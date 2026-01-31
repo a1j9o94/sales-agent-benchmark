@@ -336,19 +336,18 @@ function SortableHeader({
 
 export function Leaderboard() {
   const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
-  const [mode, setMode] = useState<"public" | "private">("private");
   const [sortField, setSortField] = useState<SortField>("rank");
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedEntry, setSelectedEntry] = useState<LeaderboardEntry | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Load leaderboard from API
+  // Load leaderboard from API (always use "public" mode which has combined scores)
   useEffect(() => {
     const loadLeaderboard = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch(`/api/leaderboard?mode=${mode}`);
+        const res = await fetch(`/api/leaderboard?mode=public`);
         if (res.ok) {
           const data = await res.json();
           if (data.entries && data.entries.length > 0) {
@@ -369,7 +368,7 @@ export function Leaderboard() {
     };
 
     loadLeaderboard();
-  }, [mode]);
+  }, []);
 
   // Handle sort
   const handleSort = (field: SortField) => {
@@ -452,17 +451,22 @@ export function Leaderboard() {
 
   if (entries.length === 0) {
     return (
-      <div className="bg-navy-900/40 rounded-2xl border border-white/5 p-8">
+      <div className="bg-navy-900/40 rounded-2xl border border-white/5 p-12">
         <div className="text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-navy-800/50 mb-4">
             <svg className="w-8 h-8 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
           </div>
-          <h4 className="font-semibold text-lg mb-2">Leaderboard</h4>
-          <p className="text-slate-500 text-sm max-w-xs mx-auto">
-            Run benchmarks to see agents ranked here. Your agent could be #1!
+          <h4 className="font-semibold text-lg mb-2">Benchmark Running</h4>
+          <p className="text-slate-500 text-sm max-w-sm mx-auto">
+            We're currently evaluating models against the full benchmark suite.
+            Results will appear here as models complete their evaluation.
           </p>
+          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-cyan-400">
+            <div className="animate-spin w-4 h-4 border-2 border-cyan-500 border-t-transparent rounded-full" />
+            <span>Check back soon</span>
+          </div>
         </div>
       </div>
     );
@@ -480,42 +484,22 @@ export function Leaderboard() {
               </svg>
             </div>
             <div>
-              <h4 className="font-semibold">Leaderboard</h4>
-              <p className="text-xs text-slate-500">{entries.length} agents ranked</p>
+              <h4 className="font-semibold">Model Rankings</h4>
+              <p className="text-xs text-slate-500">{entries.length} models tested on 36 checkpoints</p>
             </div>
           </div>
 
-          {/* Mode Toggle */}
-          <div className="flex rounded-lg bg-navy-800/50 p-0.5">
-            <button
-              onClick={() => setMode("public")}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-                mode === "public" ? "bg-white/10 text-white" : "text-slate-400 hover:text-white"
-              }`}
-            >
-              Public
-            </button>
-            <button
-              onClick={() => setMode("private")}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-                mode === "private" ? "bg-white/10 text-white" : "text-slate-400 hover:text-white"
-              }`}
-            >
-              Private
-            </button>
+          {/* Search */}
+          <div className="w-64">
+            <input
+              type="text"
+              placeholder="Search models..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full px-4 py-2 rounded-lg bg-navy-800/50 border border-white/5 text-sm
+                placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50"
+            />
           </div>
-        </div>
-
-        {/* Search */}
-        <div className="mt-4">
-          <input
-            type="text"
-            placeholder="Search agents..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-4 py-2 rounded-lg bg-navy-800/50 border border-white/5 text-sm
-              placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50"
-          />
         </div>
       </div>
 

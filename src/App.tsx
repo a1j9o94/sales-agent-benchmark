@@ -276,6 +276,7 @@ function HomePage({ onGetStarted }: { onGetStarted: () => void }) {
 
 // Benchmark Page
 function BenchmarkPage() {
+  const [showTestAgent, setShowTestAgent] = useState(false);
   const [registeredAgent, setRegisteredAgent] = useState<{ endpoint: string; apiKey: string } | null>(null);
   const [benchmarkResults, setBenchmarkResults] = useState<BenchmarkResult | null>(null);
 
@@ -286,52 +287,70 @@ function BenchmarkPage() {
 
   return (
     <div className="pt-24 pb-16">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="data-label text-cyan-400 mb-4">Deal Progression Benchmark</div>
-          <h1 className="text-4xl font-bold mb-4">Test Your Sales Agent</h1>
+          <div className="data-label text-cyan-400 mb-4">Sales Agent Benchmark</div>
+          <h1 className="text-4xl font-bold mb-4">Model Leaderboard</h1>
           <p className="text-slate-400 max-w-2xl mx-auto">
-            We send real deal checkpoints to your agent. You return risk analysis and recommendations.
-            Our judge evaluates against ground truth.
+            How do top LLMs perform at sales deal analysis? We test risk identification,
+            next step recommendations, and strategic prioritization across 36 real deal checkpoints.
           </p>
         </div>
 
-        {/* Main Grid */}
-        <div className="grid lg:grid-cols-[400px_1fr] gap-8">
-          {/* Left Sidebar */}
-          <div className="space-y-6">
-            <AgentRegistration
-              onAgentRegistered={(agent) =>
-                setRegisteredAgent({ endpoint: agent.endpoint, apiKey: agent.apiKey || "" })
-              }
-            />
-            <BenchmarkRunner
-              agentEndpoint={registeredAgent?.endpoint}
-              apiKey={registeredAgent?.apiKey}
-              onResultsReady={handleBenchmarkResults}
-            />
-          </div>
+        {/* Leaderboard - Primary Content */}
+        <div className="mb-12">
+          <Leaderboard />
+        </div>
 
-          {/* Results Area */}
-          <div className="space-y-6">
-            {benchmarkResults ? (
-              <ResultsTimeline results={benchmarkResults} />
-            ) : (
-              <div className="bg-navy-900/40 rounded-2xl border border-white/5 p-12 text-center min-h-[400px] flex flex-col items-center justify-center">
-                <div className="w-20 h-20 rounded-2xl bg-navy-800/50 flex items-center justify-center mb-6">
-                  <svg className="w-10 h-10 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">No Results Yet</h3>
-                <p className="text-slate-500 max-w-md">
-                  Register your agent endpoint or use our reference agent, select deals, and run the benchmark.
-                </p>
+        {/* Test Your Agent Section */}
+        <div className="border-t border-white/5 pt-12">
+          <button
+            onClick={() => setShowTestAgent(!showTestAgent)}
+            className="w-full flex items-center justify-between p-6 bg-navy-900/40 rounded-2xl border border-white/5 hover:bg-navy-900/60 transition-colors group"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 flex items-center justify-center">
+                <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
-            )}
-            <Leaderboard />
-          </div>
+              <div className="text-left">
+                <h3 className="text-lg font-semibold">Test Your Own Agent</h3>
+                <p className="text-sm text-slate-500">Connect your API endpoint and run the benchmark</p>
+              </div>
+            </div>
+            <svg
+              className={`w-6 h-6 text-slate-400 transition-transform ${showTestAgent ? "rotate-180" : ""}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          {showTestAgent && (
+            <div className="mt-6 grid lg:grid-cols-2 gap-6 animate-fade-up">
+              <AgentRegistration
+                onAgentRegistered={(agent) =>
+                  setRegisteredAgent({ endpoint: agent.endpoint, apiKey: agent.apiKey || "" })
+                }
+              />
+              <BenchmarkRunner
+                agentEndpoint={registeredAgent?.endpoint}
+                apiKey={registeredAgent?.apiKey}
+                onResultsReady={handleBenchmarkResults}
+              />
+            </div>
+          )}
+
+          {benchmarkResults && (
+            <div className="mt-8">
+              <ResultsTimeline results={benchmarkResults} />
+            </div>
+          )}
         </div>
       </div>
     </div>
