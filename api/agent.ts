@@ -163,7 +163,7 @@ export async function handleAgentEndpoint(req: Request): Promise<Response> {
   }
 
   try {
-    const body: AgentEndpointBody = await req.json();
+    const body = (await req.json()) as AgentEndpointBody;
 
     // Validate request
     if (!body.checkpoint_id && !body.checkpointId) {

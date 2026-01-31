@@ -453,7 +453,7 @@ export async function handleSaveResult(req: Request): Promise<Response> {
   }
 
   try {
-    const body: SaveResultBody = await req.json();
+    const body = (await req.json()) as SaveResultBody;
 
     // Calculate dimension averages from deal results
     let scores = body.scores;

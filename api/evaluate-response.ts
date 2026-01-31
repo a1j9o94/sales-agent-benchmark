@@ -180,7 +180,11 @@ export async function handleEvaluateResponseEndpoint(req: Request): Promise<Resp
   }
 
   try {
-    const body = await req.json();
+    const body = (await req.json()) as {
+      checkpoint?: Checkpoint;
+      agentResponse?: AgentResponse;
+      mode?: string;
+    };
 
     if (!body.checkpoint) {
       return Response.json({ error: "checkpoint is required" }, { status: 400 });
