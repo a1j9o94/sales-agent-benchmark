@@ -126,9 +126,9 @@ export function BenchmarkRunner({ agentEndpoint, apiKey, onResultsReady }: Bench
 
   const runBenchmark = useCallback(async (quickRun = false) => {
     const endpoint = agentEndpoint || window.location.origin + "/api/agent";
-    const dealsToRun = quickRun ? deals.slice(0, 1) : (selectedDeals.length > 0 ? selectedDeals : deals.map((d) => d.id));
+    const dealIdsToRun = quickRun ? [deals[0]?.id].filter(Boolean) : (selectedDeals.length > 0 ? selectedDeals : deals.map((d) => d.id));
     const totalCheckpoints = deals
-      .filter((d) => dealsToRun.includes(d.id))
+      .filter((d) => dealIdsToRun.includes(d.id))
       .reduce((sum, d) => sum + d.checkpointCount, 0);
 
     setIsRunning(true);
@@ -166,7 +166,9 @@ export function BenchmarkRunner({ agentEndpoint, apiKey, onResultsReady }: Bench
           // Estimate which deal we're on
           let checkpointsSoFar = 0;
           for (let i = 0; i < dealsBeingRun.length; i++) {
-            checkpointsSoFar += dealsBeingRun[i].checkpointCount;
+            const deal = dealsBeingRun[i];
+            if (!deal) continue;
+            checkpointsSoFar += deal.checkpointCount;
             if (newCurrent < checkpointsSoFar) {
               currentDealIndex = i;
               break;

@@ -195,8 +195,8 @@ export async function handleAgentEndpoint(req: Request): Promise<Response> {
     };
 
     const request: AgentRequest = {
-      checkpointId: body.checkpoint_id || body.checkpointId,
-      dealContext,
+      checkpointId: (body.checkpoint_id || body.checkpointId) as string,
+      dealContext: dealContext as AgentRequest["dealContext"],
       question: body.question || "What are the top risks and recommended next steps?",
     };
 

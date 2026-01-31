@@ -63,8 +63,9 @@ export function addToLeaderboard(result: {
 
   // Check if agent already exists
   const existingIndex = sessionLeaderboard.findIndex((e) => e.agentId === result.agentId);
-  if (existingIndex >= 0) {
-    if (entry.percentage > sessionLeaderboard[existingIndex].percentage) {
+  const existingEntry = existingIndex >= 0 ? sessionLeaderboard[existingIndex] : undefined;
+  if (existingEntry) {
+    if (entry.percentage > existingEntry.percentage) {
       sessionLeaderboard[existingIndex] = entry;
     }
   } else {

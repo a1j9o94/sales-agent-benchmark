@@ -495,7 +495,7 @@ export async function handleSaveResult(req: Request): Promise<Response> {
       mode: body.mode,
       aggregateScore: body.aggregateScore,
       maxPossibleScore: body.maxPossibleScore,
-      dealsEvaluated: body.dealResults?.length || body.dealsEvaluated,
+      dealsEvaluated: body.dealResults?.length ?? body.dealsEvaluated ?? 0,
       checkpointsEvaluated,
       avgLatencyMs: body.avgLatencyMs,
       runTimestamp: body.runTimestamp,

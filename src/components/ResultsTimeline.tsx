@@ -377,7 +377,7 @@ function DealCard({ deal, isPublic }: { deal: DealResult; isPublic: boolean }) {
         </div>
 
         {/* Expanded Detail */}
-        {expandedCheckpoint !== null && (
+        {expandedCheckpoint !== null && deal.checkpointEvaluations[expandedCheckpoint] && (
           <CheckpointDetail
             evaluation={deal.checkpointEvaluations[expandedCheckpoint]}
             isPublic={isPublic}

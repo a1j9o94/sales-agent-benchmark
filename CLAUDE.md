@@ -109,3 +109,25 @@ bun --hot ./index.ts
 ```
 
 For more information, read the Bun API docs in `node_modules/bun-types/docs/**.md`.
+
+## Pre-commit Checks
+
+ALWAYS run these checks before committing code:
+
+```bash
+# TypeScript type checking (must pass with no errors)
+bunx tsc --noEmit
+
+# Run tests (must pass)
+bun test
+```
+
+Both checks must pass cleanly before any commit. Fix all TypeScript errors and failing tests before committing.
+
+## Vercel Deployment
+
+This project deploys to Vercel. The API routes in `/api` are serverless functions.
+
+- Use `@vercel/postgres` for database (not bun:sqlite)
+- API handlers must export a default function
+- Don't use filesystem APIs (readdir, readFile) in API routes - bundle data or use database
