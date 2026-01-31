@@ -251,13 +251,13 @@ async function main() {
         if (useLLM) {
           const llmResult = await anonymizeWithLLM(exchange);
           if (llmResult) {
+            // Don't store replacements - that defeats anonymization
             anonymized = {
-              original: {
-                classification: exchange.classification,
-                matchedPattern: exchange.matchedPattern,
-                project: exchange.project.replace(/adrianobleton/gi, "user"),
-              },
-              ...llmResult,
+              classification: exchange.classification,
+              matchedPattern: exchange.matchedPattern,
+              userMessage: llmResult.anonymized?.userMessage || "",
+              assistantMessage: llmResult.anonymized?.assistantMessage || "",
+              metadata: llmResult.metadata,
             };
           }
         }
@@ -267,25 +267,17 @@ async function main() {
           const userAnon = anonymizeText(exchange.userMessage.content);
           const assistantAnon = anonymizeText(exchange.assistantMessage.content);
 
-          anonymized = {
-            original: {
-              classification: exchange.classification,
-              matchedPattern: exchange.matchedPattern,
-              project: exchange.project.replace(/adrianobleton/gi, "user"),
-            },
-            anonymized: {
-              userMessage: userAnon.text,
-              assistantMessage: assistantAnon.text,
-            },
-            replacements: [...userAnon.replacements, ...assistantAnon.replacements],
-            metadata: {
-              industry: "unknown",
-              dealStage: "unknown",
-              dynamics: "See conversation for context",
-            },
-          };
+          // Count replacements but don't store them (that would defeat anonymization)
+          const replacementCount = userAnon.replacements.length + assistantAnon.replacements.length;
+          totalReplacements += replacementCount;
 
-          totalReplacements += anonymized.replacements.length;
+          anonymized = {
+            classification: exchange.classification,
+            matchedPattern: exchange.matchedPattern,
+            userMessage: userAnon.text,
+            assistantMessage: assistantAnon.text,
+            replacementCount, // Just the count, not the actual replacements
+          };
         }
 
         await writeFile(join(outputPath, file), JSON.stringify(anonymized, null, 2));
