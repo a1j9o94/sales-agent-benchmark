@@ -5,6 +5,13 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Navy color palette */
+  --color-navy-950: #0a0e1a;
+  --color-navy-900: #0f1629;
+  --color-navy-800: #1a2340;
+  --color-navy-700: #263354;
+  --color-navy-600: #374869;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
