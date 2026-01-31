@@ -126,7 +126,7 @@ export function App() {
             Try It
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/a1j9o94/sales-agent-benchmark" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
           </Button>
