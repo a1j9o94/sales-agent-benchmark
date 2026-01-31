@@ -164,11 +164,6 @@ function ScatterPlot({ entries, onSelectEntry }: { entries: LeaderboardEntry[]; 
     return "#ef4444"; // red
   };
 
-  // Point size based on checkpoints
-  const getRadius = (checkpoints: number = 1) => {
-    return Math.min(Math.max(4 + Math.sqrt(checkpoints) * 2, 6), 16);
-  };
-
   return (
     <div className="bg-navy-900/50 rounded-xl border border-white/5 p-4">
       <div className="flex items-center justify-between mb-4">
@@ -262,16 +257,22 @@ function ScatterPlot({ entries, onSelectEntry }: { entries: LeaderboardEntry[]; 
           {entries.map((entry, i) => {
             const x = logScale(entry.avgLatencyMs || 1000);
             const y = scoreScale(entry.percentage);
-            const r = getRadius(entry.checkpointsEvaluated);
+            const r = 8; // Fixed size for cleaner look
             const color = getColor(entry.percentage);
+            const modelName = entry.agentName || entry.agentId;
+            const latencyStr = entry.avgLatencyMs ? `${(entry.avgLatencyMs / 1000).toFixed(1)}s` : "N/A";
 
             return (
               <g
                 key={entry.agentId}
                 transform={`translate(${x}, ${y})`}
-                className="cursor-pointer transition-transform hover:scale-125"
+                className="cursor-pointer"
                 onClick={() => onSelectEntry?.(entry)}
               >
+                <title>{`${modelName}\nScore: ${entry.percentage}%\nLatency: ${latencyStr}`}</title>
+                {/* Hover target (invisible, larger) */}
+                <circle r={16} fill="transparent" />
+                {/* Visible circle */}
                 <circle
                   r={r}
                   fill={color}
@@ -283,9 +284,9 @@ function ScatterPlot({ entries, onSelectEntry }: { entries: LeaderboardEntry[]; 
                 {/* Rank label for top 3 */}
                 {entry.rank <= 3 && (
                   <text
-                    y={-r - 4}
+                    y={-r - 6}
                     textAnchor="middle"
-                    className="fill-white text-[10px] font-bold"
+                    className="fill-white text-[10px] font-bold pointer-events-none"
                   >
                     #{entry.rank}
                   </text>
@@ -511,11 +512,11 @@ export function Leaderboard() {
       )}
 
       {/* Table Header */}
-      <div className="grid grid-cols-12 gap-2 px-5 py-3 bg-navy-800/30 text-xs">
+      <div className="grid grid-cols-12 px-5 py-3 bg-navy-800/30 text-xs items-center">
         <div className="col-span-1">
           <SortableHeader label="#" field="rank" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
         </div>
-        <div className="col-span-3">Agent</div>
+        <div className="col-span-2 text-slate-500 uppercase tracking-wider">Agent</div>
         <div className="col-span-1 text-right">
           <SortableHeader label="Score" field="percentage" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
         </div>
@@ -534,7 +535,7 @@ export function Leaderboard() {
         <div className="col-span-2 text-right">
           <SortableHeader label="Latency" field="avgLatencyMs" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
         </div>
-        <div className="col-span-1 text-right text-slate-500">Deals</div>
+        <div className="col-span-2 text-right text-slate-500 uppercase tracking-wider">Deals</div>
       </div>
 
       {/* Entries */}
@@ -546,7 +547,7 @@ export function Leaderboard() {
             <div
               key={entry.agentId}
               onClick={() => setSelectedEntry(isSelected ? null : entry)}
-              className={`grid grid-cols-12 gap-2 items-center px-5 py-4 cursor-pointer transition-colors
+              className={`grid grid-cols-12 items-center px-5 py-4 cursor-pointer transition-colors
                 ${entry.rank === 1 ? "bg-gradient-to-r from-yellow-500/5 to-transparent" : ""}
                 ${isSelected ? "bg-cyan-500/10" : "hover:bg-white/[0.02]"}`}
               style={{
@@ -561,14 +562,14 @@ export function Leaderboard() {
               </div>
 
               {/* Agent */}
-              <div className="col-span-3">
+              <div className="col-span-2">
                 <div className="font-medium truncate">{entry.agentName || entry.agentId}</div>
                 <div className="text-xs text-slate-600 font-mono truncate">{entry.agentId}</div>
               </div>
 
               {/* Score */}
-              <div className="col-span-1 flex flex-col items-end gap-1">
-                <div
+              <div className="col-span-1 text-right">
+                <span
                   className={`text-lg font-bold tabular-nums ${
                     entry.percentage >= 75
                       ? "text-emerald-400"
@@ -578,7 +579,7 @@ export function Leaderboard() {
                   }`}
                 >
                   {entry.percentage}%
-                </div>
+                </span>
               </div>
 
               {/* Dimension Scores */}
@@ -611,8 +612,8 @@ export function Leaderboard() {
               </div>
 
               {/* Deals */}
-              <div className="col-span-1 text-right">
-                <div className="font-medium text-sm">{entry.dealsEvaluated}</div>
+              <div className="col-span-2 text-right">
+                <span className="font-medium text-sm">{entry.dealsEvaluated}</span>
               </div>
             </div>
           );

@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { AgentRegistration } from "@/components/AgentRegistration";
-import { BenchmarkRunner } from "@/components/BenchmarkRunner";
-import { ResultsTimeline } from "@/components/ResultsTimeline";
-import { Leaderboard, addToLeaderboard } from "@/components/Leaderboard";
+import { Leaderboard } from "@/components/Leaderboard";
 import "./index.css";
 
 type Page = "home" | "benchmark" | "docs" | "faq" | "future";
@@ -278,12 +276,6 @@ function HomePage({ onGetStarted }: { onGetStarted: () => void }) {
 function BenchmarkPage() {
   const [showTestAgent, setShowTestAgent] = useState(false);
   const [registeredAgent, setRegisteredAgent] = useState<{ endpoint: string; apiKey: string } | null>(null);
-  const [benchmarkResults, setBenchmarkResults] = useState<BenchmarkResult | null>(null);
-
-  const handleBenchmarkResults = (results: BenchmarkResult) => {
-    setBenchmarkResults(results);
-    addToLeaderboard(results);
-  };
 
   return (
     <div className="pt-24 pb-16">
@@ -332,23 +324,25 @@ function BenchmarkPage() {
           </button>
 
           {showTestAgent && (
-            <div className="mt-6 grid lg:grid-cols-2 gap-6 animate-fade-up">
+            <div className="mt-6 max-w-xl animate-fade-up">
               <AgentRegistration
                 onAgentRegistered={(agent) =>
                   setRegisteredAgent({ endpoint: agent.endpoint, apiKey: agent.apiKey || "" })
                 }
               />
-              <BenchmarkRunner
-                agentEndpoint={registeredAgent?.endpoint}
-                apiKey={registeredAgent?.apiKey}
-                onResultsReady={handleBenchmarkResults}
-              />
-            </div>
-          )}
-
-          {benchmarkResults && (
-            <div className="mt-8">
-              <ResultsTimeline results={benchmarkResults} />
+              {registeredAgent && (
+                <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl">
+                  <div className="flex items-center gap-2 text-emerald-400">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="font-medium">Agent registered!</span>
+                  </div>
+                  <p className="text-sm text-slate-400 mt-1">
+                    Your agent will be included in the next benchmark run.
+                  </p>
+                </div>
+              )}
             </div>
           )}
         </div>

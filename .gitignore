@@ -41,3 +41,4 @@ output/
 data/checkpoints/private/
 .env*.local
 .playwright-mcp/
+benchmark-*.log

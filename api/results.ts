@@ -203,11 +203,14 @@ export async function saveBenchmarkRun(result: {
   // Ensure agent exists
   await upsertAgent(result.agentId, result.agentEndpoint, result.agentName);
 
-  // Insert benchmark run
+  // Insert benchmark run (round scores to integers for database)
+  const aggregateScoreInt = Math.round(result.aggregateScore);
+  const maxPossibleScoreInt = Math.round(result.maxPossibleScore);
+
   const runResult = await sql`
     INSERT INTO benchmark_runs
     (agent_id, mode, aggregate_score, max_possible_score, deals_evaluated, checkpoints_evaluated, avg_latency_ms, run_timestamp)
-    VALUES (${result.agentId}, ${result.mode}, ${result.aggregateScore}, ${result.maxPossibleScore},
+    VALUES (${result.agentId}, ${result.mode}, ${aggregateScoreInt}, ${maxPossibleScoreInt},
             ${result.dealsEvaluated}, ${result.checkpointsEvaluated}, ${result.avgLatencyMs ?? null}, ${result.runTimestamp})
     RETURNING id
   `;
