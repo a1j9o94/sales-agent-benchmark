@@ -129,33 +129,53 @@ function ScoreBar({ percentage }: { percentage: number }) {
 
 // Scatter Plot Component
 function ScatterPlot({ entries, onSelectEntry }: { entries: LeaderboardEntry[]; onSelectEntry?: (entry: LeaderboardEntry) => void }) {
-  const width = 400;
-  const height = 250;
-  const padding = { top: 20, right: 30, bottom: 40, left: 50 };
+  const width = 600;
+  const height = 280;
+  const padding = { top: 20, right: 100, bottom: 40, left: 50 }; // Extra right padding for labels
   const plotWidth = width - padding.left - padding.right;
   const plotHeight = height - padding.top - padding.bottom;
 
-  // Calculate scales
+  // Calculate scales - zoom to fit actual data with padding
   const latencies = entries.map(e => e.avgLatencyMs || 1000).filter(l => l > 0);
-  const minLatency = Math.min(...latencies, 100);
-  const maxLatency = Math.max(...latencies, 10000);
+  const scores = entries.map(e => e.percentage);
 
-  // Log scale for X axis (latency)
-  const logScale = (value: number) => {
-    const logMin = Math.log10(minLatency);
-    const logMax = Math.log10(maxLatency);
-    const logValue = Math.log10(Math.max(value, minLatency));
-    return ((logValue - logMin) / (logMax - logMin)) * plotWidth;
+  // Add 20% padding around data range for latency
+  const dataMinLatency = Math.min(...latencies);
+  const dataMaxLatency = Math.max(...latencies);
+  const latencyRange = dataMaxLatency - dataMinLatency;
+  const minLatency = Math.max(100, dataMinLatency - latencyRange * 0.3);
+  const maxLatency = dataMaxLatency + latencyRange * 0.3;
+
+  // Score range - show from slightly below min to slightly above max
+  const dataMinScore = Math.min(...scores);
+  const dataMaxScore = Math.max(...scores);
+  const scoreRange = Math.max(dataMaxScore - dataMinScore, 10); // At least 10% range
+  const minScore = Math.max(0, Math.floor((dataMinScore - scoreRange * 0.3) / 5) * 5);
+  const maxScore = Math.min(100, Math.ceil((dataMaxScore + scoreRange * 0.3) / 5) * 5);
+
+  // Linear scale for X axis (latency) - linear is clearer when data is clustered
+  const latencyScale = (value: number) => {
+    return ((value - minLatency) / (maxLatency - minLatency)) * plotWidth;
   };
 
   // Linear scale for Y axis (score percentage)
   const scoreScale = (percentage: number) => {
-    return plotHeight - (percentage / 100) * plotHeight;
+    return plotHeight - ((percentage - minScore) / (maxScore - minScore)) * plotHeight;
   };
 
-  // Generate X axis ticks (log scale)
-  const xTicks = [100, 500, 1000, 2000, 5000, 10000].filter(t => t >= minLatency && t <= maxLatency);
-  const yTicks = [0, 25, 50, 75, 100];
+  // Generate X axis ticks
+  const latencyStep = Math.ceil((maxLatency - minLatency) / 4 / 1000) * 1000 || 5000;
+  const xTicks: number[] = [];
+  for (let t = Math.ceil(minLatency / latencyStep) * latencyStep; t <= maxLatency; t += latencyStep) {
+    xTicks.push(t);
+  }
+
+  // Generate Y axis ticks
+  const yTicks: number[] = [];
+  const yStep = Math.ceil((maxScore - minScore) / 4 / 5) * 5 || 5;
+  for (let t = minScore; t <= maxScore; t += yStep) {
+    yTicks.push(t);
+  }
 
   // Color based on score
   const getColor = (percentage: number) => {
@@ -202,9 +222,9 @@ function ScatterPlot({ entries, onSelectEntry }: { entries: LeaderboardEntry[]; 
           {xTicks.map(tick => (
             <line
               key={`x-${tick}`}
-              x1={padding.left + logScale(tick)}
+              x1={padding.left + latencyScale(tick)}
               y1={padding.top}
-              x2={padding.left + logScale(tick)}
+              x2={padding.left + latencyScale(tick)}
               y2={height - padding.bottom}
               stroke="currentColor"
               strokeOpacity={0.2}
@@ -236,7 +256,7 @@ function ScatterPlot({ entries, onSelectEntry }: { entries: LeaderboardEntry[]; 
         <g transform={`translate(0, ${height - padding.bottom})`}>
           <line x1={padding.left} x2={width - padding.right} stroke="rgba(255,255,255,0.2)" />
           {xTicks.map(tick => (
-            <g key={tick} transform={`translate(${padding.left + logScale(tick)}, 0)`}>
+            <g key={tick} transform={`translate(${padding.left + latencyScale(tick)}, 0)`}>
               <text y={20} textAnchor="middle" className="fill-slate-500 text-[10px]">
                 {tick >= 1000 ? `${tick / 1000}s` : `${tick}ms`}
               </text>
@@ -248,19 +268,21 @@ function ScatterPlot({ entries, onSelectEntry }: { entries: LeaderboardEntry[]; 
             textAnchor="middle"
             className="fill-slate-400 text-[10px] font-medium"
           >
-            Response Time (log scale)
+            Response Time
           </text>
         </g>
 
         {/* Data points */}
         <g transform={`translate(${padding.left}, ${padding.top})`}>
-          {entries.map((entry, i) => {
-            const x = logScale(entry.avgLatencyMs || 1000);
+          {entries.map((entry) => {
+            const x = latencyScale(entry.avgLatencyMs || 1000);
             const y = scoreScale(entry.percentage);
-            const r = 8; // Fixed size for cleaner look
+            const r = 4; // Smaller dots
             const color = getColor(entry.percentage);
             const modelName = entry.agentName || entry.agentId;
             const latencyStr = entry.avgLatencyMs ? `${(entry.avgLatencyMs / 1000).toFixed(1)}s` : "N/A";
+            // Shorten model name for display
+            const shortName = modelName.length > 12 ? modelName.slice(0, 11) + "…" : modelName;
 
             return (
               <g
@@ -271,26 +293,25 @@ function ScatterPlot({ entries, onSelectEntry }: { entries: LeaderboardEntry[]; 
               >
                 <title>{`${modelName}\nScore: ${entry.percentage}%\nLatency: ${latencyStr}`}</title>
                 {/* Hover target (invisible, larger) */}
-                <circle r={16} fill="transparent" />
+                <circle r={12} fill="transparent" />
                 {/* Visible circle */}
                 <circle
                   r={r}
                   fill={color}
-                  fillOpacity={0.8}
+                  fillOpacity={0.9}
                   stroke={color}
-                  strokeWidth={2}
-                  style={{ filter: `drop-shadow(0 0 4px ${color})` }}
+                  strokeWidth={1.5}
+                  style={{ filter: `drop-shadow(0 0 3px ${color})` }}
                 />
-                {/* Rank label for top 3 */}
-                {entry.rank <= 3 && (
-                  <text
-                    y={-r - 6}
-                    textAnchor="middle"
-                    className="fill-white text-[10px] font-bold pointer-events-none"
-                  >
-                    #{entry.rank}
-                  </text>
-                )}
+                {/* Model name label */}
+                <text
+                  x={r + 4}
+                  y={1}
+                  dominantBaseline="middle"
+                  className="fill-slate-300 text-[8px] font-medium pointer-events-none"
+                >
+                  {shortName}
+                </text>
               </g>
             );
           })}
@@ -299,6 +320,17 @@ function ScatterPlot({ entries, onSelectEntry }: { entries: LeaderboardEntry[]; 
     </div>
   );
 }
+
+// Column descriptions for tooltips
+const columnDescriptions: Record<string, string> = {
+  riskIdentification: "Risk Identification: How well does the model identify deal risks and blockers? (0-10, higher is better)",
+  nextStepQuality: "Next Step Quality: How actionable and relevant are the suggested next steps? (0-10, higher is better)",
+  prioritization: "Prioritization: Does the model focus on what matters most for the deal? (0-10, higher is better)",
+  outcomeAlignment: "Outcome Alignment: Are recommendations aligned with closing the deal? (0-10, higher is better)",
+  avgLatencyMs: "Avg Response Time: Mean time to generate a response across all checkpoints (lower is faster)",
+  percentage: "Overall Score: Aggregate score across all evaluation dimensions",
+  rank: "Rank: Position based on overall score",
+};
 
 // Sortable Table Header
 function SortableHeader({
@@ -315,10 +347,12 @@ function SortableHeader({
   onSort: (field: SortField) => void;
 }) {
   const isActive = currentSort === field;
+  const description = columnDescriptions[field];
 
   return (
     <button
       onClick={() => onSort(field)}
+      title={description}
       className={`flex items-center gap-1 text-xs uppercase tracking-wider transition-colors
         ${isActive ? "text-cyan-400" : "text-slate-500 hover:text-slate-300"}`}
     >
@@ -512,30 +546,29 @@ export function Leaderboard() {
       )}
 
       {/* Table Header */}
-      <div className="grid grid-cols-12 px-5 py-3 bg-navy-800/30 text-xs items-center">
+      <div className="grid grid-cols-10 gap-4 px-6 py-3 bg-navy-800/30 text-xs items-center">
         <div className="col-span-1">
           <SortableHeader label="#" field="rank" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
         </div>
-        <div className="col-span-2 text-slate-500 uppercase tracking-wider">Agent</div>
-        <div className="col-span-1 text-right">
+        <div className="col-span-3 text-slate-500 uppercase tracking-wider">Agent</div>
+        <div className="col-span-1 text-center">
           <SortableHeader label="Score" field="percentage" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
         </div>
-        <div className="col-span-1 text-right">
+        <div className="col-span-1 text-center" title="Risk Identification: How well does the model spot deal risks? (0-10, higher is better)">
           <SortableHeader label="Risk" field="riskIdentification" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
         </div>
-        <div className="col-span-1 text-right">
+        <div className="col-span-1 text-center" title="Next Step Quality: Are suggested actions relevant and actionable? (0-10, higher is better)">
           <SortableHeader label="Steps" field="nextStepQuality" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
         </div>
-        <div className="col-span-1 text-right">
-          <SortableHeader label="Prior." field="prioritization" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
+        <div className="col-span-1 text-center" title="Prioritization: Does the model focus on what matters most? (0-10, higher is better)">
+          <SortableHeader label="Priority" field="prioritization" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
         </div>
-        <div className="col-span-1 text-right">
-          <SortableHeader label="Align." field="outcomeAlignment" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
+        <div className="col-span-1 text-center" title="Outcome Alignment: Are recommendations aligned with closing the deal? (0-10, higher is better)">
+          <SortableHeader label="Align" field="outcomeAlignment" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
         </div>
-        <div className="col-span-2 text-right">
+        <div className="col-span-1 text-center" title="Average response time per checkpoint (lower is faster)">
           <SortableHeader label="Latency" field="avgLatencyMs" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
         </div>
-        <div className="col-span-2 text-right text-slate-500 uppercase tracking-wider">Deals</div>
       </div>
 
       {/* Entries */}
@@ -547,7 +580,7 @@ export function Leaderboard() {
             <div
               key={entry.agentId}
               onClick={() => setSelectedEntry(isSelected ? null : entry)}
-              className={`grid grid-cols-12 items-center px-5 py-4 cursor-pointer transition-colors
+              className={`grid grid-cols-10 gap-4 items-center px-6 py-4 cursor-pointer transition-colors
                 ${entry.rank === 1 ? "bg-gradient-to-r from-yellow-500/5 to-transparent" : ""}
                 ${isSelected ? "bg-cyan-500/10" : "hover:bg-white/[0.02]"}`}
               style={{
@@ -562,13 +595,13 @@ export function Leaderboard() {
               </div>
 
               {/* Agent */}
-              <div className="col-span-2">
+              <div className="col-span-3">
                 <div className="font-medium truncate">{entry.agentName || entry.agentId}</div>
                 <div className="text-xs text-slate-600 font-mono truncate">{entry.agentId}</div>
               </div>
 
               {/* Score */}
-              <div className="col-span-1 text-right">
+              <div className="col-span-1 text-center">
                 <span
                   className={`text-lg font-bold tabular-nums ${
                     entry.percentage >= 75
@@ -583,37 +616,32 @@ export function Leaderboard() {
               </div>
 
               {/* Dimension Scores */}
-              <div className="col-span-1 text-right">
+              <div className="col-span-1 text-center">
                 <span className="text-sm tabular-nums text-slate-300">
                   {entry.scores?.riskIdentification?.toFixed(1) ?? "-"}
                 </span>
               </div>
-              <div className="col-span-1 text-right">
+              <div className="col-span-1 text-center">
                 <span className="text-sm tabular-nums text-slate-300">
                   {entry.scores?.nextStepQuality?.toFixed(1) ?? "-"}
                 </span>
               </div>
-              <div className="col-span-1 text-right">
+              <div className="col-span-1 text-center">
                 <span className="text-sm tabular-nums text-slate-300">
                   {entry.scores?.prioritization?.toFixed(1) ?? "-"}
                 </span>
               </div>
-              <div className="col-span-1 text-right">
+              <div className="col-span-1 text-center">
                 <span className="text-sm tabular-nums text-slate-300">
                   {entry.scores?.outcomeAlignment?.toFixed(1) ?? "-"}
                 </span>
               </div>
 
               {/* Latency */}
-              <div className="col-span-2 text-right">
+              <div className="col-span-1 text-center">
                 <span className="text-sm tabular-nums text-slate-400">
-                  {entry.avgLatencyMs ? `${(entry.avgLatencyMs / 1000).toFixed(2)}s` : "-"}
+                  {entry.avgLatencyMs ? `${(entry.avgLatencyMs / 1000).toFixed(1)}s` : "-"}
                 </span>
-              </div>
-
-              {/* Deals */}
-              <div className="col-span-2 text-right">
-                <span className="font-medium text-sm">{entry.dealsEvaluated}</span>
               </div>
             </div>
           );
