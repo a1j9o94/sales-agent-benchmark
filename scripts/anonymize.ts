@@ -2,17 +2,9 @@
 /**
  * Anonymize parsed conversation data for use as benchmark scenarios.
  *
- * Replaces:
- * - Company names -> fictional alternatives
- * - People names -> fictional names (preserving titles)
- * - Email addresses -> example.com addresses
- * - Phone numbers -> 555-XXX-XXXX format
- * - Dollar amounts -> rounded values
- * - File paths -> generic paths
- * - Internal URLs -> placeholder URLs
- *
- * Uses an LLM to intelligently identify and replace entities while
- * preserving the sales context and dynamics.
+ * This script has two modes:
+ * 1. Rule-based (default): Fast, uses pattern matching and known entity lists
+ * 2. LLM-powered (--llm): Uses Claude to intelligently identify and replace entities
  */
 
 import { readdir, readFile, mkdir, writeFile } from "fs/promises";
@@ -23,65 +15,57 @@ import { anthropic } from "@ai-sdk/anthropic";
 const INPUT_DIR = join(process.cwd(), "output", "parsed_conversations");
 const OUTPUT_DIR = join(process.cwd(), "output", "anonymized");
 
-const ANONYMIZE_PROMPT = `You are an anonymization tool for sales conversation data. Your job is to remove all identifying information while preserving the sales dynamics and context.
+// Known companies to replace (add more as needed)
+const COMPANY_REPLACEMENTS: Record<string, string> = {
+  // Real -> Fictional
+  "zapier": "AutomateFlow",
+  "workato": "IntegrateHub",
+  "flagship": "Horizon",
+  "flagship pioneering": "Horizon Ventures",
+  "recursion": "BioCompute",
+  "recursion pharmaceuticals": "BioCompute Therapeutics",
+  "hubspot": "SalesCloud",
+  "salesforce": "CRMPlatform",
+  "slack": "TeamChat",
+  "microsoft": "TechCorp",
+  "google": "SearchCo",
+  "coupa": "ProcureSoft",
+  "brandfolder": "AssetHub",
+  "make": "FlowBuilder",
+  "tray": "DataPipe",
+  "n8n": "NodeFlow",
+  "airtable": "GridBase",
+  "notion": "DocSpace",
+};
 
-## Replace these types of information:
+// Known person names to replace (add more as needed)
+const PERSON_REPLACEMENTS: Record<string, string> = {
+  "adrian": "Alex",
+  "sam": "Jordan",
+  "amy": "Sarah",
+  "feng": "David",
+  "bryan": "Mike",
+  "fred": "Robert",
+  "sonya": "Lisa",
+  "derek": "Kevin",
+  "julia": "Emma",
+  "emily": "Rachel",
+  "paul": "James",
+  "adrianobleton": "asmith",
+  "obleton": "smith",
+};
 
-1. **Company names** -> Replace with realistic fictional alternatives that preserve the industry
-   - Keep industry similar (biotech stays biotech, fintech stays fintech)
-   - Use believable fictional names (e.g., "Flagship Pioneering" -> "Horizon Therapeutics")
-
-2. **People names** -> Replace with fictional names
-   - Preserve titles and roles (e.g., "Fred Chen, CIO" -> "Michael Park, CIO")
-   - Keep gender indicators if apparent
-
-3. **Email addresses** -> Replace with @example.com format
-   - fred@flagship.com -> michael@horizonbio.example.com
-
-4. **Phone numbers** -> Replace with 555-XXX-XXXX format
-
-5. **Dollar amounts** -> Round to nearest reasonable increment
-   - $47,500 -> $50,000
-   - $1.2M -> $1M
-
-6. **File paths** -> Replace with generic paths
-   - /Users/adrianobleton/sales-workspace/deals/flagship -> /workspace/deals/acme
-
-7. **URLs** -> Replace with placeholder URLs
-   - Keep the structure but use example.com or placeholder domains
-
-8. **Dates** -> Keep relative timing but shift by random offset
-   - "Jan 29" -> "Feb 15" (same rough timing, different dates)
-
-9. **Internal jargon or product names** -> Replace with generic equivalents if they identify the company
-
-## Preserve:
-- Sales dynamics (blockers, champions, objections)
-- Deal stages and progression
-- Emotional tone and urgency
-- Role relationships
-- Industry context
-- MEDDPICC elements
-
-## Output format:
-Return a JSON object with:
-{
-  "anonymized": {
-    "userMessage": "anonymized user message",
-    "assistantMessage": "anonymized assistant message"
-  },
-  "replacements": [
-    {"original": "Flagship Pioneering", "replacement": "Horizon Therapeutics", "type": "company"},
-    {"original": "Fred Chen", "replacement": "Michael Park", "type": "person"}
-  ],
-  "metadata": {
-    "industry": "detected industry",
-    "dealStage": "detected deal stage",
-    "dynamics": "brief description of sales dynamics"
-  }
-}
-
-Important: Return ONLY valid JSON, no markdown code blocks or other formatting.`;
+// Product/feature names that could identify the company
+const PRODUCT_REPLACEMENTS: Record<string, string> = {
+  "meddpicc": "SALES-QUAL",
+  "zap": "automation",
+  "zaps": "automations",
+  "zapier central": "AutomateFlow Hub",
+  "zapier agents": "AutomateFlow Agents",
+  "copilot": "AI Assistant",
+  "chatgpt": "AI Chat",
+  "claude": "AI Assistant",
+};
 
 interface Exchange {
   sessionId: string;
@@ -92,93 +76,135 @@ interface Exchange {
   matchedPattern?: string;
 }
 
-interface AnonymizedExchange {
-  original: Exchange;
-  anonymized: {
-    userMessage: string;
-    assistantMessage: string;
-  };
-  replacements: Array<{ original: string; replacement: string; type: string }>;
-  metadata: {
-    industry: string;
-    dealStage: string;
-    dynamics: string;
-  };
-}
-
-async function anonymizeExchange(exchange: Exchange): Promise<AnonymizedExchange | null> {
-  const input = `## User Message:
-${exchange.userMessage.content}
-
-## Assistant Message:
-${exchange.assistantMessage.content.slice(0, 4000)}`;
-
-  try {
-    const result = await generateText({
-      model: anthropic("claude-3-5-haiku-20241022"),
-      system: ANONYMIZE_PROMPT,
-      prompt: input,
-    });
-
-    // Parse the response
-    const jsonMatch = result.text.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) {
-      console.error("No JSON found in response");
-      return null;
-    }
-
-    const parsed = JSON.parse(jsonMatch[0]);
-
-    return {
-      original: exchange,
-      ...parsed,
-    };
-  } catch (error) {
-    console.error("Error anonymizing exchange:", error);
-    return null;
-  }
-}
-
-// Simple rule-based anonymization as fallback (no API needed)
-function anonymizeSimple(text: string): { text: string; replacements: string[] } {
+function anonymizeText(text: string): { text: string; replacements: string[] } {
   const replacements: string[] = [];
   let result = text;
 
-  // Email addresses
+  // 1. Replace company names (case-insensitive, whole word)
+  for (const [real, fake] of Object.entries(COMPANY_REPLACEMENTS)) {
+    const regex = new RegExp(`\\b${real}\\b`, "gi");
+    if (regex.test(result)) {
+      replacements.push(`Company: ${real} -> ${fake}`);
+      result = result.replace(regex, fake);
+    }
+  }
+
+  // 2. Replace person names (case-insensitive, whole word)
+  for (const [real, fake] of Object.entries(PERSON_REPLACEMENTS)) {
+    const regex = new RegExp(`\\b${real}\\b`, "gi");
+    if (regex.test(result)) {
+      replacements.push(`Person: ${real} -> ${fake}`);
+      result = result.replace(regex, fake);
+    }
+  }
+
+  // 3. Replace product names
+  for (const [real, fake] of Object.entries(PRODUCT_REPLACEMENTS)) {
+    const regex = new RegExp(`\\b${real}\\b`, "gi");
+    if (regex.test(result)) {
+      replacements.push(`Product: ${real} -> ${fake}`);
+      result = result.replace(regex, fake);
+    }
+  }
+
+  // 4. Email addresses
   result = result.replace(/[\w.-]+@[\w.-]+\.\w+/g, (match) => {
     replacements.push(`Email: ${match}`);
     return "user@company.example.com";
   });
 
-  // Phone numbers
+  // 5. Phone numbers
   result = result.replace(/(\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g, (match) => {
     replacements.push(`Phone: ${match}`);
     return "555-XXX-XXXX";
   });
 
-  // File paths with usernames
+  // 6. File paths with usernames
   result = result.replace(/\/Users\/[\w-]+/g, "/Users/username");
   result = result.replace(/\/home\/[\w-]+/g, "/home/username");
 
-  // Dollar amounts (keep rough magnitude)
+  // 7. Dollar amounts (round to simpler numbers)
   result = result.replace(/\$[\d,]+(\.\d{2})?([KMB])?/gi, (match) => {
     replacements.push(`Amount: ${match}`);
-    // Round to simpler numbers
     const num = parseFloat(match.replace(/[$,KMB]/gi, ""));
-    if (match.includes("M")) return "$X.XM";
-    if (match.includes("K")) return "$XXK";
+    if (match.toLowerCase().includes("m")) return "$X.XM";
+    if (match.toLowerCase().includes("k")) return "$XXK";
     if (num > 100000) return "$XXX,XXX";
     if (num > 10000) return "$XX,XXX";
-    return "$X,XXX";
+    if (num > 1000) return "$X,XXX";
+    return "$XXX";
   });
 
-  // URLs
+  // 8. URLs (but keep structure)
   result = result.replace(/https?:\/\/[^\s<>"]+/g, (match) => {
+    if (match.includes("example.com")) return match; // Already anonymized
     replacements.push(`URL: ${match}`);
     return "https://example.com/...";
   });
 
-  return { text: result, replacements };
+  // 9. Specific date patterns (Jan 29, February 18, etc.) - shift slightly
+  result = result.replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2}\b/gi, (match) => {
+    replacements.push(`Date: ${match}`);
+    return "[DATE]";
+  });
+
+  // 10. Time patterns (9:30am, 4:30 PM, etc.)
+  result = result.replace(/\d{1,2}:\d{2}\s*(am|pm|AM|PM)?(\s*(ET|PT|CT|MT|EST|PST))?/g, "[TIME]");
+
+  return { text: result, replacements: [...new Set(replacements)] };
+}
+
+const LLM_ANONYMIZE_PROMPT = `You are an anonymization tool. Replace ALL identifying information while preserving sales context.
+
+CRITICAL: You MUST replace these types of information:
+1. ALL company names (real companies -> fictional names)
+2. ALL person names (keep titles like "VP of Operations")
+3. ALL email addresses -> user@example.com
+4. ALL specific dollar amounts -> round numbers like $50K, $100K
+5. ALL dates -> generic like "[DATE]" or "next week"
+6. ALL URLs -> https://example.com
+7. ALL file paths with real usernames
+
+Return ONLY valid JSON:
+{
+  "anonymized": {
+    "userMessage": "fully anonymized user message",
+    "assistantMessage": "fully anonymized assistant message"
+  },
+  "replacements": [
+    {"original": "Flagship", "replacement": "Acme Corp", "type": "company"},
+    {"original": "Fred Chen", "replacement": "John Smith", "type": "person"}
+  ],
+  "metadata": {
+    "industry": "detected industry",
+    "dealStage": "stage in sales cycle",
+    "dynamics": "key sales dynamics in 1-2 sentences"
+  }
+}`;
+
+async function anonymizeWithLLM(exchange: Exchange): Promise<any> {
+  const input = `Anonymize this sales conversation:
+
+USER MESSAGE:
+${exchange.userMessage.content.slice(0, 3000)}
+
+ASSISTANT MESSAGE:
+${exchange.assistantMessage.content.slice(0, 3000)}`;
+
+  try {
+    const result = await generateText({
+      model: anthropic("claude-3-5-haiku-20241022"),
+      system: LLM_ANONYMIZE_PROMPT,
+      prompt: input,
+    });
+
+    const jsonMatch = result.text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) return null;
+    return JSON.parse(jsonMatch[0]);
+  } catch (error) {
+    console.error("LLM error:", error);
+    return null;
+  }
 }
 
 async function main() {
@@ -187,16 +213,16 @@ async function main() {
   const limit = parseInt(args.find((a) => a.startsWith("--limit="))?.split("=")[1] || "0") || Infinity;
 
   console.log(`🔐 Anonymizing conversation data...`);
-  console.log(`   Mode: ${useLLM ? "LLM-powered" : "Rule-based"}`);
+  console.log(`   Mode: ${useLLM ? "LLM-powered (better quality)" : "Rule-based (fast)"}`);
   if (limit < Infinity) console.log(`   Limit: ${limit} files`);
   console.log();
 
-  // Create output directories
   await mkdir(join(OUTPUT_DIR, "corrections"), { recursive: true });
   await mkdir(join(OUTPUT_DIR, "successes"), { recursive: true });
 
   const categories = ["corrections", "successes"];
   let totalProcessed = 0;
+  let totalReplacements = 0;
 
   for (const category of categories) {
     const inputPath = join(INPUT_DIR, category);
@@ -206,17 +232,16 @@ async function main() {
     try {
       files = await readdir(inputPath);
     } catch {
-      console.log(`   Skipping ${category} (no files)`);
       continue;
     }
 
-    const jsonFiles = files.filter((f) => f.endsWith(".json")).slice(0, limit);
-    console.log(`📁 Processing ${category}: ${jsonFiles.length} files`);
+    const jsonFiles = files.filter((f) => f.endsWith(".json"));
+    const filesToProcess = limit < Infinity ? jsonFiles.slice(0, Math.max(0, limit - totalProcessed)) : jsonFiles;
+
+    console.log(`📁 Processing ${category}: ${filesToProcess.length} files`);
 
     let processed = 0;
-    for (const file of jsonFiles) {
-      if (totalProcessed >= limit) break;
-
+    for (const file of filesToProcess) {
       try {
         const content = await readFile(join(inputPath, file), "utf-8");
         const exchange: Exchange = JSON.parse(content);
@@ -224,12 +249,23 @@ async function main() {
         let anonymized: any;
 
         if (useLLM) {
-          anonymized = await anonymizeExchange(exchange);
-          if (!anonymized) continue;
-        } else {
-          // Simple rule-based anonymization
-          const userAnon = anonymizeSimple(exchange.userMessage.content);
-          const assistantAnon = anonymizeSimple(exchange.assistantMessage.content);
+          const llmResult = await anonymizeWithLLM(exchange);
+          if (llmResult) {
+            anonymized = {
+              original: {
+                classification: exchange.classification,
+                matchedPattern: exchange.matchedPattern,
+                project: exchange.project.replace(/adrianobleton/gi, "user"),
+              },
+              ...llmResult,
+            };
+          }
+        }
+
+        // Fallback to rule-based or use it as default
+        if (!anonymized) {
+          const userAnon = anonymizeText(exchange.userMessage.content);
+          const assistantAnon = anonymizeText(exchange.assistantMessage.content);
 
           anonymized = {
             original: {
@@ -248,21 +284,19 @@ async function main() {
               dynamics: "See conversation for context",
             },
           };
+
+          totalReplacements += anonymized.replacements.length;
         }
 
-        await writeFile(
-          join(outputPath, file),
-          JSON.stringify(anonymized, null, 2)
-        );
-
+        await writeFile(join(outputPath, file), JSON.stringify(anonymized, null, 2));
         processed++;
         totalProcessed++;
 
-        if (processed % 10 === 0) {
-          console.log(`   Processed ${processed}/${jsonFiles.length}`);
+        if (processed % 20 === 0) {
+          console.log(`   Processed ${processed}/${filesToProcess.length}`);
         }
       } catch (error) {
-        console.error(`   Error processing ${file}:`, error);
+        console.error(`   Error processing ${file}`);
       }
     }
 
@@ -271,9 +305,8 @@ async function main() {
 
   console.log(`\n✅ Anonymization complete!`);
   console.log(`   Output: ${OUTPUT_DIR}`);
-  console.log(`   Total processed: ${totalProcessed}`);
-  console.log(`\nTo use LLM-powered anonymization (better quality):`);
-  console.log(`   bun scripts/anonymize.ts --llm --limit=10`);
+  console.log(`   Total files: ${totalProcessed}`);
+  console.log(`   Total replacements made: ${totalReplacements}`);
 }
 
 main().catch(console.error);
