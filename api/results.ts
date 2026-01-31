@@ -417,13 +417,43 @@ export async function handleGetAllRuns(req: Request): Promise<Response> {
   }
 }
 
+interface SaveResultBody {
+  agentId: string;
+  agentEndpoint: string;
+  agentName?: string;
+  mode: "public" | "private";
+  aggregateScore: number;
+  maxPossibleScore: number;
+  dealsEvaluated?: number;
+  checkpointsEvaluated?: number;
+  avgLatencyMs?: number;
+  runTimestamp: string;
+  scores?: {
+    riskIdentification: number;
+    nextStepQuality: number;
+    prioritization: number;
+    outcomeAlignment: number;
+  };
+  dealResults?: {
+    dealId: string;
+    checkpointEvaluations: {
+      scores: {
+        riskIdentification: number;
+        nextStepQuality: number;
+        prioritization: number;
+        outcomeAlignment: number;
+      };
+    }[];
+  }[];
+}
+
 export async function handleSaveResult(req: Request): Promise<Response> {
   if (req.method !== "POST") {
     return Response.json({ error: "Method not allowed" }, { status: 405 });
   }
 
   try {
-    const body = await req.json();
+    const body: SaveResultBody = await req.json();
 
     // Calculate dimension averages from deal results
     let scores = body.scores;

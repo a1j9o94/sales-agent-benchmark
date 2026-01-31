@@ -148,6 +148,14 @@ Analyze this deal situation and provide your assessment as JSON.`;
   }
 }
 
+interface AgentEndpointBody {
+  checkpoint_id?: string;
+  checkpointId?: string;
+  deal_context?: Record<string, unknown>;
+  dealContext?: Record<string, unknown>;
+  question?: string;
+}
+
 // HTTP handler for Vercel Edge + Bun server
 export async function handleAgentEndpoint(req: Request): Promise<Response> {
   if (req.method !== "POST") {
@@ -155,7 +163,7 @@ export async function handleAgentEndpoint(req: Request): Promise<Response> {
   }
 
   try {
-    const body = await req.json();
+    const body: AgentEndpointBody = await req.json();
 
     // Validate request
     if (!body.checkpoint_id && !body.checkpointId) {
@@ -166,7 +174,7 @@ export async function handleAgentEndpoint(req: Request): Promise<Response> {
     }
 
     // Normalize the request format (support both snake_case and camelCase)
-    const rawContext = body.deal_context || body.dealContext;
+    const rawContext = (body.deal_context || body.dealContext) as Record<string, unknown>;
 
     // Normalize deal context fields from snake_case to camelCase
     const dealContext = {
