@@ -1,0 +1,136 @@
+{
+  "id": "zenith-prep-academy",
+  "name": "Summit Learning-prep-academy",
+  "checkpoints": [
+    {
+      "id": "zenith-prep-academy_cp_001",
+      "dealId": "zenith-prep-academy",
+      "timestamp": "2026-01-18",
+      "context": {
+        "company": "Summit Learning-prep-academy",
+        "stage": "Lead Qualification",
+        "lastInteraction": "Inbound demo request submitted with 10 email opens",
+        "painPoints": [],
+        "stakeholders": [],
+        "history": "Initial inbound lead from pricing page review, customer selecting sales assist AI preference",
+        "meddpicc": {
+          "metrics": {
+            "status": "yellow",
+            "notes": "200 intake calls/week, 50-60 PD calls/week. 60-70% pre-call contact rate (30-40% gap). Need to quantify: cost of no-shows, time spent on manual prep"
+          },
+          "economicBuyer": {
+            "status": "red",
+            "notes": "Unknown. Eugene is Director but unclear if he controls budget. Need to probe."
+          },
+          "decisionCriteria": {
+            "status": "yellow",
+            "notes": "Implied: ROI on automation time savings. Need to validate if there's a threshold."
+          },
+          "decisionProcess": {
+            "status": "red",
+            "notes": "Unknown. Eugene can downgrade self-serve, but expansion would require approval?"
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "Unknown. Currently monthly - annual would require procurement?"
+          },
+          "pain": {
+            "status": "green",
+            "notes": "Validated: Pre-call engagement (30-40% cold), meeting prep (clunky handoff), attribution (unreliable)"
+          },
+          "champion": {
+            "status": "green",
+            "notes": "Eugene is engaged, asking good questions, opened to expanding scope. He built the automation infra 3 years ago."
+          },
+          "competition": {
+            "status": "yellow",
+            "notes": "Status quo (HubSpot native) is the main competitor. No external tools mentioned."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "Current $50K ARR → At risk of $10-15K. Opportunity to defend or expand to $100K.",
+        "closeDate": "Renewal 2026-02-17 | Next meeting: Jan 28, 1:15 PM"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Discovery call scheduled and conducted, major use case loss identified",
+        "actualRisksThatMaterialized": [
+          "Unknown if genuine interest or price shopping",
+          "No context on current usage"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    },
+    {
+      "id": "zenith-prep-academy_cp_002",
+      "dealId": "zenith-prep-academy",
+      "timestamp": "2026-01-21",
+      "context": {
+        "company": "Summit Learning-prep-academy",
+        "stage": "Discovery Complete - Building Business Case",
+        "lastInteraction": "Deep discovery call with Eugene identifying three pain points and expansion opportunity",
+        "painPoints": [
+          "Pre-call engagement gap (30-40% leads going cold)",
+          "Clunky meeting prep handoffs",
+          "Unreliable lead attribution across 20 sources"
+        ],
+        "stakeholders": [],
+        "history": "Discovery revealed 80-85% usage loss due to Calendly->SalesCloud migration, customer open to new use cases",
+        "meddpicc": {
+          "metrics": {
+            "status": "yellow",
+            "notes": "200 intake calls/week, 50-60 PD calls/week. 60-70% pre-call contact rate (30-40% gap). Need to quantify: cost of no-shows, time spent on manual prep"
+          },
+          "economicBuyer": {
+            "status": "red",
+            "notes": "Unknown. Eugene is Director but unclear if he controls budget. Need to probe."
+          },
+          "decisionCriteria": {
+            "status": "yellow",
+            "notes": "Implied: ROI on automation time savings. Need to validate if there's a threshold."
+          },
+          "decisionProcess": {
+            "status": "red",
+            "notes": "Unknown. Eugene can downgrade self-serve, but expansion would require approval?"
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "Unknown. Currently monthly - annual would require procurement?"
+          },
+          "pain": {
+            "status": "green",
+            "notes": "Validated: Pre-call engagement (30-40% cold), meeting prep (clunky handoff), attribution (unreliable)"
+          },
+          "champion": {
+            "status": "green",
+            "notes": "Eugene is engaged, asking good questions, opened to expanding scope. He built the automation infra 3 years ago."
+          },
+          "competition": {
+            "status": "yellow",
+            "notes": "Status quo (HubSpot native) is the main competitor. No external tools mentioned."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "Current $50K ARR → At risk of $10-15K. Opportunity to defend or expand to $100K.",
+        "closeDate": "Renewal 2026-02-17 | Next meeting: Jan 28, 1:15 PM"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Customer began downgrading from 50K to 25K, solution building phase initiated",
+        "actualRisksThatMaterialized": [
+          "Major value driver eliminated",
+          "SalesCloud native replacing external tools",
+          "Pain points may not justify current spend"
+        ],
+        "outcomeAtThisPoint": "at_risk_but_engaged"
+      }
+    }
+  ],
+  "finalOutcome": "lost"
+}

@@ -36,3 +36,7 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # Parsed conversation data
 output/
+
+# Private benchmark data (not for public consumption)
+data/checkpoints/private/
+.env*.local

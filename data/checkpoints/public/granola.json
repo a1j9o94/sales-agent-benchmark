@@ -1,0 +1,358 @@
+{
+  "id": "granola",
+  "name": "NoteFlow AI",
+  "checkpoints": [
+    {
+      "id": "granola_cp_001",
+      "dealId": "granola",
+      "timestamp": "2026-01-21",
+      "context": {
+        "company": "NoteFlow AI",
+        "stage": "Discovery",
+        "lastInteraction": "Partnership sync with Taylor Lee and KR coaching session",
+        "painPoints": [
+          "High task usage at 130% of plan limit",
+          "Growing from 80K to 151K tasks rapidly"
+        ],
+        "stakeholders": [
+          {
+            "name": "Charles Pedregal",
+            "title": "CEO/Co",
+            "role": "founder",
+            "sentiment": "unknown",
+            "notes": "Walter relationship via Agents of Scale podcast - Strategic partner"
+          },
+          {
+            "name": "Jordan Stephenson",
+            "title": "Co",
+            "role": "founder",
+            "sentiment": "unknown",
+            "notes": "Power user (181K tasks), account owner - Economic buyer potential"
+          },
+          {
+            "name": "Claire Markman",
+            "title": "Ops",
+            "role": "Handled Nov 2025 upgrade, asked to be notified on limits",
+            "sentiment": "positive",
+            "notes": "Engaged contact"
+          },
+          {
+            "name": "Katie Imelda",
+            "title": "Ops",
+            "role": "On Nov 2025 call, active user (1K tasks)",
+            "sentiment": "positive",
+            "notes": "Engaged contact"
+          },
+          {
+            "name": "Jo Barrow",
+            "title": "Executive Ops/Strategy",
+            "role": "Active user (17K tasks)",
+            "sentiment": "unknown",
+            "notes": "Potential business champion"
+          },
+          {
+            "name": "Nathan Sadiq",
+            "title": "Engineering (Senior)",
+            "role": "Heaviest user (700K tasks), built their integrations",
+            "sentiment": "unknown",
+            "notes": "Technical champion"
+          },
+          {
+            "name": "Alex Sangster",
+            "title": "Unknown role",
+            "role": "Top MCP user (7.8K tool calls)",
+            "sentiment": "unknown",
+            "notes": "RelateSync integration owner"
+          }
+        ],
+        "history": "Partnership angle explored, coaching received to focus on builders directly",
+        "meddpicc": {
+          "metrics": {
+            "status": "green",
+            "notes": "**300K tasks in Jan** (300% of plan). Growth: 80K → 151K → 300K over 3 months"
+          },
+          "economicBuyer": {
+            "status": "red",
+            "notes": "Sam Stephenson (Co-founder) is a power user but haven't engaged on budget"
+          },
+          "decisionCriteria": {
+            "status": "yellow",
+            "notes": "Unknown—need to understand what would drive an enterprise decision"
+          },
+          "decisionProcess": {
+            "status": "red",
+            "notes": "Unknown"
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "Unknown—$43M Series B suggests real finance/legal function now"
+          },
+          "pain": {
+            "status": "green",
+            "notes": "**Shre personally blocked** — couldn't save Zaps on 1/26. Business disruption is real."
+          },
+          "champion": {
+            "status": "yellow",
+            "notes": "Shre now feeling the pain directly. Nyal (700K tasks) still untested."
+          },
+          "competition": {
+            "status": "green",
+            "notes": "Deeply embedded—no competitive threat visible"
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "$10-20K (Team 100K, annual)",
+        "closeDate": "TBD - Renewal in 311 days"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Plan to reach out to builders (Nathan, Jordan) and request warm intro to Shrey via Taylor",
+        "actualRisksThatMaterialized": [
+          "Over-engineering partnership asks",
+          "Not engaging economic buyer Jordan directly",
+          "Waiting too long while usage keeps growing"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    },
+    {
+      "id": "granola_cp_002",
+      "dealId": "granola",
+      "timestamp": "2026-01-26",
+      "context": {
+        "company": "NoteFlow AI",
+        "stage": "Pain Qualification",
+        "lastInteraction": "Steve hit plan limit at 300K tasks (3x their 100K plan), couldn't save Zaps",
+        "painPoints": [
+          "Business disruption from plan limits",
+          "300% task utilization",
+          "Zaps literally stop working",
+          "Head of Business personally affected"
+        ],
+        "stakeholders": [
+          {
+            "name": "Charles Pedregal",
+            "title": "CEO/Co",
+            "role": "founder",
+            "sentiment": "unknown",
+            "notes": "Walter relationship via Agents of Scale podcast - Strategic partner"
+          },
+          {
+            "name": "Jordan Stephenson",
+            "title": "Co",
+            "role": "founder",
+            "sentiment": "unknown",
+            "notes": "Power user (181K tasks), account owner - Economic buyer potential"
+          },
+          {
+            "name": "Claire Markman",
+            "title": "Ops",
+            "role": "Handled Nov 2025 upgrade, asked to be notified on limits",
+            "sentiment": "positive",
+            "notes": "Engaged contact"
+          },
+          {
+            "name": "Katie Imelda",
+            "title": "Ops",
+            "role": "On Nov 2025 call, active user (1K tasks)",
+            "sentiment": "positive",
+            "notes": "Engaged contact"
+          },
+          {
+            "name": "Jo Barrow",
+            "title": "Executive Ops/Strategy",
+            "role": "Active user (17K tasks)",
+            "sentiment": "unknown",
+            "notes": "Potential business champion"
+          },
+          {
+            "name": "Nathan Sadiq",
+            "title": "Engineering (Senior)",
+            "role": "Heaviest user (700K tasks), built their integrations",
+            "sentiment": "unknown",
+            "notes": "Technical champion"
+          },
+          {
+            "name": "Alex Sangster",
+            "title": "Unknown role",
+            "role": "Top MCP user (7.8K tool calls)",
+            "sentiment": "unknown",
+            "notes": "RelateSync integration owner"
+          }
+        ],
+        "history": "Critical pain moment - Head of Business personally blocked by plan limits",
+        "meddpicc": {
+          "metrics": {
+            "status": "green",
+            "notes": "**300K tasks in Jan** (300% of plan). Growth: 80K → 151K → 300K over 3 months"
+          },
+          "economicBuyer": {
+            "status": "red",
+            "notes": "Sam Stephenson (Co-founder) is a power user but haven't engaged on budget"
+          },
+          "decisionCriteria": {
+            "status": "yellow",
+            "notes": "Unknown—need to understand what would drive an enterprise decision"
+          },
+          "decisionProcess": {
+            "status": "red",
+            "notes": "Unknown"
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "Unknown—$43M Series B suggests real finance/legal function now"
+          },
+          "pain": {
+            "status": "green",
+            "notes": "**Shre personally blocked** — couldn't save Zaps on 1/26. Business disruption is real."
+          },
+          "champion": {
+            "status": "yellow",
+            "notes": "Shre now feeling the pain directly. Nyal (700K tasks) still untested."
+          },
+          "competition": {
+            "status": "green",
+            "notes": "Deeply embedded—no competitive threat visible"
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "$10-20K (Team 100K, annual)",
+        "closeDate": "TBD - Renewal in 311 days"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Follow-up email sent to Katie offering to connect and avoid future disruptions",
+        "actualRisksThatMaterialized": [
+          "They might just self-serve upgrade to higher tier instead of enterprise",
+          "Need to convert incident into strategic conversation quickly"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    },
+    {
+      "id": "granola_cp_003",
+      "dealId": "granola",
+      "timestamp": "2026-01-27",
+      "context": {
+        "company": "NoteFlow AI",
+        "stage": "TLU → Expansion Opportunity",
+        "lastInteraction": "Value prop crystallized around business continuity and predictability",
+        "painPoints": [
+          "Plan limits causing business disruption",
+          "Embedded in critical workflows",
+          "300% usage growth in 3 months",
+          "Fire drills from hitting limits"
+        ],
+        "stakeholders": [
+          {
+            "name": "Charles Pedregal",
+            "title": "CEO/Co",
+            "role": "founder",
+            "sentiment": "unknown",
+            "notes": "Walter relationship via Agents of Scale podcast - Strategic partner"
+          },
+          {
+            "name": "Jordan Stephenson",
+            "title": "Co",
+            "role": "founder",
+            "sentiment": "unknown",
+            "notes": "Power user (181K tasks), account owner - Economic buyer potential"
+          },
+          {
+            "name": "Claire Markman",
+            "title": "Ops",
+            "role": "Handled Nov 2025 upgrade, asked to be notified on limits",
+            "sentiment": "positive",
+            "notes": "Engaged contact"
+          },
+          {
+            "name": "Katie Imelda",
+            "title": "Ops",
+            "role": "On Nov 2025 call, active user (1K tasks)",
+            "sentiment": "positive",
+            "notes": "Engaged contact"
+          },
+          {
+            "name": "Jo Barrow",
+            "title": "Executive Ops/Strategy",
+            "role": "Active user (17K tasks)",
+            "sentiment": "unknown",
+            "notes": "Potential business champion"
+          },
+          {
+            "name": "Nathan Sadiq",
+            "title": "Engineering (Senior)",
+            "role": "Heaviest user (700K tasks), built their integrations",
+            "sentiment": "unknown",
+            "notes": "Technical champion"
+          },
+          {
+            "name": "Alex Sangster",
+            "title": "Unknown role",
+            "role": "Top MCP user (7.8K tool calls)",
+            "sentiment": "unknown",
+            "notes": "RelateSync integration owner"
+          }
+        ],
+        "history": "Deal repositioned as expansion opportunity with clear enterprise value prop",
+        "meddpicc": {
+          "metrics": {
+            "status": "green",
+            "notes": "**300K tasks in Jan** (300% of plan). Growth: 80K → 151K → 300K over 3 months"
+          },
+          "economicBuyer": {
+            "status": "red",
+            "notes": "Sam Stephenson (Co-founder) is a power user but haven't engaged on budget"
+          },
+          "decisionCriteria": {
+            "status": "yellow",
+            "notes": "Unknown—need to understand what would drive an enterprise decision"
+          },
+          "decisionProcess": {
+            "status": "red",
+            "notes": "Unknown"
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "Unknown—$43M Series B suggests real finance/legal function now"
+          },
+          "pain": {
+            "status": "green",
+            "notes": "**Shre personally blocked** — couldn't save Zaps on 1/26. Business disruption is real."
+          },
+          "champion": {
+            "status": "yellow",
+            "notes": "Shre now feeling the pain directly. Nyal (700K tasks) still untested."
+          },
+          "competition": {
+            "status": "green",
+            "notes": "Deeply embedded—no competitive threat visible"
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "$10-20K (Team 100K, annual)",
+        "closeDate": "TBD - Renewal in 311 days"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "TBD - awaiting next steps on builder outreach and strategic conversations",
+        "actualRisksThatMaterialized": [
+          "Engineering culture may prefer building vs buying",
+          "May not see enterprise features as valuable yet",
+          "Need to engage economic buyer Jordan"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    }
+  ],
+  "finalOutcome": "stalled"
+}

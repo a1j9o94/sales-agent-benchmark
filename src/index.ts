@@ -3,6 +3,22 @@ import { generateText } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
 import index from "./index.html";
 
+// Import benchmark API handlers
+import { handleAgentEndpoint } from "../api/agent";
+import {
+  handleRegisterEndpoint,
+  handleUnregisterEndpoint,
+  handleTestEndpoint,
+} from "../api/register";
+import { handleRunBenchmarkEndpoint, handleDealsEndpoint } from "../api/run-benchmark";
+import { handleEvaluateResponseEndpoint } from "../api/evaluate-response";
+import {
+  handleGetLeaderboard,
+  handleGetAllRuns,
+  handleSaveResult,
+  handleInitDatabase,
+} from "../api/results";
+
 const SALES_AGENT_CONTEXT = `You are an expert sales analyst and strategist. Your role is to help with:
 
 - Deal preparation and account research
@@ -116,11 +132,60 @@ async function handleEvaluate(req: Request): Promise<Response> {
 
 const server = serve({
   routes: {
-    // API routes
+    // Original evaluation API
     "/api/evaluate": {
       POST: handleEvaluate,
     },
 
+    // Reference agent API - implements the benchmark contract
+    "/api/agent": {
+      POST: handleAgentEndpoint,
+    },
+
+    // Agent registration APIs
+    "/api/register": {
+      GET: handleRegisterEndpoint,
+      POST: handleRegisterEndpoint,
+      DELETE: handleUnregisterEndpoint,
+    },
+
+    // Test an agent endpoint before registering
+    "/api/test-agent": {
+      POST: handleTestEndpoint,
+    },
+
+    // Benchmark runner APIs
+    "/api/benchmark/run": {
+      POST: handleRunBenchmarkEndpoint,
+    },
+
+    "/api/benchmark/deals": {
+      GET: handleDealsEndpoint,
+    },
+
+    // Evaluate a single response (for debugging)
+    "/api/benchmark/evaluate-response": {
+      POST: handleEvaluateResponseEndpoint,
+    },
+
+    // Results persistence APIs
+    "/api/leaderboard": {
+      GET: handleGetLeaderboard,
+    },
+
+    "/api/runs": {
+      GET: handleGetAllRuns,
+    },
+
+    "/api/results": {
+      POST: handleSaveResult,
+    },
+
+    "/api/init-db": {
+      POST: handleInitDatabase,
+    },
+
+    // Keep the hello endpoints for testing
     "/api/hello": {
       async GET() {
         return Response.json({
@@ -154,3 +219,16 @@ const server = serve({
 });
 
 console.log(`🚀 Server running at ${server.url}`);
+console.log(`
+📋 Benchmark API Endpoints:
+  POST /api/agent           - Reference sales agent (implements benchmark contract)
+  POST /api/register        - Register your agent endpoint
+  GET  /api/register        - List registered agents
+  POST /api/test-agent      - Test an agent endpoint
+  POST /api/benchmark/run   - Run the benchmark
+  GET  /api/benchmark/deals - Get available deals
+  GET  /api/leaderboard     - Get leaderboard rankings
+  GET  /api/runs            - Get all benchmark runs (for scatter plot)
+  POST /api/results         - Save benchmark results
+  POST /api/init-db         - Initialize database tables
+`);

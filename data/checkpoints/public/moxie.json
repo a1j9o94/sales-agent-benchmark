@@ -1,0 +1,233 @@
+{
+  "id": "moxie",
+  "name": "Velocity Systems",
+  "checkpoints": [
+    {
+      "id": "moxie_cp_001",
+      "dealId": "moxie",
+      "timestamp": "2026-01-29",
+      "context": {
+        "company": "Velocity Systems",
+        "stage": "Discovery",
+        "lastInteraction": "Discovery call with James Liao",
+        "painPoints": [
+          "Hit AutomateFlow limits during Black Friday",
+          "Manual processes blocking scaling from 200 to 2,000 customers",
+          "Scattered automation tools (AutomateFlow, n8n, ad hoc)",
+          "CSMs switching between SalesCloud and TaskBoard",
+          "No proactive ad spend monitoring"
+        ],
+        "stakeholders": [
+          {
+            "name": "James Liao",
+            "title": "(Title unclear, enterprise architecture lead?)",
+            "role": "Primary contact",
+            "sentiment": "unknown",
+            "notes": "Champion - Hired specifically to solve this problem. Technical, detail-oriented, price-conscious but not cheap."
+          }
+        ],
+        "history": "Discovery call revealed strong pain, clear use cases, and engaged champion but pricing concerns emerged",
+        "meddpicc": {
+          "metrics": {
+            "status": "yellow",
+            "notes": "They frame it as \"burning problem\" not ROI - scaling from 200 → 2,000 customers. Bottleneck is ops capacity: could onboard 15-20 customers/week vs current 5 if automated."
+          },
+          "economicBuyer": {
+            "status": "yellow",
+            "notes": "Will was \"brought on board\" to set up enterprise architecture. Unclear if he owns budget or needs approval. Need to map org."
+          },
+          "decisionCriteria": {
+            "status": "green",
+            "notes": "Clear: (1) integrations to standard stack, (2) trigger flexibility/webhooks, (3) pricing/usage limits/reliability, (4) GDPR+SOC compliance, (5) guardrails/roles, (6) AI optional"
+          },
+          "decisionProcess": {
+            "status": "yellow",
+            "notes": "March 1 deadline. February pilot with 50-user team migrating to ClickUp. Who else needs to sign off?"
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "Not discussed. Need to understand procurement, legal."
+          },
+          "pain": {
+            "status": "green",
+            "notes": "Blew past limits Black Friday. Manual processes blocking growth. Currently scattered (Zapier, n8n, ad hoc). Need to centralize before scaling."
+          },
+          "champion": {
+            "status": "green",
+            "notes": "Will is engaged, driving evaluation, shared detailed requirements. He's the right persona (enterprise architecture owner)."
+          },
+          "competition": {
+            "status": "green",
+            "notes": "Workato is primary. Not leaning toward n8n/Make (\"high-level usability and reliability is focus\"). PM vendors recommend Workato by default - this is a risk."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "$50-65K (estimated)",
+        "closeDate": "March 2026 (decision by March 1)"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Sent comprehensive follow-up with ROI calculator, comparison rubric, and confirmed Feb 9 SA meeting",
+        "actualRisksThatMaterialized": [
+          "Sticker shock at $50-100K vs $22K self-serve pricing",
+          "IntegrateHub positioning enterprise features at team-level pricing",
+          "Economic buyer not identified",
+          "PM vendors defaulting to IntegrateHub recommendations"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    },
+    {
+      "id": "moxie_cp_002",
+      "dealId": "moxie",
+      "timestamp": "2026-01-29",
+      "context": {
+        "company": "Velocity Systems",
+        "stage": "Discovery",
+        "lastInteraction": "Comprehensive follow-up email with ROI calculator and value justification",
+        "painPoints": [
+          "Same pain points",
+          "Added context: could onboard 15-20 customers/week vs current 5 if automated"
+        ],
+        "stakeholders": [
+          {
+            "name": "James Liao",
+            "title": "(Title unclear, enterprise architecture lead?)",
+            "role": "Primary contact",
+            "sentiment": "unknown",
+            "notes": "Champion - Hired specifically to solve this problem. Technical, detail-oriented, price-conscious but not cheap."
+          }
+        ],
+        "history": "Sent strategic follow-up materials including ROI calculator showing 2.5x ROI and positioning enterprise as partnership vs platform access",
+        "meddpicc": {
+          "metrics": {
+            "status": "yellow",
+            "notes": "They frame it as \"burning problem\" not ROI - scaling from 200 → 2,000 customers. Bottleneck is ops capacity: could onboard 15-20 customers/week vs current 5 if automated."
+          },
+          "economicBuyer": {
+            "status": "yellow",
+            "notes": "Will was \"brought on board\" to set up enterprise architecture. Unclear if he owns budget or needs approval. Need to map org."
+          },
+          "decisionCriteria": {
+            "status": "green",
+            "notes": "Clear: (1) integrations to standard stack, (2) trigger flexibility/webhooks, (3) pricing/usage limits/reliability, (4) GDPR+SOC compliance, (5) guardrails/roles, (6) AI optional"
+          },
+          "decisionProcess": {
+            "status": "yellow",
+            "notes": "March 1 deadline. February pilot with 50-user team migrating to ClickUp. Who else needs to sign off?"
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "Not discussed. Need to understand procurement, legal."
+          },
+          "pain": {
+            "status": "green",
+            "notes": "Blew past limits Black Friday. Manual processes blocking growth. Currently scattered (Zapier, n8n, ad hoc). Need to centralize before scaling."
+          },
+          "champion": {
+            "status": "green",
+            "notes": "Will is engaged, driving evaluation, shared detailed requirements. He's the right persona (enterprise architecture owner)."
+          },
+          "competition": {
+            "status": "green",
+            "notes": "Workato is primary. Not leaning toward n8n/Make (\"high-level usability and reliability is focus\"). PM vendors recommend Workato by default - this is a risk."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "$50-65K (estimated)",
+        "closeDate": "March 2026 (decision by March 1)"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "James requested filled-in comparison rubric indicating serious evaluation mode",
+        "actualRisksThatMaterialized": [
+          "Still need to justify pricing premium",
+          "IntegrateHub competitive threat",
+          "February pilot success critical"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    },
+    {
+      "id": "moxie_cp_003",
+      "dealId": "moxie",
+      "timestamp": "2026-01-30",
+      "context": {
+        "company": "Velocity Systems",
+        "stage": "Discovery",
+        "lastInteraction": "James asked for filled-in AutomateFlow vs IntegrateHub comparison rubric",
+        "painPoints": [
+          "All previous pain points confirmed",
+          "February migration to TaskBoard creates urgency"
+        ],
+        "stakeholders": [
+          {
+            "name": "James Liao",
+            "title": "(Title unclear, enterprise architecture lead?)",
+            "role": "Primary contact",
+            "sentiment": "unknown",
+            "notes": "Champion - Hired specifically to solve this problem. Technical, detail-oriented, price-conscious but not cheap."
+          }
+        ],
+        "history": "James's request for completed comparison rubric signals serious evaluation and comparison shopping",
+        "meddpicc": {
+          "metrics": {
+            "status": "yellow",
+            "notes": "They frame it as \"burning problem\" not ROI - scaling from 200 → 2,000 customers. Bottleneck is ops capacity: could onboard 15-20 customers/week vs current 5 if automated."
+          },
+          "economicBuyer": {
+            "status": "yellow",
+            "notes": "Will was \"brought on board\" to set up enterprise architecture. Unclear if he owns budget or needs approval. Need to map org."
+          },
+          "decisionCriteria": {
+            "status": "green",
+            "notes": "Clear: (1) integrations to standard stack, (2) trigger flexibility/webhooks, (3) pricing/usage limits/reliability, (4) GDPR+SOC compliance, (5) guardrails/roles, (6) AI optional"
+          },
+          "decisionProcess": {
+            "status": "yellow",
+            "notes": "March 1 deadline. February pilot with 50-user team migrating to ClickUp. Who else needs to sign off?"
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "Not discussed. Need to understand procurement, legal."
+          },
+          "pain": {
+            "status": "green",
+            "notes": "Blew past limits Black Friday. Manual processes blocking growth. Currently scattered (Zapier, n8n, ad hoc). Need to centralize before scaling."
+          },
+          "champion": {
+            "status": "green",
+            "notes": "Will is engaged, driving evaluation, shared detailed requirements. He's the right persona (enterprise architecture owner)."
+          },
+          "competition": {
+            "status": "green",
+            "notes": "Workato is primary. Not leaning toward n8n/Make (\"high-level usability and reliability is focus\"). PM vendors recommend Workato by default - this is a risk."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "$50-65K (estimated)",
+        "closeDate": "March 2026 (decision by March 1)"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Delivered honest head-to-head assessment showing AutomateFlow advantages in 14 criteria vs IntegrateHub's 6, with 12 ties",
+        "actualRisksThatMaterialized": [
+          "Direct feature comparison requested suggests active vendor evaluation",
+          "IntegrateHub strengths in testing/deployment and complex orchestration acknowledged",
+          "March 1 deadline approaching with economic buyer still unmapped"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    }
+  ],
+  "finalOutcome": "active"
+}

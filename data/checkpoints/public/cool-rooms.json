@@ -1,0 +1,418 @@
+{
+  "id": "cool-rooms",
+  "name": "ChillSpace Tech",
+  "checkpoints": [
+    {
+      "id": "cool-rooms_cp_001",
+      "dealId": "cool-rooms",
+      "timestamp": "2026-01-19",
+      "context": {
+        "company": "ChillSpace Tech",
+        "stage": "Discovery",
+        "lastInteraction": "Finance-focused discovery call with Javier Raynaud (CFO)",
+        "painPoints": [
+          "Petty cash manual process",
+          "AP/invoice processing pain",
+          "Month-end reconciliation inefficiencies"
+        ],
+        "stakeholders": [
+          {
+            "name": "Javier Raynaud",
+            "title": "CFO/Finance Lead",
+            "role": "Gatekeeper, ROI validator",
+            "sentiment": "positive",
+            "notes": "Neutral-to-Friendly (explicitly said €50K+ too high, but engaged and transparent)"
+          },
+          {
+            "name": "Fernando Lopezlavin",
+            "title": "Head of Revenue",
+            "role": "Owns reservation/revenue pain",
+            "sentiment": "unknown",
+            "notes": "Supporter (meeting Jan 20 to validate revenue use cases)"
+          },
+          {
+            "name": "Salomao Costa",
+            "title": "Operations",
+            "role": "Aligned with Fernando",
+            "sentiment": "unknown",
+            "notes": "Supporter"
+          },
+          {
+            "name": "Matteo Secci",
+            "title": "Finance, Technical",
+            "role": "Builder, prototype creator",
+            "sentiment": "unknown",
+            "notes": "Supporter (built MS Forms mockup, James build automations)"
+          },
+          {
+            "name": "General Manager",
+            "title": "Economic Buyer",
+            "role": "Final approval authority",
+            "sentiment": "positive",
+            "notes": "Unknown (haven't engaged directly)"
+          }
+        ],
+        "history": "Initial discovery call with CFO/Finance Lead to understand finance automation needs",
+        "meddpicc": {
+          "metrics": {
+            "status": "green",
+            "notes": "Validated: ~€60K/year opportunity cost + staff time. ~730 emails/month at Madrid (34 rooms). Response time goal: <6 hrs for groups, <2 hrs for individuals."
+          },
+          "economicBuyer": {
+            "status": "green",
+            "notes": "Self-serve/Teams tier - no major approval needed. Salomao/Fernando can likely approve training + solutions partner engagement."
+          },
+          "decisionCriteria": {
+            "status": "green",
+            "notes": "Clear: Can they build the email automation workflow? Will it improve response time? Does the plan pricing fit task volume?"
+          },
+          "decisionProcess": {
+            "status": "green",
+            "notes": "Simple for self-serve: Trial → Solutions partner engagement → Select plan based on task volume"
+          },
+          "paperProcess": {
+            "status": "green",
+            "notes": "Standard Teams signup - no enterprise procurement needed"
+          },
+          "pain": {
+            "status": "green",
+            "notes": "Validated by Fernando: losing group bookings to faster competitors, staff spending too much time on emails instead of guest service"
+          },
+          "champion": {
+            "status": "yellow",
+            "notes": "Matteo is technical lead but wasn't on this call. Fernando/Salomao are engaged. Need to ensure Matteo gets the training materials."
+          },
+          "competition": {
+            "status": "green",
+            "notes": "No direct competitor for email automation use case. They're evaluating Zapier + solutions partners vs building internally."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "Teams tier (~€2-4K ARR) | Not enterprise",
+        "closeDate": "Q1 2026"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Finance use cases mostly invalidated by Sage 200 implementation, pivot to revenue use cases with Fernando scheduled",
+        "actualRisksThatMaterialized": [
+          "Enterprise budget ruled out",
+          "Primary finance use cases may be covered by existing systems"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    },
+    {
+      "id": "cool-rooms_cp_002",
+      "dealId": "cool-rooms",
+      "timestamp": "2026-01-20",
+      "context": {
+        "company": "ChillSpace Tech",
+        "stage": "Discovery",
+        "lastInteraction": "Revenue use case validation call with Fernando Lopezlavin",
+        "painPoints": [
+          "730 emails/month at Madrid property",
+          "24-48 hour response times losing bookings",
+          "€60K/year opportunity cost",
+          "Staff time diverted from guest service"
+        ],
+        "stakeholders": [
+          {
+            "name": "Javier Raynaud",
+            "title": "CFO/Finance Lead",
+            "role": "Gatekeeper, ROI validator",
+            "sentiment": "positive",
+            "notes": "Neutral-to-Friendly (explicitly said €50K+ too high, but engaged and transparent)"
+          },
+          {
+            "name": "Fernando Lopezlavin",
+            "title": "Head of Revenue",
+            "role": "Owns reservation/revenue pain",
+            "sentiment": "unknown",
+            "notes": "Supporter (meeting Jan 20 to validate revenue use cases)"
+          },
+          {
+            "name": "Salomao Costa",
+            "title": "Operations",
+            "role": "Aligned with Fernando",
+            "sentiment": "unknown",
+            "notes": "Supporter"
+          },
+          {
+            "name": "Matteo Secci",
+            "title": "Finance, Technical",
+            "role": "Builder, prototype creator",
+            "sentiment": "unknown",
+            "notes": "Supporter (built MS Forms mockup, James build automations)"
+          },
+          {
+            "name": "General Manager",
+            "title": "Economic Buyer",
+            "role": "Final approval authority",
+            "sentiment": "positive",
+            "notes": "Unknown (haven't engaged directly)"
+          }
+        ],
+        "history": "Critical validation call with Head of Revenue to assess email automation opportunity",
+        "meddpicc": {
+          "metrics": {
+            "status": "green",
+            "notes": "Validated: ~€60K/year opportunity cost + staff time. ~730 emails/month at Madrid (34 rooms). Response time goal: <6 hrs for groups, <2 hrs for individuals."
+          },
+          "economicBuyer": {
+            "status": "green",
+            "notes": "Self-serve/Teams tier - no major approval needed. Salomao/Fernando can likely approve training + solutions partner engagement."
+          },
+          "decisionCriteria": {
+            "status": "green",
+            "notes": "Clear: Can they build the email automation workflow? Will it improve response time? Does the plan pricing fit task volume?"
+          },
+          "decisionProcess": {
+            "status": "green",
+            "notes": "Simple for self-serve: Trial → Solutions partner engagement → Select plan based on task volume"
+          },
+          "paperProcess": {
+            "status": "green",
+            "notes": "Standard Teams signup - no enterprise procurement needed"
+          },
+          "pain": {
+            "status": "green",
+            "notes": "Validated by Fernando: losing group bookings to faster competitors, staff spending too much time on emails instead of guest service"
+          },
+          "champion": {
+            "status": "yellow",
+            "notes": "Matteo is technical lead but wasn't on this call. Fernando/Salomao are engaged. Need to ensure Matteo gets the training materials."
+          },
+          "competition": {
+            "status": "green",
+            "notes": "No direct competitor for email automation use case. They're evaluating Zapier + solutions partners vs building internally."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "Teams tier (~€2-4K ARR) | Not enterprise",
+        "closeDate": "Q1 2026"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Revenue pain validated, deal repositioned to Teams/self-serve path with solutions partner support",
+        "actualRisksThatMaterialized": [
+          "Technical implementation capability uncertain",
+          "Matteo (technical lead) not yet engaged"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    },
+    {
+      "id": "cool-rooms_cp_003",
+      "dealId": "cool-rooms",
+      "timestamp": "2026-02-09",
+      "context": {
+        "company": "ChillSpace Tech",
+        "stage": "Trial - Self-Serve",
+        "lastInteraction": "Trial kickoff with training resources and solutions partner engagement plan",
+        "painPoints": [
+          "Validated €60K/year revenue impact",
+          "Clear ROI case for Teams tier",
+          "Technical feasibility confirmed"
+        ],
+        "stakeholders": [
+          {
+            "name": "Javier Raynaud",
+            "title": "CFO/Finance Lead",
+            "role": "Gatekeeper, ROI validator",
+            "sentiment": "positive",
+            "notes": "Neutral-to-Friendly (explicitly said €50K+ too high, but engaged and transparent)"
+          },
+          {
+            "name": "Fernando Lopezlavin",
+            "title": "Head of Revenue",
+            "role": "Owns reservation/revenue pain",
+            "sentiment": "unknown",
+            "notes": "Supporter (meeting Jan 20 to validate revenue use cases)"
+          },
+          {
+            "name": "Salomao Costa",
+            "title": "Operations",
+            "role": "Aligned with Fernando",
+            "sentiment": "unknown",
+            "notes": "Supporter"
+          },
+          {
+            "name": "Matteo Secci",
+            "title": "Finance, Technical",
+            "role": "Builder, prototype creator",
+            "sentiment": "unknown",
+            "notes": "Supporter (built MS Forms mockup, James build automations)"
+          },
+          {
+            "name": "General Manager",
+            "title": "Economic Buyer",
+            "role": "Final approval authority",
+            "sentiment": "positive",
+            "notes": "Unknown (haven't engaged directly)"
+          }
+        ],
+        "history": "Self-serve trial launch with clear implementation path and technical support plan",
+        "meddpicc": {
+          "metrics": {
+            "status": "green",
+            "notes": "Validated: ~€60K/year opportunity cost + staff time. ~730 emails/month at Madrid (34 rooms). Response time goal: <6 hrs for groups, <2 hrs for individuals."
+          },
+          "economicBuyer": {
+            "status": "green",
+            "notes": "Self-serve/Teams tier - no major approval needed. Salomao/Fernando can likely approve training + solutions partner engagement."
+          },
+          "decisionCriteria": {
+            "status": "green",
+            "notes": "Clear: Can they build the email automation workflow? Will it improve response time? Does the plan pricing fit task volume?"
+          },
+          "decisionProcess": {
+            "status": "green",
+            "notes": "Simple for self-serve: Trial → Solutions partner engagement → Select plan based on task volume"
+          },
+          "paperProcess": {
+            "status": "green",
+            "notes": "Standard Teams signup - no enterprise procurement needed"
+          },
+          "pain": {
+            "status": "green",
+            "notes": "Validated by Fernando: losing group bookings to faster competitors, staff spending too much time on emails instead of guest service"
+          },
+          "champion": {
+            "status": "yellow",
+            "notes": "Matteo is technical lead but wasn't on this call. Fernando/Salomao are engaged. Need to ensure Matteo gets the training materials."
+          },
+          "competition": {
+            "status": "green",
+            "notes": "No direct competitor for email automation use case. They're evaluating Zapier + solutions partners vs building internally."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "Teams tier (~€2-4K ARR) | Not enterprise",
+        "closeDate": "Q1 2026"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Trial period begins with Matteo building automation workflows using learn.AutomateFlow.com and community support",
+        "actualRisksThatMaterialized": [
+          "Outlook integration in corporate environment",
+          "Solutions partner availability",
+          "Matteo's bandwidth for implementation"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    },
+    {
+      "id": "cool-rooms_cp_004",
+      "dealId": "cool-rooms",
+      "timestamp": "2026-02-24",
+      "context": {
+        "company": "ChillSpace Tech",
+        "stage": "Trial - Self-Serve",
+        "lastInteraction": "Progress assessment call to review automation build and plan pricing alignment",
+        "painPoints": [
+          "Implementation complexity understood",
+          "Task volume requirements clarified",
+          "Solutions partner effectiveness measured"
+        ],
+        "stakeholders": [
+          {
+            "name": "Javier Raynaud",
+            "title": "CFO/Finance Lead",
+            "role": "Gatekeeper, ROI validator",
+            "sentiment": "positive",
+            "notes": "Neutral-to-Friendly (explicitly said €50K+ too high, but engaged and transparent)"
+          },
+          {
+            "name": "Fernando Lopezlavin",
+            "title": "Head of Revenue",
+            "role": "Owns reservation/revenue pain",
+            "sentiment": "unknown",
+            "notes": "Supporter (meeting Jan 20 to validate revenue use cases)"
+          },
+          {
+            "name": "Salomao Costa",
+            "title": "Operations",
+            "role": "Aligned with Fernando",
+            "sentiment": "unknown",
+            "notes": "Supporter"
+          },
+          {
+            "name": "Matteo Secci",
+            "title": "Finance, Technical",
+            "role": "Builder, prototype creator",
+            "sentiment": "unknown",
+            "notes": "Supporter (built MS Forms mockup, James build automations)"
+          },
+          {
+            "name": "General Manager",
+            "title": "Economic Buyer",
+            "role": "Final approval authority",
+            "sentiment": "positive",
+            "notes": "Unknown (haven't engaged directly)"
+          }
+        ],
+        "history": "Mid-trial check-in to assess progress and determine plan selection",
+        "meddpicc": {
+          "metrics": {
+            "status": "green",
+            "notes": "Validated: ~€60K/year opportunity cost + staff time. ~730 emails/month at Madrid (34 rooms). Response time goal: <6 hrs for groups, <2 hrs for individuals."
+          },
+          "economicBuyer": {
+            "status": "green",
+            "notes": "Self-serve/Teams tier - no major approval needed. Salomao/Fernando can likely approve training + solutions partner engagement."
+          },
+          "decisionCriteria": {
+            "status": "green",
+            "notes": "Clear: Can they build the email automation workflow? Will it improve response time? Does the plan pricing fit task volume?"
+          },
+          "decisionProcess": {
+            "status": "green",
+            "notes": "Simple for self-serve: Trial → Solutions partner engagement → Select plan based on task volume"
+          },
+          "paperProcess": {
+            "status": "green",
+            "notes": "Standard Teams signup - no enterprise procurement needed"
+          },
+          "pain": {
+            "status": "green",
+            "notes": "Validated by Fernando: losing group bookings to faster competitors, staff spending too much time on emails instead of guest service"
+          },
+          "champion": {
+            "status": "yellow",
+            "notes": "Matteo is technical lead but wasn't on this call. Fernando/Salomao are engaged. Need to ensure Matteo gets the training materials."
+          },
+          "competition": {
+            "status": "green",
+            "notes": "No direct competitor for email automation use case. They're evaluating Zapier + solutions partners vs building internally."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "Teams tier (~€2-4K ARR) | Not enterprise",
+        "closeDate": "Q1 2026"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Plan selection decision based on actual task usage and successful workflow implementation",
+        "actualRisksThatMaterialized": [
+          "Technical roadblocks during build",
+          "Task volume exceeding Teams tier limits",
+          "Budget constraints at higher usage"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    }
+  ],
+  "finalOutcome": "lost"
+}
