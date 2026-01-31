@@ -1,7 +1,14 @@
 import { serve } from "bun";
 import { generateText } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
-import index from "./index.html";
+
+// In development, use HMR with direct HTML import
+// In production, serve built files from dist/
+const isDev = process.env.NODE_ENV !== "production";
+
+// For development: import HTML directly for HMR
+// For production: we'll serve from dist/ directory
+const devIndex = isDev ? (await import("./index.html")).default : null;
 
 // Import benchmark API handlers
 import { handleAgentEndpoint } from "../api/agent";
@@ -130,7 +137,10 @@ async function handleEvaluate(req: Request): Promise<Response> {
   }
 }
 
+const port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+
 const server = serve({
+  port,
   routes: {
     // Original evaluation API
     "/api/evaluate": {
@@ -208,11 +218,32 @@ const server = serve({
       });
     },
 
-    // Serve index.html for all unmatched routes
-    "/*": index,
+    // Serve static files in production, or use HMR in development
+    "/*": isDev && devIndex
+      ? devIndex
+      : async (req: Request) => {
+          const url = new URL(req.url);
+          let path = url.pathname;
+
+          // Try to serve the exact file from dist/
+          let file = Bun.file(`dist${path}`);
+          if (await file.exists()) {
+            return new Response(file);
+          }
+
+          // For SPA routing, serve index.html for non-file paths
+          file = Bun.file("dist/index.html");
+          if (await file.exists()) {
+            return new Response(file, {
+              headers: { "Content-Type": "text/html" },
+            });
+          }
+
+          return new Response("Not found", { status: 404 });
+        },
   },
 
-  development: process.env.NODE_ENV !== "production" && {
+  development: isDev && {
     hmr: true,
     console: true,
   },

@@ -97,10 +97,32 @@ export async function initDatabase(): Promise<void> {
       )
     `;
 
+    // Create judge_evaluations table for multi-judge scoring
+    await sql`
+      CREATE TABLE IF NOT EXISTS judge_evaluations (
+        id SERIAL PRIMARY KEY,
+        run_id INTEGER NOT NULL REFERENCES benchmark_runs(id) ON DELETE CASCADE,
+        checkpoint_id TEXT NOT NULL,
+        judge_model TEXT NOT NULL,
+        risk_identification REAL NOT NULL,
+        next_step_quality REAL NOT NULL,
+        prioritization REAL NOT NULL,
+        outcome_alignment REAL NOT NULL,
+        feedback TEXT,
+        risks_identified JSONB,
+        risks_missed JSONB,
+        helpful_recommendations JSONB,
+        unhelpful_recommendations JSONB,
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `;
+
     // Create indexes
     await sql`CREATE INDEX IF NOT EXISTS idx_runs_agent ON benchmark_runs(agent_id)`;
     await sql`CREATE INDEX IF NOT EXISTS idx_runs_mode ON benchmark_runs(mode)`;
     await sql`CREATE INDEX IF NOT EXISTS idx_runs_timestamp ON benchmark_runs(run_timestamp DESC)`;
+    await sql`CREATE INDEX IF NOT EXISTS idx_judge_evals_run ON judge_evaluations(run_id)`;
+    await sql`CREATE INDEX IF NOT EXISTS idx_judge_evals_checkpoint ON judge_evaluations(checkpoint_id)`;
 
     console.log("Database tables initialized");
   } catch (error) {
@@ -203,6 +225,77 @@ export async function saveBenchmarkRun(result: {
   `;
 
   return runId;
+}
+
+// Judge evaluation type for multi-judge scoring
+export interface JudgeEvaluationData {
+  runId: number;
+  checkpointId: string;
+  judgeModel: string;
+  scores: {
+    riskIdentification: number;
+    nextStepQuality: number;
+    prioritization: number;
+    outcomeAlignment: number;
+  };
+  feedback?: string;
+  risksIdentified?: string[];
+  risksMissed?: string[];
+  helpfulRecommendations?: string[];
+  unhelpfulRecommendations?: string[];
+}
+
+// Save individual judge evaluation
+export async function saveJudgeEvaluation(evaluation: JudgeEvaluationData): Promise<number> {
+  const result = await sql`
+    INSERT INTO judge_evaluations
+    (run_id, checkpoint_id, judge_model, risk_identification, next_step_quality, prioritization, outcome_alignment, feedback, risks_identified, risks_missed, helpful_recommendations, unhelpful_recommendations)
+    VALUES (
+      ${evaluation.runId},
+      ${evaluation.checkpointId},
+      ${evaluation.judgeModel},
+      ${evaluation.scores.riskIdentification},
+      ${evaluation.scores.nextStepQuality},
+      ${evaluation.scores.prioritization},
+      ${evaluation.scores.outcomeAlignment},
+      ${evaluation.feedback ?? null},
+      ${JSON.stringify(evaluation.risksIdentified ?? [])},
+      ${JSON.stringify(evaluation.risksMissed ?? [])},
+      ${JSON.stringify(evaluation.helpfulRecommendations ?? [])},
+      ${JSON.stringify(evaluation.unhelpfulRecommendations ?? [])}
+    )
+    RETURNING id
+  `;
+
+  const id = result.rows[0]?.id;
+  if (!id) {
+    throw new Error("Failed to insert judge evaluation");
+  }
+  return id;
+}
+
+// Get judge evaluations for a run
+export async function getJudgeEvaluations(runId: number): Promise<JudgeEvaluationData[]> {
+  const results = await sql`
+    SELECT * FROM judge_evaluations WHERE run_id = ${runId}
+  `;
+
+  return results.rows.map((row) => ({
+    runId: row.run_id,
+    checkpointId: row.checkpoint_id,
+    judgeModel: row.judge_model,
+    scores: {
+      riskIdentification: row.risk_identification,
+      nextStepQuality: row.next_step_quality,
+      prioritization: row.prioritization,
+      outcomeAlignment: row.outcome_alignment,
+    },
+    feedback: row.feedback,
+    risksIdentified: row.risks_identified,
+    risksMissed: row.risks_missed,
+    helpfulRecommendations: row.helpful_recommendations,
+    unhelpfulRecommendations: row.unhelpful_recommendations,
+  }));
 }
 
 // Get leaderboard (best score per agent for a given mode)

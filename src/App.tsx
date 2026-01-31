@@ -1,11 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AgentRegistration } from "@/components/AgentRegistration";
 import { BenchmarkRunner } from "@/components/BenchmarkRunner";
 import { ResultsTimeline } from "@/components/ResultsTimeline";
 import { Leaderboard, addToLeaderboard } from "@/components/Leaderboard";
 import "./index.css";
 
-type Page = "home" | "benchmark" | "docs" | "faq";
+type Page = "home" | "benchmark" | "docs" | "faq" | "future";
+
+// Simple URL routing helper
+function getPageFromPath(): Page {
+  const path = window.location.pathname;
+  if (path === "/benchmark") return "benchmark";
+  if (path === "/docs") return "docs";
+  if (path === "/faq") return "faq";
+  if (path === "/future") return "future";
+  return "home";
+}
+
+function navigateTo(page: Page) {
+  const path = page === "home" ? "/" : `/${page}`;
+  window.history.pushState({}, "", path);
+  window.dispatchEvent(new PopStateEvent("popstate"));
+}
 
 type BenchmarkResult = {
   agentId: string;
@@ -38,6 +54,7 @@ function Nav({ activePage, setPage }: { activePage: Page; setPage: (p: Page) => 
             { key: "benchmark", label: "Benchmark" },
             { key: "docs", label: "Docs" },
             { key: "faq", label: "FAQ" },
+            { key: "future", label: "Future" },
           ].map((item) => (
             <button
               key={item.key}
@@ -552,6 +569,217 @@ function FAQPage() {
   );
 }
 
+// Future Page
+function FuturePage() {
+  return (
+    <div className="pt-24 pb-16">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <div className="data-label text-emerald-400 mb-4">What's Next</div>
+          <h1 className="text-4xl font-bold mb-4">The Future of Sales AI Evaluation</h1>
+          <p className="text-slate-400 max-w-2xl mx-auto">
+            We're building v2 with real call transcripts, email threads, and verified outcomes.
+            Help us create the definitive benchmark for sales AI.
+          </p>
+        </div>
+
+        {/* Vision Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 pb-4 border-b border-white/10">From Synthetic to Real</h2>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-navy-900/40 rounded-xl border border-white/5 p-6">
+              <div className="text-sm text-slate-500 mb-2">v1 (Current)</div>
+              <h3 className="text-lg font-semibold mb-3">36 Expert-Crafted Checkpoints</h3>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li className="flex items-start gap-2">
+                  <span className="text-slate-500">•</span>
+                  Synthetic deal scenarios
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-slate-500">•</span>
+                  Human-judged "ideal" responses
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-slate-500">•</span>
+                  Great for initial testing
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-br from-cyan-500/10 to-emerald-500/10 rounded-xl border border-cyan-500/20 p-6">
+              <div className="text-sm text-cyan-400 mb-2">v2 (Coming)</div>
+              <h3 className="text-lg font-semibold mb-3">10,000+ Real Deal Snapshots</h3>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400">✓</span>
+                  Actual call transcripts & emails
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400">✓</span>
+                  Verified win/loss outcomes
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400">✓</span>
+                  Training + evaluation dataset
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-slate-400 leading-relaxed">
+            The key insight: instead of asking "would an expert agree?", v2 asks "did this approach
+            actually work?" Ground truth comes from real outcomes, not opinions.
+          </p>
+        </section>
+
+        {/* New Capabilities */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 pb-4 border-b border-white/10">New Evaluation Tasks</h2>
+
+          <div className="space-y-4">
+            {[
+              {
+                title: "Outcome Prediction",
+                description: "Given deal state at any point, predict win/lose/stall. Validate against what actually happened.",
+                tag: "Core",
+              },
+              {
+                title: "Risk Identification 2.0",
+                description: "Find risks that actually materialized in lost deals. No more subjective \"should have spotted this.\"",
+                tag: "Evolution",
+              },
+              {
+                title: "Stakeholder Extraction",
+                description: "Map org charts from call transcripts. Validate against who actually made the decision.",
+                tag: "New",
+              },
+              {
+                title: "Commitment Tracking",
+                description: "Extract promises from calls (\"I'll send the proposal Monday\"). Check if they were kept.",
+                tag: "New",
+              },
+              {
+                title: "Next Best Action",
+                description: "Recommend actions based on what worked in similar winning deals, not generic playbooks.",
+                tag: "Evolution",
+              },
+            ].map((task) => (
+              <div key={task.title} className="bg-navy-900/40 rounded-xl border border-white/5 p-6 flex items-start gap-4">
+                <div className={`px-2 py-1 rounded text-xs font-medium ${
+                  task.tag === "Core" ? "bg-cyan-500/20 text-cyan-400" :
+                  task.tag === "New" ? "bg-emerald-500/20 text-emerald-400" :
+                  "bg-amber-500/20 text-amber-400"
+                }`}>
+                  {task.tag}
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">{task.title}</h3>
+                  <p className="text-sm text-slate-400">{task.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Data Sources */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 pb-4 border-b border-white/10">Data We Need</h2>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              {
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                ),
+                title: "Call Recordings",
+                items: ["Gong, Chorus, etc.", "Full transcripts", "Speaker labels"],
+              },
+              {
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                ),
+                title: "Email Threads",
+                items: ["Full thread history", "Response times", "Attachment context"],
+              },
+              {
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                ),
+                title: "CRM Records",
+                items: ["Salesforce, HubSpot", "Win/loss outcomes", "Stage history"],
+              },
+            ].map((source) => (
+              <div key={source.title} className="bg-navy-900/40 rounded-xl border border-white/5 p-6">
+                <div className="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center mb-4">
+                  <svg className="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    {source.icon}
+                  </svg>
+                </div>
+                <h3 className="font-semibold mb-3">{source.title}</h3>
+                <ul className="space-y-1 text-sm text-slate-400">
+                  {source.items.map((item) => (
+                    <li key={item}>• {item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="bg-gradient-to-br from-cyan-500/10 to-emerald-500/10 rounded-2xl border border-cyan-500/20 p-8 text-center">
+          <h3 className="text-2xl font-bold mb-4">Become a Design Partner</h3>
+          <p className="text-slate-400 mb-6 max-w-lg mx-auto">
+            We're looking for companies with sales data who want to help shape the future of sales AI evaluation.
+            In exchange, you'll get early access and recognition as a founding contributor.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto text-left">
+            <div className="bg-navy-900/50 rounded-xl p-4">
+              <div className="font-medium mb-2 text-emerald-400">What You Provide</div>
+              <ul className="space-y-1 text-sm text-slate-400">
+                <li>• Anonymized call transcripts</li>
+                <li>• Email thread exports</li>
+                <li>• Deal outcomes (won/lost)</li>
+                <li>• Feedback on evaluation criteria</li>
+              </ul>
+            </div>
+            <div className="bg-navy-900/50 rounded-xl p-4">
+              <div className="font-medium mb-2 text-cyan-400">What You Get</div>
+              <ul className="space-y-1 text-sm text-slate-400">
+                <li>• Early access to v2 benchmark</li>
+                <li>• Custom evaluation runs</li>
+                <li>• Recognition as founding partner</li>
+                <li>• Input on benchmark design</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="mailto:obletonadrian@gmail.com?subject=Sales%20Agent%20Benchmark%20v2%20-%20Design%20Partner"
+              className="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold
+                hover:shadow-lg hover:shadow-cyan-500/25 transition-all hover:scale-105"
+            >
+              Become a Design Partner
+            </a>
+            <a
+              href="https://github.com/a1j9o94/sales-agent-benchmark/blob/main/docs/v2-proposal.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-medium
+                hover:bg-white/10 transition-colors"
+            >
+              Read Full Proposal
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}
+
 // Footer
 function Footer() {
   return (
@@ -568,7 +796,7 @@ function Footer() {
           </div>
 
           <div className="text-sm text-slate-500">
-            Built with the Vercel AI SDK • Open source on{" "}
+            Open source on{" "}
             <a href="https://github.com/a1j9o94/sales-agent-benchmark" className="text-slate-400 hover:text-white transition-colors">
               GitHub
             </a>
@@ -581,16 +809,31 @@ function Footer() {
 
 // Main App
 export function App() {
-  const [page, setPage] = useState<Page>("home");
+  const [page, setPage] = useState<Page>(getPageFromPath);
+
+  // Listen for browser back/forward navigation
+  useEffect(() => {
+    const handlePopState = () => {
+      setPage(getPageFromPath());
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const handleNavigate = (newPage: Page) => {
+    navigateTo(newPage);
+    setPage(newPage);
+  };
 
   return (
     <div className="min-h-screen bg-navy-950 text-white">
-      <Nav activePage={page} setPage={setPage} />
+      <Nav activePage={page} setPage={handleNavigate} />
 
-      {page === "home" && <HomePage onGetStarted={() => setPage("benchmark")} />}
+      {page === "home" && <HomePage onGetStarted={() => handleNavigate("benchmark")} />}
       {page === "benchmark" && <BenchmarkPage />}
       {page === "docs" && <DocsPage />}
       {page === "faq" && <FAQPage />}
+      {page === "future" && <FuturePage />}
 
       <Footer />
     </div>

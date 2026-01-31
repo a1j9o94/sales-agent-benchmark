@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+      - PORT=8080
+    env_file:
+      - .env.local
+    # Add your Anthropic key here or in .env.local
+    # environment:
+    #   - ANTHROPIC_API_KEY=sk-ant-...

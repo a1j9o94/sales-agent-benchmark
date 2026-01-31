@@ -124,10 +124,10 @@ bun test
 
 Both checks must pass cleanly before any commit. Fix all TypeScript errors and failing tests before committing.
 
-## Vercel Deployment
+## Fly.io Deployment
 
-This project deploys to Vercel. The API routes in `/api` are serverless functions.
+This project deploys to Fly.io (not Vercel).
 
-- Use `@vercel/postgres` for database (not bun:sqlite)
-- API handlers must export a default function
-- Don't use filesystem APIs (readdir, readFile) in API routes - bundle data or use database
+- Use `@vercel/postgres` for database (Neon Postgres, still works outside Vercel)
+- Deploy with `fly deploy`
+- See `fly.toml` for configuration
