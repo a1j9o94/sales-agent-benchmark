@@ -109,7 +109,6 @@ Analyze this deal situation and provide your assessment as JSON.`;
       model: anthropic("claude-sonnet-4-20250514"),
       system: SALES_AGENT_SYSTEM_PROMPT,
       prompt,
-      maxTokens: 2000,
     });
 
     // Parse the JSON response
@@ -149,7 +148,7 @@ Analyze this deal situation and provide your assessment as JSON.`;
   }
 }
 
-// HTTP handler for the Bun server
+// HTTP handler for Vercel Edge + Bun server
 export async function handleAgentEndpoint(req: Request): Promise<Response> {
   if (req.method !== "POST") {
     return Response.json({ error: "Method not allowed" }, { status: 405 });
@@ -214,3 +213,7 @@ export async function handleAgentEndpoint(req: Request): Promise<Response> {
     );
   }
 }
+
+// Vercel Edge Runtime
+export const config = { runtime: "edge" };
+export default handleAgentEndpoint;

@@ -4,8 +4,6 @@
  * Orchestrates running the benchmark against a registered agent.
  */
 
-import { readdir, readFile } from "fs/promises";
-import { join } from "path";
 import type {
   Deal,
   Checkpoint,
@@ -17,24 +15,26 @@ import type {
 import { getRegisteredAgent, getAgentById } from "./register";
 import { evaluateResponse } from "./evaluate-response";
 
-const CHECKPOINTS_DIR = join(process.cwd(), "data", "checkpoints");
+// Import checkpoint data directly (bundled at build time)
+// Public deals
+import avmedia from "../data/checkpoints/public/avmedia.json";
+import coolRooms from "../data/checkpoints/public/cool-rooms.json";
+import granola from "../data/checkpoints/public/granola.json";
+import moxie from "../data/checkpoints/public/moxie.json";
+import zenithPrep from "../data/checkpoints/public/zenith-prep-academy.json";
 
-// Load all deals from a directory (public or private)
+const PUBLIC_DEALS: Deal[] = [avmedia, coolRooms, granola, moxie, zenithPrep] as Deal[];
+
+// Private deals - these would be imported similarly but kept secret
+// For now, we'll use an empty array for private (can be populated later)
+const PRIVATE_DEALS: Deal[] = [];
+
+// Load all deals for a given mode
 async function loadDeals(mode: "public" | "private"): Promise<Deal[]> {
-  const dir = join(CHECKPOINTS_DIR, mode);
-  const deals: Deal[] = [];
-
-  try {
-    const files = await readdir(dir);
-    for (const file of files.filter((f) => f.endsWith(".json"))) {
-      const content = await readFile(join(dir, file), "utf-8");
-      deals.push(JSON.parse(content));
-    }
-  } catch (error) {
-    console.error(`Failed to load ${mode} deals:`, error);
+  if (mode === "public") {
+    return PUBLIC_DEALS;
   }
-
-  return deals;
+  return PRIVATE_DEALS;
 }
 
 // Send request to agent and get response

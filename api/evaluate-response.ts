@@ -113,7 +113,6 @@ Evaluate the agent's analysis against the ground truth. How well did they identi
       model: anthropic("claude-sonnet-4-20250514"),
       system: JUDGE_SYSTEM_PROMPT,
       prompt,
-      maxTokens: 1500,
     });
 
     const jsonMatch = result.text.match(/\{[\s\S]*\}/);
@@ -207,3 +206,7 @@ export async function handleEvaluateResponseEndpoint(req: Request): Promise<Resp
     );
   }
 }
+
+// Vercel default export
+export const config = { runtime: "edge" };
+export default handleEvaluateResponseEndpoint;

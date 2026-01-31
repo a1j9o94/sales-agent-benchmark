@@ -218,3 +218,7 @@ export async function handleTestEndpoint(req: Request): Promise<Response> {
     });
   }
 }
+
+// Vercel default export
+export const config = { runtime: "edge" };
+export default handleRegisterEndpoint;

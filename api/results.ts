@@ -499,3 +499,7 @@ export async function handleInitDatabase(req: Request): Promise<Response> {
     );
   }
 }
+
+// Vercel default export (for POST /api/results)
+export const config = { runtime: "edge" };
+export default handleSaveResult;

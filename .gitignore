@@ -40,3 +40,4 @@ output/
 # Private benchmark data (not for public consumption)
 data/checkpoints/private/
 .env*.local
+.playwright-mcp/
