@@ -18,15 +18,17 @@ import type {
   AgentResponse,
   EvaluationScores,
 } from "../src/types/benchmark";
-import { evaluateResponse } from "./evaluate-response";
-import { saveBenchmarkRun } from "./results";
+import { evaluateResponseMultiJudge } from "./evaluate-response";
+import type { MultiJudgeCheckpointEvaluation } from "./evaluate-response";
+import { saveBenchmarkRun, saveJudgeEvaluation } from "./results";
 
 export interface BenchmarkStreamDeps {
-  evaluateResponse: typeof evaluateResponse;
+  evaluateResponseMultiJudge: typeof evaluateResponseMultiJudge;
   saveBenchmarkRun: typeof saveBenchmarkRun;
+  saveJudgeEvaluation: typeof saveJudgeEvaluation;
 }
 
-const defaultBenchmarkStreamDeps: BenchmarkStreamDeps = { evaluateResponse, saveBenchmarkRun };
+const defaultBenchmarkStreamDeps: BenchmarkStreamDeps = { evaluateResponseMultiJudge, saveBenchmarkRun, saveJudgeEvaluation };
 
 // Load deals from a directory (same pattern as scripts/benchmark-models.ts)
 async function loadDealsFromDir(dirPath: string): Promise<Deal[]> {
@@ -170,6 +172,13 @@ export async function handleBenchmarkStream(req: Request, deps: BenchmarkStreamD
         outcomeAlignment: 0,
       };
 
+      // Store judge evaluations to save after we have a runId
+      const storedJudgeEvals: Array<{
+        checkpointId: string;
+        mode: "public" | "private";
+        judgeEvaluations?: MultiJudgeCheckpointEvaluation["judgeEvaluations"];
+      }> = [];
+
       const processDeal = async (deal: Deal, mode: "public" | "private") => {
         for (const checkpoint of deal.checkpoints) {
           try {
@@ -179,8 +188,8 @@ export async function handleBenchmarkStream(req: Request, deps: BenchmarkStreamD
             const latencyMs = Date.now() - startTime;
             totalLatencyMs += latencyMs;
 
-            // Evaluate with single judge (Claude Sonnet) for speed
-            const evaluation = await deps.evaluateResponse(checkpoint, response, mode);
+            // Evaluate with multiple judges (Claude, GPT, Gemini)
+            const evaluation = await deps.evaluateResponseMultiJudge(checkpoint, response, mode);
 
             totalScore += evaluation.totalScore;
             totalMaxScore += evaluation.maxScore;
@@ -190,6 +199,13 @@ export async function handleBenchmarkStream(req: Request, deps: BenchmarkStreamD
             aggregatedScores.nextStepQuality += evaluation.scores.nextStepQuality;
             aggregatedScores.prioritization += evaluation.scores.prioritization;
             aggregatedScores.outcomeAlignment += evaluation.scores.outcomeAlignment;
+
+            // Store judge evaluations for later DB save
+            storedJudgeEvals.push({
+              checkpointId: checkpoint.id,
+              mode,
+              judgeEvaluations: evaluation.judgeEvaluations,
+            });
 
             send({
               type: "checkpoint",
@@ -202,6 +218,13 @@ export async function handleBenchmarkStream(req: Request, deps: BenchmarkStreamD
               feedback: mode === "public" ? evaluation.feedback : null,
               scores: evaluation.scores,
               progress: { completed, total: totalCheckpoints },
+              judges: mode === "public" && evaluation.judgeEvaluations
+                ? evaluation.judgeEvaluations.map(j => ({
+                    model: j.judgeName,
+                    scores: j.scores,
+                    feedback: j.feedback,
+                  }))
+                : undefined,
             });
           } catch (error) {
             completed++;
@@ -268,6 +291,26 @@ export async function handleBenchmarkStream(req: Request, deps: BenchmarkStreamD
               outcomeAlignment: Math.round(aggregatedScores.outcomeAlignment * 10) / 10,
             },
           });
+          // Save judge evaluations for public checkpoints
+          if (runId) {
+            for (const stored of storedJudgeEvals) {
+              if (stored.mode === "public" && stored.judgeEvaluations) {
+                for (const judgeEval of stored.judgeEvaluations) {
+                  await deps.saveJudgeEvaluation({
+                    runId,
+                    checkpointId: stored.checkpointId,
+                    judgeModel: judgeEval.judgeModel,
+                    scores: judgeEval.scores,
+                    feedback: judgeEval.feedback,
+                    risksIdentified: judgeEval.risksIdentified,
+                    risksMissed: judgeEval.risksMissed,
+                    helpfulRecommendations: judgeEval.helpfulRecommendations,
+                    unhelpfulRecommendations: judgeEval.unhelpfulRecommendations,
+                  });
+                }
+              }
+            }
+          }
         } catch (dbError) {
           console.error("Failed to save benchmark run:", dbError);
         }

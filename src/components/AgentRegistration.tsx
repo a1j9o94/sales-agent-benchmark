@@ -85,7 +85,20 @@ export function AgentRegistration({ onAgentRegistered }: AgentRegistrationProps)
     }
   };
 
-  const useReferenceAgent = () => {
+  const useReferenceAgent = async () => {
+    setIsTesting(true);
+    try {
+      const res = await fetch("/api/reference-agent-results");
+      if (res.ok) {
+        const data = await res.json();
+        window.history.pushState({}, "", `/results/${encodeURIComponent(data.agentId)}`);
+        window.dispatchEvent(new PopStateEvent("popstate"));
+        return;
+      }
+    } catch {
+      // Fall through to prefill
+    }
+    setIsTesting(false);
     setEndpoint(window.location.origin + "/api/agent");
     setName("Reference Agent");
   };

@@ -37,6 +37,14 @@ interface JudgeEvaluation {
   unhelpfulRecommendations?: string[];
 }
 
+const DEAL_DISPLAY_NAMES: Record<string, string> = {
+  "moxie": "Velocity Systems",
+  "granola": "NoteFlow AI",
+  "zenith-prep-academy": "Summit Learning",
+  "avmedia": "StreamCore Media",
+  "cool-rooms": "ChillSpace Tech",
+};
+
 function scoreColor(percentage: number): string {
   if (percentage >= 75) return "text-emerald-400";
   if (percentage >= 50) return "text-amber-400";
@@ -49,6 +57,132 @@ function scoreBgColor(percentage: number): string {
   return "bg-red-500/10 border-red-500/20";
 }
 
+function getDealPrefix(checkpointId: string): string {
+  const idx = checkpointId.indexOf("_cp_");
+  if (idx === -1) return checkpointId;
+  return checkpointId.substring(0, idx);
+}
+
+function getJudgeShortName(model: string): string {
+  // Extract a short display name from judge model string
+  if (model.includes("claude")) {
+    const match = model.match(/claude[- ](\w+)[- ]?([\d.]+)?/i);
+    if (match) return `Claude ${match[1]}`;
+  }
+  if (model.includes("gpt")) {
+    const match = model.match(/gpt[- ]?([\w.]+)/i);
+    if (match) return `GPT-${match[1]}`;
+  }
+  if (model.includes("gemini")) {
+    const match = model.match(/gemini[- ]?([\w.]+)/i);
+    if (match) return `Gemini ${match[1]}`;
+  }
+  // Fallback: take last segment or truncate
+  const parts = model.split("/");
+  const last = parts[parts.length - 1] || model;
+  return last.length > 20 ? last.substring(0, 20) + "..." : last;
+}
+
+function evalTotal(eval_: JudgeEvaluation): number {
+  return (
+    eval_.scores.riskIdentification +
+    eval_.scores.nextStepQuality +
+    eval_.scores.prioritization +
+    eval_.scores.outcomeAlignment
+  );
+}
+
+function JudgeDetail({ eval_ }: { eval_: JudgeEvaluation }) {
+  const total = evalTotal(eval_);
+  const totalPct = Math.round((total / 40) * 100);
+
+  return (
+    <div className="space-y-3">
+      {/* Score bars */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {[
+          { label: "Risk ID", value: eval_.scores.riskIdentification },
+          { label: "Next Steps", value: eval_.scores.nextStepQuality },
+          { label: "Priority", value: eval_.scores.prioritization },
+          { label: "Alignment", value: eval_.scores.outcomeAlignment },
+        ].map((dim) => (
+          <div key={dim.label} className="bg-navy-900/60 rounded-lg p-3">
+            <div className="text-xs text-slate-500 mb-1">{dim.label}</div>
+            <div className={`text-lg font-bold ${scoreColor(Math.round((dim.value / 10) * 100))}`}>
+              {dim.value.toFixed(1)}
+              <span className="text-slate-600 text-xs">/10</span>
+            </div>
+            <div className="mt-1 h-1 bg-navy-800 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-cyan-500 rounded-full transition-all duration-500"
+                style={{ width: `${(dim.value / 10) * 100}%` }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Total */}
+      <div className="flex items-center gap-2 text-sm">
+        <span className="text-slate-500">Total:</span>
+        <span className={`font-bold ${scoreColor(totalPct)}`}>{total.toFixed(1)}/40</span>
+      </div>
+
+      {/* Feedback */}
+      {eval_.feedback && (
+        <div className="bg-navy-900/40 rounded-lg p-3">
+          <div className="text-xs font-medium text-slate-400 mb-1">Feedback</div>
+          <p className="text-xs text-slate-300 leading-relaxed">{eval_.feedback}</p>
+        </div>
+      )}
+
+      {/* Risks & Recommendations */}
+      <div className="grid md:grid-cols-2 gap-3">
+        {eval_.risksIdentified && eval_.risksIdentified.length > 0 && (
+          <div className="bg-navy-900/40 rounded-lg p-3">
+            <div className="text-xs font-medium text-emerald-400 mb-1">Risks Identified</div>
+            <ul className="text-xs text-slate-400 space-y-0.5">
+              {eval_.risksIdentified.map((r, i) => (
+                <li key={i}>- {r}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {eval_.risksMissed && eval_.risksMissed.length > 0 && (
+          <div className="bg-navy-900/40 rounded-lg p-3">
+            <div className="text-xs font-medium text-red-400 mb-1">Risks Missed</div>
+            <ul className="text-xs text-slate-400 space-y-0.5">
+              {eval_.risksMissed.map((r, i) => (
+                <li key={i}>- {r}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {eval_.helpfulRecommendations && eval_.helpfulRecommendations.length > 0 && (
+          <div className="bg-navy-900/40 rounded-lg p-3">
+            <div className="text-xs font-medium text-emerald-400 mb-1">Helpful Recommendations</div>
+            <ul className="text-xs text-slate-400 space-y-0.5">
+              {eval_.helpfulRecommendations.map((r, i) => (
+                <li key={i}>- {r}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {eval_.unhelpfulRecommendations && eval_.unhelpfulRecommendations.length > 0 && (
+          <div className="bg-navy-900/40 rounded-lg p-3">
+            <div className="text-xs font-medium text-red-400 mb-1">Unhelpful Recommendations</div>
+            <ul className="text-xs text-slate-400 space-y-0.5">
+              {eval_.unhelpfulRecommendations.map((r, i) => (
+                <li key={i}>- {r}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function ResultsPage() {
   const pathParts = window.location.pathname.split("/").filter(Boolean);
   const resultId = pathParts[pathParts.length - 1] || "";
@@ -57,6 +191,8 @@ export function ResultsPage() {
   const [judgeEvaluations, setJudgeEvaluations] = useState<JudgeEvaluation[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [selectedDeal, setSelectedDeal] = useState<string | null>(null);
+  const [activeJudge, setActiveJudge] = useState<Record<string, number>>({});
 
   useEffect(() => {
     if (!resultId) {
@@ -84,7 +220,7 @@ export function ResultsPage() {
     })();
   }, [resultId]);
 
-  // Group judge evaluations by checkpoint
+  // Group evaluations by checkpoint
   const evaluationsByCheckpoint = judgeEvaluations.reduce<Record<string, JudgeEvaluation[]>>(
     (acc, eval_) => {
       if (!acc[eval_.checkpointId]) acc[eval_.checkpointId] = [];
@@ -93,6 +229,49 @@ export function ResultsPage() {
     },
     {}
   );
+
+  // Group checkpoints by deal prefix
+  const checkpointsByDeal = Object.keys(evaluationsByCheckpoint).reduce<Record<string, string[]>>(
+    (acc, cpId) => {
+      const deal = getDealPrefix(cpId);
+      if (!acc[deal]) acc[deal] = [];
+      acc[deal]!.push(cpId);
+      return acc;
+    },
+    {}
+  );
+
+  const deals = Object.keys(checkpointsByDeal).sort();
+
+  // Compute average score per deal
+  function dealAvgScore(deal: string): number {
+    const cps = checkpointsByDeal[deal];
+    if (!cps || cps.length === 0) return 0;
+    let total = 0;
+    let count = 0;
+    for (const cpId of cps) {
+      const evals = evaluationsByCheckpoint[cpId];
+      if (!evals) continue;
+      for (const e of evals) {
+        total += evalTotal(e);
+        count++;
+      }
+    }
+    return count > 0 ? total / count : 0;
+  }
+
+  // Compute average score for a checkpoint across judges
+  function checkpointAvgScore(cpId: string): number {
+    const evals = evaluationsByCheckpoint[cpId];
+    if (!evals || evals.length === 0) return 0;
+    const sum = evals.reduce((s, e) => s + evalTotal(e), 0);
+    return sum / evals.length;
+  }
+
+  // Filter checkpoints based on selected deal
+  const filteredCheckpoints = selectedDeal
+    ? (checkpointsByDeal[selectedDeal] || [])
+    : Object.keys(evaluationsByCheckpoint).sort();
 
   if (isLoading) {
     return (
@@ -197,7 +376,6 @@ export function ResultsPage() {
                   {dim.value.toFixed(1)}
                   <span className="text-slate-600 text-base">/10</span>
                 </div>
-                {/* Visual bar */}
                 <div className="mt-2 h-1.5 bg-navy-800 rounded-full overflow-hidden">
                   <div
                     className={`h-full bg-${dim.color}-500 rounded-full transition-all duration-500`}
@@ -209,7 +387,7 @@ export function ResultsPage() {
           </div>
         </div>
 
-        {/* Judge evaluations per checkpoint */}
+        {/* Judge evaluations with 3-level hierarchy */}
         {Object.keys(evaluationsByCheckpoint).length > 0 && (
           <div className="bg-navy-900/40 rounded-2xl border border-white/5 overflow-hidden">
             <div className="p-5 border-b border-white/5">
@@ -219,105 +397,134 @@ export function ResultsPage() {
               </p>
             </div>
 
-            <div className="divide-y divide-white/5">
-              {Object.entries(evaluationsByCheckpoint).map(([checkpointId, evals]) => (
-                <div key={checkpointId} className="p-5">
-                  <div className="font-medium text-sm mb-3 font-mono text-slate-300">
-                    {checkpointId}
-                  </div>
-
-                  <div className="space-y-4">
-                    {evals.map((eval_, idx) => {
-                      const total =
-                        eval_.scores.riskIdentification +
-                        eval_.scores.nextStepQuality +
-                        eval_.scores.prioritization +
-                        eval_.scores.outcomeAlignment;
-                      const totalPct = Math.round((total / 40) * 100);
-
-                      return (
-                        <div key={`${eval_.judgeModel}-${idx}`} className="bg-navy-900/50 rounded-lg p-4">
-                          <div className="flex items-center justify-between mb-2">
-                            <span className="text-xs font-medium text-slate-400">
-                              {eval_.judgeModel}
-                            </span>
-                            <span className={`text-sm font-bold ${scoreColor(totalPct)}`}>
-                              {total}/40
-                            </span>
-                          </div>
-
-                          {/* Scores row */}
-                          <div className="flex gap-4 text-xs text-slate-500 mb-3">
-                            <span>Risk: {eval_.scores.riskIdentification.toFixed(1)}</span>
-                            <span>Steps: {eval_.scores.nextStepQuality.toFixed(1)}</span>
-                            <span>Priority: {eval_.scores.prioritization.toFixed(1)}</span>
-                            <span>Align: {eval_.scores.outcomeAlignment.toFixed(1)}</span>
-                          </div>
-
-                          {/* Feedback */}
-                          {eval_.feedback && (
-                            <p className="text-xs text-slate-400 leading-relaxed mb-3">
-                              {eval_.feedback}
-                            </p>
-                          )}
-
-                          {/* Risks & Recommendations */}
-                          <div className="grid md:grid-cols-2 gap-3">
-                            {eval_.risksIdentified && eval_.risksIdentified.length > 0 && (
-                              <div>
-                                <div className="text-xs font-medium text-emerald-400 mb-1">
-                                  Risks Identified
-                                </div>
-                                <ul className="text-xs text-slate-400 space-y-0.5">
-                                  {eval_.risksIdentified.map((r, i) => (
-                                    <li key={i}>- {r}</li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
-                            {eval_.risksMissed && eval_.risksMissed.length > 0 && (
-                              <div>
-                                <div className="text-xs font-medium text-red-400 mb-1">
-                                  Risks Missed
-                                </div>
-                                <ul className="text-xs text-slate-400 space-y-0.5">
-                                  {eval_.risksMissed.map((r, i) => (
-                                    <li key={i}>- {r}</li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
-                            {eval_.helpfulRecommendations && eval_.helpfulRecommendations.length > 0 && (
-                              <div>
-                                <div className="text-xs font-medium text-emerald-400 mb-1">
-                                  Helpful Recommendations
-                                </div>
-                                <ul className="text-xs text-slate-400 space-y-0.5">
-                                  {eval_.helpfulRecommendations.map((r, i) => (
-                                    <li key={i}>- {r}</li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
-                            {eval_.unhelpfulRecommendations && eval_.unhelpfulRecommendations.length > 0 && (
-                              <div>
-                                <div className="text-xs font-medium text-red-400 mb-1">
-                                  Unhelpful Recommendations
-                                </div>
-                                <ul className="text-xs text-slate-400 space-y-0.5">
-                                  {eval_.unhelpfulRecommendations.map((r, i) => (
-                                    <li key={i}>- {r}</li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
+            {/* Level 1: Deal pills */}
+            {deals.length > 1 && (
+              <div className="p-4 border-b border-white/5">
+                <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-thin">
+                  <button
+                    onClick={() => setSelectedDeal(null)}
+                    className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                      selectedDeal === null
+                        ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
+                        : "bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10"
+                    }`}
+                  >
+                    All Deals
+                  </button>
+                  {deals.map((deal) => {
+                    const avg = dealAvgScore(deal);
+                    const avgPct = Math.round((avg / 40) * 100);
+                    return (
+                      <button
+                        key={deal}
+                        onClick={() => setSelectedDeal(deal)}
+                        className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-colors flex items-center gap-2 ${
+                          selectedDeal === deal
+                            ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
+                            : "bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10"
+                        }`}
+                      >
+                        {DEAL_DISPLAY_NAMES[deal] || deal}
+                        <span className={`${scoreColor(avgPct)} font-bold`}>
+                          {avg.toFixed(0)}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
-              ))}
+              </div>
+            )}
+
+            {/* Level 2: Collapsible checkpoints */}
+            <div className="divide-y divide-white/5">
+              {filteredCheckpoints.map((cpId) => {
+                const evals = evaluationsByCheckpoint[cpId];
+                if (!evals || evals.length === 0) return null;
+
+                const avg = checkpointAvgScore(cpId);
+                const avgPct = Math.round((avg / 40) * 100);
+                const judgeIdx = activeJudge[cpId] ?? 0;
+                const currentEval = evals[judgeIdx] || evals[0]!;
+
+                return (
+                  <details key={cpId} className="group">
+                    <summary className="p-4 cursor-pointer hover:bg-white/[0.02] transition-colors list-none">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <svg
+                            className="w-4 h-4 text-slate-600 transition-transform group-open:rotate-90"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                          <span className="font-mono text-sm text-slate-300">{cpId}</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          {/* Per-judge score badges */}
+                          <div className="hidden md:flex gap-1.5">
+                            {evals.map((e, i) => {
+                              const t = evalTotal(e);
+                              const p = Math.round((t / 40) * 100);
+                              return (
+                                <span
+                                  key={i}
+                                  className={`text-xs px-2 py-0.5 rounded-full ${
+                                    p >= 75
+                                      ? "bg-emerald-500/10 text-emerald-400"
+                                      : p >= 50
+                                        ? "bg-amber-500/10 text-amber-400"
+                                        : "bg-red-500/10 text-red-400"
+                                  }`}
+                                >
+                                  {t.toFixed(0)}
+                                </span>
+                              );
+                            })}
+                          </div>
+                          {/* Average */}
+                          <span className={`text-sm font-bold ${scoreColor(avgPct)}`}>
+                            {avg.toFixed(1)}/40
+                          </span>
+                        </div>
+                      </div>
+                    </summary>
+
+                    {/* Level 3: Judge carousel */}
+                    <div className="px-4 pb-4">
+                      {/* Judge tabs */}
+                      {evals.length > 1 && (
+                        <div className="flex gap-2 mb-3">
+                          {evals.map((e, i) => (
+                            <button
+                              key={i}
+                              onClick={() =>
+                                setActiveJudge((prev) => ({ ...prev, [cpId]: i }))
+                              }
+                              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                                (judgeIdx) === i
+                                  ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
+                                  : "bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10"
+                              }`}
+                            >
+                              {getJudgeShortName(e.judgeModel)}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Single judge's full evaluation */}
+                      <div className="bg-navy-900/50 rounded-lg p-4">
+                        <div className="text-xs text-slate-500 mb-3">
+                          {currentEval.judgeModel}
+                        </div>
+                        <JudgeDetail eval_={currentEval} />
+                      </div>
+                    </div>
+                  </details>
+                );
+              })}
             </div>
           </div>
         )}

@@ -393,7 +393,7 @@ describe("normalizeResponse (response normalization)", () => {
 // and the file system (loadDealsFromDir). We do this by mocking modules.
 
 // Mock modules before importing handleBenchmarkStream
-const mockEvaluateResponse = mock(
+const mockEvaluateResponseMultiJudge = mock(
   async (
     _checkpoint: Checkpoint,
     _response: AgentResponse,
@@ -409,14 +409,29 @@ const mockEvaluateResponse = mock(
     totalScore: 30,
     maxScore: 40,
     feedback: "Good analysis overall",
+    judgeEvaluations: [
+      {
+        judgeModel: "claude-4.5-opus",
+        judgeName: "Claude 4.5 Opus",
+        scores: { riskIdentification: 8, nextStepQuality: 7, prioritization: 6, outcomeAlignment: 9 },
+        totalScore: 30,
+        feedback: "Good analysis",
+        risksIdentified: ["Budget risk"],
+        risksMissed: [],
+        helpfulRecommendations: ["Follow up"],
+        unhelpfulRecommendations: [],
+      },
+    ],
   })
 );
 
 const mockSaveBenchmarkRun = mock(async () => 42);
+const mockSaveJudgeEvaluation = mock(async () => 1);
 
 const testDeps = {
-  evaluateResponse: mockEvaluateResponse,
+  evaluateResponseMultiJudge: mockEvaluateResponseMultiJudge,
   saveBenchmarkRun: mockSaveBenchmarkRun,
+  saveJudgeEvaluation: mockSaveJudgeEvaluation,
 } as any;
 
 // We need to mock fetch globally for callAgentEndpoint
@@ -467,8 +482,9 @@ async function collectSSEEvents(
 
 describe("handleBenchmarkStream", () => {
   beforeEach(() => {
-    mockEvaluateResponse.mockClear();
+    mockEvaluateResponseMultiJudge.mockClear();
     mockSaveBenchmarkRun.mockClear();
+    mockSaveJudgeEvaluation.mockClear();
   });
 
   afterEach(() => {
@@ -999,7 +1015,7 @@ describe("handleBenchmarkStream", () => {
   describe("score aggregation", () => {
     test("complete event percentage is calculated correctly", async () => {
       // Set up evaluate to return known scores
-      mockEvaluateResponse.mockImplementation(async (checkpoint) => ({
+      mockEvaluateResponseMultiJudge.mockImplementation(async (checkpoint) => ({
         checkpointId: checkpoint.id,
         scores: {
           riskIdentification: 5,
@@ -1010,6 +1026,7 @@ describe("handleBenchmarkStream", () => {
         totalScore: 20,
         maxScore: 40,
         feedback: "Average",
+        judgeEvaluations: [],
       }));
 
       globalThis.fetch = mock(async () =>

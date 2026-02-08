@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 
 export interface LeaderboardEntry {
   rank: number;
@@ -369,6 +369,156 @@ function SortableHeader({
   );
 }
 
+function EntryDetailPanel({ entry, onClose }: { entry: LeaderboardEntry; onClose: () => void }) {
+  const panelRef = useRef<HTMLDivElement>(null);
+  const [judgeData, setJudgeData] = useState<any[]>([]);
+  const [activeJudgeIdx, setActiveJudgeIdx] = useState(0);
+  const [isLoadingJudges, setIsLoadingJudges] = useState(false);
+
+  // Auto-scroll into view
+  useEffect(() => {
+    panelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, []);
+
+  // Fetch judge evaluations
+  useEffect(() => {
+    (async () => {
+      setIsLoadingJudges(true);
+      try {
+        const res = await fetch(`/api/agent-results/${encodeURIComponent(entry.agentId)}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data.judgeEvaluations?.length > 0) {
+            // Group by judgeModel, compute per-judge averages
+            const byJudge = new Map<string, { scores: number[]; count: number; model: string }>();
+            for (const eval_ of data.judgeEvaluations) {
+              const existing = byJudge.get(eval_.judgeModel) || { scores: [0,0,0,0], count: 0, model: eval_.judgeModel };
+              existing.scores[0] += eval_.scores.riskIdentification;
+              existing.scores[1] += eval_.scores.nextStepQuality;
+              existing.scores[2] += eval_.scores.prioritization;
+              existing.scores[3] += eval_.scores.outcomeAlignment;
+              existing.count++;
+              byJudge.set(eval_.judgeModel, existing);
+            }
+            setJudgeData(Array.from(byJudge.entries()).map(([model, data]) => ({
+              model,
+              scores: {
+                riskIdentification: data.scores[0]! / data.count,
+                nextStepQuality: data.scores[1]! / data.count,
+                prioritization: data.scores[2]! / data.count,
+                outcomeAlignment: data.scores[3]! / data.count,
+              },
+            })));
+          }
+        }
+      } catch {}
+      setIsLoadingJudges(false);
+    })();
+  }, [entry.agentId]);
+
+  return (
+    <div ref={panelRef} className="p-5 border-t border-white/5 bg-navy-800/20">
+      {/* Header with close button */}
+      <div className="flex items-start justify-between mb-4">
+        <div>
+          <h5 className="font-semibold">{entry.agentName || entry.agentId}</h5>
+          <p className="text-xs text-slate-500">Last run: {new Date(entry.lastRun).toLocaleString()}</p>
+        </div>
+        <button onClick={onClose} className="text-slate-500 hover:text-white">
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Aggregate score breakdown */}
+      {entry.scores && (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+          {[
+            { label: "Risk ID", value: entry.scores.riskIdentification, color: "cyan" },
+            { label: "Next Steps", value: entry.scores.nextStepQuality, color: "emerald" },
+            { label: "Priority", value: entry.scores.prioritization, color: "amber" },
+            { label: "Alignment", value: entry.scores.outcomeAlignment, color: "purple" },
+          ].map((dim) => (
+            <div key={dim.label} className="bg-navy-900/50 rounded-lg p-3 text-center">
+              <div className="text-xs text-slate-500 mb-1">{dim.label}</div>
+              <div className={`text-xl font-bold text-${dim.color}-400`}>
+                {dim.value.toFixed(1)}<span className="text-slate-600 text-sm">/10</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Judge carousel */}
+      {judgeData.length > 0 && (
+        <div className="mb-4">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-xs text-slate-500 uppercase tracking-wider">Per-Judge Scores</span>
+            <span className="text-xs text-slate-600">{activeJudgeIdx + 1}/{judgeData.length}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setActiveJudgeIdx(i => (i - 1 + judgeData.length) % judgeData.length)}
+              className="p-1 rounded text-slate-500 hover:text-white hover:bg-white/10"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <div className="flex-1 bg-navy-900/50 rounded-lg p-3">
+              <div className="text-sm font-medium text-slate-300 mb-2">{judgeData[activeJudgeIdx]?.model}</div>
+              <div className="grid grid-cols-4 gap-3">
+                {[
+                  { label: "Risk", value: judgeData[activeJudgeIdx]?.scores.riskIdentification, color: "cyan" },
+                  { label: "Steps", value: judgeData[activeJudgeIdx]?.scores.nextStepQuality, color: "emerald" },
+                  { label: "Priority", value: judgeData[activeJudgeIdx]?.scores.prioritization, color: "amber" },
+                  { label: "Align", value: judgeData[activeJudgeIdx]?.scores.outcomeAlignment, color: "purple" },
+                ].map(dim => (
+                  <div key={dim.label} className="text-center">
+                    <div className="text-[10px] text-slate-600">{dim.label}</div>
+                    <div className={`text-sm font-bold text-${dim.color}-400`}>{dim.value?.toFixed(1)}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <button
+              onClick={() => setActiveJudgeIdx(i => (i + 1) % judgeData.length)}
+              className="p-1 rounded text-slate-500 hover:text-white hover:bg-white/10"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
+      {isLoadingJudges && (
+        <div className="flex items-center gap-2 text-xs text-slate-500 mb-4">
+          <div className="animate-spin w-3 h-3 border border-slate-500 border-t-transparent rounded-full" />
+          Loading judge data...
+        </div>
+      )}
+
+      {/* View Full Results link */}
+      <a
+        href={`/results/${encodeURIComponent(entry.agentId)}`}
+        onClick={(e) => {
+          e.preventDefault();
+          window.history.pushState({}, "", `/results/${encodeURIComponent(entry.agentId)}`);
+          window.dispatchEvent(new PopStateEvent("popstate"));
+        }}
+        className="inline-flex items-center gap-2 px-4 py-2.5 bg-cyan-500/10 border border-cyan-500/20 rounded-xl text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 transition-colors"
+      >
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+        View Full Results
+      </a>
+    </div>
+  );
+}
+
 export function Leaderboard() {
   const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
   const [sortField, setSortField] = useState<SortField>("rank");
@@ -511,7 +661,7 @@ export function Leaderboard() {
     <div className="bg-navy-900/40 rounded-2xl border border-white/5 overflow-hidden">
       {/* Header */}
       <div className="p-5 border-b border-white/5">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center">
               <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -525,7 +675,7 @@ export function Leaderboard() {
           </div>
 
           {/* Search */}
-          <div className="w-64">
+          <div className="w-full sm:w-64">
             <input
               type="text"
               placeholder="Search models..."
@@ -540,13 +690,13 @@ export function Leaderboard() {
 
       {/* Scatter Plot */}
       {filteredAndSortedEntries.some((e) => e.avgLatencyMs) && (
-        <div className="p-5 border-b border-white/5">
+        <div className="hidden sm:block p-5 border-b border-white/5">
           <ScatterPlot entries={filteredAndSortedEntries} onSelectEntry={setSelectedEntry} />
         </div>
       )}
 
       {/* Table Header */}
-      <div className="grid grid-cols-10 gap-4 px-6 py-3 bg-navy-800/30 text-xs items-center">
+      <div className="hidden md:grid grid-cols-10 gap-4 px-6 py-3 bg-navy-800/30 text-xs items-center">
         <div className="col-span-1">
           <SortableHeader label="#" field="rank" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
         </div>
@@ -577,135 +727,112 @@ export function Leaderboard() {
           const isSelected = selectedEntry?.agentId === entry.agentId;
 
           return (
-            <div
-              key={entry.agentId}
-              onClick={() => setSelectedEntry(isSelected ? null : entry)}
-              className={`grid grid-cols-10 gap-4 items-center px-6 py-4 cursor-pointer transition-colors
-                ${entry.rank === 1 ? "bg-gradient-to-r from-yellow-500/5 to-transparent" : ""}
-                ${isSelected ? "bg-cyan-500/10" : "hover:bg-white/[0.02]"}`}
-              style={{
-                animation: "fade-up 0.5s ease-out forwards",
-                animationDelay: `${idx * 0.03}s`,
-                opacity: 0,
-              }}
-            >
-              {/* Rank */}
-              <div className="col-span-1">
-                <RankBadge rank={entry.rank} />
-              </div>
+            <div key={entry.agentId}>
+              {/* Desktop row */}
+              <div
+                onClick={() => setSelectedEntry(isSelected ? null : entry)}
+                className={`hidden md:grid grid-cols-10 gap-4 items-center px-6 py-4 cursor-pointer transition-colors
+                  ${entry.rank === 1 ? "bg-gradient-to-r from-yellow-500/5 to-transparent" : ""}
+                  ${isSelected ? "bg-cyan-500/10" : "hover:bg-white/[0.02]"}`}
+                style={{
+                  animation: "fade-up 0.5s ease-out forwards",
+                  animationDelay: `${idx * 0.03}s`,
+                  opacity: 0,
+                }}
+              >
+                {/* Rank */}
+                <div className="col-span-1">
+                  <RankBadge rank={entry.rank} />
+                </div>
 
-              {/* Agent */}
-              <div className="col-span-3">
-                <div className="font-medium truncate">{entry.agentName || entry.agentId}</div>
-                <div className="text-xs text-slate-600 font-mono truncate">{entry.agentId}</div>
-              </div>
+                {/* Agent */}
+                <div className="col-span-3">
+                  <div className="font-medium truncate">{entry.agentName || entry.agentId}</div>
+                  <div className="text-xs text-slate-600 font-mono truncate">{entry.agentId}</div>
+                </div>
 
-              {/* Score */}
-              <div className="col-span-1 text-center">
-                <span
-                  className={`text-lg font-bold tabular-nums ${
-                    entry.percentage >= 75
-                      ? "text-emerald-400"
-                      : entry.percentage >= 50
-                      ? "text-amber-400"
-                      : "text-red-400"
-                  }`}
-                >
-                  {entry.percentage}%
-                </span>
-              </div>
+                {/* Score */}
+                <div className="col-span-1 text-center">
+                  <span
+                    className={`text-lg font-bold tabular-nums ${
+                      entry.percentage >= 75
+                        ? "text-emerald-400"
+                        : entry.percentage >= 50
+                        ? "text-amber-400"
+                        : "text-red-400"
+                    }`}
+                  >
+                    {entry.percentage}%
+                  </span>
+                </div>
 
-              {/* Dimension Scores */}
-              <div className="col-span-1 text-center">
-                <span className="text-sm tabular-nums text-slate-300">
-                  {entry.scores?.riskIdentification?.toFixed(1) ?? "-"}
-                </span>
-              </div>
-              <div className="col-span-1 text-center">
-                <span className="text-sm tabular-nums text-slate-300">
-                  {entry.scores?.nextStepQuality?.toFixed(1) ?? "-"}
-                </span>
-              </div>
-              <div className="col-span-1 text-center">
-                <span className="text-sm tabular-nums text-slate-300">
-                  {entry.scores?.prioritization?.toFixed(1) ?? "-"}
-                </span>
-              </div>
-              <div className="col-span-1 text-center">
-                <span className="text-sm tabular-nums text-slate-300">
-                  {entry.scores?.outcomeAlignment?.toFixed(1) ?? "-"}
-                </span>
-              </div>
+                {/* Dimension Scores */}
+                <div className="col-span-1 text-center">
+                  <span className="text-sm tabular-nums text-slate-300">
+                    {entry.scores?.riskIdentification?.toFixed(1) ?? "-"}
+                  </span>
+                </div>
+                <div className="col-span-1 text-center">
+                  <span className="text-sm tabular-nums text-slate-300">
+                    {entry.scores?.nextStepQuality?.toFixed(1) ?? "-"}
+                  </span>
+                </div>
+                <div className="col-span-1 text-center">
+                  <span className="text-sm tabular-nums text-slate-300">
+                    {entry.scores?.prioritization?.toFixed(1) ?? "-"}
+                  </span>
+                </div>
+                <div className="col-span-1 text-center">
+                  <span className="text-sm tabular-nums text-slate-300">
+                    {entry.scores?.outcomeAlignment?.toFixed(1) ?? "-"}
+                  </span>
+                </div>
 
-              {/* Latency */}
-              <div className="col-span-1 text-center">
-                <span className="text-sm tabular-nums text-slate-400">
-                  {entry.avgLatencyMs ? `${(entry.avgLatencyMs / 1000).toFixed(1)}s` : "-"}
-                </span>
+                {/* Latency */}
+                <div className="col-span-1 text-center">
+                  <span className="text-sm tabular-nums text-slate-400">
+                    {entry.avgLatencyMs ? `${(entry.avgLatencyMs / 1000).toFixed(1)}s` : "-"}
+                  </span>
+                </div>
               </div>
+              {/* Mobile card */}
+              <div
+                onClick={() => setSelectedEntry(isSelected ? null : entry)}
+                className={`md:hidden p-4 cursor-pointer transition-colors
+                  ${entry.rank === 1 ? "bg-gradient-to-r from-yellow-500/5 to-transparent" : ""}
+                  ${isSelected ? "bg-cyan-500/10" : "hover:bg-white/[0.02]"}`}
+                style={{
+                  animation: "fade-up 0.5s ease-out forwards",
+                  animationDelay: `${idx * 0.03}s`,
+                  opacity: 0,
+                }}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-3">
+                    <RankBadge rank={entry.rank} />
+                    <div>
+                      <div className="font-medium text-sm truncate max-w-[200px]">{entry.agentName || entry.agentId}</div>
+                      <div className="text-xs text-slate-600 font-mono truncate max-w-[200px]">{entry.agentId}</div>
+                    </div>
+                  </div>
+                  <span className={`text-lg font-bold tabular-nums ${
+                    entry.percentage >= 75 ? "text-emerald-400" : entry.percentage >= 50 ? "text-amber-400" : "text-red-400"
+                  }`}>
+                    {entry.percentage}%
+                  </span>
+                </div>
+                <div className="flex gap-3 text-xs text-slate-500">
+                  <span>Risk: {entry.scores?.riskIdentification?.toFixed(1) ?? "-"}</span>
+                  <span>Steps: {entry.scores?.nextStepQuality?.toFixed(1) ?? "-"}</span>
+                  <span>Pri: {entry.scores?.prioritization?.toFixed(1) ?? "-"}</span>
+                  <span>Align: {entry.scores?.outcomeAlignment?.toFixed(1) ?? "-"}</span>
+                </div>
+              </div>
+              {isSelected && <EntryDetailPanel entry={entry} onClose={() => setSelectedEntry(null)} />}
             </div>
           );
         })}
       </div>
-
-      {/* Selected Entry Detail */}
-      {selectedEntry && (
-        <div className="p-5 border-t border-white/5 bg-navy-800/20">
-          <div className="flex items-start justify-between mb-4">
-            <div>
-              <h5 className="font-semibold">{selectedEntry.agentName || selectedEntry.agentId}</h5>
-              <p className="text-xs text-slate-500">
-                Last run: {new Date(selectedEntry.lastRun).toLocaleString()}
-              </p>
-            </div>
-            <button
-              onClick={() => setSelectedEntry(null)}
-              className="text-slate-500 hover:text-white"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Score breakdown */}
-          {selectedEntry.scores && (
-            <div className="grid grid-cols-4 gap-4 mb-4">
-              {[
-                { label: "Risk ID", value: selectedEntry.scores.riskIdentification, color: "cyan" },
-                { label: "Next Steps", value: selectedEntry.scores.nextStepQuality, color: "emerald" },
-                { label: "Priority", value: selectedEntry.scores.prioritization, color: "amber" },
-                { label: "Alignment", value: selectedEntry.scores.outcomeAlignment, color: "purple" },
-              ].map((dim) => (
-                <div key={dim.label} className="bg-navy-900/50 rounded-lg p-3 text-center">
-                  <div className="text-xs text-slate-500 mb-1">{dim.label}</div>
-                  <div className={`text-xl font-bold text-${dim.color}-400`}>
-                    {dim.value.toFixed(1)}
-                    <span className="text-slate-600 text-sm">/10</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* View Full Results link */}
-          <a
-            href={`/results/${encodeURIComponent(selectedEntry.agentId)}`}
-            onClick={(e) => {
-              e.preventDefault();
-              window.history.pushState({}, "", `/results/${encodeURIComponent(selectedEntry.agentId)}`);
-              window.dispatchEvent(new PopStateEvent("popstate"));
-            }}
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-cyan-500/10 border border-cyan-500/20 rounded-xl text-cyan-400
-              text-sm font-medium hover:bg-cyan-500/20 transition-colors"
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </svg>
-            View Full Results
-          </a>
-        </div>
-      )}
     </div>
   );
 }

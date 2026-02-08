@@ -131,6 +131,29 @@ async function getLatestRunForAgent(agentId: string, deps = defaultAgentResultsD
   };
 }
 
+export async function handleReferenceAgentResults(req: Request, deps = defaultAgentResultsDeps): Promise<Response> {
+  try {
+    const result = await deps.sql`
+      SELECT br.agent_id, br.id as run_id, br.aggregate_score, br.max_possible_score
+      FROM benchmark_runs br
+      JOIN agents a ON br.agent_id = a.id
+      WHERE a.endpoint LIKE '%/api/agent'
+      ORDER BY br.aggregate_score DESC
+      LIMIT 1
+    `;
+
+    if (result.rows.length === 0) {
+      return Response.json({ error: "No reference agent results found" }, { status: 404 });
+    }
+
+    const row = result.rows[0]!;
+    return Response.json({ agentId: row.agent_id, runId: row.run_id });
+  } catch (error) {
+    console.error("Failed to get reference agent results:", error);
+    return Response.json({ error: "Failed to check reference agent" }, { status: 500 });
+  }
+}
+
 export async function handleAgentResults(req: Request, deps = defaultAgentResultsDeps): Promise<Response> {
   try {
     const url = new URL(req.url);

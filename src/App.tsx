@@ -37,6 +37,8 @@ type BenchmarkResult = {
 
 // Navigation Component
 function Nav({ activePage, setPage }: { activePage: Page; setPage: (p: Page) => void }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy-950/80 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -50,7 +52,22 @@ function Nav({ activePage, setPage }: { activePage: Page; setPage: (p: Page) => 
           <span className="font-semibold tracking-tight">Sales Agent Benchmark</span>
         </button>
 
-        <div className="flex items-center gap-1">
+        {/* Hamburger button (mobile) */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10"
+        >
+          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {mobileMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-1">
           {[
             { key: "home", label: "Home" },
             { key: "benchmark", label: "Benchmark" },
@@ -81,6 +98,38 @@ function Nav({ activePage, setPage }: { activePage: Page; setPage: (p: Page) => 
             GitHub
           </a>
         </div>
+
+        {/* Mobile dropdown menu */}
+        {mobileMenuOpen && (
+          <div className="absolute top-16 left-0 right-0 bg-navy-950/95 backdrop-blur-xl border-b border-white/5 md:hidden">
+            <div className="px-6 py-4 space-y-1">
+              {[
+                { key: "home", label: "Home" },
+                { key: "benchmark", label: "Benchmark" },
+                { key: "docs", label: "Docs" },
+                { key: "faq", label: "FAQ" },
+                { key: "future", label: "Future" },
+              ].map((item) => (
+                <button
+                  key={item.key}
+                  onClick={() => { setMobileMenuOpen(false); setPage(item.key as Page); }}
+                  className={`block w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors
+                    ${activePage === item.key ? "bg-white/10 text-white" : "text-slate-400 hover:text-white hover:bg-white/5"}`}
+                >
+                  {item.label}
+                </button>
+              ))}
+              <a
+                href="https://github.com/a1j9o94/sales-agent-benchmark"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

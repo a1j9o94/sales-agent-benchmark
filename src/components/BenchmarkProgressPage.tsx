@@ -1,5 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 
+interface JudgeResult {
+  model: string;
+  scores: {
+    riskIdentification: number;
+    nextStepQuality: number;
+    prioritization: number;
+    outcomeAlignment: number;
+  };
+  feedback: string;
+}
+
 interface CheckpointResult {
   checkpointId: string;
   dealId: string;
@@ -16,6 +27,7 @@ interface CheckpointResult {
   };
   progress: { completed: number; total: number };
   error?: boolean;
+  judges?: JudgeResult[];
 }
 
 interface CompleteEvent {
@@ -324,8 +336,40 @@ export function BenchmarkProgressPage() {
                       <span>Align: {cp.scores.outcomeAlignment.toFixed(1)}</span>
                     </div>
 
-                    {/* Feedback for public checkpoints */}
-                    {cp.feedback && (
+                    {/* Individual judge scores */}
+                    {cp.judges && cp.judges.length > 0 && (
+                      <div className="mt-2 space-y-1.5">
+                        {cp.judges.map((judge, jIdx) => {
+                          const judgeTotal = judge.scores.riskIdentification + judge.scores.nextStepQuality
+                            + judge.scores.prioritization + judge.scores.outcomeAlignment;
+                          const judgePct = Math.round((judgeTotal / 40) * 100);
+                          return (
+                            <div key={jIdx} className="bg-navy-900/30 rounded-lg px-3 py-2">
+                              <div className="flex items-center justify-between mb-1">
+                                <span className="text-xs font-medium text-slate-400">{judge.model}</span>
+                                <span className={`text-xs font-bold tabular-nums ${scoreColor(judgePct)}`}>
+                                  {judgeTotal.toFixed(1)}/40
+                                </span>
+                              </div>
+                              <div className="flex gap-3 text-[11px] text-slate-500">
+                                <span>Risk: {judge.scores.riskIdentification.toFixed(1)}</span>
+                                <span>Steps: {judge.scores.nextStepQuality.toFixed(1)}</span>
+                                <span>Priority: {judge.scores.prioritization.toFixed(1)}</span>
+                                <span>Align: {judge.scores.outcomeAlignment.toFixed(1)}</span>
+                              </div>
+                              {judge.feedback && (
+                                <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                                  {judge.feedback}
+                                </p>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+
+                    {/* Aggregate feedback for public checkpoints */}
+                    {cp.feedback && !cp.judges && (
                       <p className="text-xs text-slate-400 leading-relaxed mt-1">
                         {cp.feedback}
                       </p>

@@ -26,7 +26,7 @@ import {
   handleInitDatabase,
 } from "../api/results";
 import { handleBenchmarkStream } from "../api/benchmark-stream";
-import { handleAgentResults } from "../api/agent-results";
+import { handleAgentResults, handleReferenceAgentResults } from "../api/agent-results";
 import { handleReferenceAgent } from "../api/reference-agent";
 
 const SALES_AGENT_CONTEXT = `You are an expert sales analyst and strategist. Your role is to help with:
@@ -189,6 +189,11 @@ const server = serve({
     // Agent detailed results
     "/api/agent-results/:id": {
       GET: (req) => handleAgentResults(req),
+    },
+
+    // Reference agent results lookup
+    "/api/reference-agent-results": {
+      GET: (req) => handleReferenceAgentResults(req),
     },
 
     // Reference agent via OpenRouter (any model)
