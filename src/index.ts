@@ -152,7 +152,7 @@ const server = serve({
 
     // Reference agent API - implements the benchmark contract
     "/api/agent": {
-      POST: handleAgentEndpoint,
+      POST: (req) => handleAgentEndpoint(req),
     },
 
     // Agent registration APIs
@@ -178,39 +178,39 @@ const server = serve({
 
     // SSE streaming benchmark progress
     "/api/benchmark/stream": {
-      POST: handleBenchmarkStream,
+      POST: (req) => handleBenchmarkStream(req),
     },
 
     // Evaluate a single response (for debugging)
     "/api/benchmark/evaluate-response": {
-      POST: handleEvaluateResponseEndpoint,
+      POST: (req) => handleEvaluateResponseEndpoint(req),
     },
 
     // Agent detailed results
     "/api/agent-results/:id": {
-      GET: handleAgentResults,
+      GET: (req) => handleAgentResults(req),
     },
 
     // Reference agent via OpenRouter (any model)
     "/api/reference-agent/:modelId": {
-      POST: handleReferenceAgent,
+      POST: (req) => handleReferenceAgent(req),
     },
 
     // Results persistence APIs
     "/api/leaderboard": {
-      GET: handleGetLeaderboard,
+      GET: (req) => handleGetLeaderboard(req),
     },
 
     "/api/runs": {
-      GET: handleGetAllRuns,
+      GET: (req) => handleGetAllRuns(req),
     },
 
     "/api/results": {
-      POST: handleSaveResult,
+      POST: (req) => handleSaveResult(req),
     },
 
     "/api/init-db": {
-      POST: handleInitDatabase,
+      POST: (req) => handleInitDatabase(req),
     },
 
     // Keep the hello endpoints for testing

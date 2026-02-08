@@ -10,6 +10,12 @@
 
 import { sql } from "@vercel/postgres";
 
+export interface ResultsDeps {
+  sql: typeof sql;
+}
+
+const defaultResultsDeps: ResultsDeps = { sql };
+
 // Types
 export interface StoredAgent {
   id: string;
@@ -59,9 +65,9 @@ export interface LeaderboardEntry {
 }
 
 // Initialize database tables
-export async function initDatabase(): Promise<void> {
+export async function initDatabase(deps: ResultsDeps = defaultResultsDeps): Promise<void> {
   try {
-    await sql`
+    await deps.sql`
       CREATE TABLE IF NOT EXISTS agents (
         id TEXT PRIMARY KEY,
         name TEXT,
@@ -71,7 +77,7 @@ export async function initDatabase(): Promise<void> {
       )
     `;
 
-    await sql`
+    await deps.sql`
       CREATE TABLE IF NOT EXISTS benchmark_runs (
         id SERIAL PRIMARY KEY,
         agent_id TEXT NOT NULL REFERENCES agents(id),
@@ -86,7 +92,7 @@ export async function initDatabase(): Promise<void> {
       )
     `;
 
-    await sql`
+    await deps.sql`
       CREATE TABLE IF NOT EXISTS dimension_scores (
         id SERIAL PRIMARY KEY,
         run_id INTEGER NOT NULL REFERENCES benchmark_runs(id) ON DELETE CASCADE,
@@ -98,7 +104,7 @@ export async function initDatabase(): Promise<void> {
     `;
 
     // Create judge_evaluations table for multi-judge scoring
-    await sql`
+    await deps.sql`
       CREATE TABLE IF NOT EXISTS judge_evaluations (
         id SERIAL PRIMARY KEY,
         run_id INTEGER NOT NULL REFERENCES benchmark_runs(id) ON DELETE CASCADE,
@@ -118,11 +124,11 @@ export async function initDatabase(): Promise<void> {
     `;
 
     // Create indexes
-    await sql`CREATE INDEX IF NOT EXISTS idx_runs_agent ON benchmark_runs(agent_id)`;
-    await sql`CREATE INDEX IF NOT EXISTS idx_runs_mode ON benchmark_runs(mode)`;
-    await sql`CREATE INDEX IF NOT EXISTS idx_runs_timestamp ON benchmark_runs(run_timestamp DESC)`;
-    await sql`CREATE INDEX IF NOT EXISTS idx_judge_evals_run ON judge_evaluations(run_id)`;
-    await sql`CREATE INDEX IF NOT EXISTS idx_judge_evals_checkpoint ON judge_evaluations(checkpoint_id)`;
+    await deps.sql`CREATE INDEX IF NOT EXISTS idx_runs_agent ON benchmark_runs(agent_id)`;
+    await deps.sql`CREATE INDEX IF NOT EXISTS idx_runs_mode ON benchmark_runs(mode)`;
+    await deps.sql`CREATE INDEX IF NOT EXISTS idx_runs_timestamp ON benchmark_runs(run_timestamp DESC)`;
+    await deps.sql`CREATE INDEX IF NOT EXISTS idx_judge_evals_run ON judge_evaluations(run_id)`;
+    await deps.sql`CREATE INDEX IF NOT EXISTS idx_judge_evals_checkpoint ON judge_evaluations(checkpoint_id)`;
 
     console.log("Database tables initialized");
   } catch (error) {
@@ -132,23 +138,23 @@ export async function initDatabase(): Promise<void> {
 }
 
 // Agent operations
-export async function upsertAgent(id: string, endpoint: string, name?: string): Promise<StoredAgent> {
-  const existing = await sql`SELECT * FROM agents WHERE id = ${id}`;
+export async function upsertAgent(id: string, endpoint: string, name?: string, deps: ResultsDeps = defaultResultsDeps): Promise<StoredAgent> {
+  const existing = await deps.sql`SELECT * FROM agents WHERE id = ${id}`;
 
   if (existing.rows.length > 0) {
-    await sql`
+    await deps.sql`
       UPDATE agents
       SET name = COALESCE(${name ?? null}, name), endpoint = ${endpoint}, updated_at = NOW()
       WHERE id = ${id}
     `;
   } else {
-    await sql`
+    await deps.sql`
       INSERT INTO agents (id, name, endpoint)
       VALUES (${id}, ${name ?? null}, ${endpoint})
     `;
   }
 
-  const result = await sql`SELECT * FROM agents WHERE id = ${id}`;
+  const result = await deps.sql`SELECT * FROM agents WHERE id = ${id}`;
   const agent = result.rows[0];
 
   if (!agent) {
@@ -164,8 +170,8 @@ export async function upsertAgent(id: string, endpoint: string, name?: string): 
   };
 }
 
-export async function getAgent(id: string): Promise<StoredAgent | null> {
-  const result = await sql`SELECT * FROM agents WHERE id = ${id}`;
+export async function getAgent(id: string, deps: ResultsDeps = defaultResultsDeps): Promise<StoredAgent | null> {
+  const result = await deps.sql`SELECT * FROM agents WHERE id = ${id}`;
 
   if (result.rows.length === 0) return null;
 
@@ -199,15 +205,15 @@ export async function saveBenchmarkRun(result: {
     prioritization: number;
     outcomeAlignment: number;
   };
-}): Promise<number> {
+}, deps: ResultsDeps = defaultResultsDeps): Promise<number> {
   // Ensure agent exists
-  await upsertAgent(result.agentId, result.agentEndpoint, result.agentName);
+  await upsertAgent(result.agentId, result.agentEndpoint, result.agentName, deps);
 
   // Insert benchmark run (round scores to integers for database)
   const aggregateScoreInt = Math.round(result.aggregateScore);
   const maxPossibleScoreInt = Math.round(result.maxPossibleScore);
 
-  const runResult = await sql`
+  const runResult = await deps.sql`
     INSERT INTO benchmark_runs
     (agent_id, mode, aggregate_score, max_possible_score, deals_evaluated, checkpoints_evaluated, avg_latency_ms, run_timestamp)
     VALUES (${result.agentId}, ${result.mode}, ${aggregateScoreInt}, ${maxPossibleScoreInt},
@@ -221,7 +227,7 @@ export async function saveBenchmarkRun(result: {
   }
 
   // Insert dimension scores
-  await sql`
+  await deps.sql`
     INSERT INTO dimension_scores (run_id, risk_identification, next_step_quality, prioritization, outcome_alignment)
     VALUES (${runId}, ${result.scores.riskIdentification}, ${result.scores.nextStepQuality},
             ${result.scores.prioritization}, ${result.scores.outcomeAlignment})
@@ -249,8 +255,8 @@ export interface JudgeEvaluationData {
 }
 
 // Save individual judge evaluation
-export async function saveJudgeEvaluation(evaluation: JudgeEvaluationData): Promise<number> {
-  const result = await sql`
+export async function saveJudgeEvaluation(evaluation: JudgeEvaluationData, deps: ResultsDeps = defaultResultsDeps): Promise<number> {
+  const result = await deps.sql`
     INSERT INTO judge_evaluations
     (run_id, checkpoint_id, judge_model, risk_identification, next_step_quality, prioritization, outcome_alignment, feedback, risks_identified, risks_missed, helpful_recommendations, unhelpful_recommendations)
     VALUES (
@@ -278,8 +284,8 @@ export async function saveJudgeEvaluation(evaluation: JudgeEvaluationData): Prom
 }
 
 // Get judge evaluations for a run
-export async function getJudgeEvaluations(runId: number): Promise<JudgeEvaluationData[]> {
-  const results = await sql`
+export async function getJudgeEvaluations(runId: number, deps: ResultsDeps = defaultResultsDeps): Promise<JudgeEvaluationData[]> {
+  const results = await deps.sql`
     SELECT * FROM judge_evaluations WHERE run_id = ${runId}
   `;
 
@@ -302,8 +308,8 @@ export async function getJudgeEvaluations(runId: number): Promise<JudgeEvaluatio
 }
 
 // Get leaderboard (best score per agent for a given mode)
-export async function getLeaderboard(mode: "public" | "private" = "private"): Promise<LeaderboardEntry[]> {
-  const results = await sql`
+export async function getLeaderboard(mode: "public" | "private" = "private", deps: ResultsDeps = defaultResultsDeps): Promise<LeaderboardEntry[]> {
+  const results = await deps.sql`
     SELECT DISTINCT ON (br.agent_id)
       br.agent_id,
       a.name as agent_name,
@@ -352,12 +358,12 @@ export async function getLeaderboard(mode: "public" | "private" = "private"): Pr
 }
 
 // Get all runs for scatter plot
-export async function getAllRuns(options?: { mode?: "public" | "private"; limit?: number }): Promise<StoredRun[]> {
+export async function getAllRuns(options?: { mode?: "public" | "private"; limit?: number }, deps: ResultsDeps = defaultResultsDeps): Promise<StoredRun[]> {
   const limit = options?.limit ?? 100;
 
   let results;
   if (options?.mode) {
-    results = await sql`
+    results = await deps.sql`
       SELECT
         br.id,
         br.agent_id,
@@ -381,7 +387,7 @@ export async function getAllRuns(options?: { mode?: "public" | "private"; limit?
       LIMIT ${limit}
     `;
   } else {
-    results = await sql`
+    results = await deps.sql`
       SELECT
         br.id,
         br.agent_id,
@@ -427,8 +433,8 @@ export async function getAllRuns(options?: { mode?: "public" | "private"; limit?
 }
 
 // Get run history for a specific agent
-export async function getAgentRunHistory(agentId: string, limit = 10): Promise<StoredRun[]> {
-  const results = await sql`
+export async function getAgentRunHistory(agentId: string, limit = 10, deps: ResultsDeps = defaultResultsDeps): Promise<StoredRun[]> {
+  const results = await deps.sql`
     SELECT
       br.id,
       br.agent_id,
@@ -474,12 +480,12 @@ export async function getAgentRunHistory(agentId: string, limit = 10): Promise<S
 }
 
 // API Handlers
-export async function handleGetLeaderboard(req: Request): Promise<Response> {
+export async function handleGetLeaderboard(req: Request, deps: ResultsDeps = defaultResultsDeps): Promise<Response> {
   try {
     const url = new URL(req.url);
     const mode = url.searchParams.get("mode") === "public" ? "public" : "private";
 
-    const leaderboard = await getLeaderboard(mode);
+    const leaderboard = await getLeaderboard(mode, deps);
 
     return Response.json({
       mode,
@@ -492,7 +498,7 @@ export async function handleGetLeaderboard(req: Request): Promise<Response> {
   }
 }
 
-export async function handleGetAllRuns(req: Request): Promise<Response> {
+export async function handleGetAllRuns(req: Request, deps: ResultsDeps = defaultResultsDeps): Promise<Response> {
   try {
     const url = new URL(req.url);
     const mode = url.searchParams.get("mode") as "public" | "private" | null;
@@ -501,7 +507,7 @@ export async function handleGetAllRuns(req: Request): Promise<Response> {
     const runs = await getAllRuns({
       mode: mode || undefined,
       limit: limit ? parseInt(limit, 10) : 100,
-    });
+    }, deps);
 
     return Response.json({
       count: runs.length,
@@ -543,7 +549,7 @@ interface SaveResultBody {
   }[];
 }
 
-export async function handleSaveResult(req: Request): Promise<Response> {
+export async function handleSaveResult(req: Request, deps: ResultsDeps = defaultResultsDeps): Promise<Response> {
   if (req.method !== "POST") {
     return Response.json({ error: "Method not allowed" }, { status: 405 });
   }
@@ -601,7 +607,7 @@ export async function handleSaveResult(req: Request): Promise<Response> {
         prioritization: 0,
         outcomeAlignment: 0,
       },
-    });
+    }, deps);
 
     return Response.json({ success: true, runId });
   } catch (error) {
@@ -613,9 +619,9 @@ export async function handleSaveResult(req: Request): Promise<Response> {
   }
 }
 
-export async function handleInitDatabase(req: Request): Promise<Response> {
+export async function handleInitDatabase(req: Request, deps: ResultsDeps = defaultResultsDeps): Promise<Response> {
   try {
-    await initDatabase();
+    await initDatabase(deps);
     return Response.json({ success: true, message: "Database initialized" });
   } catch (error) {
     console.error("Failed to initialize database:", error);

@@ -8,6 +8,13 @@
 import { sql } from "@vercel/postgres";
 import { getJudgeEvaluations, type JudgeEvaluationData } from "./results";
 
+export interface AgentResultsDeps {
+  sql: typeof sql;
+  getJudgeEvaluations: typeof getJudgeEvaluations;
+}
+
+const defaultAgentResultsDeps: AgentResultsDeps = { sql, getJudgeEvaluations };
+
 interface RunDetails {
   id: number;
   agentId: string;
@@ -28,8 +35,8 @@ interface RunDetails {
   };
 }
 
-async function getRunById(runId: number): Promise<RunDetails | null> {
-  const result = await sql`
+async function getRunById(runId: number, deps = defaultAgentResultsDeps): Promise<RunDetails | null> {
+  const result = await deps.sql`
     SELECT
       br.id,
       br.agent_id,
@@ -75,8 +82,8 @@ async function getRunById(runId: number): Promise<RunDetails | null> {
   };
 }
 
-async function getLatestRunForAgent(agentId: string): Promise<RunDetails | null> {
-  const result = await sql`
+async function getLatestRunForAgent(agentId: string, deps = defaultAgentResultsDeps): Promise<RunDetails | null> {
+  const result = await deps.sql`
     SELECT
       br.id,
       br.agent_id,
@@ -124,7 +131,7 @@ async function getLatestRunForAgent(agentId: string): Promise<RunDetails | null>
   };
 }
 
-export async function handleAgentResults(req: Request): Promise<Response> {
+export async function handleAgentResults(req: Request, deps = defaultAgentResultsDeps): Promise<Response> {
   try {
     const url = new URL(req.url);
     const pathParts = url.pathname.split("/").filter(Boolean);
@@ -138,12 +145,12 @@ export async function handleAgentResults(req: Request): Promise<Response> {
       // Try as numeric runId first
       const numericId = parseInt(idParam, 10);
       if (!isNaN(numericId)) {
-        run = await getRunById(numericId);
+        run = await getRunById(numericId, deps);
       }
 
       // If not found, try as agentId
       if (!run) {
-        run = await getLatestRunForAgent(decodeURIComponent(idParam));
+        run = await getLatestRunForAgent(decodeURIComponent(idParam), deps);
       }
     }
 
@@ -153,9 +160,9 @@ export async function handleAgentResults(req: Request): Promise<Response> {
       const runId = url.searchParams.get("runId");
 
       if (runId) {
-        run = await getRunById(parseInt(runId, 10));
+        run = await getRunById(parseInt(runId, 10), deps);
       } else if (agentId) {
-        run = await getLatestRunForAgent(agentId);
+        run = await getLatestRunForAgent(agentId, deps);
       }
     }
 
@@ -165,7 +172,7 @@ export async function handleAgentResults(req: Request): Promise<Response> {
 
     // Get judge evaluations for this run
     try {
-      judgeEvaluations = await getJudgeEvaluations(run.id);
+      judgeEvaluations = await deps.getJudgeEvaluations(run.id);
     } catch {
       // Judge evaluations may not exist for all runs
       judgeEvaluations = [];

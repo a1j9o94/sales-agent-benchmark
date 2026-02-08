@@ -15,15 +15,32 @@ import type {
   EvaluationScores,
 } from "../src/types/benchmark";
 
-// OpenRouter client for GPT and Gemini judges
-const openrouter = createOpenAI({
-  apiKey: process.env.OPENROUTER_API_KEY,
-  baseURL: "https://openrouter.ai/api/v1",
-  headers: {
-    "HTTP-Referer": "https://sales-agent-benchmarks.fly.dev",
-    "X-Title": "Sales Agent Benchmark",
-  },
-});
+// Dependency injection interface for testability
+export interface EvaluateDeps {
+  generateText: typeof generateText;
+  anthropic: typeof anthropic;
+  openrouter: ReturnType<typeof createOpenAI>;
+}
+
+// Lazy OpenRouter client creation (avoids requiring API key at import time)
+let _openrouter: ReturnType<typeof createOpenAI> | null = null;
+function getOpenRouter() {
+  if (!_openrouter) {
+    _openrouter = createOpenAI({
+      apiKey: process.env.OPENROUTER_API_KEY,
+      baseURL: "https://openrouter.ai/api/v1",
+      headers: {
+        "HTTP-Referer": "https://sales-agent-benchmarks.fly.dev",
+        "X-Title": "Sales Agent Benchmark",
+      },
+    });
+  }
+  return _openrouter;
+}
+
+function getDefaultEvaluateDeps(): EvaluateDeps {
+  return { generateText, anthropic, openrouter: getOpenRouter() };
+}
 
 // Judge model configurations
 export const JUDGE_MODELS = {
@@ -160,20 +177,21 @@ Evaluate the agent's analysis against the ground truth. How well did they identi
 // Evaluate with a single judge model
 async function evaluateWithJudge(
   judgeConfig: (typeof JUDGE_MODELS)[keyof typeof JUDGE_MODELS],
-  prompt: string
+  prompt: string,
+  deps = getDefaultEvaluateDeps()
 ): Promise<JudgeEvaluation> {
   try {
     let result;
 
     if (judgeConfig.provider === "anthropic") {
-      result = await generateText({
-        model: anthropic(judgeConfig.modelId),
+      result = await deps.generateText({
+        model: deps.anthropic(judgeConfig.modelId),
         system: JUDGE_SYSTEM_PROMPT,
         prompt,
       });
     } else {
-      result = await generateText({
-        model: openrouter(judgeConfig.modelId),
+      result = await deps.generateText({
+        model: deps.openrouter(judgeConfig.modelId),
         system: JUDGE_SYSTEM_PROMPT,
         prompt,
       });
@@ -290,13 +308,14 @@ function aggregateJudgeScores(judgeEvaluations: JudgeEvaluation[]): {
 export async function evaluateResponseMultiJudge(
   checkpoint: Checkpoint,
   agentResponse: AgentResponse,
-  mode: "public" | "private"
+  mode: "public" | "private",
+  deps = getDefaultEvaluateDeps()
 ): Promise<MultiJudgeCheckpointEvaluation> {
   const prompt = buildEvaluationPrompt(checkpoint, agentResponse);
 
   // Run all judges in parallel
   const judgePromises = Object.values(JUDGE_MODELS).map((judgeConfig) =>
-    evaluateWithJudge(judgeConfig, prompt)
+    evaluateWithJudge(judgeConfig, prompt, deps)
   );
 
   const judgeEvaluations = await Promise.all(judgePromises);
@@ -343,13 +362,14 @@ export async function evaluateResponseMultiJudge(
 export async function evaluateResponse(
   checkpoint: Checkpoint,
   agentResponse: AgentResponse,
-  mode: "public" | "private"
+  mode: "public" | "private",
+  deps = getDefaultEvaluateDeps()
 ): Promise<CheckpointEvaluation> {
   const prompt = buildEvaluationPrompt(checkpoint, agentResponse);
 
   try {
-    const result = await generateText({
-      model: anthropic("claude-sonnet-4-20250514"),
+    const result = await deps.generateText({
+      model: deps.anthropic("claude-sonnet-4-20250514"),
       system: JUDGE_SYSTEM_PROMPT,
       prompt,
     });
@@ -413,7 +433,7 @@ export async function evaluateResponse(
 }
 
 // HTTP handler for direct evaluation requests
-export async function handleEvaluateResponseEndpoint(req: Request): Promise<Response> {
+export async function handleEvaluateResponseEndpoint(req: Request, deps = getDefaultEvaluateDeps()): Promise<Response> {
   if (req.method !== "POST") {
     return Response.json({ error: "Method not allowed" }, { status: 405 });
   }
@@ -440,7 +460,8 @@ export async function handleEvaluateResponseEndpoint(req: Request): Promise<Resp
       const evaluation = await evaluateResponseMultiJudge(
         body.checkpoint as Checkpoint,
         body.agentResponse as AgentResponse,
-        mode
+        mode,
+        deps
       );
       return Response.json(evaluation);
     }
@@ -449,7 +470,8 @@ export async function handleEvaluateResponseEndpoint(req: Request): Promise<Resp
     const evaluation = await evaluateResponse(
       body.checkpoint as Checkpoint,
       body.agentResponse as AgentResponse,
-      mode
+      mode,
+      deps
     );
 
     return Response.json(evaluation);

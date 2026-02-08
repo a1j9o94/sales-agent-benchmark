@@ -14,15 +14,31 @@ import { createOpenAI } from "@ai-sdk/openai";
 import { BENCHMARK_MODELS, type ModelConfig } from "../scripts/benchmark-models";
 import type { AgentRequest, AgentResponse } from "../src/types/benchmark";
 
-// OpenRouter client (same pattern as benchmark-models.ts)
-const openrouter = createOpenAI({
-  apiKey: process.env.OPENROUTER_API_KEY,
-  baseURL: "https://openrouter.ai/api/v1",
-  headers: {
-    "HTTP-Referer": "https://sales-agent-benchmarks.fly.dev",
-    "X-Title": "Sales Agent Benchmark",
-  },
-});
+export interface ReferenceAgentDeps {
+  generateText: typeof generateText;
+  openrouter: ReturnType<typeof createOpenAI>;
+  benchmarkModels: readonly ModelConfig[];
+}
+
+// Lazy OpenRouter client creation (avoid side effects at import time)
+let _openrouter: ReturnType<typeof createOpenAI> | null = null;
+function getOpenRouter() {
+  if (!_openrouter) {
+    _openrouter = createOpenAI({
+      apiKey: process.env.OPENROUTER_API_KEY,
+      baseURL: "https://openrouter.ai/api/v1",
+      headers: {
+        "HTTP-Referer": "https://sales-agent-benchmarks.fly.dev",
+        "X-Title": "Sales Agent Benchmark",
+      },
+    });
+  }
+  return _openrouter;
+}
+
+function getDefaultReferenceAgentDeps(): ReferenceAgentDeps {
+  return { generateText, openrouter: getOpenRouter(), benchmarkModels: BENCHMARK_MODELS };
+}
 
 // Same system prompt as api/agent.ts and scripts/benchmark-models.ts
 const SALES_AGENT_SYSTEM_PROMPT = `You are an expert sales analyst evaluating deal situations. Your role is to:
@@ -125,13 +141,6 @@ function buildDealContextPrompt(request: AgentRequest): string {
 Analyze this deal situation and provide your assessment as JSON.`;
 }
 
-/**
- * Find a model config by its short ID (e.g., "gpt-5.2", "claude-4.5-sonnet")
- */
-function findModel(modelId: string): ModelConfig | undefined {
-  return BENCHMARK_MODELS.find((m) => m.id === modelId);
-}
-
 interface ReferenceAgentBody {
   checkpoint_id?: string;
   checkpointId?: string;
@@ -144,7 +153,7 @@ interface ReferenceAgentBody {
  * HTTP handler for the reference agent endpoint.
  * Route: POST /api/reference-agent/:modelId
  */
-export async function handleReferenceAgent(req: Request): Promise<Response> {
+export async function handleReferenceAgent(req: Request, deps: ReferenceAgentDeps = getDefaultReferenceAgentDeps()): Promise<Response> {
   if (req.method !== "POST") {
     return Response.json({ error: "Method not allowed" }, { status: 405 });
   }
@@ -158,10 +167,10 @@ export async function handleReferenceAgent(req: Request): Promise<Response> {
     return Response.json({ error: "modelId is required in URL path" }, { status: 400 });
   }
 
-  // Find the model in BENCHMARK_MODELS
-  const model = findModel(modelId);
+  // Find the model in benchmarkModels
+  const model = deps.benchmarkModels.find((m) => m.id === modelId);
   if (!model) {
-    const available = BENCHMARK_MODELS.map((m) => m.id).join(", ");
+    const available = deps.benchmarkModels.map((m) => m.id).join(", ");
     return Response.json(
       { error: `Model "${modelId}" not found. Available models: ${available}` },
       { status: 404 }
@@ -216,8 +225,8 @@ export async function handleReferenceAgent(req: Request): Promise<Response> {
     // Build prompt and call OpenRouter
     const prompt = buildDealContextPrompt(agentRequest);
 
-    const result = await generateText({
-      model: openrouter(model.openrouterId),
+    const result = await deps.generateText({
+      model: deps.openrouter(model.openrouterId),
       system: SALES_AGENT_SYSTEM_PROMPT,
       prompt,
     });

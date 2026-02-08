@@ -10,6 +10,13 @@ import { generateText } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
 import type { AgentRequest, AgentResponse, Risk, NextStep } from "../src/types/benchmark";
 
+export interface AgentDeps {
+  generateText: typeof generateText;
+  anthropic: typeof anthropic;
+}
+
+const defaultAgentDeps: AgentDeps = { generateText, anthropic };
+
 const SALES_AGENT_SYSTEM_PROMPT = `You are an expert sales analyst evaluating deal situations. Your role is to:
 
 1. IDENTIFY RISKS - What could prevent this deal from closing? Consider:
@@ -42,7 +49,7 @@ IMPORTANT: Return your analysis as JSON in this exact format:
   "reasoning": "2-3 sentences explaining your overall assessment"
 }`;
 
-export async function handleAgentRequest(request: AgentRequest): Promise<AgentResponse> {
+export async function handleAgentRequest(request: AgentRequest, deps: AgentDeps = defaultAgentDeps): Promise<AgentResponse> {
   // Build context string from the deal context
   const contextParts: string[] = [
     `## Deal: ${request.dealContext.company}`,
@@ -105,8 +112,8 @@ export async function handleAgentRequest(request: AgentRequest): Promise<AgentRe
 Analyze this deal situation and provide your assessment as JSON.`;
 
   try {
-    const result = await generateText({
-      model: anthropic("claude-sonnet-4-20250514"),
+    const result = await deps.generateText({
+      model: deps.anthropic("claude-sonnet-4-20250514"),
       system: SALES_AGENT_SYSTEM_PROMPT,
       prompt,
     });
@@ -157,7 +164,7 @@ interface AgentEndpointBody {
 }
 
 // HTTP handler for Vercel Edge + Bun server
-export async function handleAgentEndpoint(req: Request): Promise<Response> {
+export async function handleAgentEndpoint(req: Request, deps: AgentDeps = defaultAgentDeps): Promise<Response> {
   if (req.method !== "POST") {
     return Response.json({ error: "Method not allowed" }, { status: 405 });
   }
@@ -200,7 +207,7 @@ export async function handleAgentEndpoint(req: Request): Promise<Response> {
       question: body.question || "What are the top risks and recommended next steps?",
     };
 
-    const response = await handleAgentRequest(request);
+    const response = await handleAgentRequest(request, deps);
 
     // Return response in snake_case for API compatibility
     return Response.json({

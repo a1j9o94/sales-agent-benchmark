@@ -21,6 +21,13 @@ import type {
 import { evaluateResponse } from "./evaluate-response";
 import { saveBenchmarkRun } from "./results";
 
+export interface BenchmarkStreamDeps {
+  evaluateResponse: typeof evaluateResponse;
+  saveBenchmarkRun: typeof saveBenchmarkRun;
+}
+
+const defaultBenchmarkStreamDeps: BenchmarkStreamDeps = { evaluateResponse, saveBenchmarkRun };
+
 // Load deals from a directory (same pattern as scripts/benchmark-models.ts)
 async function loadDealsFromDir(dirPath: string): Promise<Deal[]> {
   const deals: Deal[] = [];
@@ -112,7 +119,7 @@ function agentIdFromEndpoint(endpoint: string): string {
   }
 }
 
-export async function handleBenchmarkStream(req: Request): Promise<Response> {
+export async function handleBenchmarkStream(req: Request, deps: BenchmarkStreamDeps = defaultBenchmarkStreamDeps): Promise<Response> {
   if (req.method !== "POST") {
     return Response.json({ error: "Method not allowed" }, { status: 405 });
   }
@@ -173,7 +180,7 @@ export async function handleBenchmarkStream(req: Request): Promise<Response> {
             totalLatencyMs += latencyMs;
 
             // Evaluate with single judge (Claude Sonnet) for speed
-            const evaluation = await evaluateResponse(checkpoint, response, mode);
+            const evaluation = await deps.evaluateResponse(checkpoint, response, mode);
 
             totalScore += evaluation.totalScore;
             totalMaxScore += evaluation.maxScore;
@@ -243,7 +250,7 @@ export async function handleBenchmarkStream(req: Request): Promise<Response> {
         const agentId = agentIdFromEndpoint(endpoint);
         let runId: number | null = null;
         try {
-          runId = await saveBenchmarkRun({
+          runId = await deps.saveBenchmarkRun({
             agentId,
             agentEndpoint: endpoint,
             agentName: agentName || undefined,
