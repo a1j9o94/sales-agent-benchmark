@@ -1,10 +1,10 @@
 {
-  "id": "granola",
+  "id": "noteflow-ai",
   "name": "NoteFlow AI",
   "checkpoints": [
     {
-      "id": "granola_cp_001",
-      "dealId": "granola",
+      "id": "noteflow-ai_cp_001",
+      "dealId": "noteflow-ai",
       "timestamp": "2026-01-21",
       "context": {
         "company": "NoteFlow AI",
@@ -119,8 +119,8 @@
       }
     },
     {
-      "id": "granola_cp_002",
-      "dealId": "granola",
+      "id": "noteflow-ai_cp_002",
+      "dealId": "noteflow-ai",
       "timestamp": "2026-01-26",
       "context": {
         "company": "NoteFlow AI",
@@ -236,8 +236,8 @@
       }
     },
     {
-      "id": "granola_cp_003",
-      "dealId": "granola",
+      "id": "noteflow-ai_cp_003",
+      "dealId": "noteflow-ai",
       "timestamp": "2026-01-27",
       "context": {
         "company": "NoteFlow AI",

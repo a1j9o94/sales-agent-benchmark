@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "totalDeals": 1,
+  "publicDeals": 0,
+  "privateDeals": 1,
+  "totalCheckpoints": 6,
+  "totalArtifacts": 48,
+  "totalTasks": 4,
+  "extractedAt": "2026-02-08T21:07:29.205Z",
+  "dealSummary": [
+    {
+      "id": "horizon-ventures",
+      "name": "Horizon Ventures",
+      "checkpoints": 6,
+      "artifacts": 48,
+      "tasks": 4,
+      "finalOutcome": "active",
+      "isPublic": false,
+      "artifactTypes": [
+        "transcript",
+        "crm_snapshot",
+        "document",
+        "email",
+        "slack_thread"
+      ]
+    }
+  ]
+}

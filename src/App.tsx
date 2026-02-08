@@ -3,13 +3,21 @@ import { AgentRegistration } from "@/components/AgentRegistration";
 import { Leaderboard } from "@/components/Leaderboard";
 import { BenchmarkProgressPage } from "@/components/BenchmarkProgressPage";
 import { ResultsPage } from "@/components/ResultsPage";
+import { UnderConstructionPage } from "@/components/v2/UnderConstructionPage";
+import { V2Leaderboard } from "@/components/v2/V2Leaderboard";
+import { V2BenchmarkProgressPage } from "@/components/v2/V2BenchmarkProgressPage";
+import { V2ResultsPage } from "@/components/v2/V2ResultsPage";
 import "./index.css";
 
-type Page = "home" | "benchmark" | "docs" | "faq" | "future" | "run" | "results";
+type Page = "home" | "benchmark" | "docs" | "faq" | "future" | "run" | "results" | "v2" | "v2-benchmark" | "v2-run" | "v2-results";
 
 // Simple URL routing helper
 function getPageFromPath(): Page {
   const path = window.location.pathname;
+  if (path === "/v2") return "v2";
+  if (path === "/v2/benchmark") return "v2-benchmark";
+  if (path.startsWith("/v2/run")) return "v2-run";
+  if (path.startsWith("/v2/results")) return "v2-results";
   if (path === "/benchmark") return "benchmark";
   if (path === "/docs") return "docs";
   if (path === "/faq") return "faq";
@@ -20,7 +28,12 @@ function getPageFromPath(): Page {
 }
 
 function navigateTo(page: Page) {
-  const path = page === "home" ? "/" : `/${page}`;
+  const pathMap: Partial<Record<Page, string>> = {
+    "v2-benchmark": "/v2/benchmark",
+    "v2-run": "/v2/run",
+    "v2-results": "/v2/results",
+  };
+  const path = page === "home" ? "/" : pathMap[page] ?? `/${page}`;
   window.history.pushState({}, "", path);
   window.dispatchEvent(new PopStateEvent("popstate"));
 }
@@ -74,16 +87,22 @@ function Nav({ activePage, setPage }: { activePage: Page; setPage: (p: Page) => 
             { key: "docs", label: "Docs" },
             { key: "faq", label: "FAQ" },
             { key: "future", label: "Future" },
+            { key: "v2", label: "V2", badge: "BETA" },
           ].map((item) => (
             <button
               key={item.key}
               onClick={() => setPage(item.key as Page)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5
                 ${activePage === item.key
                   ? "bg-white/10 text-white"
                   : "text-slate-400 hover:text-white hover:bg-white/5"}`}
             >
               {item.label}
+              {item.badge && (
+                <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/20 text-cyan-400 leading-none">
+                  {item.badge}
+                </span>
+              )}
             </button>
           ))}
           <a
@@ -109,14 +128,20 @@ function Nav({ activePage, setPage }: { activePage: Page; setPage: (p: Page) => 
                 { key: "docs", label: "Docs" },
                 { key: "faq", label: "FAQ" },
                 { key: "future", label: "Future" },
+                { key: "v2", label: "V2", badge: "BETA" },
               ].map((item) => (
                 <button
                   key={item.key}
                   onClick={() => { setMobileMenuOpen(false); setPage(item.key as Page); }}
-                  className={`block w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors
+                  className={`flex items-center gap-2 w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors
                     ${activePage === item.key ? "bg-white/10 text-white" : "text-slate-400 hover:text-white hover:bg-white/5"}`}
                 >
                   {item.label}
+                  {item.badge && (
+                    <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/20 text-cyan-400 leading-none">
+                      {item.badge}
+                    </span>
+                  )}
                 </button>
               ))}
               <a
@@ -950,6 +975,10 @@ export function App() {
       {page === "future" && <FuturePage />}
       {page === "run" && <BenchmarkProgressPage />}
       {page === "results" && <ResultsPage />}
+      {page === "v2" && <UnderConstructionPage />}
+      {page === "v2-benchmark" && <V2Leaderboard />}
+      {page === "v2-run" && <V2BenchmarkProgressPage />}
+      {page === "v2-results" && <V2ResultsPage />}
 
       <Footer />
     </div>

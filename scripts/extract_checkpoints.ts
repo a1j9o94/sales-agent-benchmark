@@ -52,6 +52,25 @@ const COMPANY_REPLACEMENTS: Record<string, string> = {
   "attio": "RelateSync",
 };
 
+// Deal directory name → codename kebab ID (used for checkpoint IDs)
+const DEAL_ID_MAP: Record<string, string> = {
+  "moxie": "velocity-systems",
+  "granola": "noteflow-ai",
+  "avmedia": "streamcore-media",
+  "cool-rooms": "chillspace-tech",
+  "zenith-prep-academy": "summit-learning",
+  "pronet": "netpro-solutions",
+  "flagship": "horizon-ventures",
+  "patoma": "pathmark-analytics",
+  "genea": "lifegen-labs",
+  "anisa": "artisan-brands",
+  "eaton-group": "eastpoint-capital",
+  "hometime": "dwelltech",
+  "scg-security": "secureguard-systems",
+  "finera": "finedge-solutions",
+  "xpansiv": "greenmarket-exchange",
+};
+
 // Person name replacements
 const PERSON_REPLACEMENTS: Record<string, string> = {
   "adrian": "Alex",
@@ -338,9 +357,12 @@ Return ONLY valid JSON:
     if (!jsonMatch) return [];
 
     const parsed = JSON.parse(jsonMatch[0]);
-    return parsed.checkpoints.map((cp: any, idx: number) => ({
-      id: `${dealName.toLowerCase().replace(/\s+/g, "_")}_cp_${String(idx + 1).padStart(3, "0")}`,
-      dealId: dealName.toLowerCase().replace(/\s+/g, "_"),
+    return parsed.checkpoints.map((cp: any, idx: number) => {
+      const rawId = dealName.toLowerCase().replace(/\s+/g, "-");
+      const dealId = DEAL_ID_MAP[rawId] || rawId;
+      return {
+      id: `${dealId}_cp_${String(idx + 1).padStart(3, "0")}`,
+      dealId,
       timestamp: cp.timestamp,
       context: {
         company: anonymizeText(dealName),
@@ -355,7 +377,7 @@ Return ONLY valid JSON:
         actualRisksThatMaterialized: (cp.risksAtThisPoint || []).map(anonymizeText),
         outcomeAtThisPoint: cp.outcomeAtCheckpoint || "progressing",
       },
-    }));
+    };});
   } catch (error) {
     console.error(`  LLM extraction failed for ${dealName}:`, error);
     return [];

@@ -1,0 +1,547 @@
+{
+  "id": "summit-learning",
+  "name": "Summit Learning",
+  "version": 2,
+  "artifacts": {
+    "tx_summit-learning_2026-01-21-zenith-discovery": {
+      "id": "tx_summit-learning_2026-01-21-zenith-discovery",
+      "dealId": "summit-learning",
+      "type": "transcript",
+      "title": "Summit Learning  &  Alex |  Meeting",
+      "rawText": "# Summit Learning  &  Alex |  Meeting\n\n## Meeting Details\n\n**Meeting ID:** 779af1f3-0bd7-4065-8625-486cfe875246\n\n**Date & Time:** Wednesday, January 21, 2026 at 7:15 PM UTC\n\n**Calendar Event ID:** 6u9g1hocncle9gd5mkflbgmoj0\n\n**Calendar Event Title:** Summit Learning  &  Alex |  Meeting\n\n**Organizer:** Alex Obleton (user@user)\n\n### Attendees\n\n- **Eugene** (user@user)\n- **Alex Obleton** (user@user)\n\n## My Notes\n\nSwitched from using calendly to SalesCloud for the main scheduler, with it has dropped the zaps that we need\n\nMainly ramped up the use of AutomateFlow to track their appointments, very helpful to connect it to their automations and TeamChat, and SalesCloud, now that we're moving in to the SalesCloud directly, our procedures are very simple, what questions did we send out, sending it over in TeamChat and keeping the SalesCloud updated\n\nRight now we two types of calls, we have our first call, then program director call where we dive in to deeper, first one where vast majority go we're talking about. 200 a week are compltely off calendly\n\n**How are they preparing for the calls\n\nThe first one it's cold leads we don't do any automation on our landing page, we're moving a bit more to a lead form, hopefully the page converts them they book a time, it's low friction we don't add a lot of detail, we dig in to the pain points there, the prep for the 200 one is very low, they're basically going in live, sometime we do have a call team, just to FlowBuilder sure timing and grade is right is a good fit, most of them do email\n\nIn theory it's all of them in theory we do get good results the problem the menial contacts we obviously email, if it's not email it's call and most of the call go to voicemaal\n\nThey suppposedly take notes in google docs and we take notes in SalesCloud, in theory SalesCloud they are using AI we have some pain points, program director basically gets their notes, which is a little bulky and clunky\n\nHave ~20 different source, they use paid ads for google and facebook, those probably FlowBuilder up 60% of our leads, the other half is our organic SEO then email , then we have an email base that we keep on hitting 2 to 3 times a week, they have a media buyer, who send us detailed report,\n\nThey use the google and facebook dashboards and we use UTMs, and sometimes that get's overridden\n\nThey use a round robin, using different landing pages within separate domains for lead sources, they have their own domains and sub domains in lead source\n\n## Meeting Notes\n\n### Current AutomateFlow Usage & Plan Changes\n\n- Switched from Calendly to SalesCloud native scheduler\n  - Dramatically reduced zap usage requirements\n  - Currently on 50K task plan, wants to drop to 25K this month\n  - Plans further reduction to 10-15K in Feb/March after completing Calendly transition\n- Historical usage: 80-85% of zaps were appointment tracking\n  - Connected automations to Excel sheets, TeamChat notifications\n  - SalesCloud workflows now handle most of these processes internally\n\n### Call Types & Volume\n\n- Two distinct appointment types:\n  1. Intake calls (first touch): \\~200/week - completely off Calendly\n  2. Program director calls (deeper consultation): 50-60/week - transitioning next 1-2 weeks\n- Round robin lead assignment using separate subdomains for each lead source\n- Current prep process creates operational challenges\n\n### Lead Generation & Attribution\n\n- \\~20 different lead sources generating prospects\n- Primary channels:\n  1. Google ads (30% of leads)\n  2. Facebook ads (30% of leads)\n  3. Organic SEO\n  4. Email campaigns (2-3x weekly to existing base)\n- Media buyer provides detailed ROAS reporting\n- Uses UTMs for tracking though sometimes overridden\n- Separate landing pages/subdomains per lead source\n\n### Process Pain Points & Opportunities\n\n- Pre-call outreach challenges:\n  - Target 100% contact rate but achieve only 60-70%\n  - Most calls go to voicemail with low engagement\n  - Automated emails sent but limited response\n- Note-taking workflow issues:\n  - Takes notes in Google Docs, manually adds to SalesCloud\n  - Program directors receive bulky/clunky CRM notes\n  - Limited time to review between intake and program calls\n  - SalesCloud AI features underutilized\n\n### Next Steps\n\n- Alex: Send examples of potential AutomateFlow automations within 1 week\n  - AI-powered lead outreach optimization\n  - Automated meeting prep briefs\n  - Centralized lead attribution system\n- Eugene: Downgrade plan in portal (self-service)\n- Follow-up meeting: Jan 28, 1:15 PM\n  - Review automation templates and implementation requirements\n  - Potentially include HR/Ops team members for broader use cases\n\n---\n\nChat with meeting transcript: [https://example.com/... AI.ai/t/e547c541-1a02-4acc-88c8-07d488e81985](https://example.com/... AI.ai/t/e547c541-1a02-4acc-88c8-07d488e81985)\n\n## Full Transcript\n\n \nThem: Recording in progress.  \nMe: Would be. A case to FlowBuilder. Sure everything. Going to. Be happening. On the outside. It's taken into account. Ing. And. You may see. A coup. Le of. How much? Okay? We. Have this to FlowBuilder it. By this policy. Driver. And then that target. More. Salon. The project. S James receive. When it comes to. Pie. It's. Ideas like a single as. Pect single bucket. Comp. Ound. Wind right now. One. Key question that I. Put. In this section here. Is. More and in. R. The process. That we are. Doing in my hand? What I need you to do. The way you lose. If you. Can take advantage. Of them. The. Action on that is. A graphic of. The case. You do it among. You. The thing. That. 's. What I want you to. Go. So that came from your. Perspective. Thank. You so much. And. If there's something else. Time. Is going to. Be done. Maybe. Not. In extremities. And then. While you're out. Here. I need to pay attention to. One is a marsh. Target. To FlowBuilder sure that you. Have. A. And then. Also. Things on june. We just need. A probable. Cause. There are. People who replace.  \nThem: Recording in progress.  \nMe: Hey, Eugene. How's it going?  \nThem: And great. Apologize for the delay. Has just been one of those days. Back to back meetings.  \nMe: I have been.  \nThem: Delays one and then the next one gets delayed and then just compounding effect.  \nMe: Hopefully. Hopefully this one we can get you back on track. Typically it doesn't take too, too long, but I know I saw you guys reached out initially, I actually apologize. I don't quite remember what the. Oh, no, you reach out to our you had chatted with our support team. You weren't able to get in touch, but I don't think we had specifically what you were chatting with them, what you were trying to get in touch for. So maybe we just start they are. Like, what. What was the sort of. What prompted you reach out about AutomateFlow initially? Like, what is the. What is the problem you guys were trying to solve?  \nThem: So I guess there's not much of a problem. We just switched from using Calendly as our main scheduler to our native CRM, which is SalesCloud with it. It has dropped the level of zaps that we need. So it's basically just we want to continue using AutomateFlow. We want to continue using access to it, but we're just looking for much lower tier plan and we wanted to talk to you and see maybe there's something that we're missing in AutomateFlow that we're doing that we could also use. So two things can we lower our plan from? I think. It's 50,000. And I think right now I'd suggest 25 for this upcoming month. And then maybe February or March, drop it down to even like 10 or 15 because moving off of the second call of Cali is going to further drop it. And then the second part is, maybe there's an opportunity there and AutomateFlow that we're just not using.  \nMe: Okay? So that's super helpful context, at least in terms of a starting point. In terms of, like, your current usage, I think. I think what you've laid out is exactly right. It looks like. Give me one second. Are you guys on the month? I'm looking at your account now. You're going to monthly or annual? Okay. It seems like you're on a monthly interval in terms. Of like, hey, we think we just need to drop down. You definitely can do that in the account. I think the next tier down below 50 is 20K, which would show what is going on there. For the second question, though, what are sort of like, other options of, like, places we could be potentially using? AutomateFlow could you talk to me a bit about what are some of the key processes in your SalesCloud system today? Because, actually, honestly, I'm kind of surprised. Like, moving to SalesCloud, we often sort of see the opposite trend where people are like, oh, there's a bunch more stuff we want to, like, connect to. SalesCloud. So could you talk to me a bit about what you guys are doing there?  \nThem: So mainly I ramped up the use of AutomateFlow when I was hired maybe about three years ago to basically track our appointment. So it was very helpful linking up AutomateFlow to just our automations, just being able to track it in an Excel sheet and TeamChat. And eventually and also with SalesCloud, now that we've kind of moved off calendly or slowly, are using the SalesCloud scheduler, a lot of those workflows are basically housed in SalesCloud.  \nMe: Makes sense.  \nThem: And it's very simple. Like our procedure is very simple. Did someone book a toll? What questions did they fill out and what time was their call? And then it just does sending all those notifications over in TeamChat and just keep being up. The SalesCloud form is updated. So that's basically what I would say. 80 or 85% of all our zaps have traditionally been used just basically tracking the calls.  \nMe: Right now, if I understand correctly, are you guys using like a SalesCloud TeamChat integration or AutomateFlow sitting between SalesCloud and TeamChat as that sort of like pipeline making that connection?  \nThem: Yeah, Right now, I guess. So we have two types of calls. We have obviously, our first, you can say intake call, and then we have our second customized program. We call program director call, where we actually dive in a little bit deeper to each of our leads as they come in. The first one is where the vast majority of our calls go. So we're talking about maybe 200 a week. And then the second one typically was around 50 to 60 a week. So the 201 is already completely off calendly and that's what majority of our calls and zap have gone. And now we're in the process of switching over. The second one probably won't be done for the next week or two. I don't know if I answered your question.  \nMe: No, you definitely. You definitely did. Transparently. This is just sort of me getting to your second question. Like, what are some potential options? So just, like, asking questions to, like, understand the process a bit. Could you help me understand how are people prepping for those meat? How is your team prepping for those meetings today? Like, what does it take for them to like. Okay, we had a lead come in. Here's the questions they answered. Like, what do they go into that conversation with? How long does it take them to prepare for that? And I imagine it's different for, like, the bigger ones versus, like, the 200 ones versus the second tier calls you talked about.  \nThem: Yes. So good point. And that's an area that we've struggled with a little bit. Mostly it's because the first ones are. It's called leads. They've seen our ads, they land on our landing page and they book. We don't typically do any automation under landing page. So if someone lands on our page and does not book. We don't capture their information. We're moving a little bit more to elite, forms a situation where we can actually get some of the emails from there. But basically they land on their page cold. Hopefully the page converts them. And they book a time. If they book a time, we have some questions that we fill out, like what grade they're in. Just basically low friction. We don't add a lot of. We don't need to dig into the pain points there. And that's what the basically onboarding call is. That's when we actually talk about. So the real preparation for that 201 is very low. Because they're basically going in blind with maybe a little bit of call sometimes. What we do is we do have a call team that once they do book, they're called. So that's why the notifications and TeamChat are so important, because that's how we reach out to them just to FlowBuilder sure. That the timing is right, the grade is right, it's a good fit. And then they take, maybe most of them email. So how it does warm up and it gets them a little bit more prepared. Really, that first call is pretty blind.  \nMe: Oh, sorry.  \nThem: Then go ahead, please.  \nMe: I was going to ask, like, how many of that, like 200 a week? How many of them are, like, getting that pre call follow up right now?  \nThem: I'd say.  \nMe: Is it like?  \nThem: In theory, it's all of them. I'd say maybe about 60 to 70%.  \nMe: Okay?  \nThem: Like we're missing some. Yeah.  \nMe: And like, I guess the follow up question is, like, do you, does it matter that you're missing, like, 30 to 40%? Like, do you see a difference in terms of, like, the conversion or how good those initial conversations are if you're able to, like, get this touch point? Or is it, like, nice to have but we don't really see a meaningful impact of whether or not we talk to them before or not.  \nThem: So we do get good results if we do, if we are able to contact them. The problem is the meaning of context. We have automated emails. But if it's not email, it's a call. And most of the calls go to voicemail. So while they are contacted, the vast majority don't engage. I guess that's the issue.  \nMe: We'll keep digging, but that's one place, like, just where my sort of spidey senses go off of, like, hey, this might be an option to, like, use AI here to, like, automate some of that, like, outreach. And then maybe your team only engages when someone responds to that first message. So, like, they're focused on, like, people, or they call people who have, like, opened that email instead. So, like, you have a bit higher signal there in terms of, like, where that team is spending their time. Okay, so that makes sense. So that's like the initial discovery call. Then it sounds like, okay, they'll have a conversation. If that goes well, we'll then have you meet with one of our. Like, I forgot the title you used, but it was like the program manager or something like that. What is. What do they go into that conversation with? Like, would that program manager's preparing. Like, what do they. What do they bring? What do they have to do to get set up?  \nThem: That's where we've been struggling. And I think that's the area opportunity of AutomateFlow can really come in. Supposedly we have, like, we take notes. So we take notes and Google Docs and then we add those notes to SalesCloud. But those notes are in theory, SalesCloud was supposed to use AI or the actual we have some pain points that we kind of break down in SalesCloud. Like there's some special customized properties in SalesCloud. But yeah, the program directors basically get those notes. Sometimes they have time to read it, sometimes they don't. And then just read everything in our CRM, which is little. I would say bulky or clumsy. So maybe there we could. We could work. I mean, I don't know the AutomateFlow capabilities, but AI could probably be pretty powerful, like making those notes.  \nMe: At least high level. Something like that could be super useful. Let me show you something real quick that I just. I use. I have an agent that runs every day. Let's see. Can I find. Am I not in? My. And of course it picks today not to run, so I don't have yours up in front of me. But here is one just as like another. As, like, an example of, like, the type of thing. So I have an agent. It runs every day, looks all by means. And I think this one ended up because we actually rescheduled this from our prior conversation. Right. So that's probably why our call wasn't picked up today. But this is, like, automatically generated. For me. It like looks through my emails, it looks through like the SalesCloud history, it looks through my gong called transcripts, kind of whatever is relevant there and sort of puts together like an actual brief for me on like what is, what's here, what's relevant. And I can see something. It's probably not exactly this, right? Because this is very much tailored to, like, me as a salesperson. But I could see something like this being used for, like, hey, here's a memo of, like, the three or four things that they answer those initial questions with that we heard on the first round of call. Here's the two questions we need to FlowBuilder sure you ask to, like, see which of our tiers they go to.  \nThem: Yeah.  \nMe: We find that, like, sort of like to be pretty helpful consistently.  \nThem: I agree. Yeah, that would be very helpful. Yeah.  \nMe: I can definitely send that as an example. Okay. And then on the other sort of end of the spectrum, could you talk to me a bit about just, like, the, like, marketing side of this? Like, how are. How do you guys keep track of, like, leads through, like, you're either social media, Are you tracking, like, return on ad spend against, like, some of those different routes like, could you talk to me a bit about how that works today?  \nThem: So we have different. We have like 20 different, you can say, lead sources. Some of our, we don't really do an organic social media, but we do use paid ads for Google and for Facebook. Those are two of our main ones. I think with those two together probably FlowBuilder up 60% of our leads. The other side you can say organic or SEO, our regular landing page, and then email. Like, we just have an email base that we keep on hitting, like, two or three times a week.  \nMe: Yeah.  \nThem: So I think those are like, the main ones in terms of paid ads. We have Media Buyer that sends us detailed reports, and for every dollar that we spend, We bring it in. How do we know which ad worked? Well, we've used the Google and Facebook dashboards that they're a little sometimes over attributing themselves like. But we'd use UTMs to track the actual ad. I know sometimes that gets overridden, so it's not 100% fine tuned, but it's what we're building towards.  \nMe: Y. Eah. That is another one where we have, like, sort of what we call, like, centralized lead routing. So we James. We can pull in from the Facebook Google and like, do some. Do some, like, AI magic. Be like, oh, like, you know, they're both counting this one based off of the thread here. This is actually go to Facebook. Like that kind of thing. And that sort of gives you a potentially a whole, like a broader picture on sort of those leads. And then I guess, maybe follow up question.  \nThem: Yeah.  \nMe: How is lead routing done? Is it, like, effective? Like around Robin system? Do you have, like, people who have, like, patches that they work? Like, when a lead come in, like, who on your team gets it or how that decided?  \nThem: Yeah, it's a straight round robin. We use a pretty archaic system, maybe of using different landing pages within separate domains for different lead sources. So, like, Facebook has its own domain in its own landing pages, and then Google has it set likewise. So we have different subdomains for every lead source. And then depending on the actual landing page. We have a tracking link that updates the lead source in SalesCloud, and that's how we know who's coming from where.  \nMe: Okay? That's super helpful. So, honestly, like, these are all, like, these are all use cases that we have lots of customers. There are templates that exist for these. We have customers who, like, use these types of things. I think these are the types of things that could be potentially helpful. What I might propose as a next step like, I think, like, you mentioned for the current uses that you have, you're going to, like, downgrade the plan. I think that makes sense. Maybe you and I touch base in a week, and I can, like, come with a couple of these, like, examples that we talk through. Like, hey, like, show you what this looks like. Show you, like, what it might take to, like, implement and see if any of these are, like, worth actually going to take to your team. The only. The only other thing I'll flag is like this has all been around like the go to market. Side of things. We have a whole other set of use cases which we haven't talked about around, like, oh, how are you handling HR funnel? Like, when someone applies the job, do we know they're a real person? I imagine there's, like, some kind of, like, operations involved. Like, so this was all, like, pre. Sale. Like, once you actually get someone as a client, like, how do we actually get them set up? Like, what stuff do we send them? Like, those types of things. As well, but I think that's like potentially like a whole nother thread that could potentially be interesting. But I think there's a couple of like, good use cases here from just what we talked about that could be worth digging deeper into.  \nThem: Great. Yeah, let's do it. I promise won't be late this time, and I appreciate the. Yeah. Appreciate the help. Yeah.  \nMe: Next. Actually, let me confirm. FlowBuilder sure I have that window open before I say that. Yeah, with the same time next week work.  \nThem: Next week.  \nMe: 20eigth.  \nThem: So it's about 1:15 at 1:30. One. Yep. Perfect. That works really well.  \nMe: Cool. I James send that over right after this. And then I'll also just send over, like, like a blurb of, like, hey, here's what lead zip we talked about. Here's some others that might be interesting. And then, like, if there are other people on your team that, like, are worth including, if there's like like an HR person or like an OPS person. That's worth including. Happy to have them join as well, but I James send over that invite P running any questions before then. And then in terms of like you're updating the account usage directly, you can downgrade to the plan that makes sense for you guys in the interim.  \nThem: Okay. Student in the portal.  \nMe: Yeah, exactly. It's self served on the portal. It's just like the same way you would go to upgrade. You would just like pick the. Pick the downgrade one.  \nThem: Okay. Okay. Well, that works out great, then.  \nMe: Cool. Awesome. Great, Eugene. We'll talk next week and hope you have a good weekend.  \nThem: Likewise.  \nMe: Bye. \n\n---\n\n**View in NoteFlow AI:** [https://example.com/... AI.ai/d/779af1f3-0bd7-4065-8625-486cfe875246](https://example.com/... AI.ai/d/779af1f3-0bd7-4065-8625-486cfe875246)\n",
+      "turns": [
+        {
+          "speaker": "them",
+          "text": "Recording in progress."
+        },
+        {
+          "speaker": "me",
+          "text": "Would be. A case to FlowBuilder. Sure everything. Going to. Be happening. On the outside. It's taken into account. Ing. And. You may see. A coup. Le of. How much? Okay? We. Have this to FlowBuilder it. By this policy. Driver. And then that target. More. Salon. The project. S James receive. When it comes to. Pie. It's. Ideas like a single as. Pect single bucket. Comp. Ound. Wind right now. One. Key question that I. Put. In this section here. Is. More and in. R. The process. That we are. Doing in my hand? What I need you to do. The way you lose. If you. Can take advantage. Of them. The. Action on that is. A graphic of. The case. You do it among. You. The thing. That. 's. What I want you to. Go. So that came from your. Perspective. Thank. You so much. And. If there's something else. Time. Is going to. Be done. Maybe. Not. In extremities. And then. While you're out. Here. I need to pay attention to. One is a marsh. Target. To FlowBuilder sure that you. Have. A. And then. Also. Things on june. We just need. A probable. Cause. There are. People who replace."
+        },
+        {
+          "speaker": "them",
+          "text": "Recording in progress."
+        },
+        {
+          "speaker": "me",
+          "text": "Hey, Eugene. How's it going?"
+        },
+        {
+          "speaker": "them",
+          "text": "And great. Apologize for the delay. Has just been one of those days. Back to back meetings."
+        },
+        {
+          "speaker": "me",
+          "text": "I have been."
+        },
+        {
+          "speaker": "them",
+          "text": "Delays one and then the next one gets delayed and then just compounding effect."
+        },
+        {
+          "speaker": "me",
+          "text": "Hopefully. Hopefully this one we can get you back on track. Typically it doesn't take too, too long, but I know I saw you guys reached out initially, I actually apologize. I don't quite remember what the. Oh, no, you reach out to our you had chatted with our support team. You weren't able to get in touch, but I don't think we had specifically what you were chatting with them, what you were trying to get in touch for. So maybe we just start they are. Like, what. What was the sort of. What prompted you reach out about AutomateFlow initially? Like, what is the. What is the problem you guys were trying to solve?"
+        },
+        {
+          "speaker": "them",
+          "text": "So I guess there's not much of a problem. We just switched from using Calendly as our main scheduler to our native CRM, which is SalesCloud with it. It has dropped the level of zaps that we need. So it's basically just we want to continue using AutomateFlow. We want to continue using access to it, but we're just looking for much lower tier plan and we wanted to talk to you and see maybe there's something that we're missing in AutomateFlow that we're doing that we could also use. So two things can we lower our plan from? I think. It's 50,000. And I think right now I'd suggest 25 for this upcoming month. And then maybe February or March, drop it down to even like 10 or 15 because moving off of the second call of Cali is going to further drop it. And then the second part is, maybe there's an opportunity there and AutomateFlow that we're just not using."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay? So that's super helpful context, at least in terms of a starting point. In terms of, like, your current usage, I think. I think what you've laid out is exactly right. It looks like. Give me one second. Are you guys on the month? I'm looking at your account now. You're going to monthly or annual? Okay. It seems like you're on a monthly interval in terms. Of like, hey, we think we just need to drop down. You definitely can do that in the account. I think the next tier down below 50 is 20K, which would show what is going on there. For the second question, though, what are sort of like, other options of, like, places we could be potentially using? AutomateFlow could you talk to me a bit about what are some of the key processes in your SalesCloud system today? Because, actually, honestly, I'm kind of surprised. Like, moving to SalesCloud, we often sort of see the opposite trend where people are like, oh, there's a bunch more stuff we want to, like, connect to. SalesCloud. So could you talk to me a bit about what you guys are doing there?"
+        },
+        {
+          "speaker": "them",
+          "text": "So mainly I ramped up the use of AutomateFlow when I was hired maybe about three years ago to basically track our appointment. So it was very helpful linking up AutomateFlow to just our automations, just being able to track it in an Excel sheet and TeamChat. And eventually and also with SalesCloud, now that we've kind of moved off calendly or slowly, are using the SalesCloud scheduler, a lot of those workflows are basically housed in SalesCloud."
+        },
+        {
+          "speaker": "me",
+          "text": "Makes sense."
+        },
+        {
+          "speaker": "them",
+          "text": "And it's very simple. Like our procedure is very simple. Did someone book a toll? What questions did they fill out and what time was their call? And then it just does sending all those notifications over in TeamChat and just keep being up. The SalesCloud form is updated. So that's basically what I would say. 80 or 85% of all our zaps have traditionally been used just basically tracking the calls."
+        },
+        {
+          "speaker": "me",
+          "text": "Right now, if I understand correctly, are you guys using like a SalesCloud TeamChat integration or AutomateFlow sitting between SalesCloud and TeamChat as that sort of like pipeline making that connection?"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, Right now, I guess. So we have two types of calls. We have obviously, our first, you can say intake call, and then we have our second customized program. We call program director call, where we actually dive in a little bit deeper to each of our leads as they come in. The first one is where the vast majority of our calls go. So we're talking about maybe 200 a week. And then the second one typically was around 50 to 60 a week. So the 201 is already completely off calendly and that's what majority of our calls and zap have gone. And now we're in the process of switching over. The second one probably won't be done for the next week or two. I don't know if I answered your question."
+        },
+        {
+          "speaker": "me",
+          "text": "No, you definitely. You definitely did. Transparently. This is just sort of me getting to your second question. Like, what are some potential options? So just, like, asking questions to, like, understand the process a bit. Could you help me understand how are people prepping for those meat? How is your team prepping for those meetings today? Like, what does it take for them to like. Okay, we had a lead come in. Here's the questions they answered. Like, what do they go into that conversation with? How long does it take them to prepare for that? And I imagine it's different for, like, the bigger ones versus, like, the 200 ones versus the second tier calls you talked about."
+        },
+        {
+          "speaker": "them",
+          "text": "Yes. So good point. And that's an area that we've struggled with a little bit. Mostly it's because the first ones are. It's called leads. They've seen our ads, they land on our landing page and they book. We don't typically do any automation under landing page. So if someone lands on our page and does not book. We don't capture their information. We're moving a little bit more to elite, forms a situation where we can actually get some of the emails from there. But basically they land on their page cold. Hopefully the page converts them. And they book a time. If they book a time, we have some questions that we fill out, like what grade they're in. Just basically low friction. We don't add a lot of. We don't need to dig into the pain points there. And that's what the basically onboarding call is. That's when we actually talk about. So the real preparation for that 201 is very low. Because they're basically going in blind with maybe a little bit of call sometimes. What we do is we do have a call team that once they do book, they're called. So that's why the notifications and TeamChat are so important, because that's how we reach out to them just to FlowBuilder sure. That the timing is right, the grade is right, it's a good fit. And then they take, maybe most of them email. So how it does warm up and it gets them a little bit more prepared. Really, that first call is pretty blind."
+        },
+        {
+          "speaker": "me",
+          "text": "Oh, sorry."
+        },
+        {
+          "speaker": "them",
+          "text": "Then go ahead, please."
+        },
+        {
+          "speaker": "me",
+          "text": "I was going to ask, like, how many of that, like 200 a week? How many of them are, like, getting that pre call follow up right now?"
+        },
+        {
+          "speaker": "them",
+          "text": "I'd say."
+        },
+        {
+          "speaker": "me",
+          "text": "Is it like?"
+        },
+        {
+          "speaker": "them",
+          "text": "In theory, it's all of them. I'd say maybe about 60 to 70%."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "Like we're missing some. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "And like, I guess the follow up question is, like, do you, does it matter that you're missing, like, 30 to 40%? Like, do you see a difference in terms of, like, the conversion or how good those initial conversations are if you're able to, like, get this touch point? Or is it, like, nice to have but we don't really see a meaningful impact of whether or not we talk to them before or not."
+        },
+        {
+          "speaker": "them",
+          "text": "So we do get good results if we do, if we are able to contact them. The problem is the meaning of context. We have automated emails. But if it's not email, it's a call. And most of the calls go to voicemail. So while they are contacted, the vast majority don't engage. I guess that's the issue."
+        },
+        {
+          "speaker": "me",
+          "text": "We'll keep digging, but that's one place, like, just where my sort of spidey senses go off of, like, hey, this might be an option to, like, use AI here to, like, automate some of that, like, outreach. And then maybe your team only engages when someone responds to that first message. So, like, they're focused on, like, people, or they call people who have, like, opened that email instead. So, like, you have a bit higher signal there in terms of, like, where that team is spending their time. Okay, so that makes sense. So that's like the initial discovery call. Then it sounds like, okay, they'll have a conversation. If that goes well, we'll then have you meet with one of our. Like, I forgot the title you used, but it was like the program manager or something like that. What is. What do they go into that conversation with? Like, would that program manager's preparing. Like, what do they. What do they bring? What do they have to do to get set up?"
+        },
+        {
+          "speaker": "them",
+          "text": "That's where we've been struggling. And I think that's the area opportunity of AutomateFlow can really come in. Supposedly we have, like, we take notes. So we take notes and Google Docs and then we add those notes to SalesCloud. But those notes are in theory, SalesCloud was supposed to use AI or the actual we have some pain points that we kind of break down in SalesCloud. Like there's some special customized properties in SalesCloud. But yeah, the program directors basically get those notes. Sometimes they have time to read it, sometimes they don't. And then just read everything in our CRM, which is little. I would say bulky or clumsy. So maybe there we could. We could work. I mean, I don't know the AutomateFlow capabilities, but AI could probably be pretty powerful, like making those notes."
+        },
+        {
+          "speaker": "me",
+          "text": "At least high level. Something like that could be super useful. Let me show you something real quick that I just. I use. I have an agent that runs every day. Let's see. Can I find. Am I not in? My. And of course it picks today not to run, so I don't have yours up in front of me. But here is one just as like another. As, like, an example of, like, the type of thing. So I have an agent. It runs every day, looks all by means. And I think this one ended up because we actually rescheduled this from our prior conversation. Right. So that's probably why our call wasn't picked up today. But this is, like, automatically generated. For me. It like looks through my emails, it looks through like the SalesCloud history, it looks through my gong called transcripts, kind of whatever is relevant there and sort of puts together like an actual brief for me on like what is, what's here, what's relevant. And I can see something. It's probably not exactly this, right? Because this is very much tailored to, like, me as a salesperson. But I could see something like this being used for, like, hey, here's a memo of, like, the three or four things that they answer those initial questions with that we heard on the first round of call. Here's the two questions we need to FlowBuilder sure you ask to, like, see which of our tiers they go to."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "We find that, like, sort of like to be pretty helpful consistently."
+        },
+        {
+          "speaker": "them",
+          "text": "I agree. Yeah, that would be very helpful. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "I can definitely send that as an example. Okay. And then on the other sort of end of the spectrum, could you talk to me a bit about just, like, the, like, marketing side of this? Like, how are. How do you guys keep track of, like, leads through, like, you're either social media, Are you tracking, like, return on ad spend against, like, some of those different routes like, could you talk to me a bit about how that works today?"
+        },
+        {
+          "speaker": "them",
+          "text": "So we have different. We have like 20 different, you can say, lead sources. Some of our, we don't really do an organic social media, but we do use paid ads for Google and for Facebook. Those are two of our main ones. I think with those two together probably FlowBuilder up 60% of our leads. The other side you can say organic or SEO, our regular landing page, and then email. Like, we just have an email base that we keep on hitting, like, two or three times a week."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "So I think those are like, the main ones in terms of paid ads. We have Media Buyer that sends us detailed reports, and for every dollar that we spend, We bring it in. How do we know which ad worked? Well, we've used the Google and Facebook dashboards that they're a little sometimes over attributing themselves like. But we'd use UTMs to track the actual ad. I know sometimes that gets overridden, so it's not 100% fine tuned, but it's what we're building towards."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Eah. That is another one where we have, like, sort of what we call, like, centralized lead routing. So we James. We can pull in from the Facebook Google and like, do some. Do some, like, AI magic. Be like, oh, like, you know, they're both counting this one based off of the thread here. This is actually go to Facebook. Like that kind of thing. And that sort of gives you a potentially a whole, like a broader picture on sort of those leads. And then I guess, maybe follow up question."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "How is lead routing done? Is it, like, effective? Like around Robin system? Do you have, like, people who have, like, patches that they work? Like, when a lead come in, like, who on your team gets it or how that decided?"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, it's a straight round robin. We use a pretty archaic system, maybe of using different landing pages within separate domains for different lead sources. So, like, Facebook has its own domain in its own landing pages, and then Google has it set likewise. So we have different subdomains for every lead source. And then depending on the actual landing page. We have a tracking link that updates the lead source in SalesCloud, and that's how we know who's coming from where."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay? That's super helpful. So, honestly, like, these are all, like, these are all use cases that we have lots of customers. There are templates that exist for these. We have customers who, like, use these types of things. I think these are the types of things that could be potentially helpful. What I might propose as a next step like, I think, like, you mentioned for the current uses that you have, you're going to, like, downgrade the plan. I think that makes sense. Maybe you and I touch base in a week, and I can, like, come with a couple of these, like, examples that we talk through. Like, hey, like, show you what this looks like. Show you, like, what it might take to, like, implement and see if any of these are, like, worth actually going to take to your team. The only. The only other thing I'll flag is like this has all been around like the go to market. Side of things. We have a whole other set of use cases which we haven't talked about around, like, oh, how are you handling HR funnel? Like, when someone applies the job, do we know they're a real person? I imagine there's, like, some kind of, like, operations involved. Like, so this was all, like, pre. Sale. Like, once you actually get someone as a client, like, how do we actually get them set up? Like, what stuff do we send them? Like, those types of things. As well, but I think that's like potentially like a whole nother thread that could potentially be interesting. But I think there's a couple of like, good use cases here from just what we talked about that could be worth digging deeper into."
+        },
+        {
+          "speaker": "them",
+          "text": "Great. Yeah, let's do it. I promise won't be late this time, and I appreciate the. Yeah. Appreciate the help. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Next. Actually, let me confirm. FlowBuilder sure I have that window open before I say that. Yeah, with the same time next week work."
+        },
+        {
+          "speaker": "them",
+          "text": "Next week."
+        },
+        {
+          "speaker": "me",
+          "text": "20eigth."
+        },
+        {
+          "speaker": "them",
+          "text": "So it's about 1:15 at 1:30. One. Yep. Perfect. That works really well."
+        },
+        {
+          "speaker": "me",
+          "text": "Cool. I James send that over right after this. And then I'll also just send over, like, like a blurb of, like, hey, here's what lead zip we talked about. Here's some others that might be interesting. And then, like, if there are other people on your team that, like, are worth including, if there's like like an HR person or like an OPS person. That's worth including. Happy to have them join as well, but I James send over that invite P running any questions before then. And then in terms of like you're updating the account usage directly, you can downgrade to the plan that makes sense for you guys in the interim."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay. Student in the portal."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah, exactly. It's self served on the portal. It's just like the same way you would go to upgrade. You would just like pick the. Pick the downgrade one."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay. Okay. Well, that works out great, then."
+        },
+        {
+          "speaker": "me",
+          "text": "Cool. Awesome. Great, Eugene. We'll talk next week and hope you have a good weekend."
+        },
+        {
+          "speaker": "them",
+          "text": "Likewise."
+        },
+        {
+          "speaker": "me",
+          "text": "Bye."
+        }
+      ],
+      "attendees": [
+        "Eugene",
+        "Alex Obleton"
+      ],
+      "date": "2026-01-21",
+      "duration": 32,
+      "keyTakeaways": [],
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/zenith-prep-academy/transcripts/2026-01-21-zenith-discovery.md",
+      "createdAt": "2026-01-25T05:23:53.291Z",
+      "anonymized": true
+    },
+    "summit-learning_crm_snapshot": {
+      "id": "summit-learning_crm_snapshot",
+      "dealId": "summit-learning",
+      "type": "crm_snapshot",
+      "sourceFile": "context.md",
+      "createdAt": "2026-01-21",
+      "anonymized": true,
+      "dealProperties": {
+        "stage": "Discovery Complete - Building Business Case",
+        "amount": "Current $50K ARR → At risk of $10-15K. Opportunity to defend or expand to $100K.",
+        "closeDate": "Renewal 2026-02-17 | Next meeting: Jan 28, 1:15 PM",
+        "lastContactedDate": "2026-01-21"
+      },
+      "contacts": [],
+      "notes": [],
+      "activityLog": []
+    },
+    "doc_summit-learning_discovery-prep": {
+      "id": "doc_summit-learning_discovery-prep",
+      "dealId": "summit-learning",
+      "type": "document",
+      "title": "discovery-prep",
+      "documentType": "other",
+      "content": "# Summit Learning - Discovery Call Prep\n\n**Contact**: Eugene Leaman Jones, Director\n**Account**: Team 50K ($7.2K ARR), renews Feb 17\n**Trigger**: Submitted \"Review our plan\" from pricing page, selected \"Sales Assist\" AI preference\n\n---\n\n## Call Objectives\n\n1. **Understand the trigger** - Why now? What's driving the \"review our plan\" request?\n2. **Map the stakeholders** - Eugene vs Kevin vs executive sponsor. Who decides?\n3. **Surface metrics** - Lead volumes, conversion rates, time costs. Build ROI case quietly.\n4. **Validate AI interest** - He's engaging with AI content. Is this real or casual?\n5. **Identify the real pain** - Governance? Cost? Capability gaps? Growth constraints?\n\n---\n\n## What We Know Going In\n\n| Fact | Source |\n|------|--------|\n| 37K tasks/month, 74% of plan cap | Usage data |\n| 46 active Zaps, mostly lead management + sales pipeline | Zap analysis |\n| Kevin owns 71 Zaps, 1.38M lifetime tasks | Account data |\n| Downgraded 100K → 50K in March 2025 | Account history |\n| Previous deal closed lost March 2025 | SalesCloud |\n| Eugene opened your email 10x | Email tracking |\n| Eugene opened AI All Hands email 3x | Marketing data |\n| Selected \"Sales Assist\" as AI preference | Form submission |\n| Recent Typeform integration + folder sharing | Activity log |\n| Support incidents: single-owner lockouts, Calendly bugs | Support tickets |\n\n---\n\n## Discovery Questions\n\n### Opening / Trigger\n*Goal: Understand what prompted outreach and set the agenda*\n\n- \"You mentioned wanting to review your plan - what's driving that conversation right now?\"\n- \"What would FlowBuilder this call successful for you?\"\n- \"Is this about optimizing what you have, or thinking about what's next?\"\n\n### Current State / Usage\n*Goal: Map how they use AutomateFlow and who owns it*\n\n- \"Walk me through how your team uses AutomateFlow today. Who's building? Who's using?\"\n- \"I see you have some pretty sophisticated workflows - lead routing, sales pipeline stuff. Who owns that?\"\n- \"How did AutomateFlow become part of your operations? Was it a deliberate choice or did it grow organically?\"\n\n**Listen for**: Kevin's role, whether Eugene is trying to take ownership, org structure\n\n### Metrics / Volume Probing\n*Goal: Surface ROI inputs without making it feel like a qualification exercise*\n\n- \"How many leads are flowing through these automations each month?\" *(volume)*\n- \"What's your enrollment cycle look like - how many families do you typically work with at any given time?\" *(scale)*\n- \"When a lead comes in, what's the journey from first touch to enrolled student?\" *(process complexity)*\n- \"How many people touch that process manually vs. automated?\" *(FTE proxy)*\n- \"What happens when something breaks - like that Calendly issue? How long does it take to sort out?\" *(downtime cost)*\n\n**Math to do quietly**:\n- Leads/month × conversion rate × avg deal value = revenue dependent on automation\n- Manual touches × time per touch × hourly rate = labor being saved\n- Incidents × hours to resolve × people involved = downtime cost\n\n### Pain / Problems\n*Goal: Find the thing that hurts enough to drive action*\n\n- \"What's working well with your current setup? What's frustrating?\"\n- \"If you could wave a magic wand and fix one thing about how you use AutomateFlow, what would it be?\"\n- \"I noticed there were some access issues in the past - people getting locked out, Zaps going down. How did that impact the team?\"\n- \"How do you handle it when Kevin's unavailable and something needs to change?\"\n\n**Listen for**: Governance pain, single-owner risk acknowledgment, growth constraints\n\n### AI / Future State\n*Goal: Validate the \"Sales Assist\" signal and understand ambition*\n\n- \"You mentioned interest in Sales Assist when you reached out. What were you thinking about there?\"\n- \"I saw you've been checking out some of our AI content - is that something you're exploring?\"\n- \"Where do you see AI fitting into your admissions process?\"\n- \"If you could automate more of the sales/enrollment process, what would that free up?\"\n\n**Listen for**: Specific use cases, sophistication level, budget signals for expansion\n\n### Decision Process / Stakeholders\n*Goal: Map the buying committee*\n\n- \"If you decided to FlowBuilder changes to your plan, who else would need to weigh in?\"\n- \"How do technology decisions typically get made at Summit Learning?\"\n- \"Is there a budget owner I should be thinking about looping in?\"\n\n**Listen for**: Economic buyer identity, procurement process, approval requirements\n\n### Timeline / Urgency\n*Goal: Understand if renewal is the forcing function*\n\n- \"Your plan renews mid-February - is that driving any of this timing?\"\n- \"What would need to happen for you to feel good about the path forward before renewal?\"\n- \"Is there a decision timeline I should be aware of?\"\n\n---\n\n## ROI Inputs to Capture\n\n| Input | Question to Surface It |\n|-------|----------------------|\n| **Lead volume/month** | \"How many leads flow through these automations?\" |\n| **Conversion rate** | \"What percentage of leads become enrolled students?\" |\n| **Avg deal value** | \"What's a typical engagement worth?\" (tuition/package) |\n| **Team size on ops** | \"How many people touch the enrollment process?\" |\n| **Hours saved/week** | \"Before automation, how long did [X process] take?\" |\n| **Incident frequency** | \"How often do things break or need fixing?\" |\n| **Incident cost** | \"When something goes down, what's the scramble like?\" |\n| **Current manual gaps** | \"What's still done by hand that you wish wasn't?\" |\n\n**Rough benchmarks** (if they don't share specifics):\n- College consulting packages: $5K-50K+ per student\n- Lead-to-enrollment: 5-15% typical for premium services\n- Ops hourly rate: $50-75/hr\n\n---\n\n## Things to Listen For\n\n**Green flags** (expansion opportunity):\n- \"We want to do more with AI\"\n- \"Kevin built this but we need to scale it\"\n- \"We're hitting limits\"\n- \"Other teams want access\"\n- Mentions of growth, new programs, expansion\n\n**Yellow flags** (needs validation):\n- \"Just want to review pricing\"\n- \"Making sure we're on the right plan\"\n- Vague on decision process\n- Doesn't know the usage details\n\n**Red flags** (cost-cutting):\n- \"Looking to reduce spend\"\n- \"Not sure we need all this\"\n- \"Exploring other options\"\n- Mentions of budget cuts, layoffs\n\n---\n\n## Possible Outcomes & Next Steps\n\n| If they say... | Then propose... |\n|----------------|-----------------|\n| \"We want AI capabilities\" | Demo of AI by AutomateFlow / Agents, position Enterprise |\n| \"Kevin owns everything, that's a problem\" | Governance conversation, Enterprise SSO/admin pitch |\n| \"We're hitting task limits\" | Task pack or plan upgrade, usage optimization review |\n| \"We have multiple accounts\" | Consolidation proposal, Teams → Enterprise path |\n| \"Just checking pricing\" | Value reinforcement, ROI walkthrough, protect the renewal |\n| \"We're evaluating alternatives\" | Competitive positioning, understand who else |\n\n---\n\n## Pre-Call Checklist\n\n- [ ] Have ROI calculator ready to build live if conversation goes there\n- [ ] Know the Enterprise vs Team 50K feature diff (SSO, SCIM, TAM, task limits)\n- [ ] Have AI by AutomateFlow / Agents demo ready if AI interest is real\n- [ ] Prep consolidation math if multiple accounts come up\n\n---\n\n## Notes Template (Fill During Call)\n\n**Trigger**: Why did Eugene reach out now?\n\n\n**Current state**: How do they use AutomateFlow today?\n\n\n**Stakeholders**: Who else is involved?\n\n\n**Pain**: What's the real problem?\n\n\n**AI interest**: Real or casual?\n\n\n**Metrics captured**:\n- Leads/month:\n- Conversion rate:\n- Avg deal value:\n- Team size:\n- Hours saved:\n\n\n**Decision process**: Who decides? Timeline?\n\n\n**Next step agreed**:\n\n\n**My read**: Expansion / Retention / At-risk?\n\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/zenith-prep-academy/outputs/discovery-prep.md",
+      "createdAt": "2026-01-25T05:23:53.290Z",
+      "anonymized": true
+    },
+    "doc_summit-learning_follow-up-email": {
+      "id": "doc_summit-learning_follow-up-email",
+      "dealId": "summit-learning",
+      "type": "document",
+      "title": "follow-up-email",
+      "documentType": "docx",
+      "content": "Hey Eugene,\n\n\n\nGreat chatting today. Calendar hold is sent for next week.\n\n\n\nAs promised, here are the two things I mentioned:\n\n\n\n1. Meeting prep agent — This is the template for what I showed you (mine is a customized version). It scans your calendar each morning, researches the people you're meeting with, and drops a brief into TeamChat before each call. For your PD calls, we could adapt this to pull intake notes + SalesCloud history and give your program directors a 3-point summary before each conversation.\n\n→ Sales Prep Agent Template\n\n\n\n2. Lead engagement templates — A few options here for the pre-call outreach gap you mentioned. The \"Automated Lead Capture and Follow-Up\" one is interesting for getting AI to do the initial touch, so your team only jumps in when someone actually engages.\n\n→ Lead Management Templates\n\n\n\nFor next week, I'll come prepared to walk through what implementation would actually look like for the meeting prep use case specifically — that seemed like the one with the most immediate impact.\n\n\n\nOne question: you mentioned there might be HR or ops use cases worth exploring too. If there's someone on that side who'd want to join, happy to include them. Otherwise we can keep it focused on the GTM stuff.\n\n\n\nTalk next week,\n\nAlex",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/zenith-prep-academy/outputs/follow-up-email.docx",
+      "createdAt": "2026-01-25T05:23:53.290Z",
+      "anonymized": true
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "summit-learning_v2_cp_001",
+      "dealId": "summit-learning",
+      "version": 2,
+      "timestamp": "2026-01-25T05:23:53.290Z",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_summit-learning_2026-01-21-zenith-discovery",
+          "type": "transcript",
+          "title": "Summit Learning  &  Alex |  Meeting",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "summit-learning_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery Complete - Building Business Case",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "doc_summit-learning_discovery-prep",
+          "type": "document",
+          "title": "discovery-prep",
+          "date": "2026-01-25T05:23:53.289Z"
+        },
+        {
+          "artifactId": "doc_summit-learning_follow-up-email",
+          "type": "document",
+          "title": "follow-up-email",
+          "date": "2026-01-25T05:23:53.290Z"
+        },
+        {
+          "artifactId": "doc_summit-learning_follow-up-email",
+          "type": "document",
+          "title": "follow-up-email",
+          "date": "2026-01-25T05:23:53.290Z"
+        },
+        {
+          "artifactId": "doc_summit-learning_discovery-prep",
+          "type": "document",
+          "title": "discovery-prep",
+          "date": "2026-01-25T05:23:53.290Z"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "Summit Learning",
+        "stage": "Discovery Complete - Building Business Case",
+        "amount": "Current $50K ARR → At risk of $10-15K. Opportunity to defend or expand to $100K.",
+        "daysSinceFirstContact": 4
+      },
+      "stakeholders": [],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "summit-learning_v2_cp_001_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_summit-learning_2026-01-21-zenith-discovery",
+            "summit-learning_crm_snapshot",
+            "doc_summit-learning_discovery-prep"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "summit-learning_v2_cp_001_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_summit-learning_2026-01-21-zenith-discovery"
+          ],
+          "optionalArtifacts": [
+            "summit-learning_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "summit-learning_v2_cp_001_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_summit-learning_2026-01-21-zenith-discovery"
+          ],
+          "optionalArtifacts": [
+            "summit-learning_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        },
+        {
+          "id": "summit-learning_v2_cp_001_task_stakeholder",
+          "type": "stakeholder_analysis",
+          "prompt": "Map the key stakeholders in this deal. For each, identify their role in the decision process, sentiment, concerns, and level of influence. Identify any missing stakeholders that should be engaged.",
+          "requiredArtifacts": [
+            "tx_summit-learning_2026-01-21-zenith-discovery",
+            "summit-learning_crm_snapshot",
+            "doc_summit-learning_discovery-prep",
+            "doc_summit-learning_follow-up-email"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "stakeholderMapping",
+            "dealQualification",
+            "informationSynthesis"
+          ],
+          "maxTurns": 2
+        }
+      ]
+    },
+    {
+      "id": "summit-learning_v2_cp_002",
+      "dealId": "summit-learning",
+      "version": 2,
+      "timestamp": "2026-01-25T05:23:53.290Z",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_summit-learning_2026-01-21-zenith-discovery",
+          "type": "transcript",
+          "title": "Summit Learning  &  Alex |  Meeting",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "summit-learning_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery Complete - Building Business Case",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "doc_summit-learning_discovery-prep",
+          "type": "document",
+          "title": "discovery-prep",
+          "date": "2026-01-25T05:23:53.289Z"
+        },
+        {
+          "artifactId": "doc_summit-learning_follow-up-email",
+          "type": "document",
+          "title": "follow-up-email",
+          "date": "2026-01-25T05:23:53.290Z"
+        },
+        {
+          "artifactId": "doc_summit-learning_follow-up-email",
+          "type": "document",
+          "title": "follow-up-email",
+          "date": "2026-01-25T05:23:53.290Z"
+        },
+        {
+          "artifactId": "doc_summit-learning_discovery-prep",
+          "type": "document",
+          "title": "discovery-prep",
+          "date": "2026-01-25T05:23:53.290Z"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "Summit Learning",
+        "stage": "Discovery Complete - Building Business Case",
+        "amount": "Current $50K ARR → At risk of $10-15K. Opportunity to defend or expand to $100K.",
+        "daysSinceFirstContact": 4
+      },
+      "stakeholders": [],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "summit-learning_v2_cp_002_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_summit-learning_2026-01-21-zenith-discovery",
+            "summit-learning_crm_snapshot",
+            "doc_summit-learning_discovery-prep"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "summit-learning_v2_cp_002_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_summit-learning_2026-01-21-zenith-discovery"
+          ],
+          "optionalArtifacts": [
+            "summit-learning_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "summit-learning_v2_cp_002_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_summit-learning_2026-01-21-zenith-discovery"
+          ],
+          "optionalArtifacts": [
+            "summit-learning_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        },
+        {
+          "id": "summit-learning_v2_cp_002_task_stakeholder",
+          "type": "stakeholder_analysis",
+          "prompt": "Map the key stakeholders in this deal. For each, identify their role in the decision process, sentiment, concerns, and level of influence. Identify any missing stakeholders that should be engaged.",
+          "requiredArtifacts": [
+            "tx_summit-learning_2026-01-21-zenith-discovery",
+            "summit-learning_crm_snapshot",
+            "doc_summit-learning_discovery-prep",
+            "doc_summit-learning_follow-up-email"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "stakeholderMapping",
+            "dealQualification",
+            "informationSynthesis"
+          ],
+          "maxTurns": 2
+        }
+      ]
+    }
+  ],
+  "finalOutcome": "active",
+  "metadata": {
+    "sourceDeals": [
+      "zenith-prep-academy"
+    ],
+    "transcriptCount": 1,
+    "artifactCount": 6,
+    "dateRange": {
+      "start": "2026-01-21",
+      "end": "2026-01-25T05:23:53.290Z"
+    }
+  }
+}

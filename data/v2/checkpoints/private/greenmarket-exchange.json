@@ -1,0 +1,654 @@
+{
+  "id": "greenmarket-exchange",
+  "name": "GreenMarket Exchange",
+  "version": 2,
+  "artifacts": {
+    "tx_greenmarket-exchange_260116-discovery": {
+      "id": "tx_greenmarket-exchange_260116-discovery",
+      "dealId": "greenmarket-exchange",
+      "type": "transcript",
+      "title": "Untitled Meeting",
+      "rawText": "Meeting Title: GreenMarket Exchange &  Alex |  Meeting\nDate: Jan 16\nMeeting participants: Lkartik, Eric Mooney\n\nTranscript:\n \nThem: Recording in progress. Alex.  \nMe: Hi, eric. How are you doing?  \nThem: Great. How about you?  \nMe: Doing well.  \nThem: My colleague Lavanya should be joining in. Just a second here.  \nMe: Sounds good. Where are you calling in from? Where's home?  \nThem: I'm in Boston area. How about you?  \nMe: Very cool. I'm in austin. I spent four, three. Four years in Boston. I worked there for a bit of PE fund in grad school up there.  \nThem: Oh, sweet.  \nMe: Yeah.  \nThem: Yeah, I have a couple friends. One work. That Bain. I don't know. Are there other? You said PE firms.  \nMe: Yeah, yeah. Bain Cap is definitely one of the big ones there. I was a TA Associates. If that means any of you know that at all.  \nThem: Got it. Nice. Nice. A little bit warmer down in Austin, that's for sure.  \nMe: Definitely. And. Okay. This is really. I was trying to figure out. I feel like we might have met before. I saw your name and I feel like I recognize it. And you saying you lived in Boston? I'm wondering if maybe we just, like, went to an event at the same time thing. I don't know, but I was just like. I saw. I saw your name and it was like. It looks so familiar now that you're telling. I wonder if we. Sorry.  \nThem: Maybe. Yeah. When. When were you here? I guess.  \nMe: I was there. So 2019 through 2023 is when I was in Boston, so I moved there. December of 2019 was when I first moved there to start my job at TA and then stayed there through 2023 for grad school.  \nThem: Okay? Got it. So, yeah, I was. Oh, where was grad school?  \nMe: Hbs.  \nThem: Okay. Got it. Yeah, I. I was at bu and I'm trying to think if there was other, but I was there. I was at BU through. 2017, and then I moved out 2021 and then came back in 2023. So it would have had to be the first couple years. Who knows? Yeah, maybe. Hey, Lavania.  \nMe: Yes. I don't know. How are you doing?  \nThem: I'm doing good. Alex, nice to meet you.  \nMe: Nice to meet you as well. Appreciate you guys taking the time to chat with me today.  \nThem: Absolutely. Seems like, Eric, you and Alex have something in common. Yeah, we're just wondering if we ever overlapped. Like, I feel like there's maybe a chance. You know, who knows? I'm having trouble recalling, but maybe.  \nMe: I was just telling him I have a weird sense of, like, deja vu with his name, so I wasn't sure if I was making that up or. We had met at some point in the past, so that.  \nThem: Definitely could have. Unfortunately, my memory is, like, probably the worst there is.  \nMe: I'm a liki Seb, but sorry, no. That's just interesting. So let's honestly, like, use the time. I know Lavanya, you initially reached out about some, like, broader products that you guys are doing. Could you just talk to me a bit about, like, what is, like, the overall, like, problem you're trying to solve? How are you. How did you get to like, oh, AutomateFlow might be a fit for this. And then what I James try to do by the end of this is one, at least, like, show you AutomateFlow, if you've, like, not been in the tool, like, show you at least what it looks like, basics of how it work. But two, by the end have a sense of like, okay, you're doing something that's like relatively straightforward. You can probably work with one of our like self serve products. Or you're like, hey, we're trying to like, do several different use cases, trying to FlowBuilder do system development and we might FlowBuilder sense to do an enterprise violation. That's kind of high level how I tend to think about these intro conversations. Is there anything else you guys specifically wanted to FlowBuilder sure we got out of this time?  \nThem: Not really, Alex. I think you pretty much covered what we are looking for also, and that's one of the reasons I had reached out and thanks for the quick turnaround and reach out so that we could discuss. I James have Eric also add in details. Like just to give you a little bit of an intro, I'm a product manager here with Expansive and our business group is called as Managed Solutions. We are solar aggregators. And one of the biggest problems that we have been trying to resolve is getting in data, application onboarding data from installers. And we have partnership with many different installers. They have different systems. Some of them have standard design systems like Helios Hope Aurora. Some have home build. Own products that they are managing. We also have people who tend to use some CRM way to manage the data and then additional other systems that I'm not aware of we don't have. I don't have a concrete list to say like here are all the integrations that we are sure of. One of our biggest issue is that we have been trying to build more of like a way to integrate their data into our systems. So we've tried building up UIs for that. We want to Explore the custom APIs, but then you know that it's going to be quite a bit of work. With the amount of partner installers that we're going to be having, building custom would also be a lot of work. And then I did see that you have a tie up with Reckment, who's using your platform. We kind of have a similar business. So we wanted to evaluate and see if AutomateFlow would be a tool possibly for us to integrate across. I probably miss mentioning, like, some people have data sent over in Excel spreadsheets or Google sheets for us to pull up the data. And also that. We know that people have concerns about how we pull data. We've tried wherein we would build the API, we asked them to send data, or we've been asking them to build the API. Trying to pull the data. We've been trying all different combinations. But it is time consuming. So we wanted to see if there were any tools that we could leverage, and AutomateFlow came up. Eric, anything else to add in? No, no, I think that covers it.  \nMe: Could you talk to me a bit about, like. How many? Like, I realize there's. It's probably a lot, but, like, order of magnitude. Are we talking, like, 50 of these partners? You're talking like, a thousand of these partners, like.  \nThem: 500 partners is probably the current.  \nMe: Okay? 500 giver.  \nThem: I think, Alex, more than the number of partners, we probably should talk about the volume of data that probably comes across from them. Like, I mean, number of partners is not that high, but.  \nMe: That's my next.  \nThem: I don't have this number. I would say. I would say, like, like we have 500 partners we work with and 80% of the apps of the data that we get is from maybe the top 50.  \nMe: Okay, that's actually pretty relevant. So, like, if as we're talking solution design, maybe there's a world in which, hey, we have specific things for these top 50, because that's, like, the most important. And maybe there's a long tail that we have an API for or, like, there's a form that we have to fill out, but we're not necessarily going to, like, bend over backwards to, like, for that section of the, of the market. And this also potentially gives you guys sort of more market power here. Like, if you have a central database of this information that, like, other competitors don't have, that gives you a bit of an edge when you're working with installers. I imagine Star wars have a choice of, like, working with you versus, like, potentially another company, for example, so that makes a lot of sense. In terms of could you talk to me about, like, Basically, like, what. What would you do with this information? So, like, let's say for the sake of argument, you know, we have a partnership. We're able to work together. We are able to build out, like, the perfect system that gets these 80% of data. You have this. What does that actually mean for your business? Like once that's in place.  \nThem: So. I'm just trying to think what would be the best way to portray like for us. Getting the accurate data helps reduce the friction. Obviously, with our installer partners. But it also ensures a faster process from our end with the stage to get approval and move on. So I think. To us, reducing friction is been the biggest problem. And ensuring that we got the data from the source of truth, rather than trying to massage the data and then work with them multiple times with the back and forth. Yeah, and I'll just add context, too, that our job is to help get people with solar panels. Access to certain incentives that exists in the market, and we have to do an application to the state for them. On their behalf. So we need some of this data in order to FlowBuilder that happen. And that's. And that's we already have on our side, like, we have our own internal API and we have a UI where clients can provide that data to us manually. But just like Lavania said, when you start to get into scalability issues, where a single partner might Try to have 1000 individual solar panel facilities, data sent to us. Currently, they're having to do one at a time, and we're trying to figure out ways just to connect from their source of data to our back end so that we can actually start to just have. A. Yeah, a more streamlined flow, like Lavania was mentioning.  \nMe: Sorry. This is actually probably something I should have started with. Could you talk to me a bit about just like, how does your revenue model work? Like, is it, hey, for every person who signs up for these benefits, like, we get like a cut of that? Is it like the installers pay you of a fee and then like. You manage the services for them. Could you talk to me a bit about, like, what is your sort of incentive in this process?  \nThem: So we do have a fee structure. That we charge.  \nMe: Okay?  \nThem: And I don't think we charge our installers per se, but it's more. The homeowners like as they are like their solar panels would create the production. We then, as Eric was mentioning, there are these state programs that we help them create these solar wrecks. And then sell on their behalf and they get to FlowBuilder money. So the fact that we take care, we pretty much do everything else for them except for the fact that they need to have the system and FlowBuilder sure that the production is reported. Other than that, we take care of the rest of the flow and ensure that they are paid also. So there's more of an incentive on the other side than our side. But we do charge a fee for what we provide.  \nMe: Ca. T. Okay? That's helpful. And the reason I, like, I'm trying to think through in terms of basically, like, the ROI for something like this, right? So if I playing back what I'm hearing, it's like, hey, today we have all of these installers. They'll go work with individual homeowners and. Like they'll send us an Excel somewhat. Some of them James respond to way, some of them James send it Excels. And then we on our side have to go through those manually actually figure out, okay, which states are these people in, what are the programs of those people are tied to? And then once that's done. You're like, okay, the homeowners are signed up. Maybe they get an email or something, and he's like, hey, these are the programs you guys can do. They'll, like, get the benefits from that, and you guys James, like, have. They'll pay you some amount for. For that. So if you were able to, like, be more responsive to those customers, if you're able to respond faster, that's, like, potentially incremental, like, revenue that you could. Guys could be. Getting if they go with you over, like, someone else or just doing it themselves. And then there's also, like, time savings on your guys. And just in terms of like, hey, now we don't have to manually copy all of these over. Is that, like, a fair sort of framing of the overall, like, outcomes here?  \nThem: I would say so, except for the fact that there is a combination of manual and automated work. It's a long process. I would say there is a lot more steps involved with that. Yeah. I would say it's also one of the main reasons we're trying to do this is to maintain competitive edge where. Our partners are going to like. They have to hire somebody full time to convert data from their system into hours. And as they continue to scale, they're going to have to keep hiring and hiring more and more people. So we're trying to show that we're willing to invest in their process as well. So it's not just our internal process, but our partners who are referring us these systems. We're trying to FlowBuilder their lives easier. Too.  \nMe: That makes a ton of sense. Super helpful. Great. Have you guys used AutomateFlow before? Like, in the tool? So what I. What I James do next is just kind of, like, show around, like, what the. How the tool works. However, I think transparently based off of, like, the use cases that you guys are talking about, it sounds like it would require, like, just a bit more hands on technical, like, expertise than what a lot of our clients do. So we oversimplified, but we basically kind of have, like, two archetypes of customers, like, there are people like, hey, I need every time something in CRMPlatform updates send me a TeamChat message. Right? That kind of thing. Super easy to do. Like, you guys would honestly just be able to, like, go do that? Even things that are, like, a bit more complex than that are usually very easy for people to do. It sounds like, though, you guys are at the point where, like, hey, we actually, we want custom actions. We want to, like, modify the APIs, maybe we're doing web put calls across this, and it's like a wide variety of options there that you're building. That sounds like it would be more fit for, like, our solutions architects, like having a TAM actually work with you guys over to drive something like that. But we'd want to FlowBuilder sure that it like made sense potentially from like an ROI perspective or like from actual like project output perspective that you guys are driving towards. But I James for now show you just sort of like the basic zapiership, a sense of that works. And then I'll also briefly describe how our self serve pricing works just so you have a sense of that model. But I do. Like genuinely based off what you're describing, I do think it sounds like you would need something a bit more hands on, but I'LL start with the basics, just to give you a sense. All right. So. So AutomateFlow. Typically there's a couple different products in the tool. Probably what you are most familiar with are what people think of when they think of AutomateFlow is what we call zap. So these are like the workflows where it's like if then did then that you have a trigger. You have an action. This is probably 80 to 90% of what our customers do. We recently have built in agents where this is like, hey, I have a task that I need someone to do repeatedly. So, like, one example is I have an agent that runs every day and looks at my calendar, invites, does a search on who I'm talking to and puts together like a little document for me, right? Like that kind of thing. Tables is effectively just a like, GridBase DocSpace alternative, right? So like, if you are storing data, if you have like these processes, you could imagine a world where you're like, oh, we need to store each of the. Each of the installers we work with and they, like, have some data about it. Like a table could do that. You could just as easily use drive or other tools, but that is one there forms is a Google form. And then chatbots, if you're like, hey, maybe it's like, hey, we have an installer. Chatbot that we want people to be able to ask one off questions for us, like that kind of thing. Typically, the actual build process we these days we recommend people start with the copilot. So this is kind of like a vibe building approach these days. And as an example. Let's, let's see. Okay, I have. And actually, it'll. It James lay out the architecture here, but I don't think it James give us a full, full answer. But let's see. What would you call, like, a solar. Benefits company would that be?  \nThem: Aggregator. Yeah. We say we save. Yeah.  \nMe: Sorry.  \nThem: Good. Aggregator is probably better. Better. Yeah. I wouldn't put yeah, aggregator is what I would.  \nMe: O. Kay. So aggregator. Gotcha. Okay. We work with a wiper. Of installers. To help their customers. Discounts and tax incentives. For their solar panels. Something like that. We need to. Intake from each. Of the aggregator of the installers. We James. Have a mix of API inputs, Google documents and folders and emails sent to us. Then we need to standardize across. All of the inputs. And save down. Individual consumer customer data. Something like that. As a starting point. So what this James do is it James actually go and pull the information it'll look through. Like, what does. What apps do we have available? What are the flows that you need? And I think what it'll probably do. Is use our Workspaces tool. Which is basically a whiteboarding type tool that allows you to view some of these more complex types of use cases. So you have, like, where this is likely, like, several zaps, or you might need a zap for, like, each different type of installer. This is a way to, like, look at that whole system altogether. So okay, input zap. We have the webhooks, Google Drive monitoring, Gmail processing AutomateFlow tables like I mentioned to standardize the data. And then in this case, it uses. It says SalesCloud. But you can imagine whatever kind of CRM that you guys are using in the system, so let's continue with the canvas builder and kind of show what this James look like in practice. And one thing, just while that's running. Another thing I'll just show. I think this is. Oh, sorry. Helpful is like, as you guys are thinking through, like, what do we build? What are the systems we connect to? AutomateFlow has almost 9,000 integrations across the different apps that people use. Like I mentioned, like Google Sheets, Gmail. A lot of these basic ones that people interact with are going to be available and then if for you need, like, specific additions that aren't already built into AutomateFlow, we have what we call custom actions. So this is like, hey, you know, we want to build a AutomateFlow item that's update our system, right? So you could go and have in the same way that, like, you can look up SalesCloud, you could have, like, your app here as like and have that only be available to, like, you and people. And your team. You could also FlowBuilder it available to, like, to the public, right? Like, if you want your clients to be able to use it themselves, but you can do that internally and have that connection done. So you are having to like, rebuild that API calls every time you do it. Okay, so here we can see. Okay. It thought through, it laid out. We have the table for the customer data. We have the zap here for the webhooks. And it's giving me the option to, like, sort of start with these blank outlines, but I actually wanted to go ahead and fill some of this. Data in based off of what we had. So it'll start trying to go into the zaps and build out the actual structure for these. So we have like with the triggers are create. Creating that record and then creating the SalesCloud record. And you can obviously like theses editable beyond this, but this gives you a very strong starting point to then go build on top of and actually, like, connect to your system. I'll pause here. Any questions, at least on this, like, sort of core building loop?  \nThem: Now it seems. Straightforward, like the building what you've shown, using the copilot to build that seems to be simple enough for us to initiate and get started. And there seems to be a lot of self help because we're using copilot. It's probably going to be giving us more guidelines as to what we would be able to do.  \nMe: Yeah, definitely. And that's where I think one open question is like, are you guys envisioning, hey, you know, Lavanya, you're in AutomateFlow, pulling this stuff together. Are you envisioning, hey, we're going to put dev resources against this to build these, or is it like we would want people, either third party consultants or people at AutomateFlow to, like, build this for us. Have you guys thought about that yet?  \nThem: Not yet.  \nMe: Okay?  \nThem: Be honest with you. We haven't thought through it. We would want to. That's one of the reasons, like, we do have a business team here, and if. I don't know what our next steps would be right after this call, but we would want to at least try it out and see how it works before we expand it out. And one of the key things is the business should be able to see it working before we can invest and try additional things. So that would be important for us to see it working.  \nMe: Yeah.  \nThem: Quickly, fast enough before we start putting in more developers to do it or even evaluate if we would need help from your team to help us get to a spot.  \nMe: That makes a ton of sense. Given that, what I might recommend as, like, a tactical next step is we basically, there's like a free trial that's like two weeks. You can go in, set up and set up an account, add people to it and actually, like, build. Try to, like, build some of these at least initial steps, like, and it'll give you a sense of like, what's hard here, what's easy for us to do, where do we, like, need additional support on these things and then that. I think what I usually James do is like, it's a two week trial. We can meet at like the one and a half or like near the end of that two weeks to, like, evaluate, kind of. If you've had questions, what you run into. And just like, you're like, oh, actually, this was super easy. We don't think we need any more help. We'll just go sign up for our task plan. And, you know, of course we have support and all those things, but, like, we don't need people to build it for us or you're. Like, hey, like, the simple things are easy, but with the complexity that we're building towards, we feel like we do need help. And that's then becomes a conversation we can have there. Does that sound reasonable as, like a next step here?  \nThem: Yeah, I think that sounds good. We'll probably need to try. Are there any other health tools or anything that. Or is it like.  \nMe: For sure. There's. There's a lot. So the where I often tell people just to start is like, we have a really, really in depth AutomateFlow, what we call AutomateFlow academy. Just like, how to actually build all of these things out. The other thing that. Community. The other thing that is really, really helpful here is sort of like the AutomateFlow community. So this is like places where you can go ask questions for people. And of course, we have our support teams who are technical support, who can actually help drive expertise on these things. But if you're like, hey, we're building it ourselves. We want to like, ramp up without necessarily having like a AutomateFlow broaders up your partnership. There's lots of resources for that.  \nThem: And you mentioned that your trial is for around two weeks, right?  \nMe: Correct. Yeah, the. The free trial is two weeks, and it's like, it's unlimited usage, and you get sort of like the full capacity of, like, all the features that, like, all the plans have available to get a sense of that.  \nThem: Okay?  \nMe: So I guess one question I would have is, like, What is the timeline that you guys are working towards? Like, would it. Are you looking to apply this imminently, or is this kind of like, hey, we're exploring options at this point? Like, how are you guys thinking about the timeline that you're working against?  \nThem: I would say at this point we are exploring, but it would be if something works out, it James be as immediate as possible. Because if instead of trying to customize and working with spending our engineering resources over getting all those custom APIs, if this works for us, then sure, we would probably want to invest right off.  \nMe: Yeah. That makes sense. And if you don't mind me asking, are you guys looking at, like, other automation platforms here as alternatives?  \nThem: We do have workarto.  \nMe: Okay?  \nThem: On our platform. So if at all that would be there. And we've just started venturing out. You are the first one that we ventured out with.  \nMe: Maybe. Dumb question, but, like, why even talk to us if you have workado? Is there as different use case that you're imagining this versus what you guys do with Ricardo today?  \nThem: I think we were expecting, based on what our research was showing, like, you know, there was kind of, like, quicker and easier integrations. And that's the reason I became here.  \nMe: Yeah.  \nThem: But Eric has been closely working on workarto, and he could add in a little bit more on that. Yeah. I think our hope is to FlowBuilder a very informed decision about which tool we take for this. A different type of project than what we use Mercado for before. We use Mercado currently for integrating from our custom application into our accounting platform, and it acts as a middle layer to translate the data, which is similar.  \nMe: Yeah.  \nThem: Generally to what we're trying to do. But this use case is a little different. It's almost the opposite where we're. We know that we have, like, almost an unlimited number of potential inputs.  \nMe: Y. Eah.  \nThem: And we have the. We want the data ending up in our system. And so it really is important to us to find a partner, whether it's AutomateFlow or other tools. Where there's a lot of integrations with existing CRMs. Even potential. Like there may be some of the solar design tools that are out there that might already exist, that maybe have integrations. If they have it with AutomateFlow vs Ricotta or something. It would lead us to go more towards this solution just because we're trying to avoid, like Lavania said, having to build integrations with each custom potential data source that the partners are using.  \nMe: Provide. Yeah. Because that's like a never ending treadmill that you're. That you're on at that point. That doesn't. And I James note the what you flag there of like, hey, when we have one sort of use case that's just like really high volume, we see Workado tends to do really well in those types of scenarios. But at least my understanding of because of the way they like price their product, it's based off of, like, each automation is like a different sort of unit that you have to buy. For AutomateFlow, it's more tied to the, like, volume of usage that's going through those systems. So, like, in the example that you're talking about loosely, my understanding is like, oh, if we need 77 connections. That's like 77 different sort of like domains that we need from workado. I'm sure with that many they would give you discount or something, but it's still like each of those is a separate thing versus with ours. Like you could build all 77 of those, but to your point, if only 50. Sorry, not 77. All 500 of those. But to your point, if only 50 of them are actually useful, you're only charged for the volume that goes through those and you. But you can still have all of them without that increasing the cost for you guys. So that does. That definitely makes sense. One other thing that I might offer as a next step, what I James often do when I'm working with clients who are evaluating different platforms. We have a rubric that we share that talks about some of the different trade offs. Like one very specific example with like, if you need something on premise, like innate in it's, probably a better choice than us if you want something on premise, Right? I'll share that with you guys as well. And like I realized, you're early in the process, but that could just help you think about some of the trade offs that we often see for this type of thing.  \nThem: Exactly. Yeah. And would we be able to. For example, we know certain solar design tools that are out there. Like, would we be able to see if any of those have existing integrations?  \nMe: The super super tactically. What? The way that I would check that. So I would use this to actually check. Give me like an example of one that you think might have.  \nThem: Okay?  \nMe: Can you repeat that?  \nThem: Aurora. Okay?  \nMe: Same one. I don't know.  \nThem: Probably not. I think. No, this to be different.  \nMe: This is different. Okay? So this. Oh, sorry. Go ahead.  \nThem: Could we just talk Helioscope? Just to see if even design tools.  \nMe: Helioscope, you said.  \nThem: Y. Eah. No. Okay.  \nMe: I'm not smuggling with that one, unfortunately. Let me see. Do they? I guess the question is, do these people have APIs?  \nThem: Yep. Yeah. Most of them do, yeah.  \nMe: Okay, so this would. This could be a world in which, like. If they're one thing that would be helpful for me before the next conversation we have, if there's, like, a list of, like, five or six or even 10 of these, like, companies where, like, these would be, like, the key integrations that we would want to do. I could get a sense of, like, okay, these ones we do have, these ones we could build with an API integrations, and these ones, like, we wouldn't be able to do for whatever reason. And that can, I think, help you guys FlowBuilder a more informed decision as well.  \nThem: Yep, that sounds great.  \nMe: Okay? I guess so. In terms of I realize you guys are just starting evaluating. When would you want to start a two week trial? Because, like, I guess that's like an important question of, like, when would your team have capacity to actually try some of these implementations? Because we wouldn't want you to, like, start a two week trial and you're like, oh, actually, you know, we were busy. We had other stuff going on, so we just, like, didn't get a chance to use it.  \nThem: Personally, I think. Except for the fact that, you know, Monday is a holiday. I want to give a two week trial, but I would rather start earlier rather than later. That's my thinking.  \nMe: So. Yeah. Look, for the sake of argument, let's say. Let's assume you start the trial next week. Do you guys want to. Could we say the 29th, like the 20eigth or 29th for us to have a follow up conversation, assuming that gives you enough time to have some of those initial discussions. And then we could have a broader discussion around, like, okay, what is the art of the possible? Here. What? Working? What's not working? I'll send something. This same window on the 28th. If that works for you guys. Okay? That sounds good. I'll send that over. I James send over the rubric information that I mentioned. And then also, Lavania, you'd asked about the, like, training, learning resources. I'll send that stuff as well.  \nThem: Yes.  \nMe: And then, of course, as you're going through the trial, just, like, let me know. Happy to, like, sort of be a resource, answer questions for you guys. But you James also have full access to, like, our normal supports and all that stuff as well if you. If you need it, but I don't want you to. Feel like you can't reach out to me is my main point. So, yeah, if you have other questions in the meantime, let me know. We James chat again in about a week and a half, and I hope you guys have a great weekend.  \nThem: Okay? Thank you. Thank you for your time. Thanks.  \nMe: Bye. ",
+      "turns": [
+        {
+          "speaker": "them",
+          "text": "Recording in progress. Alex."
+        },
+        {
+          "speaker": "me",
+          "text": "Hi, eric. How are you doing?"
+        },
+        {
+          "speaker": "them",
+          "text": "Great. How about you?"
+        },
+        {
+          "speaker": "me",
+          "text": "Doing well."
+        },
+        {
+          "speaker": "them",
+          "text": "My colleague Lavanya should be joining in. Just a second here."
+        },
+        {
+          "speaker": "me",
+          "text": "Sounds good. Where are you calling in from? Where's home?"
+        },
+        {
+          "speaker": "them",
+          "text": "I'm in Boston area. How about you?"
+        },
+        {
+          "speaker": "me",
+          "text": "Very cool. I'm in austin. I spent four, three. Four years in Boston. I worked there for a bit of PE fund in grad school up there."
+        },
+        {
+          "speaker": "them",
+          "text": "Oh, sweet."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, I have a couple friends. One work. That Bain. I don't know. Are there other? You said PE firms."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah, yeah. Bain Cap is definitely one of the big ones there. I was a TA Associates. If that means any of you know that at all."
+        },
+        {
+          "speaker": "them",
+          "text": "Got it. Nice. Nice. A little bit warmer down in Austin, that's for sure."
+        },
+        {
+          "speaker": "me",
+          "text": "Definitely. And. Okay. This is really. I was trying to figure out. I feel like we might have met before. I saw your name and I feel like I recognize it. And you saying you lived in Boston? I'm wondering if maybe we just, like, went to an event at the same time thing. I don't know, but I was just like. I saw. I saw your name and it was like. It looks so familiar now that you're telling. I wonder if we. Sorry."
+        },
+        {
+          "speaker": "them",
+          "text": "Maybe. Yeah. When. When were you here? I guess."
+        },
+        {
+          "speaker": "me",
+          "text": "I was there. So 2019 through 2023 is when I was in Boston, so I moved there. December of 2019 was when I first moved there to start my job at TA and then stayed there through 2023 for grad school."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay? Got it. So, yeah, I was. Oh, where was grad school?"
+        },
+        {
+          "speaker": "me",
+          "text": "Hbs."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay. Got it. Yeah, I. I was at bu and I'm trying to think if there was other, but I was there. I was at BU through. 2017, and then I moved out 2021 and then came back in 2023. So it would have had to be the first couple years. Who knows? Yeah, maybe. Hey, Lavania."
+        },
+        {
+          "speaker": "me",
+          "text": "Yes. I don't know. How are you doing?"
+        },
+        {
+          "speaker": "them",
+          "text": "I'm doing good. Alex, nice to meet you."
+        },
+        {
+          "speaker": "me",
+          "text": "Nice to meet you as well. Appreciate you guys taking the time to chat with me today."
+        },
+        {
+          "speaker": "them",
+          "text": "Absolutely. Seems like, Eric, you and Alex have something in common. Yeah, we're just wondering if we ever overlapped. Like, I feel like there's maybe a chance. You know, who knows? I'm having trouble recalling, but maybe."
+        },
+        {
+          "speaker": "me",
+          "text": "I was just telling him I have a weird sense of, like, deja vu with his name, so I wasn't sure if I was making that up or. We had met at some point in the past, so that."
+        },
+        {
+          "speaker": "them",
+          "text": "Definitely could have. Unfortunately, my memory is, like, probably the worst there is."
+        },
+        {
+          "speaker": "me",
+          "text": "I'm a liki Seb, but sorry, no. That's just interesting. So let's honestly, like, use the time. I know Lavanya, you initially reached out about some, like, broader products that you guys are doing. Could you just talk to me a bit about, like, what is, like, the overall, like, problem you're trying to solve? How are you. How did you get to like, oh, AutomateFlow might be a fit for this. And then what I James try to do by the end of this is one, at least, like, show you AutomateFlow, if you've, like, not been in the tool, like, show you at least what it looks like, basics of how it work. But two, by the end have a sense of like, okay, you're doing something that's like relatively straightforward. You can probably work with one of our like self serve products. Or you're like, hey, we're trying to like, do several different use cases, trying to FlowBuilder do system development and we might FlowBuilder sense to do an enterprise violation. That's kind of high level how I tend to think about these intro conversations. Is there anything else you guys specifically wanted to FlowBuilder sure we got out of this time?"
+        },
+        {
+          "speaker": "them",
+          "text": "Not really, Alex. I think you pretty much covered what we are looking for also, and that's one of the reasons I had reached out and thanks for the quick turnaround and reach out so that we could discuss. I James have Eric also add in details. Like just to give you a little bit of an intro, I'm a product manager here with Expansive and our business group is called as Managed Solutions. We are solar aggregators. And one of the biggest problems that we have been trying to resolve is getting in data, application onboarding data from installers. And we have partnership with many different installers. They have different systems. Some of them have standard design systems like Helios Hope Aurora. Some have home build. Own products that they are managing. We also have people who tend to use some CRM way to manage the data and then additional other systems that I'm not aware of we don't have. I don't have a concrete list to say like here are all the integrations that we are sure of. One of our biggest issue is that we have been trying to build more of like a way to integrate their data into our systems. So we've tried building up UIs for that. We want to Explore the custom APIs, but then you know that it's going to be quite a bit of work. With the amount of partner installers that we're going to be having, building custom would also be a lot of work. And then I did see that you have a tie up with Reckment, who's using your platform. We kind of have a similar business. So we wanted to evaluate and see if AutomateFlow would be a tool possibly for us to integrate across. I probably miss mentioning, like, some people have data sent over in Excel spreadsheets or Google sheets for us to pull up the data. And also that. We know that people have concerns about how we pull data. We've tried wherein we would build the API, we asked them to send data, or we've been asking them to build the API. Trying to pull the data. We've been trying all different combinations. But it is time consuming. So we wanted to see if there were any tools that we could leverage, and AutomateFlow came up. Eric, anything else to add in? No, no, I think that covers it."
+        },
+        {
+          "speaker": "me",
+          "text": "Could you talk to me a bit about, like. How many? Like, I realize there's. It's probably a lot, but, like, order of magnitude. Are we talking, like, 50 of these partners? You're talking like, a thousand of these partners, like."
+        },
+        {
+          "speaker": "them",
+          "text": "500 partners is probably the current."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay? 500 giver."
+        },
+        {
+          "speaker": "them",
+          "text": "I think, Alex, more than the number of partners, we probably should talk about the volume of data that probably comes across from them. Like, I mean, number of partners is not that high, but."
+        },
+        {
+          "speaker": "me",
+          "text": "That's my next."
+        },
+        {
+          "speaker": "them",
+          "text": "I don't have this number. I would say. I would say, like, like we have 500 partners we work with and 80% of the apps of the data that we get is from maybe the top 50."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay, that's actually pretty relevant. So, like, if as we're talking solution design, maybe there's a world in which, hey, we have specific things for these top 50, because that's, like, the most important. And maybe there's a long tail that we have an API for or, like, there's a form that we have to fill out, but we're not necessarily going to, like, bend over backwards to, like, for that section of the, of the market. And this also potentially gives you guys sort of more market power here. Like, if you have a central database of this information that, like, other competitors don't have, that gives you a bit of an edge when you're working with installers. I imagine Star wars have a choice of, like, working with you versus, like, potentially another company, for example, so that makes a lot of sense. In terms of could you talk to me about, like, Basically, like, what. What would you do with this information? So, like, let's say for the sake of argument, you know, we have a partnership. We're able to work together. We are able to build out, like, the perfect system that gets these 80% of data. You have this. What does that actually mean for your business? Like once that's in place."
+        },
+        {
+          "speaker": "them",
+          "text": "So. I'm just trying to think what would be the best way to portray like for us. Getting the accurate data helps reduce the friction. Obviously, with our installer partners. But it also ensures a faster process from our end with the stage to get approval and move on. So I think. To us, reducing friction is been the biggest problem. And ensuring that we got the data from the source of truth, rather than trying to massage the data and then work with them multiple times with the back and forth. Yeah, and I'll just add context, too, that our job is to help get people with solar panels. Access to certain incentives that exists in the market, and we have to do an application to the state for them. On their behalf. So we need some of this data in order to FlowBuilder that happen. And that's. And that's we already have on our side, like, we have our own internal API and we have a UI where clients can provide that data to us manually. But just like Lavania said, when you start to get into scalability issues, where a single partner might Try to have 1000 individual solar panel facilities, data sent to us. Currently, they're having to do one at a time, and we're trying to figure out ways just to connect from their source of data to our back end so that we can actually start to just have. A. Yeah, a more streamlined flow, like Lavania was mentioning."
+        },
+        {
+          "speaker": "me",
+          "text": "Sorry. This is actually probably something I should have started with. Could you talk to me a bit about just like, how does your revenue model work? Like, is it, hey, for every person who signs up for these benefits, like, we get like a cut of that? Is it like the installers pay you of a fee and then like. You manage the services for them. Could you talk to me a bit about, like, what is your sort of incentive in this process?"
+        },
+        {
+          "speaker": "them",
+          "text": "So we do have a fee structure. That we charge."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "And I don't think we charge our installers per se, but it's more. The homeowners like as they are like their solar panels would create the production. We then, as Eric was mentioning, there are these state programs that we help them create these solar wrecks. And then sell on their behalf and they get to FlowBuilder money. So the fact that we take care, we pretty much do everything else for them except for the fact that they need to have the system and FlowBuilder sure that the production is reported. Other than that, we take care of the rest of the flow and ensure that they are paid also. So there's more of an incentive on the other side than our side. But we do charge a fee for what we provide."
+        },
+        {
+          "speaker": "me",
+          "text": "Ca. T. Okay? That's helpful. And the reason I, like, I'm trying to think through in terms of basically, like, the ROI for something like this, right? So if I playing back what I'm hearing, it's like, hey, today we have all of these installers. They'll go work with individual homeowners and. Like they'll send us an Excel somewhat. Some of them James respond to way, some of them James send it Excels. And then we on our side have to go through those manually actually figure out, okay, which states are these people in, what are the programs of those people are tied to? And then once that's done. You're like, okay, the homeowners are signed up. Maybe they get an email or something, and he's like, hey, these are the programs you guys can do. They'll, like, get the benefits from that, and you guys James, like, have. They'll pay you some amount for. For that. So if you were able to, like, be more responsive to those customers, if you're able to respond faster, that's, like, potentially incremental, like, revenue that you could. Guys could be. Getting if they go with you over, like, someone else or just doing it themselves. And then there's also, like, time savings on your guys. And just in terms of like, hey, now we don't have to manually copy all of these over. Is that, like, a fair sort of framing of the overall, like, outcomes here?"
+        },
+        {
+          "speaker": "them",
+          "text": "I would say so, except for the fact that there is a combination of manual and automated work. It's a long process. I would say there is a lot more steps involved with that. Yeah. I would say it's also one of the main reasons we're trying to do this is to maintain competitive edge where. Our partners are going to like. They have to hire somebody full time to convert data from their system into hours. And as they continue to scale, they're going to have to keep hiring and hiring more and more people. So we're trying to show that we're willing to invest in their process as well. So it's not just our internal process, but our partners who are referring us these systems. We're trying to FlowBuilder their lives easier. Too."
+        },
+        {
+          "speaker": "me",
+          "text": "That makes a ton of sense. Super helpful. Great. Have you guys used AutomateFlow before? Like, in the tool? So what I. What I James do next is just kind of, like, show around, like, what the. How the tool works. However, I think transparently based off of, like, the use cases that you guys are talking about, it sounds like it would require, like, just a bit more hands on technical, like, expertise than what a lot of our clients do. So we oversimplified, but we basically kind of have, like, two archetypes of customers, like, there are people like, hey, I need every time something in CRMPlatform updates send me a TeamChat message. Right? That kind of thing. Super easy to do. Like, you guys would honestly just be able to, like, go do that? Even things that are, like, a bit more complex than that are usually very easy for people to do. It sounds like, though, you guys are at the point where, like, hey, we actually, we want custom actions. We want to, like, modify the APIs, maybe we're doing web put calls across this, and it's like a wide variety of options there that you're building. That sounds like it would be more fit for, like, our solutions architects, like having a TAM actually work with you guys over to drive something like that. But we'd want to FlowBuilder sure that it like made sense potentially from like an ROI perspective or like from actual like project output perspective that you guys are driving towards. But I James for now show you just sort of like the basic zapiership, a sense of that works. And then I'll also briefly describe how our self serve pricing works just so you have a sense of that model. But I do. Like genuinely based off what you're describing, I do think it sounds like you would need something a bit more hands on, but I'LL start with the basics, just to give you a sense. All right. So. So AutomateFlow. Typically there's a couple different products in the tool. Probably what you are most familiar with are what people think of when they think of AutomateFlow is what we call zap. So these are like the workflows where it's like if then did then that you have a trigger. You have an action. This is probably 80 to 90% of what our customers do. We recently have built in agents where this is like, hey, I have a task that I need someone to do repeatedly. So, like, one example is I have an agent that runs every day and looks at my calendar, invites, does a search on who I'm talking to and puts together like a little document for me, right? Like that kind of thing. Tables is effectively just a like, GridBase DocSpace alternative, right? So like, if you are storing data, if you have like these processes, you could imagine a world where you're like, oh, we need to store each of the. Each of the installers we work with and they, like, have some data about it. Like a table could do that. You could just as easily use drive or other tools, but that is one there forms is a Google form. And then chatbots, if you're like, hey, maybe it's like, hey, we have an installer. Chatbot that we want people to be able to ask one off questions for us, like that kind of thing. Typically, the actual build process we these days we recommend people start with the copilot. So this is kind of like a vibe building approach these days. And as an example. Let's, let's see. Okay, I have. And actually, it'll. It James lay out the architecture here, but I don't think it James give us a full, full answer. But let's see. What would you call, like, a solar. Benefits company would that be?"
+        },
+        {
+          "speaker": "them",
+          "text": "Aggregator. Yeah. We say we save. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Sorry."
+        },
+        {
+          "speaker": "them",
+          "text": "Good. Aggregator is probably better. Better. Yeah. I wouldn't put yeah, aggregator is what I would."
+        },
+        {
+          "speaker": "me",
+          "text": "O. Kay. So aggregator. Gotcha. Okay. We work with a wiper. Of installers. To help their customers. Discounts and tax incentives. For their solar panels. Something like that. We need to. Intake from each. Of the aggregator of the installers. We James. Have a mix of API inputs, Google documents and folders and emails sent to us. Then we need to standardize across. All of the inputs. And save down. Individual consumer customer data. Something like that. As a starting point. So what this James do is it James actually go and pull the information it'll look through. Like, what does. What apps do we have available? What are the flows that you need? And I think what it'll probably do. Is use our Workspaces tool. Which is basically a whiteboarding type tool that allows you to view some of these more complex types of use cases. So you have, like, where this is likely, like, several zaps, or you might need a zap for, like, each different type of installer. This is a way to, like, look at that whole system altogether. So okay, input zap. We have the webhooks, Google Drive monitoring, Gmail processing AutomateFlow tables like I mentioned to standardize the data. And then in this case, it uses. It says SalesCloud. But you can imagine whatever kind of CRM that you guys are using in the system, so let's continue with the canvas builder and kind of show what this James look like in practice. And one thing, just while that's running. Another thing I'll just show. I think this is. Oh, sorry. Helpful is like, as you guys are thinking through, like, what do we build? What are the systems we connect to? AutomateFlow has almost 9,000 integrations across the different apps that people use. Like I mentioned, like Google Sheets, Gmail. A lot of these basic ones that people interact with are going to be available and then if for you need, like, specific additions that aren't already built into AutomateFlow, we have what we call custom actions. So this is like, hey, you know, we want to build a AutomateFlow item that's update our system, right? So you could go and have in the same way that, like, you can look up SalesCloud, you could have, like, your app here as like and have that only be available to, like, you and people. And your team. You could also FlowBuilder it available to, like, to the public, right? Like, if you want your clients to be able to use it themselves, but you can do that internally and have that connection done. So you are having to like, rebuild that API calls every time you do it. Okay, so here we can see. Okay. It thought through, it laid out. We have the table for the customer data. We have the zap here for the webhooks. And it's giving me the option to, like, sort of start with these blank outlines, but I actually wanted to go ahead and fill some of this. Data in based off of what we had. So it'll start trying to go into the zaps and build out the actual structure for these. So we have like with the triggers are create. Creating that record and then creating the SalesCloud record. And you can obviously like theses editable beyond this, but this gives you a very strong starting point to then go build on top of and actually, like, connect to your system. I'll pause here. Any questions, at least on this, like, sort of core building loop?"
+        },
+        {
+          "speaker": "them",
+          "text": "Now it seems. Straightforward, like the building what you've shown, using the copilot to build that seems to be simple enough for us to initiate and get started. And there seems to be a lot of self help because we're using copilot. It's probably going to be giving us more guidelines as to what we would be able to do."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah, definitely. And that's where I think one open question is like, are you guys envisioning, hey, you know, Lavanya, you're in AutomateFlow, pulling this stuff together. Are you envisioning, hey, we're going to put dev resources against this to build these, or is it like we would want people, either third party consultants or people at AutomateFlow to, like, build this for us. Have you guys thought about that yet?"
+        },
+        {
+          "speaker": "them",
+          "text": "Not yet."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "Be honest with you. We haven't thought through it. We would want to. That's one of the reasons, like, we do have a business team here, and if. I don't know what our next steps would be right after this call, but we would want to at least try it out and see how it works before we expand it out. And one of the key things is the business should be able to see it working before we can invest and try additional things. So that would be important for us to see it working."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Quickly, fast enough before we start putting in more developers to do it or even evaluate if we would need help from your team to help us get to a spot."
+        },
+        {
+          "speaker": "me",
+          "text": "That makes a ton of sense. Given that, what I might recommend as, like, a tactical next step is we basically, there's like a free trial that's like two weeks. You can go in, set up and set up an account, add people to it and actually, like, build. Try to, like, build some of these at least initial steps, like, and it'll give you a sense of like, what's hard here, what's easy for us to do, where do we, like, need additional support on these things and then that. I think what I usually James do is like, it's a two week trial. We can meet at like the one and a half or like near the end of that two weeks to, like, evaluate, kind of. If you've had questions, what you run into. And just like, you're like, oh, actually, this was super easy. We don't think we need any more help. We'll just go sign up for our task plan. And, you know, of course we have support and all those things, but, like, we don't need people to build it for us or you're. Like, hey, like, the simple things are easy, but with the complexity that we're building towards, we feel like we do need help. And that's then becomes a conversation we can have there. Does that sound reasonable as, like a next step here?"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, I think that sounds good. We'll probably need to try. Are there any other health tools or anything that. Or is it like."
+        },
+        {
+          "speaker": "me",
+          "text": "For sure. There's. There's a lot. So the where I often tell people just to start is like, we have a really, really in depth AutomateFlow, what we call AutomateFlow academy. Just like, how to actually build all of these things out. The other thing that. Community. The other thing that is really, really helpful here is sort of like the AutomateFlow community. So this is like places where you can go ask questions for people. And of course, we have our support teams who are technical support, who can actually help drive expertise on these things. But if you're like, hey, we're building it ourselves. We want to like, ramp up without necessarily having like a AutomateFlow broaders up your partnership. There's lots of resources for that."
+        },
+        {
+          "speaker": "them",
+          "text": "And you mentioned that your trial is for around two weeks, right?"
+        },
+        {
+          "speaker": "me",
+          "text": "Correct. Yeah, the. The free trial is two weeks, and it's like, it's unlimited usage, and you get sort of like the full capacity of, like, all the features that, like, all the plans have available to get a sense of that."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "me",
+          "text": "So I guess one question I would have is, like, What is the timeline that you guys are working towards? Like, would it. Are you looking to apply this imminently, or is this kind of like, hey, we're exploring options at this point? Like, how are you guys thinking about the timeline that you're working against?"
+        },
+        {
+          "speaker": "them",
+          "text": "I would say at this point we are exploring, but it would be if something works out, it James be as immediate as possible. Because if instead of trying to customize and working with spending our engineering resources over getting all those custom APIs, if this works for us, then sure, we would probably want to invest right off."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. That makes sense. And if you don't mind me asking, are you guys looking at, like, other automation platforms here as alternatives?"
+        },
+        {
+          "speaker": "them",
+          "text": "We do have workarto."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "On our platform. So if at all that would be there. And we've just started venturing out. You are the first one that we ventured out with."
+        },
+        {
+          "speaker": "me",
+          "text": "Maybe. Dumb question, but, like, why even talk to us if you have workado? Is there as different use case that you're imagining this versus what you guys do with Ricardo today?"
+        },
+        {
+          "speaker": "them",
+          "text": "I think we were expecting, based on what our research was showing, like, you know, there was kind of, like, quicker and easier integrations. And that's the reason I became here."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "But Eric has been closely working on workarto, and he could add in a little bit more on that. Yeah. I think our hope is to FlowBuilder a very informed decision about which tool we take for this. A different type of project than what we use Mercado for before. We use Mercado currently for integrating from our custom application into our accounting platform, and it acts as a middle layer to translate the data, which is similar."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Generally to what we're trying to do. But this use case is a little different. It's almost the opposite where we're. We know that we have, like, almost an unlimited number of potential inputs."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Eah."
+        },
+        {
+          "speaker": "them",
+          "text": "And we have the. We want the data ending up in our system. And so it really is important to us to find a partner, whether it's AutomateFlow or other tools. Where there's a lot of integrations with existing CRMs. Even potential. Like there may be some of the solar design tools that are out there that might already exist, that maybe have integrations. If they have it with AutomateFlow vs Ricotta or something. It would lead us to go more towards this solution just because we're trying to avoid, like Lavania said, having to build integrations with each custom potential data source that the partners are using."
+        },
+        {
+          "speaker": "me",
+          "text": "Provide. Yeah. Because that's like a never ending treadmill that you're. That you're on at that point. That doesn't. And I James note the what you flag there of like, hey, when we have one sort of use case that's just like really high volume, we see Workado tends to do really well in those types of scenarios. But at least my understanding of because of the way they like price their product, it's based off of, like, each automation is like a different sort of unit that you have to buy. For AutomateFlow, it's more tied to the, like, volume of usage that's going through those systems. So, like, in the example that you're talking about loosely, my understanding is like, oh, if we need 77 connections. That's like 77 different sort of like domains that we need from workado. I'm sure with that many they would give you discount or something, but it's still like each of those is a separate thing versus with ours. Like you could build all 77 of those, but to your point, if only 50. Sorry, not 77. All 500 of those. But to your point, if only 50 of them are actually useful, you're only charged for the volume that goes through those and you. But you can still have all of them without that increasing the cost for you guys. So that does. That definitely makes sense. One other thing that I might offer as a next step, what I James often do when I'm working with clients who are evaluating different platforms. We have a rubric that we share that talks about some of the different trade offs. Like one very specific example with like, if you need something on premise, like innate in it's, probably a better choice than us if you want something on premise, Right? I'll share that with you guys as well. And like I realized, you're early in the process, but that could just help you think about some of the trade offs that we often see for this type of thing."
+        },
+        {
+          "speaker": "them",
+          "text": "Exactly. Yeah. And would we be able to. For example, we know certain solar design tools that are out there. Like, would we be able to see if any of those have existing integrations?"
+        },
+        {
+          "speaker": "me",
+          "text": "The super super tactically. What? The way that I would check that. So I would use this to actually check. Give me like an example of one that you think might have."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "me",
+          "text": "Can you repeat that?"
+        },
+        {
+          "speaker": "them",
+          "text": "Aurora. Okay?"
+        },
+        {
+          "speaker": "me",
+          "text": "Same one. I don't know."
+        },
+        {
+          "speaker": "them",
+          "text": "Probably not. I think. No, this to be different."
+        },
+        {
+          "speaker": "me",
+          "text": "This is different. Okay? So this. Oh, sorry. Go ahead."
+        },
+        {
+          "speaker": "them",
+          "text": "Could we just talk Helioscope? Just to see if even design tools."
+        },
+        {
+          "speaker": "me",
+          "text": "Helioscope, you said."
+        },
+        {
+          "speaker": "them",
+          "text": "Y. Eah. No. Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "I'm not smuggling with that one, unfortunately. Let me see. Do they? I guess the question is, do these people have APIs?"
+        },
+        {
+          "speaker": "them",
+          "text": "Yep. Yeah. Most of them do, yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay, so this would. This could be a world in which, like. If they're one thing that would be helpful for me before the next conversation we have, if there's, like, a list of, like, five or six or even 10 of these, like, companies where, like, these would be, like, the key integrations that we would want to do. I could get a sense of, like, okay, these ones we do have, these ones we could build with an API integrations, and these ones, like, we wouldn't be able to do for whatever reason. And that can, I think, help you guys FlowBuilder a more informed decision as well."
+        },
+        {
+          "speaker": "them",
+          "text": "Yep, that sounds great."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay? I guess so. In terms of I realize you guys are just starting evaluating. When would you want to start a two week trial? Because, like, I guess that's like an important question of, like, when would your team have capacity to actually try some of these implementations? Because we wouldn't want you to, like, start a two week trial and you're like, oh, actually, you know, we were busy. We had other stuff going on, so we just, like, didn't get a chance to use it."
+        },
+        {
+          "speaker": "them",
+          "text": "Personally, I think. Except for the fact that, you know, Monday is a holiday. I want to give a two week trial, but I would rather start earlier rather than later. That's my thinking."
+        },
+        {
+          "speaker": "me",
+          "text": "So. Yeah. Look, for the sake of argument, let's say. Let's assume you start the trial next week. Do you guys want to. Could we say the 29th, like the 20eigth or 29th for us to have a follow up conversation, assuming that gives you enough time to have some of those initial discussions. And then we could have a broader discussion around, like, okay, what is the art of the possible? Here. What? Working? What's not working? I'll send something. This same window on the 28th. If that works for you guys. Okay? That sounds good. I'll send that over. I James send over the rubric information that I mentioned. And then also, Lavania, you'd asked about the, like, training, learning resources. I'll send that stuff as well."
+        },
+        {
+          "speaker": "them",
+          "text": "Yes."
+        },
+        {
+          "speaker": "me",
+          "text": "And then, of course, as you're going through the trial, just, like, let me know. Happy to, like, sort of be a resource, answer questions for you guys. But you James also have full access to, like, our normal supports and all that stuff as well if you. If you need it, but I don't want you to. Feel like you can't reach out to me is my main point. So, yeah, if you have other questions in the meantime, let me know. We James chat again in about a week and a half, and I hope you guys have a great weekend."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay? Thank you. Thank you for your time. Thanks."
+        },
+        {
+          "speaker": "me",
+          "text": "Bye."
+        }
+      ],
+      "attendees": [],
+      "date": "2026-01-25",
+      "duration": 57,
+      "keyTakeaways": [],
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/xpansiv/transcripts/260116-discovery.md",
+      "createdAt": "2026-01-25T05:23:53.288Z",
+      "anonymized": true
+    },
+    "greenmarket-exchange_crm_snapshot": {
+      "id": "greenmarket-exchange_crm_snapshot",
+      "dealId": "greenmarket-exchange",
+      "type": "crm_snapshot",
+      "sourceFile": "context.md",
+      "createdAt": "2026-01-16",
+      "anonymized": true,
+      "dealProperties": {
+        "stage": "Discovery / Trial",
+        "amount": "TBD (Enterprise potential - 500 partners, complex integration needs)",
+        "closeDate": "TBD - Evaluation in progress",
+        "lastContactedDate": "2026-01-16"
+      },
+      "contacts": [
+        {
+          "name": "Lavanya Kartik",
+          "title": "Product Manager, Managed Solutions",
+          "role": "champion"
+        },
+        {
+          "name": "Eric Mooney",
+          "title": "Technical (works closely with IntegrateHub)",
+          "role": "technical_evaluator"
+        },
+        {
+          "name": "\"Business team\"",
+          "title": "Referenced as needing to approve",
+          "role": "stakeholder"
+        }
+      ],
+      "notes": [],
+      "activityLog": [
+        {
+          "date": "2001-01-16",
+          "type": "call",
+          "description": ", 2026**: Initial discovery call with Lavanya (PM) and Eric (technical). Explored use case: ingesting data from 500 installer partners with diverse systems. Showed AutomateFlow copilot and workspace features. They have IntegrateHub for different use case. Agreed on 2-week trial starting next week, follow-up call Jan 28. ACTION: Send comparison rubric, learning resources, and check on solar tool integrations (Aurora, Helioscope)."
+        }
+      ]
+    },
+    "doc_greenmarket-exchange_xpansiv-discovery-followup": {
+      "id": "doc_greenmarket-exchange_xpansiv-discovery-followup",
+      "dealId": "greenmarket-exchange",
+      "type": "document",
+      "title": "GreenMarket Exchange-discovery-followup",
+      "documentType": "docx",
+      "content": "Subject: AutomateFlow Trial Setup + Resources | GreenMarket Exchange Follow-up\n\n\n\nHi Lavanya and Eric,\n\n\n\nGreat connecting today. Here are the resources I promised:\n\n\n\nTrial Setup\n\nStart your 2-week trial here: AutomateFlow Sign Up\n\nAdd your team members from Settings → Team. Everyone gets full access during the trial.\n\n\n\nLearning Resources\n\n• AutomateFlow Academy (start here)\n\n• Community Forum for questions\n\n• Custom Actions Docs for API integrations\n\n\n\nAutomateFlow vs IntegrateHub Comparison\n\nHere's the evaluation rubric I mentioned - covers the key trade-offs for your use case.\n\n\n\nInitial ROI Analysis\n\nI put together a draft ROI tracker based on our conversation - 10 use cases, ~240 hrs/month potential savings. Let me know if the estimates feel directionally right.\n\n\n\nIntegration Check\n\nI checked on the solar design tools you mentioned:\n\nAurora Solar – No native integration, but has API (can connect via custom actions)\n\nHelioscope – Same situation, API available\n\nIf you can share the list of your top 5-10 partner systems, I'll run a full compatibility check before our next call.\n\n\n\nNext Steps\n\nYou: Start trial, try building one integration (Google Sheets → your API is a good quick win)\n\nYou: Send me the list of top partner systems to check\n\nJan 28: Reconnect to review progress and validate ROI assumptions\n\n\n\nQuestions in the meantime – just reply here.\n\n\n\nTalk soon,\n\nAlex",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/xpansiv/outputs/xpansiv-discovery-followup.docx",
+      "createdAt": "2026-01-25T05:23:53.288Z",
+      "anonymized": true
+    },
+    "doc_greenmarket-exchange_xpansiv-roi-tracker": {
+      "id": "doc_greenmarket-exchange_xpansiv-roi-tracker",
+      "dealId": "greenmarket-exchange",
+      "type": "document",
+      "title": "GreenMarket Exchange-roi-tracker",
+      "documentType": "xlsx",
+      "content": "Use Case | Department | Description | Difficulty | Est. Time Saved (hrs/month) | Est. Time Value ($/year) | Est. Error/Risk Reduction ($/year) | Status | Notes | Webhook/API Data Intake | IT/Product | Partners with APIs push data to AutomateFlow webhook endpoint - auto-validates and routes to internal system | Custom API | Phase 1 - Trial | Top 50 partners drive 80% of volume. Priority targets for API integration. Currently manual spreadsheet uploads. | Google Drive/Sheets Monitoring | Operations | Auto-detect when partners upload spreadsheets to shared folders, extract and standardize data | Medium | Phase 1 - Trial | Many partners send Excel/Sheets. Could set up shared folder per partner with auto-processing. | Email Attachment Processing | Operations | Parse incoming emails with data attachments, extract structured data, route to intake system | Medium | Phase 2 | Fallback for partners who can't do API or Drive. Gmail/Outlook parsing + document extraction. | Data Standardization Engine | Product | Transform diverse input formats into unified schema for internal system - field mapping, validation, normalization | Complex | Phase 1 - Trial | Core value. Each partner has different field names, formats. AutomateFlow Tables could serve as transformation layer. | Internal System Sync | IT | Push standardized data to GreenMarket Exchange's internal API/database - creating customer records and applications | Custom API | Phase 1 - Trial | Final step in pipeline. Custom action to hit their internal API. | Aurora Solar Integration | Product | Direct API connection to Aurora Solar design platform - pull project data automatically | Custom API | Phase 2 - Q1 | No native integration. Has API. Would need custom action build. High-value if many partners use Aurora. | Helioscope Integration | Product | Direct API connection to Helioscope design platform - pull project data automatically | Custom API | Phase 2 - Q1 | No native integration. Has API. Same approach as Aurora. | CRM Source Integrations | Product | Connect to common CRMs used by installers (SalesCloud, CRMPlatform, etc.) to pull customer data | Medium | Phase 2 - Q1 | Some partners manage data in CRM. AutomateFlow has native connectors for major CRMs. | Partner Onboarding Automation | Operations | Automated setup flow for new partners - create folders, configure zaps, send credentials | Medium | Phase 3 - Q2 | Reduce partner onboarding time. Self-service setup where possible. | Data Quality Alerting | Operations | Monitor for failed integrations, data validation errors, missing fields - alert team and partner | Medium | Phase 3 - Q2 | Proactive error handling vs current reactive approach. TeamChat/email alerts. | SUMMARY | Total Use Cases Identified: | Total Est. Hours Saved/Month: | Total Est. Time Value/Year: | Total Est. Error/Risk Reduction/Year: | TOTAL ESTIMATED VALUE/YEAR: | CALCULATION METHODOLOGY | Time Value = Hours Saved/Month &#215; 12 months &#215; $50/hr labor cost (tech/operations blended rate) | Error/Risk Reduction = Estimated value of partner churn prevented, application delays avoided, compliance risk | KEY ASSUMPTIONS FROM DISCOVERY CALL (Jan 16, 2026): | &#8226; ~500 installer partners total, top 50 drive 80% of data volume | &#8226; Partners use diverse systems: Aurora, Helioscope, CRMs, custom apps, spreadsheets | &#8226; Current state: Partners must hire staff to convert data formats for GreenMarket Exchange | &#8226; Competitive pressure: Making partners' lives easier = competitive differentiation | &#8226; IntegrateHub exists but used for different use case (internal app &#8594; accounting) | &#8226; Revenue model: Fee-based on solar REC transactions - faster data = faster revenue | &#9888;&#65039; CONSERVATIVE ESTIMATES: Does NOT include: partner acquisition/retention value, | DIFFICULTY LEGEND | Simple | Standard integrations, 1-2 hours to build | Medium | Multi-step workflows, conditional logic, 2-8 hours | Complex | Multiple systems, custom logic/testing, 1-2 days | Custom API | Requires webhooks/code - AutomateFlow handles this, may need SA support | PROPOSED TIMELINE | Jan 20-31: Trial period - build initial webhook + sheets + standardization flows | Jan 28: Check-in call - review trial progress, troubleshoot, discuss expansion | Feb: Evaluate enterprise partnership based on trial results | Q1: Phase 2 - Solar design tool integrations (Aurora, Helioscope) | Q2: Phase 3 - Partner onboarding automation, quality alerting | 40 | 30 | 25 | 50 | 20 | 15 | 15 | 20 | 10 | 15",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/xpansiv/outputs/xpansiv-roi-tracker.xlsx",
+      "createdAt": "2026-01-25T05:23:53.288Z",
+      "anonymized": true
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "greenmarket-exchange_v2_cp_001",
+      "dealId": "greenmarket-exchange",
+      "version": 2,
+      "timestamp": "2001-01-16",
+      "availableArtifacts": [
+        {
+          "artifactId": "greenmarket-exchange_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery / Trial",
+          "date": "2001-01-16"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "GreenMarket Exchange",
+        "stage": "Discovery / Trial",
+        "amount": "TBD (Enterprise potential - 500 partners, complex integration needs)",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [
+        {
+          "name": "Lavanya Kartik",
+          "title": "Product Manager, Managed Solutions",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Eric Mooney",
+          "title": "Technical (works closely with IntegrateHub)",
+          "role": "technical_evaluator",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "\"Business team\"",
+          "title": "Referenced as needing to approve",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "greenmarket-exchange_v2_cp_001_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "greenmarket-exchange_crm_snapshot"
+          ],
+          "optionalArtifacts": [
+            "tx_greenmarket-exchange_260116-discovery",
+            "doc_greenmarket-exchange_xpansiv-discovery-followup",
+            "doc_greenmarket-exchange_xpansiv-roi-tracker"
+          ],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 1
+        }
+      ]
+    },
+    {
+      "id": "greenmarket-exchange_v2_cp_002",
+      "dealId": "greenmarket-exchange",
+      "version": 2,
+      "timestamp": "2026-01-25",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_greenmarket-exchange_260116-discovery",
+          "type": "transcript",
+          "title": "Untitled Meeting",
+          "date": "2026-01-25"
+        },
+        {
+          "artifactId": "greenmarket-exchange_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery / Trial",
+          "date": "2001-01-16"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "GreenMarket Exchange",
+        "stage": "Discovery / Trial",
+        "amount": "TBD (Enterprise potential - 500 partners, complex integration needs)",
+        "daysSinceFirstContact": 9
+      },
+      "stakeholders": [
+        {
+          "name": "Lavanya Kartik",
+          "title": "Product Manager, Managed Solutions",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Eric Mooney",
+          "title": "Technical (works closely with IntegrateHub)",
+          "role": "technical_evaluator",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "\"Business team\"",
+          "title": "Referenced as needing to approve",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "greenmarket-exchange_v2_cp_002_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_greenmarket-exchange_260116-discovery",
+            "greenmarket-exchange_crm_snapshot"
+          ],
+          "optionalArtifacts": [
+            "doc_greenmarket-exchange_xpansiv-discovery-followup",
+            "doc_greenmarket-exchange_xpansiv-roi-tracker"
+          ],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "greenmarket-exchange_v2_cp_002_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_greenmarket-exchange_260116-discovery"
+          ],
+          "optionalArtifacts": [
+            "greenmarket-exchange_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "greenmarket-exchange_v2_cp_002_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_greenmarket-exchange_260116-discovery"
+          ],
+          "optionalArtifacts": [
+            "greenmarket-exchange_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        }
+      ]
+    }
+  ],
+  "finalOutcome": "active",
+  "metadata": {
+    "sourceDeals": [
+      "xpansiv"
+    ],
+    "transcriptCount": 1,
+    "artifactCount": 4,
+    "dateRange": {
+      "start": "2001-01-16",
+      "end": "2026-01-25T05:23:53.288Z"
+    }
+  }
+}

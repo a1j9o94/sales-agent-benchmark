@@ -1,6 +1,19 @@
 import { useState, useEffect } from "react";
+import {
+  scoreColor,
+  scoreBgColor,
+  scoreBarColor,
+  taskTypeLabel,
+  taskTypeColor,
+  dimensionLabel,
+  dimensionColor,
+  dimensionFullLabel,
+  getJudgeShortName,
+  V2_DIMENSION_KEYS,
+} from "./utils";
+import type { V2ScoringDimensions } from "@/types/benchmark-v2";
 
-interface RunDetails {
+interface V2RunDetails {
   id: number;
   agentId: string;
   agentName: string | null;
@@ -10,51 +23,23 @@ interface RunDetails {
   percentage: number;
   dealsEvaluated: number;
   checkpointsEvaluated: number;
+  tasksEvaluated: number;
+  avgTurnsPerTask: number;
   avgLatencyMs: number | null;
   runTimestamp: string;
-  scores: {
-    riskIdentification: number;
-    nextStepQuality: number;
-    prioritization: number;
-    outcomeAlignment: number;
-  };
+  dimensions: Record<string, number>;
 }
 
-interface JudgeEvaluation {
+interface V2TaskEvaluation {
   runId: number;
   checkpointId: string;
-  judgeModel: string;
-  scores: {
-    riskIdentification: number;
-    nextStepQuality: number;
-    prioritization: number;
-    outcomeAlignment: number;
-  };
+  taskId: string;
+  taskType: string;
+  turnsUsed: number;
+  scores: Partial<V2ScoringDimensions>;
   feedback?: string;
-  risksIdentified?: string[];
-  risksMissed?: string[];
-  helpfulRecommendations?: string[];
-  unhelpfulRecommendations?: string[];
-}
-
-const DEAL_DISPLAY_NAMES: Record<string, string> = {
-  "velocity-systems": "Velocity Systems",
-  "noteflow-ai": "NoteFlow AI",
-  "summit-learning": "Summit Learning",
-  "streamcore-media": "StreamCore Media",
-  "chillspace-tech": "ChillSpace Tech",
-};
-
-function scoreColor(percentage: number): string {
-  if (percentage >= 75) return "text-emerald-400";
-  if (percentage >= 50) return "text-amber-400";
-  return "text-red-400";
-}
-
-function scoreBgColor(percentage: number): string {
-  if (percentage >= 75) return "bg-emerald-500/10 border-emerald-500/20";
-  if (percentage >= 50) return "bg-amber-500/10 border-amber-500/20";
-  return "bg-red-500/10 border-red-500/20";
+  artifactsRequested?: string[];
+  judgeModel?: string;
 }
 
 function getDealPrefix(checkpointId: string): string {
@@ -63,59 +48,51 @@ function getDealPrefix(checkpointId: string): string {
   return checkpointId.substring(0, idx);
 }
 
-function getJudgeShortName(model: string): string {
-  // Extract a short display name from judge model string
-  if (model.includes("claude")) {
-    const match = model.match(/claude[- ](\w+)[- ]?([\d.]+)?/i);
-    if (match) return `Claude ${match[1]}`;
-  }
-  if (model.includes("gpt")) {
-    const match = model.match(/gpt[- ]?([\w.]+)/i);
-    if (match) return `GPT-${match[1]}`;
-  }
-  if (model.includes("gemini")) {
-    const match = model.match(/gemini[- ]?([\w.]+)/i);
-    if (match) return `Gemini ${match[1]}`;
-  }
-  // Fallback: take last segment or truncate
-  const parts = model.split("/");
-  const last = parts[parts.length - 1] || model;
-  return last.length > 20 ? last.substring(0, 20) + "..." : last;
-}
-
-function evalTotal(eval_: JudgeEvaluation): number {
+function evalV2Total(eval_: V2TaskEvaluation): number {
   return (
-    eval_.scores.riskIdentification +
-    eval_.scores.nextStepQuality +
-    eval_.scores.prioritization +
-    eval_.scores.outcomeAlignment
+    (eval_.scores.riskIdentification ?? 0) +
+    (eval_.scores.nextStepQuality ?? 0) +
+    (eval_.scores.prioritization ?? 0) +
+    (eval_.scores.outcomeAlignment ?? 0)
   );
 }
 
-function JudgeDetail({ eval_ }: { eval_: JudgeEvaluation }) {
-  const total = evalTotal(eval_);
+function ScoreBar({ percentage }: { percentage: number }) {
+  const color = scoreBarColor(percentage);
+  return (
+    <div className="relative h-1.5 bg-navy-800 rounded-full overflow-hidden">
+      <div
+        className={`absolute inset-y-0 left-0 bg-gradient-to-r ${color} rounded-full transition-all duration-500`}
+        style={{ width: `${percentage}%` }}
+      />
+    </div>
+  );
+}
+
+function JudgeDetail({ eval_ }: { eval_: V2TaskEvaluation }) {
+  const total = evalV2Total(eval_);
   const totalPct = Math.round((total / 40) * 100);
+
+  // Only show dimensions that have values
+  const scoredDimensions = Object.entries(eval_.scores).filter(
+    ([_, v]) => v !== undefined && v !== null
+  );
 
   return (
     <div className="space-y-3">
       {/* Score bars */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        {[
-          { label: "Risk ID", value: eval_.scores.riskIdentification },
-          { label: "Next Steps", value: eval_.scores.nextStepQuality },
-          { label: "Priority", value: eval_.scores.prioritization },
-          { label: "Alignment", value: eval_.scores.outcomeAlignment },
-        ].map((dim) => (
-          <div key={dim.label} className="bg-navy-900/60 rounded-lg p-3">
-            <div className="text-xs text-slate-500 mb-1">{dim.label}</div>
-            <div className={`text-lg font-bold ${scoreColor(Math.round((dim.value / 10) * 100))}`}>
-              {dim.value.toFixed(1)}
+        {scoredDimensions.map(([key, value]) => (
+          <div key={key} className="bg-navy-900/60 rounded-lg p-3">
+            <div className="text-xs text-slate-500 mb-1">{dimensionLabel(key)}</div>
+            <div className={`text-lg font-bold ${scoreColor(Math.round(((value ?? 0) / 10) * 100))}`}>
+              {(value ?? 0).toFixed(1)}
               <span className="text-slate-600 text-xs">/10</span>
             </div>
             <div className="mt-1 h-1 bg-navy-800 rounded-full overflow-hidden">
               <div
                 className="h-full bg-cyan-500 rounded-full transition-all duration-500"
-                style={{ width: `${(dim.value / 10) * 100}%` }}
+                style={{ width: `${((value ?? 0) / 10) * 100}%` }}
               />
             </div>
           </div>
@@ -136,59 +113,23 @@ function JudgeDetail({ eval_ }: { eval_: JudgeEvaluation }) {
         </div>
       )}
 
-      {/* Risks & Recommendations */}
-      <div className="grid md:grid-cols-2 gap-3">
-        {eval_.risksIdentified && eval_.risksIdentified.length > 0 && (
-          <div className="bg-navy-900/40 rounded-lg p-3">
-            <div className="text-xs font-medium text-emerald-400 mb-1">Risks Identified</div>
-            <ul className="text-xs text-slate-400 space-y-0.5">
-              {eval_.risksIdentified.map((r, i) => (
-                <li key={i}>- {r}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-        {eval_.risksMissed && eval_.risksMissed.length > 0 && (
-          <div className="bg-navy-900/40 rounded-lg p-3">
-            <div className="text-xs font-medium text-red-400 mb-1">Risks Missed</div>
-            <ul className="text-xs text-slate-400 space-y-0.5">
-              {eval_.risksMissed.map((r, i) => (
-                <li key={i}>- {r}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-        {eval_.helpfulRecommendations && eval_.helpfulRecommendations.length > 0 && (
-          <div className="bg-navy-900/40 rounded-lg p-3">
-            <div className="text-xs font-medium text-emerald-400 mb-1">Helpful Recommendations</div>
-            <ul className="text-xs text-slate-400 space-y-0.5">
-              {eval_.helpfulRecommendations.map((r, i) => (
-                <li key={i}>- {r}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-        {eval_.unhelpfulRecommendations && eval_.unhelpfulRecommendations.length > 0 && (
-          <div className="bg-navy-900/40 rounded-lg p-3">
-            <div className="text-xs font-medium text-red-400 mb-1">Unhelpful Recommendations</div>
-            <ul className="text-xs text-slate-400 space-y-0.5">
-              {eval_.unhelpfulRecommendations.map((r, i) => (
-                <li key={i}>- {r}</li>
-              ))}
-            </ul>
-          </div>
+      {/* Turns & artifacts info */}
+      <div className="flex gap-4 text-xs text-slate-500">
+        <span>Turns used: <span className="text-slate-300">{eval_.turnsUsed}</span></span>
+        {eval_.artifactsRequested && eval_.artifactsRequested.length > 0 && (
+          <span>Artifacts requested: <span className="text-slate-300">{eval_.artifactsRequested.length}</span></span>
         )}
       </div>
     </div>
   );
 }
 
-export function ResultsPage() {
+export function V2ResultsPage() {
   const pathParts = window.location.pathname.split("/").filter(Boolean);
   const resultId = pathParts[pathParts.length - 1] || "";
 
-  const [run, setRun] = useState<RunDetails | null>(null);
-  const [judgeEvaluations, setJudgeEvaluations] = useState<JudgeEvaluation[]>([]);
+  const [run, setRun] = useState<V2RunDetails | null>(null);
+  const [taskEvaluations, setTaskEvaluations] = useState<V2TaskEvaluation[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedDeal, setSelectedDeal] = useState<string | null>(null);
@@ -203,7 +144,7 @@ export function ResultsPage() {
 
     (async () => {
       try {
-        const res = await fetch(`/api/agent-results/${encodeURIComponent(resultId)}`);
+        const res = await fetch(`/api/v2/agent-results/${encodeURIComponent(resultId)}`);
         if (!res.ok) {
           const data = await res.json().catch(() => ({ error: "Failed to load" }));
           setError(data.error || `Error: ${res.status}`);
@@ -211,7 +152,7 @@ export function ResultsPage() {
         }
         const data = await res.json();
         setRun(data.run);
-        setJudgeEvaluations(data.judgeEvaluations || []);
+        setTaskEvaluations(data.taskEvaluations || []);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to load results");
       } finally {
@@ -220,8 +161,8 @@ export function ResultsPage() {
     })();
   }, [resultId]);
 
-  // Group evaluations by checkpoint
-  const evaluationsByCheckpoint = judgeEvaluations.reduce<Record<string, JudgeEvaluation[]>>(
+  // Group evaluations by checkpoint, then by deal
+  const evalsByCheckpoint = taskEvaluations.reduce<Record<string, V2TaskEvaluation[]>>(
     (acc, eval_) => {
       if (!acc[eval_.checkpointId]) acc[eval_.checkpointId] = [];
       acc[eval_.checkpointId]!.push(eval_);
@@ -230,8 +171,7 @@ export function ResultsPage() {
     {}
   );
 
-  // Group checkpoints by deal prefix
-  const checkpointsByDeal = Object.keys(evaluationsByCheckpoint).reduce<Record<string, string[]>>(
+  const checkpointsByDeal = Object.keys(evalsByCheckpoint).reduce<Record<string, string[]>>(
     (acc, cpId) => {
       const deal = getDealPrefix(cpId);
       if (!acc[deal]) acc[deal] = [];
@@ -250,28 +190,28 @@ export function ResultsPage() {
     let total = 0;
     let count = 0;
     for (const cpId of cps) {
-      const evals = evaluationsByCheckpoint[cpId];
+      const evals = evalsByCheckpoint[cpId];
       if (!evals) continue;
       for (const e of evals) {
-        total += evalTotal(e);
+        total += evalV2Total(e);
         count++;
       }
     }
     return count > 0 ? total / count : 0;
   }
 
-  // Compute average score for a checkpoint across judges
+  // Compute average score for a checkpoint
   function checkpointAvgScore(cpId: string): number {
-    const evals = evaluationsByCheckpoint[cpId];
+    const evals = evalsByCheckpoint[cpId];
     if (!evals || evals.length === 0) return 0;
-    const sum = evals.reduce((s, e) => s + evalTotal(e), 0);
+    const sum = evals.reduce((s, e) => s + evalV2Total(e), 0);
     return sum / evals.length;
   }
 
-  // Filter checkpoints based on selected deal
+  // Filter checkpoints by selected deal
   const filteredCheckpoints = selectedDeal
     ? (checkpointsByDeal[selectedDeal] || [])
-    : Object.keys(evaluationsByCheckpoint).sort();
+    : Object.keys(evalsByCheckpoint).sort();
 
   if (isLoading) {
     return (
@@ -280,7 +220,7 @@ export function ResultsPage() {
           <div className="bg-navy-900/40 rounded-2xl border border-white/5 p-8">
             <div className="flex items-center justify-center gap-3">
               <div className="animate-spin w-5 h-5 border-2 border-cyan-500 border-t-transparent rounded-full" />
-              <span className="text-slate-400">Loading results...</span>
+              <span className="text-slate-400">Loading V2 results...</span>
             </div>
           </div>
         </div>
@@ -297,30 +237,35 @@ export function ResultsPage() {
             <p className="text-slate-400 text-sm">{error || "Results not found"}</p>
           </div>
           <a
-            href="/benchmark"
+            href="/v2/benchmark"
             onClick={(e) => {
               e.preventDefault();
-              window.history.pushState({}, "", "/benchmark");
+              window.history.pushState({}, "", "/v2/benchmark");
               window.dispatchEvent(new PopStateEvent("popstate"));
             }}
             className="inline-flex items-center gap-2 mt-4 text-sm text-cyan-400 hover:text-cyan-300"
           >
-            Back to Leaderboard
+            Back to V2 Leaderboard
           </a>
         </div>
       </div>
     );
   }
 
+  // Build combined scores object for the 8-dimension grid
+  const allDimensions: Record<string, number | undefined> = {
+    ...run.dimensions,
+  };
+
   return (
     <div className="pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-6">
         {/* Back link */}
         <a
-          href="/benchmark"
+          href="/v2/benchmark"
           onClick={(e) => {
             e.preventDefault();
-            window.history.pushState({}, "", "/benchmark");
+            window.history.pushState({}, "", "/v2/benchmark");
             window.dispatchEvent(new PopStateEvent("popstate"));
           }}
           className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-white transition-colors mb-6"
@@ -328,15 +273,19 @@ export function ResultsPage() {
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to Leaderboard
+          Back to V2 Leaderboard
         </a>
 
         {/* Header */}
         <div className="mb-8">
-          <div className="data-label text-cyan-400 mb-2">Benchmark Results</div>
+          <div className="inline-flex items-center gap-2 mb-2">
+            <span className="data-label text-cyan-400">V2 Benchmark Results</span>
+            <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/20 text-cyan-400 leading-none">V2</span>
+          </div>
           <h1 className="text-3xl font-bold mb-2">{run.agentName || run.agentId}</h1>
           <p className="text-sm text-slate-500">
-            Run on {new Date(run.runTimestamp).toLocaleString()} | {run.dealsEvaluated} deals, {run.checkpointsEvaluated} checkpoints
+            Run on {new Date(run.runTimestamp).toLocaleString()} | {run.dealsEvaluated} deals, {run.checkpointsEvaluated} checkpoints, {run.tasksEvaluated} tasks
+            {run.avgTurnsPerTask > 0 && ` | avg ${run.avgTurnsPerTask.toFixed(1)} turns/task`}
           </p>
         </div>
 
@@ -362,38 +311,36 @@ export function ResultsPage() {
             )}
           </div>
 
-          {/* Dimension breakdown */}
+          {/* 8-dimension grid (2 rows x 4 cols) */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { label: "Risk Identification", value: run.scores.riskIdentification, color: "cyan" },
-              { label: "Next Step Quality", value: run.scores.nextStepQuality, color: "emerald" },
-              { label: "Prioritization", value: run.scores.prioritization, color: "amber" },
-              { label: "Outcome Alignment", value: run.scores.outcomeAlignment, color: "purple" },
-            ].map((dim) => (
-              <div key={dim.label} className="bg-navy-900/50 rounded-lg p-4 text-center">
-                <div className="text-xs text-slate-500 mb-2">{dim.label}</div>
-                <div className={`text-2xl font-bold text-${dim.color}-400`}>
-                  {dim.value.toFixed(1)}
-                  <span className="text-slate-600 text-base">/10</span>
+            {V2_DIMENSION_KEYS.map((key) => {
+              const value = allDimensions[key];
+              const color = dimensionColor(key);
+              return (
+                <div key={key} className="bg-navy-900/50 rounded-lg p-4 text-center">
+                  <div className="text-xs text-slate-500 mb-2">{dimensionFullLabel(key)}</div>
+                  <div className={`text-2xl font-bold text-${color}-400`}>
+                    {value !== undefined ? value.toFixed(1) : "-"}
+                    <span className="text-slate-600 text-base">/10</span>
+                  </div>
+                  {value !== undefined && (
+                    <div className="mt-2">
+                      <ScoreBar percentage={(value / 10) * 100} />
+                    </div>
+                  )}
                 </div>
-                <div className="mt-2 h-1.5 bg-navy-800 rounded-full overflow-hidden">
-                  <div
-                    className={`h-full bg-${dim.color}-500 rounded-full transition-all duration-500`}
-                    style={{ width: `${(dim.value / 10) * 100}%` }}
-                  />
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
-        {/* Judge evaluations with 3-level hierarchy */}
-        {Object.keys(evaluationsByCheckpoint).length > 0 && (
+        {/* 3-level hierarchy: Deal > Checkpoint > Task */}
+        {Object.keys(evalsByCheckpoint).length > 0 && (
           <div className="bg-navy-900/40 rounded-2xl border border-white/5 overflow-hidden">
             <div className="p-5 border-b border-white/5">
-              <h3 className="font-semibold">Per-Checkpoint Judge Evaluations</h3>
+              <h3 className="font-semibold">Per-Task Evaluations</h3>
               <p className="text-xs text-slate-500 mt-1">
-                Detailed feedback from public checkpoint evaluations
+                Detailed feedback from checkpoint task evaluations
               </p>
             </div>
 
@@ -424,7 +371,7 @@ export function ResultsPage() {
                             : "bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10"
                         }`}
                       >
-                        {DEAL_DISPLAY_NAMES[deal] || deal}
+                        {deal}
                         <span className={`${scoreColor(avgPct)} font-bold`}>
                           {avg.toFixed(0)}
                         </span>
@@ -438,13 +385,18 @@ export function ResultsPage() {
             {/* Level 2: Collapsible checkpoints */}
             <div className="divide-y divide-white/5">
               {filteredCheckpoints.map((cpId) => {
-                const evals = evaluationsByCheckpoint[cpId];
+                const evals = evalsByCheckpoint[cpId];
                 if (!evals || evals.length === 0) return null;
 
                 const avg = checkpointAvgScore(cpId);
                 const avgPct = Math.round((avg / 40) * 100);
-                const judgeIdx = activeJudge[cpId] ?? 0;
-                const currentEval = evals[judgeIdx] || evals[0]!;
+
+                // Group evals by task
+                const taskGroups: Record<string, V2TaskEvaluation[]> = {};
+                for (const e of evals) {
+                  if (!taskGroups[e.taskId]) taskGroups[e.taskId] = [];
+                  taskGroups[e.taskId]!.push(e);
+                }
 
                 return (
                   <details key={cpId} className="group">
@@ -462,28 +414,21 @@ export function ResultsPage() {
                           <span className="font-mono text-sm text-slate-300">{cpId}</span>
                         </div>
                         <div className="flex items-center gap-3">
-                          {/* Per-judge score badges */}
+                          {/* Task type badges */}
                           <div className="hidden md:flex gap-1.5">
-                            {evals.map((e, i) => {
-                              const t = evalTotal(e);
-                              const p = Math.round((t / 40) * 100);
+                            {Object.values(taskGroups).map((taskEvals) => {
+                              const first = taskEvals[0]!;
+                              const colors = taskTypeColor(first.taskType);
                               return (
                                 <span
-                                  key={i}
-                                  className={`text-xs px-2 py-0.5 rounded-full ${
-                                    p >= 75
-                                      ? "bg-emerald-500/10 text-emerald-400"
-                                      : p >= 50
-                                        ? "bg-amber-500/10 text-amber-400"
-                                        : "bg-red-500/10 text-red-400"
-                                  }`}
+                                  key={first.taskId}
+                                  className={`text-[10px] px-2 py-0.5 rounded-full ${colors.bg} ${colors.text} border ${colors.border}`}
                                 >
-                                  {t.toFixed(0)}
+                                  {taskTypeLabel(first.taskType)}
                                 </span>
                               );
                             })}
                           </div>
-                          {/* Average */}
                           <span className={`text-sm font-bold ${scoreColor(avgPct)}`}>
                             {avg.toFixed(1)}/40
                           </span>
@@ -491,36 +436,63 @@ export function ResultsPage() {
                       </div>
                     </summary>
 
-                    {/* Level 3: Judge carousel */}
-                    <div className="px-4 pb-4">
-                      {/* Judge tabs */}
-                      {evals.length > 1 && (
-                        <div className="flex gap-2 mb-3">
-                          {evals.map((e, i) => (
-                            <button
-                              key={i}
-                              onClick={() =>
-                                setActiveJudge((prev) => ({ ...prev, [cpId]: i }))
-                              }
-                              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                                (judgeIdx) === i
-                                  ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
-                                  : "bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10"
-                              }`}
-                            >
-                              {getJudgeShortName(e.judgeModel)}
-                            </button>
-                          ))}
-                        </div>
-                      )}
+                    {/* Level 3: Task cards within checkpoint */}
+                    <div className="px-4 pb-4 space-y-4">
+                      {Object.entries(taskGroups).map(([taskId, taskEvals]) => {
+                        const first = taskEvals[0]!;
+                        const colors = taskTypeColor(first.taskType);
+                        const judgeIdx = activeJudge[taskId] ?? 0;
+                        const currentEval = taskEvals[judgeIdx] || taskEvals[0]!;
 
-                      {/* Single judge's full evaluation */}
-                      <div className="bg-navy-900/50 rounded-lg p-4">
-                        <div className="text-xs text-slate-500 mb-3">
-                          {currentEval.judgeModel}
-                        </div>
-                        <JudgeDetail eval_={currentEval} />
-                      </div>
+                        return (
+                          <div key={taskId} className="bg-navy-900/50 rounded-lg overflow-hidden">
+                            {/* Task header */}
+                            <div className="p-4 border-b border-white/5">
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-3">
+                                  <span className={`px-2 py-0.5 rounded text-xs font-medium ${colors.bg} ${colors.text} border ${colors.border}`}>
+                                    {taskTypeLabel(first.taskType)}
+                                  </span>
+                                  <span className="text-xs text-slate-600 font-mono">{taskId}</span>
+                                </div>
+                                <div className="flex items-center gap-2 text-xs text-slate-500">
+                                  <span>{first.turnsUsed} turn{first.turnsUsed !== 1 ? "s" : ""}</span>
+                                  {first.artifactsRequested && first.artifactsRequested.length > 0 && (
+                                    <span>| {first.artifactsRequested.length} artifacts</span>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Judge tabs (if multiple judges) */}
+                            {taskEvals.length > 1 && (
+                              <div className="px-4 pt-3 flex gap-2">
+                                {taskEvals.map((e, i) => (
+                                  <button
+                                    key={i}
+                                    onClick={() => setActiveJudge((prev) => ({ ...prev, [taskId]: i }))}
+                                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                                      judgeIdx === i
+                                        ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
+                                        : "bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10"
+                                    }`}
+                                  >
+                                    {getJudgeShortName(e.judgeModel || `Judge ${i + 1}`)}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+
+                            {/* Judge detail */}
+                            <div className="p-4">
+                              {currentEval.judgeModel && (
+                                <div className="text-xs text-slate-500 mb-3">{currentEval.judgeModel}</div>
+                              )}
+                              <JudgeDetail eval_={currentEval} />
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </details>
                 );
@@ -529,13 +501,11 @@ export function ResultsPage() {
           </div>
         )}
 
-        {/* No judge evaluations */}
-        {Object.keys(evaluationsByCheckpoint).length === 0 && (
+        {/* No evaluations */}
+        {Object.keys(evalsByCheckpoint).length === 0 && (
           <div className="bg-navy-900/40 rounded-2xl border border-white/5 p-8 text-center">
             <div className="text-slate-500 text-sm">
-              No detailed judge evaluations available for this run.
-              <br />
-              Detailed feedback is only available for public checkpoint evaluations.
+              No detailed task evaluations available for this run.
             </div>
           </div>
         )}
@@ -544,4 +514,4 @@ export function ResultsPage() {
   );
 }
 
-export default ResultsPage;
+export default V2ResultsPage;

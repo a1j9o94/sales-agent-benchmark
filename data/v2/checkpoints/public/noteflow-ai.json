@@ -1,0 +1,949 @@
+{
+  "id": "noteflow-ai",
+  "name": "NoteFlow AI",
+  "version": 2,
+  "artifacts": {
+    "tx_noteflow-ai_2025-11-20-carl-shre-granola": {
+      "id": "tx_noteflow-ai_2025-11-20-carl-shre-granola",
+      "dealId": "noteflow-ai",
+      "type": "transcript",
+      "title": "Craig Labanz and Shreman Shrestha (NoteFlow AI)",
+      "rawText": "# Craig Labanz and Shreman Shrestha (NoteFlow AI)\n\n**Date:** November 20, 2025\n**Participants:** Craig Labanz (SA, AutomateFlow), Emma Wunderl (SA, AutomateFlow), Shreman Shrestha (Steve, NoteFlow AI)\n\n## Key Takeaways\n\n### Steve's Role & Context\n- Heads business side of NoteFlow AI (used to be sales, now enterprise product + partnerships)\n- Owns API/MCP strategy\n- CEO brief to him: \"this is strategically important, but this could also fuck us up. So don't fuck it up.\"\n\n### API/MCP Roadmap\n- \"People have been screaming for an API for a while or an MCP\"\n- Limited engineering bandwidth in December\n- Targeting V0 of MCP/API in January\n- Want to FlowBuilder it useful for individuals AND companies to query company-wide data\n\n### Enterprise Blockers (Critical Intel)\n1. **Data ownership debate** — Internal dispute at NoteFlow AI about who owns the data\n   - Legal and others debating whether company owns employee notes\n   - Steve's view: company should own it (like TeamChat, email, Gong)\n   - This is blocking some enterprise features\n   - \"We as a company just need to FlowBuilder a decision here quick\"\n\n2. **No service account model** — Authentication is user-based, not API key\n   - Enterprise customers want one automation for many users\n   - Currently need 10 zaps for 10 CSMs\n   - No admin-level permissions to see team data\n\n3. **Trigger limitations** — Can only trigger when note added to folder\n   - No \"note completed\" trigger\n   - Users have to manually move notes to shared folders\n\n### Enterprise Use Cases Discussed\n1. **Hinge Health example** — CSMs move notes to shared folder → Zap → Gainsight\n   - Pain: Manual folder assignment is friction\n   - Want: Auto-trigger on any completed call\n\n2. **Offboarding** — \"This is going to be a big thing\"\n   - Get all notes from departing employee\n   - Ensure saved in CRM before they leave\n   - Assign to someone else\n\n3. **Company-wide querying** — Pull all notes related to a domain/deal\n   - Like Gong: get all calls related to a deal, summarize\n   - Don't care which user owns it\n\n### Recipes Feature\n- Custom prompts for summaries (like custom GPTs)\n- Camilla (GTM) uses it for pipeline prep with CEO's format\n- PM at Brex uses it for performance reviews\n- Steve talking to AutomateFlow people about \"recipes → zaps\"\n\n### Craig's Current Workflow\n- Uses NoteFlow AI → Coda integration\n- Manually adds CRM ID to each note (no auto-routing)\n- Wishes it was automatic\n\n### Transcript Quality\n- \"Transcript is not very good sometimes\"\n- Summaries are great, transcripts have errors\n- LLMs are smart enough to interpret despite errors\n\n---\n\n## Full Transcript\n\n[Full transcript preserved below]\n\nThem: Hey, Craig.\nMe: Hello.\n[... full transcript continues ...]\n",
+      "turns": [
+        {
+          "speaker": "them",
+          "text": "Hey, Craig."
+        },
+        {
+          "speaker": "me",
+          "text": "Hello. [... full transcript continues ...]"
+        }
+      ],
+      "attendees": [
+        "Craig Labanz",
+        "Emma Wunderl",
+        "Shreman Shrestha"
+      ],
+      "date": "2025-11-20",
+      "keyTakeaways": [
+        "Heads business side of NoteFlow AI (used to be sales, now enterprise product + partnerships)",
+        "Owns API/MCP strategy",
+        "CEO brief to him: \"this is strategically important, but this could also fuck us up. So don't fuck it up.\"",
+        "\"People have been screaming for an API for a while or an MCP\"",
+        "Limited engineering bandwidth in December",
+        "Targeting V0 of MCP/API in January",
+        "Want to FlowBuilder it useful for individuals AND companies to query company-wide data",
+        "Custom prompts for summaries (like custom GPTs)",
+        "Camilla (GTM) uses it for pipeline prep with CEO's format",
+        "PM at Brex uses it for performance reviews",
+        "Steve talking to AutomateFlow people about \"recipes → zaps\"",
+        "Uses NoteFlow AI → Coda integration",
+        "Manually adds CRM ID to each note (no auto-routing)",
+        "Wishes it was automatic",
+        "\"Transcript is not very good sometimes\"",
+        "Summaries are great, transcripts have errors",
+        "LLMs are smart enough to interpret despite errors"
+      ],
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/transcripts/2025-11-20-carl-shre-granola.md",
+      "createdAt": "2026-01-25T05:23:53.282Z",
+      "anonymized": true
+    },
+    "tx_noteflow-ai_260121-meeting-ongoing-granola-partnership-work": {
+      "id": "tx_noteflow-ai_260121-meeting-ongoing-granola-partnership-work",
+      "dealId": "noteflow-ai",
+      "type": "transcript",
+      "title": "Ongoing NoteFlow AI partnership work",
+      "rawText": "# Ongoing NoteFlow AI partnership work\n\n## Meeting Details\n\n**Meeting ID:** e12bf8db-0bc9-4cc4-95fa-783ef4d77d84\n\n**Date & Time:** Wednesday, January 21, 2026 at 9:30 PM UTC\n\n**Calendar Event ID:** 7onimjlvq9018q2u4tt6lfisgs\n\n**Calendar Event Title:** Ongoing NoteFlow AI partnership work\n\n**Organizer:** Alex Obleton (user@user)\n\n### Attendees\n\n- **Taylor Lee** (user@user)\n- **Alex Obleton** (user@user)\n\n## My Notes\n\nLaunched the integration, back in July, and seeing an steady increase in usage, they've pushing a lot of brand awareness, built some zap stuff with them to get started, pitched them for the agents of Scale, they ran a build along, do an event. Caludia Cafaio who is the community specialists who's done with that\n\nThey invited their customers and we invited ours and we have someone and she's the one working the leads through our partner person solution channel\n\nPart of a working group with trying to figure out coselling with partners, Aliese actually pitched - this was around before christmas, it's for us to figure out do we expirence co-selling together, the thing with that is they're building out their sales team, they don't have a standard co-sell motion, that was an opporty\n\nEllsy who heads up the MCP project management team to get NoteFlow AI around MCP AutomateFlow use case, connected them with Steve who is their head of growth, then there was a discussion talking around a bundle, \n\nLenny's bundle where there's all these different AI ap you can get discounts from, they wanted to explore would some of our partners would reach out to them, they where but they didn't go super far, but we needed marketing support, feedback from the bundle, it's probably more of an SMB play than an eneterprise, they have the functionality to offer discounts, we also offer a light way promo \n\nWe have two sides of the partnerships team Ecosystems+Channels, Ecosystems and integrations partenrs, the 8K apps, typically. As we do new partner types such as MCP, it's an open api, there's a standard flow get access to devloper portal, get integarations through that\n\nWe had a few things we wanted\n\n## Meeting Notes\n\n### NoteFlow AI Partnership Overview\n\n- Integration launched July 2025, seeing steady usage growth\n  - NoteFlow AI pushing brand awareness, growing platform rapidly\n  - Built Zap templates together for getting started\n  - Collaborated on launch announcement, social posts\n- Current relationship: Platinum partner in ecosystem tier\n  - Based on integration quality vs revenue/leads driven\n  - Doesn’t guarantee partner manager assignment or marketing support\n\n### Recent Partnership Activities\n\n- Pitched for Agents of Scale podcast, ran build-along event\n  - Claudia Cafeo (community specialist, London-based) coordinated\n  - Invited both customer bases to joint event\n  - Kelly from Solver ran build-along, working leads through solution partner channel\n- Working group on co-selling motion (Brian Cash, Brad Smith, Elise)\n  - Elise pitched NoteFlow AI to Naveen before Christmas\n  - Conversation stalled - NoteFlow AI still building sales team, no standard co-sell motion yet\n\n### Technical Integration Opportunities\n\n- Elise (MCP product management) identified NoteFlow AI-AutomateFlow MCP use case\n  - Connected with Shrey (Head of Growth) to explore building it out\n- Two-sided partnership structure:\n  1. Ecosystems: 8,000 integration partners via open API\n  2. Channels: Partner managers for high-growth portfolio partners\n\n### Commercial Discussions\n\n- Bundle opportunity explored (inspired by Lenny’s bundle)\n  - 50+ AI apps offering discounts to shared audience\n  - NoteFlow AI interested, has promo code functionality\n  - Stalled due to marketing team feedback: more SMB than enterprise play\n- AutomateFlow also customer of NoteFlow AI ($10-20K/year spend)\n  - Kurt (legal) managing procurement, some product requirements before full rollout\n  - Potential customer case study opportunity\n\n### Next Steps\n\n- Alex to request warm intro to Shrey (Head of Growth)\n  - Taylor James facilitate via TeamChat channel\n  - Also connected to Jack (Head of Marketing)\n  - Team mostly UK timezone, building SF office\n- Taylor remains primary partnership contact for tactical coordination\n- Potential to incorporate partnership angle into transformation deal discussions\n\n---\n\nChat with meeting transcript: [https://example.com/... AI.ai/t/9acebbf6-38bf-4181-a7c0-c4baab9b4aee](https://example.com/... AI.ai/t/9acebbf6-38bf-4181-a7c0-c4baab9b4aee)\n\n## Full Transcript\n\n \nMe: Hey, Taylor. How are you doing?  \nThem: Hi, Alex. Good, thanks. How are you?  \nMe: I'm doing good. I'm doing really good. I appreciate you taking the time to chat. I don't. Really have any context. Honestly, on the NoteFlow AI partnership and for your context, effectively, what happened is we have this NoteFlow AI part of our sales process or routing, where if a customer is using more than their task limit, so if they're on 100k130 tasks, we get a notification being like, oh, they should upgrade. I got one yesterday. Typically, we just email and like, hey, you should upgrade. But I was like, NoteFlow AI. I'm like, oh, we're doing a bunch of stuff with them.  \nThem: Yeah. Y.  \nMe: There might be something going on here. And so, yeah, I just kind of want to like what we're. What we're doing with them. What our. Any commercial conversations that have happened so far, just trying sort of the state of play, if that makes sense.  \nThem: Eah. Yeah, definitely. And appreciate you reaching out because I think, you know, especially working in different teams, we can be very siloed. And then there's conversations that are happening from, like, a customer, like, acquisition perspective, but also a partnership perspective as well. So appreciate you checking in. Yeah. I can just give you a bit of a rundown of what's happened to to date. So unofficially assigned as a partner contact. But I'm not a partner manager. I leave the partner marketing team and the way that we're structured. So we have a group of partner managers that manage a portfolio of partners that we think have high growth opportunity. That being said, last year there was the initiative to basically build integrations or, like, very light, like, skeleton integration with, like, 250 AI apps to FlowBuilder sure that we're, you know, connected to key AI players.  \nMe: Yeah.  \nThem: That being said, there was, there was a lot of them that we were churning out. And then NoteFlow AI was one of those partners that we were building an integration with. They were, you know, a great brand. They were keen to do a lot. So we started working more from, with them from like a GTM co marketing perspective. Which is why I'm, like, on the account, but I'm not managing them from, like, a commercial perspective or discussing, like, build opportunities. So today, like, what we've done, we launched the integration back in July, I believe. Yeah, back in July.  \nMe: Yes.  \nThem: And we've seen kind of steady, kind of, like, increase in usage. And I think that's just naturally because they've been growing and they've been pushing a lot in terms of, like, brand awareness and growing there for the black platform. So we launched the integration, we built some zap templates, like with them to get started. We, like, collaborated on, like, a launch announcement, we did a social post. I pitched them for the Agents of Scale podcasts. So that's where you, I think, you know, you had link that we had run a build along. So I have Claudia in my team, who's based in London, and they are. Their HQ is London. I think they've got an SF office now. And so we were like, they do a lot of events, like, let's explore together and how we could do a build along.  \nMe: Yes.  \nThem: To showcase.  \nMe: You're teamed about.  \nThem: Claudia. So she Claudia Cafeo. So she's our community specialist that sits with us. And what we're trying to do more of is work with these partners. So what we did was we invited our customers day and invited their customers, and then we had one of our solution partners, Kelly from Solver, attend and actually run the build along and she is the one that's working the leads and submitting any leads to through our partner portal through our solution partner channel.  \nMe: Claudia.  \nThem: What else have we done? And part of a working group with like Brian Cash, Brad Smith before he's kind of into the team. And then also Elise, who's my manager, who heads up ecosystems and channels around trying to figure out who selling with with partners. So we know this is a motion that we are wanting to do and we've had a few different partners that we've been discussing, and then Elise actually pitched NoteFlow AI as one to Naveen, and he was like, okay, yeah, let's see what we can do there.  \nMe: When did that. That happen if you just. For my context, Was that like a last week type thing or like last year?  \nThem: No, that was like, end of last year. Like, I think it was before. Yes, before Christmas. And there was, like, one meeting that they had and I sat within that. And I don't think it's really gone that far. It's essentially, you know, for us to try to figure out, could we experiment? Co selling together. And that could be in the lightest form in terms of, like, could we identify some opportunities and, like, try pitch. But the thing with that is they're still pretty new. They're building out their, like, sales. Their sales team. They don't have a huge, you know, like a sales team. They don't have a standard, like, co sell motion yet. So conversation kind of stalled a little bit, but that was an opportunity that I know. We were discussing with them. And then Elsie, who heads up, like, the, you know, MCP product management team. I think she came up with a key use case. Around getting NoteFlow AI to a NoteFlow AI AutomateFlow MCP use case and wanted to pitch to them around how they could kind of build that out. And so I just connected her with Shrey, who's the head of growth. And I believe, yeah, they just took it from that. I'm not sure what the latest is on, on that one, but I've just kind of been connecting a few kind of by different, like, dots with them. And then there was a discussion. We talked around, like, a bundle. And so something that I was looking at, it came. It came from, I think, like, Bibo and Walter last year was I don't know if you've heard or seen of, like, Lenny's bundle. So Lenny, he's like a quite influential.  \nMe: The stack overflow product person, right? Lenny's? Yeah.  \nThem: Exit. Yes. Oh, he's got a very long name. Yes. And he's got a bundle where, you know, he's got quite a big following. And there's a bundle where there's, like, all these different AI apps where you can get discounts from. So it's like 50 of NoteFlow AI. I don't know, 25% of lovable. And they wanted to explore with some of our AI partners be interested in doing that. So I did reach out to them, given the fact that they do have promo code functionality. And, like, would they be interested in doing something? They were, but it just didn't go, like, super far because we needed marketing support in terms of how we could potentially promote the bundle. To our customers, and the feedback from the marketing team was that it's probably more of an SMB play versus enterprise. But that being said, I think there could be an opportunity. They definitely do have the functionality to Functionality to offer discounts. We also apparently have a, like, a very lightweight, like, promo code. Functionality as well, I don't think. It's really scaled out, but I know the Bizlops team have created that, so if that is. A route. We could definitely explore it. Yeah.  \nMe: Probably. Dumb question. What does it mean when we say that someone's a partner, like, in practice? And, like, what I'm thinking is, like. Because I was like, okay, I looked at both our page and NoteFlow AI pages, and there's, like, nothing that, like, indicates that we're working together. And I know I. Know, we've done the, like, ads and stuff, but I just feel like I was like, oh, like the NoteFlow AI app page, I was like, oh, is there, like, a badge or something? Or, like, if we go to NoteFlow AI, I was like, oh, does it show? AutomateFlow is a partner, and I'm just. Curious. Like, what does that, like, mean in practice? That's kind of a dumb question.  \nThem: Sure. No, no. It's a good question. And it's not always super obvious that we work with all these. These partners. So we have to take a step back. We have two sides of our partnerships team. We called ecosystems and channels, and we have our ecosystems or our integration partners. So These are the 8,000 apps that we integrate with, and this is typically through our API. But then as we're starting to launch new. Product partner. Product types like AutomateFlow, mcp, connection with a partner could also be classed as a integration partner. Just a different way to kind of connect. So we have the integration partner, kind of like program, and anyone can build, build on this. It's an open API, which is why we have 8,000 partners. So as soon as you sign up to be a partner, build on an integration. There's a standard flow in terms of, like, getting your access to the developer. Portal. You were able to manage your integration through that. And then you see those, like, NoteFlow AI, like app pages that are spun up. So let me. So these. Let me show you this. So this James be automatically spun up once a new partner builds on an integration with us. Yeah, you get those. And then you can see, like, various, like, templates at the bottom. So to get use cases to kind of get started. So this is kind of streamlined because we can't manually do this for 8,000 partners, it's kind of always churned out.  \nMe: Thanks.  \nThem: And then as part of the program, there's different tiers or levels. So this is our integration partner program page. And you can see the different levels that they, that they have. And it's a little different to say, some other part of programs that I'm a bit more familiar or kind of. It's not super commercial. Like, if you think about typically partners, there may be like, oh, the more revenue you drive us or the more leads or business you drive us, the higher you go up, the levels are more determined by integration, quality.  \nMe: Okay?  \nThem: Like the status of the integration. Are you maintaining it? And then there are some, like, app marketing benefits that you get, but they're, like, kind of more reactive in terms of the things that we can offer. So you can get a snapshot on the blog post, or you can run an event together, or we could, you know, we kept the platinum tier as a little bit kind of catch all. Well, we just say priority inclusion in AutomateFlow initiated co marketing efforts. That being said, I mentioned that we have partner managers that manage portfolio of partners. Our platinum partners are not necessarily the partners that our partner managed. So that's. That's the thing. Yeah, that's the thing. That's tricky sometimes. And the partner managers recently rejigged their portfolios to better align with, like, line of business partners. So, for example, as a business we're going after, you know, like hr, what are some partners within that ecosystem? That we can start working with, like, hr. Sorry, Job like deal. Exactly. So that's how the kind of portfolio has been kind of crafted. So platinum doesn't necessarily mean they get everything. So that's why the tiering is a little bit.  \nMe: Y. Eah.  \nThem: Doesn't mean too much, but. And so.  \nMe: And I think NoteFlow AI. Is that. Is that right? Or at least that's what Glean said. That's true.  \nThem: Yes, yes, yes, yes, they are. But again, how they get marketing support is a little bit kind of depending on what we own, what we get out of it. So typically, like, I wouldn't if it was like a gold random other partner, I probably wouldn't be involved working with them. But given the fact that they're an AI partner and that we want to position ourselves within the AI ecosystem. And they're keen. There's a lot more that we're willing to do with them.  \nMe: That makes sense.  \nThem: So that's kind of what it means to be a partner today. And we're, and I think like, we're just still trying to crack that kind of co marketing, like motion with some of these, these partners because it's a pretty new motion for us, so.  \nMe: I guess one follow up question there because, like, I want to FlowBuilder sure that I'm not like, making your job or anyone else's on the, like, partnership harder. But I, I could see a world in which, like, as part of a broader, like, transformation agreement where, like, hey, we're going to do some co. Marketing as, like, part of this type thing.  \nThem: Definitely, yeah. Yeah, definitely. And I think, like, we're. We're definitely open to, you know, we. What we're wanting to do from a partnerships perspective is like, how can we support. Like the pipeline. So whether that's like bringing partner source pipeline to sales team, so like the build lock and we actually work with like a partner to actually get leads from there, or if it's also like part of the influence, like if we can support from like a deal momentum perspective and that if that helps. Us kind of do an upsell. We can definitely do that. It isn't like, oh, this is a standard way that we're working at the moment, but I think we can use this as a. As an example to be like, oh, actually, if we're able to start bundling a partnership angle in it, as, as well, you know, does that help drive, like, velocity, help to help them momentum with the, with the deal. So I'm happy to, like, I don't think, don't worry about, like, stepping on any toes or anything like that. It's pretty, like, informal, the relationship. And so with the team, they're always every person I've introduced them to, they've been happy to have that chat. There are actually really good team. We are also a customer of NoteFlow AI as well.  \nMe: Where I was looking at that to where we're spending $10-20K a year with them right now.  \nThem: Exactly. Yeah. So we I think they are start to participate in like, a customer case study. But Kurt, our legal rep who's been managing procurement, I think there was a few things that they wanted them to do from, like a NoteFlow AI product perspective before we fully, like, roll out. But that's also another that's also another leverage angle as well, because the fact that we are a customer of theirs.  \nMe: Awesome. This is exactly what I needed. I probably James ask for a warm intro to Shrey, and I'll. I'll draft all this for you. So you're like. Yeah. And you also, I think you mentioned. Is Trey the head of growth, or is that a different person?  \nThem: Sure. Yeah. That's right. So, yeah, is head of Grove and then also connected with the head of marketing, Jack. I think they're both based in London, but they are building out like an SF office. But majority of their employees are like UK time zone. So, yeah, as soon as you draft that, we've got a TeamChat. Channel so I can just ping it to them. They're pretty. Pretty responsive, but just obviously. Remember the times I'm different, but. Yeah. Yeah, they're pretty. They're pretty good. Good partner to work. Work with. They move pretty quickly. But let me know if you. When you start talking about.  \nMe: Like, actual and, like, all that kind of.  \nThem: When you connect with them. Exactly. Or if you want to. If you want to be like, to sweeten the deal. We're going to do, you know, X, Y and Z. I can work with you on that.  \nMe: That sounds great. I guess the only thing I was going to ask is, like, do you prefer, like, is it you that I should be reaching out to, or is there someone on your team that you prefer? I work with sort of day to day, tactically on this.  \nThem: Me for now. No. Want that? Yeah, me for now. Yeah. And probably me for the future as well. I don't think there's going to be anyone. Yeah. The only person that I could potentially loop in for some things as like a Lee has been talking to them. One book like the co sell side, but.  \nMe: Call. And I'll probably. I'll probably follow up to, like, pick their brains. But I just wanted to FlowBuilder sure, like, I'm not, like, don't. We don't need to actually, like, create work for them if, like, you're the person to, like, to engage with and, like. Yeah, so that sounds. Great.  \nThem: Yeah, obit. But, yeah, if you need anything else or have any other questions, feel free to. To reach out.  \nMe: Awesome. Thank you. I appreciate it. This is what seems like a. Like, I don't know. Even if it's not like, a full AI transformation, like, I feel like they should be spitting some amount of money with us. We're mentioning today, right?  \nThem: Yeah. Exactly.  \nMe: Awesome. Thanks, Taylor. I appreciate it.  \nThem: Yeah. Amazing. All right.  \nMe: Bye.  \nThem: You too. Thank you. \n\n---\n\n**View in NoteFlow AI:** [https://example.com/... AI.ai/d/e12bf8db-0bc9-4cc4-95fa-783ef4d77d84](https://example.com/... AI.ai/d/e12bf8db-0bc9-4cc4-95fa-783ef4d77d84)\n",
+      "turns": [
+        {
+          "speaker": "me",
+          "text": "Hey, Taylor. How are you doing?"
+        },
+        {
+          "speaker": "them",
+          "text": "Hi, Alex. Good, thanks. How are you?"
+        },
+        {
+          "speaker": "me",
+          "text": "I'm doing good. I'm doing really good. I appreciate you taking the time to chat. I don't. Really have any context. Honestly, on the NoteFlow AI partnership and for your context, effectively, what happened is we have this NoteFlow AI part of our sales process or routing, where if a customer is using more than their task limit, so if they're on 100k130 tasks, we get a notification being like, oh, they should upgrade. I got one yesterday. Typically, we just email and like, hey, you should upgrade. But I was like, NoteFlow AI. I'm like, oh, we're doing a bunch of stuff with them."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Y."
+        },
+        {
+          "speaker": "me",
+          "text": "There might be something going on here. And so, yeah, I just kind of want to like what we're. What we're doing with them. What our. Any commercial conversations that have happened so far, just trying sort of the state of play, if that makes sense."
+        },
+        {
+          "speaker": "them",
+          "text": "Eah. Yeah, definitely. And appreciate you reaching out because I think, you know, especially working in different teams, we can be very siloed. And then there's conversations that are happening from, like, a customer, like, acquisition perspective, but also a partnership perspective as well. So appreciate you checking in. Yeah. I can just give you a bit of a rundown of what's happened to to date. So unofficially assigned as a partner contact. But I'm not a partner manager. I leave the partner marketing team and the way that we're structured. So we have a group of partner managers that manage a portfolio of partners that we think have high growth opportunity. That being said, last year there was the initiative to basically build integrations or, like, very light, like, skeleton integration with, like, 250 AI apps to FlowBuilder sure that we're, you know, connected to key AI players."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "That being said, there was, there was a lot of them that we were churning out. And then NoteFlow AI was one of those partners that we were building an integration with. They were, you know, a great brand. They were keen to do a lot. So we started working more from, with them from like a GTM co marketing perspective. Which is why I'm, like, on the account, but I'm not managing them from, like, a commercial perspective or discussing, like, build opportunities. So today, like, what we've done, we launched the integration back in July, I believe. Yeah, back in July."
+        },
+        {
+          "speaker": "me",
+          "text": "Yes."
+        },
+        {
+          "speaker": "them",
+          "text": "And we've seen kind of steady, kind of, like, increase in usage. And I think that's just naturally because they've been growing and they've been pushing a lot in terms of, like, brand awareness and growing there for the black platform. So we launched the integration, we built some zap templates, like with them to get started. We, like, collaborated on, like, a launch announcement, we did a social post. I pitched them for the Agents of Scale podcasts. So that's where you, I think, you know, you had link that we had run a build along. So I have Claudia in my team, who's based in London, and they are. Their HQ is London. I think they've got an SF office now. And so we were like, they do a lot of events, like, let's explore together and how we could do a build along."
+        },
+        {
+          "speaker": "me",
+          "text": "Yes."
+        },
+        {
+          "speaker": "them",
+          "text": "To showcase."
+        },
+        {
+          "speaker": "me",
+          "text": "You're teamed about."
+        },
+        {
+          "speaker": "them",
+          "text": "Claudia. So she Claudia Cafeo. So she's our community specialist that sits with us. And what we're trying to do more of is work with these partners. So what we did was we invited our customers day and invited their customers, and then we had one of our solution partners, Kelly from Solver, attend and actually run the build along and she is the one that's working the leads and submitting any leads to through our partner portal through our solution partner channel."
+        },
+        {
+          "speaker": "me",
+          "text": "Claudia."
+        },
+        {
+          "speaker": "them",
+          "text": "What else have we done? And part of a working group with like Brian Cash, Brad Smith before he's kind of into the team. And then also Elise, who's my manager, who heads up ecosystems and channels around trying to figure out who selling with with partners. So we know this is a motion that we are wanting to do and we've had a few different partners that we've been discussing, and then Elise actually pitched NoteFlow AI as one to Naveen, and he was like, okay, yeah, let's see what we can do there."
+        },
+        {
+          "speaker": "me",
+          "text": "When did that. That happen if you just. For my context, Was that like a last week type thing or like last year?"
+        },
+        {
+          "speaker": "them",
+          "text": "No, that was like, end of last year. Like, I think it was before. Yes, before Christmas. And there was, like, one meeting that they had and I sat within that. And I don't think it's really gone that far. It's essentially, you know, for us to try to figure out, could we experiment? Co selling together. And that could be in the lightest form in terms of, like, could we identify some opportunities and, like, try pitch. But the thing with that is they're still pretty new. They're building out their, like, sales. Their sales team. They don't have a huge, you know, like a sales team. They don't have a standard, like, co sell motion yet. So conversation kind of stalled a little bit, but that was an opportunity that I know. We were discussing with them. And then Elsie, who heads up, like, the, you know, MCP product management team. I think she came up with a key use case. Around getting NoteFlow AI to a NoteFlow AI AutomateFlow MCP use case and wanted to pitch to them around how they could kind of build that out. And so I just connected her with Shrey, who's the head of growth. And I believe, yeah, they just took it from that. I'm not sure what the latest is on, on that one, but I've just kind of been connecting a few kind of by different, like, dots with them. And then there was a discussion. We talked around, like, a bundle. And so something that I was looking at, it came. It came from, I think, like, Bibo and Walter last year was I don't know if you've heard or seen of, like, Lenny's bundle. So Lenny, he's like a quite influential."
+        },
+        {
+          "speaker": "me",
+          "text": "The stack overflow product person, right? Lenny's? Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Exit. Yes. Oh, he's got a very long name. Yes. And he's got a bundle where, you know, he's got quite a big following. And there's a bundle where there's, like, all these different AI apps where you can get discounts from. So it's like 50 of NoteFlow AI. I don't know, 25% of lovable. And they wanted to explore with some of our AI partners be interested in doing that. So I did reach out to them, given the fact that they do have promo code functionality. And, like, would they be interested in doing something? They were, but it just didn't go, like, super far because we needed marketing support in terms of how we could potentially promote the bundle. To our customers, and the feedback from the marketing team was that it's probably more of an SMB play versus enterprise. But that being said, I think there could be an opportunity. They definitely do have the functionality to Functionality to offer discounts. We also apparently have a, like, a very lightweight, like, promo code. Functionality as well, I don't think. It's really scaled out, but I know the Bizlops team have created that, so if that is. A route. We could definitely explore it. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Probably. Dumb question. What does it mean when we say that someone's a partner, like, in practice? And, like, what I'm thinking is, like. Because I was like, okay, I looked at both our page and NoteFlow AI pages, and there's, like, nothing that, like, indicates that we're working together. And I know I. Know, we've done the, like, ads and stuff, but I just feel like I was like, oh, like the NoteFlow AI app page, I was like, oh, is there, like, a badge or something? Or, like, if we go to NoteFlow AI, I was like, oh, does it show? AutomateFlow is a partner, and I'm just. Curious. Like, what does that, like, mean in practice? That's kind of a dumb question."
+        },
+        {
+          "speaker": "them",
+          "text": "Sure. No, no. It's a good question. And it's not always super obvious that we work with all these. These partners. So we have to take a step back. We have two sides of our partnerships team. We called ecosystems and channels, and we have our ecosystems or our integration partners. So These are the 8,000 apps that we integrate with, and this is typically through our API. But then as we're starting to launch new. Product partner. Product types like AutomateFlow, mcp, connection with a partner could also be classed as a integration partner. Just a different way to kind of connect. So we have the integration partner, kind of like program, and anyone can build, build on this. It's an open API, which is why we have 8,000 partners. So as soon as you sign up to be a partner, build on an integration. There's a standard flow in terms of, like, getting your access to the developer. Portal. You were able to manage your integration through that. And then you see those, like, NoteFlow AI, like app pages that are spun up. So let me. So these. Let me show you this. So this James be automatically spun up once a new partner builds on an integration with us. Yeah, you get those. And then you can see, like, various, like, templates at the bottom. So to get use cases to kind of get started. So this is kind of streamlined because we can't manually do this for 8,000 partners, it's kind of always churned out."
+        },
+        {
+          "speaker": "me",
+          "text": "Thanks."
+        },
+        {
+          "speaker": "them",
+          "text": "And then as part of the program, there's different tiers or levels. So this is our integration partner program page. And you can see the different levels that they, that they have. And it's a little different to say, some other part of programs that I'm a bit more familiar or kind of. It's not super commercial. Like, if you think about typically partners, there may be like, oh, the more revenue you drive us or the more leads or business you drive us, the higher you go up, the levels are more determined by integration, quality."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "Like the status of the integration. Are you maintaining it? And then there are some, like, app marketing benefits that you get, but they're, like, kind of more reactive in terms of the things that we can offer. So you can get a snapshot on the blog post, or you can run an event together, or we could, you know, we kept the platinum tier as a little bit kind of catch all. Well, we just say priority inclusion in AutomateFlow initiated co marketing efforts. That being said, I mentioned that we have partner managers that manage portfolio of partners. Our platinum partners are not necessarily the partners that our partner managed. So that's. That's the thing. Yeah, that's the thing. That's tricky sometimes. And the partner managers recently rejigged their portfolios to better align with, like, line of business partners. So, for example, as a business we're going after, you know, like hr, what are some partners within that ecosystem? That we can start working with, like, hr. Sorry, Job like deal. Exactly. So that's how the kind of portfolio has been kind of crafted. So platinum doesn't necessarily mean they get everything. So that's why the tiering is a little bit."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Eah."
+        },
+        {
+          "speaker": "them",
+          "text": "Doesn't mean too much, but. And so."
+        },
+        {
+          "speaker": "me",
+          "text": "And I think NoteFlow AI. Is that. Is that right? Or at least that's what Glean said. That's true."
+        },
+        {
+          "speaker": "them",
+          "text": "Yes, yes, yes, yes, they are. But again, how they get marketing support is a little bit kind of depending on what we own, what we get out of it. So typically, like, I wouldn't if it was like a gold random other partner, I probably wouldn't be involved working with them. But given the fact that they're an AI partner and that we want to position ourselves within the AI ecosystem. And they're keen. There's a lot more that we're willing to do with them."
+        },
+        {
+          "speaker": "me",
+          "text": "That makes sense."
+        },
+        {
+          "speaker": "them",
+          "text": "So that's kind of what it means to be a partner today. And we're, and I think like, we're just still trying to crack that kind of co marketing, like motion with some of these, these partners because it's a pretty new motion for us, so."
+        },
+        {
+          "speaker": "me",
+          "text": "I guess one follow up question there because, like, I want to FlowBuilder sure that I'm not like, making your job or anyone else's on the, like, partnership harder. But I, I could see a world in which, like, as part of a broader, like, transformation agreement where, like, hey, we're going to do some co. Marketing as, like, part of this type thing."
+        },
+        {
+          "speaker": "them",
+          "text": "Definitely, yeah. Yeah, definitely. And I think, like, we're. We're definitely open to, you know, we. What we're wanting to do from a partnerships perspective is like, how can we support. Like the pipeline. So whether that's like bringing partner source pipeline to sales team, so like the build lock and we actually work with like a partner to actually get leads from there, or if it's also like part of the influence, like if we can support from like a deal momentum perspective and that if that helps. Us kind of do an upsell. We can definitely do that. It isn't like, oh, this is a standard way that we're working at the moment, but I think we can use this as a. As an example to be like, oh, actually, if we're able to start bundling a partnership angle in it, as, as well, you know, does that help drive, like, velocity, help to help them momentum with the, with the deal. So I'm happy to, like, I don't think, don't worry about, like, stepping on any toes or anything like that. It's pretty, like, informal, the relationship. And so with the team, they're always every person I've introduced them to, they've been happy to have that chat. There are actually really good team. We are also a customer of NoteFlow AI as well."
+        },
+        {
+          "speaker": "me",
+          "text": "Where I was looking at that to where we're spending $10-20K a year with them right now."
+        },
+        {
+          "speaker": "them",
+          "text": "Exactly. Yeah. So we I think they are start to participate in like, a customer case study. But Kurt, our legal rep who's been managing procurement, I think there was a few things that they wanted them to do from, like a NoteFlow AI product perspective before we fully, like, roll out. But that's also another that's also another leverage angle as well, because the fact that we are a customer of theirs."
+        },
+        {
+          "speaker": "me",
+          "text": "Awesome. This is exactly what I needed. I probably James ask for a warm intro to Shrey, and I'll. I'll draft all this for you. So you're like. Yeah. And you also, I think you mentioned. Is Trey the head of growth, or is that a different person?"
+        },
+        {
+          "speaker": "them",
+          "text": "Sure. Yeah. That's right. So, yeah, is head of Grove and then also connected with the head of marketing, Jack. I think they're both based in London, but they are building out like an SF office. But majority of their employees are like UK time zone. So, yeah, as soon as you draft that, we've got a TeamChat. Channel so I can just ping it to them. They're pretty. Pretty responsive, but just obviously. Remember the times I'm different, but. Yeah. Yeah, they're pretty. They're pretty good. Good partner to work. Work with. They move pretty quickly. But let me know if you. When you start talking about."
+        },
+        {
+          "speaker": "me",
+          "text": "Like, actual and, like, all that kind of."
+        },
+        {
+          "speaker": "them",
+          "text": "When you connect with them. Exactly. Or if you want to. If you want to be like, to sweeten the deal. We're going to do, you know, X, Y and Z. I can work with you on that."
+        },
+        {
+          "speaker": "me",
+          "text": "That sounds great. I guess the only thing I was going to ask is, like, do you prefer, like, is it you that I should be reaching out to, or is there someone on your team that you prefer? I work with sort of day to day, tactically on this."
+        },
+        {
+          "speaker": "them",
+          "text": "Me for now. No. Want that? Yeah, me for now. Yeah. And probably me for the future as well. I don't think there's going to be anyone. Yeah. The only person that I could potentially loop in for some things as like a Lee has been talking to them. One book like the co sell side, but."
+        },
+        {
+          "speaker": "me",
+          "text": "Call. And I'll probably. I'll probably follow up to, like, pick their brains. But I just wanted to FlowBuilder sure, like, I'm not, like, don't. We don't need to actually, like, create work for them if, like, you're the person to, like, to engage with and, like. Yeah, so that sounds. Great."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, obit. But, yeah, if you need anything else or have any other questions, feel free to. To reach out."
+        },
+        {
+          "speaker": "me",
+          "text": "Awesome. Thank you. I appreciate it. This is what seems like a. Like, I don't know. Even if it's not like, a full AI transformation, like, I feel like they should be spitting some amount of money with us. We're mentioning today, right?"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Exactly."
+        },
+        {
+          "speaker": "me",
+          "text": "Awesome. Thanks, Taylor. I appreciate it."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Amazing. All right."
+        },
+        {
+          "speaker": "me",
+          "text": "Bye."
+        },
+        {
+          "speaker": "them",
+          "text": "You too. Thank you."
+        }
+      ],
+      "attendees": [
+        "Taylor Lee",
+        "Alex Obleton"
+      ],
+      "date": "2026-01-21",
+      "duration": 29,
+      "keyTakeaways": [],
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/transcripts/260121-meeting-ongoing-granola-partnership-work.md",
+      "createdAt": "2026-01-25T05:23:53.282Z",
+      "anonymized": true
+    },
+    "noteflow-ai_crm_snapshot": {
+      "id": "noteflow-ai_crm_snapshot",
+      "dealId": "noteflow-ai",
+      "type": "crm_snapshot",
+      "sourceFile": "context.md",
+      "createdAt": "2026-01-27",
+      "anonymized": true,
+      "dealProperties": {
+        "stage": "TLU → Expansion Opportunity (Actively Working)",
+        "amount": "$10-20K (Team 100K, annual)",
+        "closeDate": "TBD - Renewal in 311 days",
+        "lastContactedDate": "2026-01-27"
+      },
+      "contacts": [
+        {
+          "name": "Charles Pedregal",
+          "title": "CEO/Co-founder",
+          "role": "influencer"
+        },
+        {
+          "name": "Jordan Stephenson",
+          "title": "Co-founder",
+          "role": "economic_buyer"
+        },
+        {
+          "name": "Claire Markman",
+          "title": "Ops",
+          "role": "end_user"
+        },
+        {
+          "name": "Katie Imelda",
+          "title": "Ops",
+          "role": "end_user"
+        },
+        {
+          "name": "Jo Barrow",
+          "title": "Executive Ops/Strategy",
+          "role": "champion"
+        },
+        {
+          "name": "Nathan Sadiq",
+          "title": "Engineering (Senior)",
+          "role": "champion"
+        },
+        {
+          "name": "Alex Sangster",
+          "title": "Unknown role",
+          "role": "stakeholder"
+        },
+        {
+          "name": "Shreman Shrestha (Steve)",
+          "title": "Head of Business (enterprise product + partnerships)",
+          "role": "champion"
+        },
+        {
+          "name": "Craig Labanz",
+          "title": "Solutions Architect",
+          "role": "coach"
+        },
+        {
+          "name": "Emma Wunderl",
+          "title": "Solutions Architect",
+          "role": "coach"
+        }
+      ],
+      "notes": [
+        "**🔥 PLAN LIMIT HIT (2026-01-26):** Steve (Head of Business) personally hit plan limit — couldn't save a Zap. Screenshot shows **300K tasks used** (3x their 100K plan). Key details:\n- Steve reached out in #AutomateFlow-NoteFlow AI TeamChat at 4:13 PM: \"I'm trying to update a zap but it's not letting me save it\"\n- I responded: explained they've hit the overage limit, Katie needs to upgrade, plan resets at midnight PST\n- Sent follow-up email to Katie offering to connect and \"avoid this kind of situation in the future\"\n- **This is the pain moment we needed** — Steve was the one saying he \"wasn't the right person\" for commercial conversations, but now HE is personally blocked by the plan limits",
+        "**Value prop crystallized:**\n- Current plan creates business disruption — Zaps literally stop working\n- They're running at 300% of plan (300K vs 100K limit)\n- Enterprise = predictability, higher limits, no more fire drills\n- Steve now has firsthand experience of the cost of staying on current plan",
+        "---",
+        "**Partnership confirmed (2026-01-21):** Synced with Taylor Lee. Key findings:\n- **No commercial agreements exist** — all partnership work to date is marketing/product-focused\n- Taylor willing to FlowBuilder warm intros (Shrey = Head of Growth, Jack = Head of Marketing)\n- Taylor willing to work on structuring a commercial agreement with partnership carrots\n- NoteFlow AI is a Platinum partner (integration quality tier), but doesn't get dedicated partner manager\n- Active TeamChat channel with NoteFlow AI — responsive team, mostly UK timezone",
+        "**KR coaching (2026-01-21):** Don't wait — reach out to the builders directly.\n- Start meeting with people actively building in AutomateFlow (Nathan, Jordan, etc.)\n- Don't over-engineer partnership asks that require engineering commitments\n- Use our leverage: we're spending $110-120K/year with them, they spend $7K with us\n- Possible carrots: boot camp for all ~75 employees, marketing push, co-branding",
+        "**Immediate next steps:**\n1. Request warm intro to Shrey via Taylor (draft outreach)\n2. Reach out directly to builders (Nathan, Jordan) to understand use cases\n3. Keep partnership scope realistic — don't ask for things requiring their engineering time",
+        "**On hold:**\n- Walter exec outreach (still gathering legwork per KR)\n- Formal partnership proposal (too early — need use case understanding first)",
+        "**Warm angles confirmed:**\n- **Builders (direct)** — Nathan (700K tasks), Jordan (180K tasks) — reach out directly per KR\n- **Shrey (Head of Growth)** — Taylor can intro via TeamChat channel\n- **Jack (Head of Marketing)** — Taylor connection\n- Ops team (Claire/Katie) — asked to be notified on limits, at 130% now\n- Exec (Walter → Jordan) — Agents of Scale relationship (hold for now)\n- Product team (Craig → Steve) — existing SA relationship",
+        "**Key finding:** No partnership deal in motion. Taylor confirmed all work to date is marketing/GTM, not commercial. Clear runway for enterprise motion.",
+        "**Key insight:** All existing AutomateFlow ↔ NoteFlow AI activity has been marketing/product-focused, not commercial. No one has run a strategic enterprise sales motion. The relationship is warm everywhere, but no one is actually selling them a plan. That's the opportunity.",
+        "**Commercial leverage:** AutomateFlow spends $110-120K/year on NoteFlow AI. They spend $7K/year on us. We're a 15x bigger customer of theirs. This isn't a vendor pitch — it's a partnership rebalancing conversation."
+      ],
+      "activityLog": [
+        {
+          "date": "2026-01-23",
+          "type": "email",
+          "description": "**Outreach status update.** **Nathan**: Reached out Wednesday - need to follow up **Ops team (Katie/Claire) + Jordan (cofounder)**: Still waiting on first response **Steve**: Got intro via Taylor. Sent meeting request. Steve responded: \"Don't think I'm the right person for this so let me ask internally who would be!\" - waiting on his internal referral **Angle to explore**: Position as NoteFlow AI power user, not just vendor. Have automation set up to pipe NoteFlow AI notes into deal context. Could lead with \"here's what I built, curious how you're thinking about the integration\" vs pure sales motion."
+        },
+        {
+          "date": "2026-01-26",
+          "type": "email",
+          "description": "**Contact status update post-incident.** **Steve**: Now engaged directly via limit incident. Helped him in #AutomateFlow-NoteFlow AI TeamChat. No longer \"not the right person\" — he's feeling the pain firsthand. **Katie**: Fresh email sent re: limit incident. Hook: \"avoid this kind of situation in the future.\" Waiting for response. **Nathan/Jordan**: Still pending — but less urgent now that we have active engagement with Steve and Katie."
+        },
+        {
+          "date": "2026-01-20",
+          "type": "note",
+          "description": "Deal opened. Reviewed customer brief. TLU motion identified expansion opportunity. Key signals: 130% utilization, heavy Code usage, Series B funding, mutual customer relationship."
+        },
+        {
+          "date": "2026-01-20",
+          "type": "call",
+          "description": "Reviewed Nov 2025 call transcript (Kassidy ↔ Claire/Katie). Confirmed tactical upgrade from 50K→100K. No strategic conversation. They asked to be notified when hitting limits—now at 130%."
+        },
+        {
+          "date": "2026-01-20",
+          "type": "note",
+          "description": "Confirmed Walter ↔ Charles Pedregal exec relationship via Agents of Scale podcast. Walter publicly uses NoteFlow AI. Partnership-level opportunity."
+        },
+        {
+          "date": "2026-01-20",
+          "type": "email",
+          "description": "Drafted ops outreach (Claire/Katie) and internal note to KR re: exec connection. No formal partnership exists—potential opportunity for bundled offering."
+        },
+        {
+          "date": "2026-01-20",
+          "type": "email",
+          "description": "Reviewed Relay AITP deck. Reframed opportunity: $100K-250K target, not $25-50K. Drafted (1) KR TeamChat note with specific Walter ask, (2) Walter → Jordan message with 4 value hooks, (3) updated ops outreach. Two-track approach: exec air cover + ops ground game."
+        },
+        {
+          "date": "2026-01-20",
+          "type": "email",
+          "description": "Sent KR note. Discovered partnerships team (Taylor Lee) actively working with NoteFlow AI — Gold partner (internal only, no public badge), build-along event, GTM work, possible deal in motion. Holding ops outreach until coordinated."
+        },
+        {
+          "date": "2026-01-20",
+          "type": "email",
+          "description": "Sent TeamChat to Taylor + KR to coordinate before any external outreach. Confirmed no public partner status on integration page — opportunity to formalize as part of deal."
+        },
+        {
+          "date": "2026-01-20",
+          "type": "message",
+          "description": "Discovered Craig Labanz (SA) met with Steve (NoteFlow AI product team) in Nov 2025. NoteFlow AI reached out to get API/MCP roadmap feedback — shows product-level investment in AutomateFlow integration. Pinged Craig for recording/notes. Another warm angle via product team."
+        },
+        {
+          "date": "2026-01-21",
+          "type": "note",
+          "description": "KR aligned on bigger opportunity but wants more legwork before engaging Walter. Key gaps to fill: (1) actual use case / strategic value prop, (2) partnerships status with Taylor, (3) what's our deal with NoteFlow AI commercially, (4) NoteFlow AI ↔ AutomateFlow people mapping on Sales Navigator. Shared Relay exec brief as example of Walter-level prep."
+        },
+        {
+          "date": "2026-01-21",
+          "type": "email",
+          "description": "Automated email went to Katie (Ops) about 130% utilization. She responded asking for overage history. Drafted response using this as discovery opportunity — includes overage timeline, mutual customer angle (Agents of Scale), and partnership exploration hook. Asks who owns automation decisions. Output: `/outputs/Katie-response.docx`"
+        },
+        {
+          "date": "2026-01-21",
+          "type": "note",
+          "description": "Created deal channel note for #deal-NoteFlow AI. Includes full context, MEDDPICC elements, key links (SalesCloud, Gong, Agents of Scale episode), tagged Taylor and Craig as warm intros. Output: `/outputs/deal-channel-note.docx`"
+        },
+        {
+          "date": "2026-01-21",
+          "type": "note",
+          "description": "Updated research brief to reflect partnership-led opportunity ($100K-250K target). Uploaded to Google Drive for sharing."
+        },
+        {
+          "date": "2026-01-21",
+          "type": "note",
+          "description": "Reached out to procurement to get AutomateFlow's current spend with NoteFlow AI — James strengthen mutual customer angle."
+        },
+        {
+          "date": "2026-01-21",
+          "type": "note",
+          "description": "Full Sales Navigator mapping complete. Key findings: **Internal AutomateFlow connections**: Sara Bonanno → Lise Slimane (Marketing), Kurt Summerville → Nick Taylor (Head of CS) **Ben Rathi (WndrCo) connects to BOTH founders** — Charles Pedregal AND Jordan Stephenson. High-value single intro. Jordan Stephenson also connected via Tudor Mihailescu (Cofounder/CEO) Nathan Sadiq (heaviest user, 700K tasks) has no mutual connections — 3rd degree, no warm path Updated CSV with all connections. Created comprehensive warm intro doc with draft messages, forwardable blurbs, and priority tiers. Output: `/research/sales-nav-contacts.csv`, `/outputs/warm-intro-requests.docx`"
+        },
+        {
+          "date": "2026-01-21",
+          "type": "note",
+          "description": "Finance confirmed AutomateFlow spends **$110-120K/year** on NoteFlow AI ($26/user/month based on usage). They spend $7K on us. 15:1 imbalance = significant partnership leverage."
+        },
+        {
+          "date": "2026-01-21",
+          "type": "stage_change",
+          "description": "Created use case tracker spreadsheet. Current use cases: WorkspaceMemberAdded (40K), New Customer Notifications (12K), UpgradeToEnterprise (5K), RelateSync CRM Sync (1.2K). Added potential use case from #NoteFlow AI-feedback: Support Feedback Automation. Output: `/research/use-cases.xlsx`"
+        },
+        {
+          "date": "2026-01-21",
+          "type": "call",
+          "description": "Reviewed Craig/Steve transcript (Nov 2025). Key intel: API/MCP V0 targeted Jan 2026, internal data ownership debate blocking enterprise features, Steve owns partnerships and wants to work with AutomateFlow on recipes→zaps. Added 5 new use cases to tracker. Steve is a potential champion. Output: `/transcripts/2025-11-20-Craig-Steve-NoteFlow AI.md`"
+        },
+        {
+          "date": "2026-01-21",
+          "type": "call",
+          "description": "**Synced with Taylor Lee (Partnerships).** Key findings: (1) No commercial agreements exist — all work to date is marketing/GTM focused, (2) Taylor willing to FlowBuilder warm intros to Shrey (Head of Growth) and Jack (Head of Marketing) via TeamChat channel, (3) Taylor willing to work on structuring commercial agreement with partnership carrots if we get there, (4) NoteFlow AI is Platinum partner (integration quality tier) but no dedicated partner manager, (5) Team is responsive, mostly UK timezone, building SF office. Clear runway for enterprise motion. Output: `/transcripts/000000000-meeting-ongoing-NoteFlow AI-partnership-work.md`"
+        },
+        {
+          "date": "2026-01-21",
+          "type": "meeting",
+          "description": "**KR 1:1 coaching on NoteFlow AI.** Key advice: (1) Stop waiting — reach out directly to the builders at NoteFlow AI (Nathan, Jordan), (2) Don't over-engineer partnership asks requiring their engineering time — that creates blockers, (3) Use our leverage: we spend $110-120K/year on them, they spend $7K on us — we're the bigger company, (4) Possible carrots for deal: boot camp for all ~75 employees, marketing push, co-branding, (5) \"What's their actual use case? What's the impact?\" — need to understand before proposing anything. Next steps: reach out to builders, request Shrey intro from Taylor, keep it simple."
+        },
+        {
+          "date": "2026-01-26",
+          "type": "email",
+          "description": "**🔥 PLAN LIMIT INCIDENT.** Steve (Head of Business) reached out in #AutomateFlow-NoteFlow AI TeamChat at 4:13 PM — couldn't save a Zap because they hit plan limits. Screenshot shows **300K tasks** (3x their 100K plan). Taylor tagged me. I responded explaining the overage limit and that Katie needs to upgrade. Plan resets at midnight PST. Steve thanked me at 4:08 AM the next day (UK timezone). Sent follow-up email to Katie: \"Would love to connect to discuss how we can avoid this kind of situation in the future.\" **Key development**: Steve — who previously said he \"wasn't the right person\" for commercial conversations — is now personally experiencing the pain of their current plan. This changes the conversation."
+        },
+        {
+          "date": "2026-01-27",
+          "type": "note",
+          "description": "Updated context with limit incident. Usage has grown from 80K (Nov) → 151K (early Jan) → 300K (Jan 26). That's nearly 4x growth in 3 months. Current plan is clearly undersized for their trajectory. Enterprise value prop: predictability, higher limits, no more fire drills, governance as they scale."
+        },
+        {
+          "date": "2026-01-27",
+          "type": "message",
+          "description": "**Steve follow-up.** Messaged Steve this morning. He said he's going to wait for the reset (midnight PST). Not upgrading proactively. Katie is OOO — escalating to Claire (her manager, runs Ops) to have the \"let's FlowBuilder sure this doesn't happen again\" conversation."
+        }
+      ]
+    },
+    "doc_noteflow-ai_create-tracy-note": {
+      "id": "doc_noteflow-ai_create-tracy-note",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "create-Taylor-note",
+      "documentType": "other",
+      "content": "const { Document, Packer, Paragraph, TextRun } = require('docx');\nconst fs = require('fs');\n\nconst tracyNote = new Document({\n  styles: { default: { document: { run: { font: \"Arial\", size: 22 } } } },\n  sections: [{\n    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },\n    children: [\n      new Paragraph({\n        spacing: { after: 240 },\n        children: [new TextRun({ text: \"TeamChat to Taylor: NoteFlow AI — quick sync?\", bold: true, size: 28 })]\n      }),\n      new Paragraph({ spacing: { after: 240 }, children: [new TextRun(\"—\")] }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Hey Taylor —\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"I'm working an enterprise opportunity with NoteFlow AI (they came in as a TLU but there's a bigger play here — $100K+ potential, possibly AITP territory given the exec relationship with Walter).\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"I know you're doing a lot with them on the partnership side — the Agents of Scale campaign, the build-along event, GTM work. Before I reach out to their ops team or push the exec angle, I want to FlowBuilder sure I'm not stepping on anything and ideally find ways to coordinate.\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Do you have 15 minutes this week to download? Specifically interested in:\")]\n      }),\n      new Paragraph({\n        spacing: { after: 100 },\n        indent: { left: 360 },\n        children: [new TextRun(\"• What's the current state of the partnership / any deals in motion?\")]\n      }),\n      new Paragraph({\n        spacing: { after: 100 },\n        indent: { left: 360 },\n        children: [new TextRun(\"• Who are your main contacts there? (I've got ops team warm, looking at Jordan via Walter)\")]\n      }),\n      new Paragraph({\n        spacing: { after: 100 },\n        indent: { left: 360 },\n        children: [new TextRun(\"• Any bundled offering or co-sell motion we could tie the enterprise deal into?\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        indent: { left: 360 },\n        children: [new TextRun(\"• The build-along event — is that something that could support the enterprise conversation?\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Happy to share what I've got on their usage (they're at 130% task utilization, deeply embedded with Code by AutomateFlow).\")]\n      }),\n      new Paragraph({\n        children: [new TextRun(\"Thanks!\")]\n      })\n    ]\n  }]\n});\n\nPacker.toBuffer(tracyNote).then(buffer =>\n  fs.writeFileSync('/Users/username/sales-workspace/deals/NoteFlow AI/outputs/NoteFlow AI-Taylor-note.docx', buffer)\n).then(() => console.log('Taylor note created.'));\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/create-tracy-note.js",
+      "createdAt": "2026-01-25T05:23:53.278Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_deal-channel-note": {
+      "id": "doc_noteflow-ai_deal-channel-note",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "deal-channel-note",
+      "documentType": "docx",
+      "content": "NoteFlow AI — Enterprise / Partnership Opportunity\n\nSeries B AI startup ($43M raised, $250M valuation) running core ops through AutomateFlow at 130% of their plan. Mutual customer relationship — Walter interviewed their CEO on Agents of Scale, AutomateFlow runs on NoteFlow AI internally. Currently $7K ARR on Team plan; target is $100K+ enterprise with partnership bundle. Needs coordination with Partnerships before exec engagement.\n\nKey Links\n\nSalesCloud: Account Record\n\nGong (Nov 2025 call w/ Kassidy): Recording\n\nAgents of Scale Episode (Walter x Charles Pedregal): Apple Podcasts\n\nResearch Brief: Google Doc\n\nWhat do they do?\n\nAI meeting notes platform (\"the notepad for people in back-to-back meetings\")\n\nFounded 2023 in London, expanding to SF. Small team (11-50 per LinkedIn)\n\n$43M Series B (May 2025) at $250M valuation — Lightspeed, Spark Capital\n\nProduct: Local transcription (no bot joins calls), AI summaries, templates, team workspaces\n\n70%+ weekly retention — rare for consumer AI\n\nMutual customer: AutomateFlow uses NoteFlow AI internally. Walter is a public fan.\n\nContacts\n\nExec Layer:\n\nCharles Pedregal — CEO/Co-founder. Walter relationship via Agents of Scale podcast. Strategic partner angle.\n\nJordan Stephenson — Co-founder. Power user (181K tasks). Account owner. Likely economic buyer.\n\nOperational Layer (current entry point):\n\nClaire Markman — Ops. Handled Nov 2025 upgrade. Asked to be notified on limits.\n\nKatie Imelda — Ops. Active user (1K tasks). Just responded to automated overage email — active thread.\n\nJo Barrow — Executive Ops/Strategy. Active user (17K tasks). Potential business champion.\n\nTechnical Layer:\n\nNathan Sadiq — Engineering. Heaviest user (700K tasks). Built their AutomateFlow infrastructure. Technical champion.\n\nSteve (Shreman Shrestha) — Product team. Reached out to AutomateFlow (Craig) Nov 2025 for API/MCP roadmap feedback. @user has warm relationship here.\n\nAlex Sangster — Unknown role. Top MCP user (7.8K tool calls). Owns RelateSync integration.\n\nPartnerships:\n\n@user — Acting as partner manager. Gold partner (internal only). Active GTM work: build-along event, Agents of Scale campaign, co-marketing. Can intro to NoteFlow AI's head of growth via shared TeamChat channel.\n\nCurrent AutomateFlow Usage\n\nPlan: Team 100K (annual) — $10-20K ARR\n\nUtilization: 130% (~151K tasks/month). Hit 159% in Nov before upgrading.\n\nUsers: 32 total, 10 active\n\nTop apps: Code by AutomateFlow (73% of tasks), TeamChat (25%), PayFlow, GridBase\n\nPrimary use cases: Customer support management, customer onboarding\n\nKey workflows:\n\nWorkspaceMemberAdded (478K tasks/year) — SNS → Code → TeamChat\n\nNew Customers → TeamChat (140K tasks/year) — PayFlow → multi-step\n\nUpgradeToEnterprise (60K tasks/year) — customer lifecycle automation\n\nWhy this is bigger than a task tier upgrade\n\nThis isn't just \"bump them to 250K tasks.\" The opportunity is to position enterprise as infrastructure for a company that just raised $43M and is scaling rapidly.\n\nMutual customer leverage: Walter is a public NoteFlow AI fan. We run on them, they run on us. Partnership-level relationship at exec layer.\n\nGold partner status (not publicized): They're a top-200 partner internally but no public badge. Opportunity to formalize as part of deal.\n\nAI company, light AI adoption: Only 864 AI by AutomateFlow tasks. Natural fit for Agents upsell.\n\nTechnical sophistication: Code by AutomateFlow is 73% of their usage. They're building serious automation, not playing with templates.\n\nBundled offering potential: AutomateFlow tasks bundled for NoteFlow AI Enterprise customers. True partnership deal.\n\nDeal Sizing\n\nCurrent state: $10-20K ARR (Team 100K annual)\n\nTarget: $100K-250K ARR\n\nEnterprise platform: Task tier 250K-500K based on trajectory, SSO/SCIM, governance\n\nAI/Agents upsell: They're an AI company — natural fit\n\nPartnership bundle: AITP-style package if we land partnership (CEO alignment, build workshops, bundled tasks for their customers)\n\nROI Framing\n\nTask volume: 151K tasks/month × conservative 2 min manual equivalent = 5,033 hours/month\n\nAt $75/hr ops rate: $22.5K/month in automation value = $270K+/year\n\nROI multiple: 5-10x on proposed $25-50K enterprise investment\n\nRisk Assessment\n\nEngineering culture: May prefer building to buying at scale\n\nCheap current spend: $7K/year is rounding error post-Series B — may not feel urgency\n\nPartnership deal in motion? Build-along planning referenced \"new deal with the partner\" — need to confirm with Taylor before any exec outreach\n\nLight enterprise feature adoption: No Tables/Interfaces/Chatbots yet\n\nWhy we win this\n\nAlready embedded: AutomateFlow powers their customer lifecycle. Code by AutomateFlow is 73% of usage. High switching cost.\n\nExec relationship exists: Walter ↔ Charles. Just need to activate it commercially.\n\nMutual customer = mutual interest: Both sides benefit from deeper integration.\n\nHitting limits: 130% utilization creates natural upgrade conversation.\n\nCurrent Status\n\nActive thread with Katie (Ops): She responded to automated overage email. Drafted response with partnership hints + discovery angle.\n\nWaiting on Taylor sync: Need to understand partnership status before exec outreach.\n\nWaiting on Craig: Recording/notes from Nov 2025 meeting with Steve (NoteFlow AI product team).\n\nKR direction: Aligned on bigger opportunity. Wants more legwork before engaging Walter — use case clarity, partnerships status, connection mapping.\n\nOpen Questions (for KR)\n\nWhat's the \"new deal with the partner\" referenced in build-along planning? Is there something in motion we'd be stepping on?\n\nIs there appetite to formalize/publicize Gold partner status as part of enterprise deal?\n\nWhen we're ready for Walter, what's the format? Intro to Jordan? Joint call? Something else?\n\nSpecific Asks\n\n@user\n\nWhat's the current partnership status? Is there a commercial deal in motion?\n\nCan you intro to head of growth via shared TeamChat channel?\n\nIs there interest in bundled AutomateFlow offering for NoteFlow AI Enterprise customers?\n\n@user\n\nDo you have recording/notes from Nov 2025 call with Steve?\n\nWhat was the context — were they giving roadmap feedback or asking for something specific?\n\nBottom Line\n\nThis is a $100K+ opportunity hiding in a $7K account. The relationship already exists at exec level (Walter ↔ Charles), the usage justifies enterprise, and the mutual customer dynamic creates natural partnership angles. But we need to coordinate with Partnerships before making any moves. Immediate next step is sync with Taylor to understand what's already in motion, then build the Walter-level brief once we have clarity on use case and commercial path.",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/deal-channel-note.docx",
+      "createdAt": "2026-01-25T05:23:53.278Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_granola-wade-to-sam": {
+      "id": "doc_noteflow-ai_granola-wade-to-sam",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "NoteFlow AI-Walter-to-Jordan",
+      "documentType": "docx",
+      "content": "Draft: Walter → Jordan (NoteFlow AI)\n\nContext: This is the note Walter would send to Jordan Stephenson (NoteFlow AI co-founder, AutomateFlow account owner)\n\n—\n\nJordan —\n\nOur teams have been talking about how AutomateFlow and NoteFlow AI could work more closely together. Given how much we use NoteFlow AI internally (and how much you're using AutomateFlow), felt like it was worth a quick conversation at our level.\n\nA few ideas I wanted to float:\n\nAI automation workshop — our enterprise team can run a session with your ops folks to identify high-impact automation opportunities as you scale\n\nIntegration partnership — bundled AutomateFlow tasks for NoteFlow AI Enterprise customers, deeper product collaboration on the integration roadmap\n\nScaling playbooks — pre-built automation kits for the post-Series B scaling challenges (hiring, customer onboarding, team coordination)\n\nEnterprise infrastructure — SSO, governance, approval workflows as you grow the team\n\nWould 15 minutes work sometime in the next week or two?\n\nWalter",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/granola-wade-to-sam.docx",
+      "createdAt": "2026-01-25T05:23:53.280Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_caroline-response": {
+      "id": "doc_noteflow-ai_caroline-response",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "Katie-response",
+      "documentType": "other",
+      "content": "const { Document, Packer, Paragraph, TextRun, AlignmentType, LevelFormat } = require('docx');\nconst fs = require('fs');\n\nconst doc = new Document({\n  styles: {\n    default: { document: { run: { font: \"Arial\", size: 22 } } }\n  },\n  numbering: {\n    config: [{\n      reference: \"bullet-list\",\n      levels: [{ level: 0, format: LevelFormat.BULLET, text: \"•\", alignment: AlignmentType.LEFT,\n        style: { paragraph: { indent: { left: 720, hanging: 360 } } } }]\n    }]\n  },\n  sections: [{\n    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },\n    children: [\n      new Paragraph({ spacing: { after: 120 }, children: [\n        new TextRun({ text: \"Subject: \", bold: true }),\n        new TextRun(\"RE: AutomateFlow usage\")\n      ]}),\n      new Paragraph({ spacing: { after: 240 }, children: [] }),\n      new Paragraph({ spacing: { after: 200 }, children: [new TextRun(\"Hi Katie,\")] }),\n      new Paragraph({ spacing: { after: 200 }, children: [\n        new TextRun(\"Good question — here's the history:\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 80 }, children: [\n        new TextRun({ text: \"November 2025: \", bold: true }),\n        new TextRun(\"~159% of your 50K limit (~80K tasks)\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 80 }, children: [\n        new TextRun({ text: \"December 2025: \", bold: true }),\n        new TextRun(\"Your team upgraded to 100K\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 200 }, children: [\n        new TextRun({ text: \"January 2026 (current): \", bold: true }),\n        new TextRun(\"~130% of 100K limit (~151K tasks)\")\n      ]}),\n      new Paragraph({ spacing: { after: 200 }, children: [\n        new TextRun(\"So the pattern is tied to growth rather than a one-time spike — your task volume has roughly doubled in the past few months.\")\n      ]}),\n      new Paragraph({ spacing: { after: 200 }, children: [\n        new TextRun(\"We actually use NoteFlow AI pretty extensively at AutomateFlow — big fans (and aware of Walter and Charles's Agents of Scale episode!). Our partnerships team has been doing some work with NoteFlow AI already on the integration and go-to-market side, and there's been some discussion about deepening that — potentially bundled offerings, co-marketing, that kind of thing.\")\n      ]}),\n      new Paragraph({ spacing: { after: 200 }, children: [\n        new TextRun(\"Rather than just bump your task tier again, it might be worth a broader conversation about where this could go. Would you or whoever handles partnerships on your side be open to a quick call? Happy to loop in our partnerships team as well.\")\n      ]}),\n      new Paragraph({ spacing: { after: 80 }, children: [new TextRun(\"Cheers,\")] }),\n      new Paragraph({ children: [new TextRun(\"Alex\")] })\n    ]\n  }]\n});\n\nPacker.toBuffer(doc).then(buffer => {\n  fs.writeFileSync(\"/Users/username/sales-workspace/deals/NoteFlow AI/outputs/Katie-response.docx\", buffer);\n  console.log(\"Created Katie-response.docx\");\n});\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/caroline-response.js",
+      "createdAt": "2026-01-25T05:23:53.277Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_260121-granola-research-brief": {
+      "id": "doc_noteflow-ai_260121-granola-research-brief",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "000000000-NoteFlow AI-research-brief",
+      "documentType": "docx",
+      "content": "NoteFlow AI - Research Brief\n\nDomain: NoteFlow AI.so / NoteFlow AI.ai\n\nLast Updated: 2026-01-21\n\nSources: Sales 360 Customer Brief, Web Search (TechCrunch, Business Wire, Tracxn), Gong (Nov 2025 call), Internal TeamChat (Partnerships)\n\nExecutive Summary\n\nSeries B AI startup ($43M raised, $250M valuation) with deep AutomateFlow integration running at 130% utilization. This is a partnership-level opportunity, not a simple upsell:\n\nWalter interviewed their CEO (Charles Pedregal) on Agents of Scale — exec relationship exists\n\nAutomateFlow uses NoteFlow AI internally — mutual customer leverage\n\nGold partner status (internal) — Taylor Lee actively working GTM, build-along events\n\nTarget: $100K-250K ARR (currently $7K)\n\nKey constraint: Must coordinate with Partnerships before any exec outreach. There may be a deal already in motion.\n\nCompany Context\n\nAttribute\n\nDetail\n\nWhat they do\n\nAI meeting notes (\"notepad for back-to-back meetings\") — local transcription, no bot\n\nFounded\n\n2023, London. Expanding to SF\n\nFunding\n\n$43M Series B (May 2025) at $250M valuation. Lightspeed, Spark Capital\n\nTeam size\n\n11-50 (LinkedIn)\n\nProduct\n\nTranscription, AI summaries, templates, team workspaces\n\nRetention\n\n70%+ weekly — rare for consumer AI\n\nCurrent AutomateFlow Usage\n\nMetric\n\nValue\n\nImplication\n\nPlan\n\nTeam 100K (annual)\n\n$10-20K ARR\n\nTask utilization\n\n130% (~151K/month)\n\nImmediate upgrade needed\n\nUsers\n\n32 total, 10 active\n\nTeam-wide adoption\n\nTop apps\n\nCode (73%), TeamChat (25%)\n\nTechnical sophistication\n\nAI usage\n\n864 AI by AutomateFlow tasks\n\nLight — Agents upsell opportunity\n\nKey Workflows\n\nWorkspaceMemberAdded (478K tasks/year) — SNS → Code → TeamChat\n\nNew Customers → TeamChat (140K tasks/year) — PayFlow → multi-step\n\nUpgradeToEnterprise (60K tasks/year) — customer lifecycle\n\nPrevious Activity\n\nNov 2025: Tactical upgrade from 50K → 100K (Kassidy Butler, Sales Assist)\n\nOps team (Claire/Katie) handled — no strategic conversation\n\nThey asked to be notified when hitting limits again — now at 130%\n\nStrategic Opportunity\n\nWhy This is Bigger Than a Task Upgrade\n\nExec relationship exists: Walter ↔ Charles Pedregal via Agents of Scale podcast. Walter is a public NoteFlow AI fan.\n\nMutual customer: AutomateFlow runs on NoteFlow AI internally. Both sides benefit from deeper integration.\n\nGold partner (unpublicized): Top-200 partner internally, but no public badge. Opportunity to formalize.\n\nPartnership bundle potential: AutomateFlow tasks bundled for NoteFlow AI Enterprise customers. True partnership deal.\n\nAI company, light AI adoption: Only 864 AI by AutomateFlow tasks. Natural fit for Agents.\n\nTarget Deal Size\n\nScenario\n\nARR\n\nComponents\n\nEnterprise\n\n$50-100K\n\nTask tier 250K-500K, SSO/SCIM, governance\n\nPartnership bundle\n\n$100-250K\n\nAbove + AITP-style (workshops, bundled tasks for their customers)\n\nROI Framing\n\nTask volume: 151K tasks/month × 2 min manual equivalent = 5,033 hours/month\n\nAt $75/hr ops rate: $22.5K/month automation value = $270K+/year\n\nROI multiple: 5-10x on $25-50K enterprise investment\n\nStakeholder Map\n\nExec Layer (Partnership path)\n\nName\n\nTitle\n\nNotes\n\nCharles Pedregal\n\nCEO/Co-founder\n\nWalter relationship via Agents of Scale. Strategic partner angle.\n\nJordan Stephenson\n\nCo-founder\n\nPower user (181K tasks). Account owner. Likely economic buyer.\n\nOperational Layer (Current entry point)\n\nName\n\nTitle\n\nNotes\n\nKatie Imelda\n\nOps\n\nActive thread — responded to overage email. Discovery opportunity.\n\nClaire Markman\n\nOps\n\nHandled Nov 2025 upgrade. Asked to be notified on limits.\n\nJo Barrow\n\nExec Ops/Strategy\n\nActive user (17K tasks). Potential business champion.\n\nTechnical Layer\n\nName\n\nTitle\n\nNotes\n\nNathan Sadiq\n\nEngineering\n\nHeaviest user (700K tasks). Built their AutomateFlow infrastructure. Technical champion.\n\nSteve (Shreman)\n\nProduct\n\nReached out to Craig (SA) Nov 2025 for API/MCP feedback. Warm contact.\n\nAlex Sangster\n\nUnknown\n\nTop MCP user (7.8K tool calls). Owns RelateSync integration.\n\nInternal Resources (AutomateFlow)\n\nName\n\nRole\n\nNotes\n\nTaylor Lee\n\nPartnerships\n\nActing partner manager. Gold partner status. Can intro to head of growth.\n\nCraig Labanz\n\nSA\n\nMet with Steve Nov 2025. Has recording/notes. Warm relationship with product team.\n\nWarm Paths In\n\nKatie (Ops) — Active email thread about overages. Response drafted with partnership hooks.\n\nTaylor → Head of Growth — Can intro via shared TeamChat channel.\n\nCraig → Steve (Product) — Existing SA relationship from API/MCP feedback session.\n\nWalter → Charles/Jordan — Exec air cover when ready. Needs more legwork first (KR direction).\n\nRisks & Flags\n\nRisk\n\nSeverity\n\nMitigation\n\nPartnership deal in motion\n\nHigh\n\nSync with Taylor before any exec outreach\n\nEngineering culture (build vs buy)\n\nMedium\n\nLead with partnership value, not just features\n\nCheap current spend ($7K)\n\nMedium\n\nFrame as infrastructure investment, not cost\n\nLight enterprise feature adoption\n\nLow\n\nThey haven't needed it yet — James as they scale\n\nOpen Questions\n\nWhat's the \"new deal with the partner\" referenced in build-along planning?\n\nIs there appetite to formalize/publicize Gold partner status as part of deal?\n\nWho handles partnerships at NoteFlow AI? (Katie may surface this)\n\nWhat's NoteFlow AI's enterprise pricing? (Bundled AutomateFlow tasks would need to fit their model)\n\nCraig's notes from Steve meeting — what were they asking for?\n\nNext Steps\n\nSend Katie response — Answer overage question, plant partnership seed, ask who handles partnerships\n\nSync with Taylor — Understand partnership status before any exec moves\n\nGet Craig's notes — Understand product team's asks from Nov meeting\n\nSales Nav mapping — Map NoteFlow AI ↔ AutomateFlow connections\n\nBuild Walter brief — Once we have clarity on use case and commercial path",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/260121-granola-research-brief.docx",
+      "createdAt": "2026-01-25T05:23:53.277Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_granola-use-cases-for-kr": {
+      "id": "doc_noteflow-ai_granola-use-cases-for-kr",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "NoteFlow AI-use-cases-for-kr",
+      "documentType": "other",
+      "content": "const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, AlignmentType, HeadingLevel, LevelFormat, BorderStyle, WidthType, ShadingType, VerticalAlign } = require('docx');\nconst fs = require('fs');\n\nconst tableBorder = { style: BorderStyle.SINGLE, size: 1, color: \"CCCCCC\" };\nconst cellBorders = { top: tableBorder, bottom: tableBorder, left: tableBorder, right: tableBorder };\n\nconst doc = new Document({\n  styles: {\n    default: { document: { run: { font: \"Arial\", size: 22 } } },\n    paragraphStyles: [\n      { id: \"Heading1\", name: \"Heading 1\", basedOn: \"Normal\", next: \"Normal\", quickFormat: true,\n        run: { size: 32, bold: true, color: \"000000000\", font: \"Arial\" },\n        paragraph: { spacing: { before: 240, after: 120 } } },\n      { id: \"Heading2\", name: \"Heading 2\", basedOn: \"Normal\", next: \"Normal\", quickFormat: true,\n        run: { size: 26, bold: true, color: \"000000000\", font: \"Arial\" },\n        paragraph: { spacing: { before: 240, after: 100 } } }\n    ]\n  },\n  numbering: {\n    config: [\n      { reference: \"bullet-list\",\n        levels: [{ level: 0, format: LevelFormat.BULLET, text: \"•\", alignment: AlignmentType.LEFT,\n          style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },\n      { reference: \"numbered-list\",\n        levels: [{ level: 0, format: LevelFormat.DECIMAL, text: \"%1.\", alignment: AlignmentType.LEFT,\n          style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] }\n    ]\n  },\n  sections: [{\n    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },\n    children: [\n      // Title\n      new Paragraph({\n        heading: HeadingLevel.HEADING_1,\n        children: [new TextRun(\"NoteFlow AI: Current AutomateFlow Use Cases\")]\n      }),\n      new Paragraph({\n        spacing: { after: 120 },\n        children: [new TextRun({ text: \"For KR | January 21, 2026\", color: \"000000000\" })]\n      }),\n\n      // TLDR\n      new Paragraph({\n        heading: HeadingLevel.HEADING_2,\n        children: [new TextRun(\"Bottom Line\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"NoteFlow AI has built serious automation infrastructure on AutomateFlow. They're running \"), new TextRun({ text: \"150K+ tasks/month\", bold: true }), new TextRun(\" (130% of plan limit) across \"), new TextRun({ text: \"core business operations\", bold: true }), new TextRun(\": customer onboarding, support notifications, billing alerts, and sales pipeline. This isn't experimental\\u2014it's production infrastructure.\")]\n      }),\n\n      // Key stats\n      new Paragraph({\n        heading: HeadingLevel.HEADING_2,\n        children: [new TextRun(\"Usage Snapshot\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        children: [new TextRun({ text: \"Current plan: \", bold: true }), new TextRun(\"Team 100K ($10-20K/year)\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        children: [new TextRun({ text: \"Actual usage: \", bold: true }), new TextRun(\"151K tasks/month (130% of limit)\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        children: [new TextRun({ text: \"Active zaps: \", bold: true }), new TextRun(\"36\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        children: [new TextRun({ text: \"Active users: \", bold: true }), new TextRun(\"10 (of 32 total)\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        spacing: { after: 200 },\n        children: [new TextRun({ text: \"Top builder: \", bold: true }), new TextRun(\"Nathan Sadiq (Engineering Manager) \\u2014 700K tasks lifetime\")]\n      }),\n\n      // Top use cases table\n      new Paragraph({\n        heading: HeadingLevel.HEADING_2,\n        children: [new TextRun(\"Top Workflows (by Volume)\")]\n      }),\n      new Paragraph({ spacing: { after: 120 }, children: [] }),\n\n      new Table({\n        columnWidths: [2800, 2200, 1800, 2560],\n        rows: [\n          // Header row\n          new TableRow({\n            tableHeader: true,\n            children: [\n              new TableCell({\n                borders: cellBorders,\n                width: { size: 2800, type: WidthType.DXA },\n                shading: { fill: \"F5F5F5\", type: ShadingType.CLEAR },\n                children: [new Paragraph({ children: [new TextRun({ text: \"Workflow\", bold: true, size: 20 })] })]\n              }),\n              new TableCell({\n                borders: cellBorders,\n                width: { size: 2200, type: WidthType.DXA },\n                shading: { fill: \"F5F5F5\", type: ShadingType.CLEAR },\n                children: [new Paragraph({ children: [new TextRun({ text: \"What It Does\", bold: true, size: 20 })] })]\n              }),\n              new TableCell({\n                borders: cellBorders,\n                width: { size: 1800, type: WidthType.DXA },\n                shading: { fill: \"F5F5F5\", type: ShadingType.CLEAR },\n                children: [new Paragraph({ children: [new TextRun({ text: \"Tasks/Month\", bold: true, size: 20 })] })]\n              }),\n              new TableCell({\n                borders: cellBorders,\n                width: { size: 2560, type: WidthType.DXA },\n                shading: { fill: \"F5F5F5\", type: ShadingType.CLEAR },\n                children: [new Paragraph({ children: [new TextRun({ text: \"Stack\", bold: true, size: 20 })] })]\n              })\n            ]\n          }),\n          // Row 1\n          new TableRow({\n            children: [\n              new TableCell({ borders: cellBorders, width: { size: 2800, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"WorkspaceMemberAdded\", size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 2200, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"New user signup alerts\", size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 1800, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"61,000\", bold: true, size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 2560, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"SNS \\u2192 Code \\u2192 TeamChat\", size: 20 })] })] })\n            ]\n          }),\n          // Row 2\n          new TableRow({\n            children: [\n              new TableCell({ borders: cellBorders, width: { size: 2800, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"New Customers \\u2192 TeamChat\", size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 2200, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"Payment notifications + GridBase sync\", size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 1800, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"22,700\", bold: true, size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 2560, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"PayFlow \\u2192 GridBase \\u2192 TeamChat\", size: 20 })] })] })\n            ]\n          }),\n          // Row 3\n          new TableRow({\n            children: [\n              new TableCell({ borders: cellBorders, width: { size: 2800, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"UpgradeToEnterprise\", size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 2200, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"Enterprise upgrade tracking\", size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 1800, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"19,900\", bold: true, size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 2560, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"SNS \\u2192 Code \\u2192 TeamChat\", size: 20 })] })] })\n            ]\n          }),\n          // Row 4\n          new TableRow({\n            children: [\n              new TableCell({ borders: cellBorders, width: { size: 2800, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"Plain Thread Reset\", size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 2200, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"Support ticket hygiene\", size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 1800, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"4,900\", bold: true, size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 2560, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"Webhook \\u2192 Code \\u2192 Filter\", size: 20 })] })] })\n            ]\n          }),\n          // Row 5\n          new TableRow({\n            children: [\n              new TableCell({ borders: cellBorders, width: { size: 2800, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"Tally \\u2192 RelateSync Sync\", size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 2200, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"Lead capture to CRM\", size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 1800, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"500\", bold: true, size: 20 })] })] }),\n              new TableCell({ borders: cellBorders, width: { size: 2560, type: WidthType.DXA },\n                children: [new Paragraph({ children: [new TextRun({ text: \"Tally \\u2192 Formatter \\u2192 RelateSync\", size: 20 })] })] })\n            ]\n          })\n        ]\n      }),\n      new Paragraph({ spacing: { after: 200 }, children: [] }),\n\n      // Tech stack\n      new Paragraph({\n        heading: HeadingLevel.HEADING_2,\n        children: [new TextRun(\"Tech Stack Breakdown\")]\n      }),\n      new Paragraph({\n        spacing: { after: 120 },\n        children: [new TextRun({ text: \"By task volume (last 365 days):\", italics: true, color: \"000000000\" })]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        children: [new TextRun({ text: \"Code by AutomateFlow: \", bold: true }), new TextRun(\"330K tasks (73%) \\u2014 heavy custom logic\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        children: [new TextRun({ text: \"TeamChat: \", bold: true }), new TextRun(\"115K tasks (25%) \\u2014 primary notification channel\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        children: [new TextRun({ text: \"PayFlow: \", bold: true }), new TextRun(\"51K tasks \\u2014 billing/payment triggers\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        children: [new TextRun({ text: \"GridBase: \", bold: true }), new TextRun(\"26K tasks \\u2014 customer data store\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        children: [new TextRun({ text: \"Amazon SNS: \", bold: true }), new TextRun(\"Event bus for product events\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        spacing: { after: 200 },\n        children: [new TextRun({ text: \"RelateSync: \", bold: true }), new TextRun(\"CRM (also using MCP \\u2014 1.2K tool calls)\")]\n      }),\n\n      // Use case categories\n      new Paragraph({\n        heading: HeadingLevel.HEADING_2,\n        children: [new TextRun(\"Use Case Categories\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        children: [new TextRun({ text: \"Customer Support/Success (60%+): \", bold: true }), new TextRun(\"Real-time alerts on signups, upgrades, support tickets. TeamChat is their command center.\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        children: [new TextRun({ text: \"Customer Onboarding: \", bold: true }), new TextRun(\"New customer \\u2192 TeamChat \\u2192 GridBase pipeline. PayFlow events trigger onboarding workflows.\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        children: [new TextRun({ text: \"Lead Management: \", bold: true }), new TextRun(\"Tally forms \\u2192 RelateSync CRM. Discount/promo code fulfillment (startup packs, student packs).\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        spacing: { after: 200 },\n        children: [new TextRun({ text: \"Internal Ops: \", bold: true }), new TextRun(\"Billing alerts (Revolut), event management (Luma), even a lunch bot.\")]\n      }),\n\n      // What's notable\n      new Paragraph({\n        heading: HeadingLevel.HEADING_2,\n        children: [new TextRun(\"What's Notable\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        children: [new TextRun({ text: \"Engineering-driven: \", bold: true }), new TextRun(\"73% Code by AutomateFlow usage means they're writing custom logic, not just connecting apps. These aren't simple zaps.\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        children: [new TextRun({ text: \"Event-driven architecture: \", bold: true }), new TextRun(\"Using Amazon SNS as an event bus to trigger AutomateFlow. Sophisticated pattern.\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        children: [new TextRun({ text: \"Business-critical: \", bold: true }), new TextRun(\"Customer signup alerts, billing, support\\u2014if these break, they feel it immediately.\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        children: [new TextRun({ text: \"Growth trajectory: \", bold: true }), new TextRun(\"Upgraded 2K \\u2192 10K \\u2192 50K \\u2192 100K over 2024-2025. Still growing.\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        spacing: { after: 200 },\n        children: [new TextRun({ text: \"Light AI adoption: \", bold: true }), new TextRun(\"Some AI by AutomateFlow and ChatGPT usage, but top workflows don't use AI yet. Opportunity.\")]\n      }),\n\n      // Gaps / questions\n      new Paragraph({\n        heading: HeadingLevel.HEADING_2,\n        children: [new TextRun(\"Open Questions for Discovery\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        children: [new TextRun(\"What happens when these workflows break? Who gets paged?\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        children: [new TextRun(\"Are they hitting governance issues with 32 users and no admin visibility?\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        children: [new TextRun(\"What's the cost of the 30% overage they're eating every month?\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        children: [new TextRun(\"Are there use cases they want to build but can't with current plan/features?\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"bullet-list\", level: 0 },\n        spacing: { after: 200 },\n        children: [new TextRun(\"Why so little AI adoption for an AI company?\")]\n      }),\n\n      // Next steps\n      new Paragraph({\n        heading: HeadingLevel.HEADING_2,\n        children: [new TextRun(\"Next Steps\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        children: [new TextRun(\"Taylor intro to Shrey (Head of Growth) \\u2014 partnership angle\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        children: [new TextRun(\"Direct outreach to Nathan (top builder) \\u2014 understand pain points\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        children: [new TextRun(\"Continue Katie thread (Ops) \\u2014 overage conversation\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"numbered-list\", level: 0 },\n        children: [new TextRun(\"Hold on Jordan/exec outreach until bottom-up case is built\")]\n      })\n    ]\n  }]\n});\n\nPacker.toBuffer(doc).then(buffer => {\n  fs.writeFileSync(\"/Users/username/sales-workspace/deals/NoteFlow AI/outputs/NoteFlow AI-use-cases-for-kr.docx\", buffer);\n  console.log(\"Created: NoteFlow AI-use-cases-for-kr.docx\");\n});\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/granola-use-cases-for-kr.js",
+      "createdAt": "2026-01-25T05:23:53.280Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_warm-intro-requests": {
+      "id": "doc_noteflow-ai_warm-intro-requests",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "warm-intro-requests",
+      "documentType": "docx",
+      "content": "Warm Intro Requests - NoteFlow AI\n\nGoal: Build relationships at all levels of the org to support enterprise deal\n\nINTERNAL AutomateFlow CONNECTIONS (Easiest Paths)\n\n1. Sara Bonanno → Lise Slimane\n\nYour Connection: Sara Bonanno — AI Automation Engineer, Revenue Operations @ AutomateFlow\n\nTarget: Lise Slimane — Affiliate & Influencer Marketing Lead @ NoteFlow AI\n\nWhy this matters: Lise handles creator/influencer marketing. Could be relevant for partnership GTM (co-marketing, influencer campaigns). She follows AutomateFlow and was recently promoted.\n\nDraft TeamChat to Sara:\n\nHey Sara — quick question. I'm working on the NoteFlow AI account (they're a customer running 150K+ tasks/month through us, and we use them internally). I noticed you're connected with Lise Slimane who runs their creator marketing.\n\nWe're exploring a deeper partnership with them — Taylor Lee on Partnerships is already doing some GTM work. Would you be comfortable making an intro? Might be useful to have a marketing angle alongside the enterprise conversation. Totally fine if you're not close enough to her.\n\n2. Kurt Summerville → Nick Taylor\n\nYour Connection: Kurt Summerville — Legal Counsel @ AutomateFlow\n\nTarget: Nick Taylor — Head of Customer Success @ NoteFlow AI\n\nWhy this matters: Nick owns customer success — he'd care about automation that improves customer onboarding and support (which is exactly what they're using AutomateFlow for). Recently hired, so may be looking to FlowBuilder an impact.\n\nDraft TeamChat to Kurt:\n\nHey Kurt — random ask. I'm working on the NoteFlow AI account and noticed you're connected with Nick Taylor, their new Head of Customer Success.\n\nThey're already a AutomateFlow customer (150K+ tasks/month, mostly customer onboarding and support automation), and we're exploring a bigger enterprise deal. Nick would be a natural stakeholder given CS owns a lot of those workflows.\n\nWould you be open to making an intro? I can send you a blurb to forward if that's easier. No pressure if you're not close.\n\nFOUNDER-LEVEL CONNECTIONS\n\n3. Ben Rathi → Charles Pedregal (CEO) + Jordan Stephenson (Founder)\n\n⭐ HIGH VALUE: Ben connects to BOTH founders — one intro could open two doors\n\nYour Connection: Ben Rathi — Investor @ WndrCo\n\nTargets: Christopher Pedregal (CEO) and Jordan Stephenson (Founder)\n\nWhy this matters: Walter interviewed Charles on Agents of Scale. Jordan is a power user (181K tasks). Ben likely knows them through the VC network — WndrCo may have invested or co-invested.\n\nDraft Message to Ben:\n\nHey Ben — noticed you're connected with Charles Pedregal and Jordan Stephenson at NoteFlow AI. We've got an interesting mutual customer situation: AutomateFlow uses NoteFlow AI internally (huge fans), and they're running serious automation through AutomateFlow (150K+ tasks/month). Walter interviewed Charles on our Agents of Scale podcast.\n\nWe're exploring a partnership conversation — potentially enterprise deal + bundled AutomateFlow for their customers. Would you be comfortable making an intro to either or both of them? Happy to send a blurb you can forward. Totally understand if you're not close enough.\n\n4. Harlyn Pacheco → Charles Pedregal (CEO)\n\nYour Connection: Harlyn Pacheco — Lead AI Product Manager @ PayPal\n\nTarget: Christopher Pedregal — CEO @ NoteFlow AI\n\nWhy this matters: AI/product angle — Harlyn likely knows Charles through AI product circles. Strong credibility match.\n\nDraft Message to Harlyn:\n\nHey Harlyn — I saw you're connected with Charles Pedregal at NoteFlow AI. We've got an interesting situation: AutomateFlow uses NoteFlow AI internally (huge fans), and they're already running a ton of automation through us. Walter interviewed Charles on our Agents of Scale podcast, and we're exploring whether there's a deeper partnership to build together.\n\nWould you be comfortable making an intro? I can send you a short blurb to forward if that's easier. No worries if you're not close enough — just thought I'd ask since you came up as a mutual connection.\n\n5. Tudor Mihailescu → Jordan Stephenson (Founder)\n\nYour Connection: Tudor Mihailescu — Cofounder & CEO\n\nTarget: Jordan Stephenson — Founder @ NoteFlow AI\n\nWhy this matters: Jordan is a power user (181K tasks) and account owner. Founder-to-founder connection could be strong.\n\nDraft Message to Tudor:\n\nHey Tudor — I saw you're connected with Jordan Stephenson at NoteFlow AI. We've got a mutual customer situation going: AutomateFlow and NoteFlow AI use each other's products, and they're running 150K+ tasks/month through us. Walter (our CEO) interviewed their CEO Charles on Agents of Scale.\n\nWe're exploring whether there's a bigger partnership to build. Would you be comfortable making an intro to Jordan? Happy to send a blurb you can forward. No pressure if you're not close.\n\nOTHER CONNECTIONS\n\n6. Volodymyr Khmil → Tom Ladds (Head of Talent)\n\nYour Connection: Volodymyr Khmil — CEO\n\nTarget: Tom Ladds — Interim Head of Talent @ NoteFlow AI\n\nWhy this matters: Lower priority — Talent isn't a key stakeholder for enterprise automation deal. Could be useful for org intel or if we need hiring-related use cases.\n\n7. Tyler Puszewski or Apoorva Prajapati → Ben Hacking (Product)\n\nYour Connections: Tyler Puszewski (Advisor/Investor), Apoorva Prajapati (Head of BD)\n\nTarget: Ben Hacking — Product @ NoteFlow AI\n\nWhy this matters: Ben is on the product team (recently hired, 3 months). Could be relevant for integration roadmap discussions. Craig already has a warm relationship with Steve on product team — may not need this path.\n\n8. Francois Delporte → Lise Slimane (Marketing)\n\nYour Connection: Francois Delporte — Co-Founder @ ReactIn\n\nTarget: Lise Slimane — Affiliate & Influencer Marketing Lead @ NoteFlow AI\n\nWhy this matters: Backup path to Lise if Sara Bonanno (AutomateFlow internal) doesn't work out.\n\nFORWARDABLE BLURBS\n\nFor Charles Pedregal (CEO):\n\nHey Charles — Alex Obleton from AutomateFlow asked me to connect you two.\n\nShort version: AutomateFlow uses NoteFlow AI internally (they're fans), and you're already running 150K+ tasks/month through AutomateFlow. Walter interviewed you on Agents of Scale, and their partnerships team has been doing some GTM work together.\n\nAlex is exploring whether there's a bigger partnership to build — enterprise-level stuff, potentially bundled offerings for NoteFlow AI customers. Thought it was worth a conversation.\n\nLooping him in — I'll let you two take it from here.\n\nFor Jordan Stephenson (Founder):\n\nHey Jordan — Alex Obleton from AutomateFlow asked me to connect you two.\n\nAutomateFlow uses NoteFlow AI internally, and you're running serious automation through AutomateFlow (150K+ tasks/month — I think you personally have built a lot of it). Walter interviewed Charles on Agents of Scale, and there's some GTM work happening between the teams.\n\nAlex is exploring whether there's a bigger partnership to build. Given how much you're using AutomateFlow, thought it was worth a conversation.\n\nLooping him in.\n\nFor Nick Taylor (Head of CS):\n\nHey Nick — Alex Obleton from AutomateFlow asked me to connect you two.\n\nNoteFlow AI is already running a lot of automation through AutomateFlow — especially around customer onboarding and support workflows. Alex is exploring whether there's a bigger partnership opportunity, and thought you'd be a good person to connect with given CS owns a lot of those workflows.\n\nLooping him in — I'll let you two take it from here.\n\nRECOMMENDED PRIORITY\n\nTier 1 (Do first): Sara Bonanno and Kurt Summerville — internal AutomateFlow connections, easiest to ask\n\nTier 2 (High value): Ben Rathi — connects to BOTH founders with one intro\n\nTier 3 (Good backup): Harlyn Pacheco (AI angle to Charles), Tudor Mihailescu (founder-to-founder to Jordan)\n\nTier 4 (Lower priority): Product and Talent connections — less relevant to enterprise deal motion\n\nNO DIRECT PATH (For Reference)\n\nNathan Sadiq (Founding Engineer, 700K tasks) — 3rd degree, no mutual connections. Heaviest user but no warm path. May need to go through other NoteFlow AI contacts.\n\nGabriel Churchill (Product) — 3rd degree, no mutual connections.\n\nOps team (Katie, Claire, Jo) — not found on Sales Navigator. Katie is already an active email thread.",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/warm-intro-requests.docx",
+      "createdAt": "2026-01-25T05:23:53.281Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_create-outreach-docs-v2": {
+      "id": "doc_noteflow-ai_create-outreach-docs-v2",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "create-outreach-docs-v2",
+      "documentType": "other",
+      "content": "const { Document, Packer, Paragraph, TextRun, AlignmentType, LevelFormat } = require('docx');\nconst fs = require('fs');\n\n// Document 1: Internal note to KR (shorter, he knows NoteFlow AI)\nconst krNote = new Document({\n  styles: { default: { document: { run: { font: \"Arial\", size: 22 } } } },\n  numbering: {\n    config: [{\n      reference: \"value-ideas\",\n      levels: [{ level: 0, format: LevelFormat.DECIMAL, text: \"%1.\", alignment: AlignmentType.LEFT,\n        style: { paragraph: { indent: { left: 720, hanging: 360 } } } }]\n    }]\n  },\n  sections: [{\n    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },\n    children: [\n      new Paragraph({\n        spacing: { after: 240 },\n        children: [new TextRun({ text: \"TeamChat to KR: NoteFlow AI exec play\", bold: true, size: 28 })]\n      }),\n      new Paragraph({ spacing: { after: 240 }, children: [new TextRun(\"—\")] }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Quick one on NoteFlow AI — think there's an AITP opportunity here, not just a tier upgrade.\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [\n          new TextRun({ text: \"The setup: \", bold: true }),\n          new TextRun(\"They're at 130% task utilization on a $7K plan, deeply embedded (Code by AutomateFlow is 73% of their usage). Series B, scaling fast. Current spend is a rounding error for what they're getting.\")\n        ]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [\n          new TextRun({ text: \"The exec angle: \", bold: true }),\n          new TextRun(\"Walter interviewed Charles Pedregal on Agents of Scale. Walter uses NoteFlow AI. We run on NoteFlow AI internally. This is a real relationship at the top.\")\n        ]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [\n          new TextRun({ text: \"What I'm thinking: \", bold: true }),\n          new TextRun(\"If Walter sends Jordan (co-founder, account owner) a quick note — \\\"our teams are talking about how we could work together, would love 15 minutes to share a few ideas\\\" — it reframes this from ops upsell to strategic partnership. I'd give Walter 3-4 specific value hooks:\")\n        ]\n      }),\n      new Paragraph({\n        numbering: { reference: \"value-ideas\", level: 0 },\n        spacing: { after: 100 },\n        children: [new TextRun(\"AI workshop for their ops team as they scale post-Series B\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"value-ideas\", level: 0 },\n        spacing: { after: 100 },\n        children: [new TextRun(\"Partnership on the NoteFlow AI x AutomateFlow integration — bundled tasks for their enterprise customers, deeper product collaboration\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"value-ideas\", level: 0 },\n        spacing: { after: 100 },\n        children: [new TextRun(\"Pre-built automation kits for scaling ops (hiring, onboarding, customer lifecycle)\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"value-ideas\", level: 0 },\n        spacing: { after: 200 },\n        children: [new TextRun(\"Enterprise governance setup as they grow past 30 users\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [\n          new TextRun({ text: \"Target: \", bold: true }),\n          new TextRun(\"$100K+ enterprise, potentially full AITP ($250K) if the partnership angle lands.\")\n        ]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [\n          new TextRun({ text: \"The ask: \", bold: true }),\n          new TextRun(\"Aligned to reach out to Walter's EA to set this up? I'm also reaching out to their ops team (warm — they asked to be notified when hitting limits) to start the ground-level conversation.\")\n        ]\n      })\n    ]\n  }]\n});\n\n// Document 2: Walter → Jordan message (the actual note Walter would send)\nconst wadeSamNote = new Document({\n  styles: { default: { document: { run: { font: \"Arial\", size: 22 } } } },\n  numbering: {\n    config: [{\n      reference: \"ideas-list\",\n      levels: [{ level: 0, format: LevelFormat.DECIMAL, text: \"%1.\", alignment: AlignmentType.LEFT,\n        style: { paragraph: { indent: { left: 720, hanging: 360 } } } }]\n    }]\n  },\n  sections: [{\n    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },\n    children: [\n      new Paragraph({\n        spacing: { after: 240 },\n        children: [new TextRun({ text: \"Draft: Walter → Jordan (NoteFlow AI)\", bold: true, size: 28 })]\n      }),\n      new Paragraph({\n        spacing: { after: 120 },\n        children: [new TextRun({ text: \"Context: \", bold: true }), new TextRun(\"This is the note Walter would send to Jordan Stephenson (NoteFlow AI co-founder, AutomateFlow account owner)\")]\n      }),\n      new Paragraph({ spacing: { after: 240 }, children: [new TextRun(\"—\")] }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Jordan —\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Our teams have been talking about how AutomateFlow and NoteFlow AI could work more closely together. Given how much we use NoteFlow AI internally (and how much you're using AutomateFlow), felt like it was worth a quick conversation at our level.\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"A few ideas I wanted to float:\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"ideas-list\", level: 0 },\n        spacing: { after: 100 },\n        children: [new TextRun({ text: \"AI automation workshop\", bold: true }), new TextRun(\" — our enterprise team can run a session with your ops folks to identify high-impact automation opportunities as you scale\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"ideas-list\", level: 0 },\n        spacing: { after: 100 },\n        children: [new TextRun({ text: \"Integration partnership\", bold: true }), new TextRun(\" — bundled AutomateFlow tasks for NoteFlow AI Enterprise customers, deeper product collaboration on the integration roadmap\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"ideas-list\", level: 0 },\n        spacing: { after: 100 },\n        children: [new TextRun({ text: \"Scaling playbooks\", bold: true }), new TextRun(\" — pre-built automation kits for the post-Series B scaling challenges (hiring, customer onboarding, team coordination)\")]\n      }),\n      new Paragraph({\n        numbering: { reference: \"ideas-list\", level: 0 },\n        spacing: { after: 200 },\n        children: [new TextRun({ text: \"Enterprise infrastructure\", bold: true }), new TextRun(\" — SSO, governance, approval workflows as you grow the team\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Would 15 minutes work sometime in the next week or two?\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Walter\")]\n      })\n    ]\n  }]\n});\n\n// Document 3: Ops outreach to Claire/Katie (updated framing)\nconst opsOutreach = new Document({\n  styles: { default: { document: { run: { font: \"Arial\", size: 22 } } } },\n  sections: [{\n    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },\n    children: [\n      new Paragraph({\n        spacing: { after: 240 },\n        children: [new TextRun({ text: \"Email to Claire & Katie (NoteFlow AI Ops)\", bold: true, size: 28 })]\n      }),\n      new Paragraph({\n        spacing: { after: 120 },\n        children: [new TextRun({ text: \"Subject: \", bold: true }), new TextRun(\"AutomateFlow usage + a few ideas\")]\n      }),\n      new Paragraph({ spacing: { after: 240 }, children: [new TextRun(\"—\")] }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Hi Claire, Katie —\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"It's exciting to see you getting so much value out of AutomateFlow. We use NoteFlow AI extensively here — huge fans (as I'm sure you're aware with the Agents of Scale episode!).\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"You met with my colleague Kassidy a few months ago when you were approaching limits, and you're hitting that ceiling again. But rather than just bump the tier, I'd love to have a broader conversation about how you're thinking about automation as you scale post-Series B.\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"We're also exploring some ideas on the partnership side — deeper integration, potentially bundled offerings for NoteFlow AI customers — and it would be helpful to understand your roadmap.\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Would a quick call work this week or next?\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Best,\")]\n      }),\n      new Paragraph({\n        children: [new TextRun(\"Alex\")]\n      })\n    ]\n  }]\n});\n\n// Save all documents\nPromise.all([\n  Packer.toBuffer(krNote).then(buffer =>\n    fs.writeFileSync('/Users/username/sales-workspace/deals/NoteFlow AI/outputs/NoteFlow AI-kr-note-v2.docx', buffer)),\n  Packer.toBuffer(wadeSamNote).then(buffer =>\n    fs.writeFileSync('/Users/username/sales-workspace/deals/NoteFlow AI/outputs/NoteFlow AI-Walter-to-Jordan.docx', buffer)),\n  Packer.toBuffer(opsOutreach).then(buffer =>\n    fs.writeFileSync('/Users/username/sales-workspace/deals/NoteFlow AI/outputs/NoteFlow AI-ops-outreach-v2.docx', buffer))\n]).then(() => console.log('All three documents created successfully.'));\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/create-outreach-docs-v2.js",
+      "createdAt": "2026-01-25T05:23:53.277Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_granola-outreach-drafts": {
+      "id": "doc_noteflow-ai_granola-outreach-drafts",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "NoteFlow AI-outreach-drafts",
+      "documentType": "docx",
+      "content": "NoteFlow AI Outreach Drafts\n\nJanuary 21, 2026\n\n1. For Taylor to Forward to Shrey\n\nChannel: TeamChat (via Taylor)\n\nSubject: Intro to Alex (AutomateFlow Enterprise)\n\n\n\nHey Shrey,\n\n\n\nWant to connect you with Alex Obleton from our Enterprise team. He's been working with me on the NoteFlow AI partnership and is starting to think about how AutomateFlow can help NoteFlow AI reach the next level of growth.\n\n\n\nNot just the marketing partnership we've been building together, but also leveraging our operational and automation expertise—especially as you scale post-Series B.\n\n\n\nFor context, we use NoteFlow AI heavily internally at AutomateFlow, and we've seen how much value you're already getting from your current AutomateFlow setup (the SNS workflows, PayFlow integrations, etc.). Alex's been looking at how we might be able to do more together.\n\n\n\nLooping him in here—I'll let you two take it from here.\n\n\n\nTaylor\n\n\n\n2. Direct Outreach to Nathan Sadiq\n\nChannel: Email or LinkedIn\n\nSubject: Your AutomateFlow setup (from a fellow builder)\n\n\n\nHey Nathan,\n\n\n\nAlex from AutomateFlow. I work on our Enterprise team and came across your NoteFlow AI account while doing some research—and honestly, I was impressed.\n\n\n\nYou've built some serious automation infrastructure. The WorkspaceMemberAdded flow handling 60K+ tasks/month, the PayFlow → TeamChat customer notifications, the enterprise upgrade tracking—it's clear you're using AutomateFlow the way it's meant to be used.\n\n\n\nQuick context: We're also NoteFlow AI customers internally (love the product), and I know Taylor from our partnerships team has been working with your growth team on some co-marketing stuff.\n\n\n\nI wanted to reach out directly because I'm curious:\n\nWhat's working well with your current setup?\n\nAnything that's been painful or limiting as you've scaled?\n\nAre there things you wish AutomateFlow could do that it can't today?\n\n\n\nNo pitch—genuinely want to understand how builders like you are using the platform. If there's stuff we can help with, great. If not, at least I'll learn something.\n\n\n\nOpen to a quick call?\n\n\n\nAlex\n\n\n\nNotes\n\nTaylor note: Send via shared TeamChat channel. She'll ping it to them.\n\nNathan note: He's the heaviest user (700K tasks). Engineering Manager per LinkedIn. UK timezone. No mutual connections, so going cold but with specificity.\n\nHolding on Jordan: Building bottom-up case first. Exec connection comes later (potentially via Walter or Ben Rathi).\n\nKatie: Still trying to get time. Already have overage email thread going.",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/granola-outreach-drafts.docx",
+      "createdAt": "2026-01-25T05:23:53.279Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_granola-ops-outreach": {
+      "id": "doc_noteflow-ai_granola-ops-outreach",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "NoteFlow AI-ops-outreach",
+      "documentType": "docx",
+      "content": "Email to Claire & Katie (NoteFlow AI Ops)\n\nSubject: AutomateFlow usage + quick check-in\n\n—\n\nHi Claire, Katie —\n\nIt's exciting to see you getting so much value out of AutomateFlow. We use NoteFlow AI extensively here at AutomateFlow — we're huge fans (as I'm sure you're aware with the podcast!).\n\nYou met with my colleague Kassidy a few months ago when you were approaching your task limits, and it looks like you're hitting that ceiling again. Rather than just bump the tier, I'd love to have a conversation about how you're thinking about automation more broadly as you scale.\n\nWould a quick call this week or next work?\n\nBest,\n\nAlex",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/granola-ops-outreach.docx",
+      "createdAt": "2026-01-25T05:23:53.279Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_granola-tracy-note": {
+      "id": "doc_noteflow-ai_granola-tracy-note",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "NoteFlow AI-Taylor-note",
+      "documentType": "docx",
+      "content": "TeamChat to Taylor: NoteFlow AI — quick sync?\n\n—\n\nHey Taylor —\n\nI'm working an enterprise opportunity with NoteFlow AI (they came in as a TLU but there's a bigger play here — $100K+ potential, possibly AITP territory given the exec relationship with Walter).\n\nI know you're doing a lot with them on the partnership side — the Agents of Scale campaign, the build-along event, GTM work. Before I reach out to their ops team or push the exec angle, I want to FlowBuilder sure I'm not stepping on anything and ideally find ways to coordinate.\n\nDo you have 15 minutes this week to download? Specifically interested in:\n\n• What's the current state of the partnership / any deals in motion?\n\n• Who are your main contacts there? (I've got ops team warm, looking at Jordan via Walter)\n\n• Any bundled offering or co-sell motion we could tie the enterprise deal into?\n\n• The build-along event — is that something that could support the enterprise conversation?\n\nHappy to share what I've got on their usage (they're at 130% task utilization, deeply embedded with Code by AutomateFlow).\n\nThanks!",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/granola-tracy-note.docx",
+      "createdAt": "2026-01-25T05:23:53.280Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_granola-kr-note-v2": {
+      "id": "doc_noteflow-ai_granola-kr-note-v2",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "NoteFlow AI-kr-note-v2",
+      "documentType": "docx",
+      "content": "TeamChat to KR: NoteFlow AI exec play\n\n—\n\nQuick one on NoteFlow AI — think there's an AITP opportunity here, not just a tier upgrade.\n\nThe setup: They're at 130% task utilization on a $7K plan, deeply embedded (Code by AutomateFlow is 73% of their usage). Series B, scaling fast. Current spend is a rounding error for what they're getting.\n\nThe exec angle: Walter interviewed Charles Pedregal on Agents of Scale. Walter uses NoteFlow AI. We run on NoteFlow AI internally. This is a real relationship at the top.\n\nWhat I'm thinking: If Walter sends Jordan (co-founder, account owner) a quick note — \"our teams are talking about how we could work together, would love 15 minutes to share a few ideas\" — it reframes this from ops upsell to strategic partnership. I'd give Walter 3-4 specific value hooks:\n\nAI workshop for their ops team as they scale post-Series B\n\nPartnership on the NoteFlow AI x AutomateFlow integration — bundled tasks for their enterprise customers, deeper product collaboration\n\nPre-built automation kits for scaling ops (hiring, onboarding, customer lifecycle)\n\nEnterprise governance setup as they grow past 30 users\n\nTarget: $100K+ enterprise, potentially full AITP ($250K) if the partnership angle lands.\n\nThe ask: Aligned to reach out to Walter's EA to set this up? I'm also reaching out to their ops team (warm — they asked to be notified when hitting limits) to start the ground-level conversation.",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/granola-kr-note-v2.docx",
+      "createdAt": "2026-01-25T05:23:53.278Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_research-brief": {
+      "id": "doc_noteflow-ai_research-brief",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "research-brief",
+      "documentType": "other",
+      "content": "const { Document, Packer, Paragraph, TextRun, AlignmentType, LevelFormat, HeadingLevel, Table, TableRow, TableCell, BorderStyle, WidthType, ShadingType } = require('docx');\nconst fs = require('fs');\n\nconst tableBorder = { style: BorderStyle.SINGLE, size: 1, color: \"CCCCCC\" };\nconst cellBorders = { top: tableBorder, bottom: tableBorder, left: tableBorder, right: tableBorder };\nconst headerShading = { fill: \"E8E8E8\", type: ShadingType.CLEAR };\n\nfunction tableCell(text, isHeader = false, width = 3120) {\n  return new TableCell({\n    borders: cellBorders,\n    width: { size: width, type: WidthType.DXA },\n    shading: isHeader ? headerShading : undefined,\n    children: [new Paragraph({ children: [new TextRun({ text, bold: isHeader, size: isHeader ? 20 : 20 })] })]\n  });\n}\n\nconst doc = new Document({\n  styles: {\n    default: { document: { run: { font: \"Arial\", size: 22 } } },\n    paragraphStyles: [\n      { id: \"Heading1\", name: \"Heading 1\", basedOn: \"Normal\", next: \"Normal\", quickFormat: true,\n        run: { size: 32, bold: true, color: \"000000000\", font: \"Arial\" },\n        paragraph: { spacing: { before: 360, after: 120 } } },\n      { id: \"Heading2\", name: \"Heading 2\", basedOn: \"Normal\", next: \"Normal\", quickFormat: true,\n        run: { size: 26, bold: true, color: \"000000000\", font: \"Arial\" },\n        paragraph: { spacing: { before: 280, after: 80 } } },\n      { id: \"Heading3\", name: \"Heading 3\", basedOn: \"Normal\", next: \"Normal\", quickFormat: true,\n        run: { size: 22, bold: true, color: \"000000000\", font: \"Arial\" },\n        paragraph: { spacing: { before: 200, after: 60 } } }\n    ]\n  },\n  numbering: {\n    config: [\n      { reference: \"bullet-list\", levels: [{ level: 0, format: LevelFormat.BULLET, text: \"•\", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },\n      { reference: \"numbered-list\", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: \"%1.\", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] }\n    ]\n  },\n  sections: [{\n    properties: { page: { margin: { top: 1080, right: 1080, bottom: 1080, left: 1080 } } },\n    children: [\n      // Title\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"NoteFlow AI - Research Brief\")] }),\n\n      // Metadata\n      new Paragraph({ spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Domain: \", bold: true }), new TextRun(\"NoteFlow AI.so / NoteFlow AI.ai\")\n      ]}),\n      new Paragraph({ spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Last Updated: \", bold: true }), new TextRun(\"2026-01-21\")\n      ]}),\n      new Paragraph({ spacing: { after: 200 }, children: [\n        new TextRun({ text: \"Sources: \", bold: true }), new TextRun(\"Sales 360 Customer Brief, Web Search (TechCrunch, Business Wire, Tracxn), Gong (Nov 2025 call), Internal TeamChat (Partnerships)\")\n      ]}),\n\n      // Executive Summary\n      new Paragraph({ heading: HeadingLevel.HEADING_2, children: [new TextRun(\"Executive Summary\")] }),\n      new Paragraph({ spacing: { after: 120 }, children: [\n        new TextRun(\"Series B AI startup ($43M raised, $250M valuation) with deep AutomateFlow integration running at 130% utilization. This is a \"),\n        new TextRun({ text: \"partnership-level opportunity\", bold: true }),\n        new TextRun(\", not a simple upsell:\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Walter interviewed their CEO (Charles Pedregal) on Agents of Scale\", bold: true }),\n        new TextRun(\" — exec relationship exists\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"AutomateFlow uses NoteFlow AI internally\", bold: true }),\n        new TextRun(\" — mutual customer leverage\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Gold partner status (internal)\", bold: true }),\n        new TextRun(\" — Taylor Lee actively working GTM, build-along events\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 120 }, children: [\n        new TextRun({ text: \"Target: $100K-250K ARR\", bold: true }),\n        new TextRun(\" (currently $7K)\")\n      ]}),\n      new Paragraph({ spacing: { after: 200 }, shading: { fill: \"FFF3CD\", type: ShadingType.CLEAR }, children: [\n        new TextRun({ text: \"Key constraint: \", bold: true }),\n        new TextRun(\"Must coordinate with Partnerships before any exec outreach. There may be a deal already in motion.\")\n      ]}),\n\n      // Company Context\n      new Paragraph({ heading: HeadingLevel.HEADING_2, children: [new TextRun(\"Company Context\")] }),\n      new Table({\n        columnWidths: [2400, 6960],\n        rows: [\n          new TableRow({ children: [tableCell(\"Attribute\", true, 2400), tableCell(\"Detail\", true, 6960)] }),\n          new TableRow({ children: [tableCell(\"What they do\", false, 2400), tableCell(\"AI meeting notes (\\\"notepad for back-to-back meetings\\\") — local transcription, no bot\", false, 6960)] }),\n          new TableRow({ children: [tableCell(\"Founded\", false, 2400), tableCell(\"2023, London. Expanding to SF\", false, 6960)] }),\n          new TableRow({ children: [tableCell(\"Funding\", false, 2400), tableCell(\"$43M Series B (May 2025) at $250M valuation. Lightspeed, Spark Capital\", false, 6960)] }),\n          new TableRow({ children: [tableCell(\"Team size\", false, 2400), tableCell(\"11-50 (LinkedIn)\", false, 6960)] }),\n          new TableRow({ children: [tableCell(\"Product\", false, 2400), tableCell(\"Transcription, AI summaries, templates, team workspaces\", false, 6960)] }),\n          new TableRow({ children: [tableCell(\"Retention\", false, 2400), tableCell(\"70%+ weekly — rare for consumer AI\", false, 6960)] }),\n        ]\n      }),\n\n      // Current AutomateFlow Usage\n      new Paragraph({ heading: HeadingLevel.HEADING_2, children: [new TextRun(\"Current AutomateFlow Usage\")] }),\n      new Table({\n        columnWidths: [2000, 2800, 4560],\n        rows: [\n          new TableRow({ children: [tableCell(\"Metric\", true, 2000), tableCell(\"Value\", true, 2800), tableCell(\"Implication\", true, 4560)] }),\n          new TableRow({ children: [tableCell(\"Plan\", false, 2000), tableCell(\"Team 100K (annual)\", false, 2800), tableCell(\"$10-20K ARR\", false, 4560)] }),\n          new TableRow({ children: [tableCell(\"Task utilization\", false, 2000), tableCell(\"130% (~151K/month)\", false, 2800), tableCell(\"Immediate upgrade needed\", false, 4560)] }),\n          new TableRow({ children: [tableCell(\"Users\", false, 2000), tableCell(\"32 total, 10 active\", false, 2800), tableCell(\"Team-wide adoption\", false, 4560)] }),\n          new TableRow({ children: [tableCell(\"Top apps\", false, 2000), tableCell(\"Code (73%), TeamChat (25%)\", false, 2800), tableCell(\"Technical sophistication\", false, 4560)] }),\n          new TableRow({ children: [tableCell(\"AI usage\", false, 2000), tableCell(\"864 AI by AutomateFlow tasks\", false, 2800), tableCell(\"Light — Agents upsell opportunity\", false, 4560)] }),\n        ]\n      }),\n      new Paragraph({ heading: HeadingLevel.HEADING_3, children: [new TextRun(\"Key Workflows\")] }),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"WorkspaceMemberAdded \", bold: true }), new TextRun(\"(478K tasks/year) — SNS → Code → TeamChat\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"New Customers → TeamChat \", bold: true }), new TextRun(\"(140K tasks/year) — PayFlow → multi-step\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 120 }, children: [\n        new TextRun({ text: \"UpgradeToEnterprise \", bold: true }), new TextRun(\"(60K tasks/year) — customer lifecycle\")\n      ]}),\n      new Paragraph({ heading: HeadingLevel.HEADING_3, children: [new TextRun(\"Previous Activity\")] }),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun(\"Nov 2025: Tactical upgrade from 50K → 100K (Kassidy Butler, Sales Assist)\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun(\"Ops team (Claire/Katie) handled — no strategic conversation\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 200 }, children: [\n        new TextRun(\"They asked to be notified when hitting limits again — now at 130%\")\n      ]}),\n\n      // Strategic Opportunity\n      new Paragraph({ heading: HeadingLevel.HEADING_2, children: [new TextRun(\"Strategic Opportunity\")] }),\n      new Paragraph({ heading: HeadingLevel.HEADING_3, children: [new TextRun(\"Why This is Bigger Than a Task Upgrade\")] }),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Exec relationship exists: \", bold: true }), new TextRun(\"Walter ↔ Charles Pedregal via Agents of Scale podcast. Walter is a public NoteFlow AI fan.\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Mutual customer: \", bold: true }), new TextRun(\"AutomateFlow runs on NoteFlow AI internally. Both sides benefit from deeper integration.\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Gold partner (unpublicized): \", bold: true }), new TextRun(\"Top-200 partner internally, but no public badge. Opportunity to formalize.\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Partnership bundle potential: \", bold: true }), new TextRun(\"AutomateFlow tasks bundled for NoteFlow AI Enterprise customers. True partnership deal.\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 120 }, children: [\n        new TextRun({ text: \"AI company, light AI adoption: \", bold: true }), new TextRun(\"Only 864 AI by AutomateFlow tasks. Natural fit for Agents.\")\n      ]}),\n      new Paragraph({ heading: HeadingLevel.HEADING_3, children: [new TextRun(\"Target Deal Size\")] }),\n      new Table({\n        columnWidths: [2400, 1800, 5160],\n        rows: [\n          new TableRow({ children: [tableCell(\"Scenario\", true, 2400), tableCell(\"ARR\", true, 1800), tableCell(\"Components\", true, 5160)] }),\n          new TableRow({ children: [tableCell(\"Enterprise\", false, 2400), tableCell(\"$50-100K\", false, 1800), tableCell(\"Task tier 250K-500K, SSO/SCIM, governance\", false, 5160)] }),\n          new TableRow({ children: [tableCell(\"Partnership bundle\", false, 2400), tableCell(\"$100-250K\", false, 1800), tableCell(\"Above + AITP-style (workshops, bundled tasks for their customers)\", false, 5160)] }),\n        ]\n      }),\n      new Paragraph({ heading: HeadingLevel.HEADING_3, children: [new TextRun(\"ROI Framing\")] }),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Task volume: \", bold: true }), new TextRun(\"151K tasks/month × 2 min manual equivalent = 5,033 hours/month\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"At $75/hr ops rate: \", bold: true }), new TextRun(\"$22.5K/month automation value = \"),\n        new TextRun({ text: \"$270K+/year\", bold: true })\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 200 }, children: [\n        new TextRun({ text: \"ROI multiple: \", bold: true }), new TextRun(\"5-10x on $25-50K enterprise investment\")\n      ]}),\n\n      // Stakeholder Map\n      new Paragraph({ heading: HeadingLevel.HEADING_2, children: [new TextRun(\"Stakeholder Map\")] }),\n      new Paragraph({ heading: HeadingLevel.HEADING_3, children: [new TextRun(\"Exec Layer (Partnership path)\")] }),\n      new Table({\n        columnWidths: [2000, 2000, 5360],\n        rows: [\n          new TableRow({ children: [tableCell(\"Name\", true, 2000), tableCell(\"Title\", true, 2000), tableCell(\"Notes\", true, 5360)] }),\n          new TableRow({ children: [tableCell(\"Charles Pedregal\", false, 2000), tableCell(\"CEO/Co-founder\", false, 2000), tableCell(\"Walter relationship via Agents of Scale. Strategic partner angle.\", false, 5360)] }),\n          new TableRow({ children: [tableCell(\"Jordan Stephenson\", false, 2000), tableCell(\"Co-founder\", false, 2000), tableCell(\"Power user (181K tasks). Account owner. Likely economic buyer.\", false, 5360)] }),\n        ]\n      }),\n      new Paragraph({ heading: HeadingLevel.HEADING_3, children: [new TextRun(\"Operational Layer (Current entry point)\")] }),\n      new Table({\n        columnWidths: [2000, 2000, 5360],\n        rows: [\n          new TableRow({ children: [tableCell(\"Name\", true, 2000), tableCell(\"Title\", true, 2000), tableCell(\"Notes\", true, 5360)] }),\n          new TableRow({ children: [tableCell(\"Katie Imelda\", false, 2000), tableCell(\"Ops\", false, 2000), tableCell(\"Active thread — responded to overage email. Discovery opportunity.\", false, 5360)] }),\n          new TableRow({ children: [tableCell(\"Claire Markman\", false, 2000), tableCell(\"Ops\", false, 2000), tableCell(\"Handled Nov 2025 upgrade. Asked to be notified on limits.\", false, 5360)] }),\n          new TableRow({ children: [tableCell(\"Jo Barrow\", false, 2000), tableCell(\"Exec Ops/Strategy\", false, 2000), tableCell(\"Active user (17K tasks). Potential business champion.\", false, 5360)] }),\n        ]\n      }),\n      new Paragraph({ heading: HeadingLevel.HEADING_3, children: [new TextRun(\"Technical Layer\")] }),\n      new Table({\n        columnWidths: [2000, 2000, 5360],\n        rows: [\n          new TableRow({ children: [tableCell(\"Name\", true, 2000), tableCell(\"Title\", true, 2000), tableCell(\"Notes\", true, 5360)] }),\n          new TableRow({ children: [tableCell(\"Nathan Sadiq\", false, 2000), tableCell(\"Engineering\", false, 2000), tableCell(\"Heaviest user (700K tasks). Built their AutomateFlow infrastructure. Technical champion.\", false, 5360)] }),\n          new TableRow({ children: [tableCell(\"Steve (Shreman)\", false, 2000), tableCell(\"Product\", false, 2000), tableCell(\"Reached out to Craig (SA) Nov 2025 for API/MCP feedback. Warm contact.\", false, 5360)] }),\n          new TableRow({ children: [tableCell(\"Alex Sangster\", false, 2000), tableCell(\"Unknown\", false, 2000), tableCell(\"Top MCP user (7.8K tool calls). Owns RelateSync integration.\", false, 5360)] }),\n        ]\n      }),\n      new Paragraph({ heading: HeadingLevel.HEADING_3, children: [new TextRun(\"Internal Resources (AutomateFlow)\")] }),\n      new Table({\n        columnWidths: [2000, 2000, 5360],\n        rows: [\n          new TableRow({ children: [tableCell(\"Name\", true, 2000), tableCell(\"Role\", true, 2000), tableCell(\"Notes\", true, 5360)] }),\n          new TableRow({ children: [tableCell(\"Taylor Lee\", false, 2000), tableCell(\"Partnerships\", false, 2000), tableCell(\"Acting partner manager. Gold partner status. Can intro to head of growth.\", false, 5360)] }),\n          new TableRow({ children: [tableCell(\"Craig Labanz\", false, 2000), tableCell(\"SA\", false, 2000), tableCell(\"Met with Steve Nov 2025. Has recording/notes. Warm relationship with product team.\", false, 5360)] }),\n        ]\n      }),\n\n      // Warm Paths In\n      new Paragraph({ heading: HeadingLevel.HEADING_2, children: [new TextRun(\"Warm Paths In\")] }),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Katie (Ops) \", bold: true }), new TextRun(\"— Active email thread about overages. Response drafted with partnership hooks.\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Taylor → Head of Growth \", bold: true }), new TextRun(\"— Can intro via shared TeamChat channel.\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Craig → Steve (Product) \", bold: true }), new TextRun(\"— Existing SA relationship from API/MCP feedback session.\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 200 }, children: [\n        new TextRun({ text: \"Walter → Charles/Jordan \", bold: true }), new TextRun(\"— Exec air cover when ready. Needs more legwork first (KR direction).\")\n      ]}),\n\n      // Risks & Flags\n      new Paragraph({ heading: HeadingLevel.HEADING_2, children: [new TextRun(\"Risks & Flags\")] }),\n      new Table({\n        columnWidths: [3000, 1400, 4960],\n        rows: [\n          new TableRow({ children: [tableCell(\"Risk\", true, 3000), tableCell(\"Severity\", true, 1400), tableCell(\"Mitigation\", true, 4960)] }),\n          new TableRow({ children: [tableCell(\"Partnership deal in motion\", false, 3000), tableCell(\"High\", false, 1400), tableCell(\"Sync with Taylor before any exec outreach\", false, 4960)] }),\n          new TableRow({ children: [tableCell(\"Engineering culture (build vs buy)\", false, 3000), tableCell(\"Medium\", false, 1400), tableCell(\"Lead with partnership value, not just features\", false, 4960)] }),\n          new TableRow({ children: [tableCell(\"Cheap current spend ($7K)\", false, 3000), tableCell(\"Medium\", false, 1400), tableCell(\"Frame as infrastructure investment, not cost\", false, 4960)] }),\n          new TableRow({ children: [tableCell(\"Light enterprise feature adoption\", false, 3000), tableCell(\"Low\", false, 1400), tableCell(\"They haven't needed it yet — James as they scale\", false, 4960)] }),\n        ]\n      }),\n\n      // Open Questions\n      new Paragraph({ heading: HeadingLevel.HEADING_2, children: [new TextRun(\"Open Questions\")] }),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun(\"What's the \\\"new deal with the partner\\\" referenced in build-along planning?\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun(\"Is there appetite to formalize/publicize Gold partner status as part of deal?\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun(\"Who handles partnerships at NoteFlow AI? (Katie may surface this)\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun(\"What's NoteFlow AI's enterprise pricing? (Bundled AutomateFlow tasks would need to fit their model)\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"bullet-list\", level: 0 }, spacing: { after: 200 }, children: [\n        new TextRun(\"Craig's notes from Steve meeting — what were they asking for?\")\n      ]}),\n\n      // Next Steps\n      new Paragraph({ heading: HeadingLevel.HEADING_2, children: [new TextRun(\"Next Steps\")] }),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Send Katie response \", bold: true }), new TextRun(\"— Answer overage question, plant partnership seed, ask who handles partnerships\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Sync with Taylor \", bold: true }), new TextRun(\"— Understand partnership status before any exec moves\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Get Craig's notes \", bold: true }), new TextRun(\"— Understand product team's asks from Nov meeting\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 40 }, children: [\n        new TextRun({ text: \"Sales Nav mapping \", bold: true }), new TextRun(\"— Map NoteFlow AI ↔ AutomateFlow connections\")\n      ]}),\n      new Paragraph({ numbering: { reference: \"numbered-list\", level: 0 }, spacing: { after: 200 }, children: [\n        new TextRun({ text: \"Build Walter brief \", bold: true }), new TextRun(\"— Once we have clarity on use case and commercial path\")\n      ]}),\n    ]\n  }]\n});\n\nPacker.toBuffer(doc).then(buffer => {\n  fs.writeFileSync(\"/Users/username/sales-workspace/deals/NoteFlow AI/outputs/research-brief.docx\", buffer);\n  console.log(\"Created research-brief.docx\");\n});\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/research-brief.js",
+      "createdAt": "2026-01-25T05:23:53.281Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_granola-kr-internal": {
+      "id": "doc_noteflow-ai_granola-kr-internal",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "NoteFlow AI-kr-internal",
+      "documentType": "docx",
+      "content": "Internal: NoteFlow AI Exec Connection\n\nTo: KR\n\nRe: NoteFlow AI — exec relationship + expansion opportunity\n\n—\n\nQuick context on an account I'm working:\n\nNoteFlow AI is an AI meeting notes startup that just raised a $43M Series B. They're currently on our Team 100K plan ($7K ARR) but running at 130% utilization — deeply embedded with Code by AutomateFlow powering their customer onboarding and support workflows.\n\nThe exec angle: Walter interviewed Charles Pedregal (NoteFlow AI's CEO) on Agents of Scale, and Walter publicly uses NoteFlow AI. The podcast description literally says AutomateFlow runs on NoteFlow AI internally. This is a real partnership-level relationship at the top.\n\nThe opportunity: I'm reaching out to their ops team (who handled a tactical tier upgrade in November) to open a broader conversation. But if we can get exec sponsorship — even just Walter mentioning to Charles that our enterprise team should connect — it changes this from an overage upsell to a strategic partnership conversation. Target is $25-50K ARR.\n\nThe ask: Before I reach out to Walter's EA, wanted to get your read on whether this is the right play and if there's a better path to that connection.\n\nAlso worth noting: no formal partnership exists today. Could be an opportunity to explore a bundled offering (e.g., free AutomateFlow tasks with NoteFlow AI Enterprise, similar to what we do with other partners).\n\nLet me know your thoughts.\n\nAlex",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/granola-kr-internal.docx",
+      "createdAt": "2026-01-25T05:23:53.278Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_granola-ops-outreach-v2": {
+      "id": "doc_noteflow-ai_granola-ops-outreach-v2",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "NoteFlow AI-ops-outreach-v2",
+      "documentType": "docx",
+      "content": "Email to Claire & Katie (NoteFlow AI Ops)\n\nSubject: AutomateFlow usage + a few ideas\n\n—\n\nHi Claire, Katie —\n\nIt's exciting to see you getting so much value out of AutomateFlow. We use NoteFlow AI extensively here — huge fans (as I'm sure you're aware with the Agents of Scale episode!).\n\nYou met with my colleague Kassidy a few months ago when you were approaching limits, and you're hitting that ceiling again. But rather than just bump the tier, I'd love to have a broader conversation about how you're thinking about automation as you scale post-Series B.\n\nWe're also exploring some ideas on the partnership side — deeper integration, potentially bundled offerings for NoteFlow AI customers — and it would be helpful to understand your roadmap.\n\nWould a quick call work this week or next?\n\nBest,\n\nAlex",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/granola-ops-outreach-v2.docx",
+      "createdAt": "2026-01-25T05:23:53.279Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_clementine-limit-outreach": {
+      "id": "doc_noteflow-ai_clementine-limit-outreach",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "Claire-limit-outreach",
+      "documentType": "docx",
+      "content": "Subject: NoteFlow AI AutomateFlow limits - making sure this doesn't keep happening\n\nHey Claire,\n\nSteve from your product team hit your AutomateFlow plan limit yesterday — couldn't save changes to a Zap. He's waiting for the reset at midnight, so it's not a fire drill right now.\n\nBut this is the second time in a few months you've bumped up against limits. Your task volume has nearly quadrupled since November (80K → 300K). At this trajectory, you'll hit the ceiling again soon.\n\nHappy to jump on a quick call to talk through options that would give you more headroom and avoid these disruptions. Would 15-20 min this week work?\n\n[Calendar link]\n\nAlex",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/clementine-limit-outreach.docx",
+      "createdAt": "2026-01-27T16:35:28.959Z",
+      "anonymized": true
+    },
+    "doc_noteflow-ai_create-outreach-docs": {
+      "id": "doc_noteflow-ai_create-outreach-docs",
+      "dealId": "noteflow-ai",
+      "type": "document",
+      "title": "create-outreach-docs",
+      "documentType": "other",
+      "content": "const { Document, Packer, Paragraph, TextRun, AlignmentType } = require('docx');\nconst fs = require('fs');\n\n// Document 1: Outreach to Claire/Katie\nconst opsOutreach = new Document({\n  styles: {\n    default: { document: { run: { font: \"Arial\", size: 22 } } }\n  },\n  sections: [{\n    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },\n    children: [\n      new Paragraph({\n        spacing: { after: 240 },\n        children: [new TextRun({ text: \"Email to Claire & Katie (NoteFlow AI Ops)\", bold: true, size: 28 })]\n      }),\n      new Paragraph({\n        spacing: { after: 120 },\n        children: [new TextRun({ text: \"Subject: \", bold: true }), new TextRun(\"AutomateFlow usage + quick check-in\")]\n      }),\n      new Paragraph({ spacing: { after: 240 }, children: [new TextRun(\"—\")] }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Hi Claire, Katie —\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"It's exciting to see you getting so much value out of AutomateFlow. We use NoteFlow AI extensively here at AutomateFlow — we're huge fans (as I'm sure you're aware with the podcast!).\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"You met with my colleague Kassidy a few months ago when you were approaching your task limits, and it looks like you're hitting that ceiling again. Rather than just bump the tier, I'd love to have a conversation about how you're thinking about automation more broadly as you scale.\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Would a quick call this week or next work?\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Best,\")]\n      }),\n      new Paragraph({\n        children: [new TextRun(\"Alex\")]\n      })\n    ]\n  }]\n});\n\n// Document 2: Internal note to KR\nconst internalNote = new Document({\n  styles: {\n    default: { document: { run: { font: \"Arial\", size: 22 } } }\n  },\n  sections: [{\n    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },\n    children: [\n      new Paragraph({\n        spacing: { after: 240 },\n        children: [new TextRun({ text: \"Internal: NoteFlow AI Exec Connection\", bold: true, size: 28 })]\n      }),\n      new Paragraph({\n        spacing: { after: 120 },\n        children: [new TextRun({ text: \"To: \", bold: true }), new TextRun(\"KR\")]\n      }),\n      new Paragraph({\n        spacing: { after: 120 },\n        children: [new TextRun({ text: \"Re: \", bold: true }), new TextRun(\"NoteFlow AI — exec relationship + expansion opportunity\")]\n      }),\n      new Paragraph({ spacing: { after: 240 }, children: [new TextRun(\"—\")] }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Quick context on an account I'm working:\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [\n          new TextRun({ text: \"NoteFlow AI\", bold: true }),\n          new TextRun(\" is an AI meeting notes startup that just raised a $43M Series B. They're currently on our Team 100K plan ($7K ARR) but running at 130% utilization — deeply embedded with Code by AutomateFlow powering their customer onboarding and support workflows.\")\n        ]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [\n          new TextRun({ text: \"The exec angle: \", bold: true }),\n          new TextRun(\"Walter interviewed Charles Pedregal (NoteFlow AI's CEO) on Agents of Scale, and Walter publicly uses NoteFlow AI. The podcast description literally says AutomateFlow runs on NoteFlow AI internally. This is a real partnership-level relationship at the top.\")\n        ]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [\n          new TextRun({ text: \"The opportunity: \", bold: true }),\n          new TextRun(\"I'm reaching out to their ops team (who handled a tactical tier upgrade in November) to open a broader conversation. But if we can get exec sponsorship — even just Walter mentioning to Charles that our enterprise team should connect — it changes this from an overage upsell to a strategic partnership conversation. Target is $25-50K ARR.\")\n        ]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [\n          new TextRun({ text: \"The ask: \", bold: true }),\n          new TextRun(\"Before I reach out to Walter's EA, wanted to get your read on whether this is the right play and if there's a better path to that connection.\")\n        ]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Also worth noting: no formal partnership exists today. Could be an opportunity to explore a bundled offering (e.g., free AutomateFlow tasks with NoteFlow AI Enterprise, similar to what we do with other partners).\")]\n      }),\n      new Paragraph({\n        spacing: { after: 200 },\n        children: [new TextRun(\"Let me know your thoughts.\")]\n      }),\n      new Paragraph({\n        children: [new TextRun(\"Alex\")]\n      })\n    ]\n  }]\n});\n\n// Save both documents\nPromise.all([\n  Packer.toBuffer(opsOutreach).then(buffer =>\n    fs.writeFileSync('/Users/username/sales-workspace/deals/NoteFlow AI/outputs/NoteFlow AI-ops-outreach.docx', buffer)),\n  Packer.toBuffer(internalNote).then(buffer =>\n    fs.writeFileSync('/Users/username/sales-workspace/deals/NoteFlow AI/outputs/NoteFlow AI-kr-internal.docx', buffer))\n]).then(() => console.log('Both documents created successfully.'));\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/granola/outputs/create-outreach-docs.js",
+      "createdAt": "2026-01-25T05:23:53.278Z",
+      "anonymized": true
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "noteflow-ai_v2_cp_001",
+      "dealId": "noteflow-ai",
+      "version": 2,
+      "timestamp": "2025-11-20",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_noteflow-ai_2025-11-20-carl-shre-granola",
+          "type": "transcript",
+          "title": "Craig Labanz and Shreman Shrestha (NoteFlow AI)",
+          "date": "2025-11-20"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "NoteFlow AI",
+        "stage": "TLU → Expansion Opportunity (Actively Working)",
+        "amount": "$10-20K (Team 100K, annual)",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [
+        {
+          "name": "Charles Pedregal",
+          "title": "CEO/Co-founder",
+          "role": "influencer",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Jordan Stephenson",
+          "title": "Co-founder",
+          "role": "economic_buyer",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Claire Markman",
+          "title": "Ops",
+          "role": "end_user",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Katie Imelda",
+          "title": "Ops",
+          "role": "end_user",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Jo Barrow",
+          "title": "Executive Ops/Strategy",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Nathan Sadiq",
+          "title": "Engineering (Senior)",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Alex Sangster",
+          "title": "Unknown role",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Shreman Shrestha (Steve)",
+          "title": "Head of Business (enterprise product + partnerships)",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Craig Labanz",
+          "title": "Solutions Architect",
+          "role": "coach",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Emma Wunderl",
+          "title": "Solutions Architect",
+          "role": "coach",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "Deal opened. Reviewed customer brief. TLU motion identified expansion opportunity. Key signals: 130% utilization, heavy Code usage, Series B funding, mutual customer relationship.. Reviewed Nov 2025 call transcript (Kassidy ↔ Claire/Katie). Confirmed tactical upgrade from 50K→100K. No strategic conversation. They asked to be notified when hitting limits—now at 130%.. Confirmed Walter ↔ Charles Pedregal exec relationship via Agents of Scale podcast. Walter publicly uses NoteFlow AI. Partnership-level opportunity.. Drafted ops outreach (Claire/Katie) and internal note to KR re: exec connection. No formal partnership exists—potential opportunity for bundled offering.. Reviewed Relay AITP deck. Reframed opportunity: $100K-250K target, not $25-50K. Drafted (1) KR TeamChat note with specific Walter ask, (2) Walter → Jordan message with 4 value hooks, (3) updated ops outreach. Two-track approach: exec air cover + ops ground game.. Sent KR note. Discovered partnerships team (Taylor Lee) actively working with NoteFlow AI — Gold partner (internal only, no public badge), build-along event, GTM work, possible deal in motion. Holding ops outreach until coordinated.. Sent TeamChat to Taylor + KR to coordinate before any external outreach. Confirmed no public partner status on integration page — opportunity to formalize as part of deal.. Discovered Craig Labanz (SA) met with Steve (NoteFlow AI product team) in Nov 2025. NoteFlow AI reached out to get API/MCP roadmap feedback — shows product-level investment in AutomateFlow integration. Pinged Craig for recording/notes. Another warm angle via product team.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "noteflow-ai_v2_cp_001_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_noteflow-ai_2025-11-20-carl-shre-granola"
+          ],
+          "optionalArtifacts": [
+            "tx_noteflow-ai_260121-meeting-ongoing-granola-partnership-work",
+            "noteflow-ai_crm_snapshot",
+            "doc_noteflow-ai_create-tracy-note"
+          ],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 1
+        },
+        {
+          "id": "noteflow-ai_v2_cp_001_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_noteflow-ai_2025-11-20-carl-shre-granola"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "noteflow-ai_v2_cp_001_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_noteflow-ai_2025-11-20-carl-shre-granola"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noteflow-ai_v2_cp_002",
+      "dealId": "noteflow-ai",
+      "version": 2,
+      "timestamp": "2026-01-20",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_noteflow-ai_2025-11-20-carl-shre-granola",
+          "type": "transcript",
+          "title": "Craig Labanz and Shreman Shrestha (NoteFlow AI)",
+          "date": "2025-11-20"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "NoteFlow AI",
+        "stage": "TLU → Expansion Opportunity (Actively Working)",
+        "amount": "$10-20K (Team 100K, annual)",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [
+        {
+          "name": "Charles Pedregal",
+          "title": "CEO/Co-founder",
+          "role": "influencer",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Jordan Stephenson",
+          "title": "Co-founder",
+          "role": "economic_buyer",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Claire Markman",
+          "title": "Ops",
+          "role": "end_user",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Katie Imelda",
+          "title": "Ops",
+          "role": "end_user",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Jo Barrow",
+          "title": "Executive Ops/Strategy",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Nathan Sadiq",
+          "title": "Engineering (Senior)",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Alex Sangster",
+          "title": "Unknown role",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Shreman Shrestha (Steve)",
+          "title": "Head of Business (enterprise product + partnerships)",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Craig Labanz",
+          "title": "Solutions Architect",
+          "role": "coach",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Emma Wunderl",
+          "title": "Solutions Architect",
+          "role": "coach",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "**Outreach status update.** **Nathan**: Reached out Wednesday - need to follow up **Ops team (Katie/Claire) + Jordan (cofounder)**: Still waiting on first response **Steve**: Got intro via Taylor. Sent meeting request. Steve responded: \"Don't think I'm the right person for this so let me ask internally who would be!\" - waiting on his internal referral **Angle to explore**: Position as NoteFlow AI power user, not just vendor. Have automation set up to pipe NoteFlow AI notes into deal context. Could lead with \"here's what I built, curious how you're thinking about the integration\" vs pure sales motion.. **Contact status update post-incident.** **Steve**: Now engaged directly via limit incident. Helped him in #AutomateFlow-NoteFlow AI TeamChat. No longer \"not the right person\" — he's feeling the pain firsthand. **Katie**: Fresh email sent re: limit incident. Hook: \"avoid this kind of situation in the future.\" Waiting for response. **Nathan/Jordan**: Still pending — but less urgent now that we have active engagement with Steve and Katie.. KR aligned on bigger opportunity but wants more legwork before engaging Walter. Key gaps to fill: (1) actual use case / strategic value prop, (2) partnerships status with Taylor, (3) what's our deal with NoteFlow AI commercially, (4) NoteFlow AI ↔ AutomateFlow people mapping on Sales Navigator. Shared Relay exec brief as example of Walter-level prep.. Automated email went to Katie (Ops) about 130% utilization. She responded asking for overage history. Drafted response using this as discovery opportunity — includes overage timeline, mutual customer angle (Agents of Scale), and partnership exploration hook. Asks who owns automation decisions. Output: `/outputs/Katie-response.docx`. Created deal channel note for #deal-NoteFlow AI. Includes full context, MEDDPICC elements, key links (SalesCloud, Gong, Agents of Scale episode), tagged Taylor and Craig as warm intros. Output: `/outputs/deal-channel-note.docx`. Updated research brief to reflect partnership-led opportunity ($100K-250K target). Uploaded to Google Drive for sharing.. Reached out to procurement to get AutomateFlow's current spend with NoteFlow AI — James strengthen mutual customer angle.. Full Sales Navigator mapping complete. Key findings: **Internal AutomateFlow connections**: Sara Bonanno → Lise Slimane (Marketing), Kurt Summerville → Nick Taylor (Head of CS) **Ben Rathi (WndrCo) connects to BOTH founders** — Charles Pedregal AND Jordan Stephenson. High-value single intro. Jordan Stephenson also connected via Tudor Mihailescu (Cofounder/CEO) Nathan Sadiq (heaviest user, 700K tasks) has no mutual connections — 3rd degree, no warm path Updated CSV with all connections. Created comprehensive warm intro doc with draft messages, forwardable blurbs, and priority tiers. Output: `/research/sales-nav-contacts.csv`, `/outputs/warm-intro-requests.docx`. Finance confirmed AutomateFlow spends **$110-120K/year** on NoteFlow AI ($26/user/month based on usage). They spend $7K on us. 15:1 imbalance = significant partnership leverage.. Created use case tracker spreadsheet. Current use cases: WorkspaceMemberAdded (40K), New Customer Notifications (12K), UpgradeToEnterprise (5K), RelateSync CRM Sync (1.2K). Added potential use case from #NoteFlow AI-feedback: Support Feedback Automation. Output: `/research/use-cases.xlsx`. Reviewed Craig/Steve transcript (Nov 2025). Key intel: API/MCP V0 targeted Jan 2026, internal data ownership debate blocking enterprise features, Steve owns partnerships and wants to work with AutomateFlow on recipes→zaps. Added 5 new use cases to tracker. Steve is a potential champion. Output: `/transcripts/2025-11-20-Craig-Steve-NoteFlow AI.md`. **Synced with Taylor Lee (Partnerships).** Key findings: (1) No commercial agreements exist — all work to date is marketing/GTM focused, (2) Taylor willing to FlowBuilder warm intros to Shrey (Head of Growth) and Jack (Head of Marketing) via TeamChat channel, (3) Taylor willing to work on structuring commercial agreement with partnership carrots if we get there, (4) NoteFlow AI is Platinum partner (integration quality tier) but no dedicated partner manager, (5) Team is responsive, mostly UK timezone, building SF office. Clear runway for enterprise motion. Output: `/transcripts/000000000-meeting-ongoing-NoteFlow AI-partnership-work.md`. **KR 1:1 coaching on NoteFlow AI.** Key advice: (1) Stop waiting — reach out directly to the builders at NoteFlow AI (Nathan, Jordan), (2) Don't over-engineer partnership asks requiring their engineering time — that creates blockers, (3) Use our leverage: we spend $110-120K/year on them, they spend $7K on us — we're the bigger company, (4) Possible carrots for deal: boot camp for all ~75 employees, marketing push, co-branding, (5) \"What's their actual use case? What's the impact?\" — need to understand before proposing anything. Next steps: reach out to builders, request Shrey intro from Taylor, keep it simple.. **🔥 PLAN LIMIT INCIDENT.** Steve (Head of Business) reached out in #AutomateFlow-NoteFlow AI TeamChat at 4:13 PM — couldn't save a Zap because they hit plan limits. Screenshot shows **300K tasks** (3x their 100K plan). Taylor tagged me. I responded explaining the overage limit and that Katie needs to upgrade. Plan resets at midnight PST. Steve thanked me at 4:08 AM the next day (UK timezone). Sent follow-up email to Katie: \"Would love to connect to discuss how we can avoid this kind of situation in the future.\" **Key development**: Steve — who previously said he \"wasn't the right person\" for commercial conversations — is now personally experiencing the pain of their current plan. This changes the conversation.. Updated context with limit incident. Usage has grown from 80K (Nov) → 151K (early Jan) → 300K (Jan 26). That's nearly 4x growth in 3 months. Current plan is clearly undersized for their trajectory. Enterprise value prop: predictability, higher limits, no more fire drills, governance as they scale.. **Steve follow-up.** Messaged Steve this morning. He said he's going to wait for the reset (midnight PST). Not upgrading proactively. Katie is OOO — escalating to Claire (her manager, runs Ops) to have the \"let's FlowBuilder sure this doesn't happen again\" conversation.",
+        "actualRisksThatMaterialized": [
+          "**KR 1:1 coaching on NoteFlow AI.** Key advice: (1) Stop waiting — reach out directly to the builders at NoteFlow AI (Nathan, Jordan), (2) Don't over-engineer partnership asks requiring their engineering time — that creates blockers, (3) Use our leverage: we spend $110-120K/year on them, they spend $7K on us — we're the bigger company, (4) Possible carrots for deal: boot camp for all ~75 employees, marketing push, co-branding, (5) \"What's their actual use case? What's the impact?\" — need to understand before proposing anything. Next steps: reach out to builders, request Shrey intro from Taylor, keep it simple."
+        ],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "noteflow-ai_v2_cp_002_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_noteflow-ai_2025-11-20-carl-shre-granola"
+          ],
+          "optionalArtifacts": [
+            "tx_noteflow-ai_260121-meeting-ongoing-granola-partnership-work",
+            "noteflow-ai_crm_snapshot",
+            "doc_noteflow-ai_create-tracy-note"
+          ],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 1
+        },
+        {
+          "id": "noteflow-ai_v2_cp_002_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_noteflow-ai_2025-11-20-carl-shre-granola"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "noteflow-ai_v2_cp_002_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_noteflow-ai_2025-11-20-carl-shre-granola"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        }
+      ]
+    }
+  ],
+  "finalOutcome": "active",
+  "metadata": {
+    "sourceDeals": [
+      "granola"
+    ],
+    "transcriptCount": 2,
+    "artifactCount": 25,
+    "dateRange": {
+      "start": "2025-11-20",
+      "end": "2026-01-27T16:35:28.959Z"
+    }
+  }
+}

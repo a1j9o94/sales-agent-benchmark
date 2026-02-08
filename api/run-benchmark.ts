@@ -17,13 +17,13 @@ import { evaluateResponse } from "./evaluate-response";
 
 // Import checkpoint data directly (bundled at build time)
 // Public deals
-import avmedia from "../data/checkpoints/public/avmedia.json";
-import coolRooms from "../data/checkpoints/public/cool-rooms.json";
-import granola from "../data/checkpoints/public/granola.json";
-import moxie from "../data/checkpoints/public/moxie.json";
-import zenithPrep from "../data/checkpoints/public/zenith-prep-academy.json";
+import streamcoreMedia from "../data/checkpoints/public/streamcore-media.json";
+import chillspaceTech from "../data/checkpoints/public/chillspace-tech.json";
+import noteflowAi from "../data/checkpoints/public/noteflow-ai.json";
+import velocitySystems from "../data/checkpoints/public/velocity-systems.json";
+import summitLearning from "../data/checkpoints/public/summit-learning.json";
 
-const PUBLIC_DEALS: Deal[] = [avmedia, coolRooms, granola, moxie, zenithPrep] as Deal[];
+const PUBLIC_DEALS: Deal[] = [streamcoreMedia, chillspaceTech, noteflowAi, velocitySystems, summitLearning] as Deal[];
 
 // Private deals - these would be imported similarly but kept secret
 // For now, we'll use an empty array for private (can be populated later)

@@ -1,13 +1,13 @@
 {
-  "id": "zenith-prep-academy",
-  "name": "Summit Learning-prep-academy",
+  "id": "summit-learning",
+  "name": "Summit Learning",
   "checkpoints": [
     {
-      "id": "zenith-prep-academy_cp_001",
-      "dealId": "zenith-prep-academy",
+      "id": "summit-learning_cp_001",
+      "dealId": "summit-learning",
       "timestamp": "2026-01-18",
       "context": {
-        "company": "Summit Learning-prep-academy",
+        "company": "Summit Learning",
         "stage": "Lead Qualification",
         "lastInteraction": "Inbound demo request submitted with 10 email opens",
         "painPoints": [],
@@ -65,11 +65,11 @@
       }
     },
     {
-      "id": "zenith-prep-academy_cp_002",
-      "dealId": "zenith-prep-academy",
+      "id": "summit-learning_cp_002",
+      "dealId": "summit-learning",
       "timestamp": "2026-01-21",
       "context": {
-        "company": "Summit Learning-prep-academy",
+        "company": "Summit Learning",
         "stage": "Discovery Complete - Building Business Case",
         "lastInteraction": "Deep discovery call with Eugene identifying three pain points and expansion opportunity",
         "painPoints": [

@@ -1,10 +1,10 @@
 {
-  "id": "moxie",
+  "id": "velocity-systems",
   "name": "Velocity Systems",
   "checkpoints": [
     {
-      "id": "moxie_cp_001",
-      "dealId": "moxie",
+      "id": "velocity-systems_cp_001",
+      "dealId": "velocity-systems",
       "timestamp": "2026-01-29",
       "context": {
         "company": "Velocity Systems",
@@ -81,8 +81,8 @@
       }
     },
     {
-      "id": "moxie_cp_002",
-      "dealId": "moxie",
+      "id": "velocity-systems_cp_002",
+      "dealId": "velocity-systems",
       "timestamp": "2026-01-29",
       "context": {
         "company": "Velocity Systems",
@@ -155,8 +155,8 @@
       }
     },
     {
-      "id": "moxie_cp_003",
-      "dealId": "moxie",
+      "id": "velocity-systems_cp_003",
+      "dealId": "velocity-systems",
       "timestamp": "2026-01-30",
       "context": {
         "company": "Velocity Systems",

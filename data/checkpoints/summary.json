@@ -6,105 +6,105 @@
   "extractedAt": "2026-01-31T05:05:29.861Z",
   "dealSummary": [
     {
-      "id": "moxie",
+      "id": "velocity-systems",
       "name": "Velocity Systems",
       "checkpoints": 3,
       "finalOutcome": "active",
       "isPublic": true
     },
     {
-      "id": "granola",
+      "id": "noteflow-ai",
       "name": "NoteFlow AI",
       "checkpoints": 3,
       "finalOutcome": "stalled",
       "isPublic": true
     },
     {
-      "id": "zenith-prep-academy",
-      "name": "Summit Learning-prep-academy",
+      "id": "summit-learning",
+      "name": "Summit Learning",
       "checkpoints": 2,
       "finalOutcome": "lost",
       "isPublic": true
     },
     {
-      "id": "cool-rooms",
+      "id": "chillspace-tech",
       "name": "ChillSpace Tech",
       "checkpoints": 4,
       "finalOutcome": "lost",
       "isPublic": true
     },
     {
-      "id": "avmedia",
+      "id": "streamcore-media",
       "name": "StreamCore Media",
       "checkpoints": 2,
       "finalOutcome": "active",
       "isPublic": true
     },
     {
-      "id": "patoma",
+      "id": "pathmark-analytics",
       "name": "PathMark Analytics",
       "checkpoints": 3,
       "finalOutcome": "lost",
       "isPublic": false
     },
     {
-      "id": "flagship",
+      "id": "horizon-ventures",
       "name": "Horizon Ventures",
       "checkpoints": 4,
       "finalOutcome": "won",
       "isPublic": false
     },
     {
-      "id": "pronet",
+      "id": "netpro-solutions",
       "name": "NetPro Solutions",
       "checkpoints": 4,
       "finalOutcome": "active",
       "isPublic": false
     },
     {
-      "id": "scg-security",
+      "id": "secureguard-systems",
       "name": "SecureGuard Systems",
       "checkpoints": 1,
       "finalOutcome": "active",
       "isPublic": false
     },
     {
-      "id": "genea",
+      "id": "lifegen-labs",
       "name": "LifeGen Labs",
       "checkpoints": 2,
       "finalOutcome": "active",
       "isPublic": false
     },
     {
-      "id": "eaton-group",
-      "name": "Eastpoint-group",
+      "id": "eastpoint-capital",
+      "name": "Eastpoint Capital",
       "checkpoints": 4,
       "finalOutcome": "won",
       "isPublic": false
     },
     {
-      "id": "hometime",
+      "id": "dwelltech",
       "name": "DwellTech",
       "checkpoints": 1,
       "finalOutcome": "won",
       "isPublic": false
     },
     {
-      "id": "finera",
+      "id": "finedge-solutions",
       "name": "FinEdge Solutions",
       "checkpoints": 1,
       "finalOutcome": "won",
       "isPublic": false
     },
     {
-      "id": "xpansiv",
+      "id": "greenmarket-exchange",
       "name": "GreenMarket Exchange",
       "checkpoints": 1,
       "finalOutcome": "active",
       "isPublic": false
     },
     {
-      "id": "anisa",
+      "id": "artisan-brands",
       "name": "Artisan Brands",
       "checkpoints": 1,
       "finalOutcome": "active",

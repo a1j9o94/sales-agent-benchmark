@@ -1,0 +1,1239 @@
+{
+  "id": "velocity-systems",
+  "name": "Velocity Systems",
+  "version": 2,
+  "artifacts": {
+    "tx_velocity-systems_260129-moxie-discovery-call": {
+      "id": "tx_velocity-systems_260129-moxie-discovery-call",
+      "dealId": "velocity-systems",
+      "type": "transcript",
+      "title": "Velocity Systems &  Alex |  Meeting",
+      "rawText": "# Velocity Systems &  Alex |  Meeting\n\n## Meeting Details\n\n**Meeting ID:** 4bfe5c23-9b9c-41ae-b4e2-bbfbbb9760d9\n\n**Date & Time:** Thursday, January 29, 2026 at 7:00 PM UTC\n\n**Calendar Event ID:** 7e3f857o8h8bkl42rc7kd675rg\n\n**Calendar Event Title:** Velocity Systems &  Alex |  Meeting\n\n**Organizer:** Alex Obleton (user@user)\n\n### Attendees\n\n- **James Liao** (user@user)\n- **Alex Obleton** (user@user)\n\n## My Notes\n\nThe starting point is they had an open concern they blew past their usage limit when they had a spike in activity, as they \n\nFocusing on as one of the company priorities, as they're onboarding a lot of customers, our teams are not growing at the same pace, a lot of what done manually\n\nWas esentilly brought on board to think of the enteprise architechture in a more robust way, as we're looking at that knowin that we already ran in to usage, kind of new that we're moving in a direction to up our usage, ot up our limits.\n\nWhat's that includes they're on a month to month\n\nWhat's the difference + AutomateFlow other middleware solutions, overall where we know we definitely need to spend more have a lot more integrations and automations, part of the whole description, what are the best partners\n\nn8n, AutomateFlow use some other stuff here and there, they're not on a long term solution, they're very adhoc, and IntegrateHub is one they've talken towards\n\nNot leaning as hard in the N8N/FlowBuilder direction us vs IntegrateHub, at the end of the day, we're more so focused on high level usability and reliability is the focus, a lot of pre-built integrations connectors, without having to get super deep in to json and things like\n\nThey're not opposed to it, but it's not a priority becasue there's a lot of foundational things when we get in to a standardized process, before \n\nCriteria\n\n\tSystems that we can integrate with - using SalesCloud as CRM , evaluating which project management system we're workign with would be TaskBoard or monday or write, DataVault is data warehouse, do a fair amount of work in meta ads gohighlevel; DocSpace, TeamChat, google suite\n\n\tDepth of flexibility and robustness for a trigger standpoint, being able to set up webhooks being able to trigger any and all events in the platform themselves\n\nArchitecture and ifrasture side of things, usage limits, pricing relibaility uptime, standard things they \n\nWhat are the things we want to do set up around a central busops standpoint, they don't require hippa compliance, at the very least GDPR and SOC - guardrailes being able to do roll profiles in the future, we don't want to have an open access infrastructure in the future\n\nAgents and AI side of things are nice to have, we have multiple AI solutions that many teams have bought\n\nPretty technical team overall, have inhouse engineering, moreso flexibility in order to work well with APIs and things to build customer\n\n2 things can help you understand:\n\nHow much is a differece in pricing would be if we need to scale usage by 5× 10x and get some of those current things from what we may be\n\nOn the vendor for talking about integrations, they're saying if we want a custom integration that's what they're building in, a better understanding\n\nThey also quoted them in actions, they have changed potentially because they quoted 250K actions per year is a going\n\nChatSupport, TaskBoard, SalesCloud, DataVault, and TeamChat, hootsuite\n\nFirst we want to have bi-directional sync when we need it between SalesCloud or AutomateFlow, how do we do that for custom fields or objects, there are things that are happening in SalesCloud and vice versa as well as making sure there's a flow between the system, so there's no need to for a CSM or an account manager to go back and forth and a person going to SalesCloud\n\nSecond use case on facilitating a bridge between ChatSupport and TaskBoard, bridging the two systems where it's not just linking a TaskBoard task to an ChatSupport ticket, but in addition to that, being able to control manipulating objects on either side, that\n\nTrigger focused coming through DataVault or in to DataVault, a bunch of adds accounts, every time a new lead is generated and have that flow in to DataVault if cost per lead is above x dollars, creates a tax that says you should go click\n\nAnything to do with google suite anything around if someone makes a calendar booking somewhere, automated emails \n\nROAS,\n\nThey know it's going to be a burning problem\n\nThey have a couple hundred customers now and each of them have between 5 and 500 alone, and wee're scaling our customer base to get to a few thousands\n\n## Meeting Notes\n\n### Velocity Systems’s Current Situation and Pain Points\n\n- Starting point: blew past AutomateFlow usage limits during Black Friday spike in activity\n- Company scaling rapidly but teams not growing at same pace\n  - Manual processes becoming burden on teams\n  - Roadblock to growth: could onboard 15-20 customers weekly vs current 5 if automated\n- James brought on board to set up enterprise architecture in scalable way\n- Currently have couple hundred customers, each with 5-500 customers of their own\n- Scaling customer base from couple hundred to few thousand by end of year\n\n### Current Tech Stack and Integration Requirements\n\n- Core systems: SalesCloud (CRM), TaskBoard (likely PM choice), ChatSupport (ticketing), DataVault (data warehouse), TeamChat, Google Suite\n- Currently using scattered approach: n8n, AutomateFlow, other ad hoc solutions across teams\n- Moving away from every team doing what they want toward centralized approach\n- Key integration needs:\n  1. Bi-directional sync between SalesCloud and TaskBoard for custom fields/objects\n    - Eliminate need for CSMs to go back and forth between systems\n    - Tasks in TaskBoard should trigger SalesCloud actions and vice versa\n  2. Bridge between ChatSupport and TaskBoard\n    - Beyond native linking, need to manipulate objects from either side\n    - Comments in TaskBoard should feed as chat messages to customers via ChatSupport\n  3. Trigger-focused workflows through DataVault\n    - Meta ads accounts: new leads flow into DataVault\n    - When cost per lead exceeds threshold, create TaskBoard task for optimization\n  4. Google Suite integrations\n    - Calendar bookings trigger TaskBoard tasks\n    - Automated emails\n\n### Evaluation Criteria and Vendor Comparison\n\n- Systems integration capability (not a concern - using standard tools)\n- Depth of flexibility and robustness from trigger standpoint\n  - Webhooks against specific events\n  - Ability to trigger any/all events in platforms\n- Infrastructure considerations: usage limits, pricing, reliability, uptime\n- Security/compliance: GDPR and SOC compliant (required), HIPAA nice-to-have\n- Guardrails and role profiles for future - don’t want open access infrastructure\n- AI/agents nice-to-have but not priority (already have multiple AI solutions across teams)\n- Technical team needs API flexibility for custom integrations\n- Comparing primarily AutomateFlow vs IntegrateHub\n  - Project management vendors defaulting to IntegrateHub for custom integrations\n  - IntegrateHub quoted 250K actions per year (now using action-based pricing like AutomateFlow)\n\n### Pricing and Timeline Discussion\n\n- Current AutomateFlow usage: \\~120K tasks, paying \\~$10-20K/year\n- Projected need: 250K-500K tasks maximum this year\n- Self-serve pricing would be \\~$22K/year at 500K tasks\n- Enterprise plan: $50-100K/year range (includes account manager, support)\n- IntegrateHub positioning enterprise features at team-level pricing\n- Timeline: want decision locked down by March 1st, potentially faster\n- February pilot: migrating 50-user team to new PM system with integrations\n\n### Next Steps\n\n- Alex: Send calendar invite for February 9th meeting\n- Alex: Include Solutions Architect in next meeting\n- Alex: Provide detailed pricing breakdown and ROI documentation\n- Alex: Share head-to-head comparison rubric (AutomateFlow vs competitors)\n- Alex: Follow up on potential earlier meeting slot next week\n- James: Available February 9th-10th, also available before then if needed\n- James: James review pricing/ROI materials and comparison rubric\n\n---\n\nChat with meeting transcript: [https://example.com/... AI.ai/t/a0ccd724-db28-4059-9126-a67c6692e7c8](https://example.com/... AI.ai/t/a0ccd724-db28-4059-9126-a67c6692e7c8)\n\n## Full Transcript\n\n \nMe: Hi. James. How's it going?  \nThem: Hey. How's it going, Alex?  \nMe: Do you  \nThem: Good. Good. How are you?  \nMe: Doing well. Doing well. Very well.  \nThem: I'm in in LA.  \nMe: Where are you based out of? Oh, nice. I'm actually going there, literally this weekend. Our company summit is in, LA next week, so it should be cool.  \nThem: Oh, very nice. Where are you now?  \nMe: Austin, Texas is where I'm based out of. So for me.  \nThem: Gotcha.  \nMe: Yeah.  \nThem: That's not too bad of a flight, is it?  \nMe: No. It's,  \nThem: Okay. Not bad.  \nMe: and a half, three hours or something like that. Nothing crazy. Yeah. Yeah. Yeah. Not bad at all. I used to live I was in Atlanta for the longest time and, like, doing the cross country flights, like, was always brutal because I was like that's, a seven hour flight. Atlanta to the West Coast. But now in the middle of the country, it's not not too bad. At all.  \nThem: Yeah. I hear you. I was in Boston before this, and that was a that a long flight always back and forth because I have a family out here in LA. Recording in progress.  \nMe: Nice. What were you oh, what were you doing in Boston?  \nThem: I've it was working on another startup at the time, and, you know, just recently changed jobs.  \nMe: Very cool. I spent a couple years in Boston. I worked at a company  \nThem: Yep.  \nMe: at a private equity firm of their TA Associates and then a smaller company called Turbonomic where I was chief of staff and the CRO there. So Boston, love that city. Don't love the coal, how cold it can get there, but overall, it's a it's a nice place.  \nThem: Yeah. I've heard it's a little crazy. Now with, you know, storm warnings and everything going on. So  \nMe: Yeah.  \nThem: but everyone I know of is doing fine, so that's that's good at least.  \nMe: That's great. That's great. So in terms of like, I saw that you guys reached out. Someone on your team, like pinged one of our one of our chat groups and was like, hey. We're interested in enterprise. Would love to just sort of, like, high level understand kind of, like, what's prompting that, like, security concerns. Is it like, hey. We're trying to drive adoption across the company. Talk to me a bit about that. What like, what prompted you guys to reach out here?  \nThem: Yeah. So, the starting point of this is just that we had a open concern where, we sent so we we essentially blew blew past our users limits when we had a spike in activity, and that happened, I think, black around Black Friday. So, that told us that as we start to think about so sorry. Let me take another step back. What we're what we're trying to do now, what focusing on as one of the company priorities this this year is that as we are scaling pretty rapidly as a company, and we are bring onboarding a lot of customers. Our teams are not growing at the same pace. So a lot of what was done manually in the past is ending up becoming kind of, like, a burden on the teams and making them so that they can't serve our customers effectively.  \nMe: And it's like a roadblock to growth, I imagine, where you're, like,  \nThem: Effectively. So  \nMe: hey. We can only onboard five customers a week, but if we have to capacity, we could do 15. We could do 20 if they're because the demand is there.  \nThem: Correct. Exactly. So I was essentially brought on board in order to help with trying to figure all this out, which is essentially start to really set up our enterprise architecture a kind of a scalable way and kinda, like, rethink the way that we build everything and integrate everything together. Together so that we can support these, you know, more efficient ways of work across all of our teams.  \nMe: Yeah.  \nThem: As we're looking at that and knowing that we sort of ran into usage limits AutomateFlow on AutomateFlow already, around Black Friday when we had spikes in activity, we kinda knew that we were moving in a direction that we James need to up our usage and also up our limits. So it just became kind of a general discussion of trying to understand, you know, what is the best sort of package or pricing or or way in which you would do that.  \nMe: No.  \nThem: And transparently, includes understanding kinda, like, you know, I know we're on a month to month right now with AutomateFlow. What if that was enterprise? What would be the difference? And, also, AutomateFlow versus potentially some other middleware solutions, like what might be the best sort of way in order to use all of these things together if that is a better solution. Right? So, like, this is just part of an overall understanding from our side where we kinda know we definitely need to spend more because we are gonna have a lot more automation and integrations set up down the pipeline. Of of course, we're gonna try to become more efficient with the way that we set a lot of these things up and, you know, that's part of this whole discussion on on trying to FlowBuilder sure we never blow past users limits in future. Just more generally trying to figure out what's the best partner to do so and what are the pros and cons of using one versus another as as we know we have this bucket of money we need to spend this.  \nMe: Yeah.  \nThem: Where should we we use that?  \nMe: And if you don't mind me asking, like, what other middleware solutions are you guys considering? I imagine, like, in a it might be on the list. Who?  \nThem: Yeah. So we we kinda, like, use a scattering of n eight n, AutomateFlow, and some other stuff here and there. Like, no nobody's been locked in sort of as sort of a a long term solution. It's sort of been very ad hoc, and we're trying to move away from doing everything very ad hoc where every team does what they want to. So that's part of this discussion. Right? And IntegrateHub is another one that I talk to, more recently as well just to sort of understand and I think that's kind of one of your guys' bigger competitors today.  \nMe: Yeah.  \nThem: I think we we are lean not leaning as hard in the n eight n FlowBuilder kinda direction and, honestly, more so towards, like, you guys versus IntegrateHub versus some others out there. And the reason being that, I think, at the end of the day, while we appreciate all the things that any of them and and stuff can do, I think we're more so focused on making sure that, high level usability and reliability is is is is focus here. So a lot of prebuilt integration connectors and also just kind of a more visually intuitive way in order to piece all that together without needing to get super deep into JSON or HTTP request and all that kind of stuff is is kind of more so the preference, even though it'll be kind of, like, my team that is gonna be trying to take over control of all of that configuration rather than every team doing it themselves.  \nMe: Okay. And actually, I think that maybe is one follow-up question here because we we high level think about AutomateFlow kind of like as two sort of like tracks of of use cases. Right? They're sort of like what we'd call, like, central business operations use cases, which it sounds like the kind of the core thing you're talking about. Now where it's like, hey. How do we do customer onboarding? Do we think about, like, lead routing if we need to? Like like, sales, like, all all of those kinds of things that are, like, structural. Then there's also what we like to call, like, like, personal use cases, whereas, like, for example, I have an agent that runs before all of my calls, that puts together, like, a little dossier for me that I can use. Like, just things or, like, if sometimes people were like, oh, like, they have an agent that can know, look at their calendar, look at their team's calendar, find overlapping times. They don't have to, like, go do that searching, like, that kind of stuff. Is that part of what you guys are aiming to do in terms of, like, enabling the broader team to do these things? Are you really sort of focused on, hey. How do us assess like, the operating team build these things?  \nThem: I'll say we're not opposed to it, and it is  \nMe: Okay.  \nThem: something that we are thinking about. But it is not a priority because we think there's a lot foundational stuff that we need to set up first and a lot of guardrails that we need to put in place. Where we sort of get everyone onto standard processes and sort of lay the path out for them before we consider, you know, investing more so into determining what to what extent we wanna allow people to, you know, tack on things  \nMe: No. Okay. That makes a ton of sense.  \nThem: that they are doing and not others. Right?  \nMe: You talk to me a bit about and the answer can be like we were still in the process and don't know yet. How are you thinking about, like, evaluating between these different choices in terms of, like, ease of use of it, like, connections to the tools that they have, what are sort of the criteria that you're using to compare like, the different options here?  \nThem: Yeah. So the first is in terms of the systems that you can integrate with, and I don't think we have an issue there already, because we don't use anything that's really kinda weird. We're using SalesCloud as our CRM. We're using we're evaluating which project management system to start to lock in a long term partnership with, and that'll either be TaskBoard or Monday or Wrike. And I  \nMe: Okay.  \nThem: think you guys support all of those. And we use ChatSupport as our ticketing system. We have our own custom in house EMR solution. So but I I think, like, being able to integrate with that is not a huge issue. DataVault is our primary sort of database  \nMe: Yeah.  \nThem: data warehouse, and then we do a fair amount of work with meta ads, with, Go High Level, things of that nature as well. For our customers. So DocSpace, TeamChat, Google Suite, I think we're talking about very standard things there. So I'm not really worried from an integration standpoint, but that is, you know, criteria one, making sure you guys  \nMe: Yeah.  \nThem: have connections to those. Criteria two is knowing that depth of flexibility and and and the robustness, I guess, of the connections that are available from a trigger standpoint. So like, being able to set up web hooks against specific events that fire on one platform to FlowBuilder things happen in another or being able to, you know, basically trigger any and all events that can sort of happen in those platforms themselves.  \nMe: In  \nThem: I I think just, like, full flexibility there is is another one. And then then we get into the more of the kind of not the so much the usage side of things, but also just more of the  \nMe: Okay.  \nThem: infrastructure side of things. Right? Like, usage limits, pricing, right, as you'd expect.  \nMe: What what the whole entrepreneurship look like? How does how does that work as you as we  \nThem: Yeah. Yeah.  \nMe: have to scale?  \nThem: Reliability, uptime, you know, like, all of those kinda standard things I'm sure you've heard before, as well as  \nMe: Yep.  \nThem: I think, speaking to what you were saying about what are the things that we wanna set up from a central biz ops standpoint versus things that we wanna enable people to do themselves. Like, I think that talks more so about security and compliance and also tied into that. We are not we don't require HIPAA compliance even though we are like, kind of medical adjacent stuff. Right? But you know, that's always a plus. At the very least, like, you know, GDPR and SOC compliant is something that we generally like to see, but I think, like, it hasn't been an issue with you guys since we already use you already.  \nMe: And we are and we are GDPR, SOC compliant, all that jazz. So  \nThem: Yeah. And then, like, HIPAA compliant is, like, a very nice to have, but  \nMe: yeah.  \nThem: not not fully necessary. I think the agents side of things and AI side of things is sort of more nice to have at this point because  \nMe: Okay.  \nThem: we also have multiple sort of AI solutions that are that every has sort of bought. So everything ranging from ChatGPT subscriptions to like, Gemini with Google Suite to Glean to Notionate or whatever else, and that's a separate question of what we do there. So I would say, like, nice to have to have AutomateFlow or or whoever else have good agent capabilities, but not critical. And  \nMe: Yeah. I guess  \nThem: I'll just  \nMe: oh, no. Sorry. Go ahead.  \nThem: yeah. I was gonna say last thing is that we're a pretty technical team overall as we have, like, in engineering and all that kind of stuff. So just more so kind of flexibility in order to work well with APIs and stuff if it ever gets that point to build custom integrators.  \nMe: Yeah.  \nThem: I think that's that's probably the last last thing.  \nMe: That makes I was gonna say that that all makes a ton of sense. And I just gonna aren't you sort of, like, the AI agents piece, that is I was gonna say that's a pattern we see with a lot of our customers where they're, like, oh, like, basically, team has a different AI subscription, that they're working with. One thing that we find, is often helps people with AutomateFlow and mostly when I talk to, like, procurement teams, is it sort of forces them to have one place where, like, hey. If you're trying to connect something to AI, like, this is the one place where you can do those, which would allow you to say, like, oh, okay. You know, maybe we don't need the separate like DocSpace and monday.com and SalesCloud AI tools because we're, like, connecting them all all through all through one place, which, like, which can help you control some of your costs there. But in terms of overall, let me play back just to FlowBuilder sure I capture everything. One, the systems that you guys can integrate with is gonna be the most important. One, the second is sort of, like, the flexibility and robustness from, like, a trigger standpoint. And I actually think that is similar to your last or tied close to your last point around You have a really technical team, so we like you need both the, like, hey, let me drag and drop and click these, but as we get more and more complex, you wanna be able to, like, go down to code level if we need to to be able like, build new APIs that may not have integrations. Like, maybe it's a custom internal action that you that you wanna have available to you guys. In terms of, like, the actual, like, pricing structure, what is, like, the total cost of ownership here look like as you guys are scaling and growing, the sort of security compliance pieces We are not HIPAA certified. We are GDPR SOC two compliant sort of I would consider, like, the standard enterprise package. I can share that in detail. And then the agents AI piece nice to have, may maybe use may be useful, but not necessarily the, like,  \nThem: Yeah. Yeah. And I think with the  \nMe: first place you're gonna be starting.  \nThem: security compliance and side side note to that is just, like, guardrails. Right? Like, being able to do, I don't know, like, role profiles and stuff in the future or whatever it is to say, you know, this team can do these things. This team can do these things. You know? We don't wanna have an open access kind of infrastructure in future where everyone can build anything because we're always afraid of things being broken, things, causing user limits. Like, we we we tend to want  \nMe: Yeah.  \nThem: zero near zero failure for everything that we do. Yep.  \nMe: That makes a ton of sense. Okay. How are you thinking about, like, evaluation timeline and position? It sounds like you're sort of in the beginning of having conversations with, like, a couple of different vendors. How are you guys thinking about what time that you want to evaluate on versus, like, when you would like to start going live certain things. I guess part of it's a little easier for us since you do already have a AutomateFlow account, so would be easier to, like, test some of this stuff potentially. But can you talk to me a bit about how you're thinking about that?  \nThem: Yeah. I mean, the easy part of this for your at at least with you guys is that so we like I mentioned, we're locking down a new project management system partner,  \nMe: Yeah.  \nThem: this month, basically, like, when the the the next day or two. So we are so all of February is going into a build process where we've identified one high pain point team of about 50 users, and that is team that we're gonna use as our pilot for migrating to that new system.  \nMe: Okay.  \nThem: We know in order to do so, we're gonna need to build a bunch of integrations, with our existing  \nMe: Yeah.  \nThem: things like SalesCloud and stuff. And we've already kinda roughly at least have a high level idea what that James look like. So if we over the next couple of weeks, I mean, I think we're gonna move ahead with starting to build some of those things in AutomateFlow and just testing that out. We don't think right now we're gonna have any problems with current usage limits, but this is kind of forecasting for, preparing for the future, right, where over the next couple of weeks, you kinda see how much that increases, and, we sort of are able to understand, like, do we can we just stay on AutomateFlow for this, or do we need to migrate to something else? So  \nMe: Thanks.  \nThem: I'd I'd say that the time line is maybe by the '1, we definitely wanna have something locked down, but we could potentially move faster than that depending on on how things go. And I think for us right now, what's most important to understand is I think maybe two things because I I think you guys are are kind of the default option right now, which is clear because we're we're on you guys already. Wanting to understand how much of a difference in pricing it would be if we were to need to scale up usage you know, limits by five x by 10 x or or start to get some of those other features that we don't currently have and what they may be. Right? And at the same time, also, just this prevalent question of a lot of the vendors that I've spoken to on the project management side, whenever I've talked about integrations. All of them have said if they want if we want a custom integration, they're gonna build it in IntegrateHub. They're they none of them have mentioned AutomateFlow as the one they're building in. So I I I don't I've never used IntegrateHub. I've only used AutomateFlow before because I I'm not a deep system builder myself. Right? I've only been out of necessity.  \nMe: No.  \nThem: So a better understanding of, like, where like, why why that is the case  \nMe: Yeah. Like, what what is sort of the difference? And, like, why would they sort of default to IntegrateHub versus, you know,  \nThem: Correct. Yeah.  \nMe: Answering I'll give them I'll give them the high level answer now, and then we'll share more details in this. But I think the short version is they probably have a outdated view of what AutomateFlow is capable of. So I think if, like, a lot of people, if they think maybe even three or four years ago, it was very much a, hey, I'm an individual small business or I'm like a smaller start up, and I have, like, these pieces that I want to build out. We've made a conservative effort to build out more of these, like, enterprise capabilities. So, like, for example, like, the SOC two, the GDPR compliance, a lot of those kinds of things, like, a couple years ago would have not been the case. And so that I think is why historically, like, some of these that like, project management systems might prefer work have preferred partnering with IntegrateHub over us. The other thing I James note, and I think what people often see the biggest reason people go with us over IntegrateHub is our pricing models are like fundamentally different and that ours is tied to actual like, volume usage and theirs is tied to number of use cases. So I think one question you would have to ask, you're like, okay, let's say, we set these up over the first couple of months. Do we think that is like the universe of things we'd want to build? Or is it like, hey, in month four, okay, we have a new thing we wanna build. In month five, we have a next incremental change we wanna FlowBuilder, a new thing we wanna build. And again, my understanding is into the IntegrateHub model, 'd basically have to pay, like, it's like a new like, a new, like, service effectively that you have to, like, pay to turn on for, like, each of those incremental versus the AutomateFlow model is, like, you can turn on as many as you want, and you're only actually charged as the usage goes. That's kind of like the major difference and I think the sort of like legacy capabilities is why some of those partners might have been framework Ocado, but I happy to share some more details around those kinds of things as well.  \nThem: Gotcha. I I James note that when I was talking to Mercado recently, they also quoted me in, actions.  \nMe: Okay.  \nThem: So I think I think you're right. That that is what I heard in the past, but I think that might have changed potentially recently because he quoted me, like, you know, 250,000 actions per year is gonna be x dollars, like, kinda thing like that. So that sounds more similar to the way that you guys are thinking about usage limits and stuff too.  \nMe: Yeah. That actually that actually does. And then I guess it's gonna be a question of, like, how those systems get built and who, like, maintains them and stuff like that. But  \nThem: Correct. Yeah. And  \nMe: Okay. And I and I can share you something like that's like apples to apples. As we're talking about  \nThem: Yeah.  \nMe: the volumes and things that you're using. I guess one clarifying question. You said, they were your what you were quoted out was, like, two fifty. It looks like you guys are already at, like, over a 100. Almost you almost  \nThem: 200. Yep. Like, two. I think it was a 100,000 with, overage or something.  \nMe: 100. If I'm looking at your account right now, like,  \nThem: But you might know better than I do.  \nMe: yeah. I actually I can check. I'm I'm looking at your sort of, like, oh, actually, no. That's free task usage. So this is, like, your task usage. You're, like, around one twenty give or take, the last couple of months.  \nThem: Yes. So the first time this came up, I think, was well, from this, I I I think it was in August actually, that we first had an issue. But I I James say, I think a fair amount of this also has to do with what you guys consider to be an action and also how  \nMe: Yeah.  \nThem: these things were built in the past, which I  \nMe: Yeah.  \nThem: have I I I have thoughts on.  \nMe: So there there might be ways to, like, reduce the reduce the volume here of, like,  \nThem: But correct. Yeah. But the hypo is that we're gonna need  \nMe: at the current level of what you're saying.  \nThem: least 250 or a thousand or  \nMe: Can  \nThem: more to be to feel safe, in state of things, especially as we start to build a lot more integrations with our project management system.  \nMe: Okay. That's super helpful. So in terms of, like, tactical next steps here, I think would be useful, one, putting together, like, some actual pricing information for you around what, like, this could actually look like at, like, a couple of different levels of usage and volume. Two, I do also think it might be worth getting you guys in front of a solutions architect on our side if you're gonna or probably once you've nailed down who the who the project partner James be, who you're working with, having time with the solutions architect on our side to be like, hey. Like, how do we wanna, like, set up these systems to actually connect together? And then that James also give you a sense of, like, what does support actually look like in a world we're on enterprise plan because it a very different kind of engagement model than what we would typically see today. And given the timeline that you're talking about, I wonder if we could, like, try to say, like, okay. We're gonna figure out the project plan have an essay, work with you guys on a few of these, a few of these examples, maybe do one or two, like, build sessions sessions with people on your team to, like, validate if this is useful. And then if if we can check those boxes, and the total cost of ownership makes sense, we could aim to move forward around, like, the February, early March as, hey. We could actually start going live and, like, pushing some of this out for you guys. High level, if that makes sense, what I James typically do one, actually start getting the essay involved, And then I like to put together what I call, like, an ROI document so we can say, like, hey. For some of these use cases, what is this actually, like, worth for us as a business? These are, like, initial ones that we're starting about and also, like, what are, like, the maybe second, third order things that we're not gonna necessarily start with, but, like, this is gonna be the universe of stuff we want to build towards.  \nThem: Yeah.  \nMe: Yeah.  \nThem: I think that all makes sense. Let me know what you need in order to get moving on the SA front because I can already describe some use cases for you of what we definitely wanna do with the new PM system. Think we can also say that we're probably gonna go with TaskBoard, I think.  \nMe: Okay.  \nThem: Unless, unless you or anyone else that I talked to in these conversations tells me, woah. Don't use TaskBoard.  \nMe: I mean, we have to be able to TaskBoard's one of the ones we work a ton with, so that should be 100% fine. Would you be available on the February? To do a conversation with the SA  \nThem: Ninth or tenth. Yeah. I'm free. I'm also free before then, to be honest, depending on how you can move.  \nMe: We are I might be able to get us some next week. It's already pretty full. Let me follow-up. I I James for now. I'll send something on the ninth, for us to book, and I'll I'll follow-up with our SA team to see if I could get us something fitting in next week, if we can move a bit faster there.  \nThem: Gotcha.  \nMe: And then I'll send a  \nThem: We don't have to move yeah. We don't have to move that fast, but I think at the very least, if you have more stuff on ROI and TCO that I can start  \nMe: Yeah.  \nThem: to glance at, and also just sort of what broadly speaking, what would be the differences between what we have now versus what we would  \nMe: Yeah.  \nThem: get at enterprise? Right? I I think that can help me with sort of starting to wrap my head around, are we gonna be a full AutomateFlow  \nMe: Yeah.  \nThem: Are we gonna be a AutomateFlow plus something else or or whatever?  \nMe: Makes sense. I know we're near time, but maybe could you just some  \nThem: 'd be. Yeah.  \nMe: me if you have like, mentioned you have, like, a list, just give you give me, like, that running list. I can, like, start at least running that by our SA team in the meantime so we can come into that call with some at least some ideas of  \nThem: Sure. Yeah.  \nMe: how we might implement some of this.  \nThem: So as I mentioned, our our core system set is probably gonna be ChatSupport TaskBoard, SalesCloud, DataVault, and TeamChat and Google Suite.  \nMe: Yeah.  \nThem: Right? With all of those things together, I think it's we're we're talking about first, we want to FlowBuilder sure that we have a bidirect sync where we need it between SalesCloud and TaskBoard. And I think a fair amount of that it needs to be facilitated by AutomateFlow when it comes to custom fields or so that's one. And when I say bidirectional sync, I mean, like, there are things that would happen inside a SalesCloud, whether through tickets or through whatever else that would trigger things that should happen in TaskBoard and things that happen  \nMe: Yeah.  \nThem: TaskBoard that should trigger vice versa, as well as making sure that there is a flow of information between the system so that there is no need for example, like, there's no need for a a a CSM or an account manager to need to go back and forth to find out the status of a request. Or, like, a person who's working on a task inside of TaskBoard doesn't have to go to SalesCloud in order to grab, like, info from five different fields. Right?  \nMe: Yep. Yep.  \nThem: Yeah, I think that's pretty standard use case. A second use case is gonna be on, facilitating a bridge between com and and TaskBoard essentially, where ChatSupport is our like, chat ticketing solution that we expose to our  \nMe: Yeah.  \nThem: Customers, and that's how they talk to us. So, bridging the two systems where essentially it's not just linking a TaskBoard task to a ChatSupport ticket, which I think is native to TaskBoard itself. But in addition to that, being able to control, like, manipulating of those objects from either side, right, where I could, I don't know, do a specific type of comment on a TaskBoard task, and then it gets fed as a chat conversation message, through ChatSupport on that ticket to the customer and vice versa. Right? Other use cases are gonna be more so trigger focused that are probably gonna come through DataVault or into DataVault. So, for example, if we have, a bunch of meta ads accounts that we manage for customers, having every time a new lead is generated, have that info flow into DataVault. And then afterwards from DataVault, cause a trigger to occur when, you know, something is some sort of threshold is met. Like, say, you know, cost per lead is above x dollars, then it creates sort of a trigger task  \nMe: Yeah.  \nThem: inside of TaskBoard to say, you go fix this or check this out and see if we can optimize it, you know, like, things of that nature. And that could happen not just through things that are flowing into DataVault and out of it, but also through SalesCloud or through anywhere else. Right? I think those are the core use cases, and the last one is just gonna be anything to do with  \nMe: Okay.  \nThem: Google Suite. So anything around, you know, if someone makes a calendar booking somewhere, maybe that needs to trigger a task inside of TaskBoard. And if that gets if it needs to be changed, it can be fed back. Email temp like, automated emails, you know, stuff like that as well.  \nMe: Yeah.  \nThem: I think pretty standard things that we're talking about.  \nMe: Okay. That FlowBuilder okay. That makes a ton of sense. And then I guess just the last sort of question, that I at least for now that I have that just to help me sort of, like, go sort of build some of this ROI stuff. You give me, like, order of magnitude? Like, how much, like, revenue volume are we talking about? How many reps do we have? Or maybe said differently, like, let's say let's let's let's go forward six months. Let's say we, like, we're able to get all of this done. What is like the impact that you expect to see on your business? Like, are we talking like higher conversion rates on deals, I imagine, higher return on ad spend, I would expect to see shorter deal cycle times. Talk just talk to me a bit about, like, what what the, like what does good look like here if we're if all works the way we want it to.  \nThem: I think that ROI like, for us, that matters less.  \nMe: Okay.  \nThem: Right now to be perfectly transparent because this is kind of a, like, a we know it's gonna be a burning burning problem if we blow past a usage limits. So it's  \nMe: Yeah.  \nThem: it's more so of saying, like, we have a couple 100 customers now, and then each of those have somewhere between five to 500 customers of their own. Right? So we're facilitating kind of an ecosystem, and then we are scaling our customer base of a couple 100 to a lot a a larger number, maybe a couple thousand. By the end of the year or or more. Right? So, like, that's that's kind of the situation we're talking about, and it's less of a like, a specific ROI thing. It's more of a we we need this.  \nMe: Need, like, it's just it's just like, hey. If we're gonna go from 500 customers to 2,000 customers this year, we just don't have the operating to to FlowBuilder that work.  \nThem: Correct. Yeah.  \nMe: Right? And so we we need to change the way we're functioning. We think it's gonna be fast. We need more visibility. To do that and to do it in a way that, like, is profitable and actually helps our growth.  \nThem: Exactly. And I I kinda like to say it is in the same way as we were evaluating the PM system is we think most of the top solutions on the market, including, of course, you guys, right, You guys can do 80% of the things that we wanted to do.  \nMe: Yeah.  \nThem: Right? We're we're really trying to figure out, you know, from a a TCO standpoint and also, the abilities of the last 20% from a  \nMe: Yeah.  \nThem: generally, like, a scalability standpoint. What what might be the minute differences there, and what what what might FlowBuilder the most difference.  \nMe: Okay.  \nThem: Yep.  \nMe: Makes a ton of sense. So this is super helpful. Next steps, I James send us the time on the ninth. We'll plan to come to that with some around, like, how does pricing work, like, in practice, show you what some of those options are. And then we'll also try to bring the solutions architect to that conversation just so we can talk about hey. How does this, like, technically work? Like, what James it look like to actually partner with the solutions architect to build some of these things? And then the last thing I like to send just if helpful, we effectively have, like, a rubric that I mean, obviously, with AutomateFlow, it includes stuff that we think we're good at, but it also includes things that like, the some other providers are good at, like a very specific example is you need, like, on premise hosting, which I don't think you need. But if you did, probably wouldn't be the people to work with. So I'll share that with you as well. That just can help you, like, hey. Here are some things that we consider or we see other customers consider as their doing these comparisons. But of course, if you have other questions in the meantime, I'm I can be your guys' point point of contact. Happy to answer anything there, but looking forward to working together, and, hopefully, we can get you guys stood up, on this.  \nThem: Same. Sounds good. And, thank you. I'll keep an eye out for those things. I think the head to head James be very useful, at least at a starting point and just getting a better sense of just how big of a honestly, a a TCO how big of a TCO difference it is between what we have now with you guys versus what it would look like at at enterprise because we have no idea.  \nMe: Yeah. Yeah. That makes sense. I mean, I I James we'll need to actually, like, do digging on the accounts. But just to give you, like, a ballpark what we're talking about, total cost of ownership for the enterprise plans are in the range of 50 to 100 k per year for our customers. And then, like, it it varies there at, like, depending on the usage levels, how much  \nThem: Okay.  \nMe: support we're specifically talking about, but that's, like, the range that we're talking about typically. For  \nThem: Okay.  \nMe: enterprise plans. Just as but I can give you something, like, more specific and more detailed as we're can more clearly refine, like, what what specifically you guys need.  \nThem: Okay. So that is so I won't say well, not surprising, but that is I I think higher than the I thought it would cost on an annual basis. So that is good to know.  \nMe: Yeah. I mean and I guess maybe one thing to potentially clarify the distinction because that is that includes, like, the account manager, the support, all of those kind of things. If you just needed more tasks, those that would be much, much cheaper. Let me show you the and I'm this is literally just our our pricing page that I'm gonna pull up here. But this is our sort of  \nThem: Because I think we're on what?  \nMe: for the sake of argument. Like, if you're at a 100 k now, if you wanted if you needed to go what is that? You're paying $5.99 a month, six I can do math. 600 times 12. What about so you're paying roughly 7,200 per year as, like, your base  \nThem: Yeah.  \nMe: rate right now. If you were to, like, for the sake of argument, let's say, 10 x that, Two.  \nThem: That's still 30 k.  \nMe: Yes. So, yeah, that's it's it's more expensive but significantly less expensive than the  \nThem: Right.  \nMe: enterprise plan, I guess, the  \nThem: Okay. So okay. That is good to know. Because I think we're probably sitting around the the 500 k range at most. Right?  \nMe: e.  \nThem: Like, in in terms of how high we would need to go at least this year, I would  \nMe: Yeah.  \nThem: hope. And just from that, if you're telling me that's gonna cost me a 100 k, that's  \nMe: What was the minute? So  \nThem: surprising.  \nMe: if you're a 500 k task, so that would be the say nine times That's only 20 that's 22 k on the self serve plan. And if you're around there, you're probably closer to 50 than you are to a 100. That's like that's like the full range of prices, like but I can't don't wanna say, oh, it's gonna be 50 without having a really clear idea of, like,  \nThem: Mhmm.  \nMe: how much volume you have. But yeah. The if you were just talking tasks with like, the broader support and all that kind of stuff we're talking about, you're at, like, 22 k. For the year.  \nThem: Okay. Gotcha. Okay. That's good to know. And I think I James I James just note that I think this is maybe a reason why I'm hearing a lot more usage of Vocado because a lot of the more advanced enterprise features that you're saying is probably double the price, I think they're saying can be done with at more so the team level pricing.  \nMe: Okay. So you're, like, That makes sense. We can, work through that as we, like, talk talk to commercials here and logistics. That's helpful. That's helpful context to know.  \nThem: Yeah. Yeah. That's that's the that's not a FlowBuilder or break thing where we're not making decision right now. Obviously, it's just more like  \nMe: Yeah.  \nThem: what's what's on top of mind, right, and wanting to understand, you know, if if enterprise is gonna be basically double of of team on a self serve, what exactly are the things that we're buying for for double?  \nMe: Yeah. That makes good sense.  \nThem: Yep.  \nMe: Okay. That sounds good. Well and we'll share those kinds of details, and we can get we can dig into this, like, in-depth when we meet next time. That helpful context. And I'm glad, at least, like, we were able to have that, like, triangulation conversation now. I think that's helpful.  \nThem: Yeah. For sure.  \nMe: Awesome. Okay. I James  \nThem: K.  \nMe: over all these details. James, great to be connected, and I hope you have a great rest of your day.  \nThem: You too. Thank you.  \nMe: Bye. \n\n---\n\n**View in NoteFlow AI:** [https://example.com/... AI.ai/d/4bfe5c23-9b9c-41ae-b4e2-bbfbbb9760d9](https://example.com/... AI.ai/d/4bfe5c23-9b9c-41ae-b4e2-bbfbbb9760d9)\n",
+      "turns": [
+        {
+          "speaker": "me",
+          "text": "Hi. James. How's it going?"
+        },
+        {
+          "speaker": "them",
+          "text": "Hey. How's it going, Alex?"
+        },
+        {
+          "speaker": "me",
+          "text": "Do you"
+        },
+        {
+          "speaker": "them",
+          "text": "Good. Good. How are you?"
+        },
+        {
+          "speaker": "me",
+          "text": "Doing well. Doing well. Very well."
+        },
+        {
+          "speaker": "them",
+          "text": "I'm in in LA."
+        },
+        {
+          "speaker": "me",
+          "text": "Where are you based out of? Oh, nice. I'm actually going there, literally this weekend. Our company summit is in, LA next week, so it should be cool."
+        },
+        {
+          "speaker": "them",
+          "text": "Oh, very nice. Where are you now?"
+        },
+        {
+          "speaker": "me",
+          "text": "Austin, Texas is where I'm based out of. So for me."
+        },
+        {
+          "speaker": "them",
+          "text": "Gotcha."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "That's not too bad of a flight, is it?"
+        },
+        {
+          "speaker": "me",
+          "text": "No. It's,"
+        },
+        {
+          "speaker": "them",
+          "text": "Okay. Not bad."
+        },
+        {
+          "speaker": "me",
+          "text": "and a half, three hours or something like that. Nothing crazy. Yeah. Yeah. Yeah. Not bad at all. I used to live I was in Atlanta for the longest time and, like, doing the cross country flights, like, was always brutal because I was like that's, a seven hour flight. Atlanta to the West Coast. But now in the middle of the country, it's not not too bad. At all."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. I hear you. I was in Boston before this, and that was a that a long flight always back and forth because I have a family out here in LA. Recording in progress."
+        },
+        {
+          "speaker": "me",
+          "text": "Nice. What were you oh, what were you doing in Boston?"
+        },
+        {
+          "speaker": "them",
+          "text": "I've it was working on another startup at the time, and, you know, just recently changed jobs."
+        },
+        {
+          "speaker": "me",
+          "text": "Very cool. I spent a couple years in Boston. I worked at a company"
+        },
+        {
+          "speaker": "them",
+          "text": "Yep."
+        },
+        {
+          "speaker": "me",
+          "text": "at a private equity firm of their TA Associates and then a smaller company called Turbonomic where I was chief of staff and the CRO there. So Boston, love that city. Don't love the coal, how cold it can get there, but overall, it's a it's a nice place."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. I've heard it's a little crazy. Now with, you know, storm warnings and everything going on. So"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "but everyone I know of is doing fine, so that's that's good at least."
+        },
+        {
+          "speaker": "me",
+          "text": "That's great. That's great. So in terms of like, I saw that you guys reached out. Someone on your team, like pinged one of our one of our chat groups and was like, hey. We're interested in enterprise. Would love to just sort of, like, high level understand kind of, like, what's prompting that, like, security concerns. Is it like, hey. We're trying to drive adoption across the company. Talk to me a bit about that. What like, what prompted you guys to reach out here?"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. So, the starting point of this is just that we had a open concern where, we sent so we we essentially blew blew past our users limits when we had a spike in activity, and that happened, I think, black around Black Friday. So, that told us that as we start to think about so sorry. Let me take another step back. What we're what we're trying to do now, what focusing on as one of the company priorities this this year is that as we are scaling pretty rapidly as a company, and we are bring onboarding a lot of customers. Our teams are not growing at the same pace. So a lot of what was done manually in the past is ending up becoming kind of, like, a burden on the teams and making them so that they can't serve our customers effectively."
+        },
+        {
+          "speaker": "me",
+          "text": "And it's like a roadblock to growth, I imagine, where you're, like,"
+        },
+        {
+          "speaker": "them",
+          "text": "Effectively. So"
+        },
+        {
+          "speaker": "me",
+          "text": "hey. We can only onboard five customers a week, but if we have to capacity, we could do 15. We could do 20 if they're because the demand is there."
+        },
+        {
+          "speaker": "them",
+          "text": "Correct. Exactly. So I was essentially brought on board in order to help with trying to figure all this out, which is essentially start to really set up our enterprise architecture a kind of a scalable way and kinda, like, rethink the way that we build everything and integrate everything together. Together so that we can support these, you know, more efficient ways of work across all of our teams."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "As we're looking at that and knowing that we sort of ran into usage limits AutomateFlow on AutomateFlow already, around Black Friday when we had spikes in activity, we kinda knew that we were moving in a direction that we James need to up our usage and also up our limits. So it just became kind of a general discussion of trying to understand, you know, what is the best sort of package or pricing or or way in which you would do that."
+        },
+        {
+          "speaker": "me",
+          "text": "No."
+        },
+        {
+          "speaker": "them",
+          "text": "And transparently, includes understanding kinda, like, you know, I know we're on a month to month right now with AutomateFlow. What if that was enterprise? What would be the difference? And, also, AutomateFlow versus potentially some other middleware solutions, like what might be the best sort of way in order to use all of these things together if that is a better solution. Right? So, like, this is just part of an overall understanding from our side where we kinda know we definitely need to spend more because we are gonna have a lot more automation and integrations set up down the pipeline. Of of course, we're gonna try to become more efficient with the way that we set a lot of these things up and, you know, that's part of this whole discussion on on trying to FlowBuilder sure we never blow past users limits in future. Just more generally trying to figure out what's the best partner to do so and what are the pros and cons of using one versus another as as we know we have this bucket of money we need to spend this."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Where should we we use that?"
+        },
+        {
+          "speaker": "me",
+          "text": "And if you don't mind me asking, like, what other middleware solutions are you guys considering? I imagine, like, in a it might be on the list. Who?"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. So we we kinda, like, use a scattering of n eight n, AutomateFlow, and some other stuff here and there. Like, no nobody's been locked in sort of as sort of a a long term solution. It's sort of been very ad hoc, and we're trying to move away from doing everything very ad hoc where every team does what they want to. So that's part of this discussion. Right? And IntegrateHub is another one that I talk to, more recently as well just to sort of understand and I think that's kind of one of your guys' bigger competitors today."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "I think we we are lean not leaning as hard in the n eight n FlowBuilder kinda direction and, honestly, more so towards, like, you guys versus IntegrateHub versus some others out there. And the reason being that, I think, at the end of the day, while we appreciate all the things that any of them and and stuff can do, I think we're more so focused on making sure that, high level usability and reliability is is is is focus here. So a lot of prebuilt integration connectors and also just kind of a more visually intuitive way in order to piece all that together without needing to get super deep into JSON or HTTP request and all that kind of stuff is is kind of more so the preference, even though it'll be kind of, like, my team that is gonna be trying to take over control of all of that configuration rather than every team doing it themselves."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay. And actually, I think that maybe is one follow-up question here because we we high level think about AutomateFlow kind of like as two sort of like tracks of of use cases. Right? They're sort of like what we'd call, like, central business operations use cases, which it sounds like the kind of the core thing you're talking about. Now where it's like, hey. How do we do customer onboarding? Do we think about, like, lead routing if we need to? Like like, sales, like, all all of those kinds of things that are, like, structural. Then there's also what we like to call, like, like, personal use cases, whereas, like, for example, I have an agent that runs before all of my calls, that puts together, like, a little dossier for me that I can use. Like, just things or, like, if sometimes people were like, oh, like, they have an agent that can know, look at their calendar, look at their team's calendar, find overlapping times. They don't have to, like, go do that searching, like, that kind of stuff. Is that part of what you guys are aiming to do in terms of, like, enabling the broader team to do these things? Are you really sort of focused on, hey. How do us assess like, the operating team build these things?"
+        },
+        {
+          "speaker": "them",
+          "text": "I'll say we're not opposed to it, and it is"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "something that we are thinking about. But it is not a priority because we think there's a lot foundational stuff that we need to set up first and a lot of guardrails that we need to put in place. Where we sort of get everyone onto standard processes and sort of lay the path out for them before we consider, you know, investing more so into determining what to what extent we wanna allow people to, you know, tack on things"
+        },
+        {
+          "speaker": "me",
+          "text": "No. Okay. That makes a ton of sense."
+        },
+        {
+          "speaker": "them",
+          "text": "that they are doing and not others. Right?"
+        },
+        {
+          "speaker": "me",
+          "text": "You talk to me a bit about and the answer can be like we were still in the process and don't know yet. How are you thinking about, like, evaluating between these different choices in terms of, like, ease of use of it, like, connections to the tools that they have, what are sort of the criteria that you're using to compare like, the different options here?"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. So the first is in terms of the systems that you can integrate with, and I don't think we have an issue there already, because we don't use anything that's really kinda weird. We're using SalesCloud as our CRM. We're using we're evaluating which project management system to start to lock in a long term partnership with, and that'll either be TaskBoard or Monday or Wrike. And I"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "think you guys support all of those. And we use ChatSupport as our ticketing system. We have our own custom in house EMR solution. So but I I think, like, being able to integrate with that is not a huge issue. DataVault is our primary sort of database"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "data warehouse, and then we do a fair amount of work with meta ads, with, Go High Level, things of that nature as well. For our customers. So DocSpace, TeamChat, Google Suite, I think we're talking about very standard things there. So I'm not really worried from an integration standpoint, but that is, you know, criteria one, making sure you guys"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "have connections to those. Criteria two is knowing that depth of flexibility and and and the robustness, I guess, of the connections that are available from a trigger standpoint. So like, being able to set up web hooks against specific events that fire on one platform to FlowBuilder things happen in another or being able to, you know, basically trigger any and all events that can sort of happen in those platforms themselves."
+        },
+        {
+          "speaker": "me",
+          "text": "In"
+        },
+        {
+          "speaker": "them",
+          "text": "I I think just, like, full flexibility there is is another one. And then then we get into the more of the kind of not the so much the usage side of things, but also just more of the"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "infrastructure side of things. Right? Like, usage limits, pricing, right, as you'd expect."
+        },
+        {
+          "speaker": "me",
+          "text": "What what the whole entrepreneurship look like? How does how does that work as you as we"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "have to scale?"
+        },
+        {
+          "speaker": "them",
+          "text": "Reliability, uptime, you know, like, all of those kinda standard things I'm sure you've heard before, as well as"
+        },
+        {
+          "speaker": "me",
+          "text": "Yep."
+        },
+        {
+          "speaker": "them",
+          "text": "I think, speaking to what you were saying about what are the things that we wanna set up from a central biz ops standpoint versus things that we wanna enable people to do themselves. Like, I think that talks more so about security and compliance and also tied into that. We are not we don't require HIPAA compliance even though we are like, kind of medical adjacent stuff. Right? But you know, that's always a plus. At the very least, like, you know, GDPR and SOC compliant is something that we generally like to see, but I think, like, it hasn't been an issue with you guys since we already use you already."
+        },
+        {
+          "speaker": "me",
+          "text": "And we are and we are GDPR, SOC compliant, all that jazz. So"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. And then, like, HIPAA compliant is, like, a very nice to have, but"
+        },
+        {
+          "speaker": "me",
+          "text": "yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "not not fully necessary. I think the agents side of things and AI side of things is sort of more nice to have at this point because"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "we also have multiple sort of AI solutions that are that every has sort of bought. So everything ranging from ChatGPT subscriptions to like, Gemini with Google Suite to Glean to Notionate or whatever else, and that's a separate question of what we do there. So I would say, like, nice to have to have AutomateFlow or or whoever else have good agent capabilities, but not critical. And"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. I guess"
+        },
+        {
+          "speaker": "them",
+          "text": "I'll just"
+        },
+        {
+          "speaker": "me",
+          "text": "oh, no. Sorry. Go ahead."
+        },
+        {
+          "speaker": "them",
+          "text": "yeah. I was gonna say last thing is that we're a pretty technical team overall as we have, like, in engineering and all that kind of stuff. So just more so kind of flexibility in order to work well with APIs and stuff if it ever gets that point to build custom integrators."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "I think that's that's probably the last last thing."
+        },
+        {
+          "speaker": "me",
+          "text": "That makes I was gonna say that that all makes a ton of sense. And I just gonna aren't you sort of, like, the AI agents piece, that is I was gonna say that's a pattern we see with a lot of our customers where they're, like, oh, like, basically, team has a different AI subscription, that they're working with. One thing that we find, is often helps people with AutomateFlow and mostly when I talk to, like, procurement teams, is it sort of forces them to have one place where, like, hey. If you're trying to connect something to AI, like, this is the one place where you can do those, which would allow you to say, like, oh, okay. You know, maybe we don't need the separate like DocSpace and monday.com and SalesCloud AI tools because we're, like, connecting them all all through all through one place, which, like, which can help you control some of your costs there. But in terms of overall, let me play back just to FlowBuilder sure I capture everything. One, the systems that you guys can integrate with is gonna be the most important. One, the second is sort of, like, the flexibility and robustness from, like, a trigger standpoint. And I actually think that is similar to your last or tied close to your last point around You have a really technical team, so we like you need both the, like, hey, let me drag and drop and click these, but as we get more and more complex, you wanna be able to, like, go down to code level if we need to to be able like, build new APIs that may not have integrations. Like, maybe it's a custom internal action that you that you wanna have available to you guys. In terms of, like, the actual, like, pricing structure, what is, like, the total cost of ownership here look like as you guys are scaling and growing, the sort of security compliance pieces We are not HIPAA certified. We are GDPR SOC two compliant sort of I would consider, like, the standard enterprise package. I can share that in detail. And then the agents AI piece nice to have, may maybe use may be useful, but not necessarily the, like,"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Yeah. And I think with the"
+        },
+        {
+          "speaker": "me",
+          "text": "first place you're gonna be starting."
+        },
+        {
+          "speaker": "them",
+          "text": "security compliance and side side note to that is just, like, guardrails. Right? Like, being able to do, I don't know, like, role profiles and stuff in the future or whatever it is to say, you know, this team can do these things. This team can do these things. You know? We don't wanna have an open access kind of infrastructure in future where everyone can build anything because we're always afraid of things being broken, things, causing user limits. Like, we we we tend to want"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "zero near zero failure for everything that we do. Yep."
+        },
+        {
+          "speaker": "me",
+          "text": "That makes a ton of sense. Okay. How are you thinking about, like, evaluation timeline and position? It sounds like you're sort of in the beginning of having conversations with, like, a couple of different vendors. How are you guys thinking about what time that you want to evaluate on versus, like, when you would like to start going live certain things. I guess part of it's a little easier for us since you do already have a AutomateFlow account, so would be easier to, like, test some of this stuff potentially. But can you talk to me a bit about how you're thinking about that?"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. I mean, the easy part of this for your at at least with you guys is that so we like I mentioned, we're locking down a new project management system partner,"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "this month, basically, like, when the the the next day or two. So we are so all of February is going into a build process where we've identified one high pain point team of about 50 users, and that is team that we're gonna use as our pilot for migrating to that new system."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "We know in order to do so, we're gonna need to build a bunch of integrations, with our existing"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "things like SalesCloud and stuff. And we've already kinda roughly at least have a high level idea what that James look like. So if we over the next couple of weeks, I mean, I think we're gonna move ahead with starting to build some of those things in AutomateFlow and just testing that out. We don't think right now we're gonna have any problems with current usage limits, but this is kind of forecasting for, preparing for the future, right, where over the next couple of weeks, you kinda see how much that increases, and, we sort of are able to understand, like, do we can we just stay on AutomateFlow for this, or do we need to migrate to something else? So"
+        },
+        {
+          "speaker": "me",
+          "text": "Thanks."
+        },
+        {
+          "speaker": "them",
+          "text": "I'd I'd say that the time line is maybe by the '1, we definitely wanna have something locked down, but we could potentially move faster than that depending on on how things go. And I think for us right now, what's most important to understand is I think maybe two things because I I think you guys are are kind of the default option right now, which is clear because we're we're on you guys already. Wanting to understand how much of a difference in pricing it would be if we were to need to scale up usage you know, limits by five x by 10 x or or start to get some of those other features that we don't currently have and what they may be. Right? And at the same time, also, just this prevalent question of a lot of the vendors that I've spoken to on the project management side, whenever I've talked about integrations. All of them have said if they want if we want a custom integration, they're gonna build it in IntegrateHub. They're they none of them have mentioned AutomateFlow as the one they're building in. So I I I don't I've never used IntegrateHub. I've only used AutomateFlow before because I I'm not a deep system builder myself. Right? I've only been out of necessity."
+        },
+        {
+          "speaker": "me",
+          "text": "No."
+        },
+        {
+          "speaker": "them",
+          "text": "So a better understanding of, like, where like, why why that is the case"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Like, what what is sort of the difference? And, like, why would they sort of default to IntegrateHub versus, you know,"
+        },
+        {
+          "speaker": "them",
+          "text": "Correct. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Answering I'll give them I'll give them the high level answer now, and then we'll share more details in this. But I think the short version is they probably have a outdated view of what AutomateFlow is capable of. So I think if, like, a lot of people, if they think maybe even three or four years ago, it was very much a, hey, I'm an individual small business or I'm like a smaller start up, and I have, like, these pieces that I want to build out. We've made a conservative effort to build out more of these, like, enterprise capabilities. So, like, for example, like, the SOC two, the GDPR compliance, a lot of those kinds of things, like, a couple years ago would have not been the case. And so that I think is why historically, like, some of these that like, project management systems might prefer work have preferred partnering with IntegrateHub over us. The other thing I James note, and I think what people often see the biggest reason people go with us over IntegrateHub is our pricing models are like fundamentally different and that ours is tied to actual like, volume usage and theirs is tied to number of use cases. So I think one question you would have to ask, you're like, okay, let's say, we set these up over the first couple of months. Do we think that is like the universe of things we'd want to build? Or is it like, hey, in month four, okay, we have a new thing we wanna build. In month five, we have a next incremental change we wanna FlowBuilder, a new thing we wanna build. And again, my understanding is into the IntegrateHub model, 'd basically have to pay, like, it's like a new like, a new, like, service effectively that you have to, like, pay to turn on for, like, each of those incremental versus the AutomateFlow model is, like, you can turn on as many as you want, and you're only actually charged as the usage goes. That's kind of like the major difference and I think the sort of like legacy capabilities is why some of those partners might have been framework Ocado, but I happy to share some more details around those kinds of things as well."
+        },
+        {
+          "speaker": "them",
+          "text": "Gotcha. I I James note that when I was talking to Mercado recently, they also quoted me in, actions."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "So I think I think you're right. That that is what I heard in the past, but I think that might have changed potentially recently because he quoted me, like, you know, 250,000 actions per year is gonna be x dollars, like, kinda thing like that. So that sounds more similar to the way that you guys are thinking about usage limits and stuff too."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. That actually that actually does. And then I guess it's gonna be a question of, like, how those systems get built and who, like, maintains them and stuff like that. But"
+        },
+        {
+          "speaker": "them",
+          "text": "Correct. Yeah. And"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay. And I and I can share you something like that's like apples to apples. As we're talking about"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "the volumes and things that you're using. I guess one clarifying question. You said, they were your what you were quoted out was, like, two fifty. It looks like you guys are already at, like, over a 100. Almost you almost"
+        },
+        {
+          "speaker": "them",
+          "text": "200. Yep. Like, two. I think it was a 100,000 with, overage or something."
+        },
+        {
+          "speaker": "me",
+          "text": "100. If I'm looking at your account right now, like,"
+        },
+        {
+          "speaker": "them",
+          "text": "But you might know better than I do."
+        },
+        {
+          "speaker": "me",
+          "text": "yeah. I actually I can check. I'm I'm looking at your sort of, like, oh, actually, no. That's free task usage. So this is, like, your task usage. You're, like, around one twenty give or take, the last couple of months."
+        },
+        {
+          "speaker": "them",
+          "text": "Yes. So the first time this came up, I think, was well, from this, I I I think it was in August actually, that we first had an issue. But I I James say, I think a fair amount of this also has to do with what you guys consider to be an action and also how"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "these things were built in the past, which I"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "have I I I have thoughts on."
+        },
+        {
+          "speaker": "me",
+          "text": "So there there might be ways to, like, reduce the reduce the volume here of, like,"
+        },
+        {
+          "speaker": "them",
+          "text": "But correct. Yeah. But the hypo is that we're gonna need"
+        },
+        {
+          "speaker": "me",
+          "text": "at the current level of what you're saying."
+        },
+        {
+          "speaker": "them",
+          "text": "least 250 or a thousand or"
+        },
+        {
+          "speaker": "me",
+          "text": "Can"
+        },
+        {
+          "speaker": "them",
+          "text": "more to be to feel safe, in state of things, especially as we start to build a lot more integrations with our project management system."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay. That's super helpful. So in terms of, like, tactical next steps here, I think would be useful, one, putting together, like, some actual pricing information for you around what, like, this could actually look like at, like, a couple of different levels of usage and volume. Two, I do also think it might be worth getting you guys in front of a solutions architect on our side if you're gonna or probably once you've nailed down who the who the project partner James be, who you're working with, having time with the solutions architect on our side to be like, hey. Like, how do we wanna, like, set up these systems to actually connect together? And then that James also give you a sense of, like, what does support actually look like in a world we're on enterprise plan because it a very different kind of engagement model than what we would typically see today. And given the timeline that you're talking about, I wonder if we could, like, try to say, like, okay. We're gonna figure out the project plan have an essay, work with you guys on a few of these, a few of these examples, maybe do one or two, like, build sessions sessions with people on your team to, like, validate if this is useful. And then if if we can check those boxes, and the total cost of ownership makes sense, we could aim to move forward around, like, the February, early March as, hey. We could actually start going live and, like, pushing some of this out for you guys. High level, if that makes sense, what I James typically do one, actually start getting the essay involved, And then I like to put together what I call, like, an ROI document so we can say, like, hey. For some of these use cases, what is this actually, like, worth for us as a business? These are, like, initial ones that we're starting about and also, like, what are, like, the maybe second, third order things that we're not gonna necessarily start with, but, like, this is gonna be the universe of stuff we want to build towards."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "I think that all makes sense. Let me know what you need in order to get moving on the SA front because I can already describe some use cases for you of what we definitely wanna do with the new PM system. Think we can also say that we're probably gonna go with TaskBoard, I think."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "Unless, unless you or anyone else that I talked to in these conversations tells me, woah. Don't use TaskBoard."
+        },
+        {
+          "speaker": "me",
+          "text": "I mean, we have to be able to TaskBoard's one of the ones we work a ton with, so that should be 100% fine. Would you be available on the February? To do a conversation with the SA"
+        },
+        {
+          "speaker": "them",
+          "text": "Ninth or tenth. Yeah. I'm free. I'm also free before then, to be honest, depending on how you can move."
+        },
+        {
+          "speaker": "me",
+          "text": "We are I might be able to get us some next week. It's already pretty full. Let me follow-up. I I James for now. I'll send something on the ninth, for us to book, and I'll I'll follow-up with our SA team to see if I could get us something fitting in next week, if we can move a bit faster there."
+        },
+        {
+          "speaker": "them",
+          "text": "Gotcha."
+        },
+        {
+          "speaker": "me",
+          "text": "And then I'll send a"
+        },
+        {
+          "speaker": "them",
+          "text": "We don't have to move yeah. We don't have to move that fast, but I think at the very least, if you have more stuff on ROI and TCO that I can start"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "to glance at, and also just sort of what broadly speaking, what would be the differences between what we have now versus what we would"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "get at enterprise? Right? I I think that can help me with sort of starting to wrap my head around, are we gonna be a full AutomateFlow"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Are we gonna be a AutomateFlow plus something else or or whatever?"
+        },
+        {
+          "speaker": "me",
+          "text": "Makes sense. I know we're near time, but maybe could you just some"
+        },
+        {
+          "speaker": "them",
+          "text": "'d be. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "me if you have like, mentioned you have, like, a list, just give you give me, like, that running list. I can, like, start at least running that by our SA team in the meantime so we can come into that call with some at least some ideas of"
+        },
+        {
+          "speaker": "them",
+          "text": "Sure. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "how we might implement some of this."
+        },
+        {
+          "speaker": "them",
+          "text": "So as I mentioned, our our core system set is probably gonna be ChatSupport TaskBoard, SalesCloud, DataVault, and TeamChat and Google Suite."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Right? With all of those things together, I think it's we're we're talking about first, we want to FlowBuilder sure that we have a bidirect sync where we need it between SalesCloud and TaskBoard. And I think a fair amount of that it needs to be facilitated by AutomateFlow when it comes to custom fields or so that's one. And when I say bidirectional sync, I mean, like, there are things that would happen inside a SalesCloud, whether through tickets or through whatever else that would trigger things that should happen in TaskBoard and things that happen"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "TaskBoard that should trigger vice versa, as well as making sure that there is a flow of information between the system so that there is no need for example, like, there's no need for a a a CSM or an account manager to need to go back and forth to find out the status of a request. Or, like, a person who's working on a task inside of TaskBoard doesn't have to go to SalesCloud in order to grab, like, info from five different fields. Right?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yep. Yep."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, I think that's pretty standard use case. A second use case is gonna be on, facilitating a bridge between com and and TaskBoard essentially, where ChatSupport is our like, chat ticketing solution that we expose to our"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Customers, and that's how they talk to us. So, bridging the two systems where essentially it's not just linking a TaskBoard task to a ChatSupport ticket, which I think is native to TaskBoard itself. But in addition to that, being able to control, like, manipulating of those objects from either side, right, where I could, I don't know, do a specific type of comment on a TaskBoard task, and then it gets fed as a chat conversation message, through ChatSupport on that ticket to the customer and vice versa. Right? Other use cases are gonna be more so trigger focused that are probably gonna come through DataVault or into DataVault. So, for example, if we have, a bunch of meta ads accounts that we manage for customers, having every time a new lead is generated, have that info flow into DataVault. And then afterwards from DataVault, cause a trigger to occur when, you know, something is some sort of threshold is met. Like, say, you know, cost per lead is above x dollars, then it creates sort of a trigger task"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "inside of TaskBoard to say, you go fix this or check this out and see if we can optimize it, you know, like, things of that nature. And that could happen not just through things that are flowing into DataVault and out of it, but also through SalesCloud or through anywhere else. Right? I think those are the core use cases, and the last one is just gonna be anything to do with"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "Google Suite. So anything around, you know, if someone makes a calendar booking somewhere, maybe that needs to trigger a task inside of TaskBoard. And if that gets if it needs to be changed, it can be fed back. Email temp like, automated emails, you know, stuff like that as well."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "I think pretty standard things that we're talking about."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay. That FlowBuilder okay. That makes a ton of sense. And then I guess just the last sort of question, that I at least for now that I have that just to help me sort of, like, go sort of build some of this ROI stuff. You give me, like, order of magnitude? Like, how much, like, revenue volume are we talking about? How many reps do we have? Or maybe said differently, like, let's say let's let's let's go forward six months. Let's say we, like, we're able to get all of this done. What is like the impact that you expect to see on your business? Like, are we talking like higher conversion rates on deals, I imagine, higher return on ad spend, I would expect to see shorter deal cycle times. Talk just talk to me a bit about, like, what what the, like what does good look like here if we're if all works the way we want it to."
+        },
+        {
+          "speaker": "them",
+          "text": "I think that ROI like, for us, that matters less."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "Right now to be perfectly transparent because this is kind of a, like, a we know it's gonna be a burning burning problem if we blow past a usage limits. So it's"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "it's more so of saying, like, we have a couple 100 customers now, and then each of those have somewhere between five to 500 customers of their own. Right? So we're facilitating kind of an ecosystem, and then we are scaling our customer base of a couple 100 to a lot a a larger number, maybe a couple thousand. By the end of the year or or more. Right? So, like, that's that's kind of the situation we're talking about, and it's less of a like, a specific ROI thing. It's more of a we we need this."
+        },
+        {
+          "speaker": "me",
+          "text": "Need, like, it's just it's just like, hey. If we're gonna go from 500 customers to 2,000 customers this year, we just don't have the operating to to FlowBuilder that work."
+        },
+        {
+          "speaker": "them",
+          "text": "Correct. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Right? And so we we need to change the way we're functioning. We think it's gonna be fast. We need more visibility. To do that and to do it in a way that, like, is profitable and actually helps our growth."
+        },
+        {
+          "speaker": "them",
+          "text": "Exactly. And I I kinda like to say it is in the same way as we were evaluating the PM system is we think most of the top solutions on the market, including, of course, you guys, right, You guys can do 80% of the things that we wanted to do."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Right? We're we're really trying to figure out, you know, from a a TCO standpoint and also, the abilities of the last 20% from a"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "generally, like, a scalability standpoint. What what might be the minute differences there, and what what what might FlowBuilder the most difference."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "Yep."
+        },
+        {
+          "speaker": "me",
+          "text": "Makes a ton of sense. So this is super helpful. Next steps, I James send us the time on the ninth. We'll plan to come to that with some around, like, how does pricing work, like, in practice, show you what some of those options are. And then we'll also try to bring the solutions architect to that conversation just so we can talk about hey. How does this, like, technically work? Like, what James it look like to actually partner with the solutions architect to build some of these things? And then the last thing I like to send just if helpful, we effectively have, like, a rubric that I mean, obviously, with AutomateFlow, it includes stuff that we think we're good at, but it also includes things that like, the some other providers are good at, like a very specific example is you need, like, on premise hosting, which I don't think you need. But if you did, probably wouldn't be the people to work with. So I'll share that with you as well. That just can help you, like, hey. Here are some things that we consider or we see other customers consider as their doing these comparisons. But of course, if you have other questions in the meantime, I'm I can be your guys' point point of contact. Happy to answer anything there, but looking forward to working together, and, hopefully, we can get you guys stood up, on this."
+        },
+        {
+          "speaker": "them",
+          "text": "Same. Sounds good. And, thank you. I'll keep an eye out for those things. I think the head to head James be very useful, at least at a starting point and just getting a better sense of just how big of a honestly, a a TCO how big of a TCO difference it is between what we have now with you guys versus what it would look like at at enterprise because we have no idea."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Yeah. That makes sense. I mean, I I James we'll need to actually, like, do digging on the accounts. But just to give you, like, a ballpark what we're talking about, total cost of ownership for the enterprise plans are in the range of 50 to 100 k per year for our customers. And then, like, it it varies there at, like, depending on the usage levels, how much"
+        },
+        {
+          "speaker": "them",
+          "text": "Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "support we're specifically talking about, but that's, like, the range that we're talking about typically. For"
+        },
+        {
+          "speaker": "them",
+          "text": "Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "enterprise plans. Just as but I can give you something, like, more specific and more detailed as we're can more clearly refine, like, what what specifically you guys need."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay. So that is so I won't say well, not surprising, but that is I I think higher than the I thought it would cost on an annual basis. So that is good to know."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. I mean and I guess maybe one thing to potentially clarify the distinction because that is that includes, like, the account manager, the support, all of those kind of things. If you just needed more tasks, those that would be much, much cheaper. Let me show you the and I'm this is literally just our our pricing page that I'm gonna pull up here. But this is our sort of"
+        },
+        {
+          "speaker": "them",
+          "text": "Because I think we're on what?"
+        },
+        {
+          "speaker": "me",
+          "text": "for the sake of argument. Like, if you're at a 100 k now, if you wanted if you needed to go what is that? You're paying $5.99 a month, six I can do math. 600 times 12. What about so you're paying roughly 7,200 per year as, like, your base"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "rate right now. If you were to, like, for the sake of argument, let's say, 10 x that, Two."
+        },
+        {
+          "speaker": "them",
+          "text": "That's still 30 k."
+        },
+        {
+          "speaker": "me",
+          "text": "Yes. So, yeah, that's it's it's more expensive but significantly less expensive than the"
+        },
+        {
+          "speaker": "them",
+          "text": "Right."
+        },
+        {
+          "speaker": "me",
+          "text": "enterprise plan, I guess, the"
+        },
+        {
+          "speaker": "them",
+          "text": "Okay. So okay. That is good to know. Because I think we're probably sitting around the the 500 k range at most. Right?"
+        },
+        {
+          "speaker": "me",
+          "text": "e."
+        },
+        {
+          "speaker": "them",
+          "text": "Like, in in terms of how high we would need to go at least this year, I would"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "hope. And just from that, if you're telling me that's gonna cost me a 100 k, that's"
+        },
+        {
+          "speaker": "me",
+          "text": "What was the minute? So"
+        },
+        {
+          "speaker": "them",
+          "text": "surprising."
+        },
+        {
+          "speaker": "me",
+          "text": "if you're a 500 k task, so that would be the say nine times That's only 20 that's 22 k on the self serve plan. And if you're around there, you're probably closer to 50 than you are to a 100. That's like that's like the full range of prices, like but I can't don't wanna say, oh, it's gonna be 50 without having a really clear idea of, like,"
+        },
+        {
+          "speaker": "them",
+          "text": "Mhmm."
+        },
+        {
+          "speaker": "me",
+          "text": "how much volume you have. But yeah. The if you were just talking tasks with like, the broader support and all that kind of stuff we're talking about, you're at, like, 22 k. For the year."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay. Gotcha. Okay. That's good to know. And I think I James I James just note that I think this is maybe a reason why I'm hearing a lot more usage of Vocado because a lot of the more advanced enterprise features that you're saying is probably double the price, I think they're saying can be done with at more so the team level pricing."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay. So you're, like, That makes sense. We can, work through that as we, like, talk talk to commercials here and logistics. That's helpful. That's helpful context to know."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Yeah. That's that's the that's not a FlowBuilder or break thing where we're not making decision right now. Obviously, it's just more like"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "what's what's on top of mind, right, and wanting to understand, you know, if if enterprise is gonna be basically double of of team on a self serve, what exactly are the things that we're buying for for double?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. That makes good sense."
+        },
+        {
+          "speaker": "them",
+          "text": "Yep."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay. That sounds good. Well and we'll share those kinds of details, and we can get we can dig into this, like, in-depth when we meet next time. That helpful context. And I'm glad, at least, like, we were able to have that, like, triangulation conversation now. I think that's helpful."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. For sure."
+        },
+        {
+          "speaker": "me",
+          "text": "Awesome. Okay. I James"
+        },
+        {
+          "speaker": "them",
+          "text": "K."
+        },
+        {
+          "speaker": "me",
+          "text": "over all these details. James, great to be connected, and I hope you have a great rest of your day."
+        },
+        {
+          "speaker": "them",
+          "text": "You too. Thank you."
+        },
+        {
+          "speaker": "me",
+          "text": "Bye."
+        }
+      ],
+      "attendees": [
+        "James Liao",
+        "Alex Obleton"
+      ],
+      "date": "2026-01-29",
+      "duration": 70,
+      "keyTakeaways": [],
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/moxie/transcripts/260129-moxie-discovery-call.md",
+      "createdAt": "2026-01-29T19:44:12.942Z",
+      "anonymized": true
+    },
+    "velocity-systems_crm_snapshot": {
+      "id": "velocity-systems_crm_snapshot",
+      "dealId": "velocity-systems",
+      "type": "crm_snapshot",
+      "sourceFile": "context.md",
+      "createdAt": "2026-01-29",
+      "anonymized": true,
+      "dealProperties": {
+        "stage": "Discovery",
+        "amount": "$50-65K (estimated)",
+        "closeDate": "2026-03-01",
+        "lastContactedDate": "2026-01-29"
+      },
+      "contacts": [
+        {
+          "name": "James Liao",
+          "title": "(Title unclear, enterprise architecture lead?)",
+          "role": "technical_evaluator"
+        }
+      ],
+      "notes": [],
+      "activityLog": [
+        {
+          "date": "2026-01-29",
+          "type": "call",
+          "description": "Discovery call with James Liao. Strong call - real pain, clear use cases, engaged champion. He's price-sensitive but not unreasonable. Main risk is IntegrateHub positioning enterprise features cheaper. March 1 decision deadline. Need to map economic buyer and justify enterprise pricing."
+        },
+        {
+          "date": "2026-01-29",
+          "type": "email",
+          "description": "Sent follow-up email with: (1) Feb 9 meeting confirmed with SA, (2) AutomateFlow vs IntegrateHub comparison rubric, (3) Teams vs Enterprise framing (\"platform access vs partnership\"), (4) ROI calculator with use cases and value estimates (~$124K value vs $55K investment = 2.5x ROI). Framed metrics as primary, dollars as supporting. Link: https://example.com/..."
+        },
+        {
+          "date": "2026-01-30",
+          "type": "email",
+          "description": "James asked for filled-in comparison rubric (original was blank template). Created honest head-to-head assessment: AutomateFlow edge on 14 criteria, IntegrateHub on 6, 12 ties. Acknowledged IntegrateHub strengths (testing/deployment, complex orchestration, granular permissions, audit logging) while highlighting our advantages for their specific use case (usability, their stack compatibility, AI/BYOM, lower lock-in, incumbency). Sent standalone xlsx file."
+        }
+      ]
+    },
+    "doc_velocity-systems_will-governance-response": {
+      "id": "doc_velocity-systems_will-governance-response",
+      "dealId": "velocity-systems",
+      "type": "document",
+      "title": "James-governance-response",
+      "documentType": "other",
+      "content": "const { Document, Packer, Paragraph, TextRun, AlignmentType } = require('docx');\nconst fs = require('fs');\n\nconst doc = new Document({\n  styles: {\n    default: { document: { run: { font: \"Arial\", size: 22 } } }\n  },\n  sections: [{\n    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },\n    children: [\n      new Paragraph({ children: [new TextRun(\"James,\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"That's a fair framing, and I appreciate you being direct about the org's priorities. Let me push back gently on the practical vs. management dichotomy—because the governance features ARE what protect the operational metrics you care about.\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"Think about the use cases we mapped out together:\")] }),\n      new Paragraph({ children: [new TextRun(\"• SalesCloud ↔ TaskBoard sync taking context switches from 15-20/day down to 2-3\")] }),\n      new Paragraph({ children: [new TextRun(\"• CPL detection going from 1-3 days (manual review) to <1 hour (automated)\")] }),\n      new Paragraph({ children: [new TextRun(\"• Onboarding capacity scaling from 5/week to 15-20/week\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"Those improvements only deliver value if the automations \"), new TextRun({ text: \"keep running correctly\", italics: true }), new TextRun(\". Without governance—role-based access, audit trails, visibility into who built what—you're one rogue edit away from another Black Friday situation. Except this time at 10x the volume with your 2,000-customer target.\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"The math: we estimated ~$124K in annual value from these use cases. At a $55K investment, the governance premium isn't overhead—it's insurance on the 2.3x return. The alternative is building on self-serve and hoping nothing breaks when you can least afford it.\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun({ text: \"Offer:\", bold: true }), new TextRun(\" Happy to join a call with whoever owns budget priorities on your side. Sometimes it helps to have the vendor in the room to reframe what the investment actually buys. Let me know if that would be useful.\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"In the meantime, keep testing both platforms—that's exactly the right move.\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"Alex\")] })\n    ]\n  }]\n});\n\nPacker.toBuffer(doc).then(buffer => fs.writeFileSync(\"/Users/username/sales-workspace/deals/Velocity Systems/outputs/James-governance-response.docx\", buffer));\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/moxie/outputs/will-governance-response.js",
+      "createdAt": "2026-02-03T00:32:34.258Z",
+      "anonymized": true
+    },
+    "doc_velocity-systems_will-followup-email": {
+      "id": "doc_velocity-systems_will-followup-email",
+      "dealId": "velocity-systems",
+      "type": "document",
+      "title": "James-followup-email",
+      "documentType": "docx",
+      "content": "Subject: Following up - AutomateFlow evaluation materials + Feb 9 meeting\n\nHi James,\n\nThanks for the conversation today. I have a much clearer picture of what you're building toward - centralizing your integration infrastructure as you scale from a couple hundred to a few thousand customers this year. That's a meaningful inflection point, and the work you're doing to set up the right architecture now James pay dividends.\n\nA few things to share:\n\n1. Feb 9 Meeting Confirmed\n\nI've sent the calendar invite. I'm pulling in a Solutions Architect so we can get hands-on with your SalesCloud ↔ TaskBoard sync and the ChatSupport bridge use cases. We'll come prepared to talk through how we'd actually build these.\n\n2. AutomateFlow vs IntegrateHub Comparison Rubric\n\nHere's the evaluation framework we discussed: Comparison Rubric\n\nThis covers the criteria you mentioned - integrations, trigger flexibility, infrastructure, security/compliance, and support. I've tried to be honest about where each platform is stronger. You mentioned that PM vendors default to IntegrateHub for custom integrations - that's historically been true. IntegrateHub invested earlier in enterprise positioning. Our view is the platforms have converged significantly on capabilities, and the real differentiator is now the partnership model.\n\n3. On Teams vs Enterprise Pricing\n\nYou asked a great question about the delta between self-serve Teams ($22K at 500K tasks) and Enterprise ($50K+). Here's how I'd frame it:\n\nTeams plan = Platform access\n\nYou get the product\n\nYou figure out how to use it\n\nSupport is ticket-based\n\nGood for: Teams that have in-house automation expertise and just need task capacity\n\nEnterprise plan = Partnership\n\nDedicated Solutions Architect to help design and build\n\nCustomer Success Manager for ongoing optimization\n\nPriority support with faster response times\n\nGovernance controls (SCIM, custom data retention, role restrictions)\n\nGood for: Companies making AutomateFlow core infrastructure who need it to work reliably at scale\n\nGiven where you're headed - scaling from 200 to 2,000+ customers with teams that aren't growing proportionally - you're building on AutomateFlow as infrastructure, not just using it as a tool. The question is whether you want a partner in that or prefer to go it alone with more task capacity.\n\n4. Use Case Assessment\n\nI've documented the use cases we discussed with before/after metrics: Velocity Systems Value Assessment\n\nRather than put a dollar figure on everything (which can feel speculative), I've focused on the operational metrics that matter - context switches eliminated, response times improved, manual steps automated. We can refine these together on the 9th.\n\nLet me know if you have questions before then, or if you want to move up the timeline.\n\nBest,\n\nAlex",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/moxie/outputs/will-followup-email.docx",
+      "createdAt": "2026-01-29T20:10:43.490Z",
+      "anonymized": true
+    },
+    "doc_velocity-systems_moxie-platform-comparison-rubric": {
+      "id": "doc_velocity-systems_moxie-platform-comparison-rubric",
+      "dealId": "velocity-systems",
+      "type": "document",
+      "title": "Velocity Systems-platform-comparison-rubric",
+      "documentType": "xlsx",
+      "content": "Category | Evaluation Criteria | AutomateFlow Assessment | IntegrateHub Assessment | Edge | Ease of Use &amp; Adoption | Intuitive UI for business users (non-technical) | Strong. Visual canvas with drag-and-drop. No JSON required for standard workflows. 'Zap' metaphor is well-understood. | More technical. Recipe-based interface has steeper learning curve. Better for IT-led teams than business users. | AutomateFlow | Low/no-code capabilities | Core strength. Business users can build without engineering support. AI copilot assists with setup. | Requires more technical depth. 'Recipes' need understanding of data structures. Better suited for technical ops. | AutomateFlow | Learning curve / enablement time | Days to first value. Most users productive within 1 week. Extensive template library accelerates adoption. | Weeks to proficiency. More powerful but steeper ramp. Typically requires formal training. | AutomateFlow | Testing &amp; Deployment Simplicity | Test button runs Zaps instantly. Versioning available on Enterprise. No staging environment. | Better here: Built-in versioning, staging environments, and deployment controls. More enterprise-grade. | IntegrateHub | Internal user feedback from pilot groups | TBD during February pilot - track adoption velocity and support tickets. | N/A - not piloting IntegrateHub. | TBD | Integration &amp; Compatibility | Number of connectors / supported apps | 7,000+ app integrations. Broadest marketplace. Long tail of niche apps well-covered. | 1,000+ connectors. Fewer total but deeper enterprise app coverage (SAP, Workday, NetSuite). | AutomateFlow | Compatibility with Velocity Systems's stack (SalesCloud, TaskBoard, ChatSupport) | Native connectors for all three. SalesCloud trigger depth is strong. TaskBoard connector actively maintained. | Has all three but TaskBoard connector is newer. SalesCloud connector comparable. | AutomateFlow | Trigger diversity | Comprehensive triggers. Webhooks, scheduled, instant triggers. Paths for conditional logic. | Slightly more sophisticated event handling. Better at complex conditional triggers and polling intervals. | Tie | API flexibility / webhook support | Webhooks by AutomateFlow handles custom endpoints. API Request action for any REST API. | More powerful here: Custom SDK, on-prem agents, and deeper API customization options. | IntegrateHub | Performance &amp; reliability of integrations | 99.9% uptime SLA on Enterprise. Some users report occasional delays on high-volume syncs. | Enterprise-grade reliability. Handles high-volume sync scenarios better historically. | Tie | Breadth of Stack Coverage | Better for SaaS-heavy stacks. Weaker on legacy/on-prem systems. | Stronger for hybrid environments with on-prem + cloud. Better ERP connectors. | AutomateFlow (for Velocity Systems's cloud stack) | Ecosystem Lock-in Risk | Low lock-in. Zaps are exportable. Skills transfer to any automation role. | Higher lock-in. Recipes require IntegrateHub-specific knowledge. Migration is harder. | AutomateFlow | Automation &amp; AI Capabilities | Ability to orchestrate cross-tool workflows | Multi-step Zaps handle 100+ steps. Paths enable branching. Sub-Zaps for modularity. | More sophisticated orchestration. Better at complex multi-branch workflows with error handling. | IntegrateHub | Embedded AI features (content generation, summarization) | AI by AutomateFlow action for prompts. Native OpenAI, Claude, Gemini integrations. Copilot for building. | IntegrateHub AI capabilities less mature. Relies more on external AI tool integrations. | AutomateFlow | Reusability of workflows/templates | Shared folders on Teams+. Template library. Can duplicate and modify easily. | Better here: Callable recipes (like functions), more robust reusability patterns. | IntegrateHub | LLM Flexibility (OpenAI, Claude, Gemini, etc) | BYOM (Bring Your Own Model). Use your own API keys. No data passes through AutomateFlow. | Less flexible. More tightly coupled to specific AI partners. | AutomateFlow | Notification &amp; alerting features | TeamChat, Teams, email, SMS integrations. Filter conditions for smart alerting. | Comparable alerting capabilities. Slightly better monitoring dashboards. | Tie | Scalability &amp; Governance | Ease of scaling to additional teams | Teams/Enterprise: Shared workspaces, folders, permissions. Easy to add users and for those users to get up to speed | More robust multi-team governance. Better org hierarchy and workspace management, but higher learning curve | Tie | Permissions &amp; role management | Enterprise: Admin, Member, Restricted roles. Folder-level permissions. SCIM provisioning. | More granular. Object-level permissions, custom roles, approval workflows. | IntegrateHub | Security &amp; compliance (SOC 2, ISO, etc.) | SOC 2 Type II, GDPR, HIPAA eligible. Data encryption at rest and in transit. | SOC 2 Type II, ISO 27001, HIPAA. Comparable certifications. | Tie | Shareability/view access | Shared links for Zaps. View-only access available. Easy to share templates. | Better controlled sharing with approval workflows. | Tie | Admin &amp; audit logging capabilities | Enterprise: Audit logs, data retention controls, usage reporting. | More comprehensive. Real-time activity streams, detailed audit trails. | IntegrateHub | Support &amp; Services | Availability of implementation support / TAM | Enterprise: Dedicated CSM, Solutions Architect for implementation, TAM check-ins. | Similar model but often positioned at higher price points. | Tie | Responsiveness of support teams | Enterprise: &lt;4hr response SLA. Priority queue. Direct TeamChat channel option. | Comparable SLAs. Strong support reputation. | Tie | Quality of documentation / onboarding | Extensive help docs, AutomateFlow University, YouTube tutorials. Very approachable. | Good docs but more technical. Less self-serve friendly for non-technical users. | AutomateFlow | In-house expertise (TAM, CAM, Solutions Architect) | Enterprise includes SA hours for building + ongoing TAM for optimization. | Similar model. May require higher tier for equivalent SA access. | AutomateFlow | Training resources for internal teams | AutomateFlow University free. Certification available. Extensive community. | Training available but less accessible. More formal training programs. | AutomateFlow | Strategic Fit | Flexibility to evolve with Velocity Systems's needs | Broad app coverage means new tools can be integrated quickly. AI focus aligns with market direction. | Strong for enterprise evolution. Better if Velocity Systems moves toward complex ERP/legacy integrations. | AutomateFlow (for current trajectory) | Product roadmap alignment | Heavy AI investment (Agents, AI actions, Copilot). Canvas redesign coming. Mobile app. | Enterprise workflow focus. Less visible on AI roadmap. | AutomateFlow | Vendor's willingness to co-develop / respond to feedback | Feature requests via community. Enterprise customers get product feedback sessions. | More white-glove for large deals. Custom development possible at high tiers. | Tie | Internal stakeholder preference / trust | James has existing AutomateFlow familiarity. Team knows the product. Lower change management. | Unknown. PM vendors (TaskBoard, Monday) default recommend IntegrateHub - creates anchoring. | AutomateFlow (incumbency) | SUMMARY | AutomateFlow Edge | 14 criteria | IntegrateHub Edge | 5 criteria | Tie/TBD | 13 criteria | KEY INSIGHT | AutomateFlow wins on usability, AI capabilities, and Velocity Systems's specific stack. IntegrateHub wins on enterprise governance and complex orchestration. For a team scaling from 200→2,000 customers with a cloud-native SaaS stack and business users building automations, AutomateFlow is the better fit. If Velocity Systems's needs shift toward heavy ERP integration or IT-controlled automation, IntegrateHub becomes more compelling.",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/moxie/outputs/moxie-platform-comparison-rubric.xlsx",
+      "createdAt": "2026-01-30T15:59:00.578Z",
+      "anonymized": true
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "velocity-systems_v2_cp_001",
+      "dealId": "velocity-systems",
+      "version": 2,
+      "timestamp": "2026-01-29T20:10:43.490Z",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_velocity-systems_260129-moxie-discovery-call",
+          "type": "transcript",
+          "title": "Velocity Systems &  Alex |  Meeting",
+          "date": "2026-01-29"
+        },
+        {
+          "artifactId": "velocity-systems_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery",
+          "date": "2026-01-29"
+        },
+        {
+          "artifactId": "doc_velocity-systems_will-followup-email",
+          "type": "document",
+          "title": "James-followup-email",
+          "date": "2026-01-29T20:10:40.091Z"
+        },
+        {
+          "artifactId": "doc_velocity-systems_will-followup-email",
+          "type": "document",
+          "title": "James-followup-email",
+          "date": "2026-01-29T20:10:43.490Z"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "Velocity Systems",
+        "stage": "Discovery",
+        "amount": "$50-65K (estimated)",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [
+        {
+          "name": "James Liao",
+          "title": "(Title unclear, enterprise architecture lead?)",
+          "role": "technical_evaluator",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "James asked for filled-in comparison rubric (original was blank template). Created honest head-to-head assessment: AutomateFlow edge on 14 criteria, IntegrateHub on 6, 12 ties. Acknowledged IntegrateHub strengths (testing/deployment, complex orchestration, granular permissions, audit logging) while highlighting our advantages for their specific use case (usability, their stack compatibility, AI/BYOM, lower lock-in, incumbency). Sent standalone xlsx file.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "velocity-systems_v2_cp_001_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_velocity-systems_260129-moxie-discovery-call",
+            "velocity-systems_crm_snapshot",
+            "doc_velocity-systems_will-followup-email"
+          ],
+          "optionalArtifacts": [
+            "doc_velocity-systems_will-governance-response",
+            "doc_velocity-systems_will-governance-response",
+            "doc_velocity-systems_moxie-platform-comparison-rubric"
+          ],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "velocity-systems_v2_cp_001_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_velocity-systems_260129-moxie-discovery-call"
+          ],
+          "optionalArtifacts": [
+            "velocity-systems_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "velocity-systems_v2_cp_001_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_velocity-systems_260129-moxie-discovery-call"
+          ],
+          "optionalArtifacts": [
+            "velocity-systems_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        },
+        {
+          "id": "velocity-systems_v2_cp_001_task_stakeholder",
+          "type": "stakeholder_analysis",
+          "prompt": "Map the key stakeholders in this deal. For each, identify their role in the decision process, sentiment, concerns, and level of influence. Identify any missing stakeholders that should be engaged.",
+          "requiredArtifacts": [
+            "tx_velocity-systems_260129-moxie-discovery-call",
+            "velocity-systems_crm_snapshot",
+            "doc_velocity-systems_will-followup-email",
+            "doc_velocity-systems_will-followup-email"
+          ],
+          "optionalArtifacts": [
+            "doc_velocity-systems_will-governance-response",
+            "doc_velocity-systems_will-governance-response"
+          ],
+          "scoringDimensions": [
+            "stakeholderMapping",
+            "dealQualification",
+            "informationSynthesis"
+          ],
+          "maxTurns": 2
+        }
+      ]
+    },
+    {
+      "id": "velocity-systems_v2_cp_002",
+      "dealId": "velocity-systems",
+      "version": 2,
+      "timestamp": "2026-02-03T00:32:39.834Z",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_velocity-systems_260129-moxie-discovery-call",
+          "type": "transcript",
+          "title": "Velocity Systems &  Alex |  Meeting",
+          "date": "2026-01-29"
+        },
+        {
+          "artifactId": "velocity-systems_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery",
+          "date": "2026-01-29"
+        },
+        {
+          "artifactId": "doc_velocity-systems_will-governance-response",
+          "type": "document",
+          "title": "James-governance-response",
+          "date": "2026-02-03T00:32:39.834Z"
+        },
+        {
+          "artifactId": "doc_velocity-systems_will-governance-response",
+          "type": "document",
+          "title": "James-governance-response",
+          "date": "2026-02-03T00:32:34.258Z"
+        },
+        {
+          "artifactId": "doc_velocity-systems_will-followup-email",
+          "type": "document",
+          "title": "James-followup-email",
+          "date": "2026-01-29T20:10:40.091Z"
+        },
+        {
+          "artifactId": "doc_velocity-systems_will-followup-email",
+          "type": "document",
+          "title": "James-followup-email",
+          "date": "2026-01-29T20:10:43.490Z"
+        },
+        {
+          "artifactId": "doc_velocity-systems_moxie-platform-comparison-rubric",
+          "type": "document",
+          "title": "Velocity Systems-platform-comparison-rubric",
+          "date": "2026-01-30T15:59:00.578Z"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "Velocity Systems",
+        "stage": "Discovery",
+        "amount": "$50-65K (estimated)",
+        "daysSinceFirstContact": 5
+      },
+      "stakeholders": [
+        {
+          "name": "James Liao",
+          "title": "(Title unclear, enterprise architecture lead?)",
+          "role": "technical_evaluator",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "velocity-systems_v2_cp_002_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_velocity-systems_260129-moxie-discovery-call",
+            "velocity-systems_crm_snapshot",
+            "doc_velocity-systems_will-governance-response"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "velocity-systems_v2_cp_002_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_velocity-systems_260129-moxie-discovery-call"
+          ],
+          "optionalArtifacts": [
+            "velocity-systems_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "velocity-systems_v2_cp_002_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_velocity-systems_260129-moxie-discovery-call"
+          ],
+          "optionalArtifacts": [
+            "velocity-systems_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        },
+        {
+          "id": "velocity-systems_v2_cp_002_task_stakeholder",
+          "type": "stakeholder_analysis",
+          "prompt": "Map the key stakeholders in this deal. For each, identify their role in the decision process, sentiment, concerns, and level of influence. Identify any missing stakeholders that should be engaged.",
+          "requiredArtifacts": [
+            "tx_velocity-systems_260129-moxie-discovery-call",
+            "velocity-systems_crm_snapshot",
+            "doc_velocity-systems_will-governance-response",
+            "doc_velocity-systems_will-governance-response"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "stakeholderMapping",
+            "dealQualification",
+            "informationSynthesis"
+          ],
+          "maxTurns": 2
+        }
+      ]
+    }
+  ],
+  "finalOutcome": "active",
+  "metadata": {
+    "sourceDeals": [
+      "moxie"
+    ],
+    "transcriptCount": 1,
+    "artifactCount": 7,
+    "dateRange": {
+      "start": "2026-01-29",
+      "end": "2026-02-03T00:32:39.834Z"
+    }
+  }
+}

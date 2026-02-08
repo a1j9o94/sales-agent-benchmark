@@ -1,0 +1,775 @@
+{
+  "id": "streamcore-media",
+  "name": "StreamCore Media",
+  "version": 2,
+  "artifacts": {
+    "tx_streamcore-media_2026-01-21-discovery-call": {
+      "id": "tx_streamcore-media_2026-01-21-discovery-call",
+      "dealId": "streamcore-media",
+      "type": "transcript",
+      "title": "StreamCore Media Inc &  Alex |  Meeting",
+      "rawText": "# StreamCore Media Inc &  Alex |  Meeting\n\n## Meeting Details\n\n**Meeting ID:** b2eaf453-14f8-4571-9ca4-ea2c5a66a0ab\n\n**Date & Time:** Wednesday, January 21, 2026 at 6:30 PM UTC\n\n**Calendar Event ID:** ehc28domn8eoruhb9am9fp77bo\n\n**Calendar Event Title:** StreamCore Media Inc &  Alex |  Meeting\n\n**Organizer:** Alex Obleton (user@user)\n\n### Attendees\n\n- **Jd Rhoads** (user@user)\n- **Alex Obleton** (user@user)\n\n## My Notes\n\nFlex rental solutions integration\n\nSetup and teardown, conferences set up and tear down, they rent the equipment and we provide the labor, a lot of the labor is contracted, but they have full timers.\n\nThe system they use is Flex rental solutions, it's very industyr specific and it's open API, in 2019 they decided they are going to move all of their systems are open API, only use customers that have that capability\n\nQuickbooks, ramp, Flex rental solutions - how we manage all that equipment and we quote customers, do we have that in invevntory\n\nIt has a variable that doesn't easly connect with other things, and that's time. Quantity amount and total, no time factor on everything, things come in and out of inventory asset management is used and available for builds for certain times and not\n\nThey're API is confusing, they've only been able to get programmers who get in at a very high level\n\nA business owner out of vegas is using at. - Las Vegas Audio Visual - AV Vegas, they are currently using AutomateFlow their owner is the guy who told him they're using AutomateFlow so started diving this was a year ago, now we're back on the hunt on how we can use to talk to quick books and teamsup, calendar system\n\nRamp, expense\n\n## Full Transcript\n\n \nThem: Recording in progress.  \nMe: Hi, jd how are you doing?  \nThem: Hello. How are you?  \nMe: I'm doing well. Doing very well. Thanks for taking the time to chat today.  \nThem: Yeah. Thanks. For following up.  \nMe: Of course. Could you maybe start by just tell me a bit about what you guys are trying to solve more broadly? I know in your initial note you mentioned trying to integrate Flex Rental Solutions, but could you help me just understand a bit about what that integration is on either side of the systems? What are the teams that engage with that kind of stuff.  \nThem: Yeah. So let me first start off what we do.  \nMe: Yeah.  \nThem: That'll give you so. Have you ever been to a conference?  \nMe: Yes.  \nThem: All right. You've seen the big speaker, sound systems and screens. We do that, we set it up and tear it down all around the country. And we have teams that move around, and so we rent. The equipment. When we provide the labor. And a lot of the labor. Is contracted. But we also have full timers. They do it. We have. The systems we use is called Flex Rental Solutions. It's a very industry specific. It's open API. So we in 2019, 2019, we decided we're going to move it all of our systems to open API.  \nMe: Okay?  \nThem: So we were a little ahead of our industry, not the world, but as far as moving to things that said we're only going to use companies that software providers that had that capability. And so went to quickbooks online rather than quickbooks enterprise. We started using ramp rather than american express for credit cards. We started. I mean, I can go down and down, but Flex Rental Solutions. Are how we manage all that equipment. And how we build our customers, how we quote customers. Like, hey, you need trust and you need lights and speakers, and do we have that in inventory? Or do we need to. Or what? Needs, you know. Do we need to go?  \nMe: Combination of both the CRM and sort of a more traditional asset management platform, like, combined into one is, like, the right way to think about it.  \nThem: Yeah, yeah, yeah. Perfect. But that's great. But this software is not. It has. It has a variable that does not easily connect with other things, and that variable is time. So like QuickBooks, etc. Quantity and its quantity and amount and a total. Time factor. So on everything. So if you're there for things, come in and out of inventory. Asset management is available for certain times. And then build for certain times and then not. So that complicates because it's a different variable that a lot of systems don't. So. Not a lot. Their API is not. Is. I don't know it very well. I don't understand it very well. But haven't found a lot of. We've only been able to get programmers that kind of. Kind of, kind of get in on a very. We haven't been able to get it into like, kind of drag and drop kind of system like AutomateFlow.  \nMe: Yeah.  \nThem: What I did hear that a business owner out of Vegas is using it. So I said, well, hold on. How are they doing it? So there you go. So.  \nMe: And actually, if you don't mind, do you know who Zoner was? Just I can follow up after the fact. Can probably do some digging on.  \nThem: Yeah, it's las vegas. Audio, visual. I think las vegas. Hold on.  \nMe: There might be at least enough for me to get started. And like, I can pull that out because that at least it sounds like at least we could sort of case study to compare. Hey, how are they using their.  \nThem: Av vegas.  \nMe: Sorry.  \nThem: Av vegas.  \nMe: Av vegas, okay?  \nThem: Av vegas. So there you. They. They are. They have. They're using their owner. Is the guy who has told me that I'm using AutomateFlow, and he had some really cool tools going. Like. Oh, interesting. So I started diving in. This was a year ago. And. But now I'm back on the. Hunt. To see how. How I can use. Use it. To talk with QuickBooks. And talk to, you know. Where are the others? We hold on. What is the other one?  \nMe: You mentioned.  \nThem: Team up. Teams Up. There's Teams up, which is a calendar system. What is it? What? I'm trying. My brain just kind of ramp. Is a credit card company is our expense.  \nMe: No.  \nThem: I mean, there's tons of things, tons of our systems that you guys have that you guys do talk to.  \nMe: Integrate with already. And then it sounds like one thing that I think is cool about in particularly differentiate about AutomateFlow compared to other automation platforms is you have the opportunity to create effectively what we call like custom actions. And I suspect this is what and I can confirm this, but I suspect this is what the A.V. vegas team is doing where even though you go to that app page, you have that list of all the things that AutomateFlow integrates with, we James often have customers exactly your situation, where there's a tool that has an API but doesn't necessarily have that integration, so we can effectively build one for you. So that, like, you know, any time, like when you're building as you're building those force use case, they're connected, but then next time you're like, oh, I want to do something else with this. You have that, like, drag and drop option there in AutomateFlow, Rhoads, like, you know, maybe we. Start with the quickbook example, and then next month you're like, you want to do ramp. Instead of having to rebuild that API, you just now have a flex rental action that you can call and use their system.  \nThem: Exactly.  \nMe: Ok. That makes a ton of.  \nThem: Would you guys help do that? Do you guys. And how does that work?  \nMe: Yeah. So we have. There's a couple different options of ways that we help customers do this. So we offer effectively two tiers of plans internally. There's our self serve, what we call our teams plan. That's where it's like you people on your team are hands on keyboards, doing the building, and that is only charged. Based off of, like, how many, like, actual actions are going through the system in that world. If you want someone to like, build stuff for you, we have what we call solutions partner. So they'll like, hey, on the order of magnitude of like $10-20K. They'll work with you on a one off basis to like build a specific thing. The other end of the spectrum is our enterprise plans where we, like, are actually partnering with people of like, hey, we have, you know, maybe there's like three or four initial use cases, but we think, we think there's a world in which there's like, there's 20 things we could do here and. We would love to have someone at AutomateFlow who is like an expert on our account, who can like, if something are in Brics has like, has an integration built that custom integration for us. So the next time it happens, all that jazz and those plans are more around like, you're paying for, like, the people. The expertise you have like the TeamChat and open TeamChat channel, like all that jazz that is in the range.  \nThem: I don't think we're there, but yeah.  \nMe: That makes sense. So I think the best bet, like, for getting that set up would be connecting with some of our solutions partners. There's a couple that I've worked with who are, like, really good, and I know that, like, they've. I not necessarily like this specific type of integration, like, with competitors of yours. But have done this sort of, hey, custom API systems that we're integrating with that is like core to our business that we need to work towards.  \nThem: I don't know.  \nMe: I can share some examples with those, I guess. One. Maybe just sackling. Have you actually been in AutomateFlow before? Like, have you seen it? Like, what it's like to like, like, use or any of that kind of stuff?  \nThem: I have. I have. I have. And, you know, and my. I have a data analyst that's used it a lot.  \nMe: Great.  \nThem: So. So we understand the capabilities. I mean, a lot of the logic behind it, and we understand how that works.  \nMe: Yeah. Okay?  \nThem: I'm not an expert by any means. I mean, I'm not.  \nMe: Theoretically shouldn't need to be right. Like it's, it's, it's meant to be designed so you never don't have to be an expert. Though one thing that may be worth, worth your data analysts spending some time on and I can share some details on this and like how those custom actions work transparently. It's like, it's meant to be very, very simple. Like, I made one when we. There was, like, a. Something I needed from Hub, a spot. We didn't have the integration. I was able to FlowBuilder one and, like, get that up and running by myself in, like, under an hour. So it's. Designed to be really straightforward. I can share some details around those. And then the other thing that's important is, do you. Do you know how our pricing works on the team's plans? Just to give you a sense of that, okay. Let me show. So the unit of measure for all of our pricing. Actually, let me start there, because I was going to.  \nThem: Are zaps or something.  \nMe: So actions. The meaningful distinction is like, so the zap is like the whole automation. So let's say we don't charge you for automations that exist that aren't actually connecting to meeting. So if you want to want it to, for example, build a ramp and a QuickBooks and this sort of like flex one that we're talking about. And for some reason, like, ramps and quickbook have, like, really no volume. We don't charge you for those just to, like, exist. You'll only be charged for the actions that are going through the system. So let me show you.  \nThem: Action. Perfect.  \nMe: What? That. Looks like in practice. So this is kind of like what we talk about. So in a run, you know, you have a trigger, and then it's like, do this action, do this action. And that sort of is the unit of measure that is being pulled down against on your plan. Why can't I? Sorry. Something's wrong. Give me one moment. Something. It's not letting me switch screens the way I normally do for some reason. Here we go.  \nThem: Where are you based out of?  \nMe: I'm based out of Austin, Texas. How about you?  \nThem: Chicago.  \nMe: Chicago.  \nThem: How long? Have you been there? How long have you been with AutomateFlow?  \nMe: I've been in Texas actually a little over a year. We moved here about a year ago from Atlanta. My wife and I moved up here. She got a job based out here. And then I've been with. I was with a consulting firm called Bain, doing general, like, strategy, operations type work. And I've been with AutomateFlow since September. We're in working with customers like you on exactly these types of problems, like automation integrations of all kinds. How. Sorry. Where did you. Chicago. Are you guys headquartered there?  \nThem: No, no, Orlando, we all throughout the U.S. man, we're.  \nMe: Okay?  \nThem: We know. I'm. I'm one of the co founders. I'm the owner. And, you know, I used to be a program a long time ago, so I dabble in stuff and try to FlowBuilder. Automate things and FlowBuilder it more efficient.  \nMe: Have you been? Have you. Sorry, this is 100% a tangent. Have you been playing at all with like Claude code and stuff like that now? Because I also. So I did. I did computer science in undergrad, but similar. You have not really been a programmer since then. It's totally revamped my sort of. Like, love of programming. I'd say love of building, because I think a lot of people are like, oh, this isn't real programming. Because, like, you know, you're not typing the thing, but, like, you're building stuff, so.  \nThem: It's the same thing. It's. I agree. Yeah, absolutely. And. And I think that, you know, to me, it's exciting because, like, people like you that have a high technical knowledge.  \nMe: Yeah.  \nThem: All of a sudden. You are, your value goes way up.  \nMe: Yes.  \nThem: To, especially the smaller companies that don't have that mindset. And because what you can do. Is so much more. And like a regular IT person, can become an is person, information Systems person, and those two worlds can cross.  \nMe: Yes.  \nThem: Where. And I just think that's really exciting. And for you, I mean, the future is bright, man. I mean, I'm old. I'm in my 50s.  \nMe: Yeah.  \nThem: I mean.  \nMe: You've already. You've already made your bag.  \nThem: Yeah. I mean.  \nMe: I forgot.  \nThem: Yeah. For someone like you, I mean, it's so exciting, man. I mean, it really is, like, all of a. Like, you can actually touch. You can actually solve real problems.  \nMe: Yes. And even, like, the thing that's really cool is, like, even my day job. Obviously, I'm not an engineer, but I've built like, some pretty, what I would consider, like, strong systems using agents to, like, do like, deal reviews. Like, for example, like after this call, like, I have a automation that pulls the transcript and like, clog code James like, pull up a deal context and like create follow ups and like, all that jazz for me. So, yeah, no, it's, it's, it's a lot of fun.  \nThem: Yeah.  \nMe: Sorry, I just stopped. But yeah, that's something very cool. But the one thing I went to frame on pricing is what drives it is just how many tasks are you doing? So like we were talking about this automations, it's like how many steps do there do you expect to use and this is based off? Of per month. So the question would be like, you know, and I realize it's hard, especially if you like, don't know, like, which systems yet specifically. It's just like, how much volume of throughput do you think you'll have? And that James then inform which of these level plans makes sense. What we typically see as like a for a company your size, most people James start around the 10k range and that James give them. And they'll start paying monthly. So there's an annual and a monthly fee cost. It's cheaper if you pay yearly, but people James often start monthly. See? OK, am I using 10,000? Am I using 5,000 as actually 50? And then once you have a better sense of what your volume is, it typically makes sense for people to do, like, a year so that they can save on the volume that they're driving.  \nThem: Yeah. So why do you. Why, How. How do you give to 10,000 tasks? I don't. I get it. I mean, I see Data. I see. You know, when you're looking at. I mean, I just. It just seems like.  \nMe: A lot.  \nThem: That.  \nMe: So I guess maybe if we work through, like, an example, like, let's say you were working with a specific customer for a specific conference. So I imagine there's some, like, initial things in the CRM that's like, hey, this is a lead that we need. These are some of the things that they might have. Each of those, like, data updates would connect from the rental hub. Yeah. From that. From rental to either SalesCloud or ramp. May maybe you're like, hey, we have people who are buying additional things on site because they need to, and they're doing that in ramp. And then we want to have that update flow into our systems, maybe.  \nThem: SalesCloud. Yeah.  \nMe: Actually, those are probably, like, the good, like, two good examples. And then the question I would have is, like, hey, if you're doing for one of any given projects, Like, how many interactions are you actually having with the customer? How many sort of, like, pieces of data are you having to move between those systems? And we often find it's, like, quite a bit because you're not.  \nThem: Every item. Every item. Is action? Or is it so, like, if I send over a contact,  \nMe: Yeah.  \nThem: All ten things. An. An action. Like, if there's. Is that work.  \nMe: So it depends on how it's architected, which I realize is not a super helpful answer. There's a world in which that zap is set up, so every time a contact goes in, you send the one connection. There's another world in which you're like, every time that contact goes in, we want to bundle those and send that bundle to be processed. Right. And so that bun, if you're processing that bundle, that's only one action. If you process each of them separately, then it's however many actions like for each of them. So the, the way that you like structure and build the system definitely informs. How many tasks?  \nThem: I understand. Makes sense. Makes sense. I gotcha.  \nMe: And that's where, like, where. That's why I was saying, like, people typically start here and only on monthly, so that they're not, like, locked in. So, like, you could say, okay, we weren't even close. Or. And maybe if you're, like, you think that's way off initially, maybe you. Start with the 5K and see what's there. Use that as, like, your initial baseline to see how close you're getting, but.  \nThem: Pricing doesn't scare me at all. Like, look, this not. I mean, this is not about price. It's more about. Capabilities.  \nMe: Yeah. Like, what does it actually look like to get to have your team using it? Like, how do you actually integrate with it?  \nThem: I mean, that. That's where I. And that's. And that's where, you know, until I can get, you know, where everyone is at. Is this Flex. Is information out of this flag. So that's why I'm exploring AutomateFlow, because I know someone's already done it. So I'm like, interesting. How do we, you know, how do we do it?  \nMe: I James what I James take as an action, I'll send over like the sort of like details on how do those like custom actions work that I was talking about. Like, what does that look like in practice? I'll send over some information as well on our solutions partners, like what that looks like and what I might actually recommend is basically there's a free, like, trial period in AutomateFlow, so where, like, you can maybe have you your data analyst sign up. Excuse me. And actually try to, like, build that custom action. Because that's going to probably be the hardest part of your entire setup. And it's like you, over the course of two weeks, you try that, see, like, where you're running into roadblocks. And then we could probably connect and a follow up to, like, okay, is this working? Do we need to put you in touch with Solutions Partners? Is it fine, and you're just ready to go run? You need some guidance on, like, templates and stuff like that. That's typically how I think of, like, evaluations. Helping you at least get a sense of, like, what does it actually feel like?  \nThem: I got you. We are. I've signed up for a free trial. I don't know where it's at, but we're. Look, we are. We're there. I mean, I'm not. My real problem is understanding the API from, you know, is. Is really that working with a consultant, getting that our. Fly opened up.  \nMe: API. Yeah. I would. We definitely can. And I if you're. I'd be willing to do 30 minutes with your data analyst to maybe just try to work through it live. Because, like, I just want to be thoughtful of like. There's a chance you don't even need a consultant necessarily, I guess, is the is what I'm trying to frame, and so we. Oh, sorry. Go.  \nThem: But why? How do you say that? I don't. I guess I'm confused by that.  \nMe: Well, because your data analysis might just be able to do it themselves. Like, like it's, it's meant to be simple enough that non technical people can go in and like build these things. So there's like, if, you know, I could spend 30 minutes with them, there's a chance we can like in. That 30 minutes actually just get, like, at least a prototype up and running, and that would help them get a sense of how hard is this to actually do. But I James in parallel send you the support stuff as well. But there's, honestly, there's a chance, like, we can just get it up and running for. You.  \nThem: Yeah. Okay? All right.  \nMe: Is there a good window in the next week or so for me to connect with that person? Or should I just send you my calendly leak again? Have them book a time.  \nThem: You send it to me. You know, if you look at. If you can look up your client, A.V. vegas and see.  \nMe: Yeah, like how they're doing it.  \nThem: How they're doing it, and maybe that helps you see, you know, again, my. You know, I'm just knowledgeable enough to be dangerous. So, I mean, it's. So. What I found in AutomateFlow and some other tools I can. If. If I have a struggle, if with a starting basis, I'm. Pretty good. Like, and, you know, not understanding. Flex's API is where I struggle.  \nMe: Y. Eah. Getting started. That makes sense.  \nThem: I get stuck, you know, because it's not that integration is not. You guys don't have it pre built.  \nMe: Yeah, yeah.  \nThem: I was hoping that you guys would. But how does that work? I mean, like.  \nMe: So typically they build the integration. So like, if you, if you see on our site, like Zoho CRM or Ramp is one of our, is one of our connections. Like people like the Ramp team built that AutomateFlow integration and like then hosted it on our site. So this just means like the Flex Rental team hasn't built one.  \nThem: So. Oh, no, of course, because, yeah, I got you. I got you. Okay, that makes more. That makes sense. \n\n---\n\n**View in NoteFlow AI:** [https://example.com/... AI.ai/d/b2eaf453-14f8-4571-9ca4-ea2c5a66a0ab](https://example.com/... AI.ai/d/b2eaf453-14f8-4571-9ca4-ea2c5a66a0ab)\n",
+      "turns": [
+        {
+          "speaker": "them",
+          "text": "Recording in progress."
+        },
+        {
+          "speaker": "me",
+          "text": "Hi, jd how are you doing?"
+        },
+        {
+          "speaker": "them",
+          "text": "Hello. How are you?"
+        },
+        {
+          "speaker": "me",
+          "text": "I'm doing well. Doing very well. Thanks for taking the time to chat today."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Thanks. For following up."
+        },
+        {
+          "speaker": "me",
+          "text": "Of course. Could you maybe start by just tell me a bit about what you guys are trying to solve more broadly? I know in your initial note you mentioned trying to integrate Flex Rental Solutions, but could you help me just understand a bit about what that integration is on either side of the systems? What are the teams that engage with that kind of stuff."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. So let me first start off what we do."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "That'll give you so. Have you ever been to a conference?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yes."
+        },
+        {
+          "speaker": "them",
+          "text": "All right. You've seen the big speaker, sound systems and screens. We do that, we set it up and tear it down all around the country. And we have teams that move around, and so we rent. The equipment. When we provide the labor. And a lot of the labor. Is contracted. But we also have full timers. They do it. We have. The systems we use is called Flex Rental Solutions. It's a very industry specific. It's open API. So we in 2019, 2019, we decided we're going to move it all of our systems to open API."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "So we were a little ahead of our industry, not the world, but as far as moving to things that said we're only going to use companies that software providers that had that capability. And so went to quickbooks online rather than quickbooks enterprise. We started using ramp rather than american express for credit cards. We started. I mean, I can go down and down, but Flex Rental Solutions. Are how we manage all that equipment. And how we build our customers, how we quote customers. Like, hey, you need trust and you need lights and speakers, and do we have that in inventory? Or do we need to. Or what? Needs, you know. Do we need to go?"
+        },
+        {
+          "speaker": "me",
+          "text": "Combination of both the CRM and sort of a more traditional asset management platform, like, combined into one is, like, the right way to think about it."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, yeah, yeah. Perfect. But that's great. But this software is not. It has. It has a variable that does not easily connect with other things, and that variable is time. So like QuickBooks, etc. Quantity and its quantity and amount and a total. Time factor. So on everything. So if you're there for things, come in and out of inventory. Asset management is available for certain times. And then build for certain times and then not. So that complicates because it's a different variable that a lot of systems don't. So. Not a lot. Their API is not. Is. I don't know it very well. I don't understand it very well. But haven't found a lot of. We've only been able to get programmers that kind of. Kind of, kind of get in on a very. We haven't been able to get it into like, kind of drag and drop kind of system like AutomateFlow."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "What I did hear that a business owner out of Vegas is using it. So I said, well, hold on. How are they doing it? So there you go. So."
+        },
+        {
+          "speaker": "me",
+          "text": "And actually, if you don't mind, do you know who Zoner was? Just I can follow up after the fact. Can probably do some digging on."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, it's las vegas. Audio, visual. I think las vegas. Hold on."
+        },
+        {
+          "speaker": "me",
+          "text": "There might be at least enough for me to get started. And like, I can pull that out because that at least it sounds like at least we could sort of case study to compare. Hey, how are they using their."
+        },
+        {
+          "speaker": "them",
+          "text": "Av vegas."
+        },
+        {
+          "speaker": "me",
+          "text": "Sorry."
+        },
+        {
+          "speaker": "them",
+          "text": "Av vegas."
+        },
+        {
+          "speaker": "me",
+          "text": "Av vegas, okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "Av vegas. So there you. They. They are. They have. They're using their owner. Is the guy who has told me that I'm using AutomateFlow, and he had some really cool tools going. Like. Oh, interesting. So I started diving in. This was a year ago. And. But now I'm back on the. Hunt. To see how. How I can use. Use it. To talk with QuickBooks. And talk to, you know. Where are the others? We hold on. What is the other one?"
+        },
+        {
+          "speaker": "me",
+          "text": "You mentioned."
+        },
+        {
+          "speaker": "them",
+          "text": "Team up. Teams Up. There's Teams up, which is a calendar system. What is it? What? I'm trying. My brain just kind of ramp. Is a credit card company is our expense."
+        },
+        {
+          "speaker": "me",
+          "text": "No."
+        },
+        {
+          "speaker": "them",
+          "text": "I mean, there's tons of things, tons of our systems that you guys have that you guys do talk to."
+        },
+        {
+          "speaker": "me",
+          "text": "Integrate with already. And then it sounds like one thing that I think is cool about in particularly differentiate about AutomateFlow compared to other automation platforms is you have the opportunity to create effectively what we call like custom actions. And I suspect this is what and I can confirm this, but I suspect this is what the A.V. vegas team is doing where even though you go to that app page, you have that list of all the things that AutomateFlow integrates with, we James often have customers exactly your situation, where there's a tool that has an API but doesn't necessarily have that integration, so we can effectively build one for you. So that, like, you know, any time, like when you're building as you're building those force use case, they're connected, but then next time you're like, oh, I want to do something else with this. You have that, like, drag and drop option there in AutomateFlow, Rhoads, like, you know, maybe we. Start with the quickbook example, and then next month you're like, you want to do ramp. Instead of having to rebuild that API, you just now have a flex rental action that you can call and use their system."
+        },
+        {
+          "speaker": "them",
+          "text": "Exactly."
+        },
+        {
+          "speaker": "me",
+          "text": "Ok. That makes a ton of."
+        },
+        {
+          "speaker": "them",
+          "text": "Would you guys help do that? Do you guys. And how does that work?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. So we have. There's a couple different options of ways that we help customers do this. So we offer effectively two tiers of plans internally. There's our self serve, what we call our teams plan. That's where it's like you people on your team are hands on keyboards, doing the building, and that is only charged. Based off of, like, how many, like, actual actions are going through the system in that world. If you want someone to like, build stuff for you, we have what we call solutions partner. So they'll like, hey, on the order of magnitude of like $10-20K. They'll work with you on a one off basis to like build a specific thing. The other end of the spectrum is our enterprise plans where we, like, are actually partnering with people of like, hey, we have, you know, maybe there's like three or four initial use cases, but we think, we think there's a world in which there's like, there's 20 things we could do here and. We would love to have someone at AutomateFlow who is like an expert on our account, who can like, if something are in Brics has like, has an integration built that custom integration for us. So the next time it happens, all that jazz and those plans are more around like, you're paying for, like, the people. The expertise you have like the TeamChat and open TeamChat channel, like all that jazz that is in the range."
+        },
+        {
+          "speaker": "them",
+          "text": "I don't think we're there, but yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "That makes sense. So I think the best bet, like, for getting that set up would be connecting with some of our solutions partners. There's a couple that I've worked with who are, like, really good, and I know that, like, they've. I not necessarily like this specific type of integration, like, with competitors of yours. But have done this sort of, hey, custom API systems that we're integrating with that is like core to our business that we need to work towards."
+        },
+        {
+          "speaker": "them",
+          "text": "I don't know."
+        },
+        {
+          "speaker": "me",
+          "text": "I can share some examples with those, I guess. One. Maybe just sackling. Have you actually been in AutomateFlow before? Like, have you seen it? Like, what it's like to like, like, use or any of that kind of stuff?"
+        },
+        {
+          "speaker": "them",
+          "text": "I have. I have. I have. And, you know, and my. I have a data analyst that's used it a lot."
+        },
+        {
+          "speaker": "me",
+          "text": "Great."
+        },
+        {
+          "speaker": "them",
+          "text": "So. So we understand the capabilities. I mean, a lot of the logic behind it, and we understand how that works."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "I'm not an expert by any means. I mean, I'm not."
+        },
+        {
+          "speaker": "me",
+          "text": "Theoretically shouldn't need to be right. Like it's, it's, it's meant to be designed so you never don't have to be an expert. Though one thing that may be worth, worth your data analysts spending some time on and I can share some details on this and like how those custom actions work transparently. It's like, it's meant to be very, very simple. Like, I made one when we. There was, like, a. Something I needed from Hub, a spot. We didn't have the integration. I was able to FlowBuilder one and, like, get that up and running by myself in, like, under an hour. So it's. Designed to be really straightforward. I can share some details around those. And then the other thing that's important is, do you. Do you know how our pricing works on the team's plans? Just to give you a sense of that, okay. Let me show. So the unit of measure for all of our pricing. Actually, let me start there, because I was going to."
+        },
+        {
+          "speaker": "them",
+          "text": "Are zaps or something."
+        },
+        {
+          "speaker": "me",
+          "text": "So actions. The meaningful distinction is like, so the zap is like the whole automation. So let's say we don't charge you for automations that exist that aren't actually connecting to meeting. So if you want to want it to, for example, build a ramp and a QuickBooks and this sort of like flex one that we're talking about. And for some reason, like, ramps and quickbook have, like, really no volume. We don't charge you for those just to, like, exist. You'll only be charged for the actions that are going through the system. So let me show you."
+        },
+        {
+          "speaker": "them",
+          "text": "Action. Perfect."
+        },
+        {
+          "speaker": "me",
+          "text": "What? That. Looks like in practice. So this is kind of like what we talk about. So in a run, you know, you have a trigger, and then it's like, do this action, do this action. And that sort of is the unit of measure that is being pulled down against on your plan. Why can't I? Sorry. Something's wrong. Give me one moment. Something. It's not letting me switch screens the way I normally do for some reason. Here we go."
+        },
+        {
+          "speaker": "them",
+          "text": "Where are you based out of?"
+        },
+        {
+          "speaker": "me",
+          "text": "I'm based out of Austin, Texas. How about you?"
+        },
+        {
+          "speaker": "them",
+          "text": "Chicago."
+        },
+        {
+          "speaker": "me",
+          "text": "Chicago."
+        },
+        {
+          "speaker": "them",
+          "text": "How long? Have you been there? How long have you been with AutomateFlow?"
+        },
+        {
+          "speaker": "me",
+          "text": "I've been in Texas actually a little over a year. We moved here about a year ago from Atlanta. My wife and I moved up here. She got a job based out here. And then I've been with. I was with a consulting firm called Bain, doing general, like, strategy, operations type work. And I've been with AutomateFlow since September. We're in working with customers like you on exactly these types of problems, like automation integrations of all kinds. How. Sorry. Where did you. Chicago. Are you guys headquartered there?"
+        },
+        {
+          "speaker": "them",
+          "text": "No, no, Orlando, we all throughout the U.S. man, we're."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "We know. I'm. I'm one of the co founders. I'm the owner. And, you know, I used to be a program a long time ago, so I dabble in stuff and try to FlowBuilder. Automate things and FlowBuilder it more efficient."
+        },
+        {
+          "speaker": "me",
+          "text": "Have you been? Have you. Sorry, this is 100% a tangent. Have you been playing at all with like Claude code and stuff like that now? Because I also. So I did. I did computer science in undergrad, but similar. You have not really been a programmer since then. It's totally revamped my sort of. Like, love of programming. I'd say love of building, because I think a lot of people are like, oh, this isn't real programming. Because, like, you know, you're not typing the thing, but, like, you're building stuff, so."
+        },
+        {
+          "speaker": "them",
+          "text": "It's the same thing. It's. I agree. Yeah, absolutely. And. And I think that, you know, to me, it's exciting because, like, people like you that have a high technical knowledge."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "All of a sudden. You are, your value goes way up."
+        },
+        {
+          "speaker": "me",
+          "text": "Yes."
+        },
+        {
+          "speaker": "them",
+          "text": "To, especially the smaller companies that don't have that mindset. And because what you can do. Is so much more. And like a regular IT person, can become an is person, information Systems person, and those two worlds can cross."
+        },
+        {
+          "speaker": "me",
+          "text": "Yes."
+        },
+        {
+          "speaker": "them",
+          "text": "Where. And I just think that's really exciting. And for you, I mean, the future is bright, man. I mean, I'm old. I'm in my 50s."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "I mean."
+        },
+        {
+          "speaker": "me",
+          "text": "You've already. You've already made your bag."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. I mean."
+        },
+        {
+          "speaker": "me",
+          "text": "I forgot."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. For someone like you, I mean, it's so exciting, man. I mean, it really is, like, all of a. Like, you can actually touch. You can actually solve real problems."
+        },
+        {
+          "speaker": "me",
+          "text": "Yes. And even, like, the thing that's really cool is, like, even my day job. Obviously, I'm not an engineer, but I've built like, some pretty, what I would consider, like, strong systems using agents to, like, do like, deal reviews. Like, for example, like after this call, like, I have a automation that pulls the transcript and like, clog code James like, pull up a deal context and like create follow ups and like, all that jazz for me. So, yeah, no, it's, it's, it's a lot of fun."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Sorry, I just stopped. But yeah, that's something very cool. But the one thing I went to frame on pricing is what drives it is just how many tasks are you doing? So like we were talking about this automations, it's like how many steps do there do you expect to use and this is based off? Of per month. So the question would be like, you know, and I realize it's hard, especially if you like, don't know, like, which systems yet specifically. It's just like, how much volume of throughput do you think you'll have? And that James then inform which of these level plans makes sense. What we typically see as like a for a company your size, most people James start around the 10k range and that James give them. And they'll start paying monthly. So there's an annual and a monthly fee cost. It's cheaper if you pay yearly, but people James often start monthly. See? OK, am I using 10,000? Am I using 5,000 as actually 50? And then once you have a better sense of what your volume is, it typically makes sense for people to do, like, a year so that they can save on the volume that they're driving."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. So why do you. Why, How. How do you give to 10,000 tasks? I don't. I get it. I mean, I see Data. I see. You know, when you're looking at. I mean, I just. It just seems like."
+        },
+        {
+          "speaker": "me",
+          "text": "A lot."
+        },
+        {
+          "speaker": "them",
+          "text": "That."
+        },
+        {
+          "speaker": "me",
+          "text": "So I guess maybe if we work through, like, an example, like, let's say you were working with a specific customer for a specific conference. So I imagine there's some, like, initial things in the CRM that's like, hey, this is a lead that we need. These are some of the things that they might have. Each of those, like, data updates would connect from the rental hub. Yeah. From that. From rental to either SalesCloud or ramp. May maybe you're like, hey, we have people who are buying additional things on site because they need to, and they're doing that in ramp. And then we want to have that update flow into our systems, maybe."
+        },
+        {
+          "speaker": "them",
+          "text": "SalesCloud. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Actually, those are probably, like, the good, like, two good examples. And then the question I would have is, like, hey, if you're doing for one of any given projects, Like, how many interactions are you actually having with the customer? How many sort of, like, pieces of data are you having to move between those systems? And we often find it's, like, quite a bit because you're not."
+        },
+        {
+          "speaker": "them",
+          "text": "Every item. Every item. Is action? Or is it so, like, if I send over a contact,"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "All ten things. An. An action. Like, if there's. Is that work."
+        },
+        {
+          "speaker": "me",
+          "text": "So it depends on how it's architected, which I realize is not a super helpful answer. There's a world in which that zap is set up, so every time a contact goes in, you send the one connection. There's another world in which you're like, every time that contact goes in, we want to bundle those and send that bundle to be processed. Right. And so that bun, if you're processing that bundle, that's only one action. If you process each of them separately, then it's however many actions like for each of them. So the, the way that you like structure and build the system definitely informs. How many tasks?"
+        },
+        {
+          "speaker": "them",
+          "text": "I understand. Makes sense. Makes sense. I gotcha."
+        },
+        {
+          "speaker": "me",
+          "text": "And that's where, like, where. That's why I was saying, like, people typically start here and only on monthly, so that they're not, like, locked in. So, like, you could say, okay, we weren't even close. Or. And maybe if you're, like, you think that's way off initially, maybe you. Start with the 5K and see what's there. Use that as, like, your initial baseline to see how close you're getting, but."
+        },
+        {
+          "speaker": "them",
+          "text": "Pricing doesn't scare me at all. Like, look, this not. I mean, this is not about price. It's more about. Capabilities."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Like, what does it actually look like to get to have your team using it? Like, how do you actually integrate with it?"
+        },
+        {
+          "speaker": "them",
+          "text": "I mean, that. That's where I. And that's. And that's where, you know, until I can get, you know, where everyone is at. Is this Flex. Is information out of this flag. So that's why I'm exploring AutomateFlow, because I know someone's already done it. So I'm like, interesting. How do we, you know, how do we do it?"
+        },
+        {
+          "speaker": "me",
+          "text": "I James what I James take as an action, I'll send over like the sort of like details on how do those like custom actions work that I was talking about. Like, what does that look like in practice? I'll send over some information as well on our solutions partners, like what that looks like and what I might actually recommend is basically there's a free, like, trial period in AutomateFlow, so where, like, you can maybe have you your data analyst sign up. Excuse me. And actually try to, like, build that custom action. Because that's going to probably be the hardest part of your entire setup. And it's like you, over the course of two weeks, you try that, see, like, where you're running into roadblocks. And then we could probably connect and a follow up to, like, okay, is this working? Do we need to put you in touch with Solutions Partners? Is it fine, and you're just ready to go run? You need some guidance on, like, templates and stuff like that. That's typically how I think of, like, evaluations. Helping you at least get a sense of, like, what does it actually feel like?"
+        },
+        {
+          "speaker": "them",
+          "text": "I got you. We are. I've signed up for a free trial. I don't know where it's at, but we're. Look, we are. We're there. I mean, I'm not. My real problem is understanding the API from, you know, is. Is really that working with a consultant, getting that our. Fly opened up."
+        },
+        {
+          "speaker": "me",
+          "text": "API. Yeah. I would. We definitely can. And I if you're. I'd be willing to do 30 minutes with your data analyst to maybe just try to work through it live. Because, like, I just want to be thoughtful of like. There's a chance you don't even need a consultant necessarily, I guess, is the is what I'm trying to frame, and so we. Oh, sorry. Go."
+        },
+        {
+          "speaker": "them",
+          "text": "But why? How do you say that? I don't. I guess I'm confused by that."
+        },
+        {
+          "speaker": "me",
+          "text": "Well, because your data analysis might just be able to do it themselves. Like, like it's, it's meant to be simple enough that non technical people can go in and like build these things. So there's like, if, you know, I could spend 30 minutes with them, there's a chance we can like in. That 30 minutes actually just get, like, at least a prototype up and running, and that would help them get a sense of how hard is this to actually do. But I James in parallel send you the support stuff as well. But there's, honestly, there's a chance, like, we can just get it up and running for. You."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Okay? All right."
+        },
+        {
+          "speaker": "me",
+          "text": "Is there a good window in the next week or so for me to connect with that person? Or should I just send you my calendly leak again? Have them book a time."
+        },
+        {
+          "speaker": "them",
+          "text": "You send it to me. You know, if you look at. If you can look up your client, A.V. vegas and see."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah, like how they're doing it."
+        },
+        {
+          "speaker": "them",
+          "text": "How they're doing it, and maybe that helps you see, you know, again, my. You know, I'm just knowledgeable enough to be dangerous. So, I mean, it's. So. What I found in AutomateFlow and some other tools I can. If. If I have a struggle, if with a starting basis, I'm. Pretty good. Like, and, you know, not understanding. Flex's API is where I struggle."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Eah. Getting started. That makes sense."
+        },
+        {
+          "speaker": "them",
+          "text": "I get stuck, you know, because it's not that integration is not. You guys don't have it pre built."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah, yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "I was hoping that you guys would. But how does that work? I mean, like."
+        },
+        {
+          "speaker": "me",
+          "text": "So typically they build the integration. So like, if you, if you see on our site, like Zoho CRM or Ramp is one of our, is one of our connections. Like people like the Ramp team built that AutomateFlow integration and like then hosted it on our site. So this just means like the Flex Rental team hasn't built one."
+        },
+        {
+          "speaker": "them",
+          "text": "So. Oh, no, of course, because, yeah, I got you. I got you. Okay, that makes more. That makes sense."
+        }
+      ],
+      "attendees": [
+        "Jd Rhoads",
+        "Alex Obleton"
+      ],
+      "date": "2026-01-21",
+      "duration": 38,
+      "keyTakeaways": [],
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/avmedia/transcripts/2026-01-21-discovery-call.md",
+      "createdAt": "2026-01-25T05:23:50.853Z",
+      "anonymized": true
+    },
+    "streamcore-media_crm_snapshot": {
+      "id": "streamcore-media_crm_snapshot",
+      "dealId": "streamcore-media",
+      "type": "crm_snapshot",
+      "sourceFile": "context.md",
+      "createdAt": "2026-01-21",
+      "anonymized": true,
+      "dealProperties": {
+        "stage": "Discovery / Evaluation",
+        "amount": "Teams plan (~$2K-5K/yr likely)",
+        "closeDate": "TBD",
+        "lastContactedDate": "2026-01-21"
+      },
+      "contacts": [
+        {
+          "name": "JD Rhoads",
+          "title": "Co-founder/Owner",
+          "role": "champion"
+        },
+        {
+          "name": "[Data Analyst - name unknown]",
+          "title": "Has used AutomateFlow \"a lot\" per JD. James be hands-on-keyboard. Need to engage directly.",
+          "role": "stakeholder"
+        }
+      ],
+      "notes": [],
+      "activityLog": [
+        {
+          "date": "2026-01-21",
+          "type": "call",
+          "description": "Discovery call with JD Rhoads (owner). They run AV equipment rental for conferences. Core problem is integrating Flex Rental Solutions (industry-specific software) with QB, Ramp, TeamUp. Flex has an API but it's complex due to time-based inventory model. A competitor (AV Vegas) is using AutomateFlow with Flex - that's why JD is exploring us. He's been on a free trial, has a data analyst who knows AutomateFlow. Pricing not a concern - capabilities are. JD said \"I don't think we're there\" on enterprise but could be a Teams deal."
+        },
+        {
+          "date": "2026-01-21",
+          "type": "note",
+          "description": "**Breakthrough** - Found that Flex Rental Solutions already built a AutomateFlow integration (private/invite-only). Developer is user@user AV Vegas got Flex to build this for them. JD just needs access to the invite link. Next: Send follow-up connecting JD to Roger at Flex."
+        }
+      ]
+    },
+    "doc_streamcore-media_follow-up-jd-2026-01-21": {
+      "id": "doc_streamcore-media_follow-up-jd-2026-01-21",
+      "dealId": "streamcore-media",
+      "type": "document",
+      "title": "follow-up-jd-2026-01-21",
+      "documentType": "docx",
+      "content": "Subject: Good news - Flex Rental Solutions already has a AutomateFlow integration\n\n\n\nJD,\n\n\n\nDid some digging after our call. Turns out Flex Rental Solutions already built a AutomateFlow integration - it's just private/invite-only, which is why you didn't see it in our app directory.\n\n\n\nThe developer on the Flex side is Roger (user@user). He can give you access to the integration link. I actually found this by looking at AV Vegas's setup - so you could also reach out to their owner to hear how it's been working for them.\n\n\n\nOnce you have access, your data analyst should be able to see Flex Rental Solutions as an available app in AutomateFlow and start building. No custom actions needed.\n\n\n\nHappy to still do a working session once you're connected if that's useful, but this should unblock you.\n\n\n\nLet me know how it goes with Roger.\n\n\n\nAlex",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/avmedia/outputs/follow-up-jd-2026-01-21.docx",
+      "createdAt": "2026-01-25T05:23:50.853Z",
+      "anonymized": true
+    },
+    "doc_streamcore-media_follow-up-jd-2026-01-21-docx": {
+      "id": "doc_streamcore-media_follow-up-jd-2026-01-21-docx",
+      "dealId": "streamcore-media",
+      "type": "document",
+      "title": "follow-up-jd-2026-01-21.docx",
+      "documentType": "other",
+      "content": "const { Document, Paragraph, TextRun, Packer } = require(\"docx\");\nconst fs = require(\"fs\");\n\nconst doc = new Document({\n  sections: [{\n    children: [\n      new Paragraph({\n        children: [\n          new TextRun({ text: \"Subject: \", bold: true }),\n          new TextRun(\"Good news - Flex Rental Solutions already has a AutomateFlow integration\")\n        ]\n      }),\n      new Paragraph({ children: [] }),\n      new Paragraph({\n        children: [new TextRun(\"JD,\")]\n      }),\n      new Paragraph({ children: [] }),\n      new Paragraph({\n        children: [\n          new TextRun(\"Did some digging after our call. Turns out Flex Rental Solutions \"),\n          new TextRun({ text: \"already built\", bold: true }),\n          new TextRun(\" a AutomateFlow integration - it's just private/invite-only, which is why you didn't see it in our app directory.\")\n        ]\n      }),\n      new Paragraph({ children: [] }),\n      new Paragraph({\n        children: [new TextRun(\"The developer on the Flex side is Roger (user@user). He can give you access to the integration link. I actually found this by looking at AV Vegas's setup - so you could also reach out to their owner to hear how it's been working for them.\")]\n      }),\n      new Paragraph({ children: [] }),\n      new Paragraph({\n        children: [new TextRun(\"Once you have access, your data analyst should be able to see Flex Rental Solutions as an available app in AutomateFlow and start building. No custom actions needed.\")]\n      }),\n      new Paragraph({ children: [] }),\n      new Paragraph({\n        children: [new TextRun(\"Happy to still do a working session once you're connected if that's useful, but this should unblock you.\")]\n      }),\n      new Paragraph({ children: [] }),\n      new Paragraph({\n        children: [new TextRun(\"Let me know how it goes with Roger.\")]\n      }),\n      new Paragraph({ children: [] }),\n      new Paragraph({\n        children: [new TextRun(\"Alex\")]\n      })\n    ]\n  }]\n});\n\nPacker.toBuffer(doc).then(buffer => {\n  fs.writeFileSync(\"/Users/username/sales-workspace/deals/StreamCore Media/outputs/follow-up-jd-2026-01-21.docx\", buffer);\n  console.log(\"Created: follow-up-jd-2026-01-21.docx\");\n});\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/avmedia/outputs/follow-up-jd-2026-01-21.docx.js",
+      "createdAt": "2026-01-25T05:23:50.853Z",
+      "anonymized": true
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "streamcore-media_v2_cp_001",
+      "dealId": "streamcore-media",
+      "version": 2,
+      "timestamp": "2026-01-25T05:23:50.853Z",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_streamcore-media_2026-01-21-discovery-call",
+          "type": "transcript",
+          "title": "StreamCore Media Inc &  Alex |  Meeting",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "streamcore-media_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery / Evaluation",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "doc_streamcore-media_follow-up-jd-2026-01-21",
+          "type": "document",
+          "title": "follow-up-jd-2026-01-21",
+          "date": "2026-01-25T05:23:50.853Z"
+        },
+        {
+          "artifactId": "doc_streamcore-media_follow-up-jd-2026-01-21-docx",
+          "type": "document",
+          "title": "follow-up-jd-2026-01-21.docx",
+          "date": "2026-01-25T05:23:50.853Z"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "StreamCore Media",
+        "stage": "Discovery / Evaluation",
+        "amount": "Teams plan (~$2K-5K/yr likely)",
+        "daysSinceFirstContact": 4
+      },
+      "stakeholders": [
+        {
+          "name": "JD Rhoads",
+          "title": "Co-founder/Owner",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "[Data Analyst - name unknown]",
+          "title": "Has used AutomateFlow \"a lot\" per JD. James be hands-on-keyboard. Need to engage directly.",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "streamcore-media_v2_cp_001_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_streamcore-media_2026-01-21-discovery-call",
+            "streamcore-media_crm_snapshot",
+            "doc_streamcore-media_follow-up-jd-2026-01-21"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "streamcore-media_v2_cp_001_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_streamcore-media_2026-01-21-discovery-call"
+          ],
+          "optionalArtifacts": [
+            "streamcore-media_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "streamcore-media_v2_cp_001_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_streamcore-media_2026-01-21-discovery-call"
+          ],
+          "optionalArtifacts": [
+            "streamcore-media_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        },
+        {
+          "id": "streamcore-media_v2_cp_001_task_stakeholder",
+          "type": "stakeholder_analysis",
+          "prompt": "Map the key stakeholders in this deal. For each, identify their role in the decision process, sentiment, concerns, and level of influence. Identify any missing stakeholders that should be engaged.",
+          "requiredArtifacts": [
+            "tx_streamcore-media_2026-01-21-discovery-call",
+            "streamcore-media_crm_snapshot",
+            "doc_streamcore-media_follow-up-jd-2026-01-21",
+            "doc_streamcore-media_follow-up-jd-2026-01-21-docx"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "stakeholderMapping",
+            "dealQualification",
+            "informationSynthesis"
+          ],
+          "maxTurns": 2
+        }
+      ]
+    },
+    {
+      "id": "streamcore-media_v2_cp_002",
+      "dealId": "streamcore-media",
+      "version": 2,
+      "timestamp": "2026-01-25T05:23:50.853Z",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_streamcore-media_2026-01-21-discovery-call",
+          "type": "transcript",
+          "title": "StreamCore Media Inc &  Alex |  Meeting",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "streamcore-media_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery / Evaluation",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "doc_streamcore-media_follow-up-jd-2026-01-21",
+          "type": "document",
+          "title": "follow-up-jd-2026-01-21",
+          "date": "2026-01-25T05:23:50.853Z"
+        },
+        {
+          "artifactId": "doc_streamcore-media_follow-up-jd-2026-01-21-docx",
+          "type": "document",
+          "title": "follow-up-jd-2026-01-21.docx",
+          "date": "2026-01-25T05:23:50.853Z"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "StreamCore Media",
+        "stage": "Discovery / Evaluation",
+        "amount": "Teams plan (~$2K-5K/yr likely)",
+        "daysSinceFirstContact": 4
+      },
+      "stakeholders": [
+        {
+          "name": "JD Rhoads",
+          "title": "Co-founder/Owner",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "[Data Analyst - name unknown]",
+          "title": "Has used AutomateFlow \"a lot\" per JD. James be hands-on-keyboard. Need to engage directly.",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "streamcore-media_v2_cp_002_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_streamcore-media_2026-01-21-discovery-call",
+            "streamcore-media_crm_snapshot",
+            "doc_streamcore-media_follow-up-jd-2026-01-21"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "streamcore-media_v2_cp_002_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_streamcore-media_2026-01-21-discovery-call"
+          ],
+          "optionalArtifacts": [
+            "streamcore-media_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "streamcore-media_v2_cp_002_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_streamcore-media_2026-01-21-discovery-call"
+          ],
+          "optionalArtifacts": [
+            "streamcore-media_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        },
+        {
+          "id": "streamcore-media_v2_cp_002_task_stakeholder",
+          "type": "stakeholder_analysis",
+          "prompt": "Map the key stakeholders in this deal. For each, identify their role in the decision process, sentiment, concerns, and level of influence. Identify any missing stakeholders that should be engaged.",
+          "requiredArtifacts": [
+            "tx_streamcore-media_2026-01-21-discovery-call",
+            "streamcore-media_crm_snapshot",
+            "doc_streamcore-media_follow-up-jd-2026-01-21",
+            "doc_streamcore-media_follow-up-jd-2026-01-21-docx"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "stakeholderMapping",
+            "dealQualification",
+            "informationSynthesis"
+          ],
+          "maxTurns": 2
+        }
+      ]
+    }
+  ],
+  "finalOutcome": "active",
+  "metadata": {
+    "sourceDeals": [
+      "avmedia"
+    ],
+    "transcriptCount": 1,
+    "artifactCount": 4,
+    "dateRange": {
+      "start": "2026-01-21",
+      "end": "2026-01-25T05:23:50.853Z"
+    }
+  }
+}

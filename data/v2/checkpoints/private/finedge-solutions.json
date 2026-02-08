@@ -1,0 +1,295 @@
+{
+  "id": "finedge-solutions",
+  "name": "FinEdge Solutions",
+  "version": 2,
+  "artifacts": {
+    "tx_finedge-solutions_260115-discover": {
+      "id": "tx_finedge-solutions_260115-discover",
+      "dealId": "finedge-solutions",
+      "type": "transcript",
+      "title": "Untitled Meeting",
+      "rawText": "FinEdge Solutions.com &  Alex |  Meeting\n\nAlex Obleton with FinEdge Solutions.com\nRecorded on Jan 15, 2026 via Zoom, 26m\n\n\n\nParticipants\n\nAutomateFlow\nAlex Obleton, Account Executive, Core\n\nFinEdge Solutions.com\nTheodoros Chiras, Head of IT\n\nOther\nLior\n\n\n\nTranscript\n\n0:00 | Alex\nhi, Theodoros. Am I pronouncing that correctly? \n\n0:03 | Theodoros\nHello. How are you? Hadrian? Yes, perfect. How are you? \n\n0:10 | Alex\nI'm doing well. I'm doing well. Where are you based out of? \n\n0:14 | Theodoros\nCyprus. So it's GMT plus two. It's around 515 from our side. Most of the people are heading back to their homes, but I think it was the most suitable let's say option that we had. \n\n0:27 | Alex\nOverlap. Yeah. \n\n0:28 | Theodoros\nYeah, although I managed to exclude a few colleagues from Dubai because they are commuting right now and they could not join. Where are you based in the us? \n\n0:36 | Alex\nI'm based in Austin, Texas. Oh, okay. So like right in the middle of the country, basically… I guess so far, I moved here about actually over a year ago. I usually say a little less than a year, but a bit over a year now. Anyway, I've got a white cup drop here. I like it a lot so far. \n\n0:53 | Theodoros\nLet me notify my team about this, but I don't know if they sure. \n\n1:10 | Theodoros\nLet's give them a couple of minutes if they don't join. I know that one of my colleagues here actually let's start with introductions. My name is Theodoros. Hiras, theohiras. I recently started to work with FinEdge Solutions. FinEdge Solutions is a payment provider for the last six years, mainly doing business around the middle east, Europe. And over the last couple of years, we started to invest on our own technology, let's say and not acquire technology from other technology providers. So we're building our own payment systems, our own payment gateway. And we have started to increase a lot our technological footprint, part of this effort, it was my onboarding also as a head of it. So, my main responsibilities are around security, one team, around security and one team around it operations and devops. And since I don't think that anyone else James join from our side, why we're doing this call. Recently, a few days ago, we released also hibob, another system for HR, if you know it. \n\n2:14 | Alex\nI. \n\n2:15 | Theodoros\nguess it's pretty famous and we have already started to think about utilizing DocuSign for E signatures and the contract management solution. So where AutomateFlow stands literally… you were the first choice when we discussed with DocuSign on how we're going to integrate hibob, our HR system with DocuSign. There is also the alternative let's say to utilize devops dev resources to do that via API. But at that stage, we don't have the resources let's say to distract from our core business which is the build of payment gateway. And here, I am trying to understand the implications, the timelines, the cost. We don't need something fancy. The scenario that the HR team gave to us is literally the ability to have an employee contract and to be sent via email to the user and the user to have the ability to sign that via? DocuSign. If you want to sign a document as a viewer signer, you don't consume any license. So we would like to extend that feature to all our employees, whether they are employees based in the office or contractors working for us remotely… one. \n\n3:28 | Alex\nThing I have more questions. But one thing I would just note is the way that our pricing works in general. It's not based off of like who uses the automations, like who gets the DocuSign, it's based off of one, who are the people like in AutomateFlow, doing the building? And then two, how much volume of like actions or API calls do you have going through the system? So you would be able to have, you know, every person in your company can get the DocuSign if on kind of whatever AutomateFlow plan you guys end up going with or whatever sort of plan ends up making sense? Could you talk to me a bit about? Are you thinking at all about this more broadly across the HR function? So like for example, we often see customers who James use this in recruiting phases of the process to filter out like candidates that aren't real James have customers who James use it to monitor all of the TeamChat communications and proactively flag if you have risks of attrition, like those types of things that customers do. I want to be super clear, the use case you laid out the hibob to DocuSign that's super easy. 100 percent is within the wheelhouse of AutomateFlow. But just curious if your HR team, are you at all thinking about like what is like the second third thing that we might need to automate here? \n\n4:47 | Theodoros\nTo be honest with you a month ago, nobody had ever thought that about the integration of DocuSign with hibob, because literally HR department had no clue about that project. It came to our attention when we did a discussion internally here in Cyprus and I asked them in case we need any signature solution. What do you need? And how do you need to do it? So, they said, okay, it's not legally enforced in Europe to take a remote signature from the employee. So definitely we need to print it. Let's say copy. But at the same time, since we have contractors outside eu, it makes sense and it's a value to the business to have that signature position. But apart from that, apart from that basic scenario, nobody has ever thought so far what your platform can do or what James be the next step for the hype of integration? Yeah. Could you imagine that was released today? \n\n5:47 | Alex\nSorry, the, \n\n5:49 | Theodoros\nhype of the system? It was actually released in the employees today. \n\n5:53 | Alex\nYeah, that makes sense. That makes sense. And so like they just like sort of don't even haven't, used it enough to hit pain points that James then tell them, hey, these are the things we need to actually. \n\n6:02 | Theodoros\nExactly. And I'm in the company since first of December. So literally, I'm trying to understand also all the scenarios and the process and the flows. So I'm rather new to the company to have a full visibility of what they need. \n\n6:15 | Alex\nCould you talk to me a bit about what are the other like operations teams at FinEdge Solutions? So like HR, obviously, like a lot of companies James have revops, people, there James be like devops teams that James sometimes need this kind of stuff. Like, could you talk to me a bit about that? Yeah. \n\n6:33 | Theodoros\nThe majority of our operations is happening through our CRM system. It's based on CRMPlatform. I'm sure that I've seen some things. You have an integration related to CRMPlatform, right? Yeah. So apart from that, our devops are using standard principles. Cicd is built on GitHub. So we don't use any fancy technology or rather newly presented tools, but I James say that the majority of the operational load is focusing around CRMPlatform and tableau? \n\n7:07 | Lior\nHey, guys. \n\n7:09 | Theodoros\nHi, hi, Leo. \n\n7:10 | Lior\nHow are you doing? Sorry for coming in late? \n\n7:14 | Alex\nNo worries. Could you give a quick intro? What is your role at FinEdge Solutions? That James help me as we're going through? \n\n7:22 | Lior\nI'm the it manager basically working alongside Theodor. Okay. \n\n7:29 | Alex\nSo like anything? \n\n7:30 | Lior\nThat you guys API, whatever? \n\n7:33 | Alex\nAnything that you guys buy or do like you're probably the person like hands on keyboard, actually getting it implemented. Like if we're talking about something like AutomateFlow, are you probably going to be the ones actually building the automation or would that be someone in HR in your mind? \n\n7:48 | Lior\nIt's going to be either me or a developer in the company. \n\n7:51 | Alex\nOkay. Just, I guess one question on that, like why you guys and not someone on the HR side, just with my initial reaction is like most of our customers don't need to put dev resources against something like this because it's meant to be like, hey, drag and drop really easy at least for some of the initial use cases you guys are talking about. So it might be much lower cost in terms of like time and effort than you're imagining potentially. And we'll definitely go through an example. But yeah, can you talk to me a bit about that? Okay? \n\n8:25 | Theodoros\nLeon, I guess you can reply for the technical, why. \n\n8:27 | Lior\nThe HR, they're very let's say away from technology, you could say. \n\n8:34 | Alex\nGotcha. Okay. So it would take like a lot of effort to like get them up to a place where they could immediately engage on those things. \n\n8:43 | Theodoros\nAnd Alex, this is why we're doing the discussion because initially from DocuSign, I told you that your solution was brought up by DocuSign. One of the suggestions was either a proxy in the middle between DocuSign and hibob, or utilizing our dev resources to utilize the apis from DocuSign and hibob and do the job. So definitely HR doesn't have any development resources or even technical as Leo said. \n\n9:11 | Lior\nYeah. Okay. \n\n9:15 | Alex\nThat makes a lot of sense in terms of like I definitely thinking about the trade off of dev time in, hey, any time they're spent building internal automations that's to mean that they're building like customer features that you guys actually need building out your payments platforms, all that kind of stuff if I understand correctly. Okay. So this is like helpful context and framing. I guess one very tactical question. How are you, how much like volume are we talking about here? Like how many people are you hiring? Let's say like a week a month that you are putting, making these connections between hibob and DocuSign that you need to do? \n\n9:55 | Lior\nIt depends. I think on the like what's the season? I don't know how to like say it. \n\n10:03 | Theodoros\nIf it's going to be only the employee contracts Lior, then we don't expect more than 100 in a year, but if it's if we're going to include, let's say contracts with contractors and consultants, maybe we'll have something more. \n\n10:17 | Lior\nExactly… depends on what they include in the scope like… okay. \n\n10:29 | Alex\nOkay. This is super helpful. So what I'll do in just a moment is I'll open up AutomateFlow and kind of just like show you how it works like click around, show like a hibob DocuSign connection. One thing I'll flag in advance is I won't actually be able to connect to the system because I don't have logins for them, but you'll see like, hey, this is where we would put our login in. It'd. Be really straightforward for you guys to go build that out, taking a slight step back though Theodoros, based on what you laid out, I think there might be actually an opportunity for like additional use cases here. So if you're like, hey, you know, we can get started, get this built for you guys and we can maybe do some exploration around like, hey, what are like three or four other things that might FlowBuilder sense in the business or in the HR org based off of what you guys already are doing or like the processes that are already in place. My. So what I would typically recommend in terms of like process is, hey, let's get you this hibob integration done. I can put together like, hey, here are some potential use cases that FlowBuilder sense based off of our conversation that might be like the next, the third or fourth thing that you could go do, and we could start to have a discussion around like, what if any of those opportunities actually reasonably FlowBuilder sense? But in the meantime, you can actually just get up and running on hibob and DocuSign. So that can start driving value for you right now if that makes sense. \n\n11:52 | Theodoros\nSure. But how is this for us to have let's say not a quotation, but at least to understand the range in price if we integrate. \n\n12:01 | Alex\nHibob with DocuSign higher? \n\n12:02 | Theodoros\nPlatform? \n\n12:03 | Alex\nYeah. So there's two basic approaches on terms of pricing. One is basically our self serve by volume. So it's just based off of like how many API calls are going through the system. And this is like you people on your teams are going to be like building the zaps doing any of the maintenance on those zaps. Like all of that kind of stuff for something for the volume that you guys are talking about like, hey, hibob's DocuSign integration. If there's like 100 a month, let's assume for the sake of estimates that each of those steps is like five API calls you have to FlowBuilder like you have to, you know, do a lookup in hibob, you need to like search another system for the sake of like estimation. So if you're doing 100 of those, each of them is five API calls. You're talking roughly 500 tasks per month, give or take most companies start and actually start with a 2000 task plan. So that gives them the amount that they need to actually drive the basic use cases and FlowBuilder sure you're not getting overages as you're starting. But from there, it goes up all the way up to like millions of tasks. So let me show you our pricing page real quick. And this is just for our self serve option that we're looking at. So this is based off of like the number of tasks that you're going to be using and that James determine basically like what you're paying per month or if you want to do annually or monthly. Those are different price points. The key things to note Theodoros, like based on what you mentioned earlier, the teams plan has up to 25 users in zapiers that's like people who can build zaps, but it is on unlimited number of like people can receive the emails, receive the docusigns, all that kind of stuff. It's not limited there. The other end of the spectrum is our enterprise plans. This is where it's like, hey, we're going to partner with you to say, how do we actually drive like automation transformation across your business? You have like a technical account manager, there's a solutions architect who James like day to day, week to week, work with you guys to say, like what is the next automation thing that we should use? How do we actually implement this? They'll work with you hands on keyboard to actually build out some of these more complex things. Those typically start much higher, but we're typically, we only do those if we're like, hey, we can justify, you know, 200,000. Dollars of savings in the business per year or something like that. It's kind of like the range of where we're talking enterprise, whether that even begins to FlowBuilder sense? So I'll pause there. Any questions on this versus how we think about like enterprise being more tied to the actual like cost savings value that you're driving in the business? \n\n14:53 | Lior\nLike right now we're talking like if we talk only hibob, and like DocuSign, we don't like enterprise seems like overkill for this. \n\n15:03 | Alex\nYeah. So the transparently, if you're only doing one thing, enterprise does not FlowBuilder sense, right? Like if you're like this is the only thing that we're going to be using AutomateFlow for it won't, the question where it could potentially be helpful is like if there, if you think there are other things, if you need people in the business to like uncover those additional opportunities that's the kind of place where an enterprise plan makes sense. But if you're like, hey, we just want to build this one thing, use AutomateFlow to connect a to B, then an enterprise plan typically won't FlowBuilder sense? \n\n15:32 | Lior\nThat's true. What do you think Theodoros? It needs to be like a research for all departments, all the workflows, and see. \n\n15:40 | Theodoros\nwhat's going on I know. But from all the guidance that I have from the upper management literally now, sorry guys, no worries. I'm looking only for the integration of hybob with DocuSign for now. Alex, it James be very helpful for us to adequate them by showing them some business cases. So if you have documentation scenarios on how we can integrate AutomateFlow with CRMPlatform or tableau, and what James be, let's say the benefit for us, that would be great. But honestly from our side, we don't know your product. We don't know your tool. So it's. \n\n16:15 | Alex\nnot, you don't even know what's possible necessarily exactly. \n\n16:17 | Theodoros\nI'm pretty sure even. \n\n16:19 | Lior\nIf we go to Jira, confluence, Google workspace, what are the scenarios we can use AutomateFlow for? \n\n16:29 | Alex\nWell, so like those are actually really good examples like Jira confluence. We have all of our dev teams internally use Jira and we have like women, obviously, we have lots of zaps that are running like, hey, this like Jira ticket is done, send someone a notification in TeamChat. Hey, this commit was created and needs a PR review like use our connections to build those kind of things. But there's I'll start by just sort of showing the initial use case that you guys were talking about. So does it start in hibob, or does it start in DocuSign? \n\n16:59 | Lior\nIn DocuSign, no hibob. \n\n17:01 | Alex\nHibob, hibob. So, okay, so I'm a new employee added in hibob, and I want to create a DocuSign with a contract template. And do we need to like, well, send the template, right? Do we need to send any kind of notification to anyone in the company? Like should there be an email or like a TeamChat message in a channel somewhere that says like, hey, this is going out. \n\n17:36 | Lior\nIt's already the great. So, yeah. Okay. Let's I want to don't contract them but, yeah, yeah. \n\n17:45 | Alex\nOkay. So we'll start here. So the, there's sort of two ways to build. And I like just showing the sort of like co pilot because I think it makes it really easy to do additional things to explore stuff. But you could just as easily like just click into the boxes and actually move them yourself. So I'll do that while that's building, I'll show another example maybe using you said like Jira and Google docs. So like, let's say there's a Google sheet just for… the sake of, and every time a new row is added to this sheet, we want to like trigger something. And then again, for the sake of demonstration, let's assume this is Jira, and like, hey, we want to, that sheet tells us… create and we want to create an issue every time something in that because like it's a form someone fills in the Google spreadsheet. And then we want to create an issue, right? Like this type of connection is you can do across all of our apps. So if we go back to this, okay. So it's laid out, hi, Bob, new report created, it's an envelope using template, let's actually build this. \n\n18:59 | Lior\nBasically hibob creates something on hibob, a new employee. We get the email from there, send it to DocuSign craft the contract with his name… whatever, and send it from DocuSign to that email. Okay? That's. \n\n19:21 | Alex\nexactly, right. And so here you can see now, it's like, okay, I've set up the basics. Now, it's asking me to sign in. I don't have a hibob account so I can't but this would just open up your hibob. You'd be able to log in or the HR person would be able to log in into their account that has been connected to all of these things. I'll pause here for a second. Any questions on sort of like the basic connection flow that is here? \n\n19:46 | Lior\nNo, not really. It's pretty simple. Great. \n\n19:51 | Alex\nThen the other thing I James show just to like sort of plant the seed on the art of the possible here in terms of like what apps are available. So, this is like, hey, everything that we can, we have about almost 9,000 apps like this. 8,500 pluses is like a lower bound estimate, lots of AI capabilities. If that's something you're exploring. And pretty much any tool that you guys are using, we have a probably have an integration for it. And then if we don't for some reason… we have a pretty easy way to FlowBuilder custom actions. So like for example, I use SalesCloud a lot in my zaps that I work with, but they don't have an action that lets me pull down notes. And so I had to create a custom action. But now that action is just like available for everyone on our team. So if we go here, go to SalesCloud as an example… choose an event. So like these are sort of the ones that like SalesCloud built out. But then we have custom actions. And so I built this, get notes from contact, right? Like that's something that we, I needed to use. And now this is just available to everyone in the company to use repeatedly for a one time case. If for some reason you're trying to connect something that doesn't already have a AutomateFlow connection, but that happens rarely. Okay. \n\n21:12 | Lior\nAnd another general question like… as a comparison, like why choose AutomateFlow? And like, or like why choose NNN? Like what's the pros of AutomateFlow over NNN? \n\n21:27 | Alex\nNo, that's a great question. I think the main thing honestly is in terms of accessibility. So, if you like you mentioned like, hey, if we want to devote dev time to this, if you have like sysadmins who can do the self hosting on N8 N, who can like manage that entire process, N8 N is often a good option for people where we see AutomateFlow being the most valuable is like, hey, it's, really easy to build up these initial capabilities. So like there's no self hosting that you have to figure out. Like all these connections are pre built. You don't have to worry about API keys for most things like, for example, you know, in, if you're using hybob and N8 N, you probably have to go to the get like an API key from them, figure out how to like FlowBuilder that connection versus ours is just using the like authentication that you log in. With. So I think that's sort of the key difference. It's like N8 N might give you a bit more flexibility, but it James take that incremental level of effort to get it to like a starting point. \n\n22:23 | Lior\nAll right. Yeah. Are. \n\n22:25 | Alex\nthere other platforms you guys are looking at for this stuff? I mean, N8 N obviously is one that we hear people talking about a lot in terms of automations. What else are you guys looking at? \n\n22:38 | Lior\nRight now, basically, it's AutomateFlow and N8 N. Okay. That. \n\n22:43 | Alex\nMakes sense. \n\n22:43 | Lior\nMostly AutomateFlow because of the eu regulations. \n\n22:47 | Alex\nThat makes a ton of sense. So in terms of next steps, what I often recommend, it sounds like at least as a starting point, you'd like, hey, we just want to get this hibob doc, you sign up and running, the easiest way to do that is to basically sign up for the teams trial. It's free for two weeks. You can get connected. You have sort of the full flow of things that you need and you can like start connecting stuff. If you run into issues, I can be available to like answer questions. And then what I would typically recommend is we meet like a week and a half or so into that two week trial, give you a chance to ask follow up questions. And then we can also use that time to like, I can put together, hey, these are some like second third use cases that might be useful for you guys. But then that gets you up and running quickly. You're starting with just what you need. But then we can start to think about where additional things that would be useful. \n\n23:37 | Theodoros\nAlex, there's only one problem with this one. DocuSign is not ready yet in place. \n\n23:43 | Alex\nGotcha. Okay. \n\n23:44 | Theodoros\nSo, definitely we can have a free account, but I'll expect first let's say to have the official account from DocuSign and then start the test with you. Yeah, that makes. \n\n23:54 | Alex\nsense. Do you have a sense of like when you're planning to do that? \n\n23:57 | Theodoros\nIt's priority. So hopefully the contract negotiation with DocuSign James take place, James be finalized the next couple of weeks bringing up a DocuSign account is, very straightforward. So I James target around end of January, start of February to be ready for DocuSign. \n\n24:14 | Alex\nOkay. So let's see if I pull up my calendar. Do we want to loosely plan for? Maybe? Well, okay. So if you get the DocuSign finalized on early February, then you would actually what might FlowBuilder sense then in that kind of context is actually do what I, we might do like a trial kickoff as opposed to like a mid trial checkpoint if like the fifth or the sixth would work for you guys and I can meet a bit earlier in the day as well than what we met this time. \n\n24:48 | Theodoros\nThere might be an, \n\n24:49 | Lior\noption, but yeah, I won't be available on that time. \n\n24:55 | Theodoros\nLeor, yeah. Can we do it after when you're back Leor? Yeah. \n\n25:01 | Alex\nOh, and when would that be? So that's like this week of the. \n\n25:04 | Lior\nninth tenth? Yeah, that week? \n\n25:07 | Alex\nLet's say the tenth and then let's see what time is it we're on today? We're meeting at let's do. \n\n25:12 | Lior\nThe eleventh? \n\n25:14 | Alex\nThe eleventh? Okay. Yeah, the eleventh, and then, do you want to meet an hour earlier than we met today? Would that be better for you guys? \n\n25:22 | Lior\nYeah, if. \n\n25:23 | Theodoros\nit's feasible. Yeah. But because Leor is running on ua time, so it's already almost eight o'clock for each time. \n\n25:29 | Alex\nYeah. Okay. I'll set up an update for an hour later than we met today on February eleventh. And then I'll also, I'll send over a couple things in the meantime one, just like, hey, here's, a list of a couple of use cases that we see we have really good templates that like you might want to share with the HR team that could be helpful. Yeah. \n\n25:50 | Lior\nUse cases for HR, use cases for general CRMPlatform general for DocuSign, so we can present maybe even go with like implementing AutomateFlow into more platforms. \n\n26:02 | Alex\nYeah, exactly. So like try to lay out that. And then I also in this, I like to offer if people are looking at different solutions. So we have like a rubric that we basically sometimes share with customers. Like, hey, here are all the features of like an automation platform. And like for example, where I described like N a N is really good if you want to, if you need to self host like that kind of stuff is on there. And like it needs to help you think about those trade offs for you guys, if that makes sense? \n\n26:33 | Lior\nAll right. Okay. \n\n26:36 | Alex\nThat sounds great. I'll send the calendar a hold, send over those details on next steps. And hopefully we can get you guys connected really quickly after February. \n\n26:46 | Lior\nAll right. Sounds good. Sounds great. Thank you. Awesome. \n\n26:49 | Alex\nThanks, guys. Have a great day. Thank. \n\n26:50 | Theodoros\nyou, Alex. Take care. Bye. \n\n26:51 | Lior\nBye. ",
+      "turns": [],
+      "attendees": [],
+      "date": "2026-01-15",
+      "keyTakeaways": [],
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/finera/transcripts/260115-discover.md",
+      "createdAt": "2026-01-15T20:44:45.345Z",
+      "anonymized": true
+    },
+    "finedge-solutions_crm_snapshot": {
+      "id": "finedge-solutions_crm_snapshot",
+      "dealId": "finedge-solutions",
+      "type": "crm_snapshot",
+      "sourceFile": "context.md",
+      "createdAt": "2026-01-15",
+      "anonymized": true,
+      "dealProperties": {
+        "stage": "Discovery / Trial Prep",
+        "amount": "~$3-5K initial (Teams plan), expansion potential TBD",
+        "closeDate": "2026-02-01",
+        "lastContactedDate": "2026-01-15"
+      },
+      "contacts": [
+        {
+          "name": "Theodoros Chiras",
+          "title": "Head of IT",
+          "role": "end_user"
+        },
+        {
+          "name": "Lior",
+          "title": "IT Manager",
+          "role": "stakeholder"
+        },
+        {
+          "name": "Upper management",
+          "title": "Unknown",
+          "role": "stakeholder"
+        },
+        {
+          "name": "HR team",
+          "title": "Unknown",
+          "role": "stakeholder"
+        }
+      ],
+      "notes": [],
+      "activityLog": [
+        {
+          "date": "2026-01-15",
+          "type": "call",
+          "description": "Discovery call with Theodoros (Head of IT) and Lior (IT Manager). Initial use case: HiBob → DocuSign for employee contracts (~100/year). Low volume, simple integration. They're also evaluating n8n but leaning AutomateFlow for EU compliance. DocuSign contract not finalized yet—targeting end of Jan. Follow-up scheduled Feb 11. Sending use case decks for HR and RevOps to seed expansion conversation."
+        }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "finedge-solutions_v2_cp_001",
+      "dealId": "finedge-solutions",
+      "version": 2,
+      "timestamp": "2026-01-15",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_finedge-solutions_260115-discover",
+          "type": "transcript",
+          "title": "Untitled Meeting",
+          "date": "2026-01-15"
+        },
+        {
+          "artifactId": "finedge-solutions_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery / Trial Prep",
+          "date": "2026-01-15"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "FinEdge Solutions",
+        "stage": "Discovery / Trial Prep",
+        "amount": "~$3-5K initial (Teams plan), expansion potential TBD",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [
+        {
+          "name": "Theodoros Chiras",
+          "title": "Head of IT",
+          "role": "end_user",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Lior",
+          "title": "IT Manager",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Upper management",
+          "title": "Unknown",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "HR team",
+          "title": "Unknown",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "finedge-solutions_v2_cp_001_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_finedge-solutions_260115-discover",
+            "finedge-solutions_crm_snapshot"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "finedge-solutions_v2_cp_001_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_finedge-solutions_260115-discover"
+          ],
+          "optionalArtifacts": [
+            "finedge-solutions_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "finedge-solutions_v2_cp_001_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_finedge-solutions_260115-discover"
+          ],
+          "optionalArtifacts": [
+            "finedge-solutions_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finedge-solutions_v2_cp_002",
+      "dealId": "finedge-solutions",
+      "version": 2,
+      "timestamp": "2026-01-15",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_finedge-solutions_260115-discover",
+          "type": "transcript",
+          "title": "Untitled Meeting",
+          "date": "2026-01-15"
+        },
+        {
+          "artifactId": "finedge-solutions_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery / Trial Prep",
+          "date": "2026-01-15"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "FinEdge Solutions",
+        "stage": "Discovery / Trial Prep",
+        "amount": "~$3-5K initial (Teams plan), expansion potential TBD",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [
+        {
+          "name": "Theodoros Chiras",
+          "title": "Head of IT",
+          "role": "end_user",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Lior",
+          "title": "IT Manager",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Upper management",
+          "title": "Unknown",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "HR team",
+          "title": "Unknown",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "finedge-solutions_v2_cp_002_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_finedge-solutions_260115-discover",
+            "finedge-solutions_crm_snapshot"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "finedge-solutions_v2_cp_002_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_finedge-solutions_260115-discover"
+          ],
+          "optionalArtifacts": [
+            "finedge-solutions_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "finedge-solutions_v2_cp_002_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_finedge-solutions_260115-discover"
+          ],
+          "optionalArtifacts": [
+            "finedge-solutions_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        }
+      ]
+    }
+  ],
+  "finalOutcome": "active",
+  "metadata": {
+    "sourceDeals": [
+      "finera"
+    ],
+    "transcriptCount": 1,
+    "artifactCount": 2,
+    "dateRange": {
+      "start": "2026-01-15",
+      "end": "2026-01-15"
+    }
+  }
+}

@@ -1,0 +1,1443 @@
+{
+  "id": "artisan-brands",
+  "name": "Artisan Brands",
+  "version": 2,
+  "artifacts": {
+    "tx_artisan-brands_260129-anisa-anisa-international-adrian-meeting": {
+      "id": "tx_artisan-brands_260129-anisa-anisa-international-adrian-meeting",
+      "dealId": "artisan-brands",
+      "type": "transcript",
+      "title": "Artisan Brands International &  Alex |  Meeting",
+      "rawText": "# Artisan Brands International &  Alex |  Meeting\n\n## Meeting Details\n\n**Meeting ID:** 3399d977-337f-425a-a555-XXX-XXXX2d6d8\n\n**Date & Time:** Thursday, January 29, 2026 at 3:30 PM UTC\n\n**Calendar Event ID:** mq549pig4dfh4024mn4q6f7jrc\n\n**Calendar Event Title:** Artisan Brands International &  Alex |  Meeting\n\n**Organizer:** Alex Obleton (user@user)\n\n### Attendees\n\n- **Ramon** (ramon@user Brands.com)\n- **Courtney Jones** (courtney@user Brands.com)\n- **Alex Obleton** (user@user)\n\n## My Notes\n\nStarting to explore a platform to help us connect workflows and automate them and if we can try to layer on an AI layer that's interested\n\nADP workforce to do your recruiting, trying to fill 10 to 12 positions at a time. Wanted to use the platform to send out job descriptions and recuisitions to LinkedIn, Indeed, Do that and with whatever filters we put in each position, what are the qualifiers, what are the non negotiables, use chat-gpt maybe claude have them come back to us and go through that filter, and send it to the hiring manager to the first, as much as possible so it's out of the first round, particularly right now they don't have an HR director, we want something they can continue to use for an admin perspective.\n\nAnd then based on that they want to think about how AutomateFlow could help us for other workflows in different fucntions, marketing, operations, a bit further in HR, and even our PD (product development)\n\nHow does AutomateFlow work that is a way for useful but also easy to sue for the other people in the organization\n\nHow is AutomateFlow integrating or integrating with AI platforms, they aren't as robust as using and want to start\n\nExecutive asstitant\n\nThey can blast it to several different sites, right now having to open every single resume and look at it, most of them aren't very good\n\nIt's time consuming and we \n\nImmediate need, James help us filter the resumes on the first pass and\n\nOur COO may get emails, just go and log in and see them, and see if theres. any new resumes\n\nThey would want to build the parameters that are filtering. They want to say these are the things we want to have them at least 3 years of experience and it would filter\n\nThe only people submitting parameters, the actual managers would only want them to see the resumes that are qualified\n\n## Meeting Notes\n\n### Artisan Brands International’s Automation Needs\n\n- Starting to explore platforms to connect workflows and automate them with AI layer integration\n- Currently using ADP Workforce for recruiting, trying to fill 10-12 positions simultaneously\n- Want to send job descriptions/requisitions to LinkedIn, Indeed, other platforms\n- Need AI filtering (ChatGPT/Claude) to screen resumes against qualifiers and non-negotiables\n- Goal: Remove human component from first round screening, send only qualified candidates to hiring managers\n- Currently lack HR director - need solution that incoming hire can continue using\n\n### Current Pain Points & Process\n\n- Courtney (Executive Assistant/current recruiter) manually opens every resume\n- Most applications are unqualified/spam - time-intensive process\n- \\~300 resumes expected per job posting across all platforms\n- Currently logs into ADP daily to check for new applications\n- COO may receive email notifications but Courtney isn’t ADP administrator\n\n### Expansion Plans Beyond HR\n\n- Marketing automation opportunities\n- Operations workflow improvements\n- Additional HR processes\n- Product development team integrations\n- Need solution that’s easy for non-technical organization members to understand\n\n### AutomateFlow Implementation Options & Pricing\n\n- Self-serve plans: Teams ($249/month, 25 users, 20K tasks) vs Professional\n- For 15 roles × 300 resumes = \\~25K tasks monthly needed\n- Enterprise plan: $65-70K annually with dedicated account management\n  - Includes hands-on building support\n  - Enhanced security/governance controls\n  - Custom terms of service flexibility\n- Expert partners available for one-off builds ($5-10K range)\n\n### Technical Requirements & Challenges\n\n- Main hurdle: ADP API connection (no native AutomateFlow integration)\n- Need to work with ADP rep to establish API access\n- 5-step automation process per resume review\n- Parameters would be set by Courtney/Ramon/future HR director only\n- Managers would only receive pre-qualified resumes\n\n### Next Steps\n\n1. Alex to send pricing details, security documentation, terms of service\n2. Two-week free trial starting week of Feb 9th (after leadership on-site)\n3. Follow-up meeting scheduled for Feb 24th to assess trial results\n4. Ramon and Courtney to determine internal capability for building vs. needing support\n\n---\n\nChat with meeting transcript: [https://example.com/... AI.ai/t/7a8d6385-11f6-439b-a03f-7ed5c63e9431](https://example.com/... AI.ai/t/7a8d6385-11f6-439b-a03f-7ed5c63e9431)\n\n## Full Transcript\n\n \nThem: Recording in progress.  \nMe: Hi, Courtney. Are you doing?  \nThem: Recording for interest.  \nMe: Yes. I can.  \nThem: Alex, can you hear me?  \nMe: Guys hear me? No. Oh, are you in the same room? I think one of you James have to mute. Yourself.  \nThem: Yeah.  \nMe: How about now?  \nThem: K. Yeah. Very good.  \nMe: Okay. Great. Glad we were able to get connected today. Thanks for thanks for reaching out.  \nThem: Yeah. For sure. So I  \nMe: Yeah.  \nThem: sorry to bounce but I have to I'm gonna introduce the call, and Courtney is going  \nMe: Okay.  \nThem: continue the rest of the meeting, and then maybe we can find some time to reconnect.  \nMe: Sounds good.  \nThem: That's okay. Okay. So the reason we're reaching out nice to meet you. I'm Ramon. This is Courtney. We're with Visa International. And the reason we're reaching out is because we're starting to explore a platform like yours that can help us connect workflows and automize them automate them whenever possible rather. And if we can try to layer on an AI layer, that's interesting for us. So I'll give you the use case that we're focused on right now. We work with ADP workforce now. To do our recruiting. And Courtney can speak more to this than I can, but essentially, we're trying to fill about 10 to 12 different positions, which is a lot for us. In real time. And what we wanted to do was use our platform to send out resin or job descriptions and requisitions to other platforms such as LinkedIn, and I don't know I don't know what else we use. Indeed,  \nMe: Monster.com maybe kind of, like, whatever the  \nThem: potential Yeah. I think it blasted. Yeah. Potent Whatever. Exactly. So do that. And then with whatever filters we put in place for each position, meaning what the qualifiers are, what we're looking for, what are the nonnegotiables, what are the things that James pass the muster for a first round interview. Right? To chat potentially, maybe Claude, whatever other AI platform that we're using, have the resumes come back to us and go through that filter. Right?  \nMe: Yeah.  \nThem: And and hopefully, send it over to the hiring manager for first review. So in some ways, getting as much as possible as the human component out of that first round  \nMe: In  \nThem: so that we can manage. Particularly because right now, we don't have an HR director one of the positions that we're hiring for. But regardless, after that person comes in, we wanna be able to return something that they can continue to use from an admin perspective. So that's a use case that we want to look at and solve for as a priority. And then based on that and seeing how that goes, we want to think about how AutomateFlow can potentially help us in other workflows across different functions. Marketing is a prime example that is always used in cases like this. Right?  \nMe: Yeah.  \nThem: There's also opportunity potentially in operations. Certainly, I think we can go a little bit further in HR. And even potentially with our PD team and how they interact with our market.  \nMe: Like, in current their profession is that professional development?  \nThem: Product development.  \nMe: You're saying product development? Okay. I'm sorry.  \nThem: K. So all that to say, what we James idea of how does AutomateFlow work in a way that is useful, but also easy to understand for other people in the organization where there may not be as much buy in or understanding. Right?  \nMe: Yeah.  \nThem: And then you know, how is AutomateFlow integrating or integrated with AI platforms that also were not as robust in using, but want to start to bring into the day to day workflow. Okay? So with that, I do have to go to another meeting. Unfortunately, I double booked. But Courtney can definitely speak to  \nMe: Great.  \nThem: definitely the the use case around HR, So whatever information you can impart, and if it makes sense to have a follow-up meeting, we James.  \nMe: Yeah.  \nThem: Definitely interested in understanding cost for any in all of this. Okay?  \nMe: Okay. Thanks. Thanks, Ramon. We'll follow-up later. And, Courtney, let's let's get into it. Bye. Sorry. I realized we just we jumped right in. Courtney, could you what what is your what is your role  \nThem: Yes. So I'm the  \nMe: Beneesa? Okay.  \nThem: executive assistant for the CEO. And I'm also the recruiter right now. So  \nMe: One side thought I want to before we go before we dig in more into this HR one We actually have a lot of, like, exec ops, like, use cases, like,  \nThem: Yeah.  \nMe: our our, sort of EA team has done a really good job of, like, just making stuff easier for themselves and the executives they work with. I can share some of that as well. I just wanted to that might be helpful in terms of, like, different use cases. But  \nThem: Yeah.  \nMe: that's potentially probably down the line. Okay. So I guess first question, he said APP. Is that like a, like, p as in penguin?  \nThem: No. ADP.  \nMe: P p Oh, ADP. Okay. Yes. I  \nThem: Yeah. Yeah.  \nMe: yeah. But okay.  \nThem: So that's the platform we use for you know,  \nMe: The it's the paper. And I've  \nThem: we're use right. But we also use it for our recruiting because we can post a job at there, and I guess it blasted to, like, LinkedIn, Indeed. It posted on several different sites. And then when those people apply, it brings their resume back into our ADP platform.  \nMe: Okay.  \nThem: So right now, I'm just having to open every single resume and look at it, and most of them are garbage. Like, they're not even remotely qualified for the job. You know, it's just they just blast it, I guess, to everybody. So it it is time consuming. We've only been recruiting for a few roles recently, and we're about to ramp it up. So it I mean, I have my regular job to do, so I guess  \nMe: Yeah.  \nThem: an immediate need is what we're hoping is it James help us with that part. It can filter the resumes on the first pass. Obviously get all the ones that are just totally unqualified and then only put the ones in front of us that FlowBuilder sense to have a look at.  \nMe: That makes a ton sense. And we actually do we we have a similar Zap that we run internally, but we frame it both on like are they qualified, but then also we see a lot of these days just like what we call spam applications. And maybe that's, like, sort of the same thing where it's,  \nThem: Yeah.  \nMe: this person is, like, may not even be a real person, like, potentially  \nThem: Right.  \nMe: be, like, AI to, like, spam these things and so we can, like, filter, even if it's, like, that bar of, like, maybe they're not qualified, but at least we know it's a real person. That you're talking about or, like, looking at the resume for before you spend any time on that. Let me check something quick. I wanna see what our ADP connections are like. I'm not the top of my head. One moment. ADP. Integrations. So overall, I get sorry. I I don't mean to go silent. What I'm trying to check is how we how you would connect to ADP because I think that going to be the, like, limiting factor in term like, if whether or not we can be connected to their API. If when they send you those when when they send you those resumes in the form, like, if it if there's a way for us to, like, trigger something. Do you do you get, like, an email for them today, or is it, like, you have to go into, like, ADP and, like, whatever  \nThem: I know. Yeah. I go I don't know if the creative so we have somebody else who kinda acts as HR. She's our COO. She may get emails  \nMe: Okay. Sure.  \nThem: I don't know. Maybe because I'm not the administrator on ADP. I just go and log in, and I see them.  \nMe: Okay.  \nThem: So I log in, like, every morning to see if there's any new resumes.  \nMe: Gotcha. And so I imagine there there even be a benefit just like, being able to tell you if there is. Right? So you're not having to, like,  \nThem: Yep.  \nMe: context with we can just, alert you.  \nThem: Yeah. For sure. Like, you have three new resumes since yesterday or you know, whatever it is.  \nMe: Yeah. Let's see. So okay. It looks like there is an API for ADP at least. So as long as we can get, like, as long as there is an API, we would able to be able to get these things connected and limiting factor there is just going to be like, actually building it. I guess maybe the one question I would have, have you guys talked about how are you imagining like, the actual development of this stuff being done? And what I what we typically see is a couple different models. Right? So, like, sort of the default, would say, is what we call self serve where you, like, are paying for the platform. You are base essentially only paying for usage, like, much volume is going through the system. But it's like, hey, you people in your team are actually building these things. My initial thought is that may not FlowBuilder sense given the, like, capacity that you, like, you your team has. Like, you're already trying to do both the  \nThem: Right.  \nMe: recruiting and your day job. But I be curious to, like, hear your reactions to that.  \nThem: I guess it just depend the complexity of building that out. But I do think we would want to build the parameters that it's filtering. Like, at least for this recruiting part, right, we would wanna say, okay. For the HR director role, these are the things we want them to have at least three years of experience at director level or above. You know, things like that that we could plug into the system or however it works. And then it would filter the resumes and only pull the ones out that had those things that we selected as being necessary.  \nMe: That part, we can FlowBuilder it very easy for people to do in terms of and I know one of the things Ramon was asking is, like, oh, what does this look like for people who aren't necessarily building the Zaps, like, the automations, but for people using them. In terms of the team, like, using it, we have  \nThem: Right.  \nMe: both what we call forms where it's like, hey. They can go in and actually have a form that you're having them fill out, which is like, oh, these are parameters  \nThem: Mhmm.  \nMe: I care about. Here's the job description. Let's generate let's generate a set of rules. The other way you could do it is like, oh, we maybe we have a TeamChat channel where managers James, like, submit, hey, these are the criteria I'm working on and that in. And so you can sort of work where wherever people are today and, like, one of the main benefits of AutomateFlow is we're connected to so many different tools that you can allow like, most of the people at Anissa don't even need to know that AutomateFlow exists. Right? Like, it just sort of, like, works on the back end. It James connect these things do the flows, but people James still just work in the tools in which they work in. Today.  \nThem: Yeah. I think the only people that would be submitting the parameters are, like, myself. Ramon,  \nMe: Okay.  \nThem: If we hire an HR director, right, those people, The actual managers would not be doing that. They would we would just only want them to receive the resumes that are qualified.  \nMe: Gotcha.  \nThem: According to our parameters. So then they could open up Then they would have to read through them, right, determine who they actually wanna meet with. So that would be their only role. So I think it would be limited on the people here that would actually be  \nMe: Yeah.  \nThem: entering the the rules in the  \nMe: Okay. That makes in terms of entering the roles. And then  \nThem: form. Yeah.  \nMe: would you also be you and Ramon be, like, actually building and maybe clarifying question Have you been have you been in AutomateFlow before at all? So let me let me kinda just, like, show you what actually looks like because I think that that James FlowBuilder my questions FlowBuilder more sense. Share screen. So this is sort of like the default home screen, and you have a couple different options of types of automations to build. Sort of the the default bread and butter automation that we're talking about is what we call a Zap. This is just like a workflow where you have different triggers. So in this case, it would be hey. ADP, a resume comes in. Then we want to do something with it. So I want to or let's see. I have a job posting in ADP. I need to use their API so that the resume comes in, we download it, We use an AI by AutomateFlow step to to the QM. And, actually, we we'll probably first wanna look up the rules for that. Download it. Look up the rules. Like, hiring goals and a table Then review. The resume against those rules. EG is the person don't do that experience. And then, and then what do wanna  \nThem: Forward.  \nMe: do? We want to just, like, I guess, put the for oh, sorry. Go ahead.  \nThem: Or forward those resumes to hiring manager or something like that?  \nMe: Once a day.  \nThem: Yeah.  \nMe: Cool. Okay. So this is one sort of, like, way that you can build. Right? We have our Copilot that sits here. And what this James do is it'll, like, think through what tools are connected, what is already there. It'll start to lay these out. You could also just like click into these and sort of do it manually by yourself.  \nThem: Mhmm.  \nMe: There's both of those options. And while this is running, I'll show sort of the other options here for like, tools that exist. Tables, this is just like a Google Sheets GridBase sort of like a table you can store stuff in. They're those are interchangeable forms like I mentioned, like this might be a place where you have people where you, like, are updating the criteria that you're basing it on or when there's a new posting, maybe that's where you actually go and do that. A canvas is just a workflow tool where you have if you have workflows that have multiple different Zaps. So in this case, you could imagine okay, we're gonna, like, run this every day and then at the end of the week, maybe we wanna run a summary of all the resumes that have come through. And you could put both of those automations on, like, sort of one canvas so you can see the related pieces there. Maybe I can actually pull one. Up as an example. I don't want a new canvas. I want one of my own canvases. Uh-huh. Awesome. Canvas is Just, like, show you as an example. So it's like each of these boxes is, like, one of those automations that we were looking at. And so the goal here is just to say, how did the how does the system fit together overall? So let's go back here. Let's see. Well, this is running catches the web file download, get get the request file, find the hiring rules, use AI analysis and store results. We can actually go build this. But the so if we go back to my original question, right, the structure is here to do the pieces of what you want, but someone James have to, like, actually get connected to your system, write this act, FlowBuilder sure the web call is actually connected. Do the testing to FlowBuilder sure the flow actually flows through, like, that kind of those kind of pieces. And have a couple of different options, like I mentioned, sort of default is our self serve plan where you just like go in you Ramon would like actually do this building and you just basically pay for how many calls go through this system. There we have expert partners who if you're, like, hey. We need some help, but we don't necessarily want, like, someone from AutomateFlow. Actually who knows our business, who can, like, help us over a long period of time to just build this once. We have expert partners who can do sort of, like, one off builds on the order of magnitude of like 5 to $10-20K. They'll do like a one time come in build this workflow out for you, but they won't necessarily do like the second, third, fourth one. If that makes sense. And then the ex the end of the spectrum is, hey. Let's do a AutomateFlow enterprise plan. That comes with the, like, an an account manager, a technical or what we call a a customer success manager, a technical account manager who James, like, build this stuff for you, and over time James actually work with you guys to say, okay. What is the next thing that we need to do? How do we think about driving adoption across the org more broadly?  \nThem: Mhmm.  \nMe: And that's that is like, that plan makes sense when you're like, hey. We're actually trying to drive transformation, adoption,  \nThem: Mhmm.  \nMe: across business versus hey. We have, like, this one use case that we wanna build and sort of stop there. I realize the the spectrum there can be a lot. So I'll pause and see if you have any questions.  \nThem: So what is the difference of price for the enterprise versus just paying per per pass or per click?  \nMe: So paying per pass and per click, is on the order of magnitude of, like, it actually, let me just show you because it it really depends on how much you are  \nThem: And maybe you could give an example just based on this  \nMe: yeah.  \nThem: the hiring piece since that's, like, our most immediate use of it.  \nMe: Yeah. For sure. So in this hiring example, if if we assume that this is the these are, like, the steps we would need to do. So we'd have one, two, three, four, four actions. Like that you would that would be used in each call, and you and how many of these would you say you're getting any like, how many resumes are coming in would you say?  \nThem: Job,  \nMe: Order.  \nThem: potentially, like, 300.  \nMe: Okay. So if you're coming if 300 of them are coming in  \nThem: Not every day. That was kinda like  \nMe: every day, most  \nThem: for the whole  \nMe: okay. So for, like, maybe so maybe over  \nThem: time the job was posted, let's say. Yep.  \nMe: course of a month, we might get 300. It might be reasonable.  \nThem: Yeah.  \nMe: So if each of those takes each each of those 300 were to take five actions, assuming it went through the whole Zap,  \nThem: Mhmm.  \nMe: you're talking around 1,500. Our intro teams plan starts at 2,000 tasks. Per month. So that would be the sort of, like, starting point  \nThem: That would only cover, like, one role, basically, because that's just for one job. Right? So if we had 12, we'd need  \nMe: Yeah.  \nThem: 12 times.  \nMe: So you would you would wanna be, like, in the 20 to 50 k range,  \nThem: Yeah.  \nMe: in terms of task, and so that's around, like, 300 a month. And this is where I was like, it really it's kind of hard without, like, laying out all of the use cases that you're talking about because with these ones, okay, we can see a path to, like, 25. Maybe maybe it should be 20 because of the way overages work. But you could also see a world based off of what you guys were talking about. It's like, oh, maybe we need to be, like, 200 k because we have these use cases and a bunch of other ones. And so if you're doing the self serve plan, it really is like month to month you can what I James often recommend is people start like, hey, maybe start at, five k, do that for a month, We didn't use that much. Maybe we so then we can go to two k, or we used way more than So next month, we can go to 10 k. Do that for a couple months, figure out what your volume is, and then people James switch to annual once they're like, okay. I've had a couple months. I know that in a given month, 20 k makes sense for me, so I'll pay for a year to get that annual discount. But this is all built on the assumption that, like, your team is, like, hands on keyboard, like, doing the building, making those connections, all that kind of stuff.  \nThem: And if you don't use like, let's say, 15,000 out the 20, does it roll over to the next month, the additional 5,000, or do you know?  \nMe: No. It does not. So if if you if you don't use the task in the month, if they they don't roll over, If in a month you go  \nThem: Mhmm.  \nMe: over 0.25 times the the per task rate. So for the sake of illustration, assume it's, like, 1¢ per task it's it doesn't come out to that. But assume it's 1¢ per task, you'd pay 1.25¢ per task. Over 20,000. In that month, if that makes sense.  \nThem: So the difference between the professional and team, the team  \nMe: Okay.  \nThem: someone there could help us build it out.  \nMe: No. So both of these sorry. A part  \nThem: Is that what you're saying?  \nMe: Both of these are are self gonna be self serve.  \nThem: Okay.  \nMe: It's gonna be enterprise plan is where someone we might have someone helping you build it out.  \nThem: Okay.  \nMe: That makes sense. The professional is like, hey. This is like one person.  \nThem: Yep. Uh-huh.  \nMe: Effectively. Like, you can't have, like, different people in the account. And then Teams is, like, hey. We have a couple of people within our company. We we need admin, for example, single sign on, some basic security measures. But it's all, like, self serve options.  \nThem: So the team, let's say, just for in this scenario,  \nMe: Yeah. Right.  \nThem: $2.49 a month, that covers 25 users, or is that per user  \nMe: No. That's up to 25 users who can be in this  \nThem: Okay.  \nMe: system. But and Claire and one potential thing to clarify that's up to 25 people in AutomateFlow, not, like, who are benefiting from the automations. If you have, like, a manager sending the email that were, like, at the end sending an email to, that person would not necessarily count against the 25 unless they're, like, in AutomateFlow, if that makes  \nThem: Using a  \nMe: sense.  \nThem: Okay.  \nMe: Yeah. Those are the major things. And then I guess the other thing that just so I like to show experts. Like I was mentioning, we have the sort of solutions partners. There's a couple of these that I've worked with. If you're like, hey. We want to help maybe standing this up, but we don't necessarily think it we have capacity to do, a full enterprise evaluation or if we're not necessarily looking at how do we drive AI more broadly across the company, then these pieces here can be helpful. These these organizations can be helpful. I'll pause there. At least on the have any questions on the way the the sort of self serve plans work? And then I can talk a bit about what's included in enterprise, if that would be helpful. Okay.  \nThem: Questions yet?  \nMe: Then the next thing I James show is let me just take a look, show you kind of what, like, inner what's included in enterprise And give you sort of, an order of magnitude estimate that we're talking about. Okay. And, actually, I think I could this is this is better kind of showing the differences here. So the main things on enterprise are twofold. One, like I mentioned, you have an actual account team who James help you build these things over time. They'll actually understand your business, figure help you out what are, the second, third, fourth things to do. And actually help you, like, hands on keyboard, like, get these built for you so that your team can focus on know, continue to do your day jobs. The other major benefit here is around security and governance. So, like, for example, you could FlowBuilder FlowBuilder quality of life agents available to people. So, like, as a simple example, I have an agent that runs every day before all of my calls that, like, puts a little dossier together for me. You could imagine something like that being useful for, like, the executive team or, like, maybe  \nThem: Mhmm.  \nMe: someone in your finance or wants to like have a have something that runs once week that summarizes invoices. Just as, like, an as an example. So if you want to FlowBuilder those things available to other people in the team, you have more security around what apps can they connect to, giving permissions, making sure there are approvals before it's done. So once you have the HR person in, you could say, Okay, anytime someone wants to connect to our HR apps, that person has to say like, yes. We're okay running this automation. So that's all those, like, governance security controls are in the enterprise plan. And just for context, like, the investment is very, very different from the team's plan. So we often like to see, like, hey. What are the, like, actual value case? What's the ROI that we think we could drive if we could actually you know, do four or five of these use cases if we could, like, spread this across the business? Does this then, like, justify a larger, like, partnership? So that's one that's the, like, kind of frame that we typically think of for the enterprise plans. I'll pause. Any questions on this so far? At least, like, I'm trying to think FlowBuilder sure. At least you understand, like, hey. This is basically how AutomateFlow works. Are a couple different options in how we could partner together  \nThem: I know there'll be more question, especially around and how we keep our information secure, private, and not shared, like,  \nMe: Now  \nThem: it is on chat. So  \nMe: I can I can share some of that? So  \nThem: okay.  \nMe: trust or is it the task? Security and compliance. So I'll share this with you. You don't we feel like read it all, but effectively, have what I would call, like, the standard enterprise security governance features, and particularly around AI. By default, on the enterprise plan, we don't, store or train on any of the, like, conversations you have with our AI agents, like, in in the system. On the Teams plan, there's an option to opt out of that storage, In general, we don't keep any data in our system unless it's, like, stored in a table. So because we're, an API system, we're, show we have logs about, like, things went through or how many went through the volume, whether or not it was successful.  \nThem: Mhmm.  \nMe: But we're not storing the actual, like, information. So in the example of, like, the HR case, we're not, like, keeping information about the candidates, for example, in our system. We just have, like, oh, this API call was made to OpenAI. They responded and we passed that call over to TeamChat. As an example. I'll share all the details on this. We can share this with, like, your IT security team. As well. And then I guess the other thing in that same vein that we often yeah. So, like, the other thing is just, like, sort of our default terms of service If you guys have a, like, procurement legal team that has to review stuff like this,  \nThem: Mhmm.  \nMe: I could share these kind I could share this as well. So you have a clear idea of, like, hey. This is what sort of standard agreement entails. Generally, we don't on the for the team's plan, we don't FlowBuilder adjustments the terms of service, but for the enterprise plan, if that's something you guys wanna explore.  \nThem: Oh,  \nMe: That there's more flexibility in terms of the options. Yeah. I'm trying to think anything anything else I I'm obviously, like, there as you look through, there'll be more questions. But any, like, other high  \nThem: Yeah.  \nMe: level questions in terms of, like, how it works, what it how what it would look like actually use for your team.  \nThem: Yeah. I mean, I think I have a a good idea. I think it for us, it would be can is there somebody here qualified to build this out?  \nMe: Yeah.  \nThem: It seems fairly easy, but I'm sure it's more nuanced once you get into it. But that would probably determine, you know, which  \nMe: Yeah.  \nThem: plan we would go with if we need the help or not. What is the price on the enterprise? Is it based on how much you use, or is it just like a flat  \nMe: It's a combination of we what we call a  \nThem: rate?  \nMe: platform fee and then usage. This is it's hard to say because it really is like varied, but I would say most of our customers are in the 65 to 70 k range per year.  \nThem: Okay.  \nMe: But it can vary depending on like what specifically is in the plan.  \nThem: Okay. And then how do you determine that price? Is do you just need to know how  \nMe: So  \nThem: gonna use it and how much we're gonna use it?  \nMe: so a combination  \nThem: To give us a  \nMe: of how much you're gonna use it and also, like, what is sort of your road map of, what do we want to build. And, like, how much support from AutomateFlow do we do what do we need? Because there's, like, levels of there's everywhere from oh, okay. We just want like, it's still gonna be us building it. We just want a person who we can, like, ask questions to. We have, a shared TeamChat channel. Like, we want, like, that sort of super support. Or it's like, actually, no. We want, like, handsome one hands on keyboard, spending, like, real time with us every day to, like, actually get these rolled out and, getting embedded in our business. And so that's, like, what can change that can change that, if that makes sense.  \nThem: Yeah. Maybe if you could just send us that or send it to Ramon. But just assume for now, maybe, let's say, we're gonna hire 15 roles. Right? So we determine that each one, let's say, 300 resumes, so 1,500  \nMe: Yeah.  \nThem: a 150 click throughs. Per person. So maybe based on that usage and needing someone to help us build it out, like, put in the rules.  \nMe: Yeah.  \nThem: And give us, you know, an estimate based on that. Now I'm sure we'll expand afterwards, but I don't think immediately.  \nMe: Makes sense?  \nThem: We would be using it outside of that.  \nMe: That makes a lot of sense. I mean, what we what we James offer see a lot of customers do is, like, they'll start on Teams, maybe try to build, like, one or two use case, and they're like, okay. This makes sense. We wanna actually expand  \nThem: Yeah.  \nMe: Then they'll explore, something in enterprise, if that ends up making sense. But I can I'll send over, cover cover of the use cases we talked about. I'll also just share some of, hey. Here are some, like, other ones based on what you guys said that, like, may be worth exploring as well. Share the details on pricing for the team's plan based off of the volumes that you're talking about assuming 15 jobs that are doing, like, roughly 300 of those a month. And then I'll also send over just sort of the basic, like, governance security  \nThem: Yeah.  \nMe: pieces here.  \nThem: Terms of service, yes, we can have people start to review that.  \nMe: Yeah. And then, I guess, just super tactically, what I would  \nThem: K?  \nMe: what I often recommend if you're is there's effectively there's a two week free trial that you can do on AutomateFlow.  \nThem: Okay.  \nMe: If there's a week if we can find a window where, hey, you, Ramon, would have some time even, like, maybe like three or four hours over the course of a week to actually  \nThem: Mhmm.  \nMe: go into it. You should try it, then we can meet like halfway through that trial and that would also give you a sense of like okay, how realistic is this? Do we have the capability to do it? What questions do we have?  \nThem: Okay.  \nMe: All that kind of stuff. Is there I guess my my question is then, like, when would that be when would there be a window that you guys could have the time given, like, sort of the capacity  \nThem: Possibly two weeks from now. Next week is our big, like, on-site  \nMe: constraints that you're under right now? Okay.  \nThem: meeting. For the leadership team, which is all week long.  \nMe: Okay.  \nThem: So potentially the week after that,  \nMe: So we you would start  \nThem: we could work on it.  \nMe: the week of the ninth. That would you maybe you'd maybe start a trial the week of the ninth. Potentially.  \nThem: Maybe. Then I'm planning to be out the week of the sixteenth, so I don't know if yeah. I'd have to ask Ramon if  \nMe: That would be Okay.  \nThem: if you'd wanna I could at least help him start it out.  \nMe: Yeah. And then I guess, question, if you're gonna be out the week of the sixteenth, would it would it FlowBuilder sense to meet with Ramon without you, or should we plan to have have it it's a little tough. Maybe you start the week of the ninth and I could potentially I could maybe try to extend the trial and we can meet, like, the '20 like, this week of the twenty third,  \nThem: Yeah.  \nMe: And so then would give us a chance to like, hey. You've had a chance to play around with it. Of course, I'll be you can ask questions, like, while you're doing that. And then that would also just give you a sense of, like, okay, how hard is this? Do we need support? Like, what all that kind of things and we could have that discussion. And figure out and you'll also have a sense of, like, which, start or have more of a sense of, like, what tasks  \nThem: Okay.  \nMe: levels may or may not be. Helpful.  \nThem: That sounds good. If you don't mind, like, when you email Ramon just mentioning that,  \nMe: 100%. Would would you guys be opposed? Could I  \nThem: you know,  \nMe: for as a placeholder, maybe place put something on the February 24 for us to follow-up, and then we can move around if we  \nThem: Yes.  \nMe: need to as we get closer.  \nThem: I'll have to get back to you, though, on his schedule because I'm I'm not sure.  \nMe: Okay. I James I James  \nThem: Of his calendar.  \nMe: I'll send something. Feel feel free to move it. It's far enough out that, like, I can be flexible. I just wanna  \nThem: Okay. Yeah.  \nMe: FlowBuilder I just like to have, like, something down so we can, like, have the have the touch point. Landed.  \nThem: For sure.  \nMe: But I James send over all these details, send over that calendar hold, and I think I think that's a good plan at least for you guys to get a sense of, like, okay. How does this work? How hard is this? And act I realized I didn't really say this all but you shouldn't need support. Like, full transparency is designed to be really easy.  \nThem: User friendly? Okay.  \nMe: Hardest part is going to be the ADP connection transparently because that's, like, they don't have a AutomateFlow connection, you'll have to, like, figure out how to connect via their API, and that might be the, like, biggest hurdle. But once it's done once, you kind of just you can just use it everywhere.  \nThem: So would we reach out to ADP to  \nMe: If that makes sense.  \nThem: do that? Like, how  \nMe: You have to you would have to do it yourself, I think. So I was I was just doing some quick googling before  \nThem: Okay. Yeah.  \nMe: this. It looked like ADP, like, they have  \nThem: Oh, okay.  \nMe: AI. Connection. So I've not I don't know the details of their API yet, but it would be like, hey. There's a URL that that's somewhere in your account. That says, like, you send it a request. It'll respond with, here's the list of resumes or something like that.  \nThem: Okay.  \nMe: Yeah.  \nThem: I'm at our rep at ADP could help us too.  \nMe: Yeah. Okay. If you and if have an ADP rep, I'm sure they they've worked with this kind of stuff before, so they can probably  \nThem: Yeah.  \nMe: in the right direction.  \nThem: Okay.  \nMe: Cool.  \nThem: That sounds good. And then for the free trial, should I just tell Ramon to just sign up for it around the ninth?  \nMe: I would wait until the because it's  \nThem: Well, yeah. So we're gonna use it.  \nMe: because it Lee is two weeks. So I'll send I'll send a reminder. Like, I'll send the email today, like, right after this. Like,  \nThem: Yep.  \nMe: everything discussed, but then I'll send a reminder, like, around the ninth. Like, hey. Like, you should start the free trial. Like, start playing around with  \nThem: Yep. So we can meet Dawn, yeah, whatever day. Okay.  \nMe: And then they got away.  \nThem: Okay. Cool.  \nMe: Thanks. Courtney, was great to meet you. Phil, if you have other questions and things pop up, feel free to use me as a resource. Happy to happy to be helpful. But looking forward to helping you guys get this solved.  \nThem: Alright. Thank you so much.  \nMe: Have a great day. Bye.  \nThem: Bye. \n\n---\n\n**View in NoteFlow AI:** [https://example.com/... AI.ai/d/3399d977-337f-425a-a555-XXX-XXXX2d6d8](https://example.com/... AI.ai/d/3399d977-337f-425a-a555-XXX-XXXX2d6d8)\n",
+      "turns": [
+        {
+          "speaker": "them",
+          "text": "Recording in progress."
+        },
+        {
+          "speaker": "me",
+          "text": "Hi, Courtney. Are you doing?"
+        },
+        {
+          "speaker": "them",
+          "text": "Recording for interest."
+        },
+        {
+          "speaker": "me",
+          "text": "Yes. I can."
+        },
+        {
+          "speaker": "them",
+          "text": "Alex, can you hear me?"
+        },
+        {
+          "speaker": "me",
+          "text": "Guys hear me? No. Oh, are you in the same room? I think one of you James have to mute. Yourself."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "How about now?"
+        },
+        {
+          "speaker": "them",
+          "text": "K. Yeah. Very good."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay. Great. Glad we were able to get connected today. Thanks for thanks for reaching out."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. For sure. So I"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "sorry to bounce but I have to I'm gonna introduce the call, and Courtney is going"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "continue the rest of the meeting, and then maybe we can find some time to reconnect."
+        },
+        {
+          "speaker": "me",
+          "text": "Sounds good."
+        },
+        {
+          "speaker": "them",
+          "text": "That's okay. Okay. So the reason we're reaching out nice to meet you. I'm Ramon. This is Courtney. We're with Visa International. And the reason we're reaching out is because we're starting to explore a platform like yours that can help us connect workflows and automize them automate them whenever possible rather. And if we can try to layer on an AI layer, that's interesting for us. So I'll give you the use case that we're focused on right now. We work with ADP workforce now. To do our recruiting. And Courtney can speak more to this than I can, but essentially, we're trying to fill about 10 to 12 different positions, which is a lot for us. In real time. And what we wanted to do was use our platform to send out resin or job descriptions and requisitions to other platforms such as LinkedIn, and I don't know I don't know what else we use. Indeed,"
+        },
+        {
+          "speaker": "me",
+          "text": "Monster.com maybe kind of, like, whatever the"
+        },
+        {
+          "speaker": "them",
+          "text": "potential Yeah. I think it blasted. Yeah. Potent Whatever. Exactly. So do that. And then with whatever filters we put in place for each position, meaning what the qualifiers are, what we're looking for, what are the nonnegotiables, what are the things that James pass the muster for a first round interview. Right? To chat potentially, maybe Claude, whatever other AI platform that we're using, have the resumes come back to us and go through that filter. Right?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "And and hopefully, send it over to the hiring manager for first review. So in some ways, getting as much as possible as the human component out of that first round"
+        },
+        {
+          "speaker": "me",
+          "text": "In"
+        },
+        {
+          "speaker": "them",
+          "text": "so that we can manage. Particularly because right now, we don't have an HR director one of the positions that we're hiring for. But regardless, after that person comes in, we wanna be able to return something that they can continue to use from an admin perspective. So that's a use case that we want to look at and solve for as a priority. And then based on that and seeing how that goes, we want to think about how AutomateFlow can potentially help us in other workflows across different functions. Marketing is a prime example that is always used in cases like this. Right?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "There's also opportunity potentially in operations. Certainly, I think we can go a little bit further in HR. And even potentially with our PD team and how they interact with our market."
+        },
+        {
+          "speaker": "me",
+          "text": "Like, in current their profession is that professional development?"
+        },
+        {
+          "speaker": "them",
+          "text": "Product development."
+        },
+        {
+          "speaker": "me",
+          "text": "You're saying product development? Okay. I'm sorry."
+        },
+        {
+          "speaker": "them",
+          "text": "K. So all that to say, what we James idea of how does AutomateFlow work in a way that is useful, but also easy to understand for other people in the organization where there may not be as much buy in or understanding. Right?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "And then you know, how is AutomateFlow integrating or integrated with AI platforms that also were not as robust in using, but want to start to bring into the day to day workflow. Okay? So with that, I do have to go to another meeting. Unfortunately, I double booked. But Courtney can definitely speak to"
+        },
+        {
+          "speaker": "me",
+          "text": "Great."
+        },
+        {
+          "speaker": "them",
+          "text": "definitely the the use case around HR, So whatever information you can impart, and if it makes sense to have a follow-up meeting, we James."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Definitely interested in understanding cost for any in all of this. Okay?"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay. Thanks. Thanks, Ramon. We'll follow-up later. And, Courtney, let's let's get into it. Bye. Sorry. I realized we just we jumped right in. Courtney, could you what what is your what is your role"
+        },
+        {
+          "speaker": "them",
+          "text": "Yes. So I'm the"
+        },
+        {
+          "speaker": "me",
+          "text": "Beneesa? Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "executive assistant for the CEO. And I'm also the recruiter right now. So"
+        },
+        {
+          "speaker": "me",
+          "text": "One side thought I want to before we go before we dig in more into this HR one We actually have a lot of, like, exec ops, like, use cases, like,"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "our our, sort of EA team has done a really good job of, like, just making stuff easier for themselves and the executives they work with. I can share some of that as well. I just wanted to that might be helpful in terms of, like, different use cases. But"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "that's potentially probably down the line. Okay. So I guess first question, he said APP. Is that like a, like, p as in penguin?"
+        },
+        {
+          "speaker": "them",
+          "text": "No. ADP."
+        },
+        {
+          "speaker": "me",
+          "text": "P p Oh, ADP. Okay. Yes. I"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "yeah. But okay."
+        },
+        {
+          "speaker": "them",
+          "text": "So that's the platform we use for you know,"
+        },
+        {
+          "speaker": "me",
+          "text": "The it's the paper. And I've"
+        },
+        {
+          "speaker": "them",
+          "text": "we're use right. But we also use it for our recruiting because we can post a job at there, and I guess it blasted to, like, LinkedIn, Indeed. It posted on several different sites. And then when those people apply, it brings their resume back into our ADP platform."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "So right now, I'm just having to open every single resume and look at it, and most of them are garbage. Like, they're not even remotely qualified for the job. You know, it's just they just blast it, I guess, to everybody. So it it is time consuming. We've only been recruiting for a few roles recently, and we're about to ramp it up. So it I mean, I have my regular job to do, so I guess"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "an immediate need is what we're hoping is it James help us with that part. It can filter the resumes on the first pass. Obviously get all the ones that are just totally unqualified and then only put the ones in front of us that FlowBuilder sense to have a look at."
+        },
+        {
+          "speaker": "me",
+          "text": "That makes a ton sense. And we actually do we we have a similar Zap that we run internally, but we frame it both on like are they qualified, but then also we see a lot of these days just like what we call spam applications. And maybe that's, like, sort of the same thing where it's,"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "this person is, like, may not even be a real person, like, potentially"
+        },
+        {
+          "speaker": "them",
+          "text": "Right."
+        },
+        {
+          "speaker": "me",
+          "text": "be, like, AI to, like, spam these things and so we can, like, filter, even if it's, like, that bar of, like, maybe they're not qualified, but at least we know it's a real person. That you're talking about or, like, looking at the resume for before you spend any time on that. Let me check something quick. I wanna see what our ADP connections are like. I'm not the top of my head. One moment. ADP. Integrations. So overall, I get sorry. I I don't mean to go silent. What I'm trying to check is how we how you would connect to ADP because I think that going to be the, like, limiting factor in term like, if whether or not we can be connected to their API. If when they send you those when when they send you those resumes in the form, like, if it if there's a way for us to, like, trigger something. Do you do you get, like, an email for them today, or is it, like, you have to go into, like, ADP and, like, whatever"
+        },
+        {
+          "speaker": "them",
+          "text": "I know. Yeah. I go I don't know if the creative so we have somebody else who kinda acts as HR. She's our COO. She may get emails"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay. Sure."
+        },
+        {
+          "speaker": "them",
+          "text": "I don't know. Maybe because I'm not the administrator on ADP. I just go and log in, and I see them."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "So I log in, like, every morning to see if there's any new resumes."
+        },
+        {
+          "speaker": "me",
+          "text": "Gotcha. And so I imagine there there even be a benefit just like, being able to tell you if there is. Right? So you're not having to, like,"
+        },
+        {
+          "speaker": "them",
+          "text": "Yep."
+        },
+        {
+          "speaker": "me",
+          "text": "context with we can just, alert you."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. For sure. Like, you have three new resumes since yesterday or you know, whatever it is."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Let's see. So okay. It looks like there is an API for ADP at least. So as long as we can get, like, as long as there is an API, we would able to be able to get these things connected and limiting factor there is just going to be like, actually building it. I guess maybe the one question I would have, have you guys talked about how are you imagining like, the actual development of this stuff being done? And what I what we typically see is a couple different models. Right? So, like, sort of the default, would say, is what we call self serve where you, like, are paying for the platform. You are base essentially only paying for usage, like, much volume is going through the system. But it's like, hey, you people in your team are actually building these things. My initial thought is that may not FlowBuilder sense given the, like, capacity that you, like, you your team has. Like, you're already trying to do both the"
+        },
+        {
+          "speaker": "them",
+          "text": "Right."
+        },
+        {
+          "speaker": "me",
+          "text": "recruiting and your day job. But I be curious to, like, hear your reactions to that."
+        },
+        {
+          "speaker": "them",
+          "text": "I guess it just depend the complexity of building that out. But I do think we would want to build the parameters that it's filtering. Like, at least for this recruiting part, right, we would wanna say, okay. For the HR director role, these are the things we want them to have at least three years of experience at director level or above. You know, things like that that we could plug into the system or however it works. And then it would filter the resumes and only pull the ones out that had those things that we selected as being necessary."
+        },
+        {
+          "speaker": "me",
+          "text": "That part, we can FlowBuilder it very easy for people to do in terms of and I know one of the things Ramon was asking is, like, oh, what does this look like for people who aren't necessarily building the Zaps, like, the automations, but for people using them. In terms of the team, like, using it, we have"
+        },
+        {
+          "speaker": "them",
+          "text": "Right."
+        },
+        {
+          "speaker": "me",
+          "text": "both what we call forms where it's like, hey. They can go in and actually have a form that you're having them fill out, which is like, oh, these are parameters"
+        },
+        {
+          "speaker": "them",
+          "text": "Mhmm."
+        },
+        {
+          "speaker": "me",
+          "text": "I care about. Here's the job description. Let's generate let's generate a set of rules. The other way you could do it is like, oh, we maybe we have a TeamChat channel where managers James, like, submit, hey, these are the criteria I'm working on and that in. And so you can sort of work where wherever people are today and, like, one of the main benefits of AutomateFlow is we're connected to so many different tools that you can allow like, most of the people at Anissa don't even need to know that AutomateFlow exists. Right? Like, it just sort of, like, works on the back end. It James connect these things do the flows, but people James still just work in the tools in which they work in. Today."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. I think the only people that would be submitting the parameters are, like, myself. Ramon,"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "If we hire an HR director, right, those people, The actual managers would not be doing that. They would we would just only want them to receive the resumes that are qualified."
+        },
+        {
+          "speaker": "me",
+          "text": "Gotcha."
+        },
+        {
+          "speaker": "them",
+          "text": "According to our parameters. So then they could open up Then they would have to read through them, right, determine who they actually wanna meet with. So that would be their only role. So I think it would be limited on the people here that would actually be"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "entering the the rules in the"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay. That makes in terms of entering the roles. And then"
+        },
+        {
+          "speaker": "them",
+          "text": "form. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "would you also be you and Ramon be, like, actually building and maybe clarifying question Have you been have you been in AutomateFlow before at all? So let me let me kinda just, like, show you what actually looks like because I think that that James FlowBuilder my questions FlowBuilder more sense. Share screen. So this is sort of like the default home screen, and you have a couple different options of types of automations to build. Sort of the the default bread and butter automation that we're talking about is what we call a Zap. This is just like a workflow where you have different triggers. So in this case, it would be hey. ADP, a resume comes in. Then we want to do something with it. So I want to or let's see. I have a job posting in ADP. I need to use their API so that the resume comes in, we download it, We use an AI by AutomateFlow step to to the QM. And, actually, we we'll probably first wanna look up the rules for that. Download it. Look up the rules. Like, hiring goals and a table Then review. The resume against those rules. EG is the person don't do that experience. And then, and then what do wanna"
+        },
+        {
+          "speaker": "them",
+          "text": "Forward."
+        },
+        {
+          "speaker": "me",
+          "text": "do? We want to just, like, I guess, put the for oh, sorry. Go ahead."
+        },
+        {
+          "speaker": "them",
+          "text": "Or forward those resumes to hiring manager or something like that?"
+        },
+        {
+          "speaker": "me",
+          "text": "Once a day."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Cool. Okay. So this is one sort of, like, way that you can build. Right? We have our Copilot that sits here. And what this James do is it'll, like, think through what tools are connected, what is already there. It'll start to lay these out. You could also just like click into these and sort of do it manually by yourself."
+        },
+        {
+          "speaker": "them",
+          "text": "Mhmm."
+        },
+        {
+          "speaker": "me",
+          "text": "There's both of those options. And while this is running, I'll show sort of the other options here for like, tools that exist. Tables, this is just like a Google Sheets GridBase sort of like a table you can store stuff in. They're those are interchangeable forms like I mentioned, like this might be a place where you have people where you, like, are updating the criteria that you're basing it on or when there's a new posting, maybe that's where you actually go and do that. A canvas is just a workflow tool where you have if you have workflows that have multiple different Zaps. So in this case, you could imagine okay, we're gonna, like, run this every day and then at the end of the week, maybe we wanna run a summary of all the resumes that have come through. And you could put both of those automations on, like, sort of one canvas so you can see the related pieces there. Maybe I can actually pull one. Up as an example. I don't want a new canvas. I want one of my own canvases. Uh-huh. Awesome. Canvas is Just, like, show you as an example. So it's like each of these boxes is, like, one of those automations that we were looking at. And so the goal here is just to say, how did the how does the system fit together overall? So let's go back here. Let's see. Well, this is running catches the web file download, get get the request file, find the hiring rules, use AI analysis and store results. We can actually go build this. But the so if we go back to my original question, right, the structure is here to do the pieces of what you want, but someone James have to, like, actually get connected to your system, write this act, FlowBuilder sure the web call is actually connected. Do the testing to FlowBuilder sure the flow actually flows through, like, that kind of those kind of pieces. And have a couple of different options, like I mentioned, sort of default is our self serve plan where you just like go in you Ramon would like actually do this building and you just basically pay for how many calls go through this system. There we have expert partners who if you're, like, hey. We need some help, but we don't necessarily want, like, someone from AutomateFlow. Actually who knows our business, who can, like, help us over a long period of time to just build this once. We have expert partners who can do sort of, like, one off builds on the order of magnitude of like 5 to $10-20K. They'll do like a one time come in build this workflow out for you, but they won't necessarily do like the second, third, fourth one. If that makes sense. And then the ex the end of the spectrum is, hey. Let's do a AutomateFlow enterprise plan. That comes with the, like, an an account manager, a technical or what we call a a customer success manager, a technical account manager who James, like, build this stuff for you, and over time James actually work with you guys to say, okay. What is the next thing that we need to do? How do we think about driving adoption across the org more broadly?"
+        },
+        {
+          "speaker": "them",
+          "text": "Mhmm."
+        },
+        {
+          "speaker": "me",
+          "text": "And that's that is like, that plan makes sense when you're like, hey. We're actually trying to drive transformation, adoption,"
+        },
+        {
+          "speaker": "them",
+          "text": "Mhmm."
+        },
+        {
+          "speaker": "me",
+          "text": "across business versus hey. We have, like, this one use case that we wanna build and sort of stop there. I realize the the spectrum there can be a lot. So I'll pause and see if you have any questions."
+        },
+        {
+          "speaker": "them",
+          "text": "So what is the difference of price for the enterprise versus just paying per per pass or per click?"
+        },
+        {
+          "speaker": "me",
+          "text": "So paying per pass and per click, is on the order of magnitude of, like, it actually, let me just show you because it it really depends on how much you are"
+        },
+        {
+          "speaker": "them",
+          "text": "And maybe you could give an example just based on this"
+        },
+        {
+          "speaker": "me",
+          "text": "yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "the hiring piece since that's, like, our most immediate use of it."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. For sure. So in this hiring example, if if we assume that this is the these are, like, the steps we would need to do. So we'd have one, two, three, four, four actions. Like that you would that would be used in each call, and you and how many of these would you say you're getting any like, how many resumes are coming in would you say?"
+        },
+        {
+          "speaker": "them",
+          "text": "Job,"
+        },
+        {
+          "speaker": "me",
+          "text": "Order."
+        },
+        {
+          "speaker": "them",
+          "text": "potentially, like, 300."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay. So if you're coming if 300 of them are coming in"
+        },
+        {
+          "speaker": "them",
+          "text": "Not every day. That was kinda like"
+        },
+        {
+          "speaker": "me",
+          "text": "every day, most"
+        },
+        {
+          "speaker": "them",
+          "text": "for the whole"
+        },
+        {
+          "speaker": "me",
+          "text": "okay. So for, like, maybe so maybe over"
+        },
+        {
+          "speaker": "them",
+          "text": "time the job was posted, let's say. Yep."
+        },
+        {
+          "speaker": "me",
+          "text": "course of a month, we might get 300. It might be reasonable."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "So if each of those takes each each of those 300 were to take five actions, assuming it went through the whole Zap,"
+        },
+        {
+          "speaker": "them",
+          "text": "Mhmm."
+        },
+        {
+          "speaker": "me",
+          "text": "you're talking around 1,500. Our intro teams plan starts at 2,000 tasks. Per month. So that would be the sort of, like, starting point"
+        },
+        {
+          "speaker": "them",
+          "text": "That would only cover, like, one role, basically, because that's just for one job. Right? So if we had 12, we'd need"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "12 times."
+        },
+        {
+          "speaker": "me",
+          "text": "So you would you would wanna be, like, in the 20 to 50 k range,"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "in terms of task, and so that's around, like, 300 a month. And this is where I was like, it really it's kind of hard without, like, laying out all of the use cases that you're talking about because with these ones, okay, we can see a path to, like, 25. Maybe maybe it should be 20 because of the way overages work. But you could also see a world based off of what you guys were talking about. It's like, oh, maybe we need to be, like, 200 k because we have these use cases and a bunch of other ones. And so if you're doing the self serve plan, it really is like month to month you can what I James often recommend is people start like, hey, maybe start at, five k, do that for a month, We didn't use that much. Maybe we so then we can go to two k, or we used way more than So next month, we can go to 10 k. Do that for a couple months, figure out what your volume is, and then people James switch to annual once they're like, okay. I've had a couple months. I know that in a given month, 20 k makes sense for me, so I'll pay for a year to get that annual discount. But this is all built on the assumption that, like, your team is, like, hands on keyboard, like, doing the building, making those connections, all that kind of stuff."
+        },
+        {
+          "speaker": "them",
+          "text": "And if you don't use like, let's say, 15,000 out the 20, does it roll over to the next month, the additional 5,000, or do you know?"
+        },
+        {
+          "speaker": "me",
+          "text": "No. It does not. So if if you if you don't use the task in the month, if they they don't roll over, If in a month you go"
+        },
+        {
+          "speaker": "them",
+          "text": "Mhmm."
+        },
+        {
+          "speaker": "me",
+          "text": "over 0.25 times the the per task rate. So for the sake of illustration, assume it's, like, 1¢ per task it's it doesn't come out to that. But assume it's 1¢ per task, you'd pay 1.25¢ per task. Over 20,000. In that month, if that makes sense."
+        },
+        {
+          "speaker": "them",
+          "text": "So the difference between the professional and team, the team"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "someone there could help us build it out."
+        },
+        {
+          "speaker": "me",
+          "text": "No. So both of these sorry. A part"
+        },
+        {
+          "speaker": "them",
+          "text": "Is that what you're saying?"
+        },
+        {
+          "speaker": "me",
+          "text": "Both of these are are self gonna be self serve."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "It's gonna be enterprise plan is where someone we might have someone helping you build it out."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "That makes sense. The professional is like, hey. This is like one person."
+        },
+        {
+          "speaker": "them",
+          "text": "Yep. Uh-huh."
+        },
+        {
+          "speaker": "me",
+          "text": "Effectively. Like, you can't have, like, different people in the account. And then Teams is, like, hey. We have a couple of people within our company. We we need admin, for example, single sign on, some basic security measures. But it's all, like, self serve options."
+        },
+        {
+          "speaker": "them",
+          "text": "So the team, let's say, just for in this scenario,"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Right."
+        },
+        {
+          "speaker": "them",
+          "text": "$2.49 a month, that covers 25 users, or is that per user"
+        },
+        {
+          "speaker": "me",
+          "text": "No. That's up to 25 users who can be in this"
+        },
+        {
+          "speaker": "them",
+          "text": "Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "system. But and Claire and one potential thing to clarify that's up to 25 people in AutomateFlow, not, like, who are benefiting from the automations. If you have, like, a manager sending the email that were, like, at the end sending an email to, that person would not necessarily count against the 25 unless they're, like, in AutomateFlow, if that makes"
+        },
+        {
+          "speaker": "them",
+          "text": "Using a"
+        },
+        {
+          "speaker": "me",
+          "text": "sense."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Those are the major things. And then I guess the other thing that just so I like to show experts. Like I was mentioning, we have the sort of solutions partners. There's a couple of these that I've worked with. If you're like, hey. We want to help maybe standing this up, but we don't necessarily think it we have capacity to do, a full enterprise evaluation or if we're not necessarily looking at how do we drive AI more broadly across the company, then these pieces here can be helpful. These these organizations can be helpful. I'll pause there. At least on the have any questions on the way the the sort of self serve plans work? And then I can talk a bit about what's included in enterprise, if that would be helpful. Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "Questions yet?"
+        },
+        {
+          "speaker": "me",
+          "text": "Then the next thing I James show is let me just take a look, show you kind of what, like, inner what's included in enterprise And give you sort of, an order of magnitude estimate that we're talking about. Okay. And, actually, I think I could this is this is better kind of showing the differences here. So the main things on enterprise are twofold. One, like I mentioned, you have an actual account team who James help you build these things over time. They'll actually understand your business, figure help you out what are, the second, third, fourth things to do. And actually help you, like, hands on keyboard, like, get these built for you so that your team can focus on know, continue to do your day jobs. The other major benefit here is around security and governance. So, like, for example, you could FlowBuilder FlowBuilder quality of life agents available to people. So, like, as a simple example, I have an agent that runs every day before all of my calls that, like, puts a little dossier together for me. You could imagine something like that being useful for, like, the executive team or, like, maybe"
+        },
+        {
+          "speaker": "them",
+          "text": "Mhmm."
+        },
+        {
+          "speaker": "me",
+          "text": "someone in your finance or wants to like have a have something that runs once week that summarizes invoices. Just as, like, an as an example. So if you want to FlowBuilder those things available to other people in the team, you have more security around what apps can they connect to, giving permissions, making sure there are approvals before it's done. So once you have the HR person in, you could say, Okay, anytime someone wants to connect to our HR apps, that person has to say like, yes. We're okay running this automation. So that's all those, like, governance security controls are in the enterprise plan. And just for context, like, the investment is very, very different from the team's plan. So we often like to see, like, hey. What are the, like, actual value case? What's the ROI that we think we could drive if we could actually you know, do four or five of these use cases if we could, like, spread this across the business? Does this then, like, justify a larger, like, partnership? So that's one that's the, like, kind of frame that we typically think of for the enterprise plans. I'll pause. Any questions on this so far? At least, like, I'm trying to think FlowBuilder sure. At least you understand, like, hey. This is basically how AutomateFlow works. Are a couple different options in how we could partner together"
+        },
+        {
+          "speaker": "them",
+          "text": "I know there'll be more question, especially around and how we keep our information secure, private, and not shared, like,"
+        },
+        {
+          "speaker": "me",
+          "text": "Now"
+        },
+        {
+          "speaker": "them",
+          "text": "it is on chat. So"
+        },
+        {
+          "speaker": "me",
+          "text": "I can I can share some of that? So"
+        },
+        {
+          "speaker": "them",
+          "text": "okay."
+        },
+        {
+          "speaker": "me",
+          "text": "trust or is it the task? Security and compliance. So I'll share this with you. You don't we feel like read it all, but effectively, have what I would call, like, the standard enterprise security governance features, and particularly around AI. By default, on the enterprise plan, we don't, store or train on any of the, like, conversations you have with our AI agents, like, in in the system. On the Teams plan, there's an option to opt out of that storage, In general, we don't keep any data in our system unless it's, like, stored in a table. So because we're, an API system, we're, show we have logs about, like, things went through or how many went through the volume, whether or not it was successful."
+        },
+        {
+          "speaker": "them",
+          "text": "Mhmm."
+        },
+        {
+          "speaker": "me",
+          "text": "But we're not storing the actual, like, information. So in the example of, like, the HR case, we're not, like, keeping information about the candidates, for example, in our system. We just have, like, oh, this API call was made to OpenAI. They responded and we passed that call over to TeamChat. As an example. I'll share all the details on this. We can share this with, like, your IT security team. As well. And then I guess the other thing in that same vein that we often yeah. So, like, the other thing is just, like, sort of our default terms of service If you guys have a, like, procurement legal team that has to review stuff like this,"
+        },
+        {
+          "speaker": "them",
+          "text": "Mhmm."
+        },
+        {
+          "speaker": "me",
+          "text": "I could share these kind I could share this as well. So you have a clear idea of, like, hey. This is what sort of standard agreement entails. Generally, we don't on the for the team's plan, we don't FlowBuilder adjustments the terms of service, but for the enterprise plan, if that's something you guys wanna explore."
+        },
+        {
+          "speaker": "them",
+          "text": "Oh,"
+        },
+        {
+          "speaker": "me",
+          "text": "That there's more flexibility in terms of the options. Yeah. I'm trying to think anything anything else I I'm obviously, like, there as you look through, there'll be more questions. But any, like, other high"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "level questions in terms of, like, how it works, what it how what it would look like actually use for your team."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. I mean, I think I have a a good idea. I think it for us, it would be can is there somebody here qualified to build this out?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "It seems fairly easy, but I'm sure it's more nuanced once you get into it. But that would probably determine, you know, which"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "plan we would go with if we need the help or not. What is the price on the enterprise? Is it based on how much you use, or is it just like a flat"
+        },
+        {
+          "speaker": "me",
+          "text": "It's a combination of we what we call a"
+        },
+        {
+          "speaker": "them",
+          "text": "rate?"
+        },
+        {
+          "speaker": "me",
+          "text": "platform fee and then usage. This is it's hard to say because it really is like varied, but I would say most of our customers are in the 65 to 70 k range per year."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "But it can vary depending on like what specifically is in the plan."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay. And then how do you determine that price? Is do you just need to know how"
+        },
+        {
+          "speaker": "me",
+          "text": "So"
+        },
+        {
+          "speaker": "them",
+          "text": "gonna use it and how much we're gonna use it?"
+        },
+        {
+          "speaker": "me",
+          "text": "so a combination"
+        },
+        {
+          "speaker": "them",
+          "text": "To give us a"
+        },
+        {
+          "speaker": "me",
+          "text": "of how much you're gonna use it and also, like, what is sort of your road map of, what do we want to build. And, like, how much support from AutomateFlow do we do what do we need? Because there's, like, levels of there's everywhere from oh, okay. We just want like, it's still gonna be us building it. We just want a person who we can, like, ask questions to. We have, a shared TeamChat channel. Like, we want, like, that sort of super support. Or it's like, actually, no. We want, like, handsome one hands on keyboard, spending, like, real time with us every day to, like, actually get these rolled out and, getting embedded in our business. And so that's, like, what can change that can change that, if that makes sense."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Maybe if you could just send us that or send it to Ramon. But just assume for now, maybe, let's say, we're gonna hire 15 roles. Right? So we determine that each one, let's say, 300 resumes, so 1,500"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "a 150 click throughs. Per person. So maybe based on that usage and needing someone to help us build it out, like, put in the rules."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "And give us, you know, an estimate based on that. Now I'm sure we'll expand afterwards, but I don't think immediately."
+        },
+        {
+          "speaker": "me",
+          "text": "Makes sense?"
+        },
+        {
+          "speaker": "them",
+          "text": "We would be using it outside of that."
+        },
+        {
+          "speaker": "me",
+          "text": "That makes a lot of sense. I mean, what we what we James offer see a lot of customers do is, like, they'll start on Teams, maybe try to build, like, one or two use case, and they're like, okay. This makes sense. We wanna actually expand"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Then they'll explore, something in enterprise, if that ends up making sense. But I can I'll send over, cover cover of the use cases we talked about. I'll also just share some of, hey. Here are some, like, other ones based on what you guys said that, like, may be worth exploring as well. Share the details on pricing for the team's plan based off of the volumes that you're talking about assuming 15 jobs that are doing, like, roughly 300 of those a month. And then I'll also send over just sort of the basic, like, governance security"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "pieces here."
+        },
+        {
+          "speaker": "them",
+          "text": "Terms of service, yes, we can have people start to review that."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. And then, I guess, just super tactically, what I would"
+        },
+        {
+          "speaker": "them",
+          "text": "K?"
+        },
+        {
+          "speaker": "me",
+          "text": "what I often recommend if you're is there's effectively there's a two week free trial that you can do on AutomateFlow."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "If there's a week if we can find a window where, hey, you, Ramon, would have some time even, like, maybe like three or four hours over the course of a week to actually"
+        },
+        {
+          "speaker": "them",
+          "text": "Mhmm."
+        },
+        {
+          "speaker": "me",
+          "text": "go into it. You should try it, then we can meet like halfway through that trial and that would also give you a sense of like okay, how realistic is this? Do we have the capability to do it? What questions do we have?"
+        },
+        {
+          "speaker": "them",
+          "text": "Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "All that kind of stuff. Is there I guess my my question is then, like, when would that be when would there be a window that you guys could have the time given, like, sort of the capacity"
+        },
+        {
+          "speaker": "them",
+          "text": "Possibly two weeks from now. Next week is our big, like, on-site"
+        },
+        {
+          "speaker": "me",
+          "text": "constraints that you're under right now? Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "meeting. For the leadership team, which is all week long."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "So potentially the week after that,"
+        },
+        {
+          "speaker": "me",
+          "text": "So we you would start"
+        },
+        {
+          "speaker": "them",
+          "text": "we could work on it."
+        },
+        {
+          "speaker": "me",
+          "text": "the week of the ninth. That would you maybe you'd maybe start a trial the week of the ninth. Potentially."
+        },
+        {
+          "speaker": "them",
+          "text": "Maybe. Then I'm planning to be out the week of the sixteenth, so I don't know if yeah. I'd have to ask Ramon if"
+        },
+        {
+          "speaker": "me",
+          "text": "That would be Okay."
+        },
+        {
+          "speaker": "them",
+          "text": "if you'd wanna I could at least help him start it out."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. And then I guess, question, if you're gonna be out the week of the sixteenth, would it would it FlowBuilder sense to meet with Ramon without you, or should we plan to have have it it's a little tough. Maybe you start the week of the ninth and I could potentially I could maybe try to extend the trial and we can meet, like, the '20 like, this week of the twenty third,"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "And so then would give us a chance to like, hey. You've had a chance to play around with it. Of course, I'll be you can ask questions, like, while you're doing that. And then that would also just give you a sense of, like, okay, how hard is this? Do we need support? Like, what all that kind of things and we could have that discussion. And figure out and you'll also have a sense of, like, which, start or have more of a sense of, like, what tasks"
+        },
+        {
+          "speaker": "them",
+          "text": "Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "levels may or may not be. Helpful."
+        },
+        {
+          "speaker": "them",
+          "text": "That sounds good. If you don't mind, like, when you email Ramon just mentioning that,"
+        },
+        {
+          "speaker": "me",
+          "text": "100%. Would would you guys be opposed? Could I"
+        },
+        {
+          "speaker": "them",
+          "text": "you know,"
+        },
+        {
+          "speaker": "me",
+          "text": "for as a placeholder, maybe place put something on the February 24 for us to follow-up, and then we can move around if we"
+        },
+        {
+          "speaker": "them",
+          "text": "Yes."
+        },
+        {
+          "speaker": "me",
+          "text": "need to as we get closer."
+        },
+        {
+          "speaker": "them",
+          "text": "I'll have to get back to you, though, on his schedule because I'm I'm not sure."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay. I James I James"
+        },
+        {
+          "speaker": "them",
+          "text": "Of his calendar."
+        },
+        {
+          "speaker": "me",
+          "text": "I'll send something. Feel feel free to move it. It's far enough out that, like, I can be flexible. I just wanna"
+        },
+        {
+          "speaker": "them",
+          "text": "Okay. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "FlowBuilder I just like to have, like, something down so we can, like, have the have the touch point. Landed."
+        },
+        {
+          "speaker": "them",
+          "text": "For sure."
+        },
+        {
+          "speaker": "me",
+          "text": "But I James send over all these details, send over that calendar hold, and I think I think that's a good plan at least for you guys to get a sense of, like, okay. How does this work? How hard is this? And act I realized I didn't really say this all but you shouldn't need support. Like, full transparency is designed to be really easy."
+        },
+        {
+          "speaker": "them",
+          "text": "User friendly? Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "Hardest part is going to be the ADP connection transparently because that's, like, they don't have a AutomateFlow connection, you'll have to, like, figure out how to connect via their API, and that might be the, like, biggest hurdle. But once it's done once, you kind of just you can just use it everywhere."
+        },
+        {
+          "speaker": "them",
+          "text": "So would we reach out to ADP to"
+        },
+        {
+          "speaker": "me",
+          "text": "If that makes sense."
+        },
+        {
+          "speaker": "them",
+          "text": "do that? Like, how"
+        },
+        {
+          "speaker": "me",
+          "text": "You have to you would have to do it yourself, I think. So I was I was just doing some quick googling before"
+        },
+        {
+          "speaker": "them",
+          "text": "Okay. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "this. It looked like ADP, like, they have"
+        },
+        {
+          "speaker": "them",
+          "text": "Oh, okay."
+        },
+        {
+          "speaker": "me",
+          "text": "AI. Connection. So I've not I don't know the details of their API yet, but it would be like, hey. There's a URL that that's somewhere in your account. That says, like, you send it a request. It'll respond with, here's the list of resumes or something like that."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "I'm at our rep at ADP could help us too."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Okay. If you and if have an ADP rep, I'm sure they they've worked with this kind of stuff before, so they can probably"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "in the right direction."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "Cool."
+        },
+        {
+          "speaker": "them",
+          "text": "That sounds good. And then for the free trial, should I just tell Ramon to just sign up for it around the ninth?"
+        },
+        {
+          "speaker": "me",
+          "text": "I would wait until the because it's"
+        },
+        {
+          "speaker": "them",
+          "text": "Well, yeah. So we're gonna use it."
+        },
+        {
+          "speaker": "me",
+          "text": "because it Lee is two weeks. So I'll send I'll send a reminder. Like, I'll send the email today, like, right after this. Like,"
+        },
+        {
+          "speaker": "them",
+          "text": "Yep."
+        },
+        {
+          "speaker": "me",
+          "text": "everything discussed, but then I'll send a reminder, like, around the ninth. Like, hey. Like, you should start the free trial. Like, start playing around with"
+        },
+        {
+          "speaker": "them",
+          "text": "Yep. So we can meet Dawn, yeah, whatever day. Okay."
+        },
+        {
+          "speaker": "me",
+          "text": "And then they got away."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay. Cool."
+        },
+        {
+          "speaker": "me",
+          "text": "Thanks. Courtney, was great to meet you. Phil, if you have other questions and things pop up, feel free to use me as a resource. Happy to happy to be helpful. But looking forward to helping you guys get this solved."
+        },
+        {
+          "speaker": "them",
+          "text": "Alright. Thank you so much."
+        },
+        {
+          "speaker": "me",
+          "text": "Have a great day. Bye."
+        },
+        {
+          "speaker": "them",
+          "text": "Bye."
+        }
+      ],
+      "attendees": [
+        "Ramon",
+        "Courtney Jones",
+        "Alex Obleton"
+      ],
+      "date": "2026-01-29",
+      "duration": 64,
+      "keyTakeaways": [],
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/anisa/transcripts/260129-anisa-anisa-international-&--adrian-|--meeting.md",
+      "createdAt": "2026-01-29T17:46:49.189Z",
+      "anonymized": true
+    },
+    "artisan-brands_crm_snapshot": {
+      "id": "artisan-brands_crm_snapshot",
+      "dealId": "artisan-brands",
+      "type": "crm_snapshot",
+      "sourceFile": "context.md",
+      "createdAt": "2026-01-29",
+      "anonymized": true,
+      "dealProperties": {
+        "stage": "Discovery / Trial Scheduled",
+        "amount": "TBD (~$3K ARR for Teams, $65-70K if Enterprise)",
+        "closeDate": "TBD (Feb 24 follow-up will determine)",
+        "lastContactedDate": "2026-01-29"
+      },
+      "contacts": [
+        {
+          "name": "Ramon",
+          "title": "Unknown title (seems senior, possibly COO?)",
+          "role": "stakeholder"
+        },
+        {
+          "name": "Courtney Jones",
+          "title": "Executive Assistant to CEO / Current Recruiter",
+          "role": "decision_maker"
+        },
+        {
+          "name": "COO",
+          "title": "Mentioned as \"someone who acts as HR\"",
+          "role": "stakeholder"
+        },
+        {
+          "name": "Future HR Director",
+          "title": "One of the 15 open roles",
+          "role": "stakeholder"
+        }
+      ],
+      "notes": [],
+      "activityLog": [
+        {
+          "date": "2026-01-29",
+          "type": "call",
+          "description": "** Discovery call with Ramon and Courtney. Ramon had to leave early, Courtney stayed for full demo. Discussed recruiting automation use case, pricing (Teams vs Enterprise), security/ToS. They're interested in 2-week trial starting week of Feb 9 after their leadership on-site. Sent follow-up email with Teams pricing, security docs, ToS, exec ops deck (Enterprise positioned as $50-100K range). Calendar hold for Feb 24 follow-up. Reminder email scheduled for Feb 9 to prompt trial start."
+        }
+      ]
+    },
+    "doc_artisan-brands_followup-email": {
+      "id": "doc_artisan-brands_followup-email",
+      "dealId": "artisan-brands",
+      "type": "document",
+      "title": "followup-email",
+      "documentType": "other",
+      "content": "const { Document, Packer, Paragraph, TextRun, ExternalHyperlink, AlignmentType, LevelFormat } = require('docx');\nconst fs = require('fs');\n\nconst doc = new Document({\n  styles: {\n    default: { document: { run: { font: \"Arial\", size: 22 } } }\n  },\n  numbering: {\n    config: [\n      { reference: \"next-steps\",\n        levels: [{ level: 0, format: LevelFormat.DECIMAL, text: \"%1.\", alignment: AlignmentType.LEFT,\n          style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },\n      { reference: \"resources\",\n        levels: [{ level: 0, format: LevelFormat.BULLET, text: \"•\", alignment: AlignmentType.LEFT,\n          style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] }\n    ]\n  },\n  sections: [{\n    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },\n    children: [\n      new Paragraph({ children: [new TextRun(\"Hi Ramon,\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"Great connecting with you and Courtney today. Wanted to follow up with everything we discussed.\")] }),\n      new Paragraph({ children: [] }),\n\n      // What we covered\n      new Paragraph({ children: [new TextRun({ text: \"What we covered\", bold: true })] }),\n      new Paragraph({ children: [new TextRun(\"Your immediate priority is automating the first-pass resume screening for the ~15 open roles. The workflow would pull resumes from ADP, run them through AI filtering based on your criteria (experience level, qualifications, non-negotiables), and surface only qualified candidates to hiring managers. Courtney estimated ~300 resumes per role, which means roughly 22,500 tasks/month across all positions.\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"Beyond recruiting, you mentioned potential expansion into marketing, operations, and product development workflows once you see how this initial use case performs.\")] }),\n      new Paragraph({ children: [] }),\n\n      // Pricing\n      new Paragraph({ children: [new TextRun({ text: \"Pricing for your volume\", bold: true })] }),\n      new Paragraph({ children: [new TextRun(\"For the recruiting use case at ~22.5K tasks/month, the \"), new TextRun({ text: \"Teams plan\", bold: true }), new TextRun(\" is the right fit:\")] }),\n      new Paragraph({ numbering: { reference: \"resources\", level: 0 }, children: [new TextRun({ text: \"$249/month\", bold: true }), new TextRun(\" for 20K tasks, 25 users\")] }),\n      new Paragraph({ numbering: { reference: \"resources\", level: 0 }, children: [new TextRun(\"Overage rate: 1.25x per-task rate for anything over 20K\")] }),\n      new Paragraph({ numbering: { reference: \"resources\", level: 0 }, children: [new TextRun(\"Annual discount available once you've validated your volume\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"If you decide you want hands-on building support and enhanced governance controls down the line, Enterprise plans start around $65-70K/year with dedicated account management.\")] }),\n      new Paragraph({ children: [] }),\n\n      // Technical note\n      new Paragraph({ children: [new TextRun({ text: \"Technical note: ADP connection\", bold: true })] }),\n      new Paragraph({ children: [new TextRun(\"ADP doesn't have a native AutomateFlow integration, so you'll need to connect via their API. The good news is ADP does have an API available. I'd recommend reaching out to your ADP rep to get API access set up—they've likely helped other customers with similar integrations. Once that connection is established, the rest of the workflow is straightforward.\")] }),\n      new Paragraph({ children: [] }),\n\n      // Next steps\n      new Paragraph({ children: [new TextRun({ text: \"Next steps\", bold: true })] }),\n      new Paragraph({ numbering: { reference: \"next-steps\", level: 0 }, children: [new TextRun({ text: \"Week of Feb 9:\", bold: true }), new TextRun(\" Start your 2-week free trial (I'll send a reminder)\")] }),\n      new Paragraph({ numbering: { reference: \"next-steps\", level: 0 }, children: [new TextRun({ text: \"During trial:\", bold: true }), new TextRun(\" Reach out to your ADP rep about API access\")] }),\n      new Paragraph({ numbering: { reference: \"next-steps\", level: 0 }, children: [new TextRun({ text: \"Feb 24:\", bold: true }), new TextRun(\" Follow-up call to review progress and answer questions (calendar hold sent)\")] }),\n      new Paragraph({ children: [] }),\n\n      // Resources\n      new Paragraph({ children: [new TextRun({ text: \"Resources\", bold: true })] }),\n      new Paragraph({ numbering: { reference: \"resources\", level: 0 }, children: [\n        new ExternalHyperlink({ children: [new TextRun({ text: \"Security & Trust Center\", style: \"Hyperlink\" })], link: \"https://example.com/...\" }),\n        new TextRun(\" – SOC 2, data handling, compliance details\")\n      ] }),\n      new Paragraph({ numbering: { reference: \"resources\", level: 0 }, children: [\n        new ExternalHyperlink({ children: [new TextRun({ text: \"Terms of Service\", style: \"Hyperlink\" })], link: \"https://example.com/...\" }),\n        new TextRun(\" – Standard agreement for your legal team to review\")\n      ] }),\n      new Paragraph({ numbering: { reference: \"resources\", level: 0 }, children: [\n        new ExternalHyperlink({ children: [new TextRun({ text: \"Executive Ops Use Cases\", style: \"Hyperlink\" })], link: \"https://example.com/...\" }),\n        new TextRun(\" – Examples from our EA team that might be useful for Courtney\")\n      ] }),\n      new Paragraph({ children: [] }),\n\n      // Closing\n      new Paragraph({ children: [new TextRun(\"Feel free to reach out if questions come up before we connect again. Happy to help you and Courtney get this stood up.\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"Best,\")] }),\n      new Paragraph({ children: [new TextRun(\"Alex\")] })\n    ]\n  }]\n});\n\nPacker.toBuffer(doc).then(buffer => {\n  fs.writeFileSync(\"/Users/username/sales-workspace/deals/Artisan Brands/outputs/followup-email.docx\", buffer);\n  console.log(\"Created followup-email.docx\");\n});\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/anisa/outputs/followup-email.js",
+      "createdAt": "2026-01-29T17:47:42.841Z",
+      "anonymized": true
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "artisan-brands_v2_cp_001",
+      "dealId": "artisan-brands",
+      "version": 2,
+      "timestamp": "2026-01-29T17:47:42.841Z",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_artisan-brands_260129-anisa-anisa-international-adrian-meeting",
+          "type": "transcript",
+          "title": "Artisan Brands International &  Alex |  Meeting",
+          "date": "2026-01-29"
+        },
+        {
+          "artifactId": "artisan-brands_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery / Trial Scheduled",
+          "date": "2026-01-29"
+        },
+        {
+          "artifactId": "doc_artisan-brands_followup-email",
+          "type": "document",
+          "title": "followup-email",
+          "date": "2026-01-29T17:47:42.841Z"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "Artisan Brands",
+        "stage": "Discovery / Trial Scheduled",
+        "amount": "TBD (~$3K ARR for Teams, $65-70K if Enterprise)",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [
+        {
+          "name": "Ramon",
+          "title": "Unknown title (seems senior, possibly COO?)",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Courtney Jones",
+          "title": "Executive Assistant to CEO / Current Recruiter",
+          "role": "decision_maker",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "COO",
+          "title": "Mentioned as \"someone who acts as HR\"",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Future HR Director",
+          "title": "One of the 15 open roles",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "artisan-brands_v2_cp_001_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_artisan-brands_260129-anisa-anisa-international-adrian-meeting",
+            "artisan-brands_crm_snapshot",
+            "doc_artisan-brands_followup-email"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "artisan-brands_v2_cp_001_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_artisan-brands_260129-anisa-anisa-international-adrian-meeting"
+          ],
+          "optionalArtifacts": [
+            "artisan-brands_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "artisan-brands_v2_cp_001_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_artisan-brands_260129-anisa-anisa-international-adrian-meeting"
+          ],
+          "optionalArtifacts": [
+            "artisan-brands_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        },
+        {
+          "id": "artisan-brands_v2_cp_001_task_stakeholder",
+          "type": "stakeholder_analysis",
+          "prompt": "Map the key stakeholders in this deal. For each, identify their role in the decision process, sentiment, concerns, and level of influence. Identify any missing stakeholders that should be engaged.",
+          "requiredArtifacts": [
+            "tx_artisan-brands_260129-anisa-anisa-international-adrian-meeting",
+            "artisan-brands_crm_snapshot",
+            "doc_artisan-brands_followup-email"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "stakeholderMapping",
+            "dealQualification",
+            "informationSynthesis"
+          ],
+          "maxTurns": 2
+        }
+      ]
+    },
+    {
+      "id": "artisan-brands_v2_cp_002",
+      "dealId": "artisan-brands",
+      "version": 2,
+      "timestamp": "2026-01-29T17:53:25.893Z",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_artisan-brands_260129-anisa-anisa-international-adrian-meeting",
+          "type": "transcript",
+          "title": "Artisan Brands International &  Alex |  Meeting",
+          "date": "2026-01-29"
+        },
+        {
+          "artifactId": "artisan-brands_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery / Trial Scheduled",
+          "date": "2026-01-29"
+        },
+        {
+          "artifactId": "doc_artisan-brands_followup-email",
+          "type": "document",
+          "title": "followup-email",
+          "date": "2026-01-29T17:53:25.893Z"
+        },
+        {
+          "artifactId": "doc_artisan-brands_followup-email",
+          "type": "document",
+          "title": "followup-email",
+          "date": "2026-01-29T17:47:42.841Z"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "Artisan Brands",
+        "stage": "Discovery / Trial Scheduled",
+        "amount": "TBD (~$3K ARR for Teams, $65-70K if Enterprise)",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [
+        {
+          "name": "Ramon",
+          "title": "Unknown title (seems senior, possibly COO?)",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Courtney Jones",
+          "title": "Executive Assistant to CEO / Current Recruiter",
+          "role": "decision_maker",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "COO",
+          "title": "Mentioned as \"someone who acts as HR\"",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Future HR Director",
+          "title": "One of the 15 open roles",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "artisan-brands_v2_cp_002_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_artisan-brands_260129-anisa-anisa-international-adrian-meeting",
+            "artisan-brands_crm_snapshot",
+            "doc_artisan-brands_followup-email"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "artisan-brands_v2_cp_002_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_artisan-brands_260129-anisa-anisa-international-adrian-meeting"
+          ],
+          "optionalArtifacts": [
+            "artisan-brands_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "artisan-brands_v2_cp_002_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_artisan-brands_260129-anisa-anisa-international-adrian-meeting"
+          ],
+          "optionalArtifacts": [
+            "artisan-brands_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        },
+        {
+          "id": "artisan-brands_v2_cp_002_task_stakeholder",
+          "type": "stakeholder_analysis",
+          "prompt": "Map the key stakeholders in this deal. For each, identify their role in the decision process, sentiment, concerns, and level of influence. Identify any missing stakeholders that should be engaged.",
+          "requiredArtifacts": [
+            "tx_artisan-brands_260129-anisa-anisa-international-adrian-meeting",
+            "artisan-brands_crm_snapshot",
+            "doc_artisan-brands_followup-email",
+            "doc_artisan-brands_followup-email"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "stakeholderMapping",
+            "dealQualification",
+            "informationSynthesis"
+          ],
+          "maxTurns": 2
+        }
+      ]
+    }
+  ],
+  "finalOutcome": "active",
+  "metadata": {
+    "sourceDeals": [
+      "anisa"
+    ],
+    "transcriptCount": 1,
+    "artifactCount": 4,
+    "dateRange": {
+      "start": "2026-01-29",
+      "end": "2026-01-29T17:53:25.893Z"
+    }
+  }
+}

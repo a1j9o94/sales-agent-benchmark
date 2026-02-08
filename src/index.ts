@@ -26,8 +26,11 @@ import {
   handleInitDatabase,
 } from "../api/results";
 import { handleBenchmarkStream } from "../api/benchmark-stream";
+import { handleBenchmarkStreamV2, handleV2DealsEndpoint } from "../api/benchmark-stream-v2";
 import { handleAgentResults, handleReferenceAgentResults } from "../api/agent-results";
 import { handleReferenceAgent } from "../api/reference-agent";
+import { handleGetV2Leaderboard, handleGetV2RunDetails } from "../api/results";
+import { handleEvaluateV2Endpoint } from "../api/evaluate-response-v2";
 
 const SALES_AGENT_CONTEXT = `You are an expert sales analyst and strategist. Your role is to help with:
 
@@ -218,6 +221,31 @@ const server = serve({
       POST: (req) => handleInitDatabase(req),
     },
 
+    // V2 API routes
+    "/api/v2/benchmark/stream": {
+      POST: (req) => handleBenchmarkStreamV2(req),
+    },
+
+    "/api/v2/benchmark/deals": {
+      GET: (req) => handleV2DealsEndpoint(req),
+    },
+
+    "/api/v2/benchmark/evaluate": {
+      POST: (req) => handleEvaluateV2Endpoint(req),
+    },
+
+    "/api/v2/leaderboard": {
+      GET: (req) => handleGetV2Leaderboard(req),
+    },
+
+    "/api/v2/agent-results/:id": {
+      GET: (req) => handleGetV2RunDetails(req),
+    },
+
+    "/api/v2/reference-agent/:modelId": {
+      POST: (req) => handleReferenceAgent(req),
+    },
+
     // Keep the hello endpoints for testing
     "/api/hello": {
       async GET() {
@@ -274,18 +302,25 @@ const server = serve({
 
 console.log(`🚀 Server running at ${server.url}`);
 console.log(`
-📋 Benchmark API Endpoints:
-  POST /api/agent                      - Reference sales agent (implements benchmark contract)
-  POST /api/register                   - Register your agent endpoint
-  GET  /api/register                   - List registered agents
-  POST /api/test-agent                 - Test an agent endpoint
-  POST /api/benchmark/run              - Run the benchmark
-  POST /api/benchmark/stream           - Stream benchmark progress (SSE)
-  GET  /api/benchmark/deals            - Get available deals
-  GET  /api/leaderboard                - Get leaderboard rankings
-  GET  /api/runs                       - Get all benchmark runs (for scatter plot)
-  POST /api/results                    - Save benchmark results
-  GET  /api/agent-results/:id          - Get detailed results for a run
-  POST /api/reference-agent/:modelId   - Reference agent via OpenRouter
-  POST /api/init-db                    - Initialize database tables
+Benchmark API Endpoints:
+
+  V1:
+  POST /api/agent                        - Reference sales agent
+  POST /api/register                     - Register your agent endpoint
+  POST /api/benchmark/stream             - Stream benchmark progress (SSE)
+  GET  /api/benchmark/deals              - Get available deals
+  GET  /api/leaderboard                  - Get leaderboard rankings
+  GET  /api/runs                         - Get all benchmark runs
+  POST /api/results                      - Save benchmark results
+  GET  /api/agent-results/:id            - Get detailed results for a run
+  POST /api/reference-agent/:modelId     - Reference agent via OpenRouter
+  POST /api/init-db                      - Initialize database tables
+
+  V2:
+  POST /api/v2/benchmark/stream          - Stream V2 benchmark progress (SSE)
+  GET  /api/v2/benchmark/deals           - Get available V2 deals
+  POST /api/v2/benchmark/evaluate        - Evaluate a V2 task
+  GET  /api/v2/leaderboard               - Get V2 leaderboard rankings
+  GET  /api/v2/agent-results/:id         - Get V2 run details
+  POST /api/v2/reference-agent/:modelId  - V2 reference agent via OpenRouter
 `);

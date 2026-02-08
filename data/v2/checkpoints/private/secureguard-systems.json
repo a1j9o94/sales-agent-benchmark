@@ -1,0 +1,1031 @@
+{
+  "id": "secureguard-systems",
+  "name": "SecureGuard Systems",
+  "version": 2,
+  "artifacts": {
+    "tx_secureguard-systems_260121-securityscg-security-consulting-group-inc-a": {
+      "id": "tx_secureguard-systems_260121-securityscg-security-consulting-group-inc-a",
+      "dealId": "secureguard-systems",
+      "type": "transcript",
+      "title": "security consulting group inc &  Alex |  Meeting",
+      "rawText": "# security consulting group inc &  Alex |  Meeting\n\n## Meeting Details\n\n**Meeting ID:** dd761059-c753-4fbf-9e2e-5ec206c626bb\n\n**Date & Time:** Wednesday, January 21, 2026 at 8:45 PM UTC\n\n**Calendar Event ID:** 35o5os7kc6jbgv3ctll8nantk0\n\n**Calendar Event Title:** security consulting group inc &  Alex |  Meeting\n\n**Organizer:** Alex Obleton (user@user)\n\n### Attendees\n\n- **Nick** (user@user)\n- **Alex Obleton** (user@user)\n\n## My Notes\n\nThey built their own custom CRM, \n\nTrackTick\n\nThere's this company called AMIKA right now there's a loop in the system, when we generate an invoice, it's not working, the whole point is to automate, this is who they partnered up with AMIKA has technically optimized this, if we were able to help build them out, would be confidently say switching over if there's a solution that could work. if this works, we can talk to tracktick, and when we work with them\n\nThey overed to get them top 10 clients box seats becasue they didn't want, Of the top 10 customers, goes to shows that the level\n\nCal Saga - is a union for private security so they've done public \n\nGenerating 50 to 60 invoices every week, ~120 token items being used in a given month, they have an ecommerce platform through shopify, want to automate so every time I FlowBuilder in an invoice in shopify it generates an invioce in quickbooks\n\n[https://example.com/...\n\nBut also the tracktic portion, business is business, so if there are any savings that should be done and FlowBuilder sure from an operatig expense costs, they're pay as you go they're paying 2,800 a month, the integration is 50 bucks a month, Amika would charge 18 if you would go with them directly, the goal is for them to work tractic and switching providers to guard track\n\nGuardTrack, find a solution of James work, James work at a better cost know him as personal level, developing a system very similar to tractick, \n\nGuardTrack, this is something, can get the door open to meet with the owner/developer of that company, so we can work out a deal so that the contractors\n\n## Full Transcript\n\nThem: Recording in progress.\nMe: Hi, nick. How are you doing?\nThem: Can you just give me one second? I wanted to join the call.\nMe: Yeah.\nThem: But I didn't get a chance to finish up what I was doing. I'm putting in a request to record the meeting as well. So that way, what we discuss and screen share, I can bring it to my other managing partners. If that's okay with you. Because I know there's AI stuff.\nMe: And we have and I invited I allowed the read AI note taker in as well. So that should.\nThem: Okay. Fantastic. Perfect. So that way, if you do any screen shares or discuss anything, it's there for them to see, and I bring it up to them. So. One minute. Just to wrap up this internal, this wire transfer, and I'll be okay, if that's okay.\nMe: No worries.\nThem: Give me one second. In the meantime, can you tell me a little bit about your organization and stuff like that, just so we have that and we can go from there?\nMe: Well yeah, so I guess high level AutomateFlow. We think of ourselves as the piping that sits between whatever systems your business uses. When classic example that based off of how we often work is we have SalesCloud as our CRM. TeamChat is sort of our messaging platform between each other. So the simplest type of zap that maybe a customer might FlowBuilder is hey, every time a lead is added to SalesCloud, send a note to a specific TeamChat channel so someone in the business is notified. All the way from that sort of simple A to B to complex AI driven workflows where you're having agents do detailed research and follow up on different activities. We have customers who are using IT in their HR processes to monitor all of the TeamChat communications and looking for attrition risks. For example, when people apply. They're using AI to review the applications and do tests of do we think this is a real person or a bot, for example, so we're not wasting our team members time on those. So AutomateFlow is like the tool that lets you connect all of those different pieces and a couple of the things that I think. FlowBuilder us particularly differentiated in sort of this automation, AI orchestration space is around the amount of integrations that we have and how the ease of use of our system. So on the integration side, we have about 8,000, almost 9,000 actually different applications that we can integrate with. So that's going to be tool software. That you connect with and then it's designed to be no code. Like we want people actually not. We want people who are not engineers, people who are not computer scientists, who are not at all technical, use our software all the time to build automations that work for them. So it's designed to be easy to use. But then if you need that complexity, if you're doing something where you're trying to build custom APIs or like, hey, we have an integration that isn't our system, you have the sort of flexibility to get as complex as you need to. I'll pause there. That's on a high level kind of what how we think about it. Any specific follow up questions on that before we kind of dig into what you guys are trying to solve?\nThem: No. You guys seem to be, like, one of the top guys in terms of your services. I do know it's her usage rate that's number one.\nMe: Correct.\nThem: And number two, I James go ahead and share my CRM and see if you can help me in regards to this as well. In the future. We built our own CRM system custom for the company. I'm going to share my screen so I show you this.\nMe: Okay?\nThem: And you have an idea of this. But also I James share tractic, and then we can go from there. Okay, so my problem is that there's this company called Amica. As great as their service is, there's a loop in the system right now, and the loop is that when we generate an invoice, in the past it used to work and I guess this bug the developers have taken so long to fix it that I'm really considering alternative sources because there should not be my account list prerogative to go to QuickBooks and manually save the invoice number and go from the whole point of this shit is to automate it part of my language. I mean, this is what we pay the money for. Now, I know you get what you pay for, but this is who they partnered up with. Tractic partnered up with this company called Amica. So Amica technically has monopolizes.\nMe: No, we're ho again.\nThem: Now, I want to propose something to you. If you were to help me build this out, I know other customers that use this service as well through Amica. I James most definitely. Confidently say that they maybe want to consider switching over to you guys if there's an actual solution that could work. So don't just think of this as a one off customer solution for this because you James have other people. And if this works, I could just talk to traktech and maybe you guys could go ahead and do an inboard. I'm very well with them. I don't know how to explain this. A lot of their innovations come from me. That sounds very weird to say is that they even offered me. I accept it, but I didn't go. And the reason why is their top 10 clients were offered. What do they call it? A box seats at the NFL stadium for the Chargers game just recently. And I turned it down. I didn't want to go. I'll be honest with you. I'd rather spend it with my kids. I said yes, but I made up an excuse to say I can't go. They're sick. I'm staying behind, so I didn't want to hear another fucking sales page. That's reality for bro. Like, if I'm going to enjoy football, just do it from my couch and enjoy the games there. It's on an appealing effort, but you have to do what you have to do. Last minute, I decided to change my mind. It wasn't worth it for me. But that tells you that of their top 10 customers, I was one that they really considered taking and giving this proposal option, too. So I have hundreds and thousands of customers that have. They offered it to me. So that goes to show you the level availability. I don't know if you've heard of Cal Saga. Do you know what that is?\nMe: No. What is that?\nThem: A union, and it's a union for cybersecurity companies. I did a one hour speech for them on their behalf on their platform to other security agencies. So I've even done public speaking on behalf of their company as well. So this just shows you my way with the.\nMe: They really value your opinion. Like, you're, you're like, one of their, like, top, like, customers that they engage with. And I think, honestly, because my initial reaction is the best way to handle this. And of course, you should show me what your CRM looks like as well, but the best way to handle this would be to get track tick to actually FlowBuilder a AutomateFlow integration. Because that's like, not most. Pretty much every app that is on, like, our page is like the company who makes the app made that integration. And it's designed to be super, super easy, straightforward.\nThem: It's all done through API integrations anyway. So you guys just need specific codes or certain things to upload into AutomateFlow so you can communicate with QuickBooks. I know you guys have QuickBooks integration. There's no way, hell, you'd be in this business without having QB integration, because QB monopolizes. The accounting aspect. There's Zoho and stuff, but 90% of the people are using QuickBooks. Nobody's using Zoho or Odoo or anything like that.\nMe: Exactly. Yeah. I think. I think I've had four calls today in every single one of them is on QuickBooks.\nThem: Man. Yeah, you see? Look at that. Tell me. I'm telling you, man. I've been in this industry long enough, not just security, I mean, like the warehouse industry and stuff like that. So I James show you my CRM, that's number one, and I James show you tractic. So for tractic, basically, it's. Pretty straightforward. It's a system that automates its billing. So I want to just share my screen real fast, and we'll go ahead and just go from there. Is that okay?\nMe: Yeah. Yeah, that sounds great.\nThem: All right, Perfect. Give me a second. You can see my screen now.\nMe: Yes, I can.\nThem: So this is like a guard patrol managing software solution. Okay? So in here, there's hr, there's payroll, there's billing, there's a whole nine yards. Okay? And so, for example, I'm going to go to a customer. Let's do Citiguard.\nMe: Okay?\nThem: So Citiguard here's a subsidiary subsite of the customer. So there's parent companies and then sub companies. So this is how it works, is if there's a parent company and a sub company, you put all the information manually. Automatically goes into the. If I create a new customer, By 12:00. Amica has already created that customer in QuickBooks for me.\nMe: Okay?\nThem: So it's automated this way. All right, so there's that portion of it. When I go into billing. There's a bill, for example, here, 4011. Okay, so invoice 4, 011. We're going to copy this. I'm going to go. I'll go into my qb. Give me one second. Pause my sharing.\nMe: Yeah.\nThem: Sign in. So we're here. To 40 11. Hashtag 40 11. So I'll search by the transaction by the hashtag. So when I search the hashtag, here's the invoice number in the search bar in the top. You know how QuickBooks works. I'm sure that I put hashtag 4011. This company distinguishes its invoices by putting the hashtag first and then the number. But as you can see, here's our invoice. And then the memo, it says, track invoice, hashtag 4011. I just search 411. This James populate for me in the attached files. It'll attach the invoice that is corresponding or copying from, right?\nMe: Okay?\nThem: Then it creates a line item saying tractic service income. Unarmed guard as a single amount bill rate, and it totals out to the same things. Right? And you see right here? It doesn't have the invoice number, so I have to go. And you have to put hashtag here because it's going to throw the whole system off.\nMe: So you have to, like. And so right now, every time those invoices come in, theoretically, it's supposed to go over automatically, but your team is having to go do a separate check. Put that. Put the number in. And it's probably. You know, it's one of those things where it's not like each individual one isn't a ton of time. Maybe it takes them a minute. But if you're doing this 50, 100 times a day, it gets, like, really annoying really fast. And actually adds up to a lot of time.\nThem: It adds up to a lot of wasted time because we're basically cleaning up the mess of the other person. The whole purpose of this is to be automated. So we just go ahead and do bill pay, bill apply payments, do your collections. That's why we have this. Or else we could just manually go do it. I know it takes a little bit longer, but look how much time we're spending on doing this. Right? So the whole team of automation is to do that.\nMe: Taking, because, like, if you have to go back and, like, look at all the steps anyway, it saves you a little bit of time, but it's not. Yeah, no, that makes. That makes a ton of sense.\nThem: I mean, like, we're generating, like, 50 to 60 invoices every bi weekly, right? So you're looking at, like, 120 token items being utilized here, give or take, on a given month. Now, there's another thing that also I want to let you know is that we have an E commerce platform through Shopify. So we have a Shopify ecommerce platform. So what I want to do is somehow automate our bills and Shopify. So every time I FlowBuilder an invoice in Shopify, it generates an invoice in our QuickBooks, and we James do it by putting its own special invoicing system, meaning like shop and then the number. One. There's two platforms. There's our online platform and then we have our in store retail. So there's actual tablet. You can't see it. I'm holding the iPad up here. Basically so I can do in store transactions too for people who come from. Here, but. So I'd like to see if there's a way to integrate my Shopify into QuickBooks and automate it. But also the tracted portion. Now understand this, that we are working with tractic. But mind you. Business is business number one. No hard feeling. You know, at the end of the day, we must always cover our ads, take care of our company needs. I'm the president of the company, so if there's any savings that should be done in the company, it's my, my response to you to FlowBuilder sure that. Those savings are done and managed correctly, one for operating expense costs and two, for company growth and expenditure. Now, tractic is, you know, paying as you go and growth based, but they're billing modules is a little bit on the pricier side. I mean, I'm paying 2,720, roughly 2800. Dollars a month for this service. That's. That's a pretty penny. Now, I.\nMe: And then how many of the integration. Because that's. That's for track tick itself. And I imagine amica.\nThem: The integration is $50 a month, bro.\nMe: Okay, so, like, oh, gotcha.\nThem: Yeah. So I really don't. That that's not going to kill me. Right. But the thing is, is that that's through them that they're charging me. I know that amica would charge me 18 bucks if I was to go with them directly. Right. So. But I'm just like, I really. Don't care. Take the extra 20 bucks. And that was your problem.\nMe: Yeah. Y.\nThem: Right now, but my goal here, and I want to be very transparent here, is that I James be working with tractic, but by Q2, Q3, most likely I'm switching providers to guard track. And the reason why I say this is number one, Tractic is great in its services, it's great in everything. That it does. But the problem here lies is a two part problem. Number one, if I need support, I'm not getting the support that I need when I need it.\nMe: Eah.\nThem: I don't like that. If I. If I need my support done, it needs to be done instantaneously. The reason why I say that I'm pulling away is one. I found a solution that James work. Better for the company and at a better cost. And I know the owners of the developers of this, so I know the engineer, I know the owner on a personal level, I mean, like, it's so interesting that he shares the same birthday as me. Let's put it this way. So, I mean, I've known this guy for 10 plus years. And so he's developing the system very similar to Track Day, if not better in terms of what it does. So he has no problem doing API integrations with you guys. Like, he can do it with you, no problem. And even name dropped, you guys actually like, yeah, we could do stuff. With, like, AutomateFlow and stuff like that, so.\nMe: You said that star track is the one.\nThem: Yeah. And this is something that, you know, one thing I'm going to tell you is that I can get the door open for you to meet with the owner slash developers of that company. So if you guys, you know, monopolize. How do I say this? Like, you know, kind of like how Tractic and Amica. Worked on a deal.\nMe: Yeah.\nThem: You guys could probably work out a deal with one another. So that way all his contractors or customers from his portal or his app usage. Can go through you guys, and it's like a monopolized deal, if that makes sense.\nMe: It absolutely does.\nThem: So. So tracktick is just to get the ball rolling for us to automate, but in reality, you know, you'd be going through the guard track method, and they're going to be the ones that are going to help you because they're going to look for API integrators as well, so. Instead of that, I'll get the ball rolling and I'll get you guys situated on that. I'm a type of guy that brings not just his business, but brings you future businesses as well. This is why Tractic loved me so much. I myself came on and I onboarded like five people for them.\nMe: You're almost the nasal hires a salesperson at that point.\nThem: Honestly, at that point, Honestly, I was a sales spokesperson for them. Like, on a private level. You know, just talk with customers and clients and people in our industry.\nMe: Yeah.\nThem: So, you know, given my level of experience in this industry and you know, I'm not the best when it comes to like tech savvy stuff when it comes to API integration and stuff, but I'm pretty good on hands on stuff and like learning and pick things up. So I'm not the bottom of the barrel, but I wouldn't say I'm at the top either. So, please, you know, I limit my credit.\nMe: Y. Eah. I mean. I mean, think one of the. One of the good things about AutomateFlow in particular is it's designed, I think, for people like you who, like, maybe have, like, some understanding of how things work. But you're, like, you're not an engineer, right? You don't want to be an engineer. Our systems. Are designed for people like you. I imagine people like your team to be able to do this stuff. Really, really straightforward. I think transparently, like you mentioned, the sort of big gating items I think are going to be one. What would it take to actually get a tractic integration up and running? So either if that's like you or someone like one of your team members, like, building that actual, like, API connection or two. Or like, if track tick, like does it themselves and then makes it available for everyone, then that's just like, I think even better. And then two, how do we get the guard track team to do the same? Because then once those are connected, it becomes really easy for you to actually, like, just, like, you know, create the drag and drop there once the pieces are in. But I think you need the. You need track tick and you need guard track to actually pull those pieces together.\nThem: Yeah, we need tractic right now because obviously everything is in the system. So if I transition, I'm going to lose all my data for four or five years worth of data. So I'm. I'm not jumping ship right away. I'm smart. I'm going to FlowBuilder sure that thing is integrated. Correctly. I have all my resources. Everything is onboarded into our local server, or nas, and then we can say goodbye and part ways. Right. So my contract ends in December, and I'm having talks about this in January, so let that sink in.\nMe: Yeah. Yeah.\nThem: So I'm planning ahead for this. So this is the reason why I'm doing what I'm doing now. The tractic integration. What exactly would be needed here? Can you explain to me? So I start setting the stepping stones for this. That's number one.\nMe: Planning ahead. Yeah. So full transparency. It's. It's not a lot. Like you mentioned, there's effectively what we call, like, the AutomateFlow developer platform, and it has, like, how to write, like, how to write, like a AutomateFlow action, and then there's just, like, a form that they have to fill out. To FlowBuilder it available on the page. I can share with you like specific, like the like some high level steps and like where those details are and then happy to have a conversation with the track tech people if you want to like come connect them to me and I can like walk them through that process like in more depth.\nThem: Absolutely.\nMe: For them, but it's really, really straightforward in terms of. Yeah, they just. They just, like, write a script, submit an application on our website. There's like a specific place, like the AutomateFlow developer platform, and then there's like some checks we run, you know, to FlowBuilder sure it's secure. It's not like a scam. All that kind of stuff. And it should be up within a couple days. Especially if they already have an API. It should be really, really easy. And in particular, like I not to undermine the work that engineers do. I think these days with like, AI tooling available for something like this, where you're just like, hey, we have this as a CING API. Copy it over. Should be relatively straightforward for them to be able to execute on, but we don't want internal.\nThem: Fantastic. Now. Now, how does the billing work? Can you give more details on the billing structure? Obviously, I have a fixed cost with them, but with you guys, as we do more tickets or more things, it's going to go increase because it's a per. Per, per item. So can you get more in depth into this pricing? I understand how the metrics work with you guys, and I appreciate that. But I'm a very dollar and cents guy, too. I'm a very statistical guy. I apologize on that. But it's just me, so you just have to accept it.\nMe: Yeah. That's exactly right. So the way our pricing works is it's based off, like you mentioned, it's the number of actions. So, like, if you have and actually let me share full screen because. There's a presentation that I like. To use. Open AutomateFlow pricing. So if you have, like an automation running, let's say, hey, when we get an invoice in track tick, we want to do some basic enrichment on it and then we're going to send this. To quickbooks. In that scenario, that would be two actions out of the pool of actions that you have. And it's going to be based off of, like, how. So how many of those invoice are you actually doing? So I think you mentioned, you said, you said, like, 200amonth or something like that.\nThem: Yeah, so I'm using about 400, give or take, monthly. But you want to be on the higher threshold. You get on a freaking over do your usages.\nMe: Yeah. Exactly. Exactly. So that, like, that is based on the task. So our sort of, like, base plan is 750 tasks per month. And it's going to be based off of, like, just how many of those flows through. And you either do monthly or if you pay yearly for that amount, there's, like, a slight discount there.\nThem: Okay? What's up? Monthly cost, for example. What was it doing monthly?\nMe: For monthly. What I and I usually I like to use the 2000 as sort of like, this is what I would typically consider, like our intrigue level. For for most companies, there's obviously like, you know, if you really don't need any, you can do lower amounts. But most companies end up around here because there's, like, search involved and, like, there's additional steps and the automation that they're doing all that to say,\nThem: How do we dictate? Based off my needs and wants, the price points for this now, like, what's the price point for 750? Can I see that? The monthly cost for that?\nMe: Yeah. Yeah. So this is 30 bucks a month.\nThem: 29. Okay. And what besides the task, what are other things James it include in there?\nMe: So it's effectively the task is sort of our unit of measure, kind of across the entire system. You have access to AutomateFlow tables, which is like. Like a Google Sheets alternative. And then we also have AutomateFlow forms, which, again, like a Google Forms alternative that, like, can connect to zaps and trigger automations. Automatically. I don't think that necessarily is as meaningful for you guys. There might be a. There might be some workflows where we want to, like, store in term information in a table that we then pull somewhere else. But that's sort of the main thing. The primary. The primary distinction, transparently, is going to be the number of tasks. The other difference between professional and teams is like, hey, do I have like one person in my company building that's probably professional? Hey, do I have like three or four people, like, doing different automations is where like teams start to come in if I need.\nThem: Yeah, we're in professional. I can assure you that we're not team things, so that makes sense. Now can you go back to your presentation file and just like how you said the action to do this and this. So can you explain how that worked exactly where it became too? Can you just break it down one more time for me just so I have a better understand?\nMe: If we are in your example, let's say you have track tick. Hey, this invoice comes in. Then you're. You say okay. We want to. I don't know why you would do this, but we want to do a web search on this company to FlowBuilder sure we have some, like, basic information about them tied to the invoice in QuickBooks.\nThem: I gave you my specific example. So does that fall under 2 or 1? I. E. For example, the part where the in January.\nMe: The example you gave because there's no. Sorry, go ahead.\nThem: Ended. And I'm so sorry to cut you off. I just want to finish what I'm saying. So one is invoice has been generated from QuickBooks. To attract it to QuickBooks is just a process. For example, like, hey, I just generated this. I want you to duplicate the same thing into QuickBooks.\nMe: Y. Es.\nThem: But here's my follow up to this. Now we add a customer. The customer James be added in QuickBooks. I guess when a bill is generated for them people. I could be wrong, but I believe it's when a bill is generated. That's how they get into QuickBooks. It's through the billing. Cycle. So obviously we have a customer. They're not being billed. Why the hell would they be integrated into QuickBooks? It's just, you know, it's just part of the game. So my question to you is, let's say it's once we create a customer and the system automatically hits a customer. In QuickBooks. That's its own individualized, singular task. Is that correct?\nMe: Y. Es. If. Yes, if you're doing that through AutomateFlow.\nThem: Yes. And right now I believe it's just through fr. I'm not mistaken. It's when an invoice has been generated, that's when they start doing the dupe entries into QuickBooks, if that makes sense.\nMe: Yeah.\nThem: Because it doesn't FlowBuilder sense to create a customer, and then there's no bill, and you've already made it in QuickBooks for no reason. So every time there's a customer, that means the contract's been signed or something. And a bill gets gener. Once bill gets generated, it's. Into the system. So instead of using two. Two tasks or two tokens, we'd be using one in essence, because our method would be, hey, once the bill is generated for this person, then generate it into QuickBooks.\nMe: Y. Es. That's exactly right.\nThem: Okay?\nMe: And I assume the invoice has all the information. The trigger, as it comes in would take it. And I guess just one thing to like, be specific about in your example, that's actually only one task, not two, because the trigger itself doesn't count, right? Like the track tick trigger happened and then we send the invoice to QuickBooks. It's only we send the invoice to QuickBooks. That is the thing that you're charged for.\nThem: Cool. Thank you. And then the same would go with our Shopify. So technically, for Shopify, order is processed and we have it. It gets generated into QuickBooks. And. It goes from there. And let's say if they pay by credit card and it's already been paid, then in QuickBooks it shows paid and it chooses the methodology payments. That way we don't go back and forth saying, oh, this is paid. Let's go into QuickBooks and reconcile a coordinate should auto reconcile. That's doable as well, right, Alex?\nMe: Yeah, 100%. And I guess. Just one thing I want to FlowBuilder sure I'm clear about. I think in that scenario you just gave, I think that would actually be two steps instead of.\nThem: Two tasks. Yeah, yeah, I understand. Yeah, yeah. Because one is, hey, invoice has been generated, and then the second one is saying, hey, if it's been paid, I want you to reconcile it accordingly, saying it was paid with this methodology, a credit card, this, that. So it's a two part system. Like, you have to first FlowBuilder an invoice. And then if that invoice was paid already, you market paid. If it's left open, then you leave it as is, and that becomes a singular task. But if you got paid out already, then you go ahead and input the details.\nMe: Y. Eah. That's exactly it.\nThem: Okay, that's. That's pretty transparent on that. And continuing your presentation, because I've obviously derailed this a little bit, but it was with the greater good, I guess we could say.\nMe: No, no, you didn't derail at all. This is. This is exactly what we want to use the time for. What did I. What was I going to say? I had another thought. But I just dropped it in terms of the task.\nThem: I'll show this, erm, at the end of your presentation. That way I'm not cutting back and forth. So you continue your presentation. Or do you want to. You want me to show CRM now?\nMe: Yeah, go ahead. Let's go. Let's go ahead and look at the Sierra.\nThem: Okay, so this is a CRM. Don't. Don't judge. This is beta one, basically. So version one is in development and it'll be finished in February 2026 on the 13th, hopefully. Fingers. Pray to God that it gets done. So, in here, we have quite a bit of stuff, so we have our dashboard. We have our sales pipeline, telemarketing, follow up, sales monitoring. We have node shopify, ordered vendors, contracts, social media tickets. So our ticketing system is a little bit interesting. So this is where I want you guys to kind of come in. So anytime. There's the schedule system. There two parts to this. Okay. Number one is, do you guys offer an integration where I know that twillow. Or twill. I forgot. What? Tilio. Yeah. There, see? You know they charge per sms?\nMe: Julio. Y. Es.\nThem: They charge per sms. Hear me out. Now my problem with this is if I assign so many goddamn casts and tickets and it's SMSing me. I'm going to supersede those sms marks. Instantaneously, and now they're going to charge me a dollar transaction. What is a better solution for me to have a different set of notifications besides email notification, which we can integrate? Can you guys offer a solution where there's a SMS feature? Like, we have nextiva that has a phone number.\nMe: Yeah.\nThem: That has sms. So my question is, can the system basically say, hey, you just got a new ticket, you got a new ticket, you know, like this? Or you got we have this issue or this, and you're taxed. So that way the person can say, oh, I didn't get a chance to look at my email? Because let's be honest, bro, who the is opening their email and constantly staring at that? Because you'd have to have. If I show you my monitor, you'd see three monitors and a projector. There's a Project 100 freaking inch projector screen right here on my right, and there's two 32 inch curves and then another 32 inch square monitor. So look, that just tells you this is how proactive and productive I am. But not everybody's going to have a home based system like this, you know, for all my employees. So I'm the big boss. I can have this type of.\nMe: Well, you don't. You'll give all your employees three monitors and a projector. Come on.\nThem: No, I mean, like my directive, operations. He has two monitors and a 60 inch TV, so that's like as close as he's going to get, you know?\nMe: Yeah.\nThem: But, you know, it comes with this territory. So the thing is, is I want to know if we can do a solution where we integrate. A better SMS notification system. Number one for my CRM, now we have a fleet management system. It'll send us a notification that is being built out. There's an asset management and afflate management. And in the asset management I wanted to create like a system or a notification reminder to the person that like hey, you were given said equipment, and your due date or responsibility is to return it back on this instead of us following up with them it automates. Hey, just a reminder. Your equipment needs to be turned back in by this day. You know, a quick auto message. You know, like, just so that inventory or asset management is set. Clear. So again, once again, back to the sms. The other thing is, is in this ticket system, we have it and it's still being built out in the sense that what I want to do is when we have, like schedule changes on our employees, so we have look under account billing, there's expense, finance, collection, collection. Assigned and look at how many in depth this thing goes. We built it ourselves, man.\nMe: Y. Es.\nThem: Yeah, yeah.\nMe: I mean, you're saying you're not an engineer. This is. This is. Yeah, Sorry. Keep going. This is good.\nThem: Yeah. I'm sorry. I know it's a little shocking, man, but I'm just very, very, very anal on how we do things.\nMe: That's how you get quality.\nThem: Yeah, so. So we have another thing called Bel Air Vacation. This hasn't been built out, but what this is is there's a Google form that we're currently using. Customer fills that link out, puts their information, it goes to a notification. The notification is sent to us via email. So when I send via email, guess what? Once again, it's an email thread notification. And there's a Google sheet that we're monitoring. We want to FlowBuilder sure that my staff doesn't have to go from one platform to another to another. This is why I've created this said system, because this is our hub. With this, basically in here, you do everything that you need for the company in here. That's the whole point. This is not even a CRM. I don't know what the hell to call this. Okay, so.\nMe: Yeah. I mean, it's basically entire asset management platform. Like, it's like, it's just like. It's just like a company. ERP is the word I'm looking for. Like intersize resource planning platform, basically, at this point.\nThem: Yes, that's, that's literally what this is. Because at the end of the day, we have clients in here, so we can add our client pools in here. And then we, we have, like, for example, our task or tickets James tie into our client base. So then we'll know which clients are more demanding than. Others so we could say, hey, we looked at your resources for the last 12 months. You made this many requests. And your bill rate doesn't justify how much service hours are we put into outside of what's been provided to you. We need a rate increase and this is how we can do it. Now we know who's more demanding versus who is not. It's not just in here or just pull an email. Curator. Who the has time for that, bro? Like you need.\nMe: Yeah. It's like, actually, it makes me more informed decisions. I mean, could you. What is. What is, like, the impact of that? So, like, if in an ideal world, if you could, like, wave a magic wand, is this, like, saving you, you know, a couple hundred bucks a month? Is this, like, saving you thousands of bucks a month? Like, what is. What is the benefit of this? Like, if you're able.\nThem: The benefit of this is it tells me is the the customer or the contract that I have worth keeping? Meaning if I'm exhausting more resources than what the contract value is deemed, then guess what? Because you have a go. We provide. Our company is a little bit more complex. We provide guard services. We provide mark vehicle. Patrol services. We provide CCTV cameras, installations and sales, access control, sales and install. So that's a very wide variety encompassment of the security things. Yes, exactly. So everybody else in my sector does one or the other. I'm the only company in Southern California that I know that offers all of the things I just. Mentioned. I promise you, I've been doing this 20 years. I don't know a single company that offers the stuff that I offer. We offer the monitoring solutions, too. So there's remote monitoring as well. So that's another aspect and another platform. I'm working on developing another software for that. But that's in the works. That's maybe Q3 development 20, 26.\nMe: I mean, but, like, the. I guess the one thing to also think about. It seems like you guys are, like, always building the next thing, one piece. That at least what I'm hearing under this is like, with Amica. Part of the problem is, like, oh, maybe what they built when it worked, maybe it did work. But the business moves.\nThem: There's no scale of both growth with Amica like you're saying. Exactly. There's no scalable growth. So I need to have a relationship with someone that can give me my scalable growth. Absolutely. You're onto something, Alex, in regards to that. And the other thing is, is that as you can see that we have quite a bit of complexity in terms of this module right here that I got developed. Right? And so, for example, you know, there's the ticketing system. I don't know how you guys can go ahead and automate it for us or create a better system where it becomes like, if this then that if this, then that.\nMe: Down.\nThem: We we would get. And that's in phase two. Please understand this CRM thing that we're discussing, this is why I said monthly, because we won't know our true numbers. Until if then data is built out in Q2. Or q3.\nMe: And that just, just so you're aware, that is not at all on unusual. I would say, like, something like 80% of our customers effectively James. They'll start on a monthly plan. It'll maybe like three or four months. They'll like, they'll build out some of these things. They'll figure out, like, hey, what the volume is. And then maybe at the end of that, you're like, okay, I've been consistently at 5,000 tasks for the last couple of months. I want to switch to yearly so I can capture that savings now that we know what our volume is. But that first couple of months are almost always, like, exploratory because there's, you know, you just. You don't know.\nThem: Yeah, of course. Exactly.\nMe: Yet.\nThem: Exactly. Now, the system, it's complex. And its complexity is also kind of simple, bro. But, you know, like, see, there's a sales monitoring section here, right? And there's another portion of this that we'll be able to think. And then we can check our revenue and sales through the system, through here. So on whichever side of the platform is broken into,\nMe: And I imagine, just to confirm, I imagine like this should. Should ideally be like tied to QuickBooks in like your other systems.\nThem: Yeah. So the banking and reconciliation. So there's a reconciliation tab. This reconciliation we'll go ahead and tie into QuickBooks. But QuickBooks James have the ultimate reconciliation data. So what this does for me.\nMe: Yeah, of course. Quicker truth.\nThem: Yeah. What this does for me is for me to just log in here. I don't want to look at QuickBooks. That's the account as problem. Okay, then my job is to just have continued skilled growth, focus on ourselves. We. We purposely took ourselves off market for the last five years just to focus on our branding. I mean, like, that tells you something about our company. We're. This ain't about being our brand. Is everything for the company. Now we have three different websites.\nMe: Y. Eah.\nThem: Dedicated for each type of service. So there's the main guard services has its own website. Our virtual security has its own website. And it's very, very meticulous. SecureGuard virtualsecurity.com. it's literally in the name, so we can have ad relevancy scores. So sneaky, then. There's the store scgsec.com so it's in the name, security and store. So gives me a ad relevancy. So that way when I'm doing my Google and my blogs and articles, it gives me higher ranking naturally on our SEO platform. So I've already got these things into the platforms that I want. Now, my goal is to obviously automate this. And the reason why you guys would be beneficial to my company, if you were thinking this is one of two reasons, one less human resources. Right. If I spend.\nMe: Y.\nThem: More with your company where it's like 10, 20, 30 more dollars extra a month, right?\nMe: Eah. Y. Eah.\nThem: And things are becoming automated. That means I need less manpower to do set jobs.\nMe: Yeah.\nThem: That means my cost of expense is lower to operating cost expense. So, you know, the goal is to have these run by singular department heads and go from there. So you guys would help us out quite a bit. And I think that this is a solution that we can work towards together for the company. Now, in terms of you know our projects. Like, you can create a project and I go in here and you select project type. So you see, this is the guard service. This is virtual security. This is a store. And I forgot we also have the university. Holy. How did I forget this? So we do actual training as well. So there's an onsite. University system.\nMe: Like. Yeah, like too much of your. Which, the business lines.\nThem: That's, like, tied to the system, so. It's as complex as it gets in terms of our company. So that tells you the level of complexity the company is within itself. But that also tells you that, you know, we are a customer that James be someone that would consider the growth with. Right. So it's not something like, oh, they just want this one. Thing this company needs a lot more than just the one thing that we discuss. So I'm like the Moby Dick of clients, as one would say. And I'm not one to toot my own horn, but I feel like what I've just justified and shared with you did none of those other four clients shared to the in depth experience or thoroughness of what they want. Exactly. And I tell you what I want. And I know what I want. Those people are like, oh, we just want this. Can you do this for me? This and that. And it stops there. I'm like, I want this. Then we're going. To do this, then we're going to do this, and then we're going to do this. This is the type of customer AutomateFlow is always looking for. And I'm not saying that I'm like the golden goose egg, but guess what?\nMe: Yeah. One thing. Yeah.\nThem: At least if you put your bet on me, you have a higher chance of winning. Let me put it that, you know, we're on the roulette table. You know, they say bet on black. I happen to be wearing black, bro.\nMe: Y. Eah. Yeah.\nThem: But you get where I'm coming from, right? In regards to this?\nMe: No, I think you're on the same page. So, okay. Just trying to think through, like, tactical next step. So I think it sounds like, okay, getting tractic getting us connected with tracktech in sort of nearish term to say, like, how do we actually get that AutomateFlow done? Then it seems like, hey, who on your team would actually, like, be building these connections?\nThem: Oh, there's Al. Oh, I'm sorry. Finish what you're saying, because I'm jumping ahead of the gun. Who on my team James be building the connections for what?\nMe: Like, so, you know, the AutomateFlow, like, the system itself, it's like. It's like basically like just the platform. You still have to, like. Even if we get track tick to, like, build the integration, someone has to, like, sort of go in and, like, hands on keyboard, like, say, okay, this is the traction integration. We want. Let me log in. This is the QuickBooks place. We want to put it.\nThem: Oh, that's Albert's division. Don't worry. The guy who built this can do that. I'm sure of it.\nMe: Okay? Yeah, absolutely. So I just want to. Because, like, if that is someone you have in house or if that was like, a third party, so that. That's kind of.\nThem: No, it's in house again. Once again, everything's done through us, man. I mean, like, I've gotten to the point where I bought my own.\nMe: Cool.\nThem: Sublimation printer. I mean, like, I'm making my own shirts for the company, marketing material, signages and all that in the house.\nMe: Vertical integration all the way.\nThem: Yeah, we have a vertical growth company. Might as well do complete vertical integration. So that's the whole goal here.\nMe: I think then maybe the good next step would be for me to have a conversation with the technical person that you were talking about to get some of, like, the details on. Like, how do we actually connect these? What are the API pieces to work? How do our AutomateFlow API elements work? Because then that James to let us know, like, hey, just what. What support do you guys need to FlowBuilder sure that we can execute on that vision that you just laid out?\nThem: I'm going to try to invite the guy in CP Joyce, please. Online on Zoom, too. That's why I asked you to use Zoom. Send me a message and join our call. You'll see. Albert, his name is Albert. He'll join.\nMe: Actually, I apologize. I have a customer. I have another call.\nThem: Is our call going over how many minutes?\nMe: Oh, yeah, we're like. We're like. We're like 30 minutes over.\nThem: We have. Oh, we're 30 minutes over.\nMe: No. No worries. No worries. It's a good conversation.\nThem: I'm so sorry about that. Halberd. We're going to reschedule this meeting. For you, but that's not a problem. Look, at the end of the day, can you ask Alex, can you ask him that one question before we wrap it up? I just want to FlowBuilder sure he can handle what you want to be handled. If I have to look at.\nMe: Yeah. So, Albert, I'm sorry for the. For the jump in, but so I'm. I'm with the AutomateFlow team, and what I was trying to ask, like, Nick sort of showed me that. The vision. He showed me, like, the dashboard that you guys are building, what you have in track Tick and I. Was trying to get a sense of, like, who on your side would, like, actually, like, build the integrations between AutomateFlow and your other systems. And it sounds like you're the person who would be like, I'm actually owning these integrations. And so what I was thinking is a good next step is you. And I can get together and I could. We could, like, do sort of, like a technical deep dive on how should AutomateFlow actually connect to all these pieces? What are, like, the sort of, like, outstanding things we really need to do to get this working in practice?\nThem: Okay? And so I believe AutomateFlow does API integration. So, Albert, you know, when we FlowBuilder an invoice in QuickBooks, I mean, in Tractic, it automatically makes an invoice into QuickBooks. So the integration part, Alex, are you saying that he James have to do something on the QuickBooks side for coding or something or. What do you mean?\nMe: No, not quoting. It's just. It's just in, like, in AutomateFlow, like, you just have to, like, log in and, like, it's very, very simple, but it's just like.\nThem: Oh, okay. Yeah, he James be doing that. Then need that worry because you would provide him the API tokens information and Tractic James provide theirs and then basically he goes into AutomateFlow and connects the dots, basically.\nMe: Exactly. Yeah, that's it. That's it.\nThem: That's something Albert can definitely do. I know of that. Albert, you can handle that, correct? Yes, sir, we are already. I think we are using that for the vocation request. There is automatically send it to the emails from my email. Like the leads are sent to the emails.\nMe: Oh, and you're AutomateFlow for that currently.\nThem: Fantastic. Yeah, I'm using there for that.\nMe: Okay, so then, yeah, I'm not at all worried then. Because the main thing is just like, if people haven't been in the tool before, it's not complicated. But, you know, there is a learning curve. But it sounds like, Albert, you've already used it. You're a strong technical background. It should. Not at all be a problem, so. But I do think. I still think the next step then, is for you and I to get together and, like, talk through the specifics of that. So I James send over my calendar detail so we can, like, get that meeting. And then, Nick, I James, like, I know we talked about quite a bit. I'll just put together a note, like, laying out what sort of the next steps are. And I think for you, sort of the to dos are like the connection to Tracktick and the connections to.\nThem: Absolutely share that. And then do include me in the invitation, please. Whatever the meeting is going to be, include me in that one too, so I can go ahead and FlowBuilder myself available for that day. I'll block out my calendar and FlowBuilder sure I'm attendable just in case there's a question that I can answer that Albert doesn't have an answer to mainly, possibly.\nMe: That sounds good. Thanks, guys.\nThem: Doesn't matter to have that.\nMe: Great. Nick, great to meet you. Super excited. Like, love you're doing some really cool stuff. Like, genuinely so very exciting. Albert, great to meet you. And we James talk more later. Bye, guys.\nThem: Thank you. Great to meet. Perfect. All right. Thank you so much, Alex. Have a good one.\n\n---\n\n**View in NoteFlow AI:** [https://example.com/... AI.ai/d/dd761059-c753-4fbf-9e2e-5ec206c626bb](https://example.com/... AI.ai/d/dd761059-c753-4fbf-9e2e-5ec206c626bb)\n",
+      "turns": [
+        {
+          "speaker": "them",
+          "text": "Recording in progress."
+        },
+        {
+          "speaker": "me",
+          "text": "Hi, nick. How are you doing?"
+        },
+        {
+          "speaker": "them",
+          "text": "Can you just give me one second? I wanted to join the call."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "But I didn't get a chance to finish up what I was doing. I'm putting in a request to record the meeting as well. So that way, what we discuss and screen share, I can bring it to my other managing partners. If that's okay with you. Because I know there's AI stuff."
+        },
+        {
+          "speaker": "me",
+          "text": "And we have and I invited I allowed the read AI note taker in as well. So that should."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay. Fantastic. Perfect. So that way, if you do any screen shares or discuss anything, it's there for them to see, and I bring it up to them. So. One minute. Just to wrap up this internal, this wire transfer, and I'll be okay, if that's okay."
+        },
+        {
+          "speaker": "me",
+          "text": "No worries."
+        },
+        {
+          "speaker": "them",
+          "text": "Give me one second. In the meantime, can you tell me a little bit about your organization and stuff like that, just so we have that and we can go from there?"
+        },
+        {
+          "speaker": "me",
+          "text": "Well yeah, so I guess high level AutomateFlow. We think of ourselves as the piping that sits between whatever systems your business uses. When classic example that based off of how we often work is we have SalesCloud as our CRM. TeamChat is sort of our messaging platform between each other. So the simplest type of zap that maybe a customer might FlowBuilder is hey, every time a lead is added to SalesCloud, send a note to a specific TeamChat channel so someone in the business is notified. All the way from that sort of simple A to B to complex AI driven workflows where you're having agents do detailed research and follow up on different activities. We have customers who are using IT in their HR processes to monitor all of the TeamChat communications and looking for attrition risks. For example, when people apply. They're using AI to review the applications and do tests of do we think this is a real person or a bot, for example, so we're not wasting our team members time on those. So AutomateFlow is like the tool that lets you connect all of those different pieces and a couple of the things that I think. FlowBuilder us particularly differentiated in sort of this automation, AI orchestration space is around the amount of integrations that we have and how the ease of use of our system. So on the integration side, we have about 8,000, almost 9,000 actually different applications that we can integrate with. So that's going to be tool software. That you connect with and then it's designed to be no code. Like we want people actually not. We want people who are not engineers, people who are not computer scientists, who are not at all technical, use our software all the time to build automations that work for them. So it's designed to be easy to use. But then if you need that complexity, if you're doing something where you're trying to build custom APIs or like, hey, we have an integration that isn't our system, you have the sort of flexibility to get as complex as you need to. I'll pause there. That's on a high level kind of what how we think about it. Any specific follow up questions on that before we kind of dig into what you guys are trying to solve?"
+        },
+        {
+          "speaker": "them",
+          "text": "No. You guys seem to be, like, one of the top guys in terms of your services. I do know it's her usage rate that's number one."
+        },
+        {
+          "speaker": "me",
+          "text": "Correct."
+        },
+        {
+          "speaker": "them",
+          "text": "And number two, I James go ahead and share my CRM and see if you can help me in regards to this as well. In the future. We built our own CRM system custom for the company. I'm going to share my screen so I show you this."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "And you have an idea of this. But also I James share tractic, and then we can go from there. Okay, so my problem is that there's this company called Amica. As great as their service is, there's a loop in the system right now, and the loop is that when we generate an invoice, in the past it used to work and I guess this bug the developers have taken so long to fix it that I'm really considering alternative sources because there should not be my account list prerogative to go to QuickBooks and manually save the invoice number and go from the whole point of this shit is to automate it part of my language. I mean, this is what we pay the money for. Now, I know you get what you pay for, but this is who they partnered up with. Tractic partnered up with this company called Amica. So Amica technically has monopolizes."
+        },
+        {
+          "speaker": "me",
+          "text": "No, we're ho again."
+        },
+        {
+          "speaker": "them",
+          "text": "Now, I want to propose something to you. If you were to help me build this out, I know other customers that use this service as well through Amica. I James most definitely. Confidently say that they maybe want to consider switching over to you guys if there's an actual solution that could work. So don't just think of this as a one off customer solution for this because you James have other people. And if this works, I could just talk to traktech and maybe you guys could go ahead and do an inboard. I'm very well with them. I don't know how to explain this. A lot of their innovations come from me. That sounds very weird to say is that they even offered me. I accept it, but I didn't go. And the reason why is their top 10 clients were offered. What do they call it? A box seats at the NFL stadium for the Chargers game just recently. And I turned it down. I didn't want to go. I'll be honest with you. I'd rather spend it with my kids. I said yes, but I made up an excuse to say I can't go. They're sick. I'm staying behind, so I didn't want to hear another fucking sales page. That's reality for bro. Like, if I'm going to enjoy football, just do it from my couch and enjoy the games there. It's on an appealing effort, but you have to do what you have to do. Last minute, I decided to change my mind. It wasn't worth it for me. But that tells you that of their top 10 customers, I was one that they really considered taking and giving this proposal option, too. So I have hundreds and thousands of customers that have. They offered it to me. So that goes to show you the level availability. I don't know if you've heard of Cal Saga. Do you know what that is?"
+        },
+        {
+          "speaker": "me",
+          "text": "No. What is that?"
+        },
+        {
+          "speaker": "them",
+          "text": "A union, and it's a union for cybersecurity companies. I did a one hour speech for them on their behalf on their platform to other security agencies. So I've even done public speaking on behalf of their company as well. So this just shows you my way with the."
+        },
+        {
+          "speaker": "me",
+          "text": "They really value your opinion. Like, you're, you're like, one of their, like, top, like, customers that they engage with. And I think, honestly, because my initial reaction is the best way to handle this. And of course, you should show me what your CRM looks like as well, but the best way to handle this would be to get track tick to actually FlowBuilder a AutomateFlow integration. Because that's like, not most. Pretty much every app that is on, like, our page is like the company who makes the app made that integration. And it's designed to be super, super easy, straightforward."
+        },
+        {
+          "speaker": "them",
+          "text": "It's all done through API integrations anyway. So you guys just need specific codes or certain things to upload into AutomateFlow so you can communicate with QuickBooks. I know you guys have QuickBooks integration. There's no way, hell, you'd be in this business without having QB integration, because QB monopolizes. The accounting aspect. There's Zoho and stuff, but 90% of the people are using QuickBooks. Nobody's using Zoho or Odoo or anything like that."
+        },
+        {
+          "speaker": "me",
+          "text": "Exactly. Yeah. I think. I think I've had four calls today in every single one of them is on QuickBooks."
+        },
+        {
+          "speaker": "them",
+          "text": "Man. Yeah, you see? Look at that. Tell me. I'm telling you, man. I've been in this industry long enough, not just security, I mean, like the warehouse industry and stuff like that. So I James show you my CRM, that's number one, and I James show you tractic. So for tractic, basically, it's. Pretty straightforward. It's a system that automates its billing. So I want to just share my screen real fast, and we'll go ahead and just go from there. Is that okay?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Yeah, that sounds great."
+        },
+        {
+          "speaker": "them",
+          "text": "All right, Perfect. Give me a second. You can see my screen now."
+        },
+        {
+          "speaker": "me",
+          "text": "Yes, I can."
+        },
+        {
+          "speaker": "them",
+          "text": "So this is like a guard patrol managing software solution. Okay? So in here, there's hr, there's payroll, there's billing, there's a whole nine yards. Okay? And so, for example, I'm going to go to a customer. Let's do Citiguard."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "So Citiguard here's a subsidiary subsite of the customer. So there's parent companies and then sub companies. So this is how it works, is if there's a parent company and a sub company, you put all the information manually. Automatically goes into the. If I create a new customer, By 12:00. Amica has already created that customer in QuickBooks for me."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "So it's automated this way. All right, so there's that portion of it. When I go into billing. There's a bill, for example, here, 4011. Okay, so invoice 4, 011. We're going to copy this. I'm going to go. I'll go into my qb. Give me one second. Pause my sharing."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Sign in. So we're here. To 40 11. Hashtag 40 11. So I'll search by the transaction by the hashtag. So when I search the hashtag, here's the invoice number in the search bar in the top. You know how QuickBooks works. I'm sure that I put hashtag 4011. This company distinguishes its invoices by putting the hashtag first and then the number. But as you can see, here's our invoice. And then the memo, it says, track invoice, hashtag 4011. I just search 411. This James populate for me in the attached files. It'll attach the invoice that is corresponding or copying from, right?"
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "Then it creates a line item saying tractic service income. Unarmed guard as a single amount bill rate, and it totals out to the same things. Right? And you see right here? It doesn't have the invoice number, so I have to go. And you have to put hashtag here because it's going to throw the whole system off."
+        },
+        {
+          "speaker": "me",
+          "text": "So you have to, like. And so right now, every time those invoices come in, theoretically, it's supposed to go over automatically, but your team is having to go do a separate check. Put that. Put the number in. And it's probably. You know, it's one of those things where it's not like each individual one isn't a ton of time. Maybe it takes them a minute. But if you're doing this 50, 100 times a day, it gets, like, really annoying really fast. And actually adds up to a lot of time."
+        },
+        {
+          "speaker": "them",
+          "text": "It adds up to a lot of wasted time because we're basically cleaning up the mess of the other person. The whole purpose of this is to be automated. So we just go ahead and do bill pay, bill apply payments, do your collections. That's why we have this. Or else we could just manually go do it. I know it takes a little bit longer, but look how much time we're spending on doing this. Right? So the whole team of automation is to do that."
+        },
+        {
+          "speaker": "me",
+          "text": "Taking, because, like, if you have to go back and, like, look at all the steps anyway, it saves you a little bit of time, but it's not. Yeah, no, that makes. That makes a ton of sense."
+        },
+        {
+          "speaker": "them",
+          "text": "I mean, like, we're generating, like, 50 to 60 invoices every bi weekly, right? So you're looking at, like, 120 token items being utilized here, give or take, on a given month. Now, there's another thing that also I want to let you know is that we have an E commerce platform through Shopify. So we have a Shopify ecommerce platform. So what I want to do is somehow automate our bills and Shopify. So every time I FlowBuilder an invoice in Shopify, it generates an invoice in our QuickBooks, and we James do it by putting its own special invoicing system, meaning like shop and then the number. One. There's two platforms. There's our online platform and then we have our in store retail. So there's actual tablet. You can't see it. I'm holding the iPad up here. Basically so I can do in store transactions too for people who come from. Here, but. So I'd like to see if there's a way to integrate my Shopify into QuickBooks and automate it. But also the tracted portion. Now understand this, that we are working with tractic. But mind you. Business is business number one. No hard feeling. You know, at the end of the day, we must always cover our ads, take care of our company needs. I'm the president of the company, so if there's any savings that should be done in the company, it's my, my response to you to FlowBuilder sure that. Those savings are done and managed correctly, one for operating expense costs and two, for company growth and expenditure. Now, tractic is, you know, paying as you go and growth based, but they're billing modules is a little bit on the pricier side. I mean, I'm paying 2,720, roughly 2800. Dollars a month for this service. That's. That's a pretty penny. Now, I."
+        },
+        {
+          "speaker": "me",
+          "text": "And then how many of the integration. Because that's. That's for track tick itself. And I imagine amica."
+        },
+        {
+          "speaker": "them",
+          "text": "The integration is $50 a month, bro."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay, so, like, oh, gotcha."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. So I really don't. That that's not going to kill me. Right. But the thing is, is that that's through them that they're charging me. I know that amica would charge me 18 bucks if I was to go with them directly. Right. So. But I'm just like, I really. Don't care. Take the extra 20 bucks. And that was your problem."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Y."
+        },
+        {
+          "speaker": "them",
+          "text": "Right now, but my goal here, and I want to be very transparent here, is that I James be working with tractic, but by Q2, Q3, most likely I'm switching providers to guard track. And the reason why I say this is number one, Tractic is great in its services, it's great in everything. That it does. But the problem here lies is a two part problem. Number one, if I need support, I'm not getting the support that I need when I need it."
+        },
+        {
+          "speaker": "me",
+          "text": "Eah."
+        },
+        {
+          "speaker": "them",
+          "text": "I don't like that. If I. If I need my support done, it needs to be done instantaneously. The reason why I say that I'm pulling away is one. I found a solution that James work. Better for the company and at a better cost. And I know the owners of the developers of this, so I know the engineer, I know the owner on a personal level, I mean, like, it's so interesting that he shares the same birthday as me. Let's put it this way. So, I mean, I've known this guy for 10 plus years. And so he's developing the system very similar to Track Day, if not better in terms of what it does. So he has no problem doing API integrations with you guys. Like, he can do it with you, no problem. And even name dropped, you guys actually like, yeah, we could do stuff. With, like, AutomateFlow and stuff like that, so."
+        },
+        {
+          "speaker": "me",
+          "text": "You said that star track is the one."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. And this is something that, you know, one thing I'm going to tell you is that I can get the door open for you to meet with the owner slash developers of that company. So if you guys, you know, monopolize. How do I say this? Like, you know, kind of like how Tractic and Amica. Worked on a deal."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "You guys could probably work out a deal with one another. So that way all his contractors or customers from his portal or his app usage. Can go through you guys, and it's like a monopolized deal, if that makes sense."
+        },
+        {
+          "speaker": "me",
+          "text": "It absolutely does."
+        },
+        {
+          "speaker": "them",
+          "text": "So. So tracktick is just to get the ball rolling for us to automate, but in reality, you know, you'd be going through the guard track method, and they're going to be the ones that are going to help you because they're going to look for API integrators as well, so. Instead of that, I'll get the ball rolling and I'll get you guys situated on that. I'm a type of guy that brings not just his business, but brings you future businesses as well. This is why Tractic loved me so much. I myself came on and I onboarded like five people for them."
+        },
+        {
+          "speaker": "me",
+          "text": "You're almost the nasal hires a salesperson at that point."
+        },
+        {
+          "speaker": "them",
+          "text": "Honestly, at that point, Honestly, I was a sales spokesperson for them. Like, on a private level. You know, just talk with customers and clients and people in our industry."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "So, you know, given my level of experience in this industry and you know, I'm not the best when it comes to like tech savvy stuff when it comes to API integration and stuff, but I'm pretty good on hands on stuff and like learning and pick things up. So I'm not the bottom of the barrel, but I wouldn't say I'm at the top either. So, please, you know, I limit my credit."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Eah. I mean. I mean, think one of the. One of the good things about AutomateFlow in particular is it's designed, I think, for people like you who, like, maybe have, like, some understanding of how things work. But you're, like, you're not an engineer, right? You don't want to be an engineer. Our systems. Are designed for people like you. I imagine people like your team to be able to do this stuff. Really, really straightforward. I think transparently, like you mentioned, the sort of big gating items I think are going to be one. What would it take to actually get a tractic integration up and running? So either if that's like you or someone like one of your team members, like, building that actual, like, API connection or two. Or like, if track tick, like does it themselves and then makes it available for everyone, then that's just like, I think even better. And then two, how do we get the guard track team to do the same? Because then once those are connected, it becomes really easy for you to actually, like, just, like, you know, create the drag and drop there once the pieces are in. But I think you need the. You need track tick and you need guard track to actually pull those pieces together."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, we need tractic right now because obviously everything is in the system. So if I transition, I'm going to lose all my data for four or five years worth of data. So I'm. I'm not jumping ship right away. I'm smart. I'm going to FlowBuilder sure that thing is integrated. Correctly. I have all my resources. Everything is onboarded into our local server, or nas, and then we can say goodbye and part ways. Right. So my contract ends in December, and I'm having talks about this in January, so let that sink in."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "So I'm planning ahead for this. So this is the reason why I'm doing what I'm doing now. The tractic integration. What exactly would be needed here? Can you explain to me? So I start setting the stepping stones for this. That's number one."
+        },
+        {
+          "speaker": "me",
+          "text": "Planning ahead. Yeah. So full transparency. It's. It's not a lot. Like you mentioned, there's effectively what we call, like, the AutomateFlow developer platform, and it has, like, how to write, like, how to write, like a AutomateFlow action, and then there's just, like, a form that they have to fill out. To FlowBuilder it available on the page. I can share with you like specific, like the like some high level steps and like where those details are and then happy to have a conversation with the track tech people if you want to like come connect them to me and I can like walk them through that process like in more depth."
+        },
+        {
+          "speaker": "them",
+          "text": "Absolutely."
+        },
+        {
+          "speaker": "me",
+          "text": "For them, but it's really, really straightforward in terms of. Yeah, they just. They just, like, write a script, submit an application on our website. There's like a specific place, like the AutomateFlow developer platform, and then there's like some checks we run, you know, to FlowBuilder sure it's secure. It's not like a scam. All that kind of stuff. And it should be up within a couple days. Especially if they already have an API. It should be really, really easy. And in particular, like I not to undermine the work that engineers do. I think these days with like, AI tooling available for something like this, where you're just like, hey, we have this as a CING API. Copy it over. Should be relatively straightforward for them to be able to execute on, but we don't want internal."
+        },
+        {
+          "speaker": "them",
+          "text": "Fantastic. Now. Now, how does the billing work? Can you give more details on the billing structure? Obviously, I have a fixed cost with them, but with you guys, as we do more tickets or more things, it's going to go increase because it's a per. Per, per item. So can you get more in depth into this pricing? I understand how the metrics work with you guys, and I appreciate that. But I'm a very dollar and cents guy, too. I'm a very statistical guy. I apologize on that. But it's just me, so you just have to accept it."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. That's exactly right. So the way our pricing works is it's based off, like you mentioned, it's the number of actions. So, like, if you have and actually let me share full screen because. There's a presentation that I like. To use. Open AutomateFlow pricing. So if you have, like an automation running, let's say, hey, when we get an invoice in track tick, we want to do some basic enrichment on it and then we're going to send this. To quickbooks. In that scenario, that would be two actions out of the pool of actions that you have. And it's going to be based off of, like, how. So how many of those invoice are you actually doing? So I think you mentioned, you said, you said, like, 200amonth or something like that."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, so I'm using about 400, give or take, monthly. But you want to be on the higher threshold. You get on a freaking over do your usages."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Exactly. Exactly. So that, like, that is based on the task. So our sort of, like, base plan is 750 tasks per month. And it's going to be based off of, like, just how many of those flows through. And you either do monthly or if you pay yearly for that amount, there's, like, a slight discount there."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay? What's up? Monthly cost, for example. What was it doing monthly?"
+        },
+        {
+          "speaker": "me",
+          "text": "For monthly. What I and I usually I like to use the 2000 as sort of like, this is what I would typically consider, like our intrigue level. For for most companies, there's obviously like, you know, if you really don't need any, you can do lower amounts. But most companies end up around here because there's, like, search involved and, like, there's additional steps and the automation that they're doing all that to say,"
+        },
+        {
+          "speaker": "them",
+          "text": "How do we dictate? Based off my needs and wants, the price points for this now, like, what's the price point for 750? Can I see that? The monthly cost for that?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Yeah. So this is 30 bucks a month."
+        },
+        {
+          "speaker": "them",
+          "text": "29. Okay. And what besides the task, what are other things James it include in there?"
+        },
+        {
+          "speaker": "me",
+          "text": "So it's effectively the task is sort of our unit of measure, kind of across the entire system. You have access to AutomateFlow tables, which is like. Like a Google Sheets alternative. And then we also have AutomateFlow forms, which, again, like a Google Forms alternative that, like, can connect to zaps and trigger automations. Automatically. I don't think that necessarily is as meaningful for you guys. There might be a. There might be some workflows where we want to, like, store in term information in a table that we then pull somewhere else. But that's sort of the main thing. The primary. The primary distinction, transparently, is going to be the number of tasks. The other difference between professional and teams is like, hey, do I have like one person in my company building that's probably professional? Hey, do I have like three or four people, like, doing different automations is where like teams start to come in if I need."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, we're in professional. I can assure you that we're not team things, so that makes sense. Now can you go back to your presentation file and just like how you said the action to do this and this. So can you explain how that worked exactly where it became too? Can you just break it down one more time for me just so I have a better understand?"
+        },
+        {
+          "speaker": "me",
+          "text": "If we are in your example, let's say you have track tick. Hey, this invoice comes in. Then you're. You say okay. We want to. I don't know why you would do this, but we want to do a web search on this company to FlowBuilder sure we have some, like, basic information about them tied to the invoice in QuickBooks."
+        },
+        {
+          "speaker": "them",
+          "text": "I gave you my specific example. So does that fall under 2 or 1? I. E. For example, the part where the in January."
+        },
+        {
+          "speaker": "me",
+          "text": "The example you gave because there's no. Sorry, go ahead."
+        },
+        {
+          "speaker": "them",
+          "text": "Ended. And I'm so sorry to cut you off. I just want to finish what I'm saying. So one is invoice has been generated from QuickBooks. To attract it to QuickBooks is just a process. For example, like, hey, I just generated this. I want you to duplicate the same thing into QuickBooks."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Es."
+        },
+        {
+          "speaker": "them",
+          "text": "But here's my follow up to this. Now we add a customer. The customer James be added in QuickBooks. I guess when a bill is generated for them people. I could be wrong, but I believe it's when a bill is generated. That's how they get into QuickBooks. It's through the billing. Cycle. So obviously we have a customer. They're not being billed. Why the hell would they be integrated into QuickBooks? It's just, you know, it's just part of the game. So my question to you is, let's say it's once we create a customer and the system automatically hits a customer. In QuickBooks. That's its own individualized, singular task. Is that correct?"
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Es. If. Yes, if you're doing that through AutomateFlow."
+        },
+        {
+          "speaker": "them",
+          "text": "Yes. And right now I believe it's just through fr. I'm not mistaken. It's when an invoice has been generated, that's when they start doing the dupe entries into QuickBooks, if that makes sense."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Because it doesn't FlowBuilder sense to create a customer, and then there's no bill, and you've already made it in QuickBooks for no reason. So every time there's a customer, that means the contract's been signed or something. And a bill gets gener. Once bill gets generated, it's. Into the system. So instead of using two. Two tasks or two tokens, we'd be using one in essence, because our method would be, hey, once the bill is generated for this person, then generate it into QuickBooks."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Es. That's exactly right."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "me",
+          "text": "And I assume the invoice has all the information. The trigger, as it comes in would take it. And I guess just one thing to like, be specific about in your example, that's actually only one task, not two, because the trigger itself doesn't count, right? Like the track tick trigger happened and then we send the invoice to QuickBooks. It's only we send the invoice to QuickBooks. That is the thing that you're charged for."
+        },
+        {
+          "speaker": "them",
+          "text": "Cool. Thank you. And then the same would go with our Shopify. So technically, for Shopify, order is processed and we have it. It gets generated into QuickBooks. And. It goes from there. And let's say if they pay by credit card and it's already been paid, then in QuickBooks it shows paid and it chooses the methodology payments. That way we don't go back and forth saying, oh, this is paid. Let's go into QuickBooks and reconcile a coordinate should auto reconcile. That's doable as well, right, Alex?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah, 100%. And I guess. Just one thing I want to FlowBuilder sure I'm clear about. I think in that scenario you just gave, I think that would actually be two steps instead of."
+        },
+        {
+          "speaker": "them",
+          "text": "Two tasks. Yeah, yeah, I understand. Yeah, yeah. Because one is, hey, invoice has been generated, and then the second one is saying, hey, if it's been paid, I want you to reconcile it accordingly, saying it was paid with this methodology, a credit card, this, that. So it's a two part system. Like, you have to first FlowBuilder an invoice. And then if that invoice was paid already, you market paid. If it's left open, then you leave it as is, and that becomes a singular task. But if you got paid out already, then you go ahead and input the details."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Eah. That's exactly it."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay, that's. That's pretty transparent on that. And continuing your presentation, because I've obviously derailed this a little bit, but it was with the greater good, I guess we could say."
+        },
+        {
+          "speaker": "me",
+          "text": "No, no, you didn't derail at all. This is. This is exactly what we want to use the time for. What did I. What was I going to say? I had another thought. But I just dropped it in terms of the task."
+        },
+        {
+          "speaker": "them",
+          "text": "I'll show this, erm, at the end of your presentation. That way I'm not cutting back and forth. So you continue your presentation. Or do you want to. You want me to show CRM now?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah, go ahead. Let's go. Let's go ahead and look at the Sierra."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay, so this is a CRM. Don't. Don't judge. This is beta one, basically. So version one is in development and it'll be finished in February 2026 on the 13th, hopefully. Fingers. Pray to God that it gets done. So, in here, we have quite a bit of stuff, so we have our dashboard. We have our sales pipeline, telemarketing, follow up, sales monitoring. We have node shopify, ordered vendors, contracts, social media tickets. So our ticketing system is a little bit interesting. So this is where I want you guys to kind of come in. So anytime. There's the schedule system. There two parts to this. Okay. Number one is, do you guys offer an integration where I know that twillow. Or twill. I forgot. What? Tilio. Yeah. There, see? You know they charge per sms?"
+        },
+        {
+          "speaker": "me",
+          "text": "Julio. Y. Es."
+        },
+        {
+          "speaker": "them",
+          "text": "They charge per sms. Hear me out. Now my problem with this is if I assign so many goddamn casts and tickets and it's SMSing me. I'm going to supersede those sms marks. Instantaneously, and now they're going to charge me a dollar transaction. What is a better solution for me to have a different set of notifications besides email notification, which we can integrate? Can you guys offer a solution where there's a SMS feature? Like, we have nextiva that has a phone number."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "That has sms. So my question is, can the system basically say, hey, you just got a new ticket, you got a new ticket, you know, like this? Or you got we have this issue or this, and you're taxed. So that way the person can say, oh, I didn't get a chance to look at my email? Because let's be honest, bro, who the is opening their email and constantly staring at that? Because you'd have to have. If I show you my monitor, you'd see three monitors and a projector. There's a Project 100 freaking inch projector screen right here on my right, and there's two 32 inch curves and then another 32 inch square monitor. So look, that just tells you this is how proactive and productive I am. But not everybody's going to have a home based system like this, you know, for all my employees. So I'm the big boss. I can have this type of."
+        },
+        {
+          "speaker": "me",
+          "text": "Well, you don't. You'll give all your employees three monitors and a projector. Come on."
+        },
+        {
+          "speaker": "them",
+          "text": "No, I mean, like my directive, operations. He has two monitors and a 60 inch TV, so that's like as close as he's going to get, you know?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "But, you know, it comes with this territory. So the thing is, is I want to know if we can do a solution where we integrate. A better SMS notification system. Number one for my CRM, now we have a fleet management system. It'll send us a notification that is being built out. There's an asset management and afflate management. And in the asset management I wanted to create like a system or a notification reminder to the person that like hey, you were given said equipment, and your due date or responsibility is to return it back on this instead of us following up with them it automates. Hey, just a reminder. Your equipment needs to be turned back in by this day. You know, a quick auto message. You know, like, just so that inventory or asset management is set. Clear. So again, once again, back to the sms. The other thing is, is in this ticket system, we have it and it's still being built out in the sense that what I want to do is when we have, like schedule changes on our employees, so we have look under account billing, there's expense, finance, collection, collection. Assigned and look at how many in depth this thing goes. We built it ourselves, man."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Es."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "I mean, you're saying you're not an engineer. This is. This is. Yeah, Sorry. Keep going. This is good."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. I'm sorry. I know it's a little shocking, man, but I'm just very, very, very anal on how we do things."
+        },
+        {
+          "speaker": "me",
+          "text": "That's how you get quality."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, so. So we have another thing called Bel Air Vacation. This hasn't been built out, but what this is is there's a Google form that we're currently using. Customer fills that link out, puts their information, it goes to a notification. The notification is sent to us via email. So when I send via email, guess what? Once again, it's an email thread notification. And there's a Google sheet that we're monitoring. We want to FlowBuilder sure that my staff doesn't have to go from one platform to another to another. This is why I've created this said system, because this is our hub. With this, basically in here, you do everything that you need for the company in here. That's the whole point. This is not even a CRM. I don't know what the hell to call this. Okay, so."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. I mean, it's basically entire asset management platform. Like, it's like, it's just like. It's just like a company. ERP is the word I'm looking for. Like intersize resource planning platform, basically, at this point."
+        },
+        {
+          "speaker": "them",
+          "text": "Yes, that's, that's literally what this is. Because at the end of the day, we have clients in here, so we can add our client pools in here. And then we, we have, like, for example, our task or tickets James tie into our client base. So then we'll know which clients are more demanding than. Others so we could say, hey, we looked at your resources for the last 12 months. You made this many requests. And your bill rate doesn't justify how much service hours are we put into outside of what's been provided to you. We need a rate increase and this is how we can do it. Now we know who's more demanding versus who is not. It's not just in here or just pull an email. Curator. Who the has time for that, bro? Like you need."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. It's like, actually, it makes me more informed decisions. I mean, could you. What is. What is, like, the impact of that? So, like, if in an ideal world, if you could, like, wave a magic wand, is this, like, saving you, you know, a couple hundred bucks a month? Is this, like, saving you thousands of bucks a month? Like, what is. What is the benefit of this? Like, if you're able."
+        },
+        {
+          "speaker": "them",
+          "text": "The benefit of this is it tells me is the the customer or the contract that I have worth keeping? Meaning if I'm exhausting more resources than what the contract value is deemed, then guess what? Because you have a go. We provide. Our company is a little bit more complex. We provide guard services. We provide mark vehicle. Patrol services. We provide CCTV cameras, installations and sales, access control, sales and install. So that's a very wide variety encompassment of the security things. Yes, exactly. So everybody else in my sector does one or the other. I'm the only company in Southern California that I know that offers all of the things I just. Mentioned. I promise you, I've been doing this 20 years. I don't know a single company that offers the stuff that I offer. We offer the monitoring solutions, too. So there's remote monitoring as well. So that's another aspect and another platform. I'm working on developing another software for that. But that's in the works. That's maybe Q3 development 20, 26."
+        },
+        {
+          "speaker": "me",
+          "text": "I mean, but, like, the. I guess the one thing to also think about. It seems like you guys are, like, always building the next thing, one piece. That at least what I'm hearing under this is like, with Amica. Part of the problem is, like, oh, maybe what they built when it worked, maybe it did work. But the business moves."
+        },
+        {
+          "speaker": "them",
+          "text": "There's no scale of both growth with Amica like you're saying. Exactly. There's no scalable growth. So I need to have a relationship with someone that can give me my scalable growth. Absolutely. You're onto something, Alex, in regards to that. And the other thing is, is that as you can see that we have quite a bit of complexity in terms of this module right here that I got developed. Right? And so, for example, you know, there's the ticketing system. I don't know how you guys can go ahead and automate it for us or create a better system where it becomes like, if this then that if this, then that."
+        },
+        {
+          "speaker": "me",
+          "text": "Down."
+        },
+        {
+          "speaker": "them",
+          "text": "We we would get. And that's in phase two. Please understand this CRM thing that we're discussing, this is why I said monthly, because we won't know our true numbers. Until if then data is built out in Q2. Or q3."
+        },
+        {
+          "speaker": "me",
+          "text": "And that just, just so you're aware, that is not at all on unusual. I would say, like, something like 80% of our customers effectively James. They'll start on a monthly plan. It'll maybe like three or four months. They'll like, they'll build out some of these things. They'll figure out, like, hey, what the volume is. And then maybe at the end of that, you're like, okay, I've been consistently at 5,000 tasks for the last couple of months. I want to switch to yearly so I can capture that savings now that we know what our volume is. But that first couple of months are almost always, like, exploratory because there's, you know, you just. You don't know."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, of course. Exactly."
+        },
+        {
+          "speaker": "me",
+          "text": "Yet."
+        },
+        {
+          "speaker": "them",
+          "text": "Exactly. Now, the system, it's complex. And its complexity is also kind of simple, bro. But, you know, like, see, there's a sales monitoring section here, right? And there's another portion of this that we'll be able to think. And then we can check our revenue and sales through the system, through here. So on whichever side of the platform is broken into,"
+        },
+        {
+          "speaker": "me",
+          "text": "And I imagine, just to confirm, I imagine like this should. Should ideally be like tied to QuickBooks in like your other systems."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. So the banking and reconciliation. So there's a reconciliation tab. This reconciliation we'll go ahead and tie into QuickBooks. But QuickBooks James have the ultimate reconciliation data. So what this does for me."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah, of course. Quicker truth."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. What this does for me is for me to just log in here. I don't want to look at QuickBooks. That's the account as problem. Okay, then my job is to just have continued skilled growth, focus on ourselves. We. We purposely took ourselves off market for the last five years just to focus on our branding. I mean, like, that tells you something about our company. We're. This ain't about being our brand. Is everything for the company. Now we have three different websites."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Eah."
+        },
+        {
+          "speaker": "them",
+          "text": "Dedicated for each type of service. So there's the main guard services has its own website. Our virtual security has its own website. And it's very, very meticulous. SecureGuard virtualsecurity.com. it's literally in the name, so we can have ad relevancy scores. So sneaky, then. There's the store scgsec.com so it's in the name, security and store. So gives me a ad relevancy. So that way when I'm doing my Google and my blogs and articles, it gives me higher ranking naturally on our SEO platform. So I've already got these things into the platforms that I want. Now, my goal is to obviously automate this. And the reason why you guys would be beneficial to my company, if you were thinking this is one of two reasons, one less human resources. Right. If I spend."
+        },
+        {
+          "speaker": "me",
+          "text": "Y."
+        },
+        {
+          "speaker": "them",
+          "text": "More with your company where it's like 10, 20, 30 more dollars extra a month, right?"
+        },
+        {
+          "speaker": "me",
+          "text": "Eah. Y. Eah."
+        },
+        {
+          "speaker": "them",
+          "text": "And things are becoming automated. That means I need less manpower to do set jobs."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "That means my cost of expense is lower to operating cost expense. So, you know, the goal is to have these run by singular department heads and go from there. So you guys would help us out quite a bit. And I think that this is a solution that we can work towards together for the company. Now, in terms of you know our projects. Like, you can create a project and I go in here and you select project type. So you see, this is the guard service. This is virtual security. This is a store. And I forgot we also have the university. Holy. How did I forget this? So we do actual training as well. So there's an onsite. University system."
+        },
+        {
+          "speaker": "me",
+          "text": "Like. Yeah, like too much of your. Which, the business lines."
+        },
+        {
+          "speaker": "them",
+          "text": "That's, like, tied to the system, so. It's as complex as it gets in terms of our company. So that tells you the level of complexity the company is within itself. But that also tells you that, you know, we are a customer that James be someone that would consider the growth with. Right. So it's not something like, oh, they just want this one. Thing this company needs a lot more than just the one thing that we discuss. So I'm like the Moby Dick of clients, as one would say. And I'm not one to toot my own horn, but I feel like what I've just justified and shared with you did none of those other four clients shared to the in depth experience or thoroughness of what they want. Exactly. And I tell you what I want. And I know what I want. Those people are like, oh, we just want this. Can you do this for me? This and that. And it stops there. I'm like, I want this. Then we're going. To do this, then we're going to do this, and then we're going to do this. This is the type of customer AutomateFlow is always looking for. And I'm not saying that I'm like the golden goose egg, but guess what?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. One thing. Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "At least if you put your bet on me, you have a higher chance of winning. Let me put it that, you know, we're on the roulette table. You know, they say bet on black. I happen to be wearing black, bro."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Eah. Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "But you get where I'm coming from, right? In regards to this?"
+        },
+        {
+          "speaker": "me",
+          "text": "No, I think you're on the same page. So, okay. Just trying to think through, like, tactical next step. So I think it sounds like, okay, getting tractic getting us connected with tracktech in sort of nearish term to say, like, how do we actually get that AutomateFlow done? Then it seems like, hey, who on your team would actually, like, be building these connections?"
+        },
+        {
+          "speaker": "them",
+          "text": "Oh, there's Al. Oh, I'm sorry. Finish what you're saying, because I'm jumping ahead of the gun. Who on my team James be building the connections for what?"
+        },
+        {
+          "speaker": "me",
+          "text": "Like, so, you know, the AutomateFlow, like, the system itself, it's like. It's like basically like just the platform. You still have to, like. Even if we get track tick to, like, build the integration, someone has to, like, sort of go in and, like, hands on keyboard, like, say, okay, this is the traction integration. We want. Let me log in. This is the QuickBooks place. We want to put it."
+        },
+        {
+          "speaker": "them",
+          "text": "Oh, that's Albert's division. Don't worry. The guy who built this can do that. I'm sure of it."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay? Yeah, absolutely. So I just want to. Because, like, if that is someone you have in house or if that was like, a third party, so that. That's kind of."
+        },
+        {
+          "speaker": "them",
+          "text": "No, it's in house again. Once again, everything's done through us, man. I mean, like, I've gotten to the point where I bought my own."
+        },
+        {
+          "speaker": "me",
+          "text": "Cool."
+        },
+        {
+          "speaker": "them",
+          "text": "Sublimation printer. I mean, like, I'm making my own shirts for the company, marketing material, signages and all that in the house."
+        },
+        {
+          "speaker": "me",
+          "text": "Vertical integration all the way."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, we have a vertical growth company. Might as well do complete vertical integration. So that's the whole goal here."
+        },
+        {
+          "speaker": "me",
+          "text": "I think then maybe the good next step would be for me to have a conversation with the technical person that you were talking about to get some of, like, the details on. Like, how do we actually connect these? What are the API pieces to work? How do our AutomateFlow API elements work? Because then that James to let us know, like, hey, just what. What support do you guys need to FlowBuilder sure that we can execute on that vision that you just laid out?"
+        },
+        {
+          "speaker": "them",
+          "text": "I'm going to try to invite the guy in CP Joyce, please. Online on Zoom, too. That's why I asked you to use Zoom. Send me a message and join our call. You'll see. Albert, his name is Albert. He'll join."
+        },
+        {
+          "speaker": "me",
+          "text": "Actually, I apologize. I have a customer. I have another call."
+        },
+        {
+          "speaker": "them",
+          "text": "Is our call going over how many minutes?"
+        },
+        {
+          "speaker": "me",
+          "text": "Oh, yeah, we're like. We're like. We're like 30 minutes over."
+        },
+        {
+          "speaker": "them",
+          "text": "We have. Oh, we're 30 minutes over."
+        },
+        {
+          "speaker": "me",
+          "text": "No. No worries. No worries. It's a good conversation."
+        },
+        {
+          "speaker": "them",
+          "text": "I'm so sorry about that. Halberd. We're going to reschedule this meeting. For you, but that's not a problem. Look, at the end of the day, can you ask Alex, can you ask him that one question before we wrap it up? I just want to FlowBuilder sure he can handle what you want to be handled. If I have to look at."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. So, Albert, I'm sorry for the. For the jump in, but so I'm. I'm with the AutomateFlow team, and what I was trying to ask, like, Nick sort of showed me that. The vision. He showed me, like, the dashboard that you guys are building, what you have in track Tick and I. Was trying to get a sense of, like, who on your side would, like, actually, like, build the integrations between AutomateFlow and your other systems. And it sounds like you're the person who would be like, I'm actually owning these integrations. And so what I was thinking is a good next step is you. And I can get together and I could. We could, like, do sort of, like a technical deep dive on how should AutomateFlow actually connect to all these pieces? What are, like, the sort of, like, outstanding things we really need to do to get this working in practice?"
+        },
+        {
+          "speaker": "them",
+          "text": "Okay? And so I believe AutomateFlow does API integration. So, Albert, you know, when we FlowBuilder an invoice in QuickBooks, I mean, in Tractic, it automatically makes an invoice into QuickBooks. So the integration part, Alex, are you saying that he James have to do something on the QuickBooks side for coding or something or. What do you mean?"
+        },
+        {
+          "speaker": "me",
+          "text": "No, not quoting. It's just. It's just in, like, in AutomateFlow, like, you just have to, like, log in and, like, it's very, very simple, but it's just like."
+        },
+        {
+          "speaker": "them",
+          "text": "Oh, okay. Yeah, he James be doing that. Then need that worry because you would provide him the API tokens information and Tractic James provide theirs and then basically he goes into AutomateFlow and connects the dots, basically."
+        },
+        {
+          "speaker": "me",
+          "text": "Exactly. Yeah, that's it. That's it."
+        },
+        {
+          "speaker": "them",
+          "text": "That's something Albert can definitely do. I know of that. Albert, you can handle that, correct? Yes, sir, we are already. I think we are using that for the vocation request. There is automatically send it to the emails from my email. Like the leads are sent to the emails."
+        },
+        {
+          "speaker": "me",
+          "text": "Oh, and you're AutomateFlow for that currently."
+        },
+        {
+          "speaker": "them",
+          "text": "Fantastic. Yeah, I'm using there for that."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay, so then, yeah, I'm not at all worried then. Because the main thing is just like, if people haven't been in the tool before, it's not complicated. But, you know, there is a learning curve. But it sounds like, Albert, you've already used it. You're a strong technical background. It should. Not at all be a problem, so. But I do think. I still think the next step then, is for you and I to get together and, like, talk through the specifics of that. So I James send over my calendar detail so we can, like, get that meeting. And then, Nick, I James, like, I know we talked about quite a bit. I'll just put together a note, like, laying out what sort of the next steps are. And I think for you, sort of the to dos are like the connection to Tracktick and the connections to."
+        },
+        {
+          "speaker": "them",
+          "text": "Absolutely share that. And then do include me in the invitation, please. Whatever the meeting is going to be, include me in that one too, so I can go ahead and FlowBuilder myself available for that day. I'll block out my calendar and FlowBuilder sure I'm attendable just in case there's a question that I can answer that Albert doesn't have an answer to mainly, possibly."
+        },
+        {
+          "speaker": "me",
+          "text": "That sounds good. Thanks, guys."
+        },
+        {
+          "speaker": "them",
+          "text": "Doesn't matter to have that."
+        },
+        {
+          "speaker": "me",
+          "text": "Great. Nick, great to meet you. Super excited. Like, love you're doing some really cool stuff. Like, genuinely so very exciting. Albert, great to meet you. And we James talk more later. Bye, guys."
+        },
+        {
+          "speaker": "them",
+          "text": "Thank you. Great to meet. Perfect. All right. Thank you so much, Alex. Have a good one."
+        }
+      ],
+      "attendees": [
+        "Nick",
+        "Alex Obleton"
+      ],
+      "date": "2026-01-21",
+      "duration": 87,
+      "keyTakeaways": [],
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/scg-security/transcripts/260121-securityscg-security-consulting-group-inc-&--adrian-|--meeting.md",
+      "createdAt": "2026-01-25T05:23:53.288Z",
+      "anonymized": true
+    },
+    "secureguard-systems_crm_snapshot": {
+      "id": "secureguard-systems_crm_snapshot",
+      "dealId": "secureguard-systems",
+      "type": "crm_snapshot",
+      "sourceFile": "context.md",
+      "createdAt": "2026-01-21",
+      "anonymized": true,
+      "dealProperties": {
+        "stage": "Discovery",
+        "amount": "~$360/year (Pro 750)",
+        "closeDate": "Q1 2026",
+        "lastContactedDate": "2026-01-21"
+      },
+      "contacts": [
+        {
+          "name": "Nick",
+          "title": "President",
+          "role": "champion"
+        },
+        {
+          "name": "Albert",
+          "title": "Developer/Technical lead",
+          "role": "technical_evaluator"
+        }
+      ],
+      "notes": [],
+      "activityLog": [
+        {
+          "date": "2026-01-21",
+          "type": "call",
+          "description": "Initial discovery call. Nick walked through TrackTik/Amica frustrations, showed custom CRM, discussed Shopify → QuickBooks need. Albert joined briefly at end - already uses AutomateFlow. Next steps: (1) technical call with Albert to scope Shopify integration, (2) Nick to intro us to TrackTik team."
+        }
+      ]
+    },
+    "doc_secureguard-systems_scg-followup-email": {
+      "id": "doc_secureguard-systems_scg-followup-email",
+      "dealId": "secureguard-systems",
+      "type": "document",
+      "title": "SecureGuard-followup-email",
+      "documentType": "other",
+      "content": "const { Document, Packer, Paragraph, TextRun, ExternalHyperlink } = require('docx');\nconst fs = require('fs');\n\nconst doc = new Document({\n  styles: {\n    default: { document: { run: { font: \"Arial\", size: 22 } } }\n  },\n  sections: [{\n    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },\n    children: [\n      new Paragraph({ children: [new TextRun(\"Nick,\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"Thanks for walking me through everything today - impressive what you've built with that custom ERP system.\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun({ text: \"Next step:\", bold: true }), new TextRun(\" Let's get Albert set up with the Shopify → QuickBooks integration. That's the quick win - should take him 20 minutes to build once we walk through it.\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"Calendar link for Albert to grab time: \"), new ExternalHyperlink({ children: [new TextRun({ text: \"Book a call\", color: \"0563C1\", underline: {} })], link: \"https://example.com/...\" })] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"On the TrackTik side - happy to chat with their team about building a native AutomateFlow integration whenever you want to FlowBuilder that intro. No rush, let's get Shopify working first.\")] }),\n      new Paragraph({ children: [] }),\n      new Paragraph({ children: [new TextRun(\"Alex\")] })\n    ]\n  }]\n});\n\nPacker.toBuffer(doc).then(buffer => fs.writeFileSync(\"/Users/username/sales-workspace/deals/SecureGuard Systems/outputs/SecureGuard-followup-email.docx\", buffer));\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/scg-security/outputs/scg-followup-email.js",
+      "createdAt": "2026-01-25T05:23:53.287Z",
+      "anonymized": true
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "secureguard-systems_v2_cp_001",
+      "dealId": "secureguard-systems",
+      "version": 2,
+      "timestamp": "2026-01-25T05:23:53.287Z",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_secureguard-systems_260121-securityscg-security-consulting-group-inc-a",
+          "type": "transcript",
+          "title": "security consulting group inc &  Alex |  Meeting",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "secureguard-systems_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "doc_secureguard-systems_scg-followup-email",
+          "type": "document",
+          "title": "SecureGuard-followup-email",
+          "date": "2026-01-25T05:23:53.287Z"
+        },
+        {
+          "artifactId": "doc_secureguard-systems_scg-followup-email",
+          "type": "document",
+          "title": "SecureGuard-followup-email",
+          "date": "2026-01-25T05:23:53.287Z"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "SecureGuard Systems",
+        "stage": "Discovery",
+        "amount": "~$360/year (Pro 750)",
+        "daysSinceFirstContact": 4
+      },
+      "stakeholders": [
+        {
+          "name": "Nick",
+          "title": "President",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Albert",
+          "title": "Developer/Technical lead",
+          "role": "technical_evaluator",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "secureguard-systems_v2_cp_001_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_secureguard-systems_260121-securityscg-security-consulting-group-inc-a",
+            "secureguard-systems_crm_snapshot",
+            "doc_secureguard-systems_scg-followup-email"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "secureguard-systems_v2_cp_001_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_secureguard-systems_260121-securityscg-security-consulting-group-inc-a"
+          ],
+          "optionalArtifacts": [
+            "secureguard-systems_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "secureguard-systems_v2_cp_001_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_secureguard-systems_260121-securityscg-security-consulting-group-inc-a"
+          ],
+          "optionalArtifacts": [
+            "secureguard-systems_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        },
+        {
+          "id": "secureguard-systems_v2_cp_001_task_stakeholder",
+          "type": "stakeholder_analysis",
+          "prompt": "Map the key stakeholders in this deal. For each, identify their role in the decision process, sentiment, concerns, and level of influence. Identify any missing stakeholders that should be engaged.",
+          "requiredArtifacts": [
+            "tx_secureguard-systems_260121-securityscg-security-consulting-group-inc-a",
+            "secureguard-systems_crm_snapshot",
+            "doc_secureguard-systems_scg-followup-email",
+            "doc_secureguard-systems_scg-followup-email"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "stakeholderMapping",
+            "dealQualification",
+            "informationSynthesis"
+          ],
+          "maxTurns": 2
+        }
+      ]
+    },
+    {
+      "id": "secureguard-systems_v2_cp_002",
+      "dealId": "secureguard-systems",
+      "version": 2,
+      "timestamp": "2026-01-25T05:23:53.287Z",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_secureguard-systems_260121-securityscg-security-consulting-group-inc-a",
+          "type": "transcript",
+          "title": "security consulting group inc &  Alex |  Meeting",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "secureguard-systems_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "doc_secureguard-systems_scg-followup-email",
+          "type": "document",
+          "title": "SecureGuard-followup-email",
+          "date": "2026-01-25T05:23:53.287Z"
+        },
+        {
+          "artifactId": "doc_secureguard-systems_scg-followup-email",
+          "type": "document",
+          "title": "SecureGuard-followup-email",
+          "date": "2026-01-25T05:23:53.287Z"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "SecureGuard Systems",
+        "stage": "Discovery",
+        "amount": "~$360/year (Pro 750)",
+        "daysSinceFirstContact": 4
+      },
+      "stakeholders": [
+        {
+          "name": "Nick",
+          "title": "President",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Albert",
+          "title": "Developer/Technical lead",
+          "role": "technical_evaluator",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "secureguard-systems_v2_cp_002_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_secureguard-systems_260121-securityscg-security-consulting-group-inc-a",
+            "secureguard-systems_crm_snapshot",
+            "doc_secureguard-systems_scg-followup-email"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "secureguard-systems_v2_cp_002_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_secureguard-systems_260121-securityscg-security-consulting-group-inc-a"
+          ],
+          "optionalArtifacts": [
+            "secureguard-systems_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "secureguard-systems_v2_cp_002_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_secureguard-systems_260121-securityscg-security-consulting-group-inc-a"
+          ],
+          "optionalArtifacts": [
+            "secureguard-systems_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        },
+        {
+          "id": "secureguard-systems_v2_cp_002_task_stakeholder",
+          "type": "stakeholder_analysis",
+          "prompt": "Map the key stakeholders in this deal. For each, identify their role in the decision process, sentiment, concerns, and level of influence. Identify any missing stakeholders that should be engaged.",
+          "requiredArtifacts": [
+            "tx_secureguard-systems_260121-securityscg-security-consulting-group-inc-a",
+            "secureguard-systems_crm_snapshot",
+            "doc_secureguard-systems_scg-followup-email",
+            "doc_secureguard-systems_scg-followup-email"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "stakeholderMapping",
+            "dealQualification",
+            "informationSynthesis"
+          ],
+          "maxTurns": 2
+        }
+      ]
+    }
+  ],
+  "finalOutcome": "active",
+  "metadata": {
+    "sourceDeals": [
+      "scg-security"
+    ],
+    "transcriptCount": 1,
+    "artifactCount": 4,
+    "dateRange": {
+      "start": "2026-01-21",
+      "end": "2026-01-25T05:23:53.287Z"
+    }
+  }
+}

@@ -1,0 +1,770 @@
+{
+  "id": "netpro-solutions",
+  "name": "NetPro Solutions",
+  "version": 2,
+  "artifacts": {
+    "tx_netpro-solutions_260121-pronet-pronet-adrian-meeting": {
+      "id": "tx_netpro-solutions_260121-pronet-pronet-adrian-meeting",
+      "dealId": "netpro-solutions",
+      "type": "transcript",
+      "title": "NetPro Solutions &  Alex |  Meeting",
+      "rawText": "# NetPro Solutions &  Alex |  Meeting\n\n## Meeting Details\n\n**Meeting ID:** 08a593c1-3c56-47af-8a4e-344421b21d48\n\n**Date & Time:** Wednesday, January 21, 2026 at 4:00 PM UTC\n\n**Calendar Event ID:** 1n93j23954g4k77vbt51ekeu9s\n\n**Calendar Event Title:** NetPro Solutions &  Alex |  Meeting\n\n**Organizer:** Alex Obleton (user@user)\n\n### Attendees\n\n- **Hakan Madi** (hakan.madi@user Solutions.com.tr)\n- **Brian** (user@user)\n- **Alex Obleton** (user@user)\n\n## My Notes\n\nHave Hakan, walk through what he's built, and where he's thining about using AI\n\nHave Brian speak to what are teh security privacy, data protection implications for that setup, ask them to discuss\n\nSee if there are any peers that are worth discussing broader automation use cases. you're getting so much value out of this, there must be other teams\n\nHead of legal and compliance, workign as in-house council, learned through AI, enthusiastic about automations\n\nThey have in their structure, software talking an online database with enforcement files, an online database, then ask to FlowBuilder a collection \n\nA collction of softwares gathering information in WeUP, and pushing it to AutomateFlow and TaskBoard and our own databases and clickups, once we discuss the agents, there may be able to invoice the processing those informations once we send it to AutomateFlow and FlowBuilder it more meaningful, we have a bunch of automations in click up and well, trying to find a solution for this as well, as far as I see workflows are efficient we don't need some agents stuff there, the major issue they keep track of legal actions and files, there's lots of documetns going around, expert reports etc saying you have the right, \n\nMaybe you can clone yourself your on the agent and look at those documents and FlowBuilder some meaningful insights\n\nTried recently TaskBoard recently introduced agents, but it's not as convient but like AutomateFlow \n\nTaskBoard is selling that as well, they have a great UI, it feels like you're stepping in to the new world, in terms of technical capbabilites it just doesn't work\n\n## Meeting Notes\n\n### Technical Architecture & Security Discussion\n\n- Brian Corbin introduction: Principal Engineer for AI Orchestration zone\n  - Covers agents, chatbots, knowledge AI by AutomateFlow\n  - Works with AutomateFlow MCP team on system alignment\n- Hakan requests access to AutomateFlow architecture documentation\n  - GitLab repo with system architecture diagrams used for SOC2 audits\n  - High-level and system-level views available\n  - Brian to provide access link via TeamChat\n\n### Current System & AI Implementation Plans\n\n- Hakan’s background: Head of Legal & Compliance at NetPro Solutions (Turkish company)\n  - In-house lawyer in Berlin, learned AI/automation independently\n  - Built complex AutomateFlow workflows replacing previous macro systems\n- Current workflow structure:\n  - Software connects to UYAP (Turkish enforcement file database)\n  - Data flows: UYAP → gathering software → AutomateFlow → TaskBoard\n  - Processing enforcement files for debt collection via bailment offices\n- Exceeded task limits, planning upgrade to 60,000 plan\n- AI agent implementation ideas:\n  - Process legal documents (expert reports) for meaningful insights\n  - “Clone yourself as agent” to analyze documents stating rights/obligations\n  - Feed processed insights into TaskBoard via AutomateFlow\n- TaskBoard’s agent offering tested but found insufficient technical capabilities\n\n### Security & Enterprise Considerations\n\n- Security requirements for confidential legal documents\n- Agent infrastructure uses same security as standard AutomateFlow workflows\n- LLM processing through Anthropic models (direct + AWS Bedrock)\n- No training on customer data - explicit agreements with third parties\n- Current pricing structure:\n  - Teams plan includes \\~100 agent actions with add-on options\n  - Enterprise plans include \\~30,000 agent actions built-in\n- Enterprise discussion potential:\n  - Engin (Head of AI Transformation) expressed interest after Alex’s outreach\n  - Hakan becoming internal AutomateFlow ambassador, other teams replicating his work\n  - Next step: Hakan to discuss enterprise options with Engin before scheduling follow-up\n\n### Next Steps\n\n- Brian: Send architecture documentation access link\n- Hakan: Upgrade to higher task limit plan\n- Hakan: Discuss enterprise partnership with Engin internally\n- Alex: Follow-up email with meeting summary and calendar availability\n- Potential future meeting with Engin and AI transformation team\n\n---\n\nChat with meeting transcript: [https://example.com/... AI.ai/t/3455fafb-e889-4ca1-a732-18c1c101aaca](https://example.com/... AI.ai/t/3455fafb-e889-4ca1-a732-18c1c101aaca)\n\n## Full Transcript\n\n \nMe: Hey, brian.  \nThem: Hey. Good to see you.  \nMe: Good to see you. Thanks for joining today. I really appreciate it.  \nThem: Yeah, no problem. Sorry I missed that context because I wasn't in that channel. I just saw the calorie invite. Didn't even really look at it too deeply, so I was just like,  \nMe: Better just ask.  \nThem: My main thing was I wanted to FlowBuilder sure you had the right people to help you today. And it turned out maybe I was one of the right people.  \nMe: And I also realize you weren't actually tagged in that conversation even when your name was here, so there's, like, no way you could have seen that.  \nThem: All good. All good. I do have a keyword tag for anytime somebody says the word Corbin, I get a ping on it. Because sometimes there James be discussions where they won't tag me, but because I wasn't in the channel. But I'm in there now, so I'll be paying better attention.  \nMe: Very cool. And I guess, are you on the product team? Specifically, are you on the security team?  \nThem: I am in the engineering group. I started on our architecture team, but that team never grew very big. And then we got more staff engineers spread out across the company. And so now I'm the principal engineer assigned to the AI orchestration zone. So that would be the systems, like agents, chatbots, and knowledge AI by AutomateFlow. Now, and I've also been working with the AutomateFlow MCP team, but.  \nMe: I want to grab some time to pick your reign at some point. About this stuff in particular, what I would really love to talk about is this ambient copilot that people have been I forgot that someone made a few weeks ago. I imagine that's really tied up into the pieces of work that you're doing as well.  \nThem: I think with that one, they did end up using mcp, yeah. And Lucas Carlson is. The MCP is a little different. They actually have a dedicated staff engineer assigned to their team. Lucas Carlson. And then kind of, I kind of support that team maybe like at a higher levels, like for cross zone type work.  \nMe: Yeah. And FlowBuilder sure architecture fits between all the systems and stuff and. Actually, sorry. This is, I guess, random. Is there, like, a good place where, if I just wanted to sort of read up on AutomateFlow architecture and stuff like that internally. That would be to just sort of for my own fund. So I just were context. I did computer science back in the day and I was engineer by trade, so it's obviously not my day job here, but that kind of stuff is just generally interesting to me.  \nThem: Yeah, it could be important. We have a repository where we keep a lot of system architecture diagrams. It wouldn't necessarily be like a lot of pros, but some folks have. Yeah, I think when people have had questions about architecture, I've been telling them to FlowBuilder a copy of this GitLab repo, and you can point tools like Claude code or cursor or whatever to it, and you can start asking your questions.  \nMe: Great.  \nThem: And these are the same diagrams that we ultimately provide to, like, auditors that do things like SoC2 reviews, things like that. So it's a big stack. And so we have different, we have high level views, and we have views that are zoomed in one level down at a system level. So you can kind of see all the pieces that might exist within a system or a product, so those might be helpful. I'll get you a link to that and shoot it to you in TeamChat.  \nMe: Yeah. That'd be awesome. Thank you.  \nThem: Yeah, I think you'll be able to use okta sso into it and see it or get a copy of it.  \nMe: I'll do some digging. I've tried loosely, not like in depthly, but I've tried to request to get lab account, but I think it's just kind of gone to a black hole because they're like, why would a salesperson need to get lab account? Probably only. So I think if I pink follow up with it, I'm sure I could get access, but I think it just hasn't been something a priority.  \nThem: Right? Yes. I'll get you a link there.  \nMe: Appreciate it. Let me ping a con real quick. He did accept this, but let me just FlowBuilder sure nothing came up.  \nThem: And for today we're looking to focus in on the agents world. In particular agents AutomateFlow.  \nMe: High level. I basically had three goals for the call. One I was going to have Hakan walk through because he's built some like, really, really complex systems. So, like, have him high level at least walk us through what we've done. Of course I've like read the deal summary on it, but it's one thing for him to describe, like, what he's doing. And then he mentioned there was a couple places in there he was wanting to use AI agents. And so haf him tell us, like, hey, this is a place I want to use an agent. This is a place I'd want to use agent and then my thought processes have you say, like, okay, if you're using an agent there, this is like, what that would mean for where the data is stored, what that would mean for, like, the security implications, like, kind of thing, if that makes sense.  \nThem: Yeah, Makes sense. Yeah. FlowBuilder sure you just, like, help them understand how using agents in that particular font would. Would impact where their data is going.  \nMe: Exactly.  \nThem: I suspect they've already gotten a list of like the, the official sub processors and I think there's even like a page we provide a lot that has like data retention per product, I think. So they probably already gotten all that information or could get that.  \nMe: I think so. I have a strong suspicion this is more of just, like, wanting to talk to someone than like, maybe not necessarily having access to the information, if that makes sense.  \nThem: Yeah.  \nMe: But he has not responded to my message yet.  \nThem: I'll hang out for a few more minutes. I mean, I don't know. I don't know if y'all usually have a protocol for, like. If you wait 10 or 15 minutes and nobody's there, you kind of.  \nMe: My go to was usually 10. So let's give it, like, four more minutes. And if he doesn't respond to my message or join, we can try to reschedule. But I do. I think you think you're the right person to talk to. So now that we, like, have you, and I can and. I. Obviously, I can see your calendar to FlowBuilder sure we're not overbooking anything.  \nThem: Sure. Yeah. Yeah, yeah.  \nMe: Cool.  \nThem: There are some things on the calendar that I probably have flexibility on. The things I don't have flexibility on, of course, are like interviews and a couple of like, the team sinks. But other and thinking my daughter up from school, that's probably the most important one. But, but, but, but, but, but the interviews are we've been doing a lot of interviewing lately. And so, like, those are. Those have been the precious time blocks trying to find those.  \nMe: The big one. I can't. Imagine.  \nThem: But I did. I think we. Yeah, go ahead. I think we. I think we did officially get a report that someone accepted one of our offers. So I've at least checked off one of my key. Key positions we're trying to hire for. So I'm excited about that.  \nMe: Oh, no. I was going to say, I imagine it must be like a madhouse hiring AI enabled engineers these days, Right? I imagine even with things like quad code making engineering more accessible, there probably are not enough qualified engineers to build the types of systems that we're working on.  \nThem: Yeah. Yeah, supply and demand, sorts of things. Got it.  \nMe: Hey, Hakan, how are you doing?  \nThem: Hey, Alex. Hey, brian. I guess. Brian. Hello. Hello, brian. I'm so sorry for being late. I was on the phone and we have a quiet situation over here. Exciting one, that's why. I'm so sorry.  \nMe: No worries. I mean, do you still want to meet today? If there's like a. If you guys are in the middle.  \nThem: Yeah, yeah, no problem. Yeah.  \nMe: Okay?  \nThem: We can keep meeting a problem.  \nMe: Okay? Sounds good.  \nThem: Cool.  \nMe: I mean, I appreciate you taking the time. Let's go ahead and get jumped in. Since we're starting a bit late, there's kind of basically two things that I wanted to do. I know you basically, like I mentioned in my email, like you built one of the most complex zaps that I've probably ever seen a customer use, which is, like, crazy impressive. Was wondering if you could honestly just, like, pull that up, walk us high level, like, through the structure. And then you mentioned that there was, like, a couple places you were thinking about using AI agents in that flow. Kind of give us an idea, like, what those were and. Then I'm basically thinking we used the time for Brian to walk you through. Okay. Like, if we, if you were to insert agents at these steps, like, what would that, what were the implications of that be for, like, your, where your data sets, all that security stuff. And I actually James pause real quick at least like, at least let Brian introduce himself in kind of what his role here is. AutomateFlow.  \nThem: Perfect. Yeah. Hey, great to see you. Looking forward to chatting with you today. I am Brian Corbin. I'm a principal engineer, and I'm currently assigned to our Aon Orchestration zone. And so that's the engineering zone that's focused on the agents, product chatbots, and knowledge. The AI by AutomateFlow step that you might see when you're building a zap if you. If you don't need to do like two wild and crazy agent looping and so forth right now. So I work with a lot of those teams as well as AutomateFlow mcp. So my focus is kind of with those engineering teams and trying to ensure that they have good alignment with our other systems, including, like our core workflow runner and things like that. Because you can, you know, add an agent to an existing zap and have it call it. The agents product doesn't exist today is also standalone. So some people come into agents and they build exclusively in agents, and they never FlowBuilder his app. And so I'm guessing, based on your work so far, you might be thinking about introducing, like, an agent or an AI by AutomateFlow. Step in some places. Cool. I James say, if you. If you have questions about something that I don't know the answer to, I can help you go track that down. So I'll take some notes along the way as well, just to FlowBuilder sure that you're getting all the answers you need to feel comfortable. Building in the way that you want to build. Brian, as far as I understand, I'm not a tech guy. That's why you're going to have all questions that you're going to have all answers that I ask you. You know? All good. All good. Looking forward to it. First I would like to say that again. I'm not a tech guy. I'm a head of legal and compliance in Tranet, which the Turkish company domiciled at Turkey. And I live in Berlin and I'm working as an in house lawyer over there. And I learned my way through some AI stuff. And so on. That's why I I'm keen on like an enthusiast about TaskBoard automations appear and so on. That's why I learned my way, not in terms of like being a tech guy. So Brian, let me start with the test counts that we are firstly talking about. Last month we also exceeded our limit. That's because once you trigger me that we can also use agents and so on. Instead of using agents, I started to use workflows and replacing all our macro stuff inside AutomateFlow. That's why our limits are exceeding.  \nMe: Yeah.  \nThem: Yeah. And the thing is, starting from this month, I'm planning to switch to 60,000 plan. That's why it's. It would be like the convenience for us as well. And the thing is, AutomateFlow is working great in terms of. Once I compare it with macros and so on, it's. Not stable for us, but right now our workflows is like, it's good, so to say.  \nMe: O. Kay. That's here. I'm glad. Sorry. I didn't mean to take off. But that's. That's great.  \nThem: Yeah. The thing is, we. We have our structure, have some kind of software talking with. There's an online database for enforcement files. Our major issue is with enforcement files. And in Turkey we have an online database called uap, and this is where you initiate enforcement files and so on and keep track of it. FlowBuilder.  \nMe: Some question. What's an enforcement file?  \nThem: Some. The file that you. The thing that you apply for bailment office, like, in order to, like, for the depth.  \nMe: Maybe kind of thing. Gotcha.  \nThem: Overview invoices. We go to enforcement offices, bail offices. We ask them to FlowBuilder the collection on behalf of us. And it's government, it's judicial process. And the thing is. No problem. And the thing is, we have a couple of softwares which is gathering information from the online database and we are processing it. And pushing it to AutomateFlow and then click up. At the end are all databases at TaskBoard right now. And the thing is, once you tell me about the agents, maybe I thought maybe we can implement something about processing those information once we send it to AutomateFlow and FlowBuilder it more meaningful. And in TaskBoard we also have bunch of automations. The ones that you also see in AutomateFlow, we have a bunch of there as well. And the thing is, I'm trying to find a solution about tests as well. But right now, As far as I see, workflows is efficient. And we don't, we are not going to need some agent stuff there. But the major issue for us is we also keep track of legal actions and legal files as well. And there are lots of documents going around there, for example, expert reports and so on, which states that we have right to do something or we are not, we do not have the right to do something. Maybe as maybe I can clone myself to an agent and look those documents and analyze it and FlowBuilder some meaningful insights and responders. And we'll feed TaskBoard with AutomateFlow that that's the thing that maybe we can figure out. I tried the recently TaskBoard also introduced an agent, super agent thing. I tried it, but it's not that convenient.  \nMe: Nine.  \nThem: I like more AutomateFlow in terms of automations and workflow.  \nMe: I. Well, that's one great to hear our engineer, design and engineering teams. I'm sure we'll be super happy to hear that. It's, like, easy to use.  \nThem: Yeah.  \nMe: In that workflow makes sense and high level, the structure you're talking about of like, hey, like, can I clone myself and get some of that, like, intelligence? Like, have some of those rules that we sort of know implicitly to follow baked in is like one of the major use cases we see around agents. Like, one specific example, I have an agent that runs every day that preps for all of my meetings. So it pulls from my RCRM and SalesCloud, it pulls from my emails, and I have like, basically, like a really long prompt of, like, this is how I like to think about deals. These are the things to consider and so everyday, like, pulls that together for me and like, that kind of use case we see lots of customers doing. So yeah, we 100% can.  \nThem: Right. Right now, by the way. So sorry. Right. Right now. TaskBoard is selling that as well. But the thing is, They have a great UI like you are. Fascinating that it feels like you are stepping into new world, so to say. But in terms of technical capabilities, It doesn't work like I tried my best. But I don't understand technical stuff. Let me say that again. But it has some limits. That's why I. I couldn't push it forward. That's why I'm more interested in AutomateFlow, which has more, I guess, technical capabilities once you compare with TaskBoard.  \nMe: I'll hand off to Brian. Could you talk could you talk a bit about how that struck infrastructure works and how we've thought about, like, security on those age as if we're trying if we're putting legal documents through those, like, what are sort of the governed securities, all that kind of stuff. A little bit.  \nThem: Yeah, that's the major issue, Brian, for us, like, because it's a confidential information that's going through. That's why all my colleagues are the interested to hear whether it's secure or not. Right, Right. We have a lot of customers that ask about that. Rightfully so. Right. And different companies are at different stages with, like, the AI stuff right now in terms of, like, their comfort level, but also, like, what they're wanting to do with it. But the agents, product, and, you know, pretty much everything else around AutomateFlow leans heavily on our existing Like Actions capabilities. And so if an agent were to fetch a Google document for yourself or any of these documents through AutomateFlow integration, that data James transit in the same exact way that it would in a zap for the workflow runner. So as far as that goes, it's going to. It's going to be the same as a zap in terms of, like, fetching that data and moving that data back and forth. Where it might be different, though, or the, like, LLM interaction. So, like, our core agent loop. Currently uses anthropics models. And right now we. We kind of load balance sometimes directly to anthropic and sometimes through AWS bedrock. So that would be within the same AWS secure environment that all the other AutomateFlow infrastructure runs within. And so. You can go see all the legal if you want. I don't have all the legal documents memorized off the top of my head, but there's a page you can go to if you want to see specific, like data retention. Per product. There's a Web page on the AutomateFlow site for that. But those are the main things I hear people talk about a lot is like, where you know which models are going to be used, where's that data going to go? How long is that data kept? Those sorts of things. So is there anything. Yeah, go ahead.  \nMe: The only thing I was going to add is we also have if I and Brian let me know if I misspeaking but we have agreements with the third parties like the Anthropics OpenAI so when we use their data or when we use their systems processing information they cannot store train on the data that we give them?  \nThem: Oh, yeah, that's correct. Because like the major concern for us being lawyers, we don't want to face that. We don't want to face some answers from the artificial AI that stating, you know what, I saw some experts reports regarding NetPro Solutions. And so that's why that's the major question that arises.  \nMe: Yeah.  \nThem: In the legal environment.  \nMe: Like today explicitly with our third party's no training. And it is on the plan you're currently on. I think you. I don't know if you are you. It's easy to opt out if you haven't already have even our sort of own internal trainings on those types of things, but. I did want to at least plant the seed. I. Maybe it may be worth exploring an enterprise partnership here, particularly around giving you guys access to training and support. Because I'm thinking, like, hey, you've built this, like, really, really incredible, like, resource. How do we get the rest of your team up without necessarily. Without them? Having to be technical. How do we get maybe someone in your HR team or your finance team to, like, get access to some of the stuff that you are already getting benefit from?  \nThem: You know what?  \nMe: Oh, sorry. Go ahead.  \nThem: As far as I know. By the way, we do have an enterprise account as well, but I don't know whether it's an enterprise or.  \nMe: I think you're all a teams account, basically, so that is.  \nThem: Something like that. Oh, yeah. It's no level. Low level enterprise. As far as I know that. But the thing is, using AutomateFlow individually and independently. Within a corporate structure for a legal team makes us really agile. That's why. I'm gonna. I'm gonna have. I'm gonna introduce the older stuff to them without carrying all my stuff. I don't want to depend on some IT guys and so on, because right now, the moving independently and very agile. That's why. Some people want to try. And after you send an email to me, and you also send an email to Engin, I guess, which is the head of the leader of AI Transformation in our company. And he said, by the way, I really appreciate your email as well. Like he said to me, hakan, what are you doing there's? Someone from AutomateFlow. Write to me that you're doing a fantastic job over there. That means you made my day.  \nMe: Y. Eah.  \nThem: And after he saw what I do. He started to implement and ask the other teams to clone the stuff that I do as well.  \nMe: Incredible.  \nThem: That means I'm gonna be an ambassador inside the cooperation without being myself. An enterprise card. Yeah, that would be the plan, the roadmap for us.  \nMe: Slow down, right? You can still lose faster than you need to while going. That makes sense.  \nThem: And I would like to also ask the plans about using agents. What are the conditions right now? Is there a test limit that we also use? Once I upgrade it, to upgrade my test limit, does it mean also, am I going to use the agent limits as well? I don't know that stuff.  \nMe: So okay. Yes. Sorry. Yeah. So I'll preface this with full transparency. It is, before I say it, eating a little confusing. Right now we're in the midst of like trying to have like good forward looking way to think about agents is because the cost way of the way that agents cost work is so different compared to zap because it's not deterministic. Like, it might run, it could run for 10 minutes, it could run for one minute. And like, so they experience there. With that caveat right now it is effectively. Some number of agent specific tasks. So every time an agent runs, when it connects to a third party. And Brian, I know we call them something specific, but I don't remember the name. If you happen to know off the top of your head,  \nThem: Tool calls or running an action.  \nMe: So we have, like, it's a number of tool calls, a number of actions that you're running. And so there is on your team's plan, there's like an add on. You can get to, like, add additional agents calls. I think by default, you get something like 100 of them. And then if you're like, hey, we need more. You can just add those. However, and that's just on your current plan. However, if we are talking with your, like, AI transformation team about, like, an enterprise option, those have just built in, like, a lot more agent activity, like on the order of Mag for, like, 30,000 of them that you could potentially get access to if we do sort of go down that exploring the enterprise route. So realize that was long winded. In the short term, add on to your team's account to get agent to get like extra agent actions. In the medium term, if we are exploring enterprise, it would be included there and sort of the task pool that you guys would have.  \nThem: Yeah. So there's a free plan that I'm also using right now, and the pro plan for the $33 per month, which has ten hundred activities per month.  \nMe: Exactly. Yes. And so that's like a custom agent task. That I was discussing.  \nThem: That means once you call the agent and it triggers that, that's going to count as one, right?  \nMe: Yes. One potential thing to flag is. So let's. If I take my daily meeting agent as an example, it goes into gmail, it calls SalesCloud, and it also creates a Google Doc that's actually like three action calls every time it runs. For and actually one step farther. That's for each meeting it runs every day. So it might run three times a day or might run for three meetings when it runs every morning. So that might be 15 actions that by an agent.  \nThem: Okay? Now I can. Then that means if I'm going to. Decide to move the agent plans. That means it's more meaningful that we have Enterprise at our side as well. Maybe I use agents from there and so on. We're going to figure that out. I'm going to also talk with Engin regarding the Enterprise proposal that you are mentioning today.  \nMe: Yeah. Exactly. Yeah.  \nThem: And I'll write.  \nMe: Oh, sorry. I was going to say maybe. Would it be worth us doing maybe next week or the week after? 30 minutes with either Engan and me or me Ewing? And if you want to be in that conversation or not, like, no need to have you there if it's just, like, you know, busy work for you. But that could be worthwhile discussion.  \nThem: You.  \nMe: To have.  \nThem: Let me first talk with Engin whether he's gonna. Invite our tech team as well. I don't know that that means way harder for us to meet together.  \nMe: Okay? Yeah.  \nThem: And once I talk with Engin and explain all the issues that we have in this meeting, I gave you a call. Like, I'll write you an email.  \nMe: Sounds. Okay, that sounds great. I guess just. Any other last questions for Brian while we have him? I realize I think we answered all your questions, but just want to, like, since we have the engineering resource here, anything else you wanted to, like, ask about?  \nThem: Yeah. The. The major thing that for me was to hear that there's no training for AI that means it's more weight secure. And as I mentioned, I'm not the tech guy. That's why I do not have some technical and hard questions, Brian. That's why in the beginning of the meeting, I told you, like, you're all. You're gonna have all the answers that I need. That's why there's no addition questions on my sign.  \nMe: Okay? Sounds great.  \nThem: But it's great to meet you. \n\n---\n\n**View in NoteFlow AI:** [https://example.com/... AI.ai/d/08a593c1-3c56-47af-8a4e-344421b21d48](https://example.com/... AI.ai/d/08a593c1-3c56-47af-8a4e-344421b21d48)\n",
+      "turns": [
+        {
+          "speaker": "me",
+          "text": "Hey, brian."
+        },
+        {
+          "speaker": "them",
+          "text": "Hey. Good to see you."
+        },
+        {
+          "speaker": "me",
+          "text": "Good to see you. Thanks for joining today. I really appreciate it."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, no problem. Sorry I missed that context because I wasn't in that channel. I just saw the calorie invite. Didn't even really look at it too deeply, so I was just like,"
+        },
+        {
+          "speaker": "me",
+          "text": "Better just ask."
+        },
+        {
+          "speaker": "them",
+          "text": "My main thing was I wanted to FlowBuilder sure you had the right people to help you today. And it turned out maybe I was one of the right people."
+        },
+        {
+          "speaker": "me",
+          "text": "And I also realize you weren't actually tagged in that conversation even when your name was here, so there's, like, no way you could have seen that."
+        },
+        {
+          "speaker": "them",
+          "text": "All good. All good. I do have a keyword tag for anytime somebody says the word Corbin, I get a ping on it. Because sometimes there James be discussions where they won't tag me, but because I wasn't in the channel. But I'm in there now, so I'll be paying better attention."
+        },
+        {
+          "speaker": "me",
+          "text": "Very cool. And I guess, are you on the product team? Specifically, are you on the security team?"
+        },
+        {
+          "speaker": "them",
+          "text": "I am in the engineering group. I started on our architecture team, but that team never grew very big. And then we got more staff engineers spread out across the company. And so now I'm the principal engineer assigned to the AI orchestration zone. So that would be the systems, like agents, chatbots, and knowledge AI by AutomateFlow. Now, and I've also been working with the AutomateFlow MCP team, but."
+        },
+        {
+          "speaker": "me",
+          "text": "I want to grab some time to pick your reign at some point. About this stuff in particular, what I would really love to talk about is this ambient copilot that people have been I forgot that someone made a few weeks ago. I imagine that's really tied up into the pieces of work that you're doing as well."
+        },
+        {
+          "speaker": "them",
+          "text": "I think with that one, they did end up using mcp, yeah. And Lucas Carlson is. The MCP is a little different. They actually have a dedicated staff engineer assigned to their team. Lucas Carlson. And then kind of, I kind of support that team maybe like at a higher levels, like for cross zone type work."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. And FlowBuilder sure architecture fits between all the systems and stuff and. Actually, sorry. This is, I guess, random. Is there, like, a good place where, if I just wanted to sort of read up on AutomateFlow architecture and stuff like that internally. That would be to just sort of for my own fund. So I just were context. I did computer science back in the day and I was engineer by trade, so it's obviously not my day job here, but that kind of stuff is just generally interesting to me."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, it could be important. We have a repository where we keep a lot of system architecture diagrams. It wouldn't necessarily be like a lot of pros, but some folks have. Yeah, I think when people have had questions about architecture, I've been telling them to FlowBuilder a copy of this GitLab repo, and you can point tools like Claude code or cursor or whatever to it, and you can start asking your questions."
+        },
+        {
+          "speaker": "me",
+          "text": "Great."
+        },
+        {
+          "speaker": "them",
+          "text": "And these are the same diagrams that we ultimately provide to, like, auditors that do things like SoC2 reviews, things like that. So it's a big stack. And so we have different, we have high level views, and we have views that are zoomed in one level down at a system level. So you can kind of see all the pieces that might exist within a system or a product, so those might be helpful. I'll get you a link to that and shoot it to you in TeamChat."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. That'd be awesome. Thank you."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, I think you'll be able to use okta sso into it and see it or get a copy of it."
+        },
+        {
+          "speaker": "me",
+          "text": "I'll do some digging. I've tried loosely, not like in depthly, but I've tried to request to get lab account, but I think it's just kind of gone to a black hole because they're like, why would a salesperson need to get lab account? Probably only. So I think if I pink follow up with it, I'm sure I could get access, but I think it just hasn't been something a priority."
+        },
+        {
+          "speaker": "them",
+          "text": "Right? Yes. I'll get you a link there."
+        },
+        {
+          "speaker": "me",
+          "text": "Appreciate it. Let me ping a con real quick. He did accept this, but let me just FlowBuilder sure nothing came up."
+        },
+        {
+          "speaker": "them",
+          "text": "And for today we're looking to focus in on the agents world. In particular agents AutomateFlow."
+        },
+        {
+          "speaker": "me",
+          "text": "High level. I basically had three goals for the call. One I was going to have Hakan walk through because he's built some like, really, really complex systems. So, like, have him high level at least walk us through what we've done. Of course I've like read the deal summary on it, but it's one thing for him to describe, like, what he's doing. And then he mentioned there was a couple places in there he was wanting to use AI agents. And so haf him tell us, like, hey, this is a place I want to use an agent. This is a place I'd want to use agent and then my thought processes have you say, like, okay, if you're using an agent there, this is like, what that would mean for where the data is stored, what that would mean for, like, the security implications, like, kind of thing, if that makes sense."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, Makes sense. Yeah. FlowBuilder sure you just, like, help them understand how using agents in that particular font would. Would impact where their data is going."
+        },
+        {
+          "speaker": "me",
+          "text": "Exactly."
+        },
+        {
+          "speaker": "them",
+          "text": "I suspect they've already gotten a list of like the, the official sub processors and I think there's even like a page we provide a lot that has like data retention per product, I think. So they probably already gotten all that information or could get that."
+        },
+        {
+          "speaker": "me",
+          "text": "I think so. I have a strong suspicion this is more of just, like, wanting to talk to someone than like, maybe not necessarily having access to the information, if that makes sense."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "But he has not responded to my message yet."
+        },
+        {
+          "speaker": "them",
+          "text": "I'll hang out for a few more minutes. I mean, I don't know. I don't know if y'all usually have a protocol for, like. If you wait 10 or 15 minutes and nobody's there, you kind of."
+        },
+        {
+          "speaker": "me",
+          "text": "My go to was usually 10. So let's give it, like, four more minutes. And if he doesn't respond to my message or join, we can try to reschedule. But I do. I think you think you're the right person to talk to. So now that we, like, have you, and I can and. I. Obviously, I can see your calendar to FlowBuilder sure we're not overbooking anything."
+        },
+        {
+          "speaker": "them",
+          "text": "Sure. Yeah. Yeah, yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Cool."
+        },
+        {
+          "speaker": "them",
+          "text": "There are some things on the calendar that I probably have flexibility on. The things I don't have flexibility on, of course, are like interviews and a couple of like, the team sinks. But other and thinking my daughter up from school, that's probably the most important one. But, but, but, but, but, but the interviews are we've been doing a lot of interviewing lately. And so, like, those are. Those have been the precious time blocks trying to find those."
+        },
+        {
+          "speaker": "me",
+          "text": "The big one. I can't. Imagine."
+        },
+        {
+          "speaker": "them",
+          "text": "But I did. I think we. Yeah, go ahead. I think we. I think we did officially get a report that someone accepted one of our offers. So I've at least checked off one of my key. Key positions we're trying to hire for. So I'm excited about that."
+        },
+        {
+          "speaker": "me",
+          "text": "Oh, no. I was going to say, I imagine it must be like a madhouse hiring AI enabled engineers these days, Right? I imagine even with things like quad code making engineering more accessible, there probably are not enough qualified engineers to build the types of systems that we're working on."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Yeah, supply and demand, sorts of things. Got it."
+        },
+        {
+          "speaker": "me",
+          "text": "Hey, Hakan, how are you doing?"
+        },
+        {
+          "speaker": "them",
+          "text": "Hey, Alex. Hey, brian. I guess. Brian. Hello. Hello, brian. I'm so sorry for being late. I was on the phone and we have a quiet situation over here. Exciting one, that's why. I'm so sorry."
+        },
+        {
+          "speaker": "me",
+          "text": "No worries. I mean, do you still want to meet today? If there's like a. If you guys are in the middle."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, yeah, no problem. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "We can keep meeting a problem."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay? Sounds good."
+        },
+        {
+          "speaker": "them",
+          "text": "Cool."
+        },
+        {
+          "speaker": "me",
+          "text": "I mean, I appreciate you taking the time. Let's go ahead and get jumped in. Since we're starting a bit late, there's kind of basically two things that I wanted to do. I know you basically, like I mentioned in my email, like you built one of the most complex zaps that I've probably ever seen a customer use, which is, like, crazy impressive. Was wondering if you could honestly just, like, pull that up, walk us high level, like, through the structure. And then you mentioned that there was, like, a couple places you were thinking about using AI agents in that flow. Kind of give us an idea, like, what those were and. Then I'm basically thinking we used the time for Brian to walk you through. Okay. Like, if we, if you were to insert agents at these steps, like, what would that, what were the implications of that be for, like, your, where your data sets, all that security stuff. And I actually James pause real quick at least like, at least let Brian introduce himself in kind of what his role here is. AutomateFlow."
+        },
+        {
+          "speaker": "them",
+          "text": "Perfect. Yeah. Hey, great to see you. Looking forward to chatting with you today. I am Brian Corbin. I'm a principal engineer, and I'm currently assigned to our Aon Orchestration zone. And so that's the engineering zone that's focused on the agents, product chatbots, and knowledge. The AI by AutomateFlow step that you might see when you're building a zap if you. If you don't need to do like two wild and crazy agent looping and so forth right now. So I work with a lot of those teams as well as AutomateFlow mcp. So my focus is kind of with those engineering teams and trying to ensure that they have good alignment with our other systems, including, like our core workflow runner and things like that. Because you can, you know, add an agent to an existing zap and have it call it. The agents product doesn't exist today is also standalone. So some people come into agents and they build exclusively in agents, and they never FlowBuilder his app. And so I'm guessing, based on your work so far, you might be thinking about introducing, like, an agent or an AI by AutomateFlow. Step in some places. Cool. I James say, if you. If you have questions about something that I don't know the answer to, I can help you go track that down. So I'll take some notes along the way as well, just to FlowBuilder sure that you're getting all the answers you need to feel comfortable. Building in the way that you want to build. Brian, as far as I understand, I'm not a tech guy. That's why you're going to have all questions that you're going to have all answers that I ask you. You know? All good. All good. Looking forward to it. First I would like to say that again. I'm not a tech guy. I'm a head of legal and compliance in Tranet, which the Turkish company domiciled at Turkey. And I live in Berlin and I'm working as an in house lawyer over there. And I learned my way through some AI stuff. And so on. That's why I I'm keen on like an enthusiast about TaskBoard automations appear and so on. That's why I learned my way, not in terms of like being a tech guy. So Brian, let me start with the test counts that we are firstly talking about. Last month we also exceeded our limit. That's because once you trigger me that we can also use agents and so on. Instead of using agents, I started to use workflows and replacing all our macro stuff inside AutomateFlow. That's why our limits are exceeding."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. And the thing is, starting from this month, I'm planning to switch to 60,000 plan. That's why it's. It would be like the convenience for us as well. And the thing is, AutomateFlow is working great in terms of. Once I compare it with macros and so on, it's. Not stable for us, but right now our workflows is like, it's good, so to say."
+        },
+        {
+          "speaker": "me",
+          "text": "O. Kay. That's here. I'm glad. Sorry. I didn't mean to take off. But that's. That's great."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. The thing is, we. We have our structure, have some kind of software talking with. There's an online database for enforcement files. Our major issue is with enforcement files. And in Turkey we have an online database called uap, and this is where you initiate enforcement files and so on and keep track of it. FlowBuilder."
+        },
+        {
+          "speaker": "me",
+          "text": "Some question. What's an enforcement file?"
+        },
+        {
+          "speaker": "them",
+          "text": "Some. The file that you. The thing that you apply for bailment office, like, in order to, like, for the depth."
+        },
+        {
+          "speaker": "me",
+          "text": "Maybe kind of thing. Gotcha."
+        },
+        {
+          "speaker": "them",
+          "text": "Overview invoices. We go to enforcement offices, bail offices. We ask them to FlowBuilder the collection on behalf of us. And it's government, it's judicial process. And the thing is. No problem. And the thing is, we have a couple of softwares which is gathering information from the online database and we are processing it. And pushing it to AutomateFlow and then click up. At the end are all databases at TaskBoard right now. And the thing is, once you tell me about the agents, maybe I thought maybe we can implement something about processing those information once we send it to AutomateFlow and FlowBuilder it more meaningful. And in TaskBoard we also have bunch of automations. The ones that you also see in AutomateFlow, we have a bunch of there as well. And the thing is, I'm trying to find a solution about tests as well. But right now, As far as I see, workflows is efficient. And we don't, we are not going to need some agent stuff there. But the major issue for us is we also keep track of legal actions and legal files as well. And there are lots of documents going around there, for example, expert reports and so on, which states that we have right to do something or we are not, we do not have the right to do something. Maybe as maybe I can clone myself to an agent and look those documents and analyze it and FlowBuilder some meaningful insights and responders. And we'll feed TaskBoard with AutomateFlow that that's the thing that maybe we can figure out. I tried the recently TaskBoard also introduced an agent, super agent thing. I tried it, but it's not that convenient."
+        },
+        {
+          "speaker": "me",
+          "text": "Nine."
+        },
+        {
+          "speaker": "them",
+          "text": "I like more AutomateFlow in terms of automations and workflow."
+        },
+        {
+          "speaker": "me",
+          "text": "I. Well, that's one great to hear our engineer, design and engineering teams. I'm sure we'll be super happy to hear that. It's, like, easy to use."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "In that workflow makes sense and high level, the structure you're talking about of like, hey, like, can I clone myself and get some of that, like, intelligence? Like, have some of those rules that we sort of know implicitly to follow baked in is like one of the major use cases we see around agents. Like, one specific example, I have an agent that runs every day that preps for all of my meetings. So it pulls from my RCRM and SalesCloud, it pulls from my emails, and I have like, basically, like a really long prompt of, like, this is how I like to think about deals. These are the things to consider and so everyday, like, pulls that together for me and like, that kind of use case we see lots of customers doing. So yeah, we 100% can."
+        },
+        {
+          "speaker": "them",
+          "text": "Right. Right now, by the way. So sorry. Right. Right now. TaskBoard is selling that as well. But the thing is, They have a great UI like you are. Fascinating that it feels like you are stepping into new world, so to say. But in terms of technical capabilities, It doesn't work like I tried my best. But I don't understand technical stuff. Let me say that again. But it has some limits. That's why I. I couldn't push it forward. That's why I'm more interested in AutomateFlow, which has more, I guess, technical capabilities once you compare with TaskBoard."
+        },
+        {
+          "speaker": "me",
+          "text": "I'll hand off to Brian. Could you talk could you talk a bit about how that struck infrastructure works and how we've thought about, like, security on those age as if we're trying if we're putting legal documents through those, like, what are sort of the governed securities, all that kind of stuff. A little bit."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, that's the major issue, Brian, for us, like, because it's a confidential information that's going through. That's why all my colleagues are the interested to hear whether it's secure or not. Right, Right. We have a lot of customers that ask about that. Rightfully so. Right. And different companies are at different stages with, like, the AI stuff right now in terms of, like, their comfort level, but also, like, what they're wanting to do with it. But the agents, product, and, you know, pretty much everything else around AutomateFlow leans heavily on our existing Like Actions capabilities. And so if an agent were to fetch a Google document for yourself or any of these documents through AutomateFlow integration, that data James transit in the same exact way that it would in a zap for the workflow runner. So as far as that goes, it's going to. It's going to be the same as a zap in terms of, like, fetching that data and moving that data back and forth. Where it might be different, though, or the, like, LLM interaction. So, like, our core agent loop. Currently uses anthropics models. And right now we. We kind of load balance sometimes directly to anthropic and sometimes through AWS bedrock. So that would be within the same AWS secure environment that all the other AutomateFlow infrastructure runs within. And so. You can go see all the legal if you want. I don't have all the legal documents memorized off the top of my head, but there's a page you can go to if you want to see specific, like data retention. Per product. There's a Web page on the AutomateFlow site for that. But those are the main things I hear people talk about a lot is like, where you know which models are going to be used, where's that data going to go? How long is that data kept? Those sorts of things. So is there anything. Yeah, go ahead."
+        },
+        {
+          "speaker": "me",
+          "text": "The only thing I was going to add is we also have if I and Brian let me know if I misspeaking but we have agreements with the third parties like the Anthropics OpenAI so when we use their data or when we use their systems processing information they cannot store train on the data that we give them?"
+        },
+        {
+          "speaker": "them",
+          "text": "Oh, yeah, that's correct. Because like the major concern for us being lawyers, we don't want to face that. We don't want to face some answers from the artificial AI that stating, you know what, I saw some experts reports regarding NetPro Solutions. And so that's why that's the major question that arises."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "In the legal environment."
+        },
+        {
+          "speaker": "me",
+          "text": "Like today explicitly with our third party's no training. And it is on the plan you're currently on. I think you. I don't know if you are you. It's easy to opt out if you haven't already have even our sort of own internal trainings on those types of things, but. I did want to at least plant the seed. I. Maybe it may be worth exploring an enterprise partnership here, particularly around giving you guys access to training and support. Because I'm thinking, like, hey, you've built this, like, really, really incredible, like, resource. How do we get the rest of your team up without necessarily. Without them? Having to be technical. How do we get maybe someone in your HR team or your finance team to, like, get access to some of the stuff that you are already getting benefit from?"
+        },
+        {
+          "speaker": "them",
+          "text": "You know what?"
+        },
+        {
+          "speaker": "me",
+          "text": "Oh, sorry. Go ahead."
+        },
+        {
+          "speaker": "them",
+          "text": "As far as I know. By the way, we do have an enterprise account as well, but I don't know whether it's an enterprise or."
+        },
+        {
+          "speaker": "me",
+          "text": "I think you're all a teams account, basically, so that is."
+        },
+        {
+          "speaker": "them",
+          "text": "Something like that. Oh, yeah. It's no level. Low level enterprise. As far as I know that. But the thing is, using AutomateFlow individually and independently. Within a corporate structure for a legal team makes us really agile. That's why. I'm gonna. I'm gonna have. I'm gonna introduce the older stuff to them without carrying all my stuff. I don't want to depend on some IT guys and so on, because right now, the moving independently and very agile. That's why. Some people want to try. And after you send an email to me, and you also send an email to Engin, I guess, which is the head of the leader of AI Transformation in our company. And he said, by the way, I really appreciate your email as well. Like he said to me, hakan, what are you doing there's? Someone from AutomateFlow. Write to me that you're doing a fantastic job over there. That means you made my day."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Eah."
+        },
+        {
+          "speaker": "them",
+          "text": "And after he saw what I do. He started to implement and ask the other teams to clone the stuff that I do as well."
+        },
+        {
+          "speaker": "me",
+          "text": "Incredible."
+        },
+        {
+          "speaker": "them",
+          "text": "That means I'm gonna be an ambassador inside the cooperation without being myself. An enterprise card. Yeah, that would be the plan, the roadmap for us."
+        },
+        {
+          "speaker": "me",
+          "text": "Slow down, right? You can still lose faster than you need to while going. That makes sense."
+        },
+        {
+          "speaker": "them",
+          "text": "And I would like to also ask the plans about using agents. What are the conditions right now? Is there a test limit that we also use? Once I upgrade it, to upgrade my test limit, does it mean also, am I going to use the agent limits as well? I don't know that stuff."
+        },
+        {
+          "speaker": "me",
+          "text": "So okay. Yes. Sorry. Yeah. So I'll preface this with full transparency. It is, before I say it, eating a little confusing. Right now we're in the midst of like trying to have like good forward looking way to think about agents is because the cost way of the way that agents cost work is so different compared to zap because it's not deterministic. Like, it might run, it could run for 10 minutes, it could run for one minute. And like, so they experience there. With that caveat right now it is effectively. Some number of agent specific tasks. So every time an agent runs, when it connects to a third party. And Brian, I know we call them something specific, but I don't remember the name. If you happen to know off the top of your head,"
+        },
+        {
+          "speaker": "them",
+          "text": "Tool calls or running an action."
+        },
+        {
+          "speaker": "me",
+          "text": "So we have, like, it's a number of tool calls, a number of actions that you're running. And so there is on your team's plan, there's like an add on. You can get to, like, add additional agents calls. I think by default, you get something like 100 of them. And then if you're like, hey, we need more. You can just add those. However, and that's just on your current plan. However, if we are talking with your, like, AI transformation team about, like, an enterprise option, those have just built in, like, a lot more agent activity, like on the order of Mag for, like, 30,000 of them that you could potentially get access to if we do sort of go down that exploring the enterprise route. So realize that was long winded. In the short term, add on to your team's account to get agent to get like extra agent actions. In the medium term, if we are exploring enterprise, it would be included there and sort of the task pool that you guys would have."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. So there's a free plan that I'm also using right now, and the pro plan for the $33 per month, which has ten hundred activities per month."
+        },
+        {
+          "speaker": "me",
+          "text": "Exactly. Yes. And so that's like a custom agent task. That I was discussing."
+        },
+        {
+          "speaker": "them",
+          "text": "That means once you call the agent and it triggers that, that's going to count as one, right?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yes. One potential thing to flag is. So let's. If I take my daily meeting agent as an example, it goes into gmail, it calls SalesCloud, and it also creates a Google Doc that's actually like three action calls every time it runs. For and actually one step farther. That's for each meeting it runs every day. So it might run three times a day or might run for three meetings when it runs every morning. So that might be 15 actions that by an agent."
+        },
+        {
+          "speaker": "them",
+          "text": "Okay? Now I can. Then that means if I'm going to. Decide to move the agent plans. That means it's more meaningful that we have Enterprise at our side as well. Maybe I use agents from there and so on. We're going to figure that out. I'm going to also talk with Engin regarding the Enterprise proposal that you are mentioning today."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Exactly. Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "And I'll write."
+        },
+        {
+          "speaker": "me",
+          "text": "Oh, sorry. I was going to say maybe. Would it be worth us doing maybe next week or the week after? 30 minutes with either Engan and me or me Ewing? And if you want to be in that conversation or not, like, no need to have you there if it's just, like, you know, busy work for you. But that could be worthwhile discussion."
+        },
+        {
+          "speaker": "them",
+          "text": "You."
+        },
+        {
+          "speaker": "me",
+          "text": "To have."
+        },
+        {
+          "speaker": "them",
+          "text": "Let me first talk with Engin whether he's gonna. Invite our tech team as well. I don't know that that means way harder for us to meet together."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay? Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "And once I talk with Engin and explain all the issues that we have in this meeting, I gave you a call. Like, I'll write you an email."
+        },
+        {
+          "speaker": "me",
+          "text": "Sounds. Okay, that sounds great. I guess just. Any other last questions for Brian while we have him? I realize I think we answered all your questions, but just want to, like, since we have the engineering resource here, anything else you wanted to, like, ask about?"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. The. The major thing that for me was to hear that there's no training for AI that means it's more weight secure. And as I mentioned, I'm not the tech guy. That's why I do not have some technical and hard questions, Brian. That's why in the beginning of the meeting, I told you, like, you're all. You're gonna have all the answers that I need. That's why there's no addition questions on my sign."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay? Sounds great."
+        },
+        {
+          "speaker": "them",
+          "text": "But it's great to meet you."
+        }
+      ],
+      "attendees": [
+        "Hakan Madi",
+        "Brian",
+        "Alex Obleton"
+      ],
+      "date": "2026-01-21",
+      "duration": 46,
+      "keyTakeaways": [],
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/pronet/transcripts/260121-pronet-pronet-&--adrian-|--meeting.md",
+      "createdAt": "2026-01-25T05:23:53.287Z",
+      "anonymized": true
+    },
+    "netpro-solutions_crm_snapshot": {
+      "id": "netpro-solutions_crm_snapshot",
+      "dealId": "netpro-solutions",
+      "type": "crm_snapshot",
+      "sourceFile": "context.md",
+      "createdAt": "2026-01-23",
+      "anonymized": true,
+      "dealProperties": {
+        "stage": "Discovery / Expansion",
+        "amount": "~$10-20K (Pro 60K monthly - upgraded Jan 23)",
+        "lastContactedDate": "2026-01-23"
+      },
+      "contacts": [
+        {
+          "name": "Hakan Madi",
+          "title": "Director, Legal & Compliance",
+          "role": "champion"
+        },
+        {
+          "name": "Engin Kurtay",
+          "title": "CCO / Head of AI Transformation",
+          "role": "stakeholder"
+        }
+      ],
+      "notes": [],
+      "activityLog": [
+        {
+          "date": "2026-01-23",
+          "type": "email",
+          "description": "Sent first follow-up to Hakan. **Good news: Hakan upgraded to 60K plan (~$1K revenue increase)** - demonstrates follow-through and continued investment. Still need to get intro to Engin scheduled. James follow up again to push for the Engin meeting."
+        },
+        {
+          "date": "2025-11-26",
+          "type": "email",
+          "description": "Initial research and outreach strategy developed. Identified Hakan as power user, Engin/Cafer/Kerem as expansion targets."
+        },
+        {
+          "date": "2025-11-27",
+          "type": "email",
+          "description": "Sent intro email to Hakan acknowledging his sophisticated automation work, flagging renewal and AI capabilities."
+        },
+        {
+          "date": "2025-12-15",
+          "type": "email",
+          "description": "Follow-up email to Hakan."
+        },
+        {
+          "date": "2025-12-16",
+          "type": "meeting",
+          "description": "Hakan responded - interested in Agents but has security concerns about legal data. Booked meeting."
+        },
+        {
+          "date": "2026-01-12",
+          "type": "note",
+          "description": "Requested SA/TAM support for security conversation. Brian Corbin (Principal Engineer) joined."
+        },
+        {
+          "date": "2026-01-21",
+          "type": "call",
+          "description": "**Discovery call with Hakan and Brian Corbin.** Key outcomes: Brian explained Agents security architecture - Anthropic models, no training on customer data, same security as core AutomateFlow Hakan satisfied with security explanation (\"no training for AI means it's more secure\") Hakan disclosed he's upgrading to 60K plan due to exceeded limits Major revelation: Engin (Head of AI Transformation) already engaged after Alex's outreach - \"Hakan, what are you doing there?\" Other teams starting to replicate Hakan's work Hakan becoming internal AutomateFlow ambassador Next step: Hakan to discuss enterprise with Engin, then coordinate follow-up meeting Brian to send architecture docs"
+        }
+      ]
+    },
+    "doc_netpro-solutions_deal-channel-brief": {
+      "id": "doc_netpro-solutions_deal-channel-brief",
+      "dealId": "netpro-solutions",
+      "type": "document",
+      "title": "deal-channel-brief",
+      "documentType": "other",
+      "content": "const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, AlignmentType, LevelFormat, BorderStyle, WidthType, ShadingType, HeadingLevel, ExternalHyperlink } = require('docx');\nconst fs = require('fs');\n\nconst tableBorder = { style: BorderStyle.SINGLE, size: 1, color: \"CCCCCC\" };\nconst cellBorders = { top: tableBorder, bottom: tableBorder, left: tableBorder, right: tableBorder };\n\nconst doc = new Document({\n  styles: {\n    default: { document: { run: { font: \"Arial\", size: 22 } } },\n    paragraphStyles: [\n      { id: \"Heading1\", name: \"Heading 1\", basedOn: \"Normal\", next: \"Normal\", quickFormat: true,\n        run: { size: 28, bold: true, color: \"000000000\", font: \"Arial\" },\n        paragraph: { spacing: { before: 300, after: 120 } } },\n      { id: \"Heading2\", name: \"Heading 2\", basedOn: \"Normal\", next: \"Normal\", quickFormat: true,\n        run: { size: 24, bold: true, color: \"000000000\", font: \"Arial\" },\n        paragraph: { spacing: { before: 240, after: 100 } } }\n    ]\n  },\n  numbering: {\n    config: [\n      { reference: \"bullets\", levels: [{ level: 0, format: LevelFormat.BULLET, text: \"•\", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },\n      { reference: \"numbers\", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: \"%1.\", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },\n      { reference: \"next-steps\", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: \"%1.\", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] }\n    ]\n  },\n  sections: [{\n    properties: { page: { margin: { top: 1080, right: 1080, bottom: 1080, left: 1080 } } },\n    children: [\n      // Title\n      new Paragraph({ spacing: { after: 120 }, children: [new TextRun({ text: \"NetPro Solutions Security Services - Enterprise Expansion (Legal → Company-wide)\", bold: true, size: 32 })] }),\n\n      // Summary\n      new Paragraph({ spacing: { after: 200 }, children: [new TextRun(\"Turkey's largest electronic security company. Land-and-expand opportunity—Head of Legal built sophisticated automation on Pro plan, is now internal AutomateFlow ambassador. Head of AI Transformation (Engin) is engaged and pushing other teams to replicate. Path from $3.4K ARR to enterprise.\")] }),\n\n      // Links\n      new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: \"SalesCloud Deal: \", bold: true }), new ExternalHyperlink({ children: [new TextRun({ text: \"https://example.com/...\", color: \"0563C1\", underline: { type: \"single\" } })], link: \"https://example.com/...\" })] }),\n      new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: \"Gong Call (Jan 21): \", bold: true }), new ExternalHyperlink({ children: [new TextRun({ text: \"https://example.com/...\", color: \"0563C1\", underline: { type: \"single\" } })], link: \"https://example.com/...\" })] }),\n\n      // What do they do\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"What do they do?\")] }),\n      new Paragraph({ spacing: { after: 100 }, children: [new TextRun(\"NetPro Solutions is Turkey's leading electronic security provider (founded 1995)\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"~200K subscribers, 1-5K employees\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"24/7 alarm monitoring, camera services, residential and commercial security\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"PE-backed (Cinven/Turkven) - had major exit in 2019\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 200 }, children: [new TextRun(\"Serves major banks and retail chains\")] }),\n\n      // Contacts\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"Contacts\")] }),\n      new Paragraph({ spacing: { after: 120 }, children: [new TextRun({ text: \"Hakan Madi\", bold: true }), new TextRun(\" - Director, Legal & Compliance. \"), new TextRun({ text: \"Champion.\", bold: true, color: \"2E7D32\" }), new TextRun(\" Based in Berlin, built entire legal case management system on AutomateFlow (1.4M tasks/year, 68-step workflows). Self-described \\\"ambassador inside the corporation.\\\" Upgrading to 50K plan. Interested in Agents for legal document processing.\")] }),\n      new Paragraph({ spacing: { after: 120 }, children: [new TextRun({ text: \"Engin Kurtay\", bold: true }), new TextRun(\" - CCO / Head of AI Transformation. \"), new TextRun({ text: \"Likely economic buyer.\", bold: true, color: \"1565C0\" }), new TextRun(\" 23 years at NetPro Solutions, manages 500 employees + 150 subcontractors. Already engaged—saw my outreach and asked Hakan \\\"what are you doing there?\\\" Now pushing other teams to replicate Hakan's work. Harvard Business School background.\")] }),\n      new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: \"Brian Corbin (AutomateFlow)\", bold: true }), new TextRun(\" - Principal Engineer, AI Orchestration. Joined discovery call to address Agents security questions. Sending architecture docs to Hakan.\")] }),\n\n      // What they're trying to solve\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"What they're trying to solve\")] }),\n      new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: \"Current (Hakan/Legal):\", bold: true })] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Legal case management for debt collection/enforcement files\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Data flows from UYAP (Turkish enforcement database) → gathering software → AutomateFlow → TaskBoard\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Replaced unstable Excel macros with AutomateFlow workflows\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 120 }, children: [new TextRun(\"Pain: Usage spikes from macro retry behavior causing billing unpredictability\")] }),\n\n      new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: \"Next (Hakan wants Agents for):\", bold: true })] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Process legal documents (expert reports) for insights\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Extract rights/obligations from documents automatically\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"\\\"Clone myself as an agent\\\" to analyze documents and feed insights to TaskBoard\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 120 }, children: [new TextRun(\"Tested TaskBoard's agents, found them technically insufficient\")] }),\n\n      new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: \"Broader (Engin's AI transformation):\", bold: true })] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Company-wide automation adoption (CX, operations, technical services)\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"FlowBuilder AI an operational lever, not just productivity tool\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 200 }, children: [new TextRun(\"Unknown specific use cases yet—need discovery with Engin\")] }),\n\n      // Current state\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"Current state\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Plan: \", bold: true }), new TextRun(\"Pro 20K monthly → upgrading to 50K\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"ARR: \", bold: true }), new TextRun(\"$10-20K\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Users: \", bold: true }), new TextRun(\"1 (Hakan only)\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Tasks/month: \", bold: true }), new TextRun(\"142K total, 33K billable\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Active Zaps: \", bold: true }), new TextRun(\"39\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Renewal: \", bold: true }), new TextRun(\"7 days\")] }),\n      new Paragraph({ spacing: { before: 120, after: 60 }, children: [new TextRun({ text: \"Tech stack: \", bold: true }), new TextRun(\"TaskBoard (primary database), Excel, AutomateFlow Tables, Google Sheets, UYAP integration\")] }),\n      new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: \"AI usage: \", bold: true }), new TextRun(\"Light - 6,796 AI by AutomateFlow tasks/year, minimal ChatGPT\")] }),\n\n      // What they care about\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"What they care about\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Security/data isolation\", bold: true }), new TextRun(\" - Legal data is confidential. Brian addressed on call, Hakan satisfied. Flagged opt-out form for additional protection.\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Agents capability\", bold: true }), new TextRun(\" - Wants to process legal documents with AI. Current Teams plan has limited agent actions (100), enterprise has 30K.\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Independence from IT\", bold: true }), new TextRun(\" - Hakan explicitly doesn't want to \\\"depend on some IT guys.\\\" Prefers agility of running his own automation.\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 200 }, children: [new TextRun({ text: \"Broader adoption\", bold: true }), new TextRun(\" - Engin pushing other teams to replicate Hakan's work.\")] }),\n\n      // Deal sizing\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"Deal sizing\")] }),\n      new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: \"Current: \", bold: true }), new TextRun(\"$10-20K ARR (Pro 20K monthly) → $5K+ (Pro 50K)\")] }),\n      new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: \"Enterprise opportunity: \", bold: true }), new TextRun(\"$50K+ ARR\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Platform with agent actions (30K vs 100 on Teams)\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"TAM support for broader rollout\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Training/enablement for other teams\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 120 }, children: [new TextRun(\"SSO/SCIM for IT governance (if Engin brings IT in)\")] }),\n      new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: \"Expand path:\", bold: true })] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"CX team (Engin manages 500 employees in customer ops)\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Technical services / field operations\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Call center automation\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 200 }, children: [new TextRun(\"Consolidation play if other teams adopt\")] }),\n\n      // Timeline\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"Timeline\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Nov 26\", bold: true }), new TextRun(\" - Initial research, identified expansion opportunity\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Nov 27\", bold: true }), new TextRun(\" - Intro email to Hakan\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Dec 16\", bold: true }), new TextRun(\" - Hakan responded, interested in Agents, security concerns\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Jan 21\", bold: true }), new TextRun(\" - Discovery call with Hakan + Brian Corbin (today)\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Next\", bold: true }), new TextRun(\" - Hakan talks to Engin internally about enterprise\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 200 }, children: [new TextRun({ text: \"TBD\", bold: true }), new TextRun(\" - Follow-up meeting with Engin and AI transformation team\")] }),\n\n      // Competitive situation\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"Competitive situation\")] }),\n      new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: \"TaskBoard Agents\", bold: true }), new TextRun(\" - Tested and rejected. \\\"Great UI, doesn't work technically.\\\" No threat.\")] }),\n      new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: \"Status quo\", bold: true }), new TextRun(\" - Main competitor. Hakan values his independence and agility. May resist formalized enterprise deal if it means IT involvement.\")] }),\n      new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: \"Our angle: \", bold: true }), new TextRun(\"Hakan is already winning internally. We're not displacing anything—we're scaling what's already proven. Enterprise unlocks agent capacity he needs and gives Engin governance/visibility he wants.\")] }),\n\n      // Risk assessment\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"Risk assessment\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Hakan prefers independence over enterprise deal \", bold: true }), new TextRun(\"→ Frame enterprise as enabling his work, not constraining it. Agent capacity is the hook.\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"IT involvement slows things down \", bold: true }), new TextRun(\"→ Hakan is trying to avoid this. May need to position carefully with Engin.\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Engin conversation doesn't materialize \", bold: true }), new TextRun(\"→ Hakan is motivated to have it—Agents capacity is gated on it.\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 200 }, children: [new TextRun({ text: \"Turkish company / procurement complexity \", bold: true }), new TextRun(\"→ Unknown. PE-backed suggests process exists.\")] }),\n\n      // Why we win\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"Why we win this\")] }),\n      new Paragraph({ numbering: { reference: \"numbers\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Internal champion is doing the selling\", bold: true }), new TextRun(\" - Hakan is literally becoming their AutomateFlow ambassador without us asking\")] }),\n      new Paragraph({ numbering: { reference: \"numbers\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Proof of value exists\", bold: true }), new TextRun(\" - 1.4M tasks, mission-critical legal workflows, already replaced competitor (Excel macros)\")] }),\n      new Paragraph({ numbering: { reference: \"numbers\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Executive air cover\", bold: true }), new TextRun(\" - Engin is engaged and pushing adoption before we've even talked to him\")] }),\n      new Paragraph({ numbering: { reference: \"numbers\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Clear upgrade driver\", bold: true }), new TextRun(\" - Agent capacity. Hakan wants it, current plan doesn't have enough.\")] }),\n      new Paragraph({ numbering: { reference: \"numbers\", level: 0 }, spacing: { after: 200 }, children: [new TextRun({ text: \"No real competition\", bold: true }), new TextRun(\" - TaskBoard agents failed, IntegrateHub/FlowBuilder not in picture\")] }),\n\n      // Resources needed\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"Resources needed\")] }),\n      new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: \"If Engin meeting happens:\", bold: true })] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: \"Executive sponsor connection\", bold: true }), new TextRun(\" - Engin is CCO with Harvard background, 23 years at company. May warrant exec alignment on our side.\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 120 }, children: [new TextRun({ text: \"SA support for broader discovery\", bold: true }), new TextRun(\" - What are CX/ops use cases? What's the automation potential across 500 employees?\")] }),\n      new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: \"Not needed yet:\", bold: true })] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"No immediate asks - still early stage\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 200 }, children: [new TextRun(\"Hakan is handling internal socialization\")] }),\n\n      // Next steps\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"Next steps\")] }),\n      new Paragraph({ numbering: { reference: \"next-steps\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Send Hakan follow-up email (done - sending today)\")] }),\n      new Paragraph({ numbering: { reference: \"next-steps\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Brian sends architecture docs to Hakan\")] }),\n      new Paragraph({ numbering: { reference: \"next-steps\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Hakan discusses enterprise with Engin\")] }),\n      new Paragraph({ numbering: { reference: \"next-steps\", level: 0 }, spacing: { after: 60 }, children: [new TextRun(\"Hakan confirms if IT needs to be involved\")] }),\n      new Paragraph({ numbering: { reference: \"next-steps\", level: 0 }, spacing: { after: 200 }, children: [new TextRun(\"Schedule follow-up with Engin + relevant stakeholders\")] }),\n\n      // Bottom line\n      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(\"Bottom line\")] }),\n      new Paragraph({ shading: { fill: \"FFF3E0\", type: ShadingType.CLEAR }, spacing: { after: 100 }, children: [new TextRun({ text: \"Low-effort, high-potential expansion. \", bold: true }), new TextRun(\"Champion is doing internal selling, executive is already engaged, usage is growing. No urgent action needed—just need to be ready when Engin conversation happens. If that lands, James want to think about exec alignment given Engin's seniority (CCO, 23 years, Harvard).\")] })\n    ]\n  }]\n});\n\nPacker.toBuffer(doc).then(buffer => {\n  fs.writeFileSync(\"/Users/username/sales-workspace/deals/NetPro Solutions/outputs/NetPro Solutions-deal-channel-brief.docx\", buffer);\n  console.log(\"Created: NetPro Solutions-deal-channel-brief.docx\");\n});\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/pronet/outputs/deal-channel-brief.js",
+      "createdAt": "2026-01-25T05:23:53.285Z",
+      "anonymized": true
+    },
+    "doc_netpro-solutions_hakan-followup-2026-01-21": {
+      "id": "doc_netpro-solutions_hakan-followup-2026-01-21",
+      "dealId": "netpro-solutions",
+      "type": "document",
+      "title": "hakan-followup-2026-01-21",
+      "documentType": "docx",
+      "content": "Subject: Great connecting today - next steps on AutomateFlow + Agents\n\n\n\nHakan,\n\nThanks for making time today, and for walking us through what you've built. The legal case management system you've created is genuinely impressive - the complexity of those workflows (68 steps with branching logic) is something we typically only see from dedicated automation engineers.\n\nWhat we covered:\n\nBrian confirmed the security architecture for Agents: data transits the same way as standard Zaps, LLM processing runs through Anthropic (with AWS Bedrock), and we have explicit agreements with subprocessors that no customer data is used for training\n\nOne follow-up on data usage: You can also opt out of AutomateFlow using your data for AI model training on your current plan - just fill out the opt-out form at AutomateFlow.com/security-compliance. Enterprise plans auto-opt out all users, which may be relevant to the Engin conversation.\n\nYour plan to move Excel macro logic into Agents makes sense for stability - the current spikes in your usage are likely tied to macro retry behavior\n\nYou're upgrading to the 50K plan to accommodate current growth\n\nNext steps:\n\nBrian James send over the architecture documentation via TeamChat\n\nYou James connect with Engin to discuss whether an enterprise partnership makes sense for NetPro Solutions\n\nWe can schedule a follow-up with you, Engin, and whoever else should be involved once you've had that conversation\n\nOn enterprise partnership:\n\nTwo things that might be relevant as you talk to Engin:\n\nFor you specifically - enterprise plans include ~30,000 agent actions built in (vs. the 100 on Teams with add-ons). If you're serious about using Agents for document analysis, that headroom matters. We'd also help bring your colleagues up to speed so you're not the only one who knows how to build and maintain these workflows.\n\nFor Engin and the AI transformation initiative - we work with companies globally on making AI an operational lever, not just a productivity tool for drafting emails. The difference between \"everyone has ChatGPT access\" and \"AI is embedded in how we actually run the business\" is significant, and it's the work Engin seems to be driving. Happy to share what we're seeing work.\n\nLet me know how the conversation with Engin goes - I'll hold time flexible for a follow-up.\n\nAlex",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/pronet/outputs/hakan-followup-2026-01-21.docx",
+      "createdAt": "2026-01-25T05:23:53.286Z",
+      "anonymized": true
+    },
+    "doc_netpro-solutions_pronet-deal-channel-brief": {
+      "id": "doc_netpro-solutions_pronet-deal-channel-brief",
+      "dealId": "netpro-solutions",
+      "type": "document",
+      "title": "NetPro Solutions-deal-channel-brief",
+      "documentType": "docx",
+      "content": "NetPro Solutions Security Services - Enterprise Expansion (Legal → Company-wide)\n\nTurkey's largest electronic security company. Land-and-expand opportunity—Head of Legal built sophisticated automation on Pro plan, is now internal AutomateFlow ambassador. Head of AI Transformation (Engin) is engaged and pushing other teams to replicate. Path from $3.4K ARR to enterprise.\n\nSalesCloud Deal: https://example.com/...\n\nGong Call (Jan 21): https://example.com/...\n\nWhat do they do?\n\nNetPro Solutions is Turkey's leading electronic security provider (founded 1995)\n\n~200K subscribers, 1-5K employees\n\n24/7 alarm monitoring, camera services, residential and commercial security\n\nPE-backed (Cinven/Turkven) - had major exit in 2019\n\nServes major banks and retail chains\n\nContacts\n\nHakan Madi - Director, Legal & Compliance. Champion. Based in Berlin, built entire legal case management system on AutomateFlow (1.4M tasks/year, 68-step workflows). Self-described \"ambassador inside the corporation.\" Upgrading to 50K plan. Interested in Agents for legal document processing.\n\nEngin Kurtay - CCO / Head of AI Transformation. Likely economic buyer. 23 years at NetPro Solutions, manages 500 employees + 150 subcontractors. Already engaged—saw my outreach and asked Hakan \"what are you doing there?\" Now pushing other teams to replicate Hakan's work. Harvard Business School background.\n\nBrian Corbin (AutomateFlow) - Principal Engineer, AI Orchestration. Joined discovery call to address Agents security questions. Sending architecture docs to Hakan.\n\nWhat they're trying to solve\n\nCurrent (Hakan/Legal):\n\nLegal case management for debt collection/enforcement files\n\nData flows from UYAP (Turkish enforcement database) → gathering software → AutomateFlow → TaskBoard\n\nReplaced unstable Excel macros with AutomateFlow workflows\n\nPain: Usage spikes from macro retry behavior causing billing unpredictability\n\nNext (Hakan wants Agents for):\n\nProcess legal documents (expert reports) for insights\n\nExtract rights/obligations from documents automatically\n\n\"Clone myself as an agent\" to analyze documents and feed insights to TaskBoard\n\nTested TaskBoard's agents, found them technically insufficient\n\nBroader (Engin's AI transformation):\n\nCompany-wide automation adoption (CX, operations, technical services)\n\nFlowBuilder AI an operational lever, not just productivity tool\n\nUnknown specific use cases yet—need discovery with Engin\n\nCurrent state\n\nPlan: Pro 20K monthly → upgrading to 50K\n\nARR: $10-20K\n\nUsers: 1 (Hakan only)\n\nTasks/month: 142K total, 33K billable\n\nActive Zaps: 39\n\nRenewal: 7 days\n\nTech stack: TaskBoard (primary database), Excel, AutomateFlow Tables, Google Sheets, UYAP integration\n\nAI usage: Light - 6,796 AI by AutomateFlow tasks/year, minimal ChatGPT\n\nWhat they care about\n\nSecurity/data isolation - Legal data is confidential. Brian addressed on call, Hakan satisfied. Flagged opt-out form for additional protection.\n\nAgents capability - Wants to process legal documents with AI. Current Teams plan has limited agent actions (100), enterprise has 30K.\n\nIndependence from IT - Hakan explicitly doesn't want to \"depend on some IT guys.\" Prefers agility of running his own automation.\n\nBroader adoption - Engin pushing other teams to replicate Hakan's work.\n\nDeal sizing\n\nCurrent: $10-20K ARR (Pro 20K monthly) → $5K+ (Pro 50K)\n\nEnterprise opportunity: $50K+ ARR\n\nPlatform with agent actions (30K vs 100 on Teams)\n\nTAM support for broader rollout\n\nTraining/enablement for other teams\n\nSSO/SCIM for IT governance (if Engin brings IT in)\n\nExpand path:\n\nCX team (Engin manages 500 employees in customer ops)\n\nTechnical services / field operations\n\nCall center automation\n\nConsolidation play if other teams adopt\n\nTimeline\n\nNov 26 - Initial research, identified expansion opportunity\n\nNov 27 - Intro email to Hakan\n\nDec 16 - Hakan responded, interested in Agents, security concerns\n\nJan 21 - Discovery call with Hakan + Brian Corbin (today)\n\nNext - Hakan talks to Engin internally about enterprise\n\nTBD - Follow-up meeting with Engin and AI transformation team\n\nCompetitive situation\n\nTaskBoard Agents - Tested and rejected. \"Great UI, doesn't work technically.\" No threat.\n\nStatus quo - Main competitor. Hakan values his independence and agility. May resist formalized enterprise deal if it means IT involvement.\n\nOur angle: Hakan is already winning internally. We're not displacing anything—we're scaling what's already proven. Enterprise unlocks agent capacity he needs and gives Engin governance/visibility he wants.\n\nRisk assessment\n\nHakan prefers independence over enterprise deal → Frame enterprise as enabling his work, not constraining it. Agent capacity is the hook.\n\nIT involvement slows things down → Hakan is trying to avoid this. May need to position carefully with Engin.\n\nEngin conversation doesn't materialize → Hakan is motivated to have it—Agents capacity is gated on it.\n\nTurkish company / procurement complexity → Unknown. PE-backed suggests process exists.\n\nWhy we win this\n\nInternal champion is doing the selling - Hakan is literally becoming their AutomateFlow ambassador without us asking\n\nProof of value exists - 1.4M tasks, mission-critical legal workflows, already replaced competitor (Excel macros)\n\nExecutive air cover - Engin is engaged and pushing adoption before we've even talked to him\n\nClear upgrade driver - Agent capacity. Hakan wants it, current plan doesn't have enough.\n\nNo real competition - TaskBoard agents failed, IntegrateHub/FlowBuilder not in picture\n\nResources needed\n\nIf Engin meeting happens:\n\nExecutive sponsor connection - Engin is CCO with Harvard background, 23 years at company. May warrant exec alignment on our side.\n\nSA support for broader discovery - What are CX/ops use cases? What's the automation potential across 500 employees?\n\nNot needed yet:\n\nNo immediate asks - still early stage\n\nHakan is handling internal socialization\n\nNext steps\n\nSend Hakan follow-up email (done - sending today)\n\nBrian sends architecture docs to Hakan\n\nHakan discusses enterprise with Engin\n\nHakan confirms if IT needs to be involved\n\nSchedule follow-up with Engin + relevant stakeholders\n\nBottom line\n\nLow-effort, high-potential expansion. Champion is doing internal selling, executive is already engaged, usage is growing. No urgent action needed—just need to be ready when Engin conversation happens. If that lands, James want to think about exec alignment given Engin's seniority (CCO, 23 years, Harvard).",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/pronet/outputs/pronet-deal-channel-brief.docx",
+      "createdAt": "2026-01-25T05:23:53.286Z",
+      "anonymized": true
+    },
+    "doc_netpro-solutions_hakan-followup": {
+      "id": "doc_netpro-solutions_hakan-followup",
+      "dealId": "netpro-solutions",
+      "type": "document",
+      "title": "hakan-followup",
+      "documentType": "other",
+      "content": "const { Document, Packer, Paragraph, TextRun, AlignmentType, LevelFormat } = require('docx');\nconst fs = require('fs');\n\nconst doc = new Document({\n  styles: {\n    default: { document: { run: { font: \"Arial\", size: 22 } } }\n  },\n  numbering: {\n    config: [\n      { reference: \"bullets\", levels: [{ level: 0, format: LevelFormat.BULLET, text: \"•\", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },\n      { reference: \"next-steps\", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: \"%1.\", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] }\n    ]\n  },\n  sections: [{\n    properties: { page: { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },\n    children: [\n      new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: \"Subject: \", bold: true }), new TextRun(\"Great connecting today - next steps on AutomateFlow + Agents\")] }),\n      new Paragraph({ spacing: { after: 200 }, children: [] }),\n      new Paragraph({ spacing: { after: 200 }, children: [new TextRun(\"Hakan,\")] }),\n      new Paragraph({ spacing: { after: 200 }, children: [new TextRun(\"Thanks for making time today, and for walking us through what you've built. The legal case management system you've created is genuinely impressive - the complexity of those workflows (68 steps with branching logic) is something we typically only see from dedicated automation engineers.\")] }),\n\n      new Paragraph({ spacing: { before: 300, after: 200 }, children: [new TextRun({ text: \"What we covered:\", bold: true })] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 100 }, children: [new TextRun(\"Brian confirmed the security architecture for Agents: data transits the same way as standard Zaps, LLM processing runs through Anthropic (with AWS Bedrock), and we have explicit agreements with subprocessors that no customer data is used for training\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 100 }, children: [new TextRun({ text: \"One follow-up on data usage: \", bold: true }), new TextRun(\"You can also opt out of AutomateFlow using your data for AI model training on your current plan - just fill out the opt-out form at AutomateFlow.com/security-compliance. Enterprise plans auto-opt out all users, which may be relevant to the Engin conversation.\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 100 }, children: [new TextRun(\"Your plan to move Excel macro logic into Agents makes sense for stability - the current spikes in your usage are likely tied to macro retry behavior\")] }),\n      new Paragraph({ numbering: { reference: \"bullets\", level: 0 }, spacing: { after: 200 }, children: [new TextRun(\"You're upgrading to the 50K plan to accommodate current growth\")] }),\n\n      new Paragraph({ spacing: { before: 300, after: 200 }, children: [new TextRun({ text: \"Next steps:\", bold: true })] }),\n      new Paragraph({ numbering: { reference: \"next-steps\", level: 0 }, spacing: { after: 100 }, children: [new TextRun({ text: \"Brian \", bold: true }), new TextRun(\"James send over the architecture documentation via TeamChat\")] }),\n      new Paragraph({ numbering: { reference: \"next-steps\", level: 0 }, spacing: { after: 100 }, children: [new TextRun({ text: \"You \", bold: true }), new TextRun(\"James connect with Engin to discuss whether an enterprise partnership makes sense for NetPro Solutions\")] }),\n      new Paragraph({ numbering: { reference: \"next-steps\", level: 0 }, spacing: { after: 200 }, children: [new TextRun({ text: \"We \", bold: true }), new TextRun(\"can schedule a follow-up with you, Engin, and whoever else should be involved once you've had that conversation\")] }),\n\n      new Paragraph({ spacing: { before: 300, after: 200 }, children: [new TextRun({ text: \"On enterprise partnership:\", bold: true })] }),\n      new Paragraph({ spacing: { after: 200 }, children: [new TextRun(\"Two things that might be relevant as you talk to Engin:\")] }),\n      new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: \"For you specifically\", bold: true }), new TextRun(\" - enterprise plans include ~30,000 agent actions built in (vs. the 100 on Teams with add-ons). If you're serious about using Agents for document analysis, that headroom matters. We'd also help bring your colleagues up to speed so you're not the only one who knows how to build and maintain these workflows.\")] }),\n      new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: \"For Engin and the AI transformation initiative\", bold: true }), new TextRun(\" - we work with companies globally on making AI an operational lever, not just a productivity tool for drafting emails. The difference between \\\"everyone has ChatGPT access\\\" and \\\"AI is embedded in how we actually run the business\\\" is significant, and it's the work Engin seems to be driving. Happy to share what we're seeing work.\")] }),\n\n      new Paragraph({ spacing: { before: 200, after: 200 }, children: [new TextRun(\"Let me know how the conversation with Engin goes - I'll hold time flexible for a follow-up.\")] }),\n      new Paragraph({ spacing: { before: 200 }, children: [new TextRun(\"Alex\")] })\n    ]\n  }]\n});\n\nPacker.toBuffer(doc).then(buffer => {\n  fs.writeFileSync(\"/Users/username/sales-workspace/deals/NetPro Solutions/outputs/hakan-followup-2026-01-21.docx\", buffer);\n  console.log(\"Created: hakan-followup-2026-01-21.docx\");\n});\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/pronet/outputs/hakan-followup.js",
+      "createdAt": "2026-01-25T05:23:53.286Z",
+      "anonymized": true
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "netpro-solutions_v2_cp_001",
+      "dealId": "netpro-solutions",
+      "version": 2,
+      "timestamp": "2025-12-16",
+      "availableArtifacts": [],
+      "dealSnapshot": {
+        "company": "NetPro Solutions",
+        "stage": "Discovery / Expansion",
+        "amount": "~$10-20K (Pro 60K monthly - upgraded Jan 23)",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [
+        {
+          "name": "Hakan Madi",
+          "title": "Director, Legal & Compliance",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Engin Kurtay",
+          "title": "CCO / Head of AI Transformation",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "Requested SA/TAM support for security conversation. Brian Corbin (Principal Engineer) joined.. **Discovery call with Hakan and Brian Corbin.** Key outcomes: Brian explained Agents security architecture - Anthropic models, no training on customer data, same security as core AutomateFlow Hakan satisfied with security explanation (\"no training for AI means it's more secure\") Hakan disclosed he's upgrading to 60K plan due to exceeded limits Major revelation: Engin (Head of AI Transformation) already engaged after Alex's outreach - \"Hakan, what are you doing there?\" Other teams starting to replicate Hakan's work Hakan becoming internal AutomateFlow ambassador Next step: Hakan to discuss enterprise with Engin, then coordinate follow-up meeting Brian to send architecture docs",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": []
+    },
+    {
+      "id": "netpro-solutions_v2_cp_002",
+      "dealId": "netpro-solutions",
+      "version": 2,
+      "timestamp": "2026-01-21",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_netpro-solutions_260121-pronet-pronet-adrian-meeting",
+          "type": "transcript",
+          "title": "NetPro Solutions &  Alex |  Meeting",
+          "date": "2026-01-21"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "NetPro Solutions",
+        "stage": "Discovery / Expansion",
+        "amount": "~$10-20K (Pro 60K monthly - upgraded Jan 23)",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [
+        {
+          "name": "Hakan Madi",
+          "title": "Director, Legal & Compliance",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Engin Kurtay",
+          "title": "CCO / Head of AI Transformation",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "Sent first follow-up to Hakan. **Good news: Hakan upgraded to 60K plan (~$1K revenue increase)** - demonstrates follow-through and continued investment. Still need to get intro to Engin scheduled. James follow up again to push for the Engin meeting.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "netpro-solutions_v2_cp_002_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_netpro-solutions_260121-pronet-pronet-adrian-meeting"
+          ],
+          "optionalArtifacts": [
+            "netpro-solutions_crm_snapshot",
+            "doc_netpro-solutions_deal-channel-brief",
+            "doc_netpro-solutions_hakan-followup-2026-01-21"
+          ],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 1
+        },
+        {
+          "id": "netpro-solutions_v2_cp_002_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_netpro-solutions_260121-pronet-pronet-adrian-meeting"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "netpro-solutions_v2_cp_002_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_netpro-solutions_260121-pronet-pronet-adrian-meeting"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "netpro-solutions_v2_cp_003",
+      "dealId": "netpro-solutions",
+      "version": 2,
+      "timestamp": "2026-01-23",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_netpro-solutions_260121-pronet-pronet-adrian-meeting",
+          "type": "transcript",
+          "title": "NetPro Solutions &  Alex |  Meeting",
+          "date": "2026-01-21"
+        },
+        {
+          "artifactId": "netpro-solutions_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Discovery / Expansion",
+          "date": "2026-01-23"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "NetPro Solutions",
+        "stage": "Discovery / Expansion",
+        "amount": "~$10-20K (Pro 60K monthly - upgraded Jan 23)",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [
+        {
+          "name": "Hakan Madi",
+          "title": "Director, Legal & Compliance",
+          "role": "champion",
+          "sentiment": "unknown"
+        },
+        {
+          "name": "Engin Kurtay",
+          "title": "CCO / Head of AI Transformation",
+          "role": "stakeholder",
+          "sentiment": "unknown"
+        }
+      ],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "netpro-solutions_v2_cp_003_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_netpro-solutions_260121-pronet-pronet-adrian-meeting",
+            "netpro-solutions_crm_snapshot"
+          ],
+          "optionalArtifacts": [
+            "doc_netpro-solutions_deal-channel-brief",
+            "doc_netpro-solutions_hakan-followup-2026-01-21",
+            "doc_netpro-solutions_pronet-deal-channel-brief"
+          ],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "netpro-solutions_v2_cp_003_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_netpro-solutions_260121-pronet-pronet-adrian-meeting"
+          ],
+          "optionalArtifacts": [
+            "netpro-solutions_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "netpro-solutions_v2_cp_003_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_netpro-solutions_260121-pronet-pronet-adrian-meeting"
+          ],
+          "optionalArtifacts": [
+            "netpro-solutions_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        }
+      ]
+    }
+  ],
+  "finalOutcome": "active",
+  "metadata": {
+    "sourceDeals": [
+      "pronet"
+    ],
+    "transcriptCount": 1,
+    "artifactCount": 7,
+    "dateRange": {
+      "start": "2026-01-21",
+      "end": "2026-01-25T05:23:53.286Z"
+    }
+  }
+}

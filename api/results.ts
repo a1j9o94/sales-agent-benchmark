@@ -123,12 +123,44 @@ export async function initDatabase(deps: ResultsDeps = defaultResultsDeps): Prom
       )
     `;
 
+    // V2 dimension scores (extends v1 with 4 new dimensions)
+    await deps.sql`
+      CREATE TABLE IF NOT EXISTS v2_dimension_scores (
+        id SERIAL PRIMARY KEY,
+        run_id INTEGER NOT NULL REFERENCES benchmark_runs(id) ON DELETE CASCADE,
+        stakeholder_mapping REAL,
+        deal_qualification REAL,
+        information_synthesis REAL,
+        communication_quality REAL
+      )
+    `;
+
+    // V2 task evaluations (per-checkpoint, per-task scoring with multi-turn support)
+    await deps.sql`
+      CREATE TABLE IF NOT EXISTS v2_task_evaluations (
+        id SERIAL PRIMARY KEY,
+        run_id INTEGER NOT NULL REFERENCES benchmark_runs(id) ON DELETE CASCADE,
+        checkpoint_id TEXT NOT NULL,
+        task_id TEXT NOT NULL,
+        task_type TEXT NOT NULL,
+        turns_used INTEGER NOT NULL DEFAULT 1,
+        scores JSONB NOT NULL,
+        feedback TEXT,
+        artifacts_requested JSONB,
+        judge_model TEXT,
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `;
+
     // Create indexes
     await deps.sql`CREATE INDEX IF NOT EXISTS idx_runs_agent ON benchmark_runs(agent_id)`;
     await deps.sql`CREATE INDEX IF NOT EXISTS idx_runs_mode ON benchmark_runs(mode)`;
     await deps.sql`CREATE INDEX IF NOT EXISTS idx_runs_timestamp ON benchmark_runs(run_timestamp DESC)`;
     await deps.sql`CREATE INDEX IF NOT EXISTS idx_judge_evals_run ON judge_evaluations(run_id)`;
     await deps.sql`CREATE INDEX IF NOT EXISTS idx_judge_evals_checkpoint ON judge_evaluations(checkpoint_id)`;
+    await deps.sql`CREATE INDEX IF NOT EXISTS idx_v2_dim_scores_run ON v2_dimension_scores(run_id)`;
+    await deps.sql`CREATE INDEX IF NOT EXISTS idx_v2_task_evals_run ON v2_task_evaluations(run_id)`;
+    await deps.sql`CREATE INDEX IF NOT EXISTS idx_v2_task_evals_checkpoint ON v2_task_evaluations(checkpoint_id)`;
 
     console.log("Database tables initialized");
   } catch (error) {
@@ -627,6 +659,321 @@ export async function handleInitDatabase(req: Request, deps: ResultsDeps = defau
     console.error("Failed to initialize database:", error);
     return Response.json(
       { error: error instanceof Error ? error.message : "Failed to initialize database" },
+      { status: 500 }
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// V2 Operations
+// ---------------------------------------------------------------------------
+
+export interface V2TaskEvaluationData {
+  runId: number;
+  checkpointId: string;
+  taskId: string;
+  taskType: string;
+  turnsUsed: number;
+  scores: Record<string, number>;
+  feedback?: string;
+  artifactsRequested?: string[];
+  judgeModel?: string;
+}
+
+export async function saveV2DimensionScores(
+  runId: number,
+  scores: {
+    stakeholderMapping?: number;
+    dealQualification?: number;
+    informationSynthesis?: number;
+    communicationQuality?: number;
+  },
+  deps: ResultsDeps = defaultResultsDeps
+): Promise<void> {
+  await deps.sql`
+    INSERT INTO v2_dimension_scores (run_id, stakeholder_mapping, deal_qualification, information_synthesis, communication_quality)
+    VALUES (${runId}, ${scores.stakeholderMapping ?? null}, ${scores.dealQualification ?? null},
+            ${scores.informationSynthesis ?? null}, ${scores.communicationQuality ?? null})
+  `;
+}
+
+export async function saveV2TaskEvaluation(
+  evaluation: V2TaskEvaluationData,
+  deps: ResultsDeps = defaultResultsDeps
+): Promise<number> {
+  const result = await deps.sql`
+    INSERT INTO v2_task_evaluations
+    (run_id, checkpoint_id, task_id, task_type, turns_used, scores, feedback, artifacts_requested, judge_model)
+    VALUES (
+      ${evaluation.runId},
+      ${evaluation.checkpointId},
+      ${evaluation.taskId},
+      ${evaluation.taskType},
+      ${evaluation.turnsUsed},
+      ${JSON.stringify(evaluation.scores)},
+      ${evaluation.feedback ?? null},
+      ${JSON.stringify(evaluation.artifactsRequested ?? [])},
+      ${evaluation.judgeModel ?? null}
+    )
+    RETURNING id
+  `;
+
+  const id = result.rows[0]?.id;
+  if (!id) throw new Error("Failed to insert v2 task evaluation");
+  return id;
+}
+
+export async function getV2TaskEvaluations(
+  runId: number,
+  deps: ResultsDeps = defaultResultsDeps
+): Promise<V2TaskEvaluationData[]> {
+  const results = await deps.sql`
+    SELECT * FROM v2_task_evaluations WHERE run_id = ${runId}
+  `;
+
+  return results.rows.map((row) => ({
+    runId: row.run_id,
+    checkpointId: row.checkpoint_id,
+    taskId: row.task_id,
+    taskType: row.task_type,
+    turnsUsed: row.turns_used,
+    scores: row.scores as Record<string, number>,
+    feedback: row.feedback,
+    artifactsRequested: row.artifacts_requested as string[],
+    judgeModel: row.judge_model,
+  }));
+}
+
+// ---------------------------------------------------------------------------
+// V2 Leaderboard & Run Details
+// ---------------------------------------------------------------------------
+
+export interface V2LeaderboardEntry {
+  rank: number;
+  agentId: string;
+  agentName: string | null;
+  score: number;
+  maxScore: number;
+  percentage: number;
+  dealsEvaluated: number;
+  checkpointsEvaluated: number;
+  avgLatencyMs: number | null;
+  lastRun: string;
+  dimensions: Record<string, number>;
+}
+
+export async function getV2Leaderboard(
+  deps: ResultsDeps = defaultResultsDeps
+): Promise<V2LeaderboardEntry[]> {
+  const results = await deps.sql`
+    SELECT DISTINCT ON (br.agent_id)
+      br.agent_id,
+      a.name as agent_name,
+      br.aggregate_score,
+      br.max_possible_score,
+      br.deals_evaluated,
+      br.checkpoints_evaluated,
+      br.avg_latency_ms,
+      br.run_timestamp,
+      ds.risk_identification,
+      ds.next_step_quality,
+      ds.prioritization,
+      ds.outcome_alignment,
+      v2ds.stakeholder_mapping,
+      v2ds.deal_qualification,
+      v2ds.information_synthesis,
+      v2ds.communication_quality
+    FROM benchmark_runs br
+    JOIN agents a ON br.agent_id = a.id
+    JOIN dimension_scores ds ON br.id = ds.run_id
+    LEFT JOIN v2_dimension_scores v2ds ON br.id = v2ds.run_id
+    WHERE br.mode = 'public'
+      AND v2ds.id IS NOT NULL
+    ORDER BY br.agent_id, br.aggregate_score DESC
+  `;
+
+  const sorted = results.rows
+    .map((row) => ({
+      agentId: row.agent_id,
+      agentName: row.agent_name,
+      score: row.aggregate_score,
+      maxScore: row.max_possible_score,
+      percentage: row.max_possible_score > 0
+        ? Math.round((row.aggregate_score / row.max_possible_score) * 100)
+        : 0,
+      dealsEvaluated: row.deals_evaluated,
+      checkpointsEvaluated: row.checkpoints_evaluated,
+      avgLatencyMs: row.avg_latency_ms,
+      lastRun: row.run_timestamp,
+      dimensions: {
+        riskIdentification: row.risk_identification ?? 0,
+        nextStepQuality: row.next_step_quality ?? 0,
+        prioritization: row.prioritization ?? 0,
+        outcomeAlignment: row.outcome_alignment ?? 0,
+        ...(row.stakeholder_mapping != null ? { stakeholderMapping: row.stakeholder_mapping } : {}),
+        ...(row.deal_qualification != null ? { dealQualification: row.deal_qualification } : {}),
+        ...(row.information_synthesis != null ? { informationSynthesis: row.information_synthesis } : {}),
+        ...(row.communication_quality != null ? { communicationQuality: row.communication_quality } : {}),
+      },
+    }))
+    .sort((a, b) => b.percentage - a.percentage);
+
+  return sorted.map((entry, index) => ({
+    rank: index + 1,
+    ...entry,
+  }));
+}
+
+export interface V2RunDetails {
+  run: {
+    id: number;
+    agentId: string;
+    agentName: string | null;
+    aggregateScore: number;
+    maxPossibleScore: number;
+    percentage: number;
+    dealsEvaluated: number;
+    checkpointsEvaluated: number;
+    avgLatencyMs: number | null;
+    runTimestamp: string;
+    dimensions: Record<string, number>;
+  };
+  taskEvaluations: V2TaskEvaluationData[];
+}
+
+export async function getV2RunDetails(
+  runId: number,
+  deps: ResultsDeps = defaultResultsDeps
+): Promise<V2RunDetails | null> {
+  const result = await deps.sql`
+    SELECT
+      br.id,
+      br.agent_id,
+      a.name as agent_name,
+      br.aggregate_score,
+      br.max_possible_score,
+      br.deals_evaluated,
+      br.checkpoints_evaluated,
+      br.avg_latency_ms,
+      br.run_timestamp,
+      ds.risk_identification,
+      ds.next_step_quality,
+      ds.prioritization,
+      ds.outcome_alignment,
+      v2ds.stakeholder_mapping,
+      v2ds.deal_qualification,
+      v2ds.information_synthesis,
+      v2ds.communication_quality
+    FROM benchmark_runs br
+    JOIN agents a ON br.agent_id = a.id
+    JOIN dimension_scores ds ON br.id = ds.run_id
+    LEFT JOIN v2_dimension_scores v2ds ON br.id = v2ds.run_id
+    WHERE br.id = ${runId}
+  `;
+
+  if (result.rows.length === 0) return null;
+
+  const row = result.rows[0]!;
+
+  const taskEvaluations = await getV2TaskEvaluations(runId, deps);
+
+  return {
+    run: {
+      id: row.id,
+      agentId: row.agent_id,
+      agentName: row.agent_name,
+      aggregateScore: row.aggregate_score,
+      maxPossibleScore: row.max_possible_score,
+      percentage: row.max_possible_score > 0
+        ? Math.round((row.aggregate_score / row.max_possible_score) * 100)
+        : 0,
+      dealsEvaluated: row.deals_evaluated,
+      checkpointsEvaluated: row.checkpoints_evaluated,
+      avgLatencyMs: row.avg_latency_ms,
+      runTimestamp: row.run_timestamp,
+      dimensions: {
+        riskIdentification: row.risk_identification ?? 0,
+        nextStepQuality: row.next_step_quality ?? 0,
+        prioritization: row.prioritization ?? 0,
+        outcomeAlignment: row.outcome_alignment ?? 0,
+        ...(row.stakeholder_mapping != null ? { stakeholderMapping: row.stakeholder_mapping } : {}),
+        ...(row.deal_qualification != null ? { dealQualification: row.deal_qualification } : {}),
+        ...(row.information_synthesis != null ? { informationSynthesis: row.information_synthesis } : {}),
+        ...(row.communication_quality != null ? { communicationQuality: row.communication_quality } : {}),
+      },
+    },
+    taskEvaluations,
+  };
+}
+
+export async function getV2RunDetailsByAgentId(
+  agentId: string,
+  deps: ResultsDeps = defaultResultsDeps
+): Promise<V2RunDetails | null> {
+  // Find the latest run for this agent that has V2 dimension scores
+  const runResult = await deps.sql`
+    SELECT br.id
+    FROM benchmark_runs br
+    LEFT JOIN v2_dimension_scores v2ds ON br.id = v2ds.run_id
+    WHERE br.agent_id = ${agentId}
+      AND v2ds.id IS NOT NULL
+    ORDER BY br.aggregate_score DESC
+    LIMIT 1
+  `;
+
+  if (runResult.rows.length === 0) return null;
+
+  return getV2RunDetails(runResult.rows[0]!.id, deps);
+}
+
+// HTTP Handlers for V2 endpoints
+export async function handleGetV2Leaderboard(
+  _req: Request,
+  deps: ResultsDeps = defaultResultsDeps
+): Promise<Response> {
+  try {
+    const leaderboard = await getV2Leaderboard(deps);
+    return Response.json({
+      version: 2,
+      count: leaderboard.length,
+      entries: leaderboard,
+    });
+  } catch (error) {
+    console.error("Failed to get V2 leaderboard:", error);
+    return Response.json({ error: "Failed to load V2 leaderboard", entries: [] }, { status: 500 });
+  }
+}
+
+export async function handleGetV2RunDetails(
+  req: Request,
+  deps: ResultsDeps = defaultResultsDeps
+): Promise<Response> {
+  try {
+    const url = new URL(req.url);
+    const pathParts = url.pathname.split("/").filter(Boolean);
+    const idParam = pathParts[pathParts.length - 1];
+
+    if (!idParam) {
+      return Response.json({ error: "Run ID or agent ID is required" }, { status: 400 });
+    }
+
+    let details: V2RunDetails | null = null;
+    const runId = parseInt(idParam, 10);
+    if (!isNaN(runId)) {
+      details = await getV2RunDetails(runId, deps);
+    } else {
+      // Look up the latest run for this agent ID
+      details = await getV2RunDetailsByAgentId(idParam, deps);
+    }
+    if (!details) {
+      return Response.json({ error: "Run not found" }, { status: 404 });
+    }
+
+    return Response.json(details);
+  } catch (error) {
+    console.error("Failed to get V2 run details:", error);
+    return Response.json(
+      { error: error instanceof Error ? error.message : "Failed to load run details" },
       { status: 500 }
     );
   }

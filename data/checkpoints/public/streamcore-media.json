@@ -1,10 +1,10 @@
 {
-  "id": "avmedia",
+  "id": "streamcore-media",
   "name": "StreamCore Media",
   "checkpoints": [
     {
-      "id": "avmedia_cp_001",
-      "dealId": "avmedia",
+      "id": "streamcore-media_cp_001",
+      "dealId": "streamcore-media",
       "timestamp": "2026-01-21",
       "context": {
         "company": "StreamCore Media",
@@ -86,8 +86,8 @@
       }
     },
     {
-      "id": "avmedia_cp_002",
-      "dealId": "avmedia",
+      "id": "streamcore-media_cp_002",
+      "dealId": "streamcore-media",
       "timestamp": "2026-01-21",
       "context": {
         "company": "StreamCore Media",

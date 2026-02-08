@@ -1,0 +1,696 @@
+{
+  "id": "pathmark-analytics",
+  "name": "PathMark Analytics",
+  "version": 2,
+  "artifacts": {
+    "tx_pathmark-analytics_260115-call": {
+      "id": "tx_pathmark-analytics_260115-call",
+      "dealId": "pathmark-analytics",
+      "type": "transcript",
+      "title": "Untitled Meeting",
+      "rawText": "Meeting Title: PathMark Analytics (Nyc) &  Alex |  Meeting\nDate: Jan 15\nMeeting participants: Phenry\n\nTranscript:\n \nThem: Recording in progress. Alex.  \nMe: Hi, paul. How are you doing?  \nThem: I'm. All right. How are you?  \nMe: I'm doing well. Doing very well. Thanks for taking the time to chat for this afternoon. I appreciate it.  \nThem: Yeah, no worries. Thanks to you as well.  \nMe: Where are you calling from? You guys are based out of New York?  \nThem: Yeah, we're in Brooklyn and Williamsburg.  \nMe: Very cool. Very cool.  \nThem: What about you?  \nMe: I'm in Austin. Texas is home for me.  \nThem: Go off.  \nMe: Yeah.  \nThem: Great town.  \nMe: I love it a lot, honestly. So we moved here. Just over a year ago now, my wife got a job out here. Really, really liked it. Yeah. Good food scene. Lots of stuff to do. Great.  \nThem: Yeah, I've only been. God's only once. Again? No, twice. I've been twice. Had a great time. From California originally, so I love my Mexican food. Good stuff. Good truck at every bar, too.  \nMe: I know. Great. So great.  \nThem: Love it. Yeah.  \nMe: But I know you originally reached out because you're like, we're hitting task overages. And then there was also a question around a feature comparison. That you were asking about whether. Just a bit of an overview of the account so far. There was one place in particular where I was just like looking through the zaps that you're running today called.  \nThem: Yeah. Yeah. Yeah.  \nMe: Wait. Sorry. The work orders app that you're running.  \nThem: Yeah.  \nMe: I think there might be an opportunity. You probably know this is so much better than I do, but I spent, like, a little bit of time looking. I think there might be an opportunity to optimize that a bit so that you're not running all of the loops and just on the ones that you need to. Follow up on, but we can talk about that when we get there. Was there anything specifically want to FlowBuilder sure we cover?  \nThem: Okay? No, I mean, those are the, like, look. We're a small business. I wear many hats and I. I think I'm a. Probably the biggest fan of AutomateFlow you're ever going to find. I think it's amazing. I'm doing all. I've done so much, and I've, you know, I actually have an engineering background. But not really. Not really coding, at least for many years.  \nMe: Yeah.  \nThem: So I don't really know what I'm doing, but I have learned a lot. And also, you guys keep bringing new features and, like, keeps getting better and better. And now with the AI Stuff, you can do so much more. But, like, my whole setup is, like, a total mess. I'm very aware of that. Like, I'm not very organized. I've got. I've got old zaps that I probably don't need anymore. Running, but they're not using many tasks. And frankly, like the per task cost is pretty low. Like, I, I feel like this is actually cheap, don't tell your bosses I said that or whatever. But, you know, so like, I'm not that worried about, about the task usage though one thing I would say is like, the tiers are like, there's such a wide gulf there. It's like, I forget what. And they keep changing. But it's like you can either have fifty thousand or a hundred thousand tasks, like, and I'm probably somewhere in the middle is kind of where I'm getting stuck.  \nMe: Y. Eah.  \nThem: So, like, I wouldn't mind being able to, like, pay for more, I think. Also, I'm going to start using more tasks because I've, I've automated a whole bunch of stuff recently. Like, I'm sure my task usage over the past month is higher than it was previously, although we're a real estate company. And so we also do get a lot busier with leasing stuff in the summer. And so, like. Like next summer is July James be substantially more usage.  \nMe: Yeah.  \nThem: And so like this 2k in annual overages. Like, I'd love to save that. I'm not super concerned about that, but I don't expect my task users to go down. So if there's a tier I could jump up to, I would be, oh, I would be interested in that. But more important to me would be that comparison feature, the where you could look and see what changed, what steps change, which I had access to for a while and then got taken away.  \nMe: Can you talk to me a bit about? So this is, like, within a zap.  \nThem: Because I did some like promotely. You could. It's the version history.  \nMe: Sorry. Okay?  \nThem: That it says like it tells me, do you want to see virgin history, like, Like, upgrade your plan or whatever. I was on some promotional plan. I. I don't know. I got. It was confusing, and I just. I just kind of. Yeah. So that feature would be great.  \nMe: Okay?  \nThem: And another thing would be like, and this is probably not AutomateFlow doing this, but like, a huge pain point, and particularly with asana, like, somebody's got to tell them to stop changing stuff. So that it breaks zaps. Like, why on earth would you change the name of the data field from, you know, Task ID to Task G ID or something and then have it break? It's incredibly stupid that they do it that way.  \nMe: Yeah. Yeah. Abs that break, right? Like it's every API that's built on top of it.  \nThem: Yeah. Why the just do something new but leave the old one there and little, you know, stuff like, like. Like when you change in ChatGPT, if you change from the legacy, you know, classify into categories into the new one, you lose everything and you have to re enter everything.  \nMe: Yep.  \nThem: It would be. They. They should have. They should migrate it for you as what should happen, because it's supposed to be automation and then it becomes the most manual exercise you could possibly imagine. To just, like, take a screenshot and then I'm like, retyping what I had before, so some stuff like that. And also a bulk. Like, let's say I have a zap that has 80 steps in it and I want to FlowBuilder the same change to every Google Sheets step. And I should just be able to do that once. And you do have that feature when I'm changing the account. Like, if I change the. The from, you know, Phenry to management, like connection. It'll say, do you want to FlowBuilder this change for all the steps in the zap? Why wouldn't it do that when it's like, upgrade From Google Sheets 2.4 to Google Sheets 2.5, right?  \nMe: Yeah. Y. Eah. And now you just back right, like it should. It should theoretically just flow through to all. All of your saps.  \nThem: Totally. Exactly. Yes. That would be huge. And yeah, but the version comparison, one that seems like that's that obviously the capability is there. It's just like you took it away from me because you changed the tears. And that, I think kind of stinks. I'd love to get that feature back.  \nMe: Yeah. Let me do some digging on that one. I. I know promises in advance, but I might be able to just get you that feature. Even if it's, like, on an enterprise plan or something like that. It might be something I can just, like, turn on for you, but let me do some digging.  \nThem: I would be. I would be in your debt. If you. If you could, that would be huge.  \nMe: Yeah. And then I guess the other thing I wanted to, like, get your thoughts on around, like, what? How are you thinking about, like, your growth through this year? So to your point, around the various different sort of like pricing tiers. Let me show you something that I like James often to sort of determine where to go. Stop. Share. New share. Can you see this?  \nThem: Yeah.  \nMe: So this is. This is just like in Claude, but, like, I had it do the math. Basically, I'm like, what are the breakpoints at each of these tiers on a team's plan? So, like, right now, you're on this 100k plan.  \nThem: Y.  \nMe: Basically, the Breakpoint here is 150. I think.  \nThem: Meaning that's where. That's where the cost is equal between the 200,000 and the 100. Plus the overage. Yeah.  \nMe: That's. That's exactly right. And so the question I think we would helpful to think through is like, hey, how much volume do you think you're going to be driving this year? Because if it's like, if you think it's closer to like 250, 300, the 300 may FlowBuilder sense, but if you're like, I'm actually not sure where we're going to end up, maybe it makes sense to do monthly 200 for a couple months and then switch to, like, a 300 if it ends up going there, how are you thinking about.  \nThem: What was my last month was that.  \nMe: Your last month was 145.  \nThem: 145.  \nMe: But you've been going. Go ahead.  \nThem: It's so. It's. I don't think. I don't expect. I would double that to 300. I mean, maybe depending on, you know, book and, you know, depending on features coming out, etc. Maybe. But I would be surprised if I doubled it.  \nMe: Okay? Yeah. If.  \nThem: I wouldn't be surprised if I got to 200. And it looks like from this math, like, I'm right below the 153. So, like, it probably does FlowBuilder sense to go to 200.  \nMe: Yeah.  \nThem: But, like, you know, why isn't there a tier at 150, you know, that's just in between the cost, like.  \nMe: Preaching. Honestly, preaching the choir a little bit on this one. Like, my. Like, if I could wave a magic wand, I would probably just have it be, like, straight metered all the way up. If that makes sense. Just, like, have different rates at, like, for the incremental volume, so you could just, like, keep rolling, but.  \nThem: Yeah. Yeah, you guys should be able to automate the billing of that with. With your own software. I totally agree. That'd be great.  \nMe: Yeah. Okay, so I think I. Based on what you're saying, it seems like a 200 would get you the volume that you need. I James do some digging, and I'll follow up with you either way on if I can figure out that comparison feature that you were talking about, like the version history that sounds. Good. And then, honestly, the only other thing I just wanted to put in front of you in the. And this could just be like. It's not at all of interest. I noticed that over the last year, you had a couple of, like, pretty major incidents working with AutomateFlow. And as you mentioned, like, you know, used to have an engineering background. You're sort of wearing many hats. Is there a world in which it would be worthwhile to have AutomateFlow support to can, like, own these things? So, like, when that Jira example, the Atlassian example, you have, like, we have a Tam, a person who, like, is responsible for doing those types of things. Just want to sort of plant the seed of like, what is the ROI of your time fixing this versus maybe having us fix this?  \nThem: 100%. I would, I would absolutely pay something for that. I, you know, I think what I would pay depends on the issue and the cost, I guess. But, like, yes, I would love to be able to, like, You know, send a request such as, you know, here's a zap. I need to. I need to migrate all of the. Like, I have a bunch of zaps where I might use the. I might use ChatGPT classify into categories multiple times in that zap, and I set it up, you know, when it was the. The old. I forget the terminology, but it's like the old. The old ChatGPT API instead of the I think its responses now or whatever it is. But I could define this is what I need to do like and have somebody do that for me.  \nMe: Yes.  \nThem: That would be huge. I'm very interested in that. I don't know what the cost would be. I'd have to look at it. But, like, that is conceptually very interesting.  \nMe: So we have. We have a bunch of sort of like. Like prefacing this with, like, enterprise pricing is always sort of like, up in the air. We say is our list price is around 50,000 a year, and then most of our customers are in, like, the 75-100K range. But transparently, if I like, if there's a world in which you're like, hey, we, you know, it would FlowBuilder sense for me at like, 35, 40. Thousand a year or something like that. Where like that my time is worthwhile. We could probably find something there that makes sense for you, but.  \nThem: Yeah.  \nMe: That's kind of how we think about.  \nThem: Well, yeah, I don't know. I got. I have to think about it. Sort of depends what. You know what exactly they would do for me? Like, this is just, like. It doesn't sound like this is, like, actually building zaps for me. This would be more like.  \nMe: There would be. They do, like, build apps for you. So, like, for example, like, solution architect on your account. Like, they would work with you to actually, like, build some of these automations. You could, like, you know, send them this workflow that we were talking about and be like, hey, like, you know, I talk to my ae. He said there was, like, might be an option here to, like, to standardize this or, like, reduce the steps. Can you guys, like, take a look at and work on this for me? So, like, that kind of option, typically there, what may FlowBuilder sense as a.  \nThem: Or. Okay? It would. Like a test case maybe, like if, if there was something where, you know, like this, this work order one, which I'm. By the way, I'm sure all of my zaps could be made a lot more efficient. That's one thing that I've actually thought about with all this, like the. You know, when you're like. I remember from the one computer science class I took back in, like, 2001, when computing power was a lot lower. Like, you had to. You had to really think about the code you were writing because if it was too, too inefficient, it would take too long and. It wouldn't work, basically, right? Nobody. Nobody. This automation stuff, it's just like you, you know, you just. I'm sure there's so many, so much wasted energy because, like, I'm at such a low level. Like, the capacity is so much greater than my need that, that I can be inefficient and it doesn't. Really matter. And none of the stuff I'm doing is, like, time critical. If it takes my zap 20 minutes to run or two hours to run, like, that doesn't really matter for me as a user, but I know it's not efficient. So, like, I would be interested in something if, like, yeah. It's like maybe, you know.  \nMe: Yeah.  \nThem: Like, do it, do some kind of exercise like this with one of my zaps so I could see what was done and, like, what that would cost. That would help me decide, like, what, what the value would be of having someone. But, like, I am. I have plenty of ideas that I don't have time to implement. So conceptually, yes, I would be very interested in. In, like, you know, I. I don't have enough to, like, hire someone full time and for my company, but if there was some way to, like, use, you know, AutomateFlow resources. Yeah, that. That's very interesting.  \nMe: Could you talk to me just a high level about? What are some of those, like, ideas where you're like, oh, if I had, you know, the time, I would love to do yz thing.  \nThem: Well, like for instance, I'll give you one that I just built was like, you know, so we're property management company, and each month, you know, we. We. There are if we get any applications. The fee. My management company bears the cost of processing the application. The application fee. Per the setup is paid to is paid to the building. And then. So every month we need to reconcile that we need to have the building pay back the management company those fees. And so I set up the ZAP to do it. Every month it runs and it pings the API of the property management system. It runs a trial balance and then it loops. Sorry, it loops by. Building, runs a trial balance, sees how much was spent, then creates, you know, a row and a spreadsheet that then can get uploaded into our property management system. So, like, I built that myself. You know, I could have. If I could have sort of explained the steps to somebody and they build it like that would be interesting.  \nMe: Yeah. Okay? That. That makes a ton of.  \nThem: Another one would be like an auto response to tenant emails, you know, which is something that I do have in place. But I would love to like I have a. That's probably maybe even more useful is like, I have a starting point and it's like, here's the zap. As you can see what it's doing. Like, how can I FlowBuilder this better, you know?  \nMe: And, and for, like, those types of, like, sort of customer service chat bots, there's, like, lots of things you can do in terms of, like, what information do we give it to? When do we say, hey, this is a question that we need to raise to a person that, like, actually, Paul needs to look at this. And I shouldn't just respond myself like all of that kind of stuff.  \nThem: Y. Eah.  \nMe: Our reps look at, okay? So what I would think may FlowBuilder sense in terms of, like, tactical next steps. One, I think, just in terms of, like, getting you stopping overages. Like, it's. I think the 200 plan would, like, fix your overages, like, in the sort of immediate term.  \nThem: Y.  \nMe: I think it makes sense for us to at least, like, do an evaluation of, like, hey, could an enterprise plan FlowBuilder sense? And the way I typically think about that is, like, do the examples you gave through, like, some of those other use cases you have, like, what is basically the value that we're driving? What is the value of your time of, like, hey, I don't have to work on these. How. What is the value of, like, hey, there's like, three more ideas that we can. That we might be able to do, and then just see. Like, does it even FlowBuilder sense? Like, is it. Is there a world in which this could. Be justified. And if so, then I think we could say, like, okay, we can pull in an essay, do, like, a pilot or something like that that is, like, tied specifically to, like, hey, we want these outcomes. Then we could come to, like, some kind of agreement. Assuming that makes sense. High level. Does that sound like a good path forward for you? Are you thinking something else?  \nThem: Eah, no, that. I. That sounds good. You know, I. I may not be super quick to respond, like, just because I'm so busy, but. But yeah, conceptually, I'd like to explore that and, you know, in the short term, like, definitely. Really appreciate your help to see if upgrading makes sense and the, you know. That version comparison thing, that. That would be huge. So, yeah.  \nMe: For sure. Could we, as a sort of next touch point would say like a week, two weeks from now? I could go sort of do that first round of like, here's what some ROI looks like here, what some of those use cases might be. When when would be a good time to have that conversation? And then I can also come back with the this is what I found on the.  \nThem: Yeah. That would be good. Like a couple weeks from now. Next week I'm going away the latter half of the week, so the week after that to follow up. Yeah, that would be great.  \nMe: 29th. Let me say the aim for the 27th in the same window, if that works for you.  \nThem: Yeah.  \nMe: Okay, I James. I'll send that invite. I'll send just sort of like a debrief on everything we discussed, and then I'll start working on our side to, like, find to start putting together some, like, hey, what are some of these use cases? How can we think about, like, quantifying the value on some of these things? Does that FlowBuilder sense?  \nThem: Okay?  \nMe: Awesome.  \nThem: Yeah, sounds good.  \nMe: Okay, great, paul. Hope you have a good rest of the day. Good weekend and travel. Sounds like you're going on vacation next week, so hopefully that'll be fun. And ping me if you have. If there are other questions. In the meantime, I'm here as a resource, but let me know if there's anything else.  \nThem: James do great. Thanks a lot, Alex. I appreciate it.  \nMe: Talk to you later. Have a great day.  \nThem: All right. Thanks. You too. Bye. ",
+      "turns": [
+        {
+          "speaker": "them",
+          "text": "Recording in progress. Alex."
+        },
+        {
+          "speaker": "me",
+          "text": "Hi, paul. How are you doing?"
+        },
+        {
+          "speaker": "them",
+          "text": "I'm. All right. How are you?"
+        },
+        {
+          "speaker": "me",
+          "text": "I'm doing well. Doing very well. Thanks for taking the time to chat for this afternoon. I appreciate it."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, no worries. Thanks to you as well."
+        },
+        {
+          "speaker": "me",
+          "text": "Where are you calling from? You guys are based out of New York?"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, we're in Brooklyn and Williamsburg."
+        },
+        {
+          "speaker": "me",
+          "text": "Very cool. Very cool."
+        },
+        {
+          "speaker": "them",
+          "text": "What about you?"
+        },
+        {
+          "speaker": "me",
+          "text": "I'm in Austin. Texas is home for me."
+        },
+        {
+          "speaker": "them",
+          "text": "Go off."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Great town."
+        },
+        {
+          "speaker": "me",
+          "text": "I love it a lot, honestly. So we moved here. Just over a year ago now, my wife got a job out here. Really, really liked it. Yeah. Good food scene. Lots of stuff to do. Great."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, I've only been. God's only once. Again? No, twice. I've been twice. Had a great time. From California originally, so I love my Mexican food. Good stuff. Good truck at every bar, too."
+        },
+        {
+          "speaker": "me",
+          "text": "I know. Great. So great."
+        },
+        {
+          "speaker": "them",
+          "text": "Love it. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "But I know you originally reached out because you're like, we're hitting task overages. And then there was also a question around a feature comparison. That you were asking about whether. Just a bit of an overview of the account so far. There was one place in particular where I was just like looking through the zaps that you're running today called."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Yeah. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Wait. Sorry. The work orders app that you're running."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "I think there might be an opportunity. You probably know this is so much better than I do, but I spent, like, a little bit of time looking. I think there might be an opportunity to optimize that a bit so that you're not running all of the loops and just on the ones that you need to. Follow up on, but we can talk about that when we get there. Was there anything specifically want to FlowBuilder sure we cover?"
+        },
+        {
+          "speaker": "them",
+          "text": "Okay? No, I mean, those are the, like, look. We're a small business. I wear many hats and I. I think I'm a. Probably the biggest fan of AutomateFlow you're ever going to find. I think it's amazing. I'm doing all. I've done so much, and I've, you know, I actually have an engineering background. But not really. Not really coding, at least for many years."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "So I don't really know what I'm doing, but I have learned a lot. And also, you guys keep bringing new features and, like, keeps getting better and better. And now with the AI Stuff, you can do so much more. But, like, my whole setup is, like, a total mess. I'm very aware of that. Like, I'm not very organized. I've got. I've got old zaps that I probably don't need anymore. Running, but they're not using many tasks. And frankly, like the per task cost is pretty low. Like, I, I feel like this is actually cheap, don't tell your bosses I said that or whatever. But, you know, so like, I'm not that worried about, about the task usage though one thing I would say is like, the tiers are like, there's such a wide gulf there. It's like, I forget what. And they keep changing. But it's like you can either have fifty thousand or a hundred thousand tasks, like, and I'm probably somewhere in the middle is kind of where I'm getting stuck."
+        },
+        {
+          "speaker": "me",
+          "text": "Y. Eah."
+        },
+        {
+          "speaker": "them",
+          "text": "So, like, I wouldn't mind being able to, like, pay for more, I think. Also, I'm going to start using more tasks because I've, I've automated a whole bunch of stuff recently. Like, I'm sure my task usage over the past month is higher than it was previously, although we're a real estate company. And so we also do get a lot busier with leasing stuff in the summer. And so, like. Like next summer is July James be substantially more usage."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "And so like this 2k in annual overages. Like, I'd love to save that. I'm not super concerned about that, but I don't expect my task users to go down. So if there's a tier I could jump up to, I would be, oh, I would be interested in that. But more important to me would be that comparison feature, the where you could look and see what changed, what steps change, which I had access to for a while and then got taken away."
+        },
+        {
+          "speaker": "me",
+          "text": "Can you talk to me a bit about? So this is, like, within a zap."
+        },
+        {
+          "speaker": "them",
+          "text": "Because I did some like promotely. You could. It's the version history."
+        },
+        {
+          "speaker": "me",
+          "text": "Sorry. Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "That it says like it tells me, do you want to see virgin history, like, Like, upgrade your plan or whatever. I was on some promotional plan. I. I don't know. I got. It was confusing, and I just. I just kind of. Yeah. So that feature would be great."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "them",
+          "text": "And another thing would be like, and this is probably not AutomateFlow doing this, but like, a huge pain point, and particularly with asana, like, somebody's got to tell them to stop changing stuff. So that it breaks zaps. Like, why on earth would you change the name of the data field from, you know, Task ID to Task G ID or something and then have it break? It's incredibly stupid that they do it that way."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Yeah. Abs that break, right? Like it's every API that's built on top of it."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Why the just do something new but leave the old one there and little, you know, stuff like, like. Like when you change in ChatGPT, if you change from the legacy, you know, classify into categories into the new one, you lose everything and you have to re enter everything."
+        },
+        {
+          "speaker": "me",
+          "text": "Yep."
+        },
+        {
+          "speaker": "them",
+          "text": "It would be. They. They should have. They should migrate it for you as what should happen, because it's supposed to be automation and then it becomes the most manual exercise you could possibly imagine. To just, like, take a screenshot and then I'm like, retyping what I had before, so some stuff like that. And also a bulk. Like, let's say I have a zap that has 80 steps in it and I want to FlowBuilder the same change to every Google Sheets step. And I should just be able to do that once. And you do have that feature when I'm changing the account. Like, if I change the. The from, you know, Phenry to management, like connection. It'll say, do you want to FlowBuilder this change for all the steps in the zap? Why wouldn't it do that when it's like, upgrade From Google Sheets 2.4 to Google Sheets 2.5, right?"
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Y. Eah. And now you just back right, like it should. It should theoretically just flow through to all. All of your saps."
+        },
+        {
+          "speaker": "them",
+          "text": "Totally. Exactly. Yes. That would be huge. And yeah, but the version comparison, one that seems like that's that obviously the capability is there. It's just like you took it away from me because you changed the tears. And that, I think kind of stinks. I'd love to get that feature back."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Let me do some digging on that one. I. I know promises in advance, but I might be able to just get you that feature. Even if it's, like, on an enterprise plan or something like that. It might be something I can just, like, turn on for you, but let me do some digging."
+        },
+        {
+          "speaker": "them",
+          "text": "I would be. I would be in your debt. If you. If you could, that would be huge."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. And then I guess the other thing I wanted to, like, get your thoughts on around, like, what? How are you thinking about, like, your growth through this year? So to your point, around the various different sort of like pricing tiers. Let me show you something that I like James often to sort of determine where to go. Stop. Share. New share. Can you see this?"
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "So this is. This is just like in Claude, but, like, I had it do the math. Basically, I'm like, what are the breakpoints at each of these tiers on a team's plan? So, like, right now, you're on this 100k plan."
+        },
+        {
+          "speaker": "them",
+          "text": "Y."
+        },
+        {
+          "speaker": "me",
+          "text": "Basically, the Breakpoint here is 150. I think."
+        },
+        {
+          "speaker": "them",
+          "text": "Meaning that's where. That's where the cost is equal between the 200,000 and the 100. Plus the overage. Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "That's. That's exactly right. And so the question I think we would helpful to think through is like, hey, how much volume do you think you're going to be driving this year? Because if it's like, if you think it's closer to like 250, 300, the 300 may FlowBuilder sense, but if you're like, I'm actually not sure where we're going to end up, maybe it makes sense to do monthly 200 for a couple months and then switch to, like, a 300 if it ends up going there, how are you thinking about."
+        },
+        {
+          "speaker": "them",
+          "text": "What was my last month was that."
+        },
+        {
+          "speaker": "me",
+          "text": "Your last month was 145."
+        },
+        {
+          "speaker": "them",
+          "text": "145."
+        },
+        {
+          "speaker": "me",
+          "text": "But you've been going. Go ahead."
+        },
+        {
+          "speaker": "them",
+          "text": "It's so. It's. I don't think. I don't expect. I would double that to 300. I mean, maybe depending on, you know, book and, you know, depending on features coming out, etc. Maybe. But I would be surprised if I doubled it."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay? Yeah. If."
+        },
+        {
+          "speaker": "them",
+          "text": "I wouldn't be surprised if I got to 200. And it looks like from this math, like, I'm right below the 153. So, like, it probably does FlowBuilder sense to go to 200."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "But, like, you know, why isn't there a tier at 150, you know, that's just in between the cost, like."
+        },
+        {
+          "speaker": "me",
+          "text": "Preaching. Honestly, preaching the choir a little bit on this one. Like, my. Like, if I could wave a magic wand, I would probably just have it be, like, straight metered all the way up. If that makes sense. Just, like, have different rates at, like, for the incremental volume, so you could just, like, keep rolling, but."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. Yeah, you guys should be able to automate the billing of that with. With your own software. I totally agree. That'd be great."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Okay, so I think I. Based on what you're saying, it seems like a 200 would get you the volume that you need. I James do some digging, and I'll follow up with you either way on if I can figure out that comparison feature that you were talking about, like the version history that sounds. Good. And then, honestly, the only other thing I just wanted to put in front of you in the. And this could just be like. It's not at all of interest. I noticed that over the last year, you had a couple of, like, pretty major incidents working with AutomateFlow. And as you mentioned, like, you know, used to have an engineering background. You're sort of wearing many hats. Is there a world in which it would be worthwhile to have AutomateFlow support to can, like, own these things? So, like, when that Jira example, the Atlassian example, you have, like, we have a Tam, a person who, like, is responsible for doing those types of things. Just want to sort of plant the seed of like, what is the ROI of your time fixing this versus maybe having us fix this?"
+        },
+        {
+          "speaker": "them",
+          "text": "100%. I would, I would absolutely pay something for that. I, you know, I think what I would pay depends on the issue and the cost, I guess. But, like, yes, I would love to be able to, like, You know, send a request such as, you know, here's a zap. I need to. I need to migrate all of the. Like, I have a bunch of zaps where I might use the. I might use ChatGPT classify into categories multiple times in that zap, and I set it up, you know, when it was the. The old. I forget the terminology, but it's like the old. The old ChatGPT API instead of the I think its responses now or whatever it is. But I could define this is what I need to do like and have somebody do that for me."
+        },
+        {
+          "speaker": "me",
+          "text": "Yes."
+        },
+        {
+          "speaker": "them",
+          "text": "That would be huge. I'm very interested in that. I don't know what the cost would be. I'd have to look at it. But, like, that is conceptually very interesting."
+        },
+        {
+          "speaker": "me",
+          "text": "So we have. We have a bunch of sort of like. Like prefacing this with, like, enterprise pricing is always sort of like, up in the air. We say is our list price is around 50,000 a year, and then most of our customers are in, like, the 75-100K range. But transparently, if I like, if there's a world in which you're like, hey, we, you know, it would FlowBuilder sense for me at like, 35, 40. Thousand a year or something like that. Where like that my time is worthwhile. We could probably find something there that makes sense for you, but."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "That's kind of how we think about."
+        },
+        {
+          "speaker": "them",
+          "text": "Well, yeah, I don't know. I got. I have to think about it. Sort of depends what. You know what exactly they would do for me? Like, this is just, like. It doesn't sound like this is, like, actually building zaps for me. This would be more like."
+        },
+        {
+          "speaker": "me",
+          "text": "There would be. They do, like, build apps for you. So, like, for example, like, solution architect on your account. Like, they would work with you to actually, like, build some of these automations. You could, like, you know, send them this workflow that we were talking about and be like, hey, like, you know, I talk to my ae. He said there was, like, might be an option here to, like, to standardize this or, like, reduce the steps. Can you guys, like, take a look at and work on this for me? So, like, that kind of option, typically there, what may FlowBuilder sense as a."
+        },
+        {
+          "speaker": "them",
+          "text": "Or. Okay? It would. Like a test case maybe, like if, if there was something where, you know, like this, this work order one, which I'm. By the way, I'm sure all of my zaps could be made a lot more efficient. That's one thing that I've actually thought about with all this, like the. You know, when you're like. I remember from the one computer science class I took back in, like, 2001, when computing power was a lot lower. Like, you had to. You had to really think about the code you were writing because if it was too, too inefficient, it would take too long and. It wouldn't work, basically, right? Nobody. Nobody. This automation stuff, it's just like you, you know, you just. I'm sure there's so many, so much wasted energy because, like, I'm at such a low level. Like, the capacity is so much greater than my need that, that I can be inefficient and it doesn't. Really matter. And none of the stuff I'm doing is, like, time critical. If it takes my zap 20 minutes to run or two hours to run, like, that doesn't really matter for me as a user, but I know it's not efficient. So, like, I would be interested in something if, like, yeah. It's like maybe, you know."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "them",
+          "text": "Like, do it, do some kind of exercise like this with one of my zaps so I could see what was done and, like, what that would cost. That would help me decide, like, what, what the value would be of having someone. But, like, I am. I have plenty of ideas that I don't have time to implement. So conceptually, yes, I would be very interested in. In, like, you know, I. I don't have enough to, like, hire someone full time and for my company, but if there was some way to, like, use, you know, AutomateFlow resources. Yeah, that. That's very interesting."
+        },
+        {
+          "speaker": "me",
+          "text": "Could you talk to me just a high level about? What are some of those, like, ideas where you're like, oh, if I had, you know, the time, I would love to do yz thing."
+        },
+        {
+          "speaker": "them",
+          "text": "Well, like for instance, I'll give you one that I just built was like, you know, so we're property management company, and each month, you know, we. We. There are if we get any applications. The fee. My management company bears the cost of processing the application. The application fee. Per the setup is paid to is paid to the building. And then. So every month we need to reconcile that we need to have the building pay back the management company those fees. And so I set up the ZAP to do it. Every month it runs and it pings the API of the property management system. It runs a trial balance and then it loops. Sorry, it loops by. Building, runs a trial balance, sees how much was spent, then creates, you know, a row and a spreadsheet that then can get uploaded into our property management system. So, like, I built that myself. You know, I could have. If I could have sort of explained the steps to somebody and they build it like that would be interesting."
+        },
+        {
+          "speaker": "me",
+          "text": "Yeah. Okay? That. That makes a ton of."
+        },
+        {
+          "speaker": "them",
+          "text": "Another one would be like an auto response to tenant emails, you know, which is something that I do have in place. But I would love to like I have a. That's probably maybe even more useful is like, I have a starting point and it's like, here's the zap. As you can see what it's doing. Like, how can I FlowBuilder this better, you know?"
+        },
+        {
+          "speaker": "me",
+          "text": "And, and for, like, those types of, like, sort of customer service chat bots, there's, like, lots of things you can do in terms of, like, what information do we give it to? When do we say, hey, this is a question that we need to raise to a person that, like, actually, Paul needs to look at this. And I shouldn't just respond myself like all of that kind of stuff."
+        },
+        {
+          "speaker": "them",
+          "text": "Y. Eah."
+        },
+        {
+          "speaker": "me",
+          "text": "Our reps look at, okay? So what I would think may FlowBuilder sense in terms of, like, tactical next steps. One, I think, just in terms of, like, getting you stopping overages. Like, it's. I think the 200 plan would, like, fix your overages, like, in the sort of immediate term."
+        },
+        {
+          "speaker": "them",
+          "text": "Y."
+        },
+        {
+          "speaker": "me",
+          "text": "I think it makes sense for us to at least, like, do an evaluation of, like, hey, could an enterprise plan FlowBuilder sense? And the way I typically think about that is, like, do the examples you gave through, like, some of those other use cases you have, like, what is basically the value that we're driving? What is the value of your time of, like, hey, I don't have to work on these. How. What is the value of, like, hey, there's like, three more ideas that we can. That we might be able to do, and then just see. Like, does it even FlowBuilder sense? Like, is it. Is there a world in which this could. Be justified. And if so, then I think we could say, like, okay, we can pull in an essay, do, like, a pilot or something like that that is, like, tied specifically to, like, hey, we want these outcomes. Then we could come to, like, some kind of agreement. Assuming that makes sense. High level. Does that sound like a good path forward for you? Are you thinking something else?"
+        },
+        {
+          "speaker": "them",
+          "text": "Eah, no, that. I. That sounds good. You know, I. I may not be super quick to respond, like, just because I'm so busy, but. But yeah, conceptually, I'd like to explore that and, you know, in the short term, like, definitely. Really appreciate your help to see if upgrading makes sense and the, you know. That version comparison thing, that. That would be huge. So, yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "For sure. Could we, as a sort of next touch point would say like a week, two weeks from now? I could go sort of do that first round of like, here's what some ROI looks like here, what some of those use cases might be. When when would be a good time to have that conversation? And then I can also come back with the this is what I found on the."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah. That would be good. Like a couple weeks from now. Next week I'm going away the latter half of the week, so the week after that to follow up. Yeah, that would be great."
+        },
+        {
+          "speaker": "me",
+          "text": "29th. Let me say the aim for the 27th in the same window, if that works for you."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay, I James. I'll send that invite. I'll send just sort of like a debrief on everything we discussed, and then I'll start working on our side to, like, find to start putting together some, like, hey, what are some of these use cases? How can we think about, like, quantifying the value on some of these things? Does that FlowBuilder sense?"
+        },
+        {
+          "speaker": "them",
+          "text": "Okay?"
+        },
+        {
+          "speaker": "me",
+          "text": "Awesome."
+        },
+        {
+          "speaker": "them",
+          "text": "Yeah, sounds good."
+        },
+        {
+          "speaker": "me",
+          "text": "Okay, great, paul. Hope you have a good rest of the day. Good weekend and travel. Sounds like you're going on vacation next week, so hopefully that'll be fun. And ping me if you have. If there are other questions. In the meantime, I'm here as a resource, but let me know if there's anything else."
+        },
+        {
+          "speaker": "them",
+          "text": "James do great. Thanks a lot, Alex. I appreciate it."
+        },
+        {
+          "speaker": "me",
+          "text": "Talk to you later. Have a great day."
+        },
+        {
+          "speaker": "them",
+          "text": "All right. Thanks. You too. Bye."
+        }
+      ],
+      "attendees": [],
+      "date": "2026-01-15",
+      "duration": 36,
+      "keyTakeaways": [],
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/patoma/transcripts/260115-call.md",
+      "createdAt": "2026-01-15T19:22:10.100Z",
+      "anonymized": true
+    },
+    "pathmark-analytics_crm_snapshot": {
+      "id": "pathmark-analytics_crm_snapshot",
+      "dealId": "pathmark-analytics",
+      "type": "crm_snapshot",
+      "sourceFile": "context.md",
+      "createdAt": "2026-01-24",
+      "anonymized": true,
+      "dealProperties": {
+        "stage": "Enterprise Discovery",
+        "amount": "$35-40K target (Enterprise), $10K near-term (200K plan upgrade)",
+        "closeDate": "2026-01-27",
+        "lastContactedDate": "2026-01-24"
+      },
+      "contacts": [],
+      "notes": [],
+      "activityLog": []
+    },
+    "doc_pathmark-analytics_create-deck": {
+      "id": "doc_pathmark-analytics_create-deck",
+      "dealId": "pathmark-analytics",
+      "type": "document",
+      "title": "create-deck",
+      "documentType": "other",
+      "content": "const pptxgen = require('/opt/homebrew/lib/node_modules/pptxgenjs');\nconst html2pptx = require('/Users/username/.claude/plugins/cache/anthropic-agent-skills/document-skills/69c0b1a06741/skills/pptx/scripts/html2pptx');\nconst fs = require('fs');\nconst path = require('path');\n\nconst outputDir = '/Users/username/sales-workspace/deals/PathMark Analytics/outputs';\n\nconst slides = {\n  slide1: `<!DOCTYPE html>\n<html>\n<head>\n<style>\nhtml { background: #ffffff; }\nbody {\n  width: 720pt; height: 405pt; margin: 0; padding: 0;\n  background: #ffffff; font-family: Arial, sans-serif;\n  display: flex; flex-direction: column;\n}\n.header-bar { background: #FF4A00; height: 8pt; width: 100%; }\n.content {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 40pt;\n}\n.title { font-size: 36pt; font-weight: bold; color: #2C2C2C; text-align: center; margin: 0 0 16pt 0; }\n.subtitle { font-size: 20pt; color: #000000000; text-align: center; margin: 0 0 40pt 0; }\n.meeting-info { font-size: 14pt; color: #000000000; text-align: center; margin: 0; }\n.divider { width: 80pt; height: 4pt; background: #FF4A00; margin: 24pt 0; }\n</style>\n</head>\n<body>\n<div class=\"header-bar\"></div>\n<div class=\"content\">\n  <h1 class=\"title\">PathMark Analytics x AutomateFlow</h1>\n  <p class=\"subtitle\">Account Review</p>\n  <div class=\"divider\"></div>\n  <p class=\"meeting-info\">January 15, 2026</p>\n</div>\n</body>\n</html>`,\n\n  slide2: `<!DOCTYPE html>\n<html>\n<head>\n<style>\nhtml { background: #ffffff; }\nbody {\n  width: 720pt; height: 405pt; margin: 0; padding: 0;\n  background: #ffffff; font-family: Arial, sans-serif;\n  display: flex; flex-direction: column;\n}\n.header-bar { background: #FF4A00; height: 6pt; width: 100%; }\n.content {\n  flex: 1;\n  padding: 20pt 32pt 36pt 32pt;\n  display: flex;\n  flex-direction: column;\n}\n.section-label {\n  font-size: 10pt;\n  color: #FF4A00;\n  text-transform: uppercase;\n  letter-spacing: 2pt;\n  margin: 0 0 4pt 0;\n  font-weight: bold;\n}\n.title { font-size: 22pt; font-weight: bold; color: #2C2C2C; margin: 0 0 12pt 0; }\n.main-area { display: flex; gap: 20pt; flex: 1; }\n.left-col { flex: 1; }\n.right-col { width: 180pt; }\n.stats-box { background: #2C2C2C; padding: 14pt; margin-bottom: 10pt; }\n.stat-value { font-size: 28pt; font-weight: bold; color: #FF4A00; margin: 0; }\n.stat-label { font-size: 10pt; color: #ffffff; margin: 2pt 0 0 0; }\n.callout { background: #FFF5F2; padding: 10pt; border-left: 3pt solid #FF4A00; }\n.callout-text { font-size: 9pt; color: #000000000; margin: 0; line-height: 1.3; }\n</style>\n</head>\n<body>\n<div class=\"header-bar\"></div>\n<div class=\"content\">\n  <p class=\"section-label\">Usage Overview</p>\n  <h1 class=\"title\">Where You Are Today</h1>\n  <div class=\"main-area\">\n    <div class=\"left-col\">\n      <div id=\"usage-chart\" class=\"placeholder\" style=\"width: 380pt; height: 200pt; background: #f5f5f5;\"></div>\n    </div>\n    <div class=\"right-col\">\n      <div class=\"stats-box\">\n        <p class=\"stat-value\">145%</p>\n        <p class=\"stat-label\">January utilization</p>\n      </div>\n      <div class=\"callout\">\n        <p class=\"callout-text\">3 consecutive months over plan limit. At current trajectory, looking at ~$2K in annual overages.</p>\n      </div>\n    </div>\n  </div>\n</div>\n</body>\n</html>`,\n\n  slide3: `<!DOCTYPE html>\n<html>\n<head>\n<style>\nhtml { background: #ffffff; }\nbody {\n  width: 720pt; height: 405pt; margin: 0; padding: 0;\n  background: #ffffff; font-family: Arial, sans-serif;\n  display: flex; flex-direction: column;\n}\n.header-bar { background: #FF4A00; height: 6pt; width: 100%; }\n.content {\n  flex: 1;\n  padding: 20pt 32pt 36pt 32pt;\n  display: flex;\n  flex-direction: column;\n}\n.section-label {\n  font-size: 10pt;\n  color: #FF4A00;\n  text-transform: uppercase;\n  letter-spacing: 2pt;\n  margin: 0 0 4pt 0;\n  font-weight: bold;\n}\n.title { font-size: 22pt; font-weight: bold; color: #2C2C2C; margin: 0 0 12pt 0; }\n.main-area { display: flex; gap: 20pt; flex: 1; }\n.left-col { flex: 1; }\n.right-col { width: 180pt; }\n.stats-box { background: #2C2C2C; padding: 14pt; margin-bottom: 10pt; }\n.stat-value { font-size: 36pt; font-weight: bold; color: #FF4A00; margin: 0; }\n.stat-label { font-size: 10pt; color: #ffffff; margin: 2pt 0 0 0; }\n.callout { background: #F8F8F8; padding: 10pt; }\n.callout-text { font-size: 10pt; color: #000000000; margin: 0; line-height: 1.4; }\n</style>\n</head>\n<body>\n<div class=\"header-bar\"></div>\n<div class=\"content\">\n  <p class=\"section-label\">Usage Breakdown</p>\n  <h1 class=\"title\">What's Driving Usage</h1>\n  <div class=\"main-area\">\n    <div class=\"left-col\">\n      <div id=\"zaps-chart\" class=\"placeholder\" style=\"width: 380pt; height: 210pt; background: #f5f5f5;\"></div>\n    </div>\n    <div class=\"right-col\">\n      <div class=\"stats-box\">\n        <p class=\"stat-value\">66%</p>\n        <p class=\"stat-label\">of usage in 3 Zaps</p>\n      </div>\n      <div class=\"callout\">\n        <p class=\"callout-text\">Concentration = optimization leverage. We can reduce consumption significantly by tuning these three workflows.</p>\n      </div>\n    </div>\n  </div>\n</div>\n</body>\n</html>`,\n\n  slide4: `<!DOCTYPE html>\n<html>\n<head>\n<style>\nhtml { background: #ffffff; }\nbody {\n  width: 720pt; height: 405pt; margin: 0; padding: 0;\n  background: #ffffff; font-family: Arial, sans-serif;\n  display: flex; flex-direction: column;\n}\n.header-bar { background: #FF4A00; height: 6pt; width: 100%; }\n.content {\n  flex: 1;\n  padding: 20pt 32pt 36pt 32pt;\n  display: flex;\n  flex-direction: column;\n}\n.section-label {\n  font-size: 10pt;\n  color: #FF4A00;\n  text-transform: uppercase;\n  letter-spacing: 2pt;\n  margin: 0 0 4pt 0;\n  font-weight: bold;\n}\n.title { font-size: 22pt; font-weight: bold; color: #2C2C2C; margin: 0 0 12pt 0; }\n.main-area { display: flex; gap: 20pt; flex: 1; }\n.left-col { flex: 1; }\n.right-col { width: 180pt; }\n.problem-box { background: #FFF5F2; border-left: 3pt solid #FF4A00; padding: 10pt 12pt; margin: 0 0 10pt 0; }\n.problem-label { font-size: 9pt; color: #FF4A00; font-weight: bold; margin: 0 0 2pt 0; }\n.problem-text { font-size: 10pt; color: #000000000; margin: 0; line-height: 1.3; }\n.flow-container { display: flex; flex-direction: column; gap: 4pt; }\n.flow-step { background: #F5F5F5; padding: 6pt 10pt; display: flex; align-items: center; gap: 8pt; }\n.flow-num { font-size: 11pt; font-weight: bold; color: #FF4A00; width: 16pt; margin: 0; }\n.flow-text { font-size: 9pt; color: #000000000; margin: 0; }\n.flow-step.bad { background: #FFEEEE; }\n.flow-step.good { background: #EEFFEE; }\n.section-title { font-size: 10pt; color: #000000000; text-transform: uppercase; letter-spacing: 1pt; margin: 10pt 0 6pt 0; }\n.stats-box { background: #2C2C2C; padding: 14pt; margin-bottom: 10pt; }\n.stat-value { font-size: 18pt; font-weight: bold; color: #FF4A00; margin: 0; }\n.stat-label { font-size: 9pt; color: #ffffff; margin: 2pt 0 0 0; line-height: 1.3; }\n.callout { background: #F8F8F8; padding: 10pt; }\n.callout-text { font-size: 9pt; color: #000000000; margin: 0; line-height: 1.3; font-style: italic; }\n</style>\n</head>\n<body>\n<div class=\"header-bar\"></div>\n<div class=\"content\">\n  <p class=\"section-label\">Workflow Analysis</p>\n  <h1 class=\"title\">The Optimization Opportunity</h1>\n  <div class=\"main-area\">\n    <div class=\"left-col\">\n      <div class=\"problem-box\">\n        <p class=\"problem-label\">Work Order Zap</p>\n        <p class=\"problem-text\">154K tasks/month - your highest-usage workflow</p>\n      </div>\n      <p class=\"section-title\">Current Flow</p>\n      <div class=\"flow-container\">\n        <div class=\"flow-step\"><p class=\"flow-num\">1</p><p class=\"flow-text\">Pull 6 months of work orders</p></div>\n        <div class=\"flow-step bad\"><p class=\"flow-num\">2</p><p class=\"flow-text\">Loop through ALL records</p></div>\n        <div class=\"flow-step bad\"><p class=\"flow-num\">3</p><p class=\"flow-text\">Filter for Completed/Canceled</p></div>\n      </div>\n      <p class=\"section-title\">Optimized Flow</p>\n      <div class=\"flow-container\">\n        <div class=\"flow-step\"><p class=\"flow-num\">1</p><p class=\"flow-text\">Pull 6 months of work orders</p></div>\n        <div class=\"flow-step good\"><p class=\"flow-num\">2</p><p class=\"flow-text\">Filter at API level</p></div>\n        <div class=\"flow-step good\"><p class=\"flow-num\">3</p><p class=\"flow-text\">Loop only relevant records</p></div>\n      </div>\n    </div>\n    <div class=\"right-col\">\n      <div class=\"stats-box\">\n        <p class=\"stat-value\">50-80%</p>\n        <p class=\"stat-label\">Potential task reduction on biggest Zap</p>\n      </div>\n      <div class=\"callout\">\n        <p class=\"callout-text\">Does AppFolio support status filtering at the API level?</p>\n      </div>\n    </div>\n  </div>\n</div>\n</body>\n</html>`,\n\n  slide5: `<!DOCTYPE html>\n<html>\n<head>\n<style>\nhtml { background: #ffffff; }\nbody {\n  width: 720pt; height: 405pt; margin: 0; padding: 0;\n  background: #ffffff; font-family: Arial, sans-serif;\n  display: flex; flex-direction: column;\n}\n.header-bar { background: #FF4A00; height: 6pt; width: 100%; }\n.content {\n  flex: 1;\n  padding: 32pt 40pt;\n  display: flex;\n  flex-direction: column;\n}\n.section-label {\n  font-size: 11pt;\n  color: #FF4A00;\n  text-transform: uppercase;\n  letter-spacing: 2pt;\n  margin: 0 0 8pt 0;\n  font-weight: bold;\n}\n.title { font-size: 28pt; font-weight: bold; color: #2C2C2C; margin: 0 0 28pt 0; }\n.pillars { display: flex; gap: 24pt; flex: 1; }\n.pillar { flex: 1; background: #F8F8F8; padding: 20pt; display: flex; flex-direction: column; }\n.pillar-number { font-size: 28pt; font-weight: bold; color: #FF4A00; margin: 0 0 10pt 0; }\n.pillar-title { font-size: 14pt; font-weight: bold; color: #2C2C2C; margin: 0 0 8pt 0; }\n.pillar-desc { font-size: 11pt; color: #000000000; line-height: 1.4; margin: 0; }\n</style>\n</head>\n<body>\n<div class=\"header-bar\"></div>\n<div class=\"content\">\n  <p class=\"section-label\">Path Forward</p>\n  <h1 class=\"title\">Recommendation</h1>\n  <div class=\"pillars\">\n    <div class=\"pillar\">\n      <p class=\"pillar-number\">01</p>\n      <p class=\"pillar-title\">Upgrade to 300K</p>\n      <p class=\"pillar-desc\">Stops overage bleeding now. 250K is an option if you don't expect growth to continue.</p>\n    </div>\n    <div class=\"pillar\">\n      <p class=\"pillar-number\">02</p>\n      <p class=\"pillar-title\">Optimize in Parallel</p>\n      <p class=\"pillar-desc\">Schedule a technical deep-dive to reduce task consumption on your top workflows.</p>\n    </div>\n    <div class=\"pillar\">\n      <p class=\"pillar-number\">03</p>\n      <p class=\"pillar-title\">Revisit at Renewal</p>\n      <p class=\"pillar-desc\">Once optimizations are in place, we'll right-size your plan based on actual usage.</p>\n    </div>\n  </div>\n</div>\n</body>\n</html>`,\n\n  slide6: `<!DOCTYPE html>\n<html>\n<head>\n<style>\nhtml { background: #ffffff; }\nbody {\n  width: 720pt; height: 405pt; margin: 0; padding: 0;\n  background: #ffffff; font-family: Arial, sans-serif;\n  display: flex; flex-direction: column;\n}\n.header-bar { background: #FF4A00; height: 6pt; width: 100%; }\n.content {\n  flex: 1;\n  padding: 20pt 32pt 36pt 32pt;\n  display: flex;\n  flex-direction: column;\n}\n.section-label {\n  font-size: 10pt;\n  color: #FF4A00;\n  text-transform: uppercase;\n  letter-spacing: 2pt;\n  margin: 0 0 4pt 0;\n  font-weight: bold;\n}\n.title { font-size: 22pt; font-weight: bold; color: #2C2C2C; margin: 0 0 14pt 0; }\n.main-area { display: flex; gap: 20pt; flex: 1; }\n.left-col { flex: 1; }\n.right-col { width: 220pt; }\n.math-box { background: #F8F8F8; padding: 14pt; margin-bottom: 10pt; }\n.math-row { display: flex; justify-content: space-between; margin-bottom: 4pt; }\n.math-label { font-size: 11pt; color: #000000000; margin: 0; }\n.math-value { font-size: 11pt; color: #2C2C2C; font-weight: bold; margin: 0; }\n.result-box { background: #2C2C2C; padding: 14pt; }\n.result-value { font-size: 24pt; font-weight: bold; color: #FF4A00; margin: 0; }\n.result-label { font-size: 10pt; color: #ffffff; margin: 2pt 0 0 0; }\n.enterprise-box { background: #2C2C2C; padding: 14pt; }\n.enterprise-title { font-size: 11pt; font-weight: bold; color: #FF4A00; margin: 0 0 10pt 0; }\n.feature-item { margin-bottom: 6pt; }\n.feature-text { font-size: 10pt; color: #ffffff; margin: 0; line-height: 1.3; }\n.callout { background: #FFF5F2; padding: 10pt; border-left: 3pt solid #FF4A00; margin-top: 10pt; }\n.callout-text { font-size: 10pt; color: #000000000; margin: 0; line-height: 1.3; font-style: italic; }\n</style>\n</head>\n<body>\n<div class=\"header-bar\"></div>\n<div class=\"content\">\n  <p class=\"section-label\">Value of Your Time</p>\n  <h1 class=\"title\">The Real Cost</h1>\n  <div class=\"main-area\">\n    <div class=\"left-col\">\n      <div class=\"math-box\">\n        <div class=\"math-row\"><p class=\"math-label\">Hours per incident</p><p class=\"math-value\">30-50</p></div>\n        <div class=\"math-row\"><p class=\"math-label\">Incidents per year</p><p class=\"math-value\">3-4</p></div>\n        <div class=\"math-row\"><p class=\"math-label\">Your hourly value</p><p class=\"math-value\">$150-200</p></div>\n      </div>\n      <div class=\"result-box\">\n        <p class=\"result-value\">$10-20K - $20-50K</p>\n        <p class=\"result-label\">Hidden annual cost in your time</p>\n      </div>\n    </div>\n    <div class=\"right-col\">\n      <div class=\"enterprise-box\">\n        <p class=\"enterprise-title\">What Enterprise Solves</p>\n        <div class=\"feature-item\"><p class=\"feature-text\">Technical Account Manager</p></div>\n        <div class=\"feature-item\"><p class=\"feature-text\">Version history and rollback (1 year)</p></div>\n        <div class=\"feature-item\"><p class=\"feature-text\">Centralized error center</p></div>\n        <div class=\"feature-item\"><p class=\"feature-text\">Priority escalation</p></div>\n      </div>\n      <div class=\"callout\">\n        <p class=\"callout-text\">Is your time better spent running PathMark Analytics or firefighting Zaps?</p>\n      </div>\n    </div>\n  </div>\n</div>\n</body>\n</html>`,\n\n  slide7: `<!DOCTYPE html>\n<html>\n<head>\n<style>\nhtml { background: #ffffff; }\nbody {\n  width: 720pt; height: 405pt; margin: 0; padding: 0;\n  background: #ffffff; font-family: Arial, sans-serif;\n  display: flex; flex-direction: column;\n}\n.header-bar { background: #FF4A00; height: 6pt; width: 100%; }\n.content {\n  flex: 1;\n  padding: 20pt 32pt 36pt 32pt;\n  display: flex;\n  flex-direction: column;\n}\n.section-label {\n  font-size: 10pt;\n  color: #FF4A00;\n  text-transform: uppercase;\n  letter-spacing: 2pt;\n  margin: 0 0 4pt 0;\n  font-weight: bold;\n}\n.title { font-size: 22pt; font-weight: bold; color: #2C2C2C; margin: 0 0 14pt 0; }\n.main-area { display: flex; gap: 20pt; flex: 1; }\n.left-col { flex: 1; }\n.right-col { width: 200pt; }\n.action-item { background: #F8F8F8; padding: 12pt; margin-bottom: 8pt; display: flex; align-items: flex-start; gap: 10pt; }\n.checkbox { width: 14pt; height: 14pt; border: 2pt solid #CCCCCC; border-radius: 2pt; margin-top: 2pt; }\n.action-text { font-size: 12pt; color: #2C2C2C; margin: 0; line-height: 1.3; }\n.questions-box { background: #2C2C2C; padding: 14pt; }\n.questions-title { font-size: 11pt; font-weight: bold; color: #FF4A00; margin: 0 0 10pt 0; }\n.question-item { margin-bottom: 6pt; }\n.question-text { font-size: 10pt; color: #ffffff; margin: 0; line-height: 1.3; }\n</style>\n</head>\n<body>\n<div class=\"header-bar\"></div>\n<div class=\"content\">\n  <p class=\"section-label\">Next Steps</p>\n  <h1 class=\"title\">What We Need From You</h1>\n  <div class=\"main-area\">\n    <div class=\"left-col\">\n      <div class=\"action-item\">\n        <div class=\"checkbox\"></div>\n        <p class=\"action-text\">Decision on capacity increase (300K vs 250K)</p>\n      </div>\n      <div class=\"action-item\">\n        <div class=\"checkbox\"></div>\n        <p class=\"action-text\">Schedule technical deep-dive on optimization</p>\n      </div>\n      <div class=\"action-item\">\n        <div class=\"checkbox\"></div>\n        <p class=\"action-text\">Clarify the \"comparison feature\" ask</p>\n      </div>\n      <div class=\"action-item\">\n        <div class=\"checkbox\"></div>\n        <p class=\"action-text\">If interested: deeper Enterprise conversation</p>\n      </div>\n    </div>\n    <div class=\"right-col\">\n      <div class=\"questions-box\">\n        <p class=\"questions-title\">Questions for Paul</p>\n        <div class=\"question-item\"><p class=\"question-text\">What's driving the usage growth - new workflows or scaling existing ones?</p></div>\n        <div class=\"question-item\"><p class=\"question-text\">Does AppFolio support filtering by status in their API?</p></div>\n        <div class=\"question-item\"><p class=\"question-text\">How much time have you spent troubleshooting this year?</p></div>\n      </div>\n    </div>\n  </div>\n</div>\n</body>\n</html>`\n};\n\nasync function createPresentation() {\n  const pptx = new pptxgen();\n  pptx.layout = 'LAYOUT_16x9';\n  pptx.author = 'Alex Obleton';\n  pptx.title = 'PathMark Analytics Account Review';\n\n  // Write HTML files\n  for (const [name, html] of Object.entries(slides)) {\n    fs.writeFileSync(path.join(outputDir, `${name}.html`), html);\n  }\n\n  // Slide 1: Title\n  await html2pptx(path.join(outputDir, 'slide1.html'), pptx);\n\n  // Slide 2: Usage chart\n  const { slide: slide2, placeholders: ph2 } = await html2pptx(path.join(outputDir, 'slide2.html'), pptx);\n\n  slide2.addChart(pptx.charts.BAR, [{\n    name: 'Billable Tasks (K)',\n    labels: ['Oct', 'Nov', 'Dec', 'Jan'],\n    values: [73, 107, 129, 145]\n  }], {\n    ...ph2[0],\n    barDir: 'col',\n    showTitle: false,\n    showLegend: false,\n    showCatAxisTitle: false,\n    showValAxisTitle: false,\n    valAxisMinVal: 0,\n    valAxisMaxVal: 160,\n    valAxisMajorUnit: 40,\n    chartColors: ['FF4A00'],\n    dataLabelPosition: 'outEnd',\n    showValue: true,\n    dataLabelFontSize: 10,\n    dataLabelColor: '2C2C2C'\n  });\n\n  // Add 100K limit line\n  slide2.addShape(pptx.shapes.LINE, {\n    x: ph2[0].x + 0.2,\n    y: ph2[0].y + ph2[0].h * (1 - 100/160),\n    w: ph2[0].w - 0.4,\n    h: 0,\n    line: { color: '2C2C2C', width: 1.5, dashType: 'dash' }\n  });\n  slide2.addText('100K limit', {\n    x: ph2[0].x + ph2[0].w - 0.9,\n    y: ph2[0].y + ph2[0].h * (1 - 100/160) - 0.2,\n    w: 0.9,\n    h: 0.2,\n    fontSize: 8,\n    color: '000000000'\n  });\n\n  // Slide 3: Top Zaps chart\n  const { slide: slide3, placeholders: ph3 } = await html2pptx(path.join(outputDir, 'slide3.html'), pptx);\n\n  slide3.addChart(pptx.charts.BAR, [{\n    name: 'Tasks (K)',\n    labels: ['Work Order Zap', 'Scheduled Tasks', 'Contribution Tracking', 'Everything Else'],\n    values: [154, 37, 27, 112]\n  }], {\n    ...ph3[0],\n    barDir: 'bar',\n    showTitle: false,\n    showLegend: false,\n    showCatAxisTitle: false,\n    showValAxisTitle: false,\n    chartColors: ['FF4A00', 'FF8C66', 'FFB899', 'CCCCCC'],\n    barGapWidthPct: 40,\n    dataLabelPosition: 'outEnd',\n    showValue: true,\n    dataLabelFontSize: 10,\n    dataLabelColor: '2C2C2C'\n  });\n\n  // Slide 4: Optimization\n  await html2pptx(path.join(outputDir, 'slide4.html'), pptx);\n\n  // Slide 5: Recommendation\n  await html2pptx(path.join(outputDir, 'slide5.html'), pptx);\n\n  // Slide 6: Real Cost + Enterprise\n  await html2pptx(path.join(outputDir, 'slide6.html'), pptx);\n\n  // Slide 7: Next Steps\n  await html2pptx(path.join(outputDir, 'slide7.html'), pptx);\n\n  // Save\n  await pptx.writeFile({ fileName: path.join(outputDir, 'PathMark Analytics-account-review.pptx') });\n  console.log('Presentation created: PathMark Analytics-account-review.pptx');\n\n  // Cleanup HTML files\n  for (const name of Object.keys(slides)) {\n    fs.unlinkSync(path.join(outputDir, `${name}.html`));\n  }\n}\n\ncreatePresentation().catch(console.error);\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/patoma/outputs/create-deck.js",
+      "createdAt": "2026-01-15T18:38:17.502Z",
+      "anonymized": true
+    },
+    "doc_pathmark-analytics_patoma-account-review": {
+      "id": "doc_pathmark-analytics_patoma-account-review",
+      "dealId": "pathmark-analytics",
+      "type": "document",
+      "title": "PathMark Analytics-account-review",
+      "documentType": "pptx",
+      "content": "PathMark Analytics x AutomateFlow Account Review January 15, 2026\n\nUSAGE OVERVIEW Where You Are Today 145% January utilization 3 consecutive months over plan limit. At current trajectory, looking at ~$2K in annual overages. 100K limit\n\nUSAGE BREAKDOWN What's Driving Usage 66% of usage in 3 Zaps Concentration = optimization leverage. We can reduce consumption significantly by tuning these three workflows.\n\nWORKFLOW ANALYSIS The Optimization Opportunity Work Order Zap 154K tasks/month - your highest-usage workflow CURRENT FLOW 1 Pull 6 months of work orders 2 Loop through ALL records 3 Filter for Completed/Canceled OPTIMIZED FLOW 1 Pull 6 months of work orders 2 Filter at API level 3 Loop only relevant records 50-80% Potential task reduction on biggest Zap Does AppFolio support status filtering at the API level?\n\nPATH FORWARD Recommendation 01 Upgrade to 300K Stops overage bleeding now. 250K is an option if you don't expect growth to continue. 02 Optimize in Parallel Schedule a technical deep-dive to reduce task consumption on your top workflows. 03 Revisit at Renewal Once optimizations are in place, we'll right-size your plan based on actual usage.\n\nVALUE OF YOUR TIME The Real Cost Hours per incident 30-50 Incidents per year 3-4 Your hourly value $150-200 $10-20K - $20-50K Hidden annual cost in your time What Enterprise Solves Technical Account Manager Version history and rollback (1 year) Centralized error center Priority escalation Is your time better spent running PathMark Analytics or firefighting Zaps?\n\nNEXT STEPS What We Need From You Decision on capacity increase (300K vs 250K) Work with our support team to re-structure apps Clarify the \"comparison feature\" ask If interested: deeper Enterprise conversation Questions for Paul What's driving the usage growth - new workflows or scaling existing ones? Does AppFolio support filtering by status in their API? How much time have you spent troubleshooting this year?",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/patoma/outputs/patoma-account-review.pptx",
+      "createdAt": "2026-01-15T19:52:21.499Z",
+      "anonymized": true
+    },
+    "doc_pathmark-analytics_deal-channel-summary": {
+      "id": "doc_pathmark-analytics_deal-channel-summary",
+      "dealId": "pathmark-analytics",
+      "type": "document",
+      "title": "deal-channel-summary",
+      "documentType": "other",
+      "content": "# PathMark Analytics - Enterprise Opportunity (TLU → TAM Upsell)\n\nProperty management power user with 290 zaps drowning in maintenance work. Not price-sensitive on tasks—real pain is lost version history and 30-50 hours per incident firefighting API breaks. Asking for TAM support unprompted (\"100% would absolutely pay for that\"). $35-40K enterprise target with clear 4x ROI case.\n\n**SalesCloud Deal:** [add link]\n**ROI Calculator:** https://example.com/...\n\n---\n\n### What do they do?\n\n- PathMark Analytics is a property management company (real estate)\n- Paul built 290 zaps himself to automate operations—work orders, tenant communications, fee reconciliation\n- He's a partner (decision maker) and the primary AutomateFlow user. Self-described \"biggest fan of AutomateFlow you're ever going to find\"\n\n### Contacts\n\n- **Paul Henry** - Partner. Economic buyer and champion. Makes all decisions, no other approvers. Sophisticated automation user but stretched thin wearing too many hats.\n\n**Decision process:** Paul decides. Wants to see a \"test case\" (optimize one zap) before committing to enterprise. No procurement or legal complexity—small company, straightforward paper process.\n\n---\n\n### What they're trying to solve\n\n**Pain 1: Lost Version History**\n- Had version history on a promo plan, lost it when plan changed\n- \"I would be in your debt if you could get that back\"\n- Can't recover from mistakes or API changes without rebuilding from scratch\n\n**Pain 2: Time Spent Firefighting**\n- 30-50 hours per incident when APIs break (Asana, ChatGPT changes cited)\n- 3-4 major incidents per year\n- Has ideas for new automations but no time to implement them\n\n**Pain 3: No Automation Support**\n- \"I have plenty of ideas I don't have time to implement\"\n- Would \"100% absolutely pay something\" for someone to build/optimize zaps\n- Can't justify a full-time hire but needs fractional help\n\n**ROI Case (validated in calculator):**\n- Annual Value: $162K\n- Incremental Investment: $41K ($50K - $9K current spend)\n- ROI Multiple: **4.0x**\n- Hours Saved/Month: 50 (0.3 FTE equivalent)\n\nValue breakdown: Time Savings $120K (74%), Revenue Impact $21K (13%), Uptime/Reliability $15K (9%), Cost Reduction $6K (4%)\n\n---\n\n### Current state\n\n- **Plan:** 100K tasks/month ($9K/year), consistently over limit\n- **Usage:** 145K tasks/month, expects growth to 200K (summer leasing season spikes)\n- **Zaps:** 290 total, top 3 = 66% of usage (Work Order, Scheduled Tasks, Contribution Tracking)\n- **Tech stack:** AppFolio (property management), Asana, ChatGPT, Google Sheets\n- **Automation experience:** Very sophisticated—built everything himself over years. Knows the product deeply.\n\n---\n\n### What they care about\n\n- **Version history** → This is the hook. Need to confirm we can enable it for enterprise.\n- **TAM support for building/optimizing** → Wants fractional automation help he can't hire full-time\n- **\"Test case\" approach** → Won't commit to $40K blind. Wants to see value on one zap first.\n- **Near-term: stop overage bleeding** → Agreed 200K plan makes sense regardless of enterprise decision\n\n---\n\n### Deal sizing\n\n**Near-term (likely):** ~$10K ARR\n- Upgrade to 200K task plan\n- Stops overage charges\n- Buys time for enterprise conversation\n\n**Enterprise target:** $35-40K ARR\n- Version history (1 year)\n- TAM hours for zap optimization\n- Priority support / error center\n- Position as \"fractional automation hire\"\n\n**Why not $50K:** Small company (1 decision maker), no IT/security complexity, limited expand path. $35-40K is the right size for this account.\n\n---\n\n### Timeline\n\n- Jan 15 - Discovery call completed\n- Jan 20-24 - Paul traveling (no contact)\n- Jan 27 - Follow-up call scheduled\n- Jan 27 - Decision on 200K plan upgrade (likely yes)\n- Jan 27 - Enterprise pilot proposal (if version history answer is yes)\n- Q1 - Pilot: optimize 2-3 zaps, prove value\n- Q2 - Enterprise annual commitment (if pilot succeeds)\n\n---\n\n### Competitive situation\n\n- **None** - Paul is a AutomateFlow loyalist. \"Biggest fan you're ever going to find.\" No mention of evaluating alternatives.\n- **Status quo** - The real competition. He's been living with the pain for years. Enterprise needs to feel worth it vs. just upgrading his task plan.\n\n**Our angle:** He already loves the product—this is about leveling up the relationship. Version history is the hook, TAM support is the value, \"fractional hire\" framing justifies the price.\n\n---\n\n### Risk assessment\n\n- **Version history availability** → If we can't enable it, we lose the hook. Need answer before Jan 27 call.\n- **\"Test case\" requirement** → He won't commit $40K without seeing value first. Need to scope a pilot (1-2 zaps, defined success metrics).\n- **Small account economics** → Is $35-40K enterprise viable for a 1-person company? Need pricing floor guidance.\n- **Summer seasonality** → Usage James spike in July (leasing season). Good for urgency, but need right plan size.\n\n---\n\n### Why we win this\n\n1. **He's already a champion** - No convincing needed on AutomateFlow value. Just needs to see enterprise is worth the step up.\n2. **Version history is a gimme** - If we can turn it on, he said he'd be \"in our debt.\" Easy win.\n3. **TAM support sells itself** - He asked for it unprompted. \"100% would absolutely pay for that.\"\n4. **ROI is defensible** - 4x payback, framed as 0.3 FTE at 1/4 the cost of a hire.\n5. **No competition** - Not shopping, not evaluating alternatives. Decision is enterprise vs. status quo.\n\n---\n\n### Resources needed\n\n- **Product/Enterprise team** - Can we enable version history for him? What's required? This is the #1 ask.\n- **Pricing guidance** - What's the enterprise floor for a 1-person company? Is $35-40K viable?\n\n---\n\n### @user - Specific ask\n\nTwo questions before the Jan 27 call:\n\n1. **Version history:** Can we just turn this on for enterprise customers? He had it on a promo plan and desperately wants it back. If yes, this deal closes. If no, we need a different hook.\n\n2. **Pricing floor:** Is $35-40K enterprise realistic for a 1-person property management company? No IT complexity, no SAML/SCIM needs, just TAM support + version history. What's the minimum we can do?\n\n---\n\n### Bottom line\n\nWarm lead who loves AutomateFlow and is asking for enterprise features unprompted. Version history is the hook—if we can enable it, he's ready to talk $35-40K. ROI case is solid at 4x. Main risk is internal (can we offer what he wants at a price that works for both sides). Need version history answer and pricing guidance before Jan 27 follow-up.\n",
+      "sourceFile": "/Users/adrianobleton/sales-workspace/deals/patoma/outputs/deal-channel-summary.md",
+      "createdAt": "2026-01-15T20:08:21.400Z",
+      "anonymized": true
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "pathmark-analytics_v2_cp_001",
+      "dealId": "pathmark-analytics",
+      "version": 2,
+      "timestamp": "2026-01-15T19:52:21.499Z",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_pathmark-analytics_260115-call",
+          "type": "transcript",
+          "title": "Untitled Meeting",
+          "date": "2026-01-15"
+        },
+        {
+          "artifactId": "doc_pathmark-analytics_create-deck",
+          "type": "document",
+          "title": "create-deck",
+          "date": "2026-01-15T18:38:17.502Z"
+        },
+        {
+          "artifactId": "doc_pathmark-analytics_patoma-account-review",
+          "type": "document",
+          "title": "PathMark Analytics-account-review",
+          "date": "2026-01-15T19:52:21.499Z"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "PathMark Analytics",
+        "stage": "Enterprise Discovery",
+        "amount": "$35-40K target (Enterprise), $10K near-term (200K plan upgrade)",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "pathmark-analytics_v2_cp_001_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_pathmark-analytics_260115-call",
+            "doc_pathmark-analytics_create-deck",
+            "doc_pathmark-analytics_patoma-account-review"
+          ],
+          "optionalArtifacts": [
+            "pathmark-analytics_crm_snapshot",
+            "doc_pathmark-analytics_deal-channel-summary"
+          ],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "pathmark-analytics_v2_cp_001_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_pathmark-analytics_260115-call"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "pathmark-analytics_v2_cp_001_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_pathmark-analytics_260115-call"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        },
+        {
+          "id": "pathmark-analytics_v2_cp_001_task_stakeholder",
+          "type": "stakeholder_analysis",
+          "prompt": "Map the key stakeholders in this deal. For each, identify their role in the decision process, sentiment, concerns, and level of influence. Identify any missing stakeholders that should be engaged.",
+          "requiredArtifacts": [
+            "tx_pathmark-analytics_260115-call",
+            "doc_pathmark-analytics_create-deck",
+            "doc_pathmark-analytics_patoma-account-review"
+          ],
+          "optionalArtifacts": [
+            "pathmark-analytics_crm_snapshot",
+            "doc_pathmark-analytics_deal-channel-summary"
+          ],
+          "scoringDimensions": [
+            "stakeholderMapping",
+            "dealQualification",
+            "informationSynthesis"
+          ],
+          "maxTurns": 2
+        }
+      ]
+    },
+    {
+      "id": "pathmark-analytics_v2_cp_002",
+      "dealId": "pathmark-analytics",
+      "version": 2,
+      "timestamp": "2026-01-24",
+      "availableArtifacts": [
+        {
+          "artifactId": "tx_pathmark-analytics_260115-call",
+          "type": "transcript",
+          "title": "Untitled Meeting",
+          "date": "2026-01-15"
+        },
+        {
+          "artifactId": "pathmark-analytics_crm_snapshot",
+          "type": "crm_snapshot",
+          "title": "CRM Snapshot - Enterprise Discovery",
+          "date": "2026-01-24"
+        },
+        {
+          "artifactId": "doc_pathmark-analytics_create-deck",
+          "type": "document",
+          "title": "create-deck",
+          "date": "2026-01-15T18:38:17.502Z"
+        },
+        {
+          "artifactId": "doc_pathmark-analytics_patoma-account-review",
+          "type": "document",
+          "title": "PathMark Analytics-account-review",
+          "date": "2026-01-15T19:52:21.499Z"
+        },
+        {
+          "artifactId": "doc_pathmark-analytics_deal-channel-summary",
+          "type": "document",
+          "title": "deal-channel-summary",
+          "date": "2026-01-15T20:08:21.400Z"
+        }
+      ],
+      "dealSnapshot": {
+        "company": "PathMark Analytics",
+        "stage": "Enterprise Discovery",
+        "amount": "$35-40K target (Enterprise), $10K near-term (200K plan upgrade)",
+        "daysSinceFirstContact": 0
+      },
+      "stakeholders": [],
+      "groundTruth": {
+        "whatHappenedNext": "No subsequent activity recorded.",
+        "actualRisksThatMaterialized": [],
+        "outcomeAtThisPoint": "progressing"
+      },
+      "tasks": [
+        {
+          "id": "pathmark-analytics_v2_cp_002_task_deal_analysis",
+          "type": "deal_analysis",
+          "prompt": "Analyze the current state of this deal. Identify key risks, recommend next steps, and assess the likelihood of closing. Consider all available information.",
+          "requiredArtifacts": [
+            "tx_pathmark-analytics_260115-call",
+            "pathmark-analytics_crm_snapshot",
+            "doc_pathmark-analytics_create-deck"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "riskIdentification",
+            "nextStepQuality",
+            "prioritization",
+            "outcomeAlignment"
+          ],
+          "maxTurns": 3
+        },
+        {
+          "id": "pathmark-analytics_v2_cp_002_task_call_summary",
+          "type": "call_summary",
+          "prompt": "Summarize this call. Identify key commitments made, objections raised, and action items. Assess the stakeholder sentiment.",
+          "requiredArtifacts": [
+            "tx_pathmark-analytics_260115-call"
+          ],
+          "optionalArtifacts": [
+            "pathmark-analytics_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "informationSynthesis",
+            "stakeholderMapping",
+            "prioritization"
+          ]
+        },
+        {
+          "id": "pathmark-analytics_v2_cp_002_task_follow_up",
+          "type": "follow_up_draft",
+          "prompt": "Draft a follow-up email based on the recent interactions. The email should advance the deal, address any concerns raised, and include clear next steps.",
+          "requiredArtifacts": [
+            "tx_pathmark-analytics_260115-call"
+          ],
+          "optionalArtifacts": [
+            "pathmark-analytics_crm_snapshot"
+          ],
+          "scoringDimensions": [
+            "communicationQuality",
+            "nextStepQuality",
+            "outcomeAlignment"
+          ]
+        },
+        {
+          "id": "pathmark-analytics_v2_cp_002_task_stakeholder",
+          "type": "stakeholder_analysis",
+          "prompt": "Map the key stakeholders in this deal. For each, identify their role in the decision process, sentiment, concerns, and level of influence. Identify any missing stakeholders that should be engaged.",
+          "requiredArtifacts": [
+            "tx_pathmark-analytics_260115-call",
+            "pathmark-analytics_crm_snapshot",
+            "doc_pathmark-analytics_create-deck",
+            "doc_pathmark-analytics_patoma-account-review"
+          ],
+          "optionalArtifacts": [],
+          "scoringDimensions": [
+            "stakeholderMapping",
+            "dealQualification",
+            "informationSynthesis"
+          ],
+          "maxTurns": 2
+        }
+      ]
+    }
+  ],
+  "finalOutcome": "active",
+  "metadata": {
+    "sourceDeals": [
+      "patoma"
+    ],
+    "transcriptCount": 1,
+    "artifactCount": 5,
+    "dateRange": {
+      "start": "2026-01-15",
+      "end": "2026-01-24"
+    }
+  }
+}

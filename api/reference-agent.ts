@@ -13,6 +13,17 @@ import { generateText } from "ai";
 import { createOpenAI } from "@ai-sdk/openai";
 import { BENCHMARK_MODELS, type ModelConfig } from "../scripts/benchmark-models";
 import type { AgentRequest, AgentResponse } from "../src/types/benchmark";
+import type {
+  V2AgentRequest,
+  V2AgentResponse,
+  Artifact,
+  TranscriptArtifact,
+  EmailArtifact,
+  CrmSnapshotArtifact,
+  DocumentArtifact,
+  SlackThreadArtifact,
+  CalendarEventArtifact,
+} from "../src/types/benchmark-v2";
 
 export interface ReferenceAgentDeps {
   generateText: typeof generateText;
@@ -141,12 +152,206 @@ function buildDealContextPrompt(request: AgentRequest): string {
 Analyze this deal situation and provide your assessment as JSON.`;
 }
 
+// ---------------------------------------------------------------------------
+// V2 Reference Agent
+// ---------------------------------------------------------------------------
+
+const V2_SALES_AGENT_SYSTEM_PROMPT = `${SALES_AGENT_SYSTEM_PROMPT}
+
+You are analyzing real deal artifacts — transcripts, emails, CRM data, documents, etc.
+Synthesize information across all provided artifacts to form your analysis.
+Reference specific artifacts and evidence when identifying risks and recommending actions.
+
+IMPORTANT: Return your analysis as JSON in this exact format:
+{
+  "reasoning": "2-3 sentences explaining your analytical process and key observations",
+  "answer": "Your complete analysis — synthesizing insights across all artifacts",
+  "risks": [
+    {"description": "specific risk with evidence from artifacts", "severity": "high|medium|low"}
+  ],
+  "nextSteps": [
+    {"action": "specific action to take", "priority": 1, "rationale": "why this matters based on evidence"}
+  ],
+  "confidence": 0.0-1.0,
+  "artifactRequests": [],
+  "isComplete": true
+}`;
+
+function formatArtifactForPrompt(artifact: Artifact): string {
+  switch (artifact.type) {
+    case "transcript": {
+      const t = artifact as TranscriptArtifact;
+      const turns = t.turns.map((turn) => `[${turn.speaker}] ${turn.text}`).join("\n");
+      return `### Transcript: ${t.title} (${t.date})\nAttendees: ${t.attendees.join(", ")}\n${turns}`;
+    }
+    case "email": {
+      const e = artifact as EmailArtifact;
+      const msgs = e.messages.map(
+        (m) => `From: ${m.from} | To: ${m.to.join(", ")} | ${m.date}\n${m.body}`
+      ).join("\n---\n");
+      return `### Email Thread: ${e.subject}\n${msgs}`;
+    }
+    case "crm_snapshot": {
+      const c = artifact as CrmSnapshotArtifact;
+      const props = c.dealProperties;
+      const contacts = c.contacts.map((ct) => `  - ${ct.name} (${ct.title ?? ct.role ?? "unknown"})`).join("\n");
+      const activity = c.activityLog.map((a) => `  - [${a.date}] ${a.type}: ${a.description}`).join("\n");
+      return `### CRM Snapshot\nStage: ${props.stage} | Amount: ${props.amount ?? "N/A"}\nContacts:\n${contacts}\nActivity Log:\n${activity}`;
+    }
+    case "document": {
+      const d = artifact as DocumentArtifact;
+      return `### Document: ${d.title} (${d.documentType})\n${d.content}`;
+    }
+    case "slack_thread": {
+      const s = artifact as SlackThreadArtifact;
+      const msgs = s.messages.map((m) => `[${m.author}] ${m.text}`).join("\n");
+      return `### Slack: #${s.channel}\n${msgs}`;
+    }
+    case "calendar_event": {
+      const cal = artifact as CalendarEventArtifact;
+      return `### Calendar: ${cal.title} (${cal.date}, ${cal.duration}min)\nAttendees: ${cal.attendees.join(", ")}\n${cal.description ?? ""}`;
+    }
+    default:
+      return `### Artifact\n[Unknown type]`;
+  }
+}
+
+function buildV2Prompt(request: V2AgentRequest): string {
+  const parts: string[] = [
+    `## Deal: ${request.dealSnapshot.company}`,
+    `**Stage:** ${request.dealSnapshot.stage}`,
+    request.dealSnapshot.amount ? `**Deal Size:** ${request.dealSnapshot.amount}` : "",
+    `**Days Since First Contact:** ${request.dealSnapshot.daysSinceFirstContact}`,
+    "",
+  ];
+
+  if (request.stakeholders.length > 0) {
+    parts.push("### Stakeholders:");
+    for (const s of request.stakeholders) {
+      parts.push(`- **${s.name}** (${s.role}${s.title ? `, ${s.title}` : ""}) — ${s.sentiment} sentiment${s.notes ? `: ${s.notes}` : ""}`);
+    }
+    parts.push("");
+  }
+
+  if (request.meddpicc) {
+    const m = request.meddpicc;
+    parts.push("### MEDDPICC Status:");
+    if (m.metrics) parts.push(`- **Metrics:** ${m.metrics.status} — ${m.metrics.notes}`);
+    if (m.economicBuyer) parts.push(`- **Economic Buyer:** ${m.economicBuyer.status} — ${m.economicBuyer.notes}`);
+    if (m.decisionCriteria) parts.push(`- **Decision Criteria:** ${m.decisionCriteria.status} — ${m.decisionCriteria.notes}`);
+    if (m.decisionProcess) parts.push(`- **Decision Process:** ${m.decisionProcess.status} — ${m.decisionProcess.notes}`);
+    if (m.paperProcess) parts.push(`- **Paper Process:** ${m.paperProcess.status} — ${m.paperProcess.notes}`);
+    if (m.pain) parts.push(`- **Pain:** ${m.pain.status} — ${m.pain.notes}`);
+    if (m.champion) parts.push(`- **Champion:** ${m.champion.status} — ${m.champion.notes}`);
+    if (m.competition) parts.push(`- **Competition:** ${m.competition.status} — ${m.competition.notes}`);
+    parts.push("");
+  }
+
+  parts.push("### Artifacts:");
+  for (const artifact of request.artifacts) {
+    parts.push(formatArtifactForPrompt(artifact));
+    parts.push("");
+  }
+
+  parts.push("---");
+  parts.push(`**Task (Turn ${request.turnNumber}/${request.maxTurns}):** ${request.prompt}`);
+  parts.push("");
+  parts.push("Analyze this deal situation using all provided artifacts and respond as JSON.");
+
+  return parts.filter((p) => p !== undefined).join("\n");
+}
+
+async function handleV2ReferenceAgent(
+  body: V2AgentRequest,
+  model: ModelConfig,
+  deps: ReferenceAgentDeps
+): Promise<Response> {
+  const prompt = buildV2Prompt(body);
+
+  try {
+    const result = await deps.generateText({
+      model: deps.openrouter(model.openrouterId),
+      system: V2_SALES_AGENT_SYSTEM_PROMPT,
+      prompt,
+    });
+
+    const jsonMatch = result.text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      throw new Error("No JSON found in model response");
+    }
+
+    const parsed = JSON.parse(jsonMatch[0]);
+
+    const response: V2AgentResponse = {
+      version: 2,
+      reasoning: String(parsed.reasoning || "No reasoning provided"),
+      answer: typeof parsed.answer === "object" && parsed.answer !== null
+        ? JSON.stringify(parsed.answer, null, 2)
+        : String(parsed.answer || parsed.reasoning || "No answer provided"),
+      artifactRequests: [],
+      isComplete: true,
+      risks: (parsed.risks || []).map((r: Record<string, unknown>) => ({
+        description: String(r.description || "Unknown risk"),
+        severity: ["high", "medium", "low"].includes(r.severity as string)
+          ? (r.severity as "high" | "medium" | "low")
+          : "medium",
+      })),
+      nextSteps: (parsed.nextSteps || parsed.next_steps || []).map(
+        (s: Record<string, unknown>, idx: number) => ({
+          action: String(s.action || "No action specified"),
+          priority: typeof s.priority === "number" ? s.priority : idx + 1,
+          rationale: s.rationale as string | undefined,
+        })
+      ),
+      confidence:
+        typeof parsed.confidence === "number"
+          ? Math.min(1, Math.max(0, parsed.confidence))
+          : 0.5,
+    };
+
+    return Response.json({
+      model: model.id,
+      model_name: model.name,
+      ...response,
+    });
+  } catch (error) {
+    console.error(`V2 reference agent error (${model.name}):`, error);
+
+    return Response.json(
+      {
+        model: model.id,
+        model_name: model.name,
+        version: 2,
+        reasoning: `Error: ${error instanceof Error ? error.message : "Unknown error"}`,
+        answer: "Unable to analyze deal - error in processing",
+        artifactRequests: [],
+        isComplete: true,
+        risks: [{ description: "Unable to analyze deal - error in processing", severity: "high" }],
+        nextSteps: [{ action: "Review deal context and try again", priority: 1 }],
+        confidence: 0,
+      },
+      { status: 500 }
+    );
+  }
+}
+
 interface ReferenceAgentBody {
+  version?: number;
   checkpoint_id?: string;
   checkpointId?: string;
   deal_context?: Record<string, unknown>;
   dealContext?: Record<string, unknown>;
   question?: string;
+  // V2 fields
+  taskId?: string;
+  taskType?: string;
+  prompt?: string;
+  artifacts?: Artifact[];
+  dealSnapshot?: V2AgentRequest["dealSnapshot"];
+  stakeholders?: V2AgentRequest["stakeholders"];
+  meddpicc?: V2AgentRequest["meddpicc"];
+  turnNumber?: number;
+  maxTurns?: number;
 }
 
 /**
@@ -187,6 +392,11 @@ export async function handleReferenceAgent(req: Request, deps: ReferenceAgentDep
 
   try {
     const body = (await req.json()) as ReferenceAgentBody;
+
+    // Route V2 requests to the V2 handler
+    if (body.version === 2) {
+      return handleV2ReferenceAgent(body as unknown as V2AgentRequest, model, deps);
+    }
 
     // Validate request
     if (!body.checkpoint_id && !body.checkpointId) {

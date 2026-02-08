@@ -1,10 +1,10 @@
 {
-  "id": "cool-rooms",
+  "id": "chillspace-tech",
   "name": "ChillSpace Tech",
   "checkpoints": [
     {
-      "id": "cool-rooms_cp_001",
-      "dealId": "cool-rooms",
+      "id": "chillspace-tech_cp_001",
+      "dealId": "chillspace-tech",
       "timestamp": "2026-01-19",
       "context": {
         "company": "ChillSpace Tech",
@@ -105,8 +105,8 @@
       }
     },
     {
-      "id": "cool-rooms_cp_002",
-      "dealId": "cool-rooms",
+      "id": "chillspace-tech_cp_002",
+      "dealId": "chillspace-tech",
       "timestamp": "2026-01-20",
       "context": {
         "company": "ChillSpace Tech",
@@ -208,8 +208,8 @@
       }
     },
     {
-      "id": "cool-rooms_cp_003",
-      "dealId": "cool-rooms",
+      "id": "chillspace-tech_cp_003",
+      "dealId": "chillspace-tech",
       "timestamp": "2026-02-09",
       "context": {
         "company": "ChillSpace Tech",
@@ -311,8 +311,8 @@
       }
     },
     {
-      "id": "cool-rooms_cp_004",
-      "dealId": "cool-rooms",
+      "id": "chillspace-tech_cp_004",
+      "dealId": "chillspace-tech",
       "timestamp": "2026-02-24",
       "context": {
         "company": "ChillSpace Tech",
