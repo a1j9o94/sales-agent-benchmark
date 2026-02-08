@@ -69,6 +69,31 @@ function ScoreBar({ percentage }: { percentage: number }) {
   );
 }
 
+function parseFeedbackByJudge(feedback: string, judgeModel: string): { judge: string; text: string }[] {
+  // Check if feedback contains multiple judge sections like "[claude-4.5-opus] ... | [gpt-5.2] ..."
+  const judgePattern = /\[([^\]]+)\]\s*/g;
+  const matches = [...feedback.matchAll(judgePattern)];
+
+  if (matches.length <= 1) {
+    // Single judge or no brackets - return as-is
+    return [{ judge: judgeModel || "Judge", text: feedback }];
+  }
+
+  const sections: { judge: string; text: string }[] = [];
+  for (let i = 0; i < matches.length; i++) {
+    const match = matches[i]!;
+    const judgeName = match[1]!;
+    const startIdx = match.index! + match[0].length;
+    const endIdx = i < matches.length - 1 ? matches[i + 1]!.index! : feedback.length;
+    let text = feedback.substring(startIdx, endIdx).trim();
+    // Remove trailing pipe separator
+    if (text.endsWith("|")) text = text.slice(0, -1).trim();
+    sections.push({ judge: judgeName, text });
+  }
+
+  return sections;
+}
+
 function JudgeDetail({ eval_ }: { eval_: V2TaskEvaluation }) {
   const total = evalV2Total(eval_);
   const totalPct = Math.round((total / 40) * 100);
@@ -77,6 +102,12 @@ function JudgeDetail({ eval_ }: { eval_: V2TaskEvaluation }) {
   const scoredDimensions = Object.entries(eval_.scores).filter(
     ([_, v]) => v !== undefined && v !== null
   );
+
+  // Parse feedback into per-judge sections
+  const feedbackSections = eval_.feedback
+    ? parseFeedbackByJudge(eval_.feedback, eval_.judgeModel || "Judge")
+    : [];
+  const [activeFeedbackJudge, setActiveFeedbackJudge] = useState(0);
 
   return (
     <div className="space-y-3">
@@ -105,13 +136,36 @@ function JudgeDetail({ eval_ }: { eval_: V2TaskEvaluation }) {
         <span className={`font-bold ${scoreColor(totalPct)}`}>{total.toFixed(1)}/40</span>
       </div>
 
-      {/* Feedback */}
-      {eval_.feedback && (
+      {/* Feedback - with per-judge tabs if multi-judge */}
+      {feedbackSections.length > 1 ? (
+        <div className="bg-navy-900/40 rounded-lg overflow-hidden">
+          <div className="flex gap-1 px-3 pt-3">
+            {feedbackSections.map((section, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveFeedbackJudge(i)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                  activeFeedbackJudge === i
+                    ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
+                    : "bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10"
+                }`}
+              >
+                {getJudgeShortName(section.judge)}
+              </button>
+            ))}
+          </div>
+          <div className="p-3">
+            <p className="text-xs text-slate-300 leading-relaxed whitespace-pre-wrap">
+              {feedbackSections[activeFeedbackJudge]?.text}
+            </p>
+          </div>
+        </div>
+      ) : feedbackSections.length === 1 ? (
         <div className="bg-navy-900/40 rounded-lg p-3">
           <div className="text-xs font-medium text-slate-400 mb-1">Feedback</div>
-          <p className="text-xs text-slate-300 leading-relaxed">{eval_.feedback}</p>
+          <p className="text-xs text-slate-300 leading-relaxed whitespace-pre-wrap">{feedbackSections[0]!.text}</p>
         </div>
-      )}
+      ) : null}
 
       {/* Turns & artifacts info */}
       <div className="flex gap-4 text-xs text-slate-500">
@@ -220,7 +274,7 @@ export function V2ResultsPage() {
           <div className="bg-navy-900/40 rounded-2xl border border-white/5 p-8">
             <div className="flex items-center justify-center gap-3">
               <div className="animate-spin w-5 h-5 border-2 border-cyan-500 border-t-transparent rounded-full" />
-              <span className="text-slate-400">Loading V2 results...</span>
+              <span className="text-slate-400">Loading results...</span>
             </div>
           </div>
         </div>
@@ -237,15 +291,15 @@ export function V2ResultsPage() {
             <p className="text-slate-400 text-sm">{error || "Results not found"}</p>
           </div>
           <a
-            href="/v2/benchmark"
+            href="/benchmark?tab=artifact-based"
             onClick={(e) => {
               e.preventDefault();
-              window.history.pushState({}, "", "/v2/benchmark");
+              window.history.pushState({}, "", "/benchmark?tab=artifact-based");
               window.dispatchEvent(new PopStateEvent("popstate"));
             }}
             className="inline-flex items-center gap-2 mt-4 text-sm text-cyan-400 hover:text-cyan-300"
           >
-            Back to V2 Leaderboard
+            Back to Leaderboard
           </a>
         </div>
       </div>
@@ -262,10 +316,10 @@ export function V2ResultsPage() {
       <div className="max-w-4xl mx-auto px-6">
         {/* Back link */}
         <a
-          href="/v2/benchmark"
+          href="/benchmark?tab=artifact-based"
           onClick={(e) => {
             e.preventDefault();
-            window.history.pushState({}, "", "/v2/benchmark");
+            window.history.pushState({}, "", "/benchmark?tab=artifact-based");
             window.dispatchEvent(new PopStateEvent("popstate"));
           }}
           className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-white transition-colors mb-6"
@@ -273,14 +327,13 @@ export function V2ResultsPage() {
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to V2 Leaderboard
+          Back to Leaderboard
         </a>
 
         {/* Header */}
         <div className="mb-8">
           <div className="inline-flex items-center gap-2 mb-2">
-            <span className="data-label text-cyan-400">V2 Benchmark Results</span>
-            <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/20 text-cyan-400 leading-none">V2</span>
+            <span className="data-label text-cyan-400">Artifact-Based Benchmark Results</span>
           </div>
           <h1 className="text-3xl font-bold mb-2">{run.agentName || run.agentId}</h1>
           <p className="text-sm text-slate-500">

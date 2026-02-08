@@ -1,23 +1,31 @@
 import { useState, useEffect } from "react";
-import { AgentRegistration } from "@/components/AgentRegistration";
-import { Leaderboard } from "@/components/Leaderboard";
 import { BenchmarkProgressPage } from "@/components/BenchmarkProgressPage";
 import { ResultsPage } from "@/components/ResultsPage";
-import { UnderConstructionPage } from "@/components/v2/UnderConstructionPage";
-import { V2Leaderboard } from "@/components/v2/V2Leaderboard";
+import { UnifiedBenchmarkPage } from "@/components/UnifiedBenchmarkPage";
 import { V2BenchmarkProgressPage } from "@/components/v2/V2BenchmarkProgressPage";
 import { V2ResultsPage } from "@/components/v2/V2ResultsPage";
 import "./index.css";
 
-type Page = "home" | "benchmark" | "docs" | "faq" | "future" | "run" | "results" | "v2" | "v2-benchmark" | "v2-run" | "v2-results";
+type Page = "home" | "benchmark" | "docs" | "faq" | "future" | "run" | "results";
 
 // Simple URL routing helper
 function getPageFromPath(): Page {
   const path = window.location.pathname;
-  if (path === "/v2") return "v2";
-  if (path === "/v2/benchmark") return "v2-benchmark";
-  if (path.startsWith("/v2/run")) return "v2-run";
-  if (path.startsWith("/v2/results")) return "v2-results";
+  // Backward-compatible redirects for old /v2/* URLs
+  if (path === "/v2" || path === "/v2/benchmark") {
+    window.history.replaceState({}, "", "/benchmark?tab=artifact-based");
+    return "benchmark";
+  }
+  if (path.startsWith("/v2/run")) {
+    const search = window.location.search;
+    window.history.replaceState({}, "", `/run${search}${search ? "&" : "?"}type=artifact-based`);
+    return "run";
+  }
+  if (path.startsWith("/v2/results")) {
+    const id = path.split("/").filter(Boolean).pop() || "";
+    window.history.replaceState({}, "", `/results/${id}?type=artifact-based`);
+    return "results";
+  }
   if (path === "/benchmark") return "benchmark";
   if (path === "/docs") return "docs";
   if (path === "/faq") return "faq";
@@ -28,25 +36,10 @@ function getPageFromPath(): Page {
 }
 
 function navigateTo(page: Page) {
-  const pathMap: Partial<Record<Page, string>> = {
-    "v2-benchmark": "/v2/benchmark",
-    "v2-run": "/v2/run",
-    "v2-results": "/v2/results",
-  };
-  const path = page === "home" ? "/" : pathMap[page] ?? `/${page}`;
+  const path = page === "home" ? "/" : `/${page}`;
   window.history.pushState({}, "", path);
   window.dispatchEvent(new PopStateEvent("popstate"));
 }
-
-type BenchmarkResult = {
-  agentId: string;
-  agentEndpoint: string;
-  mode: string;
-  runTimestamp: string;
-  dealResults: any[];
-  aggregateScore: number;
-  maxPossibleScore: number;
-};
 
 // Navigation Component
 function Nav({ activePage, setPage }: { activePage: Page; setPage: (p: Page) => void }) {
@@ -87,22 +80,16 @@ function Nav({ activePage, setPage }: { activePage: Page; setPage: (p: Page) => 
             { key: "docs", label: "Docs" },
             { key: "faq", label: "FAQ" },
             { key: "future", label: "Future" },
-            { key: "v2", label: "V2", badge: "BETA" },
           ].map((item) => (
             <button
               key={item.key}
               onClick={() => setPage(item.key as Page)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors
                 ${activePage === item.key
                   ? "bg-white/10 text-white"
                   : "text-slate-400 hover:text-white hover:bg-white/5"}`}
             >
               {item.label}
-              {item.badge && (
-                <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/20 text-cyan-400 leading-none">
-                  {item.badge}
-                </span>
-              )}
             </button>
           ))}
           <a
@@ -128,20 +115,14 @@ function Nav({ activePage, setPage }: { activePage: Page; setPage: (p: Page) => 
                 { key: "docs", label: "Docs" },
                 { key: "faq", label: "FAQ" },
                 { key: "future", label: "Future" },
-                { key: "v2", label: "V2", badge: "BETA" },
               ].map((item) => (
                 <button
                   key={item.key}
                   onClick={() => { setMobileMenuOpen(false); setPage(item.key as Page); }}
-                  className={`flex items-center gap-2 w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors
+                  className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors
                     ${activePage === item.key ? "bg-white/10 text-white" : "text-slate-400 hover:text-white hover:bg-white/5"}`}
                 >
                   {item.label}
-                  {item.badge && (
-                    <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/20 text-cyan-400 leading-none">
-                      {item.badge}
-                    </span>
-                  )}
                 </button>
               ))}
               <a
@@ -350,83 +331,18 @@ function HomePage({ onGetStarted }: { onGetStarted: () => void }) {
   );
 }
 
-// Benchmark Page
-function BenchmarkPage() {
-  const [showTestAgent, setShowTestAgent] = useState(false);
-  const [registeredAgent, setRegisteredAgent] = useState<{ endpoint: string; apiKey: string } | null>(null);
+// Determine which results page to render based on ?type= query param
+function ResultsRouter() {
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get("type");
+  return type === "artifact-based" ? <V2ResultsPage /> : <ResultsPage />;
+}
 
-  return (
-    <div className="pt-24 pb-16">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="data-label text-cyan-400 mb-4">Sales Agent Benchmark</div>
-          <h1 className="text-4xl font-bold mb-4">Model Leaderboard</h1>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            How do top LLMs perform at sales deal analysis? We test risk identification,
-            next step recommendations, and strategic prioritization across 36 real deal checkpoints.
-          </p>
-        </div>
-
-        {/* Leaderboard - Primary Content */}
-        <div className="mb-12">
-          <Leaderboard />
-        </div>
-
-        {/* Test Your Agent Section */}
-        <div className="border-t border-white/5 pt-12">
-          <button
-            onClick={() => setShowTestAgent(!showTestAgent)}
-            className="w-full flex items-center justify-between p-6 bg-navy-900/40 rounded-2xl border border-white/5 hover:bg-navy-900/60 transition-colors group"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 flex items-center justify-center">
-                <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <div className="text-left">
-                <h3 className="text-lg font-semibold">Test Your Own Agent</h3>
-                <p className="text-sm text-slate-500">Connect your API endpoint and run the benchmark</p>
-              </div>
-            </div>
-            <svg
-              className={`w-6 h-6 text-slate-400 transition-transform ${showTestAgent ? "rotate-180" : ""}`}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-
-          {showTestAgent && (
-            <div className="mt-6 max-w-xl animate-fade-up">
-              <AgentRegistration
-                onAgentRegistered={(agent) =>
-                  setRegisteredAgent({ endpoint: agent.endpoint, apiKey: agent.apiKey || "" })
-                }
-              />
-              {registeredAgent && (
-                <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl">
-                  <div className="flex items-center gap-2 text-emerald-400">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="font-medium">Agent registered!</span>
-                  </div>
-                  <p className="text-sm text-slate-400 mt-1">
-                    Your agent will be included in the next benchmark run.
-                  </p>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+// Determine which run page to render based on ?type= query param
+function RunRouter() {
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get("type");
+  return type === "artifact-based" ? <V2BenchmarkProgressPage /> : <BenchmarkProgressPage />;
 }
 
 // Docs Page
@@ -728,7 +644,7 @@ function FuturePage() {
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="bg-navy-900/40 rounded-xl border border-white/5 p-6">
-              <div className="text-sm text-slate-500 mb-2">v1 (Current)</div>
+              <div className="text-sm text-slate-500 mb-2">Summary Benchmark</div>
               <h3 className="text-lg font-semibold mb-3">36 Expert-Crafted Checkpoints</h3>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li className="flex items-start gap-2">
@@ -747,7 +663,7 @@ function FuturePage() {
             </div>
 
             <div className="bg-gradient-to-br from-cyan-500/10 to-emerald-500/10 rounded-xl border border-cyan-500/20 p-6">
-              <div className="text-sm text-cyan-400 mb-2">v2 (Coming)</div>
+              <div className="text-sm text-cyan-400 mb-2">Artifact-Based Benchmark</div>
               <h3 className="text-lg font-semibold mb-3">10,000+ Real Deal Snapshots</h3>
               <ul className="space-y-2 text-sm text-slate-300">
                 <li className="flex items-start gap-2">
@@ -969,16 +885,12 @@ export function App() {
       <Nav activePage={page} setPage={handleNavigate} />
 
       {page === "home" && <HomePage onGetStarted={() => handleNavigate("benchmark")} />}
-      {page === "benchmark" && <BenchmarkPage />}
+      {page === "benchmark" && <UnifiedBenchmarkPage />}
       {page === "docs" && <DocsPage />}
       {page === "faq" && <FAQPage />}
       {page === "future" && <FuturePage />}
-      {page === "run" && <BenchmarkProgressPage />}
-      {page === "results" && <ResultsPage />}
-      {page === "v2" && <UnderConstructionPage />}
-      {page === "v2-benchmark" && <V2Leaderboard />}
-      {page === "v2-run" && <V2BenchmarkProgressPage />}
-      {page === "v2-results" && <V2ResultsPage />}
+      {page === "run" && <RunRouter />}
+      {page === "results" && <ResultsRouter />}
 
       <Footer />
     </div>

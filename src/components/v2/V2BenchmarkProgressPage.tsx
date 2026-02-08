@@ -193,8 +193,7 @@ export function V2BenchmarkProgressPage() {
         {/* Header */}
         <div className="mb-8">
           <div className="inline-flex items-center gap-2 mb-2">
-            <span className="data-label text-cyan-400">V2 Live Benchmark</span>
-            <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/20 text-cyan-400 leading-none">V2</span>
+            <span className="data-label text-cyan-400">Artifact-Based Benchmark</span>
           </div>
           <h1 className="text-3xl font-bold mb-2">{agentName}</h1>
           <p className="text-sm text-slate-500 font-mono truncate">{endpoint}</p>
@@ -343,10 +342,10 @@ export function V2BenchmarkProgressPage() {
             <div className="flex flex-col sm:flex-row gap-3">
               {complete.runId && (
                 <a
-                  href={`/v2/results/${complete.runId}`}
+                  href={`/results/${complete.runId}?type=artifact-based`}
                   onClick={(e) => {
                     e.preventDefault();
-                    window.history.pushState({}, "", `/v2/results/${complete.runId}`);
+                    window.history.pushState({}, "", `/results/${complete.runId}?type=artifact-based`);
                     window.dispatchEvent(new PopStateEvent("popstate"));
                   }}
                   className="flex-1 px-4 py-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-medium
@@ -356,16 +355,16 @@ export function V2BenchmarkProgressPage() {
                 </a>
               )}
               <a
-                href="/v2/benchmark"
+                href="/benchmark?tab=artifact-based"
                 onClick={(e) => {
                   e.preventDefault();
-                  window.history.pushState({}, "", "/v2/benchmark");
+                  window.history.pushState({}, "", "/benchmark?tab=artifact-based");
                   window.dispatchEvent(new PopStateEvent("popstate"));
                 }}
                 className="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-medium
                   hover:bg-white/10 transition-colors text-center text-sm"
               >
-                Back to V2 Leaderboard
+                Back to Leaderboard
               </a>
             </div>
           </div>

@@ -8,6 +8,7 @@ import {
   taskTypeColor,
   V2_DIMENSION_KEYS,
 } from "./utils";
+import { ScatterPlot } from "@/components/shared/ScatterPlot";
 import type { ScoringDimensionKey } from "@/types/benchmark-v2";
 
 interface V2LeaderboardEntry {
@@ -152,10 +153,10 @@ function EntryDetail({ entry, onClose }: { entry: V2LeaderboardEntry; onClose: (
 
       {/* View Full Results link */}
       <a
-        href={`/v2/results/${encodeURIComponent(entry.agentId)}`}
+        href={`/results/${encodeURIComponent(entry.agentId)}?type=artifact-based`}
         onClick={(e) => {
           e.preventDefault();
-          window.history.pushState({}, "", `/v2/results/${encodeURIComponent(entry.agentId)}`);
+          window.history.pushState({}, "", `/results/${encodeURIComponent(entry.agentId)}?type=artifact-based`);
           window.dispatchEvent(new PopStateEvent("popstate"));
         }}
         className="inline-flex items-center gap-2 mt-4 px-4 py-2.5 bg-cyan-500/10 border border-cyan-500/20 rounded-xl text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 transition-colors"
@@ -235,68 +236,49 @@ export function V2Leaderboard() {
 
   if (isLoading) {
     return (
-      <div className="pt-24 pb-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-navy-900/40 rounded-2xl border border-white/5 p-8">
-            <div className="flex items-center justify-center gap-3">
-              <div className="animate-spin w-5 h-5 border-2 border-cyan-500 border-t-transparent rounded-full" />
-              <span className="text-slate-400">Loading V2 leaderboard...</span>
-            </div>
-          </div>
+      <div className="bg-navy-900/40 rounded-2xl border border-white/5 p-8">
+        <div className="flex items-center justify-center gap-3">
+          <div className="animate-spin w-5 h-5 border-2 border-cyan-500 border-t-transparent rounded-full" />
+          <span className="text-slate-400">Loading leaderboard...</span>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="pt-24 pb-16">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-slate-400 mb-6">
-            <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/20 text-cyan-400 leading-none">
-              V2
-            </span>
-            Real-World Artifact Evaluation
+    <>
+      {entries.length === 0 ? (
+        <div className="bg-navy-900/40 rounded-2xl border border-white/5 p-12 text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-navy-800/50 mb-4">
+            <svg className="w-8 h-8 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
           </div>
-          <h1 className="text-4xl font-bold mb-4">V2 Leaderboard</h1>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            8 scoring dimensions, multi-turn evaluation, real deal artifacts.
+          <h4 className="font-semibold text-lg mb-2">No Results Yet</h4>
+          <p className="text-slate-500 text-sm max-w-sm mx-auto">
+            The artifact-based benchmark is being set up. Once agents are evaluated against real-world artifacts, results will appear here.
           </p>
-        </div>
-
-        {entries.length === 0 ? (
-          <div className="bg-navy-900/40 rounded-2xl border border-white/5 p-12 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-navy-800/50 mb-4">
-              <svg className="w-8 h-8 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-            </div>
-            <h4 className="font-semibold text-lg mb-2">No V2 Results Yet</h4>
-            <p className="text-slate-500 text-sm max-w-sm mx-auto">
-              The V2 benchmark is being set up. Once agents are evaluated against the real-world artifact pipeline, results will appear here.
-            </p>
-            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-cyan-400">
-              <div className="animate-spin w-4 h-4 border-2 border-cyan-500 border-t-transparent rounded-full" />
-              <span>Check back soon</span>
-            </div>
+          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-cyan-400">
+            <div className="animate-spin w-4 h-4 border-2 border-cyan-500 border-t-transparent rounded-full" />
+            <span>Check back soon</span>
           </div>
-        ) : (
-          <div className="bg-navy-900/40 rounded-2xl border border-white/5 overflow-hidden">
-            {/* Header bar */}
-            <div className="p-5 border-b border-white/5">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">V2 Model Rankings</h4>
-                    <p className="text-xs text-slate-500">{entries.length} models, 8 dimensions</p>
-                  </div>
+        </div>
+      ) : (
+        <div className="bg-navy-900/40 rounded-2xl border border-white/5 overflow-hidden">
+          {/* Header bar */}
+          <div className="p-5 border-b border-white/5">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
                 </div>
+                <div>
+                  <h4 className="font-semibold">Model Rankings</h4>
+                  <p className="text-xs text-slate-500">{entries.length} models, 8 dimensions</p>
+                </div>
+              </div>
                 <div className="flex items-center gap-3 w-full sm:w-auto">
                   <button
                     onClick={() => setShowDimensions(!showDimensions)}
@@ -315,6 +297,24 @@ export function V2Leaderboard() {
                 </div>
               </div>
             </div>
+
+            {/* Scatter Plot */}
+            {filteredAndSorted.some((e) => e.avgLatencyMs) && (
+              <div className="hidden sm:block p-5 border-b border-white/5">
+                <ScatterPlot
+                  entries={filteredAndSorted.map(e => ({
+                    id: e.agentId,
+                    name: e.agentName || e.agentId,
+                    percentage: e.percentage,
+                    avgLatencyMs: e.avgLatencyMs ?? null,
+                  }))}
+                  onSelectEntry={(sp) => {
+                    const match = filteredAndSorted.find(e => e.agentId === sp.id);
+                    if (match) setSelectedEntry(match);
+                  }}
+                />
+              </div>
+            )}
 
             {/* Desktop table header */}
             <div className="hidden lg:grid grid-cols-[60px_minmax(150px,2fr)_80px_repeat(8,minmax(60px,1fr))_70px] gap-2 px-6 py-3 bg-navy-800/30 text-xs items-center">
@@ -428,8 +428,7 @@ export function V2Leaderboard() {
             </div>
           </div>
         )}
-      </div>
-    </div>
+    </>
   );
 }
 
