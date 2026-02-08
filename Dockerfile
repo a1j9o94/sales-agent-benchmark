@@ -25,6 +25,7 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/src ./src
 COPY --from=builder /app/api ./api
+COPY --from=builder /app/scripts ./scripts
 COPY --from=builder /app/data ./data
 
 # Fly.io uses port 8080 by default
