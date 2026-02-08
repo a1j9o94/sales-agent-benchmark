@@ -2,7 +2,7 @@
 
 This file contains the current state and pending tasks for the Sales Agent Benchmark project.
 
-## Current State (Jan 31, 2026)
+## Current State (Feb 7, 2026)
 
 ### Database Status
 
@@ -16,75 +16,46 @@ This file contains the current state and pending tasks for the Sales Agent Bench
 | Gemini 3 Flash Preview | 1063/1440 | 74% | 7 |
 | Devstral 2512 | 977/1440 | 68% | 8 |
 
-### Pending Benchmarks (6 models)
+### Pending Benchmarks (7 models)
 
-These models need to be benchmarked. Run with:
+Claude Opus 4.6 has been added to BENCHMARK_MODELS. Run with:
 ```bash
-bun scripts/benchmark-models.ts --parallel=4 --models=grok-4.1-fast,kimi-k2.5,deepseek-v3.2,qwen3-coder-480b,claude-4.5-haiku,gemini-2.5-flash-lite
+bun scripts/benchmark-models.ts --parallel=4 --models=claude-4.6-opus,grok-4.1-fast,kimi-k2.5,deepseek-v3.2,qwen3-coder-480b,claude-4.5-haiku,gemini-2.5-flash-lite
 ```
 
-Note: These models had timeout issues in previous runs. You may want to:
+Note: Some models had timeout issues in previous runs. You may want to:
 - Run them individually with longer timeouts
 - Or accept that some may fail and proceed with the ones that work
 
 ---
 
-## Pending Implementation Plan
+## Recently Completed Features (Feb 7, 2026)
 
-Two independent workstreams to implement:
+### TASK A: Live Benchmark Progress & Results Viewer - DONE
 
-### TASK A: Live Benchmark Progress & Results Viewer
+**Files created:**
+- `api/benchmark-stream.ts` - SSE endpoint for streaming benchmark progress
+- `api/agent-results.ts` - GET endpoint for detailed results
+- `src/components/BenchmarkProgressPage.tsx` - Live progress UI
+- `src/components/ResultsPage.tsx` - Detailed results view
 
-When a user registers their agent, auto-run the full benchmark and show live progress with results streaming in.
+**Files modified:**
+- `src/components/AgentRegistration.tsx` - Redirects to progress page after registration
+- `src/components/Leaderboard.tsx` - "View Full Results" link in selected entry panel
+- `src/App.tsx` - Routes for /run/* and /results/*
+- `src/index.ts` - API routes for stream, results, reference-agent
 
-**Files to create:**
-1. `api/benchmark-stream.ts` - SSE endpoint for streaming benchmark progress
-2. `api/agent-results.ts` - GET endpoint for detailed results
-3. `src/components/BenchmarkProgressPage.tsx` - Live progress UI
-4. `src/components/ResultsPage.tsx` - Detailed results view
+### TASK B: Hosted Reference Agent Implementations - DONE
 
-**Files to modify:**
-- `src/components/AgentRegistration.tsx` - Redirect to progress page after registration
-- `src/components/Leaderboard.tsx` - Add "View Full Results" link
-- `src/App.tsx` - Add routes for /run/:runId and /results/:agentId
-- `src/index.ts` - Add API routes
+**Files created:**
+- `api/reference-agent.ts` - Wraps any OpenRouter model as benchmark API contract
+- `examples/python-flask/app.py` - Example Python implementation
+- `examples/typescript-bun/index.ts` - Example Bun implementation
+- `examples/node-express/index.js` - Example Node.js implementation
 
-**API Specs:**
+### Claude Opus 4.6 Added to Benchmark
 
-`POST /api/benchmark/stream` - SSE stream:
-```typescript
-// Request
-{ "endpoint": "https://my-agent.example.com/api", "agentName": "My Agent" }
-
-// SSE Events
-data: { "type": "checkpoint", "checkpointId": "moxie_cp_001", "score": 32, "maxScore": 40, "feedback": "..." | null, "progress": { "completed": 5, "total": 36 } }
-data: { "type": "complete", "runId": 123, "finalScore": 1114, "maxScore": 1440 }
-```
-
-`GET /api/agent-results/:agentId` - Returns detailed results with judge evaluations (public checkpoints only show feedback).
-
-### TASK B: Hosted Reference Agent Implementations
-
-Host reference agent endpoints that wrap OpenRouter.
-
-**Files to create:**
-1. `api/reference-agent.ts` - Wraps OpenRouter models as our API contract
-2. `examples/python-flask/app.py` - Example Python implementation
-3. `examples/typescript-bun/index.ts` - Example Bun implementation
-4. `examples/node-express/index.js` - Example Node.js implementation
-
-**Files to modify:**
-- `src/index.ts` - Add route for /api/reference-agent/:modelId
-- `src/App.tsx` - Update DocsPage with reference endpoints and examples
-
-**Reference Agent Endpoint:**
-```typescript
-POST /api/reference-agent/gpt-5.2
-POST /api/reference-agent/claude-4.5-sonnet
-POST /api/reference-agent/gemini-3-pro
-
-// Uses same request/response format as user agents
-```
+Added to `scripts/benchmark-models.ts` as `claude-4.6-opus` with OpenRouter ID `anthropic/claude-opus-4-6` in the frontier tier.
 
 ---
 
@@ -94,8 +65,12 @@ POST /api/reference-agent/gemini-3-pro
 - **React app**: `src/App.tsx`
 - **Components**: `src/components/`
 - **Benchmark logic**: `scripts/benchmark-models.ts`
-- **Evaluation**: `src/evaluation.ts`
-- **Database queries**: `src/db.ts`
+- **Evaluation**: `api/evaluate-response.ts`
+- **Database queries**: `api/results.ts`
+- **SSE streaming**: `api/benchmark-stream.ts`
+- **Reference agent**: `api/reference-agent.ts`
+- **Agent results**: `api/agent-results.ts`
+- **Examples**: `examples/`
 - **Deal/checkpoint data**: `data/` directory
 
 ## Environment
@@ -104,18 +79,3 @@ POST /api/reference-agent/gemini-3-pro
 - Database: Neon Postgres via `@vercel/postgres`
 - Deploys to Fly.io with `fly deploy`
 - OpenRouter API for model access
-
-## Verification Steps
-
-After implementing:
-
-**Task A:**
-1. Register agent → auto-redirects to `/run/new?endpoint=...`
-2. Progress page shows checkpoints completing via SSE
-3. Public checkpoints show feedback, private show score only
-4. "View Full Results" link works from leaderboard
-
-**Task B:**
-1. `curl -X POST .../api/reference-agent/gpt-5.2 -d '{...}'` returns valid response
-2. Can run benchmark against reference agent via UI
-3. Example code in `examples/` is runnable

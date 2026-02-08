@@ -670,7 +670,7 @@ export function Leaderboard() {
 
           {/* Score breakdown */}
           {selectedEntry.scores && (
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 gap-4 mb-4">
               {[
                 { label: "Risk ID", value: selectedEntry.scores.riskIdentification, color: "cyan" },
                 { label: "Next Steps", value: selectedEntry.scores.nextStepQuality, color: "emerald" },
@@ -687,6 +687,23 @@ export function Leaderboard() {
               ))}
             </div>
           )}
+
+          {/* View Full Results link */}
+          <a
+            href={`/results/${encodeURIComponent(selectedEntry.agentId)}`}
+            onClick={(e) => {
+              e.preventDefault();
+              window.history.pushState({}, "", `/results/${encodeURIComponent(selectedEntry.agentId)}`);
+              window.dispatchEvent(new PopStateEvent("popstate"));
+            }}
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-cyan-500/10 border border-cyan-500/20 rounded-xl text-cyan-400
+              text-sm font-medium hover:bg-cyan-500/20 transition-colors"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            View Full Results
+          </a>
         </div>
       )}
     </div>

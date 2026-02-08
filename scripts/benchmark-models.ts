@@ -69,6 +69,12 @@ export const BENCHMARK_MODELS = [
     tier: "frontier",
   },
   {
+    id: "claude-4.6-opus",
+    name: "Claude Opus 4.6",
+    openrouterId: "anthropic/claude-opus-4-6",
+    tier: "frontier",
+  },
+  {
     id: "claude-4.5-opus",
     name: "Claude 4.5 Opus",
     openrouterId: "anthropic/claude-4.5-opus-20251124",
@@ -1130,7 +1136,9 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error("Fatal error:", error);
-  process.exit(1);
-});
+if (import.meta.main) {
+  main().catch((error) => {
+    console.error("Fatal error:", error);
+    process.exit(1);
+  });
+}

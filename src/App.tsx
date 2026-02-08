@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { AgentRegistration } from "@/components/AgentRegistration";
 import { Leaderboard } from "@/components/Leaderboard";
+import { BenchmarkProgressPage } from "@/components/BenchmarkProgressPage";
+import { ResultsPage } from "@/components/ResultsPage";
 import "./index.css";
 
-type Page = "home" | "benchmark" | "docs" | "faq" | "future";
+type Page = "home" | "benchmark" | "docs" | "faq" | "future" | "run" | "results";
 
 // Simple URL routing helper
 function getPageFromPath(): Page {
@@ -12,6 +14,8 @@ function getPageFromPath(): Page {
   if (path === "/docs") return "docs";
   if (path === "/faq") return "faq";
   if (path === "/future") return "future";
+  if (path.startsWith("/run")) return "run";
+  if (path.startsWith("/results")) return "results";
   return "home";
 }
 
@@ -445,6 +449,54 @@ function DocsPage() {
             </div>
           </section>
 
+          {/* Reference Agent Endpoints */}
+          <section>
+            <h2 className="text-2xl font-bold mb-6 pb-4 border-b border-white/10">Reference Agent Endpoints</h2>
+
+            <p className="text-slate-400 mb-6">
+              Don't have your own agent yet? Use our hosted reference agents that wrap any benchmarked model via OpenRouter.
+            </p>
+
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-cyan-400">POST /api/reference-agent/:modelId</h3>
+                <p className="text-slate-400 text-sm mb-4">
+                  Uses the same request/response format as your own agent. Replace <code className="text-cyan-400">:modelId</code> with any of the available models.
+                </p>
+                <pre className="bg-navy-900 rounded-xl p-6 overflow-x-auto text-sm">
+                  <code className="text-slate-300">{`# Example: Test with GPT-5.2
+curl -X POST ${typeof window !== 'undefined' ? window.location.origin : ''}/api/reference-agent/gpt-5.2 \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "checkpoint_id": "test_001",
+    "deal_context": {
+      "company": "Acme Corp",
+      "stage": "Discovery",
+      "last_interaction": "Demo call on Jan 15",
+      "pain_points": ["Manual processes"],
+      "stakeholders": [{"name": "Jane", "role": "VP Sales"}],
+      "history": "Initial outreach last week"
+    }
+  }'`}</code>
+                </pre>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-3 text-emerald-400">Available Models</h3>
+                <div className="grid grid-cols-2 gap-2">
+                  {[
+                    "gpt-5.2", "claude-4.6-opus", "claude-4.5-opus", "claude-4.5-sonnet",
+                    "gemini-3-pro", "gemini-3-flash", "devstral-2512",
+                  ].map((id) => (
+                    <div key={id} className="bg-navy-900/50 rounded-lg px-3 py-2 font-mono text-sm text-slate-300">
+                      {id}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Scoring */}
           <section>
             <h2 className="text-2xl font-bold mb-6 pb-4 border-b border-white/10">Scoring</h2>
@@ -847,6 +899,8 @@ export function App() {
       {page === "docs" && <DocsPage />}
       {page === "faq" && <FAQPage />}
       {page === "future" && <FuturePage />}
+      {page === "run" && <BenchmarkProgressPage />}
+      {page === "results" && <ResultsPage />}
 
       <Footer />
     </div>

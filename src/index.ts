@@ -25,6 +25,9 @@ import {
   handleSaveResult,
   handleInitDatabase,
 } from "../api/results";
+import { handleBenchmarkStream } from "../api/benchmark-stream";
+import { handleAgentResults } from "../api/agent-results";
+import { handleReferenceAgent } from "../api/reference-agent";
 
 const SALES_AGENT_CONTEXT = `You are an expert sales analyst and strategist. Your role is to help with:
 
@@ -173,9 +176,24 @@ const server = serve({
       GET: handleDealsEndpoint,
     },
 
+    // SSE streaming benchmark progress
+    "/api/benchmark/stream": {
+      POST: handleBenchmarkStream,
+    },
+
     // Evaluate a single response (for debugging)
     "/api/benchmark/evaluate-response": {
       POST: handleEvaluateResponseEndpoint,
+    },
+
+    // Agent detailed results
+    "/api/agent-results/:id": {
+      GET: handleAgentResults,
+    },
+
+    // Reference agent via OpenRouter (any model)
+    "/api/reference-agent/:modelId": {
+      POST: handleReferenceAgent,
     },
 
     // Results persistence APIs
@@ -252,14 +270,17 @@ const server = serve({
 console.log(`🚀 Server running at ${server.url}`);
 console.log(`
 📋 Benchmark API Endpoints:
-  POST /api/agent           - Reference sales agent (implements benchmark contract)
-  POST /api/register        - Register your agent endpoint
-  GET  /api/register        - List registered agents
-  POST /api/test-agent      - Test an agent endpoint
-  POST /api/benchmark/run   - Run the benchmark
-  GET  /api/benchmark/deals - Get available deals
-  GET  /api/leaderboard     - Get leaderboard rankings
-  GET  /api/runs            - Get all benchmark runs (for scatter plot)
-  POST /api/results         - Save benchmark results
-  POST /api/init-db         - Initialize database tables
+  POST /api/agent                      - Reference sales agent (implements benchmark contract)
+  POST /api/register                   - Register your agent endpoint
+  GET  /api/register                   - List registered agents
+  POST /api/test-agent                 - Test an agent endpoint
+  POST /api/benchmark/run              - Run the benchmark
+  POST /api/benchmark/stream           - Stream benchmark progress (SSE)
+  GET  /api/benchmark/deals            - Get available deals
+  GET  /api/leaderboard                - Get leaderboard rankings
+  GET  /api/runs                       - Get all benchmark runs (for scatter plot)
+  POST /api/results                    - Save benchmark results
+  GET  /api/agent-results/:id          - Get detailed results for a run
+  POST /api/reference-agent/:modelId   - Reference agent via OpenRouter
+  POST /api/init-db                    - Initialize database tables
 `);

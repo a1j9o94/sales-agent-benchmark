@@ -73,6 +73,11 @@ export function AgentRegistration({ onAgentRegistered }: AgentRegistrationProps)
 
       setRegisteredAgent(data.agent);
       onAgentRegistered?.(data.agent);
+
+      // Navigate to the benchmark progress page to start running
+      const progressUrl = `/run/new?endpoint=${encodeURIComponent(data.agent.endpoint)}&name=${encodeURIComponent(data.agent.name || name || "My Agent")}`;
+      window.history.pushState({}, "", progressUrl);
+      window.dispatchEvent(new PopStateEvent("popstate"));
     } catch (e) {
       setError(e instanceof Error ? e.message : "Registration failed");
     } finally {
