@@ -1,7 +1,7 @@
 /**
  * Parse context.md files from deal directories into CrmSnapshotArtifact objects.
  *
- * Reuses parsing patterns from scripts/extract_checkpoints.ts but outputs v2 types.
+ * Reuses parsing patterns from scripts/extract_checkpoints.ts but outputs artifact-based types.
  * Anonymization is NOT applied here — that is a separate transform step.
  */
 
@@ -10,8 +10,8 @@ import type {
   CrmActivityEntry,
   MeddpiccState,
   MeddpiccElement,
-  V2Stakeholder,
-} from "../../../src/types/benchmark-v2";
+  ArtifactStakeholder,
+} from "../../../src/types/benchmark-artifact";
 
 // ---------------------------------------------------------------------------
 // Exported types
@@ -23,7 +23,7 @@ export interface ParsedContext {
   notes: string[];
   activityLog: CrmActivityEntry[];
   meddpicc?: MeddpiccState;
-  stakeholders?: V2Stakeholder[];
+  stakeholders?: ArtifactStakeholder[];
   hypothesis?: {
     whyTheyWillBuy: string[];
     whyTheyMightNot: string[];
@@ -198,11 +198,11 @@ function parseMEDDPICC(content: string): MeddpiccState | undefined {
 }
 
 // ---------------------------------------------------------------------------
-// Stakeholder Map → V2Stakeholder[]
+// Stakeholder Map → ArtifactStakeholder[]
 // ---------------------------------------------------------------------------
 
-function parseStakeholders(content: string): V2Stakeholder[] {
-  const stakeholders: V2Stakeholder[] = [];
+function parseStakeholders(content: string): ArtifactStakeholder[] {
+  const stakeholders: ArtifactStakeholder[] = [];
   const mapSection = extractSection(content, "Stakeholder Map");
   if (!mapSection) return stakeholders;
 
@@ -256,7 +256,7 @@ function parseStakeholders(content: string): V2Stakeholder[] {
   return stakeholders;
 }
 
-function inferSentiment(text: string): V2Stakeholder["sentiment"] {
+function inferSentiment(text: string): ArtifactStakeholder["sentiment"] {
   const lower = text.toLowerCase();
   if (
     lower.includes("positive") ||
@@ -317,7 +317,7 @@ function inferRole(title: string, notes: string): string {
 // ---------------------------------------------------------------------------
 
 function extractContacts(
-  stakeholders: V2Stakeholder[],
+  stakeholders: ArtifactStakeholder[],
 ): CrmSnapshotArtifact["contacts"] {
   return stakeholders.map((s) => ({
     name: s.name,

@@ -26,11 +26,11 @@ import {
   handleInitDatabase,
 } from "../api/results";
 import { handleBenchmarkStream } from "../api/benchmark-stream";
-import { handleBenchmarkStreamV2, handleV2DealsEndpoint } from "../api/benchmark-stream-v2";
+import { handleBenchmarkStreamArtifact, handleArtifactDealsEndpoint } from "../api/benchmark-stream-artifact";
 import { handleAgentResults, handleReferenceAgentResults } from "../api/agent-results";
 import { handleReferenceAgent } from "../api/reference-agent";
-import { handleGetV2Leaderboard, handleGetV2RunDetails } from "../api/results";
-import { handleEvaluateV2Endpoint } from "../api/evaluate-response-v2";
+import { handleGetArtifactLeaderboard, handleGetArtifactRunDetails } from "../api/results";
+import { handleEvaluateArtifactEndpoint } from "../api/evaluate-response-artifact";
 
 const SALES_AGENT_CONTEXT = `You are an expert sales analyst and strategist. Your role is to help with:
 
@@ -221,28 +221,28 @@ const server = serve({
       POST: (req) => handleInitDatabase(req),
     },
 
-    // V2 API routes
-    "/api/v2/benchmark/stream": {
-      POST: (req) => handleBenchmarkStreamV2(req),
+    // Artifact-Based API routes
+    "/api/artifact/benchmark/stream": {
+      POST: (req) => handleBenchmarkStreamArtifact(req),
     },
 
-    "/api/v2/benchmark/deals": {
-      GET: (req) => handleV2DealsEndpoint(req),
+    "/api/artifact/benchmark/deals": {
+      GET: (req) => handleArtifactDealsEndpoint(req),
     },
 
-    "/api/v2/benchmark/evaluate": {
-      POST: (req) => handleEvaluateV2Endpoint(req),
+    "/api/artifact/benchmark/evaluate": {
+      POST: (req) => handleEvaluateArtifactEndpoint(req),
     },
 
-    "/api/v2/leaderboard": {
-      GET: (req) => handleGetV2Leaderboard(req),
+    "/api/artifact/leaderboard": {
+      GET: (req) => handleGetArtifactLeaderboard(req),
     },
 
-    "/api/v2/agent-results/:id": {
-      GET: (req) => handleGetV2RunDetails(req),
+    "/api/artifact/agent-results/:id": {
+      GET: (req) => handleGetArtifactRunDetails(req),
     },
 
-    "/api/v2/reference-agent/:modelId": {
+    "/api/artifact/reference-agent/:modelId": {
       POST: (req) => handleReferenceAgent(req),
     },
 
@@ -316,11 +316,11 @@ Benchmark API Endpoints:
   POST /api/reference-agent/:modelId     - Reference agent via OpenRouter
   POST /api/init-db                      - Initialize database tables
 
-  V2:
-  POST /api/v2/benchmark/stream          - Stream V2 benchmark progress (SSE)
-  GET  /api/v2/benchmark/deals           - Get available V2 deals
-  POST /api/v2/benchmark/evaluate        - Evaluate a V2 task
-  GET  /api/v2/leaderboard               - Get V2 leaderboard rankings
-  GET  /api/v2/agent-results/:id         - Get V2 run details
-  POST /api/v2/reference-agent/:modelId  - V2 reference agent via OpenRouter
+  Artifact-Based:
+  POST /api/artifact/benchmark/stream          - Stream artifact-based benchmark progress (SSE)
+  GET  /api/artifact/benchmark/deals           - Get available artifact-based deals
+  POST /api/artifact/benchmark/evaluate        - Evaluate an artifact-based task
+  GET  /api/artifact/leaderboard               - Get artifact-based leaderboard rankings
+  GET  /api/artifact/agent-results/:id         - Get artifact-based run details
+  POST /api/artifact/reference-agent/:modelId  - Artifact-based reference agent via OpenRouter
 `);

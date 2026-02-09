@@ -6,7 +6,7 @@
  * relate to the same events, stakeholders, or time periods.
  */
 
-import type { Artifact, ArtifactReference } from "../../../src/types/benchmark-v2";
+import type { Artifact, ArtifactReference } from "../../../src/types/benchmark-artifact";
 
 /** How close in time two artifacts must be to be linked (days) */
 const DEFAULT_DATE_WINDOW_DAYS = 3;

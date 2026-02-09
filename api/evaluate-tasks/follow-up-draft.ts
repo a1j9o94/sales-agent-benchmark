@@ -1,17 +1,17 @@
 /**
- * Follow-Up Draft Judge — V2 Evaluation Task
+ * Follow-Up Draft Judge — Artifact-Based Evaluation Task
  *
  * Evaluates agent responses to follow-up drafting tasks: communication quality,
  * next step clarity, and outcome alignment.
  */
 
 import type {
-  V2ScoringDimensions,
-  V2GroundTruth,
+  ArtifactScoringDimensions,
+  ArtifactGroundTruth,
   Artifact,
-  V2AgentResponse,
+  ArtifactAgentResponse,
   ScoringDimensionKey,
-} from "../../src/types/benchmark-v2";
+} from "../../src/types/benchmark-artifact";
 
 export const FOLLOW_UP_DRAFT_DIMENSIONS: ScoringDimensionKey[] = [
   "communicationQuality",
@@ -66,14 +66,14 @@ Return ONLY valid JSON:
 }`;
 
 /**
- * Parse a judge's JSON response into V2ScoringDimensions for follow-up draft.
+ * Parse a judge's JSON response into ArtifactScoringDimensions for follow-up draft.
  * Clamps all scores to 0-10 range.
  */
 export function scoreFollowUpDraft(
-  response: V2AgentResponse,
-  groundTruth: V2GroundTruth,
+  response: ArtifactAgentResponse,
+  groundTruth: ArtifactGroundTruth,
   artifacts: Artifact[]
-): Partial<V2ScoringDimensions> {
+): Partial<ArtifactScoringDimensions> {
   return {
     communicationQuality: 0,
     nextStepQuality: 0,
@@ -82,11 +82,11 @@ export function scoreFollowUpDraft(
 }
 
 /**
- * Parse raw judge JSON output into clamped V2ScoringDimensions.
+ * Parse raw judge JSON output into clamped ArtifactScoringDimensions.
  */
 export function parseFollowUpDraftScores(
   judgeOutput: Record<string, unknown>
-): Partial<V2ScoringDimensions> {
+): Partial<ArtifactScoringDimensions> {
   const scores = judgeOutput.scores as Record<string, number> | undefined;
   const clamp = (v: number) => Math.min(10, Math.max(0, v || 0));
 

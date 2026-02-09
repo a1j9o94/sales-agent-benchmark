@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { BenchmarkProgressPage } from "@/components/BenchmarkProgressPage";
 import { ResultsPage } from "@/components/ResultsPage";
 import { UnifiedBenchmarkPage } from "@/components/UnifiedBenchmarkPage";
-import { V2BenchmarkProgressPage } from "@/components/v2/V2BenchmarkProgressPage";
-import { V2ResultsPage } from "@/components/v2/V2ResultsPage";
+import { ArtifactBenchmarkProgressPage } from "@/components/artifact/ArtifactBenchmarkProgressPage";
+import { ArtifactResultsPage } from "@/components/artifact/ArtifactResultsPage";
 import "./index.css";
 
 type Page = "home" | "benchmark" | "docs" | "faq" | "future" | "run" | "results";
@@ -11,21 +11,6 @@ type Page = "home" | "benchmark" | "docs" | "faq" | "future" | "run" | "results"
 // Simple URL routing helper
 function getPageFromPath(): Page {
   const path = window.location.pathname;
-  // Backward-compatible redirects for old /v2/* URLs
-  if (path === "/v2" || path === "/v2/benchmark") {
-    window.history.replaceState({}, "", "/benchmark?tab=artifact-based");
-    return "benchmark";
-  }
-  if (path.startsWith("/v2/run")) {
-    const search = window.location.search;
-    window.history.replaceState({}, "", `/run${search}${search ? "&" : "?"}type=artifact-based`);
-    return "run";
-  }
-  if (path.startsWith("/v2/results")) {
-    const id = path.split("/").filter(Boolean).pop() || "";
-    window.history.replaceState({}, "", `/results/${id}?type=artifact-based`);
-    return "results";
-  }
   if (path === "/benchmark") return "benchmark";
   if (path === "/docs") return "docs";
   if (path === "/faq") return "faq";
@@ -335,14 +320,14 @@ function HomePage({ onGetStarted }: { onGetStarted: () => void }) {
 function ResultsRouter() {
   const params = new URLSearchParams(window.location.search);
   const type = params.get("type");
-  return type === "artifact-based" ? <V2ResultsPage /> : <ResultsPage />;
+  return type === "artifact-based" ? <ArtifactResultsPage /> : <ResultsPage />;
 }
 
 // Determine which run page to render based on ?type= query param
 function RunRouter() {
   const params = new URLSearchParams(window.location.search);
   const type = params.get("type");
-  return type === "artifact-based" ? <V2BenchmarkProgressPage /> : <BenchmarkProgressPage />;
+  return type === "artifact-based" ? <ArtifactBenchmarkProgressPage /> : <BenchmarkProgressPage />;
 }
 
 // Docs Page
@@ -633,7 +618,7 @@ function FuturePage() {
           <div className="data-label text-emerald-400 mb-4">What's Next</div>
           <h1 className="text-4xl font-bold mb-4">The Future of Sales AI Evaluation</h1>
           <p className="text-slate-400 max-w-2xl mx-auto">
-            We're building v2 with real call transcripts, email threads, and verified outcomes.
+            We're building the artifact-based benchmark with real call transcripts, email threads, and verified outcomes.
             Help us create the definitive benchmark for sales AI.
           </p>
         </div>
@@ -683,7 +668,7 @@ function FuturePage() {
           </div>
 
           <p className="text-slate-400 leading-relaxed">
-            The key insight: instead of asking "would an expert agree?", v2 asks "did this approach
+            The key insight: instead of asking "would an expert agree?", the artifact-based benchmark asks "did this approach
             actually work?" Ground truth comes from real outcomes, not opinions.
           </p>
         </section>
@@ -803,7 +788,7 @@ function FuturePage() {
             <div className="bg-navy-900/50 rounded-xl p-4">
               <div className="font-medium mb-2 text-cyan-400">What You Get</div>
               <ul className="space-y-1 text-sm text-slate-400">
-                <li>• Early access to v2 benchmark</li>
+                <li>• Early access to the artifact-based benchmark</li>
                 <li>• Custom evaluation runs</li>
                 <li>• Recognition as founding partner</li>
                 <li>• Input on benchmark design</li>
@@ -813,14 +798,14 @@ function FuturePage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:obletonadrian@gmail.com?subject=Sales%20Agent%20Benchmark%20v2%20-%20Design%20Partner"
+              href="mailto:obletonadrian@gmail.com?subject=Sales%20Agent%20Benchmark%20-%20Design%20Partner"
               className="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold
                 hover:shadow-lg hover:shadow-cyan-500/25 transition-all hover:scale-105"
             >
               Become a Design Partner
             </a>
             <a
-              href="https://github.com/a1j9o94/sales-agent-benchmark/blob/main/docs/v2-proposal.md"
+              href="https://github.com/a1j9o94/sales-agent-benchmark/blob/main/docs/artifact-based-proposal.md"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-medium

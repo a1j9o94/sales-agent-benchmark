@@ -1,5 +1,5 @@
 /**
- * Gmail data ingestion module for the v2 pipeline.
+ * Gmail data ingestion module for the artifact-based pipeline.
  *
  * Exports pure transform functions that accept raw Gmail thread data
  * (fetched via Zapier MCP) and return EmailArtifact objects.
@@ -11,7 +11,7 @@
 import type {
   EmailArtifact,
   EmailMessage,
-} from "../../../src/types/benchmark-v2";
+} from "../../../src/types/benchmark-artifact";
 
 // ---------------------------------------------------------------------------
 // Raw data shapes (what Zapier MCP returns)
@@ -54,7 +54,7 @@ const MAX_THREADS_PER_DEAL = 10;
 /**
  * Transform pre-grouped Gmail threads into EmailArtifact objects.
  *
- * @param dealId - The v2 deal codename ID (e.g. "velocity-systems")
+ * @param dealId - The deal codename ID (e.g. "velocity-systems")
  * @param rawThreads - Pre-grouped thread objects
  */
 export function transformGmailThreads(
@@ -108,7 +108,7 @@ export function transformGmailThreads(
  *
  * Groups messages by thread_id if available, otherwise by subject line.
  *
- * @param dealId - The v2 deal codename ID
+ * @param dealId - The deal codename ID
  * @param rawMessages - Flat array of raw Gmail messages from Zapier
  */
 export function transformRawGmailMessages(

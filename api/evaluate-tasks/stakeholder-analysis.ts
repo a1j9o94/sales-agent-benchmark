@@ -1,17 +1,17 @@
 /**
- * Stakeholder Analysis Judge — V2 Evaluation Task
+ * Stakeholder Analysis Judge — Artifact-Based Evaluation Task
  *
  * Evaluates agent responses to stakeholder analysis tasks: stakeholder mapping,
  * deal qualification through stakeholder signals, and information synthesis.
  */
 
 import type {
-  V2ScoringDimensions,
-  V2GroundTruth,
+  ArtifactScoringDimensions,
+  ArtifactGroundTruth,
   Artifact,
-  V2AgentResponse,
+  ArtifactAgentResponse,
   ScoringDimensionKey,
-} from "../../src/types/benchmark-v2";
+} from "../../src/types/benchmark-artifact";
 
 export const STAKEHOLDER_ANALYSIS_DIMENSIONS: ScoringDimensionKey[] = [
   "stakeholderMapping",
@@ -65,14 +65,14 @@ Return ONLY valid JSON:
 }`;
 
 /**
- * Parse a judge's JSON response into V2ScoringDimensions for stakeholder analysis.
+ * Parse a judge's JSON response into ArtifactScoringDimensions for stakeholder analysis.
  * Clamps all scores to 0-10 range.
  */
 export function scoreStakeholderAnalysis(
-  response: V2AgentResponse,
-  groundTruth: V2GroundTruth,
+  response: ArtifactAgentResponse,
+  groundTruth: ArtifactGroundTruth,
   artifacts: Artifact[]
-): Partial<V2ScoringDimensions> {
+): Partial<ArtifactScoringDimensions> {
   return {
     stakeholderMapping: 0,
     dealQualification: 0,
@@ -81,11 +81,11 @@ export function scoreStakeholderAnalysis(
 }
 
 /**
- * Parse raw judge JSON output into clamped V2ScoringDimensions.
+ * Parse raw judge JSON output into clamped ArtifactScoringDimensions.
  */
 export function parseStakeholderAnalysisScores(
   judgeOutput: Record<string, unknown>
-): Partial<V2ScoringDimensions> {
+): Partial<ArtifactScoringDimensions> {
   const scores = judgeOutput.scores as Record<string, number> | undefined;
   const clamp = (v: number) => Math.min(10, Math.max(0, v || 0));
 

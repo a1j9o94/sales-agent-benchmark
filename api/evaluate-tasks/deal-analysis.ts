@@ -1,17 +1,17 @@
 /**
- * Deal Analysis Judge — V2 Evaluation Task
+ * Deal Analysis Judge — Artifact-Based Evaluation Task
  *
  * Evaluates agent responses to deal analysis tasks: risk identification,
  * next step quality, prioritization, outcome alignment, and deal qualification.
  */
 
 import type {
-  V2ScoringDimensions,
-  V2GroundTruth,
+  ArtifactScoringDimensions,
+  ArtifactGroundTruth,
   Artifact,
-  V2AgentResponse,
+  ArtifactAgentResponse,
   ScoringDimensionKey,
-} from "../../src/types/benchmark-v2";
+} from "../../src/types/benchmark-artifact";
 
 export const DEAL_ANALYSIS_DIMENSIONS: ScoringDimensionKey[] = [
   "riskIdentification",
@@ -83,14 +83,14 @@ Return ONLY valid JSON:
 }`;
 
 /**
- * Parse a judge's JSON response into V2ScoringDimensions for deal analysis.
+ * Parse a judge's JSON response into ArtifactScoringDimensions for deal analysis.
  * Clamps all scores to 0-10 range.
  */
 export function scoreDealAnalysis(
-  response: V2AgentResponse,
-  groundTruth: V2GroundTruth,
+  response: ArtifactAgentResponse,
+  groundTruth: ArtifactGroundTruth,
   artifacts: Artifact[]
-): Partial<V2ScoringDimensions> {
+): Partial<ArtifactScoringDimensions> {
   // This function parses pre-computed judge JSON output.
   // The actual LLM call happens in the benchmark runner — this just validates & clamps scores.
   // The response/groundTruth/artifacts params provide context for any heuristic adjustments.
@@ -105,11 +105,11 @@ export function scoreDealAnalysis(
 }
 
 /**
- * Parse raw judge JSON output into clamped V2ScoringDimensions.
+ * Parse raw judge JSON output into clamped ArtifactScoringDimensions.
  */
 export function parseDealAnalysisScores(
   judgeOutput: Record<string, unknown>
-): Partial<V2ScoringDimensions> {
+): Partial<ArtifactScoringDimensions> {
   const scores = judgeOutput.scores as Record<string, number> | undefined;
   const clamp = (v: number) => Math.min(10, Math.max(0, v || 0));
 

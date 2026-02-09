@@ -2,124 +2,68 @@
 
 This file contains the current state and pending tasks for the Sales Agent Benchmark project.
 
-## Current State (Feb 8, 2026)
+## Current State (Feb 9, 2026)
 
 ### What This Project Is
 
-A benchmark for evaluating AI models as sales agents. Currently uses 15 anonymized deals (5 public, 10 private) with LLM-generated checkpoint snapshots. Models are scored on their ability to analyze deal context and recommend next actions.
+A benchmark for evaluating AI models as sales agents. Two evaluation modes:
+- **Summary benchmark**: Uses LLM-generated checkpoint summaries from 15 anonymized deals (5 public, 10 private). Models scored on next-action recommendations.
+- **Artifact-based benchmark**: Uses real deal artifacts (call transcripts, email threads, CRM snapshots, documents). Models scored on 8 dimensions including stakeholder mapping, deal qualification, and information synthesis.
 
-### What's Been Built (v1 - complete)
+### Architecture
 
-- Web UI with leaderboard, live benchmark streaming, results viewer
-- Multi-judge evaluation system (4 judges per checkpoint)
-- Reference agent wrapper (any OpenRouter model can be benchmarked)
-- 15 deals with 36 total checkpoints, all using codename identifiers
-- Database with benchmark results for 6+ models
+- **Summary benchmark** (original): Single-turn evaluation, 4 scoring dimensions, 15 deals / 36 checkpoints
+- **Artifact-based benchmark**: Multi-turn evaluation, 8 scoring dimensions, 14 deals / 65 checkpoints / 148 tasks
+- Unified leaderboard with tab toggle between Summary and Artifact-Based views
+- API routes: `/api/` for summary, `/api/artifact/` for artifact-based
 
-### Database Status
+### Database Schema
 
-**Completed Benchmarks (6 agents saved):**
-| Agent | Score | % | Run ID |
-|-------|-------|---|--------|
-| GPT-5.2 | 1136/1440 | 79% | 6 |
-| Claude 4.5 Opus | 1114/1440 | 77% | 3 |
-| Claude 4.5 Sonnet | 1101/1440 | 76% | 5 |
-| Gemini 3 Pro Preview | 1069/1440 | 74% | 4 |
-| Gemini 3 Flash Preview | 1063/1440 | 74% | 7 |
-| Devstral 2512 | 977/1440 | 68% | 8 |
+Unified tables:
+- `benchmark_runs` — stores both summary and artifact-based runs
+- `agents` — agent registry
+- `judge_evaluations` — per-judge scores
+- `dimension_scores` — 4 summary dimensions + 4 nullable artifact dimensions (stakeholder_mapping, deal_qualification, information_synthesis, communication_quality)
+- `task_evaluations` — artifact-based task-level evaluations
 
----
+### Benchmark Results
 
-## Next Phase: Real-World Evaluation Dataset (v2)
+**Summary benchmark (6+ agents):**
+| Agent | Score | % |
+|-------|-------|---|
+| GPT-5.2 | 1136/1440 | 79% |
+| Claude 4.5 Opus | 1114/1440 | 77% |
+| Claude 4.5 Sonnet | 1101/1440 | 76% |
+| Gemini 3 Pro Preview | 1069/1440 | 74% |
+| Gemini 3 Flash Preview | 1063/1440 | 74% |
+| Devstral 2512 | 977/1440 | 68% |
 
-The current benchmark uses LLM-extracted checkpoint summaries from a single user's deals. The next step is building a larger, more rigorous evaluation using **real deal artifacts** - call transcripts, email threads, CRM logs, meeting notes, etc.
-
-### Why
-
-- Current checkpoints are LLM-summarized, losing nuance and signal
-- Real transcripts test whether models can extract insight from messy, unstructured data
-- Multi-source context (calls + emails + CRM) tests information synthesis
-- Larger dataset = more statistically meaningful model comparisons
-
-### Strategy
-
-- **Open-source public benchmark** - "MMLU for sales." Public leaderboard, open dataset, community adoption
-- **Private evaluation tier** - Paid service for companies implementing sales agents. Uses held-out private problems to avoid contamination. This is the business
-- **Build with own data first** - Use Adrian's deals from sales-workspace as the v2 foundation (same approach as v1). Working examples make it easy to recruit data partners later
-- **Data partners come last** - Once the pipeline exists and produces compelling output, use that to pitch Gong, Chorus, sales orgs, etc. to contribute data
-
-### Key Tasks (in order)
-
-1. **Design the v2 evaluation schema**
-   - What does a v2 checkpoint look like with real artifacts?
-   - Raw inputs: call transcripts, email threads, CRM snapshots, meeting notes
-   - Ground truth: what actually happened next, which risks materialized
-   - Multi-turn evaluation: test agent's ability to ask clarifying questions
-   - Expanded dimensions: risk identification, stakeholder mapping, deal qualification, objection handling
-
-2. **Build the data pipeline** - Using Adrian's deals as source
-   - Ingest real artifacts from sales-workspace (call recordings/transcripts, emails, HubSpot data)
-   - Anonymization across all artifact types (names, companies, amounts, dates)
-   - Cross-referencing between artifacts (same deal, same stakeholders)
-   - Quality bar: each checkpoint should have enough context for a human seller to form an opinion
-
-3. **Expand the evaluation system**
-   - Current: single-turn next-action recommendation, 4-judge scoring
-   - Add: multi-turn dialogue (agent asks questions before recommending)
-   - Add: time-series evaluation (same deal at multiple points)
-   - Add: artifact-specific tasks (summarize this call, draft this follow-up email)
-
-4. **Legal / licensing framework**
-   - Open-source license for public benchmark
-   - Data contribution agreement template for partners
-   - GDPR / privacy framework for real conversation data
-   - Clear separation: public problems (open) vs. private problems (held-out)
-
-5. **Recruit data partners** (after pipeline is proven)
-   - Revenue intelligence platforms (Gong, Chorus, Clari)
-   - CRM providers with research programs
-   - Sales training organizations with recorded call libraries
-   - Academic datasets (if any exist for B2B sales)
-   - Target: 50+ deals, 200+ checkpoints from diverse sources
+**Artifact-based benchmark (13 agents, top 5):**
+| Agent | Score | % |
+|-------|-------|---|
+| Claude Opus 4.6 | — | 38% |
+| GPT-5.2 | — | 37% |
+| Claude 4.5 Opus | — | 35% |
+| Kimi K2.5 | — | 35% |
+| Grok 4.1 Fast | — | 34% |
 
 ---
 
-## Recently Completed (Feb 8, 2026)
+## Roadmap
 
-### Codename Migration
-- All 15 checkpoint files renamed from real company names to codenames
-- All IDs updated (deal IDs, checkpoint IDs, display names)
-- DB migrated: 882 rows in judge_evaluations updated
-- Fixed bugs: "Summit Learning-prep-academy" -> "Summit Learning", "Eastpoint-group" -> "Eastpoint Capital"
-- Code updated: ResultsPage.tsx, run-benchmark.ts, extract_checkpoints.ts
+### Completed
+- Summary benchmark with leaderboard, streaming, multi-judge evaluation
+- Artifact-based benchmark pipeline: 14 deals processed from real artifacts
+- Unified leaderboard with Summary + Artifact-Based tabs
+- Codename migration (real company names → codenames)
+- V2 → Artifact-Based terminology refactor (all "v2" references removed)
 
-### Previous Features (Feb 7, 2026)
+### Next Steps
 
-### TASK A: Live Benchmark Progress & Results Viewer - DONE
-
-**Files created:**
-- `api/benchmark-stream.ts` - SSE endpoint for streaming benchmark progress
-- `api/agent-results.ts` - GET endpoint for detailed results
-- `src/components/BenchmarkProgressPage.tsx` - Live progress UI
-- `src/components/ResultsPage.tsx` - Detailed results view
-
-**Files modified:**
-- `src/components/AgentRegistration.tsx` - Redirects to progress page after registration
-- `src/components/Leaderboard.tsx` - "View Full Results" link in selected entry panel
-- `src/App.tsx` - Routes for /run/* and /results/*
-- `src/index.ts` - API routes for stream, results, reference-agent
-
-### TASK B: Hosted Reference Agent Implementations - DONE
-
-**Files created:**
-- `api/reference-agent.ts` - Wraps any OpenRouter model as benchmark API contract
-- `examples/python-flask/app.py` - Example Python implementation
-- `examples/typescript-bun/index.ts` - Example Bun implementation
-- `examples/node-express/index.js` - Example Node.js implementation
-
-### Claude Opus 4.6 Added to Benchmark
-
-Added to `scripts/benchmark-models.ts` as `claude-4.6-opus` with OpenRouter ID `anthropic/claude-opus-4-6` in the frontier tier.
+1. **Recruit data partners** — More diverse deals from Gong, Chorus, sales orgs
+2. **Legal / licensing** — Open-source license, data contribution agreements, GDPR framework
+3. **External data ingestion** — HubSpot, Gmail, Slack, Calendar via Zapier MCP
+4. **Public launch** — Open-source benchmark ("MMLU for sales") with private held-out problems
 
 ---
 
@@ -127,15 +71,22 @@ Added to `scripts/benchmark-models.ts` as `claude-4.6-opus` with OpenRouter ID `
 
 - **Main server**: `src/index.ts`
 - **React app**: `src/App.tsx`
-- **Components**: `src/components/`
-- **Benchmark logic**: `scripts/benchmark-models.ts`
-- **Evaluation**: `api/evaluate-response.ts`
+- **Components**: `src/components/` (summary in root, artifact-based in `artifact/`)
+- **Unified leaderboard**: `src/components/UnifiedBenchmarkPage.tsx`
+- **Summary benchmark script**: `scripts/benchmark-models.ts`
+- **Artifact-based benchmark script**: `scripts/benchmark-models-artifact.ts`
+- **Artifact pipeline**: `scripts/artifact-pipeline/`
+- **Summary evaluation**: `api/evaluate-response.ts`
+- **Artifact-based evaluation**: `api/evaluate-response-artifact.ts`
+- **Artifact task evaluators**: `api/evaluate-tasks/`
+- **Artifact-based streaming**: `api/benchmark-stream-artifact.ts`
 - **Database queries**: `api/results.ts`
-- **SSE streaming**: `api/benchmark-stream.ts`
+- **Summary SSE streaming**: `api/benchmark-stream.ts`
 - **Reference agent**: `api/reference-agent.ts`
-- **Agent results**: `api/agent-results.ts`
+- **Type definitions**: `src/types/benchmark.ts` (summary), `src/types/benchmark-artifact.ts` (artifact-based)
+- **Deal data**: `data/checkpoints/` (summary), `data/artifact/checkpoints/` (artifact-based)
+- **DB migration**: `scripts/migrate-v2-to-artifact.ts`
 - **Examples**: `examples/`
-- **Deal/checkpoint data**: `data/` directory
 
 ## Environment
 

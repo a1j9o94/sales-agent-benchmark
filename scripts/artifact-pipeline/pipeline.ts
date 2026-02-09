@@ -1,29 +1,29 @@
 #!/usr/bin/env bun
 /**
- * V2 Pipeline Orchestrator
+ * Artifact Pipeline Orchestrator
  *
- * CLI tool to process deals through the v2 pipeline:
+ * CLI tool to process deals through the artifact pipeline:
  * ingest → transform → validate → export
  *
  * Usage:
- *   bun scripts/v2/pipeline.ts                            # Process all deals
- *   bun scripts/v2/pipeline.ts --deals flagship,granola   # Specific deals
- *   bun scripts/v2/pipeline.ts --skip-external            # Skip HubSpot/Gmail/Slack
- *   bun scripts/v2/pipeline.ts --include-external <json>  # Merge external data from JSON file
- *   bun scripts/v2/pipeline.ts --dry-run                  # Validate without writing
+ *   bun scripts/artifact-pipeline/pipeline.ts                            # Process all deals
+ *   bun scripts/artifact-pipeline/pipeline.ts --deals flagship,granola   # Specific deals
+ *   bun scripts/artifact-pipeline/pipeline.ts --skip-external            # Skip HubSpot/Gmail/Slack
+ *   bun scripts/artifact-pipeline/pipeline.ts --include-external <json>  # Merge external data from JSON file
+ *   bun scripts/artifact-pipeline/pipeline.ts --dry-run                  # Validate without writing
  */
 
 import { readdir } from "fs/promises";
 import { join } from "path";
 import type {
-  V2Deal,
+  ArtifactDeal,
   Artifact,
   PipelineConfig,
   PipelineResult,
   PipelineSummary,
   DealClassification,
   DealTier,
-} from "../../src/types/benchmark-v2";
+} from "../../src/types/benchmark-artifact";
 import { ingestTranscripts } from "./ingest/transcripts";
 import { parseContextMd, contextToCrmArtifact } from "./ingest/context";
 import { ingestDocuments } from "./ingest/documents";
@@ -37,10 +37,10 @@ import { anonymizeArtifact } from "./transform/anonymize";
 import { buildCheckpoints, type CheckpointBuilderInput } from "./transform/checkpoint-builder";
 import { sortArtifactsChronologically, getArtifactDate } from "./transform/linker";
 import { validateDeal } from "./validate/quality";
-import { exportAllDeals } from "./export/v2-json";
+import { exportAllDeals } from "./export/artifact-json";
 
 const DEALS_DIR = join(process.env.HOME || "", "sales-workspace", "deals");
-const OUTPUT_DIR = join(process.cwd(), "data", "v2", "checkpoints");
+const OUTPUT_DIR = join(process.cwd(), "data", "artifact", "checkpoints");
 
 // ---------------------------------------------------------------------------
 // External data shape (loaded from JSON file via --include-external)
@@ -133,11 +133,11 @@ async function classifyDeals(dealDirs: string[]): Promise<DealClassification[]> 
 
     let tier: DealTier;
     if (transcriptCount >= 4) {
-      tier = "v2-rich";
+      tier = "artifact-rich";
     } else if (transcriptCount >= 1) {
-      tier = "v2-standard";
+      tier = "artifact-standard";
     } else {
-      tier = "v1-only";
+      tier = "summary-only";
     }
 
     classifications.push({
@@ -159,7 +159,7 @@ async function processDeal(
   dealDir: string,
   config: PipelineConfig,
   externalData?: ExternalDealData,
-): Promise<{ deal: V2Deal | null; result: PipelineResult }> {
+): Promise<{ deal: ArtifactDeal | null; result: PipelineResult }> {
   const dealDirName = dealDir.split("/").pop() || "";
   const dealId = DEAL_ID_MAP[dealDirName] || dealDirName;
   const dealName = DEAL_NAME_MAP[dealDirName] || dealDirName;
@@ -259,7 +259,7 @@ async function processDeal(
   if (!config.skipExternal && externalData?.hubspot?.deal) {
     const crmIdx = allArtifacts.findIndex((a) => a.type === "crm_snapshot");
     if (crmIdx >= 0) {
-      const existingCrm = allArtifacts[crmIdx] as import("../../src/types/benchmark-v2").CrmSnapshotArtifact;
+      const existingCrm = allArtifacts[crmIdx] as import("../../src/types/benchmark-artifact").CrmSnapshotArtifact;
       const hubspotResult = transformHubSpotData(
         dealId,
         externalData.hubspot.deal,
@@ -305,7 +305,7 @@ async function processDeal(
   }
 
   // Determine final outcome
-  let finalOutcome: V2Deal["finalOutcome"] = "active";
+  let finalOutcome: ArtifactDeal["finalOutcome"] = "active";
   if (crmArtifact?.type === "crm_snapshot") {
     const stageLower = stage.toLowerCase();
     if (stageLower.includes("won") || stageLower.includes("closed")) finalOutcome = "won";
@@ -329,7 +329,7 @@ async function processDeal(
   console.log(`    Checkpoints: ${checkpoints.length}`);
   console.log(`    Tasks: ${checkpoints.reduce((s, cp) => s + cp.tasks.length, 0)}`);
 
-  // Build the V2Deal
+  // Build the ArtifactDeal
   const artifactsMap: Record<string, Artifact> = {};
   for (const artifact of processedArtifacts) {
     artifactsMap[artifact.id] = artifact;
@@ -341,7 +341,7 @@ async function processDeal(
     end: sorted.length > 0 ? getArtifactDate(sorted[sorted.length - 1]!) : "",
   };
 
-  const deal: V2Deal = {
+  const deal: ArtifactDeal = {
     id: dealId,
     name: dealName,
     version: 2,
@@ -451,7 +451,7 @@ async function main() {
     console.log(`Loaded external data for ${Object.keys(externalDataMap).length} deals\n`);
   }
 
-  console.log("=== V2 Benchmark Pipeline ===\n");
+  console.log("=== Artifact Benchmark Pipeline ===\n");
   console.log(`Deals directory: ${config.dealsDir}`);
   console.log(`Output directory: ${config.outputDir}`);
   if (config.deals) console.log(`Specific deals: ${config.deals.join(", ")}`);
@@ -486,20 +486,20 @@ async function main() {
     console.log(`  ${c.dealDir}: ${c.tier} (${c.transcriptCount} transcripts)`);
   }
 
-  // Filter out v1-only deals
-  const v2DealDirs = dealDirs.filter((d) => {
+  // Filter out summary-only deals
+  const artifactDealDirs = dealDirs.filter((d) => {
     const name = d.split("/").pop() || "";
     const classification = classifications.find((c) => c.dealDir === name);
-    return classification && classification.tier !== "v1-only";
+    return classification && classification.tier !== "summary-only";
   });
 
-  console.log(`\nProcessing ${v2DealDirs.length} deals (skipping ${dealDirs.length - v2DealDirs.length} v1-only)`);
+  console.log(`\nProcessing ${artifactDealDirs.length} deals (skipping ${dealDirs.length - artifactDealDirs.length} summary-only)`);
 
   // Process deals
-  const deals: V2Deal[] = [];
+  const deals: ArtifactDeal[] = [];
   const results: PipelineResult[] = [];
 
-  for (const dealDir of v2DealDirs) {
+  for (const dealDir of artifactDealDirs) {
     const dealDirName = dealDir.split("/").pop() || "";
     const externalData = externalDataMap?.[dealDirName];
     const { deal, result } = await processDeal(dealDir, config, externalData);

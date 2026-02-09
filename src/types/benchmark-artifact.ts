@@ -1,12 +1,12 @@
 /**
- * V2 Benchmark Types — Real-World Evaluation with Artifact-Based Context
+ * Artifact-Based Benchmark Types — Real-World Evaluation with Artifact-Based Context
  *
- * V2 replaces LLM-generated checkpoint summaries with real deal artifacts:
- * call transcripts, email threads, CRM snapshots, documents, Slack threads,
- * and calendar events. Models are evaluated on their ability to extract
- * insight from messy, unstructured multi-source data.
+ * The artifact-based benchmark replaces LLM-generated checkpoint summaries
+ * with real deal artifacts: call transcripts, email threads, CRM snapshots,
+ * documents, Slack threads, and calendar events. Models are evaluated on
+ * their ability to extract insight from messy, unstructured multi-source data.
  *
- * V1 types in benchmark.ts remain untouched. The benchmark runner detects
+ * Summary types in benchmark.ts remain untouched. The benchmark runner detects
  * the `version` field and routes accordingly.
  */
 
@@ -146,7 +146,7 @@ export interface ArtifactReference {
 // Stakeholders & MEDDPICC
 // ---------------------------------------------------------------------------
 
-export interface V2Stakeholder {
+export interface ArtifactStakeholder {
   name: string;
   title?: string;
   role: string; // "champion" | "economic_buyer" | "technical_evaluator" | "blocker" | etc.
@@ -176,15 +176,15 @@ export interface MeddpiccState {
 // Scoring
 // ---------------------------------------------------------------------------
 
-/** V2 scoring dimensions (8 total, backward-compatible with v1's 4) */
-export interface V2ScoringDimensions {
-  // V1 dimensions (always scored)
+/** Artifact-based scoring dimensions (8 total, backward-compatible with summary's 4) */
+export interface ArtifactScoringDimensions {
+  // Summary dimensions (always scored)
   riskIdentification: number;    // 0-10
   nextStepQuality: number;       // 0-10
   prioritization: number;        // 0-10
   outcomeAlignment: number;      // 0-10
 
-  // V2 dimensions (scored when relevant to task type)
+  // Artifact-based dimensions (scored when relevant to task type)
   stakeholderMapping?: number;   // 0-10
   dealQualification?: number;    // 0-10
   informationSynthesis?: number; // 0-10
@@ -192,17 +192,18 @@ export interface V2ScoringDimensions {
 }
 
 /** Which dimensions are relevant for a given task */
-export type ScoringDimensionKey = keyof V2ScoringDimensions;
+export type ScoringDimensionKey = keyof ArtifactScoringDimensions
+;
 
-export const V1_DIMENSIONS: ScoringDimensionKey[] = [
+export const SUMMARY_DIMENSIONS: ScoringDimensionKey[] = [
   "riskIdentification",
   "nextStepQuality",
   "prioritization",
   "outcomeAlignment",
 ];
 
-export const V2_DIMENSIONS: ScoringDimensionKey[] = [
-  ...V1_DIMENSIONS,
+export const ARTIFACT_DIMENSIONS: ScoringDimensionKey[] = [
+  ...SUMMARY_DIMENSIONS,
   "stakeholderMapping",
   "dealQualification",
   "informationSynthesis",
@@ -237,7 +238,7 @@ export interface EvaluationTask {
 // Ground Truth
 // ---------------------------------------------------------------------------
 
-export interface V2GroundTruth {
+export interface ArtifactGroundTruth {
   whatHappenedNext: string;
   actualRisksThatMaterialized: string[];
   outcomeAtThisPoint: "progressing" | "stalled" | "at_risk" | "won" | "lost";
@@ -249,7 +250,7 @@ export interface V2GroundTruth {
 // Checkpoints & Deals
 // ---------------------------------------------------------------------------
 
-export interface V2Checkpoint {
+export interface ArtifactCheckpoint {
   id: string;
   dealId: string;
   version: 2;
@@ -261,19 +262,19 @@ export interface V2Checkpoint {
     amount?: string;
     daysSinceFirstContact: number;
   };
-  stakeholders: V2Stakeholder[];
+  stakeholders: ArtifactStakeholder[];
   meddpicc?: MeddpiccState;
-  groundTruth: V2GroundTruth;
+  groundTruth: ArtifactGroundTruth;
   tasks: EvaluationTask[];
 }
 
-export interface V2Deal {
+export interface ArtifactDeal {
   id: string;
   name: string;
   version: 2;
   industry?: string;
   artifacts: Record<string, Artifact>; // keyed by artifact ID
-  checkpoints: V2Checkpoint[];
+  checkpoints: ArtifactCheckpoint[];
   finalOutcome: "won" | "lost" | "stalled" | "active";
   metadata?: {
     sourceDeals?: string[]; // original deal directory names (before anonymization)
@@ -284,26 +285,26 @@ export interface V2Deal {
 }
 
 // ---------------------------------------------------------------------------
-// V2 Agent API Contract
+// Artifact-Based Agent API Contract
 // ---------------------------------------------------------------------------
 
-/** Request sent to an agent for a v2 evaluation task */
-export interface V2AgentRequest {
+/** Request sent to an agent for an artifact-based evaluation task */
+export interface ArtifactAgentRequest {
   version: 2;
   checkpointId: string;
   taskId: string;
   taskType: EvaluationTaskType;
   prompt: string;
   artifacts: Artifact[];       // initial artifacts provided
-  dealSnapshot: V2Checkpoint["dealSnapshot"];
-  stakeholders: V2Stakeholder[];
+  dealSnapshot: ArtifactCheckpoint["dealSnapshot"];
+  stakeholders: ArtifactStakeholder[];
   meddpicc?: MeddpiccState;
   turnNumber: number;          // 1-based, increments on multi-turn
   maxTurns: number;
 }
 
 /** Response from an agent */
-export interface V2AgentResponse {
+export interface ArtifactAgentResponse {
   version: 2;
   reasoning: string;
   answer: string;
@@ -322,28 +323,28 @@ export interface V2AgentResponse {
 }
 
 // ---------------------------------------------------------------------------
-// V2 Evaluation Results
+// Artifact-Based Evaluation Results
 // ---------------------------------------------------------------------------
 
-export interface V2TaskEvaluation {
+export interface ArtifactTaskEvaluation {
   taskId: string;
   taskType: EvaluationTaskType;
   turnsUsed: number;
-  scores: V2ScoringDimensions;
+  scores: ArtifactScoringDimensions;
   feedback: string;
   artifactsRequested: string[];
   judgeModel?: string;
 }
 
-export interface V2CheckpointEvaluation {
+export interface ArtifactCheckpointEvaluation {
   checkpointId: string;
-  taskEvaluations: V2TaskEvaluation[];
-  aggregateScores: V2ScoringDimensions;
+  taskEvaluations: ArtifactTaskEvaluation[];
+  aggregateScores: ArtifactScoringDimensions;
   totalScore: number;
   maxScore: number;
 }
 
-export interface V2BenchmarkResult {
+export interface ArtifactBenchmarkResult {
   agentId: string;
   agentEndpoint: string;
   version: 2;
@@ -351,16 +352,16 @@ export interface V2BenchmarkResult {
   runTimestamp: string;
   dealResults: {
     dealId: string;
-    checkpointEvaluations: V2CheckpointEvaluation[];
+    checkpointEvaluations: ArtifactCheckpointEvaluation[];
     dealScore: number;
   }[];
   aggregateScore: number;
   maxPossibleScore: number;
-  aggregateDimensions: V2ScoringDimensions;
+  aggregateDimensions: ArtifactScoringDimensions;
 }
 
 // ---------------------------------------------------------------------------
-// Pipeline Types (used by scripts/v2/)
+// Pipeline Types (used by scripts/artifact-pipeline/)
 // ---------------------------------------------------------------------------
 
 /** Configuration for a pipeline run */
@@ -400,7 +401,7 @@ export interface PipelineSummary {
 // Deal Tier Classification (for pipeline prioritization)
 // ---------------------------------------------------------------------------
 
-export type DealTier = "v2-rich" | "v2-standard" | "v1-only";
+export type DealTier = "artifact-rich" | "artifact-standard" | "summary-only";
 
 export interface DealClassification {
   dealDir: string;

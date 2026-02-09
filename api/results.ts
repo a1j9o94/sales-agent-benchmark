@@ -99,7 +99,11 @@ export async function initDatabase(deps: ResultsDeps = defaultResultsDeps): Prom
         risk_identification REAL NOT NULL,
         next_step_quality REAL NOT NULL,
         prioritization REAL NOT NULL,
-        outcome_alignment REAL NOT NULL
+        outcome_alignment REAL NOT NULL,
+        stakeholder_mapping REAL,
+        deal_qualification REAL,
+        information_synthesis REAL,
+        communication_quality REAL
       )
     `;
 
@@ -123,21 +127,11 @@ export async function initDatabase(deps: ResultsDeps = defaultResultsDeps): Prom
       )
     `;
 
-    // V2 dimension scores (extends v1 with 4 new dimensions)
-    await deps.sql`
-      CREATE TABLE IF NOT EXISTS v2_dimension_scores (
-        id SERIAL PRIMARY KEY,
-        run_id INTEGER NOT NULL REFERENCES benchmark_runs(id) ON DELETE CASCADE,
-        stakeholder_mapping REAL,
-        deal_qualification REAL,
-        information_synthesis REAL,
-        communication_quality REAL
-      )
-    `;
+    // Artifact-based dimension scores (4 nullable columns added to dimension_scores above)
 
-    // V2 task evaluations (per-checkpoint, per-task scoring with multi-turn support)
+    // Artifact-based task evaluations (per-checkpoint, per-task scoring with multi-turn support)
     await deps.sql`
-      CREATE TABLE IF NOT EXISTS v2_task_evaluations (
+      CREATE TABLE IF NOT EXISTS task_evaluations (
         id SERIAL PRIMARY KEY,
         run_id INTEGER NOT NULL REFERENCES benchmark_runs(id) ON DELETE CASCADE,
         checkpoint_id TEXT NOT NULL,
@@ -158,9 +152,8 @@ export async function initDatabase(deps: ResultsDeps = defaultResultsDeps): Prom
     await deps.sql`CREATE INDEX IF NOT EXISTS idx_runs_timestamp ON benchmark_runs(run_timestamp DESC)`;
     await deps.sql`CREATE INDEX IF NOT EXISTS idx_judge_evals_run ON judge_evaluations(run_id)`;
     await deps.sql`CREATE INDEX IF NOT EXISTS idx_judge_evals_checkpoint ON judge_evaluations(checkpoint_id)`;
-    await deps.sql`CREATE INDEX IF NOT EXISTS idx_v2_dim_scores_run ON v2_dimension_scores(run_id)`;
-    await deps.sql`CREATE INDEX IF NOT EXISTS idx_v2_task_evals_run ON v2_task_evaluations(run_id)`;
-    await deps.sql`CREATE INDEX IF NOT EXISTS idx_v2_task_evals_checkpoint ON v2_task_evaluations(checkpoint_id)`;
+    await deps.sql`CREATE INDEX IF NOT EXISTS idx_task_evals_run ON task_evaluations(run_id)`;
+    await deps.sql`CREATE INDEX IF NOT EXISTS idx_task_evals_checkpoint ON task_evaluations(checkpoint_id)`;
 
     console.log("Database tables initialized");
   } catch (error) {
@@ -665,10 +658,10 @@ export async function handleInitDatabase(req: Request, deps: ResultsDeps = defau
 }
 
 // ---------------------------------------------------------------------------
-// V2 Operations
+// Artifact-Based Operations
 // ---------------------------------------------------------------------------
 
-export interface V2TaskEvaluationData {
+export interface ArtifactTaskEvaluationData {
   runId: number;
   checkpointId: string;
   taskId: string;
@@ -680,7 +673,7 @@ export interface V2TaskEvaluationData {
   judgeModel?: string;
 }
 
-export async function saveV2DimensionScores(
+export async function saveArtifactDimensionScores(
   runId: number,
   scores: {
     stakeholderMapping?: number;
@@ -691,18 +684,21 @@ export async function saveV2DimensionScores(
   deps: ResultsDeps = defaultResultsDeps
 ): Promise<void> {
   await deps.sql`
-    INSERT INTO v2_dimension_scores (run_id, stakeholder_mapping, deal_qualification, information_synthesis, communication_quality)
-    VALUES (${runId}, ${scores.stakeholderMapping ?? null}, ${scores.dealQualification ?? null},
-            ${scores.informationSynthesis ?? null}, ${scores.communicationQuality ?? null})
+    UPDATE dimension_scores
+    SET stakeholder_mapping = ${scores.stakeholderMapping ?? null},
+        deal_qualification = ${scores.dealQualification ?? null},
+        information_synthesis = ${scores.informationSynthesis ?? null},
+        communication_quality = ${scores.communicationQuality ?? null}
+    WHERE run_id = ${runId}
   `;
 }
 
-export async function saveV2TaskEvaluation(
-  evaluation: V2TaskEvaluationData,
+export async function saveArtifactTaskEvaluation(
+  evaluation: ArtifactTaskEvaluationData,
   deps: ResultsDeps = defaultResultsDeps
 ): Promise<number> {
   const result = await deps.sql`
-    INSERT INTO v2_task_evaluations
+    INSERT INTO task_evaluations
     (run_id, checkpoint_id, task_id, task_type, turns_used, scores, feedback, artifacts_requested, judge_model)
     VALUES (
       ${evaluation.runId},
@@ -719,16 +715,16 @@ export async function saveV2TaskEvaluation(
   `;
 
   const id = result.rows[0]?.id;
-  if (!id) throw new Error("Failed to insert v2 task evaluation");
+  if (!id) throw new Error("Failed to insert artifact-based task evaluation");
   return id;
 }
 
-export async function getV2TaskEvaluations(
+export async function getArtifactTaskEvaluations(
   runId: number,
   deps: ResultsDeps = defaultResultsDeps
-): Promise<V2TaskEvaluationData[]> {
+): Promise<ArtifactTaskEvaluationData[]> {
   const results = await deps.sql`
-    SELECT * FROM v2_task_evaluations WHERE run_id = ${runId}
+    SELECT * FROM task_evaluations WHERE run_id = ${runId}
   `;
 
   return results.rows.map((row) => ({
@@ -745,10 +741,10 @@ export async function getV2TaskEvaluations(
 }
 
 // ---------------------------------------------------------------------------
-// V2 Leaderboard & Run Details
+// Artifact-Based Leaderboard & Run Details
 // ---------------------------------------------------------------------------
 
-export interface V2LeaderboardEntry {
+export interface ArtifactLeaderboardEntry {
   rank: number;
   agentId: string;
   agentName: string | null;
@@ -762,9 +758,9 @@ export interface V2LeaderboardEntry {
   dimensions: Record<string, number>;
 }
 
-export async function getV2Leaderboard(
+export async function getArtifactLeaderboard(
   deps: ResultsDeps = defaultResultsDeps
-): Promise<V2LeaderboardEntry[]> {
+): Promise<ArtifactLeaderboardEntry[]> {
   const results = await deps.sql`
     SELECT DISTINCT ON (br.agent_id)
       br.agent_id,
@@ -779,16 +775,15 @@ export async function getV2Leaderboard(
       ds.next_step_quality,
       ds.prioritization,
       ds.outcome_alignment,
-      v2ds.stakeholder_mapping,
-      v2ds.deal_qualification,
-      v2ds.information_synthesis,
-      v2ds.communication_quality
+      ds.stakeholder_mapping,
+      ds.deal_qualification,
+      ds.information_synthesis,
+      ds.communication_quality
     FROM benchmark_runs br
     JOIN agents a ON br.agent_id = a.id
     JOIN dimension_scores ds ON br.id = ds.run_id
-    LEFT JOIN v2_dimension_scores v2ds ON br.id = v2ds.run_id
     WHERE br.mode = 'public'
-      AND v2ds.id IS NOT NULL
+      AND ds.stakeholder_mapping IS NOT NULL
     ORDER BY br.agent_id, br.aggregate_score DESC
   `;
 
@@ -824,7 +819,7 @@ export async function getV2Leaderboard(
   }));
 }
 
-export interface V2RunDetails {
+export interface ArtifactRunDetails {
   run: {
     id: number;
     agentId: string;
@@ -838,13 +833,13 @@ export interface V2RunDetails {
     runTimestamp: string;
     dimensions: Record<string, number>;
   };
-  taskEvaluations: V2TaskEvaluationData[];
+  taskEvaluations: ArtifactTaskEvaluationData[];
 }
 
-export async function getV2RunDetails(
+export async function getArtifactRunDetails(
   runId: number,
   deps: ResultsDeps = defaultResultsDeps
-): Promise<V2RunDetails | null> {
+): Promise<ArtifactRunDetails | null> {
   const result = await deps.sql`
     SELECT
       br.id,
@@ -860,14 +855,13 @@ export async function getV2RunDetails(
       ds.next_step_quality,
       ds.prioritization,
       ds.outcome_alignment,
-      v2ds.stakeholder_mapping,
-      v2ds.deal_qualification,
-      v2ds.information_synthesis,
-      v2ds.communication_quality
+      ds.stakeholder_mapping,
+      ds.deal_qualification,
+      ds.information_synthesis,
+      ds.communication_quality
     FROM benchmark_runs br
     JOIN agents a ON br.agent_id = a.id
     JOIN dimension_scores ds ON br.id = ds.run_id
-    LEFT JOIN v2_dimension_scores v2ds ON br.id = v2ds.run_id
     WHERE br.id = ${runId}
   `;
 
@@ -875,7 +869,7 @@ export async function getV2RunDetails(
 
   const row = result.rows[0]!;
 
-  const taskEvaluations = await getV2TaskEvaluations(runId, deps);
+  const taskEvaluations = await getArtifactTaskEvaluations(runId, deps);
 
   return {
     run: {
@@ -906,45 +900,45 @@ export async function getV2RunDetails(
   };
 }
 
-export async function getV2RunDetailsByAgentId(
+export async function getArtifactRunDetailsByAgentId(
   agentId: string,
   deps: ResultsDeps = defaultResultsDeps
-): Promise<V2RunDetails | null> {
-  // Find the latest run for this agent that has V2 dimension scores
+): Promise<ArtifactRunDetails | null> {
+  // Find the latest run for this agent that has artifact-based dimension scores
   const runResult = await deps.sql`
     SELECT br.id
     FROM benchmark_runs br
-    LEFT JOIN v2_dimension_scores v2ds ON br.id = v2ds.run_id
+    JOIN dimension_scores ds ON br.id = ds.run_id
     WHERE br.agent_id = ${agentId}
-      AND v2ds.id IS NOT NULL
+      AND ds.stakeholder_mapping IS NOT NULL
     ORDER BY br.aggregate_score DESC
     LIMIT 1
   `;
 
   if (runResult.rows.length === 0) return null;
 
-  return getV2RunDetails(runResult.rows[0]!.id, deps);
+  return getArtifactRunDetails(runResult.rows[0]!.id, deps);
 }
 
-// HTTP Handlers for V2 endpoints
-export async function handleGetV2Leaderboard(
+// HTTP Handlers for Artifact-Based endpoints
+export async function handleGetArtifactLeaderboard(
   _req: Request,
   deps: ResultsDeps = defaultResultsDeps
 ): Promise<Response> {
   try {
-    const leaderboard = await getV2Leaderboard(deps);
+    const leaderboard = await getArtifactLeaderboard(deps);
     return Response.json({
       version: 2,
       count: leaderboard.length,
       entries: leaderboard,
     });
   } catch (error) {
-    console.error("Failed to get V2 leaderboard:", error);
-    return Response.json({ error: "Failed to load V2 leaderboard", entries: [] }, { status: 500 });
+    console.error("Failed to get artifact-based leaderboard:", error);
+    return Response.json({ error: "Failed to load artifact-based leaderboard", entries: [] }, { status: 500 });
   }
 }
 
-export async function handleGetV2RunDetails(
+export async function handleGetArtifactRunDetails(
   req: Request,
   deps: ResultsDeps = defaultResultsDeps
 ): Promise<Response> {
@@ -957,13 +951,13 @@ export async function handleGetV2RunDetails(
       return Response.json({ error: "Run ID or agent ID is required" }, { status: 400 });
     }
 
-    let details: V2RunDetails | null = null;
+    let details: ArtifactRunDetails | null = null;
     const runId = parseInt(idParam, 10);
     if (!isNaN(runId)) {
-      details = await getV2RunDetails(runId, deps);
+      details = await getArtifactRunDetails(runId, deps);
     } else {
       // Look up the latest run for this agent ID
-      details = await getV2RunDetailsByAgentId(idParam, deps);
+      details = await getArtifactRunDetailsByAgentId(idParam, deps);
     }
     if (!details) {
       return Response.json({ error: "Run not found" }, { status: 404 });
@@ -971,7 +965,7 @@ export async function handleGetV2RunDetails(
 
     return Response.json(details);
   } catch (error) {
-    console.error("Failed to get V2 run details:", error);
+    console.error("Failed to get artifact-based run details:", error);
     return Response.json(
       { error: error instanceof Error ? error.message : "Failed to load run details" },
       { status: 500 }

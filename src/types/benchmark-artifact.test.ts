@@ -8,23 +8,23 @@ import type {
   DocumentArtifact,
   SlackThreadArtifact,
   CalendarEventArtifact,
-  V2Checkpoint,
-  V2Deal,
+  ArtifactCheckpoint,
+  ArtifactDeal,
   EvaluationTask,
-  V2AgentRequest,
-  V2AgentResponse,
-  V2ScoringDimensions,
-  V2BenchmarkResult,
+  ArtifactAgentRequest,
+  ArtifactAgentResponse,
+  ArtifactScoringDimensions,
+  ArtifactBenchmarkResult,
   PipelineConfig,
   PipelineResult,
   PipelineSummary,
   DealClassification,
-} from "./benchmark-v2";
-import { V1_DIMENSIONS, V2_DIMENSIONS } from "./benchmark-v2";
+} from "./benchmark-artifact";
+import { SUMMARY_DIMENSIONS, ARTIFACT_DIMENSIONS } from "./benchmark-artifact";
 
-describe("V2 Benchmark Types", () => {
-  test("V1_DIMENSIONS contains the 4 original dimensions", () => {
-    expect(V1_DIMENSIONS).toEqual([
+describe("Artifact-Based Benchmark Types", () => {
+  test("SUMMARY_DIMENSIONS contains the 4 original dimensions", () => {
+    expect(SUMMARY_DIMENSIONS).toEqual([
       "riskIdentification",
       "nextStepQuality",
       "prioritization",
@@ -32,17 +32,17 @@ describe("V2 Benchmark Types", () => {
     ]);
   });
 
-  test("V2_DIMENSIONS contains all 8 dimensions", () => {
-    expect(V2_DIMENSIONS).toHaveLength(8);
-    expect(V2_DIMENSIONS).toContain("stakeholderMapping");
-    expect(V2_DIMENSIONS).toContain("dealQualification");
-    expect(V2_DIMENSIONS).toContain("informationSynthesis");
-    expect(V2_DIMENSIONS).toContain("communicationQuality");
+  test("ARTIFACT_DIMENSIONS contains all 8 dimensions", () => {
+    expect(ARTIFACT_DIMENSIONS).toHaveLength(8);
+    expect(ARTIFACT_DIMENSIONS).toContain("stakeholderMapping");
+    expect(ARTIFACT_DIMENSIONS).toContain("dealQualification");
+    expect(ARTIFACT_DIMENSIONS).toContain("informationSynthesis");
+    expect(ARTIFACT_DIMENSIONS).toContain("communicationQuality");
   });
 
-  test("V2_DIMENSIONS includes all V1 dimensions", () => {
-    for (const dim of V1_DIMENSIONS) {
-      expect(V2_DIMENSIONS).toContain(dim);
+  test("ARTIFACT_DIMENSIONS includes all SUMMARY dimensions", () => {
+    for (const dim of SUMMARY_DIMENSIONS) {
+      expect(ARTIFACT_DIMENSIONS).toContain(dim);
     }
   });
 
@@ -170,8 +170,8 @@ describe("V2 Benchmark Types", () => {
     expect(types).toEqual(["transcript", "email"]);
   });
 
-  test("V2Checkpoint can be constructed with tasks", () => {
-    const checkpoint: V2Checkpoint = {
+  test("ArtifactCheckpoint can be constructed with tasks", () => {
+    const checkpoint: ArtifactCheckpoint = {
       id: "velocity-systems_cp_001",
       dealId: "velocity-systems",
       version: 2,
@@ -207,8 +207,8 @@ describe("V2 Benchmark Types", () => {
     expect(checkpoint.tasks).toHaveLength(1);
   });
 
-  test("V2Deal can be constructed with artifacts and checkpoints", () => {
-    const deal: V2Deal = {
+  test("ArtifactDeal can be constructed with artifacts and checkpoints", () => {
+    const deal: ArtifactDeal = {
       id: "velocity-systems",
       name: "Velocity Systems",
       version: 2,
@@ -231,8 +231,8 @@ describe("V2 Benchmark Types", () => {
     expect(Object.keys(deal.artifacts)).toHaveLength(1);
   });
 
-  test("V2AgentRequest and V2AgentResponse have correct version", () => {
-    const request: V2AgentRequest = {
+  test("ArtifactAgentRequest and ArtifactAgentResponse have correct version", () => {
+    const request: ArtifactAgentRequest = {
       version: 2,
       checkpointId: "cp_001",
       taskId: "task_001",
@@ -246,7 +246,7 @@ describe("V2 Benchmark Types", () => {
     };
     expect(request.version).toBe(2);
 
-    const response: V2AgentResponse = {
+    const response: ArtifactAgentResponse = {
       version: 2,
       reasoning: "Based on the transcript...",
       answer: "The deal is progressing well",
@@ -257,18 +257,18 @@ describe("V2 Benchmark Types", () => {
     expect(response.isComplete).toBe(true);
   });
 
-  test("V2ScoringDimensions allows optional v2 dimensions", () => {
-    // V1-only scoring (v2 dimensions omitted)
-    const v1Scores: V2ScoringDimensions = {
+  test("ArtifactScoringDimensions allows optional artifact dimensions", () => {
+    // Summary-only scoring (artifact dimensions omitted)
+    const summaryScores: ArtifactScoringDimensions = {
       riskIdentification: 8,
       nextStepQuality: 7,
       prioritization: 9,
       outcomeAlignment: 6,
     };
-    expect(v1Scores.stakeholderMapping).toBeUndefined();
+    expect(summaryScores.stakeholderMapping).toBeUndefined();
 
-    // Full v2 scoring
-    const v2Scores: V2ScoringDimensions = {
+    // Full artifact scoring
+    const artifactScores: ArtifactScoringDimensions = {
       riskIdentification: 8,
       nextStepQuality: 7,
       prioritization: 9,
@@ -278,7 +278,7 @@ describe("V2 Benchmark Types", () => {
       informationSynthesis: 9,
       communicationQuality: 8,
     };
-    expect(v2Scores.stakeholderMapping).toBe(8);
+    expect(artifactScores.stakeholderMapping).toBe(8);
   });
 
   test("PipelineConfig supports all flags", () => {
@@ -296,17 +296,17 @@ describe("V2 Benchmark Types", () => {
 
   test("DealClassification categorizes tiers", () => {
     const classifications: DealClassification[] = [
-      { dealDir: "flagship", tier: "v2-rich", transcriptCount: 11, hasContextMd: true, hasOutputs: true },
-      { dealDir: "granola", tier: "v2-standard", transcriptCount: 2, hasContextMd: true, hasOutputs: true },
-      { dealDir: "hometime", tier: "v1-only", transcriptCount: 0, hasContextMd: true, hasOutputs: false },
+      { dealDir: "flagship", tier: "artifact-rich", transcriptCount: 11, hasContextMd: true, hasOutputs: true },
+      { dealDir: "granola", tier: "artifact-standard", transcriptCount: 2, hasContextMd: true, hasOutputs: true },
+      { dealDir: "hometime", tier: "summary-only", transcriptCount: 0, hasContextMd: true, hasOutputs: false },
     ];
-    expect(classifications.filter((c) => c.tier === "v2-rich")).toHaveLength(1);
-    expect(classifications.filter((c) => c.tier === "v2-standard")).toHaveLength(1);
-    expect(classifications.filter((c) => c.tier === "v1-only")).toHaveLength(1);
+    expect(classifications.filter((c) => c.tier === "artifact-rich")).toHaveLength(1);
+    expect(classifications.filter((c) => c.tier === "artifact-standard")).toHaveLength(1);
+    expect(classifications.filter((c) => c.tier === "summary-only")).toHaveLength(1);
   });
 
-  test("V2BenchmarkResult has version 2", () => {
-    const result: V2BenchmarkResult = {
+  test("ArtifactBenchmarkResult has version 2", () => {
+    const result: ArtifactBenchmarkResult = {
       agentId: "test-agent",
       agentEndpoint: "http://localhost:3000",
       version: 2,

@@ -7,7 +7,7 @@
 
 import { readdir, stat } from "node:fs/promises";
 import { join, basename } from "node:path";
-import type { TranscriptArtifact } from "../../../src/types/benchmark-v2";
+import type { TranscriptArtifact } from "../../../src/types/benchmark-artifact";
 import { parseGranolaTranscript } from "../transform/transcript-parser.ts";
 
 /**

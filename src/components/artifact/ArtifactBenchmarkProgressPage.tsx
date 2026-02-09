@@ -6,9 +6,9 @@ import {
   taskTypeColor,
   dimensionLabel,
   dimensionColor,
-  V2_DIMENSION_KEYS,
+  ARTIFACT_DIMENSION_KEYS,
 } from "./utils";
-import type { V2ScoringDimensions } from "@/types/benchmark-v2";
+import type { ArtifactScoringDimensions } from "@/types/benchmark-artifact";
 
 interface TaskResult {
   taskId: string;
@@ -19,7 +19,7 @@ interface TaskResult {
   mode: "public" | "private";
   turnsUsed: number;
   artifactsRequested?: string[];
-  scores: Partial<V2ScoringDimensions>;
+  scores: Partial<ArtifactScoringDimensions>;
   feedback: string | null;
   latencyMs?: number;
   error?: boolean;
@@ -66,7 +66,7 @@ function ScoreBar({ percentage }: { percentage: number }) {
   );
 }
 
-export function V2BenchmarkProgressPage() {
+export function ArtifactBenchmarkProgressPage() {
   const params = new URLSearchParams(window.location.search);
   const endpoint = params.get("endpoint") || "";
   const agentName = params.get("name") || "Your Agent";
@@ -84,7 +84,7 @@ export function V2BenchmarkProgressPage() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [tasks]);
 
-  // Start the V2 benchmark stream
+  // Start the artifact-based benchmark stream
   useEffect(() => {
     if (!endpoint) {
       setErrorMessage("No agent endpoint specified.");
@@ -96,7 +96,7 @@ export function V2BenchmarkProgressPage() {
 
     (async () => {
       try {
-        const res = await fetch("/api/v2/benchmark/stream", {
+        const res = await fetch("/api/artifact/benchmark/stream", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ endpoint, agentName }),
@@ -291,7 +291,7 @@ export function V2BenchmarkProgressPage() {
 
             {/* 8-dimension grid (2 rows x 4 cols) */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-              {V2_DIMENSION_KEYS.map((key) => {
+              {ARTIFACT_DIMENSION_KEYS.map((key) => {
                 const value = complete.dimensions[key];
                 const color = dimensionColor(key);
                 return (
@@ -472,4 +472,4 @@ export function V2BenchmarkProgressPage() {
   );
 }
 
-export default V2BenchmarkProgressPage;
+export default ArtifactBenchmarkProgressPage;

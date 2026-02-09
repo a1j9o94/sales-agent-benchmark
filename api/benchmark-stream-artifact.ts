@@ -1,8 +1,8 @@
 /**
- * V2 SSE Benchmark Streaming Endpoint
+ * Artifact-Based SSE Benchmark Streaming Endpoint
  *
- * Streams V2 benchmark progress to the client as Server-Sent Events.
- * POST /api/v2/benchmark/stream
+ * Streams artifact-based benchmark progress to the client as Server-Sent Events.
+ * POST /api/artifact/benchmark/stream
  * Body: { "endpoint": "https://my-agent.example.com/api", "agentName": "My Agent" }
  *
  * SSE Events:
@@ -14,37 +14,37 @@
  */
 
 import type {
-  V2Deal,
-  V2Checkpoint,
-  V2AgentRequest,
-  V2AgentResponse,
+  ArtifactDeal,
+  ArtifactCheckpoint,
+  ArtifactAgentRequest,
+  ArtifactAgentResponse,
   EvaluationTask,
   Artifact,
-  V2ScoringDimensions,
-  V2TaskEvaluation,
+  ArtifactScoringDimensions,
+  ArtifactTaskEvaluation,
   ScoringDimensionKey,
-} from "../src/types/benchmark-v2";
+} from "../src/types/benchmark-artifact";
 import { MultiTurnOrchestrator } from "./evaluate-tasks/multi-turn";
-import { evaluateV2Task } from "./evaluate-response-v2";
-import { saveBenchmarkRun, saveV2TaskEvaluation, saveV2DimensionScores } from "./results";
+import { evaluateArtifactTask } from "./evaluate-response-artifact";
+import { saveBenchmarkRun, saveArtifactTaskEvaluation, saveArtifactDimensionScores } from "./results";
 
-export interface BenchmarkStreamV2Deps {
-  evaluateV2Task: typeof evaluateV2Task;
+export interface BenchmarkStreamArtifactDeps {
+  evaluateArtifactTask: typeof evaluateArtifactTask;
   saveBenchmarkRun: typeof saveBenchmarkRun;
-  saveV2TaskEvaluation: typeof saveV2TaskEvaluation;
-  saveV2DimensionScores: typeof saveV2DimensionScores;
+  saveArtifactTaskEvaluation: typeof saveArtifactTaskEvaluation;
+  saveArtifactDimensionScores: typeof saveArtifactDimensionScores;
 }
 
-const defaultDeps: BenchmarkStreamV2Deps = {
-  evaluateV2Task,
+const defaultDeps: BenchmarkStreamArtifactDeps = {
+  evaluateArtifactTask,
   saveBenchmarkRun,
-  saveV2TaskEvaluation,
-  saveV2DimensionScores,
+  saveArtifactTaskEvaluation,
+  saveArtifactDimensionScores,
 };
 
-// Load V2 deals from a directory
-async function loadV2DealsFromDir(dirPath: string): Promise<V2Deal[]> {
-  const deals: V2Deal[] = [];
+// Load artifact-based deals from a directory
+async function loadArtifactDealsFromDir(dirPath: string): Promise<ArtifactDeal[]> {
+  const deals: ArtifactDeal[] = [];
   try {
     const dir = await Bun.$`ls ${dirPath}/*.json`.text();
     const files = dir.trim().split("\n").filter(Boolean);
@@ -53,23 +53,23 @@ async function loadV2DealsFromDir(dirPath: string): Promise<V2Deal[]> {
         const file = Bun.file(filePath.trim());
         const content = await file.json();
         if (content.version === 2) {
-          deals.push(content as V2Deal);
+          deals.push(content as ArtifactDeal);
         }
       } catch (error) {
-        console.error(`Failed to load V2 deal ${filePath}:`, error);
+        console.error(`Failed to load artifact-based deal ${filePath}:`, error);
       }
     }
   } catch (error) {
-    console.error(`Failed to list V2 deals in ${dirPath}:`, error);
+    console.error(`Failed to list artifact-based deals in ${dirPath}:`, error);
   }
   return deals;
 }
 
-// Call the user's agent endpoint with a V2 request
-async function callV2AgentEndpoint(
+// Call the user's agent endpoint with an artifact-based request
+async function callArtifactAgentEndpoint(
   endpoint: string,
-  request: V2AgentRequest
-): Promise<V2AgentResponse> {
+  request: ArtifactAgentRequest
+): Promise<ArtifactAgentResponse> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 60000);
 
@@ -87,7 +87,7 @@ async function callV2AgentEndpoint(
 
     const data = await res.json();
 
-    // Normalize V2 response
+    // Normalize artifact-based response
     return {
       version: 2,
       reasoning: String(data.reasoning || ""),
@@ -119,14 +119,14 @@ async function callV2AgentEndpoint(
 function agentIdFromEndpoint(endpoint: string): string {
   try {
     const url = new URL(endpoint);
-    return `v2_agent_${url.hostname.replace(/\./g, "_")}`;
+    return `artifact_agent_${url.hostname.replace(/\./g, "_")}`;
   } catch {
-    return `v2_agent_${Date.now()}`;
+    return `artifact_agent_${Date.now()}`;
   }
 }
 
 // Count total tasks across all deals and checkpoints
-function countTotalTasks(deals: V2Deal[]): number {
+function countTotalTasks(deals: ArtifactDeal[]): number {
   let total = 0;
   for (const deal of deals) {
     for (const cp of deal.checkpoints) {
@@ -136,9 +136,9 @@ function countTotalTasks(deals: V2Deal[]): number {
   return total;
 }
 
-export async function handleBenchmarkStreamV2(
+export async function handleBenchmarkStreamArtifact(
   req: Request,
-  deps: BenchmarkStreamV2Deps = defaultDeps
+  deps: BenchmarkStreamArtifactDeps = defaultDeps
 ): Promise<Response> {
   if (req.method !== "POST") {
     return Response.json({ error: "Method not allowed" }, { status: 405 });
@@ -156,17 +156,17 @@ export async function handleBenchmarkStreamV2(
     return Response.json({ error: "endpoint is required" }, { status: 400 });
   }
 
-  // Load V2 deals
+  // Load artifact-based deals
   const [publicDeals, privateDeals] = await Promise.all([
-    loadV2DealsFromDir("data/v2/checkpoints/public"),
-    loadV2DealsFromDir("data/v2/checkpoints/private"),
+    loadArtifactDealsFromDir("data/artifact/checkpoints/public"),
+    loadArtifactDealsFromDir("data/artifact/checkpoints/private"),
   ]);
 
   const allDeals = [...publicDeals, ...privateDeals];
   const totalTasks = countTotalTasks(allDeals);
 
   if (totalTasks === 0) {
-    return Response.json({ error: "No V2 deals found" }, { status: 500 });
+    return Response.json({ error: "No artifact-based deals found" }, { status: 500 });
   }
 
   const stream = new ReadableStream({
@@ -181,22 +181,22 @@ export async function handleBenchmarkStreamV2(
       let dealsEvaluated = 0;
       let checkpointsEvaluated = 0;
 
-      // Accumulated dimension scores for V1 compatibility
-      const v1Scores = {
+      // Accumulated dimension scores for summary compatibility
+      const summaryScores = {
         riskIdentification: 0,
         nextStepQuality: 0,
         prioritization: 0,
         outcomeAlignment: 0,
       };
 
-      // V2 dimension accumulators
-      const v2Scores = {
+      // Artifact-based dimension accumulators
+      const artifactScores = {
         stakeholderMapping: 0,
         dealQualification: 0,
         informationSynthesis: 0,
         communicationQuality: 0,
       };
-      const v2ScoreCounts = {
+      const artifactScoreCounts = {
         stakeholderMapping: 0,
         dealQualification: 0,
         informationSynthesis: 0,
@@ -207,12 +207,12 @@ export async function handleBenchmarkStreamV2(
       const storedTaskEvals: Array<{
         checkpointId: string;
         mode: "public" | "private";
-        evaluation: V2TaskEvaluation;
+        evaluation: ArtifactTaskEvaluation;
       }> = [];
 
-      const processDeal = async (deal: V2Deal, mode: "public" | "private") => {
+      const processDeal = async (deal: ArtifactDeal, mode: "public" | "private") => {
         for (const checkpoint of deal.checkpoints) {
-          const taskResults: V2TaskEvaluation[] = [];
+          const taskResults: ArtifactTaskEvaluation[] = [];
 
           for (const task of checkpoint.tasks) {
             try {
@@ -224,7 +224,7 @@ export async function handleBenchmarkStreamV2(
                 task,
                 deal.artifacts,
                 {
-                  callAgent: (request) => callV2AgentEndpoint(endpoint, request),
+                  callAgent: (request) => callArtifactAgentEndpoint(endpoint, request),
                 }
               );
 
@@ -238,7 +238,7 @@ export async function handleBenchmarkStreamV2(
                 .filter((a): a is Artifact => a !== undefined);
 
               // Evaluate the response
-              const evaluation = await deps.evaluateV2Task(
+              const evaluation = await deps.evaluateArtifactTask(
                 task,
                 multiTurnResult.finalResponse,
                 checkpoint.groundTruth,
@@ -250,28 +250,28 @@ export async function handleBenchmarkStreamV2(
               taskResults.push(evaluation);
               storedTaskEvals.push({ checkpointId: checkpoint.id, mode, evaluation });
 
-              // Accumulate V1 dimension scores
-              v1Scores.riskIdentification += evaluation.scores.riskIdentification ?? 0;
-              v1Scores.nextStepQuality += evaluation.scores.nextStepQuality ?? 0;
-              v1Scores.prioritization += evaluation.scores.prioritization ?? 0;
-              v1Scores.outcomeAlignment += evaluation.scores.outcomeAlignment ?? 0;
+              // Accumulate summary dimension scores
+              summaryScores.riskIdentification += evaluation.scores.riskIdentification ?? 0;
+              summaryScores.nextStepQuality += evaluation.scores.nextStepQuality ?? 0;
+              summaryScores.prioritization += evaluation.scores.prioritization ?? 0;
+              summaryScores.outcomeAlignment += evaluation.scores.outcomeAlignment ?? 0;
 
-              // Accumulate V2 dimension scores (only when present)
+              // Accumulate artifact-based dimension scores (only when present)
               if (evaluation.scores.stakeholderMapping !== undefined) {
-                v2Scores.stakeholderMapping += evaluation.scores.stakeholderMapping;
-                v2ScoreCounts.stakeholderMapping++;
+                artifactScores.stakeholderMapping += evaluation.scores.stakeholderMapping;
+                artifactScoreCounts.stakeholderMapping++;
               }
               if (evaluation.scores.dealQualification !== undefined) {
-                v2Scores.dealQualification += evaluation.scores.dealQualification;
-                v2ScoreCounts.dealQualification++;
+                artifactScores.dealQualification += evaluation.scores.dealQualification;
+                artifactScoreCounts.dealQualification++;
               }
               if (evaluation.scores.informationSynthesis !== undefined) {
-                v2Scores.informationSynthesis += evaluation.scores.informationSynthesis;
-                v2ScoreCounts.informationSynthesis++;
+                artifactScores.informationSynthesis += evaluation.scores.informationSynthesis;
+                artifactScoreCounts.informationSynthesis++;
               }
               if (evaluation.scores.communicationQuality !== undefined) {
-                v2Scores.communicationQuality += evaluation.scores.communicationQuality;
-                v2ScoreCounts.communicationQuality++;
+                artifactScores.communicationQuality += evaluation.scores.communicationQuality;
+                artifactScoreCounts.communicationQuality++;
               }
 
               completedTasks++;
@@ -344,35 +344,35 @@ export async function handleBenchmarkStreamV2(
           await processDeal(deal, "private");
         }
 
-        // Calculate averages for V1 dimensions
+        // Calculate averages for summary dimensions
         if (completedTasks > 0) {
-          v1Scores.riskIdentification /= completedTasks;
-          v1Scores.nextStepQuality /= completedTasks;
-          v1Scores.prioritization /= completedTasks;
-          v1Scores.outcomeAlignment /= completedTasks;
+          summaryScores.riskIdentification /= completedTasks;
+          summaryScores.nextStepQuality /= completedTasks;
+          summaryScores.prioritization /= completedTasks;
+          summaryScores.outcomeAlignment /= completedTasks;
         }
 
-        // Calculate aggregate score: sum of all V1 dimension scores across tasks
+        // Calculate aggregate score: sum of all summary dimension scores across tasks
         const aggregateScore = storedTaskEvals.reduce((sum, e) => {
           const s = e.evaluation.scores;
           return sum + (s.riskIdentification ?? 0) + (s.nextStepQuality ?? 0)
             + (s.prioritization ?? 0) + (s.outcomeAlignment ?? 0);
         }, 0);
-        const maxPossibleScore = completedTasks * 40; // 4 V1 dims * 10 each
+        const maxPossibleScore = completedTasks * 40; // 4 summary dims * 10 each
 
-        // Calculate V2 dimension averages
-        const avgV2Scores = {
-          stakeholderMapping: v2ScoreCounts.stakeholderMapping > 0
-            ? Math.round((v2Scores.stakeholderMapping / v2ScoreCounts.stakeholderMapping) * 10) / 10
+        // Calculate artifact-based dimension averages
+        const avgArtifactScores = {
+          stakeholderMapping: artifactScoreCounts.stakeholderMapping > 0
+            ? Math.round((artifactScores.stakeholderMapping / artifactScoreCounts.stakeholderMapping) * 10) / 10
             : undefined,
-          dealQualification: v2ScoreCounts.dealQualification > 0
-            ? Math.round((v2Scores.dealQualification / v2ScoreCounts.dealQualification) * 10) / 10
+          dealQualification: artifactScoreCounts.dealQualification > 0
+            ? Math.round((artifactScores.dealQualification / artifactScoreCounts.dealQualification) * 10) / 10
             : undefined,
-          informationSynthesis: v2ScoreCounts.informationSynthesis > 0
-            ? Math.round((v2Scores.informationSynthesis / v2ScoreCounts.informationSynthesis) * 10) / 10
+          informationSynthesis: artifactScoreCounts.informationSynthesis > 0
+            ? Math.round((artifactScores.informationSynthesis / artifactScoreCounts.informationSynthesis) * 10) / 10
             : undefined,
-          communicationQuality: v2ScoreCounts.communicationQuality > 0
-            ? Math.round((v2Scores.communicationQuality / v2ScoreCounts.communicationQuality) * 10) / 10
+          communicationQuality: artifactScoreCounts.communicationQuality > 0
+            ? Math.round((artifactScores.communicationQuality / artifactScoreCounts.communicationQuality) * 10) / 10
             : undefined,
         };
 
@@ -394,25 +394,25 @@ export async function handleBenchmarkStreamV2(
             avgLatencyMs,
             runTimestamp: new Date().toISOString(),
             scores: {
-              riskIdentification: Math.round(v1Scores.riskIdentification * 10) / 10,
-              nextStepQuality: Math.round(v1Scores.nextStepQuality * 10) / 10,
-              prioritization: Math.round(v1Scores.prioritization * 10) / 10,
-              outcomeAlignment: Math.round(v1Scores.outcomeAlignment * 10) / 10,
+              riskIdentification: Math.round(summaryScores.riskIdentification * 10) / 10,
+              nextStepQuality: Math.round(summaryScores.nextStepQuality * 10) / 10,
+              prioritization: Math.round(summaryScores.prioritization * 10) / 10,
+              outcomeAlignment: Math.round(summaryScores.outcomeAlignment * 10) / 10,
             },
           });
 
-          // Save V2 dimension scores
+          // Save artifact-based dimension scores
           if (runId) {
-            await deps.saveV2DimensionScores(runId, {
-              stakeholderMapping: avgV2Scores.stakeholderMapping,
-              dealQualification: avgV2Scores.dealQualification,
-              informationSynthesis: avgV2Scores.informationSynthesis,
-              communicationQuality: avgV2Scores.communicationQuality,
+            await deps.saveArtifactDimensionScores(runId, {
+              stakeholderMapping: avgArtifactScores.stakeholderMapping,
+              dealQualification: avgArtifactScores.dealQualification,
+              informationSynthesis: avgArtifactScores.informationSynthesis,
+              communicationQuality: avgArtifactScores.communicationQuality,
             });
 
             // Save individual task evaluations
             for (const stored of storedTaskEvals) {
-              await deps.saveV2TaskEvaluation({
+              await deps.saveArtifactTaskEvaluation({
                 runId,
                 checkpointId: stored.checkpointId,
                 taskId: stored.evaluation.taskId,
@@ -426,7 +426,7 @@ export async function handleBenchmarkStreamV2(
             }
           }
         } catch (dbError) {
-          console.error("Failed to save V2 benchmark run:", dbError);
+          console.error("Failed to save artifact-based benchmark run:", dbError);
         }
 
         send({
@@ -441,20 +441,20 @@ export async function handleBenchmarkStreamV2(
           checkpointsEvaluated,
           dealsEvaluated,
           dimensions: {
-            riskIdentification: Math.round(v1Scores.riskIdentification * 10) / 10,
-            nextStepQuality: Math.round(v1Scores.nextStepQuality * 10) / 10,
-            prioritization: Math.round(v1Scores.prioritization * 10) / 10,
-            outcomeAlignment: Math.round(v1Scores.outcomeAlignment * 10) / 10,
-            ...(avgV2Scores.stakeholderMapping !== undefined ? { stakeholderMapping: avgV2Scores.stakeholderMapping } : {}),
-            ...(avgV2Scores.dealQualification !== undefined ? { dealQualification: avgV2Scores.dealQualification } : {}),
-            ...(avgV2Scores.informationSynthesis !== undefined ? { informationSynthesis: avgV2Scores.informationSynthesis } : {}),
-            ...(avgV2Scores.communicationQuality !== undefined ? { communicationQuality: avgV2Scores.communicationQuality } : {}),
+            riskIdentification: Math.round(summaryScores.riskIdentification * 10) / 10,
+            nextStepQuality: Math.round(summaryScores.nextStepQuality * 10) / 10,
+            prioritization: Math.round(summaryScores.prioritization * 10) / 10,
+            outcomeAlignment: Math.round(summaryScores.outcomeAlignment * 10) / 10,
+            ...(avgArtifactScores.stakeholderMapping !== undefined ? { stakeholderMapping: avgArtifactScores.stakeholderMapping } : {}),
+            ...(avgArtifactScores.dealQualification !== undefined ? { dealQualification: avgArtifactScores.dealQualification } : {}),
+            ...(avgArtifactScores.informationSynthesis !== undefined ? { informationSynthesis: avgArtifactScores.informationSynthesis } : {}),
+            ...(avgArtifactScores.communicationQuality !== undefined ? { communicationQuality: avgArtifactScores.communicationQuality } : {}),
           },
         });
       } catch (error) {
         send({
           type: "error",
-          message: error instanceof Error ? error.message : "V2 Benchmark failed",
+          message: error instanceof Error ? error.message : "Artifact-based benchmark failed",
         });
       }
 
@@ -471,15 +471,15 @@ export async function handleBenchmarkStreamV2(
   });
 }
 
-// GET /api/v2/benchmark/deals — List available V2 deals
-export async function handleV2DealsEndpoint(_req: Request): Promise<Response> {
+// GET /api/artifact/benchmark/deals — List available artifact-based deals
+export async function handleArtifactDealsEndpoint(_req: Request): Promise<Response> {
   try {
     const [publicDeals, privateDeals] = await Promise.all([
-      loadV2DealsFromDir("data/v2/checkpoints/public"),
-      loadV2DealsFromDir("data/v2/checkpoints/private"),
+      loadArtifactDealsFromDir("data/artifact/checkpoints/public"),
+      loadArtifactDealsFromDir("data/artifact/checkpoints/private"),
     ]);
 
-    const formatDeal = (deal: V2Deal) => ({
+    const formatDeal = (deal: ArtifactDeal) => ({
       id: deal.id,
       name: deal.name,
       version: deal.version,
@@ -512,7 +512,7 @@ export async function handleV2DealsEndpoint(_req: Request): Promise<Response> {
       },
     });
   } catch (error) {
-    console.error("Failed to list V2 deals:", error);
+    console.error("Failed to list artifact-based deals:", error);
     return Response.json({ error: "Failed to list deals" }, { status: 500 });
   }
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { AgentRegistration } from "@/components/AgentRegistration";
 import { Leaderboard } from "@/components/Leaderboard";
-import { V2Leaderboard } from "@/components/v2/V2Leaderboard";
+import { ArtifactLeaderboard } from "@/components/artifact/ArtifactLeaderboard";
 
 type BenchmarkTab = "summary" | "artifact-based";
 
@@ -70,7 +70,7 @@ export function UnifiedBenchmarkPage() {
 
         {/* Active Tab Content */}
         <div className="mb-12">
-          {activeTab === "summary" ? <Leaderboard /> : <V2Leaderboard />}
+          {activeTab === "summary" ? <Leaderboard /> : <ArtifactLeaderboard />}
         </div>
 
         {/* Test Your Agent Section */}

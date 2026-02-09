@@ -8,7 +8,7 @@ import { readdir, stat } from "node:fs/promises";
 import { join, extname, basename, resolve } from "node:path";
 import * as mammoth from "mammoth";
 import * as JSZip from "jszip";
-import type { DocumentArtifact } from "../../../src/types/benchmark-v2";
+import type { DocumentArtifact } from "../../../src/types/benchmark-artifact";
 
 // ---------------------------------------------------------------------------
 // Text extraction per format

@@ -1,15 +1,15 @@
 import { test, expect, describe, mock } from "bun:test";
 import { MultiTurnOrchestrator, type MultiTurnDeps } from "./multi-turn";
 import type {
-  V2Checkpoint,
-  V2AgentRequest,
-  V2AgentResponse,
+  ArtifactCheckpoint,
+  ArtifactAgentRequest,
+  ArtifactAgentResponse,
   EvaluationTask,
   Artifact,
   TranscriptArtifact,
   CrmSnapshotArtifact,
   EmailArtifact,
-} from "../../src/types/benchmark-v2";
+} from "../../src/types/benchmark-artifact";
 
 // ---------------------------------------------------------------------------
 // Fixtures
@@ -58,7 +58,7 @@ const allArtifacts: Record<string, Artifact> = {
   "email1": makeEmail("email1"),
 };
 
-const checkpoint: V2Checkpoint = {
+const checkpoint: ArtifactCheckpoint = {
   id: "cp-1",
   dealId: "deal-1",
   version: 2,
@@ -84,7 +84,7 @@ const task: EvaluationTask = {
   maxTurns: 3,
 };
 
-function makeResponse(opts: Partial<V2AgentResponse> = {}): V2AgentResponse {
+function makeResponse(opts: Partial<ArtifactAgentResponse> = {}): ArtifactAgentResponse {
   return {
     version: 2,
     reasoning: "Analysis complete",
@@ -101,7 +101,7 @@ function makeResponse(opts: Partial<V2AgentResponse> = {}): V2AgentResponse {
 
 describe("MultiTurnOrchestrator", () => {
   test("single-turn: agent completes on first call", async () => {
-    const callAgent = mock(async (_req: V2AgentRequest) => makeResponse());
+    const callAgent = mock(async (_req: ArtifactAgentRequest) => makeResponse());
 
     const orchestrator = new MultiTurnOrchestrator(checkpoint, task, allArtifacts, { callAgent });
     const result = await orchestrator.execute();
@@ -120,7 +120,7 @@ describe("MultiTurnOrchestrator", () => {
 
   test("multi-turn: agent requests optional artifacts", async () => {
     let callCount = 0;
-    const callAgent = mock(async (_req: V2AgentRequest) => {
+    const callAgent = mock(async (_req: ArtifactAgentRequest) => {
       callCount++;
       if (callCount === 1) {
         return makeResponse({
@@ -145,7 +145,7 @@ describe("MultiTurnOrchestrator", () => {
   });
 
   test("multi-turn: respects maxTurns limit", async () => {
-    const callAgent = mock(async (_req: V2AgentRequest) =>
+    const callAgent = mock(async (_req: ArtifactAgentRequest) =>
       makeResponse({
         isComplete: false,
         artifactRequests: ["t2", "email1"],
@@ -162,7 +162,7 @@ describe("MultiTurnOrchestrator", () => {
 
   test("filters out artifacts not in optionalArtifacts", async () => {
     let callCount = 0;
-    const callAgent = mock(async (_req: V2AgentRequest) => {
+    const callAgent = mock(async (_req: ArtifactAgentRequest) => {
       callCount++;
       if (callCount === 1) {
         return makeResponse({
@@ -183,7 +183,7 @@ describe("MultiTurnOrchestrator", () => {
 
   test("does not provide already-provided artifacts again", async () => {
     let callCount = 0;
-    const callAgent = mock(async (_req: V2AgentRequest) => {
+    const callAgent = mock(async (_req: ArtifactAgentRequest) => {
       callCount++;
       if (callCount === 1) {
         return makeResponse({
@@ -223,7 +223,7 @@ describe("MultiTurnOrchestrator", () => {
     };
 
     let callCount = 0;
-    const callAgent = mock(async (_req: V2AgentRequest) => {
+    const callAgent = mock(async (_req: ArtifactAgentRequest) => {
       callCount++;
       if (callCount === 1) {
         return makeResponse({ isComplete: false, artifactRequests: ["t2"] });
@@ -244,7 +244,7 @@ describe("MultiTurnOrchestrator", () => {
   });
 
   test("handles agent with empty artifactRequests as complete", async () => {
-    const callAgent = mock(async (_req: V2AgentRequest) =>
+    const callAgent = mock(async (_req: ArtifactAgentRequest) =>
       makeResponse({
         isComplete: false,
         artifactRequests: [],
@@ -264,7 +264,7 @@ describe("MultiTurnOrchestrator", () => {
       // crm1 is missing
     };
 
-    const callAgent = mock(async (_req: V2AgentRequest) => makeResponse());
+    const callAgent = mock(async (_req: ArtifactAgentRequest) => makeResponse());
     const orchestrator = new MultiTurnOrchestrator(checkpoint, task, sparseArtifacts, { callAgent });
     const result = await orchestrator.execute();
 
@@ -276,7 +276,7 @@ describe("MultiTurnOrchestrator", () => {
   });
 
   test("passes correct checkpoint fields in request", async () => {
-    const callAgent = mock(async (_req: V2AgentRequest) => makeResponse());
+    const callAgent = mock(async (_req: ArtifactAgentRequest) => makeResponse());
 
     const orchestrator = new MultiTurnOrchestrator(checkpoint, task, allArtifacts, { callAgent });
     await orchestrator.execute();

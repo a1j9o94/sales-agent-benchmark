@@ -1,31 +1,31 @@
 #!/usr/bin/env bun
 /**
- * V2 Multi-Model Benchmark Script
+ * Artifact-Based Multi-Model Benchmark Script
  *
- * Runs the V2 Sales Agent Benchmark against multiple LLM models using OpenRouter.
+ * Runs the Artifact-Based Sales Agent Benchmark against multiple LLM models using OpenRouter.
  * Evaluates responses with task-specific multi-judge panel and saves results to DB.
  *
  * Usage:
- *   bun scripts/benchmark-models-v2.ts                              # All models, all deals
- *   bun scripts/benchmark-models-v2.ts --models=claude-4.5-sonnet,gpt-5.2
- *   bun scripts/benchmark-models-v2.ts --deals=horizon-ventures     # Single deal
- *   bun scripts/benchmark-models-v2.ts --dry-run                    # No DB save
- *   bun scripts/benchmark-models-v2.ts --single-judge               # 1 judge (faster)
- *   bun scripts/benchmark-models-v2.ts --resume                     # Skip completed
- *   bun scripts/benchmark-models-v2.ts --parallel=3                 # 3 models at once
+ *   bun scripts/benchmark-models-artifact.ts                              # All models, all deals
+ *   bun scripts/benchmark-models-artifact.ts --models=claude-4.5-sonnet,gpt-5.2
+ *   bun scripts/benchmark-models-artifact.ts --deals=horizon-ventures     # Single deal
+ *   bun scripts/benchmark-models-artifact.ts --dry-run                    # No DB save
+ *   bun scripts/benchmark-models-artifact.ts --single-judge               # 1 judge (faster)
+ *   bun scripts/benchmark-models-artifact.ts --resume                     # Skip completed
+ *   bun scripts/benchmark-models-artifact.ts --parallel=3                 # 3 models at once
  */
 
 import { generateText } from "ai";
 import { createOpenAI } from "@ai-sdk/openai";
 import type {
-  V2Deal,
-  V2Checkpoint,
-  V2AgentRequest,
-  V2AgentResponse,
+  ArtifactDeal,
+  ArtifactCheckpoint,
+  ArtifactAgentRequest,
+  ArtifactAgentResponse,
   EvaluationTask,
   Artifact,
-  V2ScoringDimensions,
-  V2TaskEvaluation,
+  ArtifactScoringDimensions,
+  ArtifactTaskEvaluation,
   ScoringDimensionKey,
   TranscriptArtifact,
   EmailArtifact,
@@ -33,14 +33,15 @@ import type {
   DocumentArtifact,
   SlackThreadArtifact,
   CalendarEventArtifact,
-} from "../src/types/benchmark-v2";
-import { evaluateV2Task } from "../api/evaluate-response-v2";
+} from "../src/types/benchmark-artifact";
+import { evaluateArtifactTask } from "../api/evaluate-response-artifact";
 import {
   saveBenchmarkRun,
-  saveV2TaskEvaluation,
-  saveV2DimensionScores,
+  saveArtifactTaskEvaluation,
+  saveArtifactDimensionScores,
   initDatabase,
 } from "../api/results";
+import { sql } from "@vercel/postgres";
 import { BENCHMARK_MODELS, type ModelConfig } from "./benchmark-models";
 
 // ============================================================================
@@ -52,17 +53,17 @@ const openrouter = createOpenAI({
   baseURL: "https://openrouter.ai/api/v1",
   headers: {
     "HTTP-Referer": "https://sales-agent-benchmarks.fly.dev",
-    "X-Title": "Sales Agent Benchmark V2",
+    "X-Title": "Sales Agent Benchmark Artifact-Based",
   },
 });
 
-const API_TIMEOUT_MS = 90000; // V2 prompts are larger
+const API_TIMEOUT_MS = 90000; // Artifact-based prompts are larger
 const MAX_RETRIES = 3;
 const BASE_DELAY_MS = 1000;
 const MAX_PARALLEL = 3;
 
-// V2-aware system prompt
-const V2_SYSTEM_PROMPT = `You are an expert sales analyst evaluating deal situations. Your role is to:
+// Artifact-based system prompt
+const ARTIFACT_SYSTEM_PROMPT = `You are an expert sales analyst evaluating deal situations. Your role is to:
 
 1. IDENTIFY RISKS - What could prevent this deal from closing? Consider:
    - Missing stakeholder buy-in
@@ -156,8 +157,8 @@ async function withTimeout<T>(
 // Deal Loading
 // ============================================================================
 
-async function loadV2DealsFromDir(dirPath: string): Promise<V2Deal[]> {
-  const deals: V2Deal[] = [];
+async function loadArtifactDealsFromDir(dirPath: string): Promise<ArtifactDeal[]> {
+  const deals: ArtifactDeal[] = [];
   try {
     const dir = await Bun.$`ls ${dirPath}/*.json`.text();
     const files = dir.trim().split("\n").filter(Boolean);
@@ -166,7 +167,7 @@ async function loadV2DealsFromDir(dirPath: string): Promise<V2Deal[]> {
         const file = Bun.file(filePath.trim());
         const content = await file.json();
         if (content.version === 2) {
-          deals.push(content as V2Deal);
+          deals.push(content as ArtifactDeal);
         }
       } catch {
         // skip non-deal files like summary.json
@@ -226,9 +227,9 @@ function formatArtifactForPrompt(artifact: Artifact): string {
   }
 }
 
-function buildV2Prompt(
-  deal: V2Deal,
-  checkpoint: V2Checkpoint,
+function buildArtifactPrompt(
+  deal: ArtifactDeal,
+  checkpoint: ArtifactCheckpoint,
   task: EvaluationTask,
   artifacts: Artifact[]
 ): string {
@@ -291,16 +292,16 @@ function buildV2Prompt(
 
 async function callModelForTask(
   model: ModelConfig,
-  deal: V2Deal,
-  checkpoint: V2Checkpoint,
+  deal: ArtifactDeal,
+  checkpoint: ArtifactCheckpoint,
   task: EvaluationTask
-): Promise<{ response: V2AgentResponse; latencyMs: number }> {
+): Promise<{ response: ArtifactAgentResponse; latencyMs: number }> {
   // Resolve artifacts for this task
   const artifacts = task.requiredArtifacts
     .map((id) => deal.artifacts[id])
     .filter((a): a is Artifact => a !== undefined);
 
-  const prompt = buildV2Prompt(deal, checkpoint, task, artifacts);
+  const prompt = buildArtifactPrompt(deal, checkpoint, task, artifacts);
   const startTime = Date.now();
 
   const result = await withTimeout(
@@ -308,7 +309,7 @@ async function callModelForTask(
       async () => {
         const genResult = await generateText({
           model: openrouter(model.openrouterId),
-          system: V2_SYSTEM_PROMPT,
+          system: ARTIFACT_SYSTEM_PROMPT,
           prompt,
         });
         return genResult;
@@ -328,7 +329,7 @@ async function callModelForTask(
 
   const parsed = JSON.parse(jsonMatch[0]);
 
-  const response: V2AgentResponse = {
+  const response: ArtifactAgentResponse = {
     version: 2,
     reasoning: String(parsed.reasoning || "No reasoning provided"),
     answer: typeof parsed.answer === "object" && parsed.answer !== null
@@ -358,20 +359,36 @@ async function callModelForTask(
 }
 
 // ============================================================================
+// Resume Support
+// ============================================================================
+
+async function getCompletedTaskIds(agentId: string): Promise<Set<string>> {
+  const result = await sql`
+    SELECT DISTINCT te.task_id
+    FROM task_evaluations te
+    JOIN benchmark_runs br ON te.run_id = br.id
+    WHERE br.agent_id = ${agentId}
+  `;
+  return new Set(result.rows.map((r) => r.task_id));
+}
+
+// ============================================================================
 // Main Runner
 // ============================================================================
 
 async function runBenchmarkForModel(
   model: ModelConfig,
-  deals: V2Deal[],
+  deals: ArtifactDeal[],
   opts: {
     dryRun: boolean;
     singleJudge: boolean;
+    resume: boolean;
   }
 ): Promise<{
   model: ModelConfig;
   tasksCompleted: number;
   tasksFailed: number;
+  tasksSkipped: number;
   totalLatencyMs: number;
   scores: Record<string, number[]>;
   overallPercentage: number;
@@ -383,15 +400,25 @@ async function runBenchmarkForModel(
   const scores: Record<string, number[]> = {};
   let tasksCompleted = 0;
   let tasksFailed = 0;
+  let tasksSkipped = 0;
   let totalLatencyMs = 0;
 
-  const v1DimAccum = { riskIdentification: 0, nextStepQuality: 0, prioritization: 0, outcomeAlignment: 0 };
-  const v2DimAccum: Record<string, { sum: number; count: number }> = {};
+  const summaryDimAccum = { riskIdentification: 0, nextStepQuality: 0, prioritization: 0, outcomeAlignment: 0 };
+  const artifactDimAccum: Record<string, { sum: number; count: number }> = {};
 
   const storedEvals: Array<{
     checkpointId: string;
-    evaluation: V2TaskEvaluation;
+    evaluation: ArtifactTaskEvaluation;
   }> = [];
+
+  // Load completed tasks for resume mode
+  let completedTaskIds = new Set<string>();
+  if (opts.resume) {
+    completedTaskIds = await getCompletedTaskIds(`artifact_${model.id}`);
+    if (completedTaskIds.size > 0) {
+      console.log(`  ⏩ Resume: found ${completedTaskIds.size} completed tasks, skipping them`);
+    }
+  }
 
   for (const deal of deals) {
     console.log(`\n  📁 Deal: ${deal.name} (${Object.keys(deal.artifacts).length} artifacts, ${deal.checkpoints.length} checkpoints)`);
@@ -399,6 +426,14 @@ async function runBenchmarkForModel(
     for (const checkpoint of deal.checkpoints) {
       for (const task of checkpoint.tasks) {
         const taskLabel = `${task.type} [${task.id}]`;
+
+        // Skip already-completed tasks in resume mode
+        if (opts.resume && completedTaskIds.has(task.id)) {
+          console.log(`    ⏩ ${taskLabel} (already completed)`);
+          tasksSkipped++;
+          continue;
+        }
+
         process.stdout.write(`    🔄 ${taskLabel}... `);
 
         try {
@@ -411,7 +446,7 @@ async function runBenchmarkForModel(
             .map((id) => deal.artifacts[id])
             .filter((a): a is Artifact => a !== undefined);
 
-          const evaluation = await evaluateV2Task(
+          const evaluation = await evaluateArtifactTask(
             task,
             response,
             checkpoint.groundTruth,
@@ -426,14 +461,14 @@ async function runBenchmarkForModel(
               if (!scores[dim]) scores[dim] = [];
               scores[dim]!.push(score);
 
-              // V1 dimensions
-              if (dim in v1DimAccum) {
-                (v1DimAccum as Record<string, number>)[dim]! += score;
+              // Summary dimensions
+              if (dim in summaryDimAccum) {
+                (summaryDimAccum as Record<string, number>)[dim]! += score;
               }
-              // V2 dimensions
-              if (!v2DimAccum[dim]) v2DimAccum[dim] = { sum: 0, count: 0 };
-              v2DimAccum[dim]!.sum += score;
-              v2DimAccum[dim]!.count++;
+              // Artifact dimensions
+              if (!artifactDimAccum[dim]) artifactDimAccum[dim] = { sum: 0, count: 0 };
+              artifactDimAccum[dim]!.sum += score;
+              artifactDimAccum[dim]!.count++;
             }
           }
 
@@ -466,12 +501,12 @@ async function runBenchmarkForModel(
   // Save to database
   if (!opts.dryRun && tasksCompleted > 0) {
     try {
-      // Aggregate V1 scores
-      const v1Avgs = {
-        riskIdentification: tasksCompleted > 0 ? v1DimAccum.riskIdentification / tasksCompleted : 0,
-        nextStepQuality: tasksCompleted > 0 ? v1DimAccum.nextStepQuality / tasksCompleted : 0,
-        prioritization: tasksCompleted > 0 ? v1DimAccum.prioritization / tasksCompleted : 0,
-        outcomeAlignment: tasksCompleted > 0 ? v1DimAccum.outcomeAlignment / tasksCompleted : 0,
+      // Aggregate summary scores
+      const summaryAvgs = {
+        riskIdentification: tasksCompleted > 0 ? summaryDimAccum.riskIdentification / tasksCompleted : 0,
+        nextStepQuality: tasksCompleted > 0 ? summaryDimAccum.nextStepQuality / tasksCompleted : 0,
+        prioritization: tasksCompleted > 0 ? summaryDimAccum.prioritization / tasksCompleted : 0,
+        outcomeAlignment: tasksCompleted > 0 ? summaryDimAccum.outcomeAlignment / tasksCompleted : 0,
       };
 
       const aggregateScore = storedEvals.reduce((sum, e) => {
@@ -481,9 +516,9 @@ async function runBenchmarkForModel(
       }, 0);
 
       const runId = await saveBenchmarkRun({
-        agentId: `v2_${model.id}`,
+        agentId: `artifact_${model.id}`,
         agentEndpoint: `openrouter:${model.openrouterId}`,
-        agentName: `${model.name} (V2)`,
+        agentName: model.name,
         mode: "public",
         aggregateScore: Math.round(aggregateScore),
         maxPossibleScore: tasksCompleted * 40,
@@ -492,26 +527,26 @@ async function runBenchmarkForModel(
         avgLatencyMs: Math.round(totalLatencyMs / tasksCompleted),
         runTimestamp: new Date().toISOString(),
         scores: {
-          riskIdentification: Math.round(v1Avgs.riskIdentification * 10) / 10,
-          nextStepQuality: Math.round(v1Avgs.nextStepQuality * 10) / 10,
-          prioritization: Math.round(v1Avgs.prioritization * 10) / 10,
-          outcomeAlignment: Math.round(v1Avgs.outcomeAlignment * 10) / 10,
+          riskIdentification: Math.round(summaryAvgs.riskIdentification * 10) / 10,
+          nextStepQuality: Math.round(summaryAvgs.nextStepQuality * 10) / 10,
+          prioritization: Math.round(summaryAvgs.prioritization * 10) / 10,
+          outcomeAlignment: Math.round(summaryAvgs.outcomeAlignment * 10) / 10,
         },
       });
 
       if (runId) {
-        // Save V2 dimension scores
-        const v2Avgs: Record<string, number | undefined> = {};
-        for (const [dim, acc] of Object.entries(v2DimAccum)) {
+        // Save artifact dimension scores
+        const artifactAvgs: Record<string, number | undefined> = {};
+        for (const [dim, acc] of Object.entries(artifactDimAccum)) {
           if (acc.count > 0 && !["riskIdentification", "nextStepQuality", "prioritization", "outcomeAlignment"].includes(dim)) {
-            v2Avgs[dim] = Math.round((acc.sum / acc.count) * 10) / 10;
+            artifactAvgs[dim] = Math.round((acc.sum / acc.count) * 10) / 10;
           }
         }
-        await saveV2DimensionScores(runId, v2Avgs as Record<string, number | undefined>);
+        await saveArtifactDimensionScores(runId, artifactAvgs as Record<string, number | undefined>);
 
         // Save individual task evaluations
         for (const stored of storedEvals) {
-          await saveV2TaskEvaluation({
+          await saveArtifactTaskEvaluation({
             runId,
             checkpointId: stored.checkpointId,
             taskId: stored.evaluation.taskId,
@@ -531,7 +566,7 @@ async function runBenchmarkForModel(
     }
   }
 
-  return { model, tasksCompleted, tasksFailed, totalLatencyMs, scores, overallPercentage };
+  return { model, tasksCompleted, tasksFailed, tasksSkipped, totalLatencyMs, scores, overallPercentage };
 }
 
 // ============================================================================
@@ -565,11 +600,11 @@ async function main() {
   const parallelArg = args.find((a) => a.startsWith("--parallel="));
   const parallelCount = parallelArg ? parseInt(parallelArg.split("=")[1] || "1") : 1;
 
-  // Load V2 deals
-  console.log("📂 Loading V2 deals...");
+  // Load artifact-based deals
+  console.log("📂 Loading artifact-based deals...");
   const [publicDeals, privateDeals] = await Promise.all([
-    loadV2DealsFromDir("data/v2/checkpoints/public"),
-    loadV2DealsFromDir("data/v2/checkpoints/private"),
+    loadArtifactDealsFromDir("data/artifact/checkpoints/public"),
+    loadArtifactDealsFromDir("data/artifact/checkpoints/private"),
   ]);
 
   let allDeals = [...publicDeals, ...privateDeals];
@@ -582,7 +617,7 @@ async function main() {
     (sum, d) => sum + d.checkpoints.reduce((s, cp) => s + cp.tasks.length, 0), 0
   );
 
-  console.log(`\n=== V2 Benchmark Runner ===`);
+  console.log(`\n=== Artifact-Based Benchmark Runner ===`);
   console.log(`Deals: ${allDeals.length} (${allDeals.map((d) => d.name).join(", ")})`);
   console.log(`Total checkpoints: ${allDeals.reduce((s, d) => s + d.checkpoints.length, 0)}`);
   console.log(`Total tasks: ${totalTasks}`);
@@ -591,7 +626,7 @@ async function main() {
   console.log(`Parallel: ${parallelCount}`);
 
   if (totalTasks === 0) {
-    console.error("No V2 tasks found. Run the pipeline first.");
+    console.error("No artifact-based tasks found. Run the pipeline first.");
     process.exit(1);
   }
 
@@ -606,7 +641,7 @@ async function main() {
   if (parallelCount > 1) {
     const executing: Promise<void>[] = [];
     for (const model of modelsToRun) {
-      const p = runBenchmarkForModel(model, allDeals, { dryRun, singleJudge }).then((r) => {
+      const p = runBenchmarkForModel(model, allDeals, { dryRun, singleJudge, resume }).then((r) => {
         results.push(r);
         executing.splice(executing.indexOf(p), 1);
       });
@@ -618,14 +653,14 @@ async function main() {
     await Promise.all(executing);
   } else {
     for (const model of modelsToRun) {
-      const result = await runBenchmarkForModel(model, allDeals, { dryRun, singleJudge });
+      const result = await runBenchmarkForModel(model, allDeals, { dryRun, singleJudge, resume });
       results.push(result);
     }
   }
 
   // Print summary
   console.log(`\n\n${"=".repeat(60)}`);
-  console.log("📊 V2 BENCHMARK RESULTS SUMMARY");
+  console.log("📊 ARTIFACT-BASED BENCHMARK RESULTS SUMMARY");
   console.log(`${"=".repeat(60)}\n`);
 
   // Sort by overall percentage
@@ -648,7 +683,8 @@ async function main() {
     if (dimAvgs.length > 0) {
       console.log(`         ${dimAvgs.join(" | ")}`);
     }
-    console.log(`         Tasks: ${r.tasksCompleted}/${r.tasksCompleted + r.tasksFailed} | Avg latency: ${avgLatency}ms`);
+    const skippedStr = r.tasksSkipped > 0 ? ` | Skipped: ${r.tasksSkipped}` : "";
+    console.log(`         Tasks: ${r.tasksCompleted}/${r.tasksCompleted + r.tasksFailed}${skippedStr} | Avg latency: ${avgLatency}ms`);
     console.log("");
   }
 

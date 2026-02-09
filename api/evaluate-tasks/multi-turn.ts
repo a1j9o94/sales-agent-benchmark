@@ -1,32 +1,32 @@
 /**
  * Multi-Turn Evaluation Orchestrator
  *
- * Manages the artifact request/response loop for V2 evaluations.
+ * Manages the artifact request/response loop for Artifact-Based evaluations.
  * Agents receive required artifacts upfront, then can request optional
  * artifacts across multiple turns before submitting their final answer.
  */
 
 import type {
-  V2AgentRequest,
-  V2AgentResponse,
-  V2Checkpoint,
+  ArtifactAgentRequest,
+  ArtifactAgentResponse,
+  ArtifactCheckpoint,
   EvaluationTask,
   Artifact,
-} from "../../src/types/benchmark-v2";
+} from "../../src/types/benchmark-artifact";
 
 export interface MultiTurnResult {
-  finalResponse: V2AgentResponse;
+  finalResponse: ArtifactAgentResponse;
   turnsUsed: number;
   artifactsRequested: string[];
   turnHistory: Array<{
     turnNumber: number;
     artifactsProvided: string[];
-    response: V2AgentResponse;
+    response: ArtifactAgentResponse;
   }>;
 }
 
 export interface MultiTurnDeps {
-  callAgent: (request: V2AgentRequest) => Promise<V2AgentResponse>;
+  callAgent: (request: ArtifactAgentRequest) => Promise<ArtifactAgentResponse>;
 }
 
 const DEFAULT_MAX_TURNS = 3;
@@ -35,7 +35,7 @@ export class MultiTurnOrchestrator {
   private maxTurns: number;
 
   constructor(
-    private checkpoint: V2Checkpoint,
+    private checkpoint: ArtifactCheckpoint,
     private task: EvaluationTask,
     private allArtifacts: Record<string, Artifact>,
     private deps: MultiTurnDeps
@@ -55,7 +55,7 @@ export class MultiTurnOrchestrator {
     let currentArtifacts = initialArtifacts;
 
     while (turnNumber <= this.maxTurns) {
-      const request: V2AgentRequest = {
+      const request: ArtifactAgentRequest = {
         version: 2,
         checkpointId: this.checkpoint.id,
         taskId: this.task.id,

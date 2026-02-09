@@ -6,12 +6,12 @@ import {
   dimensionColor,
   taskTypeLabel,
   taskTypeColor,
-  V2_DIMENSION_KEYS,
+  ARTIFACT_DIMENSION_KEYS,
 } from "./utils";
 import { ScatterPlot } from "@/components/shared/ScatterPlot";
-import type { ScoringDimensionKey } from "@/types/benchmark-v2";
+import type { ScoringDimensionKey } from "@/types/benchmark-artifact";
 
-interface V2LeaderboardEntry {
+interface ArtifactLeaderboardEntry {
   rank: number;
   agentId: string;
   agentName?: string | null;
@@ -90,7 +90,7 @@ function SortableHeader({
   );
 }
 
-function EntryDetail({ entry, onClose }: { entry: V2LeaderboardEntry; onClose: () => void }) {
+function EntryDetail({ entry, onClose }: { entry: ArtifactLeaderboardEntry; onClose: () => void }) {
   return (
     <div className="p-5 border-t border-white/5 bg-navy-800/20">
       <div className="flex items-start justify-between mb-4">
@@ -107,7 +107,7 @@ function EntryDetail({ entry, onClose }: { entry: V2LeaderboardEntry; onClose: (
 
       {/* 8-dimension grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-        {V2_DIMENSION_KEYS.map((key) => {
+        {ARTIFACT_DIMENSION_KEYS.map((key) => {
           const value = entry.dimensions[key];
           const color = dimensionColor(key);
           return (
@@ -170,12 +170,12 @@ function EntryDetail({ entry, onClose }: { entry: V2LeaderboardEntry; onClose: (
   );
 }
 
-export function V2Leaderboard() {
-  const [entries, setEntries] = useState<V2LeaderboardEntry[]>([]);
+export function ArtifactLeaderboard() {
+  const [entries, setEntries] = useState<ArtifactLeaderboardEntry[]>([]);
   const [sortField, setSortField] = useState<SortField>("rank");
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedEntry, setSelectedEntry] = useState<V2LeaderboardEntry | null>(null);
+  const [selectedEntry, setSelectedEntry] = useState<ArtifactLeaderboardEntry | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [showDimensions, setShowDimensions] = useState(false);
 
@@ -183,7 +183,7 @@ export function V2Leaderboard() {
     (async () => {
       setIsLoading(true);
       try {
-        const res = await fetch("/api/v2/leaderboard");
+        const res = await fetch("/api/artifact/leaderboard");
         if (res.ok) {
           const data = await res.json();
           if (data.entries?.length > 0) {
@@ -325,7 +325,7 @@ export function V2Leaderboard() {
               <div className="text-center">
                 <SortableHeader label="Score" field="percentage" currentSort={sortField} currentDirection={sortDirection} onSort={handleSort} />
               </div>
-              {V2_DIMENSION_KEYS.map((key) => (
+              {ARTIFACT_DIMENSION_KEYS.map((key) => (
                 <div key={key} className="text-center">
                   <SortableHeader
                     label={dimensionLabel(key)}
@@ -369,7 +369,7 @@ export function V2Leaderboard() {
                           {entry.percentage}%
                         </span>
                       </div>
-                      {V2_DIMENSION_KEYS.map((key) => (
+                      {ARTIFACT_DIMENSION_KEYS.map((key) => (
                         <div key={key} className="text-center">
                           <span className="text-sm tabular-nums text-slate-300">
                             {entry.dimensions[key] !== undefined ? entry.dimensions[key]!.toFixed(1) : "-"}
@@ -409,7 +409,7 @@ export function V2Leaderboard() {
                       </div>
                       {showDimensions && (
                         <div className="grid grid-cols-4 gap-2 mt-2 text-xs text-slate-500">
-                          {V2_DIMENSION_KEYS.map((key) => (
+                          {ARTIFACT_DIMENSION_KEYS.map((key) => (
                             <div key={key} className="text-center">
                               <div className="text-[10px] text-slate-600">{dimensionLabel(key)}</div>
                               <div className="text-slate-300 font-medium">
@@ -432,4 +432,4 @@ export function V2Leaderboard() {
   );
 }
 
-export default V2Leaderboard;
+export default ArtifactLeaderboard;

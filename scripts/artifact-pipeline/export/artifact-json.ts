@@ -1,17 +1,17 @@
 /**
- * V2 JSON Exporter
+ * Artifact-Based JSON Exporter
  *
- * Exports V2Deal objects to JSON files in the data/v2/checkpoints/ directory.
+ * Exports ArtifactDeal objects to JSON files in the data/artifact/checkpoints/ directory.
  * Handles public/private split and summary generation.
  */
 
 import { mkdir, writeFile } from "fs/promises";
 import { join } from "path";
-import type { V2Deal } from "../../../src/types/benchmark-v2";
+import type { ArtifactDeal } from "../../../src/types/benchmark-artifact";
 
-const DEFAULT_OUTPUT_DIR = join(process.cwd(), "data", "v2", "checkpoints");
+const DEFAULT_OUTPUT_DIR = join(process.cwd(), "data", "artifact", "checkpoints");
 
-/** Public deal IDs (same 5 as v1) */
+/** Public deal IDs (same 5 as summary benchmark) */
 const PUBLIC_DEAL_IDS = new Set([
   "velocity-systems",
   "noteflow-ai",
@@ -33,10 +33,10 @@ export interface ExportResult {
 }
 
 /**
- * Export a single V2Deal to JSON file.
+ * Export a single ArtifactDeal to JSON file.
  */
 export async function exportDeal(
-  deal: V2Deal,
+  deal: ArtifactDeal,
   options: ExportOptions = {}
 ): Promise<ExportResult> {
   const outputDir = options.outputDir ?? DEFAULT_OUTPUT_DIR;
@@ -62,11 +62,11 @@ export async function exportDeal(
  * Export all deals and generate summary.
  */
 export async function exportAllDeals(
-  deals: V2Deal[],
+  deals: ArtifactDeal[],
   options: ExportOptions = {}
 ): Promise<{
   results: ExportResult[];
-  summary: V2ExportSummary;
+  summary: ArtifactExportSummary;
 }> {
   const results: ExportResult[] = [];
 
@@ -88,7 +88,7 @@ export async function exportAllDeals(
   return { results, summary };
 }
 
-export interface V2ExportSummary {
+export interface ArtifactExportSummary {
   version: 2;
   totalDeals: number;
   publicDeals: number;
@@ -109,7 +109,7 @@ export interface V2ExportSummary {
   }[];
 }
 
-function generateSummary(deals: V2Deal[], results: ExportResult[]): V2ExportSummary {
+function generateSummary(deals: ArtifactDeal[], results: ExportResult[]): ArtifactExportSummary {
   const publicResults = results.filter((r) => r.isPublic);
   const privateResults = results.filter((r) => !r.isPublic);
 

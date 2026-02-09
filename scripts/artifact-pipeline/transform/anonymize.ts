@@ -1,11 +1,11 @@
 /**
- * Anonymization module for the v2 pipeline.
+ * Anonymization module for the artifact-based pipeline.
  *
  * Refactored from extract_checkpoints.ts with extended coverage:
  *   - Slack handle anonymization
  *   - HubSpot numeric ID anonymization
  *   - ISO date shifting
- *   - Artifact-level anonymization for all v2 artifact types
+ *   - Artifact-level anonymization for all artifact types
  */
 
 import type {
@@ -20,7 +20,7 @@ import type {
   SlackThreadArtifact,
   SlackMessage,
   CalendarEventArtifact,
-} from "../../../src/types/benchmark-v2.ts";
+} from "../../../src/types/benchmark-artifact";
 
 // ---------------------------------------------------------------------------
 // Replacement Maps
@@ -156,7 +156,7 @@ export function anonymizeText(text: string): string {
   // Anonymize URLs
   result = result.replace(/https?:\/\/[^\s<>"]+/g, "https://example.com/...");
 
-  // --- v2 extensions ---
+  // --- artifact extensions ---
 
   // Anonymize Slack handles (@username -> @user)
   result = result.replace(/@[\w.-]{2,}/g, "@user");

@@ -85,22 +85,8 @@ export function AgentRegistration({ onAgentRegistered }: AgentRegistrationProps)
     }
   };
 
-  const useReferenceAgent = async () => {
-    setIsTesting(true);
-    try {
-      const res = await fetch("/api/reference-agent-results");
-      if (res.ok) {
-        const data = await res.json();
-        window.history.pushState({}, "", `/results/${encodeURIComponent(data.agentId)}`);
-        window.dispatchEvent(new PopStateEvent("popstate"));
-        return;
-      }
-    } catch {
-      // Fall through to prefill
-    }
-    setIsTesting(false);
-    setEndpoint(window.location.origin + "/api/agent");
-    setName("Reference Agent");
+  const useReferenceAgent = () => {
+    window.open("https://github.com/a1j9o94/sales-agent-benchmark/blob/main/api/reference-agent.ts", "_blank");
   };
 
   if (registeredAgent) {
@@ -209,7 +195,7 @@ export function AgentRegistration({ onAgentRegistered }: AgentRegistrationProps)
             className="flex-1 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm font-medium
               hover:bg-white/10 transition-colors"
           >
-            Use Reference Agent
+            View Reference Agent
           </button>
           <button
             onClick={testEndpoint}

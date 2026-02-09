@@ -9,11 +9,11 @@ import {
   dimensionColor,
   dimensionFullLabel,
   getJudgeShortName,
-  V2_DIMENSION_KEYS,
+  ARTIFACT_DIMENSION_KEYS,
 } from "./utils";
-import type { V2ScoringDimensions } from "@/types/benchmark-v2";
+import type { ArtifactScoringDimensions } from "@/types/benchmark-artifact";
 
-interface V2RunDetails {
+interface ArtifactRunDetails {
   id: number;
   agentId: string;
   agentName: string | null;
@@ -30,13 +30,13 @@ interface V2RunDetails {
   dimensions: Record<string, number>;
 }
 
-interface V2TaskEvaluation {
+interface ArtifactTaskEvaluation {
   runId: number;
   checkpointId: string;
   taskId: string;
   taskType: string;
   turnsUsed: number;
-  scores: Partial<V2ScoringDimensions>;
+  scores: Partial<ArtifactScoringDimensions>;
   feedback?: string;
   artifactsRequested?: string[];
   judgeModel?: string;
@@ -48,7 +48,7 @@ function getDealPrefix(checkpointId: string): string {
   return checkpointId.substring(0, idx);
 }
 
-function evalV2Total(eval_: V2TaskEvaluation): number {
+function evalArtifactTotal(eval_: ArtifactTaskEvaluation): number {
   return (
     (eval_.scores.riskIdentification ?? 0) +
     (eval_.scores.nextStepQuality ?? 0) +
@@ -94,8 +94,8 @@ function parseFeedbackByJudge(feedback: string, judgeModel: string): { judge: st
   return sections;
 }
 
-function JudgeDetail({ eval_ }: { eval_: V2TaskEvaluation }) {
-  const total = evalV2Total(eval_);
+function JudgeDetail({ eval_ }: { eval_: ArtifactTaskEvaluation }) {
+  const total = evalArtifactTotal(eval_);
   const totalPct = Math.round((total / 40) * 100);
 
   // Only show dimensions that have values
@@ -178,12 +178,12 @@ function JudgeDetail({ eval_ }: { eval_: V2TaskEvaluation }) {
   );
 }
 
-export function V2ResultsPage() {
+export function ArtifactResultsPage() {
   const pathParts = window.location.pathname.split("/").filter(Boolean);
   const resultId = pathParts[pathParts.length - 1] || "";
 
-  const [run, setRun] = useState<V2RunDetails | null>(null);
-  const [taskEvaluations, setTaskEvaluations] = useState<V2TaskEvaluation[]>([]);
+  const [run, setRun] = useState<ArtifactRunDetails | null>(null);
+  const [taskEvaluations, setTaskEvaluations] = useState<ArtifactTaskEvaluation[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedDeal, setSelectedDeal] = useState<string | null>(null);
@@ -198,7 +198,7 @@ export function V2ResultsPage() {
 
     (async () => {
       try {
-        const res = await fetch(`/api/v2/agent-results/${encodeURIComponent(resultId)}`);
+        const res = await fetch(`/api/artifact/agent-results/${encodeURIComponent(resultId)}`);
         if (!res.ok) {
           const data = await res.json().catch(() => ({ error: "Failed to load" }));
           setError(data.error || `Error: ${res.status}`);
@@ -216,7 +216,7 @@ export function V2ResultsPage() {
   }, [resultId]);
 
   // Group evaluations by checkpoint, then by deal
-  const evalsByCheckpoint = taskEvaluations.reduce<Record<string, V2TaskEvaluation[]>>(
+  const evalsByCheckpoint = taskEvaluations.reduce<Record<string, ArtifactTaskEvaluation[]>>(
     (acc, eval_) => {
       if (!acc[eval_.checkpointId]) acc[eval_.checkpointId] = [];
       acc[eval_.checkpointId]!.push(eval_);
@@ -247,7 +247,7 @@ export function V2ResultsPage() {
       const evals = evalsByCheckpoint[cpId];
       if (!evals) continue;
       for (const e of evals) {
-        total += evalV2Total(e);
+        total += evalArtifactTotal(e);
         count++;
       }
     }
@@ -258,7 +258,7 @@ export function V2ResultsPage() {
   function checkpointAvgScore(cpId: string): number {
     const evals = evalsByCheckpoint[cpId];
     if (!evals || evals.length === 0) return 0;
-    const sum = evals.reduce((s, e) => s + evalV2Total(e), 0);
+    const sum = evals.reduce((s, e) => s + evalArtifactTotal(e), 0);
     return sum / evals.length;
   }
 
@@ -366,7 +366,7 @@ export function V2ResultsPage() {
 
           {/* 8-dimension grid (2 rows x 4 cols) */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {V2_DIMENSION_KEYS.map((key) => {
+            {ARTIFACT_DIMENSION_KEYS.map((key) => {
               const value = allDimensions[key];
               const color = dimensionColor(key);
               return (
@@ -445,7 +445,7 @@ export function V2ResultsPage() {
                 const avgPct = Math.round((avg / 40) * 100);
 
                 // Group evals by task
-                const taskGroups: Record<string, V2TaskEvaluation[]> = {};
+                const taskGroups: Record<string, ArtifactTaskEvaluation[]> = {};
                 for (const e of evals) {
                   if (!taskGroups[e.taskId]) taskGroups[e.taskId] = [];
                   taskGroups[e.taskId]!.push(e);
@@ -567,4 +567,4 @@ export function V2ResultsPage() {
   );
 }
 
-export default V2ResultsPage;
+export default ArtifactResultsPage;

@@ -1,7 +1,7 @@
 /**
- * V2 Response Evaluation API
+ * Artifact-Based Response Evaluation API
  *
- * Task-specific multi-judge evaluation for V2 benchmark.
+ * Task-specific multi-judge evaluation for artifact-based benchmark.
  * Routes to the correct judge prompt based on task type, runs 3 judges in
  * parallel (Claude, GPT, Gemini), and aggregates dimension-specific scores.
  */
@@ -10,13 +10,13 @@ import { generateText } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
 import { createOpenAI } from "@ai-sdk/openai";
 import type {
-  V2AgentResponse,
-  V2GroundTruth,
+  ArtifactAgentResponse,
+  ArtifactGroundTruth,
   Artifact,
-  V2ScoringDimensions,
+  ArtifactScoringDimensions,
   EvaluationTask,
   ScoringDimensionKey,
-  V2TaskEvaluation,
+  ArtifactTaskEvaluation,
   EvaluationTaskType,
   TranscriptArtifact,
   EmailArtifact,
@@ -24,7 +24,7 @@ import type {
   DocumentArtifact,
   SlackThreadArtifact,
   CalendarEventArtifact,
-} from "../src/types/benchmark-v2";
+} from "../src/types/benchmark-artifact";
 import { JUDGE_MODELS } from "./evaluate-response";
 import {
   DEAL_ANALYSIS_JUDGE_PROMPT,
@@ -51,7 +51,7 @@ import {
 // Dependency Injection
 // ---------------------------------------------------------------------------
 
-export interface EvaluateV2Deps {
+export interface EvaluateArtifactDeps {
   generateText: typeof generateText;
   anthropic: typeof anthropic;
   openrouter: ReturnType<typeof createOpenAI>;
@@ -72,7 +72,7 @@ function getOpenRouter() {
   return _openrouter;
 }
 
-function getDefaultV2Deps(): EvaluateV2Deps {
+function getDefaultArtifactDeps(): EvaluateArtifactDeps {
   return { generateText, anthropic, openrouter: getOpenRouter() };
 }
 
@@ -83,7 +83,7 @@ function getDefaultV2Deps(): EvaluateV2Deps {
 interface TaskConfig {
   judgePrompt: string;
   dimensions: ScoringDimensionKey[];
-  parseScores: (judgeOutput: Record<string, unknown>) => Partial<V2ScoringDimensions>;
+  parseScores: (judgeOutput: Record<string, unknown>) => Partial<ArtifactScoringDimensions>;
 }
 
 const TASK_CONFIGS: Record<string, TaskConfig> = {
@@ -167,10 +167,10 @@ function summarizeArtifact(artifact: Artifact): string {
 // Prompt Building
 // ---------------------------------------------------------------------------
 
-function buildV2EvaluationPrompt(
+function buildArtifactEvaluationPrompt(
   task: EvaluationTask,
-  response: V2AgentResponse,
-  groundTruth: V2GroundTruth,
+  response: ArtifactAgentResponse,
+  groundTruth: ArtifactGroundTruth,
   artifacts: Artifact[]
 ): string {
   const artifactSummaries = artifacts.map(summarizeArtifact).join("\n\n");
@@ -222,17 +222,17 @@ Evaluate the agent's response against the artifacts and ground truth.`;
 // ---------------------------------------------------------------------------
 
 interface JudgeResult {
-  scores: Partial<V2ScoringDimensions>;
+  scores: Partial<ArtifactScoringDimensions>;
   feedback: string;
   judgeModel: string;
   rawOutput: Record<string, unknown>;
 }
 
-async function evaluateV2WithJudge(
+async function evaluateArtifactWithJudge(
   judgeConfig: (typeof JUDGE_MODELS)[keyof typeof JUDGE_MODELS],
   prompt: string,
   taskConfig: TaskConfig,
-  deps: EvaluateV2Deps
+  deps: EvaluateArtifactDeps
 ): Promise<JudgeResult> {
   try {
     let result;
@@ -266,10 +266,10 @@ async function evaluateV2WithJudge(
       rawOutput: parsed,
     };
   } catch (error) {
-    console.error(`${judgeConfig.name} V2 evaluation error:`, error);
+    console.error(`${judgeConfig.name} artifact-based evaluation error:`, error);
 
     // Return zero scores on error
-    const zeroScores: Partial<V2ScoringDimensions> = {};
+    const zeroScores: Partial<ArtifactScoringDimensions> = {};
     for (const dim of taskConfig.dimensions) {
       zeroScores[dim] = 0;
     }
@@ -287,11 +287,11 @@ async function evaluateV2WithJudge(
 // Score Aggregation
 // ---------------------------------------------------------------------------
 
-function aggregateV2Scores(
+function aggregateArtifactScores(
   judgeResults: JudgeResult[],
   dimensions: ScoringDimensionKey[]
-): { scores: V2ScoringDimensions; feedback: string } {
-  const scores: V2ScoringDimensions = {
+): { scores: ArtifactScoringDimensions; feedback: string } {
+  const scores: ArtifactScoringDimensions = {
     riskIdentification: 0,
     nextStepQuality: 0,
     prioritization: 0,
@@ -329,29 +329,29 @@ function aggregateV2Scores(
 // Main Evaluation Function
 // ---------------------------------------------------------------------------
 
-export async function evaluateV2Task(
+export async function evaluateArtifactTask(
   task: EvaluationTask,
-  agentResponse: V2AgentResponse,
-  groundTruth: V2GroundTruth,
+  agentResponse: ArtifactAgentResponse,
+  groundTruth: ArtifactGroundTruth,
   artifacts: Artifact[],
   turnsUsed: number = 1,
   artifactsRequested: string[] = [],
-  deps: EvaluateV2Deps = getDefaultV2Deps()
-): Promise<V2TaskEvaluation> {
+  deps: EvaluateArtifactDeps = getDefaultArtifactDeps()
+): Promise<ArtifactTaskEvaluation> {
   const taskConfig = getTaskConfig(task.type);
 
   // Build the evaluation prompt
-  const prompt = buildV2EvaluationPrompt(task, agentResponse, groundTruth, artifacts);
+  const prompt = buildArtifactEvaluationPrompt(task, agentResponse, groundTruth, artifacts);
 
   // Run all 3 judges in parallel
   const judgePromises = Object.values(JUDGE_MODELS).map((judgeConfig) =>
-    evaluateV2WithJudge(judgeConfig, prompt, taskConfig, deps)
+    evaluateArtifactWithJudge(judgeConfig, prompt, taskConfig, deps)
   );
 
   const judgeResults = await Promise.all(judgePromises);
 
   // Aggregate scores across judges
-  const { scores, feedback } = aggregateV2Scores(judgeResults, taskConfig.dimensions);
+  const { scores, feedback } = aggregateArtifactScores(judgeResults, taskConfig.dimensions);
 
   return {
     taskId: task.id,
@@ -368,9 +368,9 @@ export async function evaluateV2Task(
 // HTTP Handler
 // ---------------------------------------------------------------------------
 
-export async function handleEvaluateV2Endpoint(
+export async function handleEvaluateArtifactEndpoint(
   req: Request,
-  deps: EvaluateV2Deps = getDefaultV2Deps()
+  deps: EvaluateArtifactDeps = getDefaultArtifactDeps()
 ): Promise<Response> {
   if (req.method !== "POST") {
     return Response.json({ error: "Method not allowed" }, { status: 405 });
@@ -379,8 +379,8 @@ export async function handleEvaluateV2Endpoint(
   try {
     const body = (await req.json()) as {
       task?: EvaluationTask;
-      agentResponse?: V2AgentResponse;
-      groundTruth?: V2GroundTruth;
+      agentResponse?: ArtifactAgentResponse;
+      groundTruth?: ArtifactGroundTruth;
       artifacts?: Artifact[];
       turnsUsed?: number;
       artifactsRequested?: string[];
@@ -396,7 +396,7 @@ export async function handleEvaluateV2Endpoint(
       return Response.json({ error: "groundTruth is required" }, { status: 400 });
     }
 
-    const evaluation = await evaluateV2Task(
+    const evaluation = await evaluateArtifactTask(
       body.task,
       body.agentResponse,
       body.groundTruth,
@@ -408,7 +408,7 @@ export async function handleEvaluateV2Endpoint(
 
     return Response.json(evaluation);
   } catch (error) {
-    console.error("V2 evaluate response error:", error);
+    console.error("Artifact-based evaluate response error:", error);
     return Response.json(
       { error: error instanceof Error ? error.message : "Evaluation failed" },
       { status: 500 }

@@ -1,5 +1,5 @@
 /**
- * Slack data ingestion module for the v2 pipeline.
+ * Slack data ingestion module for the artifact-based pipeline.
  *
  * Exports pure transform functions that accept raw Slack data
  * (fetched via Zapier MCP) and return SlackThreadArtifact objects.
@@ -13,7 +13,7 @@
 import type {
   SlackThreadArtifact,
   SlackMessage,
-} from "../../../src/types/benchmark-v2";
+} from "../../../src/types/benchmark-artifact";
 
 // ---------------------------------------------------------------------------
 // Raw data shapes (what Zapier MCP returns)
@@ -54,7 +54,7 @@ const MIN_MESSAGES_PER_THREAD = 2;
  * Transform pre-grouped Slack threads into SlackThreadArtifact objects.
  * Only includes threads with 2+ messages.
  *
- * @param dealId - The v2 deal codename ID (e.g. "velocity-systems")
+ * @param dealId - The deal codename ID (e.g. "velocity-systems")
  * @param rawThreads - Pre-grouped thread objects
  */
 export function transformSlackThreads(
@@ -97,7 +97,7 @@ export function transformSlackThreads(
  * Groups messages by thread_ts (thread parent timestamp). Messages without
  * thread_ts are treated as standalone threads grouped by channel+date.
  *
- * @param dealId - The v2 deal codename ID
+ * @param dealId - The deal codename ID
  * @param rawMessages - Flat array of raw Slack messages from Zapier
  */
 export function transformRawSlackMessages(

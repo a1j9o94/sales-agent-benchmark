@@ -6,7 +6,7 @@ import {
   type RawHubSpotContact,
   type RawHubSpotNote,
 } from "./hubspot";
-import type { CrmSnapshotArtifact } from "../../../src/types/benchmark-v2";
+import type { CrmSnapshotArtifact } from "../../../src/types/benchmark-artifact";
 
 describe("transformHubSpotData", () => {
   const dealId = "velocity-systems";

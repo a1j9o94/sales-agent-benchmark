@@ -1,22 +1,22 @@
 /**
  * Checkpoint Builder
  *
- * Assembles artifacts into time-windowed V2Checkpoints.
+ * Assembles artifacts into time-windowed ArtifactCheckpoints.
  * Creates 2-6 checkpoints per deal at significant deal events,
  * with appropriate artifacts available at each point.
  */
 
 import type {
   Artifact,
-  V2Checkpoint,
-  V2Stakeholder,
+  ArtifactCheckpoint,
+  ArtifactStakeholder,
   MeddpiccState,
   EvaluationTask,
-  V2GroundTruth,
+  ArtifactGroundTruth,
   CrmActivityEntry,
   ScoringDimensionKey,
   EvaluationTaskType,
-} from "../../../src/types/benchmark-v2";
+} from "../../../src/types/benchmark-artifact";
 import {
   sortArtifactsChronologically,
   getArtifactsAvailableAt,
@@ -47,7 +47,7 @@ export interface CheckpointBuilderInput {
   dealName: string;
   artifacts: Artifact[];
   activityLog: CrmActivityEntry[];
-  stakeholders: V2Stakeholder[];
+  stakeholders: ArtifactStakeholder[];
   meddpicc?: MeddpiccState;
   stage: string;
   amount?: string;
@@ -223,9 +223,9 @@ export function generateTasks(
 }
 
 /**
- * Build V2Checkpoints from a set of artifacts and deal metadata.
+ * Build ArtifactCheckpoints from a set of artifacts and deal metadata.
  */
-export function buildCheckpoints(input: CheckpointBuilderInput): V2Checkpoint[] {
+export function buildCheckpoints(input: CheckpointBuilderInput): ArtifactCheckpoint[] {
   const {
     dealId,
     dealName,
@@ -251,7 +251,7 @@ export function buildCheckpoints(input: CheckpointBuilderInput): V2Checkpoint[] 
       : new Date(getArtifactDate(sortArtifactsChronologically(artifacts)[0]!));
 
   return checkpointDates.map((date, idx) => {
-    const id = `${dealId}_v2_cp_${String(idx + 1).padStart(3, "0")}`;
+    const id = `${dealId}_cp_${String(idx + 1).padStart(3, "0")}`;
     const available = getArtifactsAvailableAt(artifacts, date);
     const daysSinceFirst = Math.floor(
       (new Date(date).getTime() - firstContact.getTime()) / (1000 * 60 * 60 * 24)
@@ -289,7 +289,7 @@ function extractGroundTruth(
   allCheckpointDates: string[],
   activityLog: CrmActivityEntry[],
   checkpointIdx: number
-): V2GroundTruth {
+): ArtifactGroundTruth {
   const cpTime = new Date(checkpointDate).getTime();
 
   // Find the next checkpoint date (or end of log)
@@ -315,7 +315,7 @@ function extractGroundTruth(
     .map((e) => e.description);
 
   // Determine outcome
-  let outcome: V2GroundTruth["outcomeAtThisPoint"] = "progressing";
+  let outcome: ArtifactGroundTruth["outcomeAtThisPoint"] = "progressing";
   const allFutureText = whatHappened.toLowerCase();
   if (allFutureText.includes("won") || allFutureText.includes("closed won") || allFutureText.includes("signed")) {
     outcome = "won";

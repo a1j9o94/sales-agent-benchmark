@@ -1,14 +1,14 @@
 /**
- * V2 Data Quality Validation
+ * Artifact Data Quality Validation
  *
- * Validates V2Deal data for:
+ * Validates ArtifactDeal data for:
  * - Minimum artifact thresholds
  * - Anonymization leak detection
  * - Completeness checks
  * - Structural integrity
  */
 
-import type { V2Deal, V2Checkpoint, Artifact, ArtifactType } from "../../../src/types/benchmark-v2";
+import type { ArtifactDeal, ArtifactCheckpoint, Artifact, ArtifactType } from "../../../src/types/benchmark-artifact";
 
 export interface ValidationResult {
   dealId: string;
@@ -123,8 +123,8 @@ function scanArtifactForLeaks(artifact: Artifact): string[] {
   return scanForLeaks(allText);
 }
 
-/** Validate a single V2Deal */
-export function validateDeal(deal: V2Deal): ValidationResult {
+/** Validate a single ArtifactDeal */
+export function validateDeal(deal: ArtifactDeal): ValidationResult {
   const errors: string[] = [];
   const warnings: string[] = [];
 
@@ -203,8 +203,8 @@ export function validateDeal(deal: V2Deal): ValidationResult {
 
 /** Validate a single checkpoint within a deal */
 function validateCheckpoint(
-  checkpoint: V2Checkpoint,
-  deal: V2Deal
+  checkpoint: ArtifactCheckpoint,
+  deal: ArtifactDeal
 ): { errors: string[]; warnings: string[] } {
   const errors: string[] = [];
   const warnings: string[] = [];
@@ -260,7 +260,7 @@ function validateCheckpoint(
 }
 
 /** Validate a batch of deals and return summary */
-export function validateBatch(deals: V2Deal[]): {
+export function validateBatch(deals: ArtifactDeal[]): {
   results: ValidationResult[];
   totalErrors: number;
   totalWarnings: number;

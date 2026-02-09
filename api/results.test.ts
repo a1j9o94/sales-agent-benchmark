@@ -116,8 +116,8 @@ beforeEach(() => {
 describe("initDatabase", () => {
   test("creates all tables and indexes", async () => {
     await initDatabase(testDeps);
-    // 6 CREATE TABLE (4 v1 + 2 v2) + 8 CREATE INDEX (5 v1 + 3 v2) = 14 sql calls
-    expect(sqlCalls.length).toBe(14);
+    // 5 CREATE TABLE (agents, benchmark_runs, dimension_scores, judge_evaluations, task_evaluations) + 7 CREATE INDEX = 12 sql calls
+    expect(sqlCalls.length).toBe(12);
   });
 
   test("throws on database error", async () => {

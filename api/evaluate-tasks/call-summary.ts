@@ -1,17 +1,17 @@
 /**
- * Call Summary Judge — V2 Evaluation Task
+ * Call Summary Judge — Artifact-Based Evaluation Task
  *
  * Evaluates agent responses to call summary tasks: information synthesis,
  * stakeholder mapping, and prioritization of key takeaways.
  */
 
 import type {
-  V2ScoringDimensions,
-  V2GroundTruth,
+  ArtifactScoringDimensions,
+  ArtifactGroundTruth,
   Artifact,
-  V2AgentResponse,
+  ArtifactAgentResponse,
   ScoringDimensionKey,
-} from "../../src/types/benchmark-v2";
+} from "../../src/types/benchmark-artifact";
 
 export const CALL_SUMMARY_DIMENSIONS: ScoringDimensionKey[] = [
   "informationSynthesis",
@@ -65,14 +65,14 @@ Return ONLY valid JSON:
 }`;
 
 /**
- * Parse a judge's JSON response into V2ScoringDimensions for call summary.
+ * Parse a judge's JSON response into ArtifactScoringDimensions for call summary.
  * Clamps all scores to 0-10 range.
  */
 export function scoreCallSummary(
-  response: V2AgentResponse,
-  groundTruth: V2GroundTruth,
+  response: ArtifactAgentResponse,
+  groundTruth: ArtifactGroundTruth,
   artifacts: Artifact[]
-): Partial<V2ScoringDimensions> {
+): Partial<ArtifactScoringDimensions> {
   return {
     informationSynthesis: 0,
     stakeholderMapping: 0,
@@ -81,11 +81,11 @@ export function scoreCallSummary(
 }
 
 /**
- * Parse raw judge JSON output into clamped V2ScoringDimensions.
+ * Parse raw judge JSON output into clamped ArtifactScoringDimensions.
  */
 export function parseCallSummaryScores(
   judgeOutput: Record<string, unknown>
-): Partial<V2ScoringDimensions> {
+): Partial<ArtifactScoringDimensions> {
   const scores = judgeOutput.scores as Record<string, number> | undefined;
   const clamp = (v: number) => Math.min(10, Math.max(0, v || 0));
 

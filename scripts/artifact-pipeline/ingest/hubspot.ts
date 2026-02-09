@@ -1,5 +1,5 @@
 /**
- * HubSpot data ingestion module for the v2 pipeline.
+ * HubSpot data ingestion module for the artifact-based pipeline.
  *
  * Exports pure transform functions that accept raw HubSpot API data
  * (fetched via Zapier MCP) and return structured CRM artifacts.
@@ -13,7 +13,7 @@
 import type {
   CrmSnapshotArtifact,
   CrmActivityEntry,
-} from "../../../src/types/benchmark-v2";
+} from "../../../src/types/benchmark-artifact";
 
 // ---------------------------------------------------------------------------
 // Raw data shapes (what Zapier MCP returns)
@@ -67,7 +67,7 @@ export interface HubSpotIngestResult {
 /**
  * Transform raw HubSpot data into structured CRM artifact fields.
  *
- * @param dealId - The v2 deal codename ID (e.g. "velocity-systems")
+ * @param dealId - The deal codename ID (e.g. "velocity-systems")
  * @param rawDeal - Raw deal object from deal_crmSearch
  * @param rawContacts - Raw contact objects from contactSearch
  * @param rawNotes - Raw note objects from ae:496206 (optional)

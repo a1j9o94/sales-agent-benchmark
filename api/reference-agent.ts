@@ -14,8 +14,8 @@ import { createOpenAI } from "@ai-sdk/openai";
 import { BENCHMARK_MODELS, type ModelConfig } from "../scripts/benchmark-models";
 import type { AgentRequest, AgentResponse } from "../src/types/benchmark";
 import type {
-  V2AgentRequest,
-  V2AgentResponse,
+  ArtifactAgentRequest,
+  ArtifactAgentResponse,
   Artifact,
   TranscriptArtifact,
   EmailArtifact,
@@ -23,7 +23,7 @@ import type {
   DocumentArtifact,
   SlackThreadArtifact,
   CalendarEventArtifact,
-} from "../src/types/benchmark-v2";
+} from "../src/types/benchmark-artifact";
 
 export interface ReferenceAgentDeps {
   generateText: typeof generateText;
@@ -153,10 +153,10 @@ Analyze this deal situation and provide your assessment as JSON.`;
 }
 
 // ---------------------------------------------------------------------------
-// V2 Reference Agent
+// Artifact-Based Reference Agent
 // ---------------------------------------------------------------------------
 
-const V2_SALES_AGENT_SYSTEM_PROMPT = `${SALES_AGENT_SYSTEM_PROMPT}
+const ARTIFACT_SALES_AGENT_SYSTEM_PROMPT = `${SALES_AGENT_SYSTEM_PROMPT}
 
 You are analyzing real deal artifacts — transcripts, emails, CRM data, documents, etc.
 Synthesize information across all provided artifacts to form your analysis.
@@ -216,7 +216,7 @@ function formatArtifactForPrompt(artifact: Artifact): string {
   }
 }
 
-function buildV2Prompt(request: V2AgentRequest): string {
+function buildArtifactPrompt(request: ArtifactAgentRequest): string {
   const parts: string[] = [
     `## Deal: ${request.dealSnapshot.company}`,
     `**Stage:** ${request.dealSnapshot.stage}`,
@@ -261,17 +261,17 @@ function buildV2Prompt(request: V2AgentRequest): string {
   return parts.filter((p) => p !== undefined).join("\n");
 }
 
-async function handleV2ReferenceAgent(
-  body: V2AgentRequest,
+async function handleArtifactReferenceAgent(
+  body: ArtifactAgentRequest,
   model: ModelConfig,
   deps: ReferenceAgentDeps
 ): Promise<Response> {
-  const prompt = buildV2Prompt(body);
+  const prompt = buildArtifactPrompt(body);
 
   try {
     const result = await deps.generateText({
       model: deps.openrouter(model.openrouterId),
-      system: V2_SALES_AGENT_SYSTEM_PROMPT,
+      system: ARTIFACT_SALES_AGENT_SYSTEM_PROMPT,
       prompt,
     });
 
@@ -282,7 +282,7 @@ async function handleV2ReferenceAgent(
 
     const parsed = JSON.parse(jsonMatch[0]);
 
-    const response: V2AgentResponse = {
+    const response: ArtifactAgentResponse = {
       version: 2,
       reasoning: String(parsed.reasoning || "No reasoning provided"),
       answer: typeof parsed.answer === "object" && parsed.answer !== null
@@ -315,7 +315,7 @@ async function handleV2ReferenceAgent(
       ...response,
     });
   } catch (error) {
-    console.error(`V2 reference agent error (${model.name}):`, error);
+    console.error(`Artifact-based reference agent error (${model.name}):`, error);
 
     return Response.json(
       {
@@ -342,14 +342,14 @@ interface ReferenceAgentBody {
   deal_context?: Record<string, unknown>;
   dealContext?: Record<string, unknown>;
   question?: string;
-  // V2 fields
+  // Artifact-based fields
   taskId?: string;
   taskType?: string;
   prompt?: string;
   artifacts?: Artifact[];
-  dealSnapshot?: V2AgentRequest["dealSnapshot"];
-  stakeholders?: V2AgentRequest["stakeholders"];
-  meddpicc?: V2AgentRequest["meddpicc"];
+  dealSnapshot?: ArtifactAgentRequest["dealSnapshot"];
+  stakeholders?: ArtifactAgentRequest["stakeholders"];
+  meddpicc?: ArtifactAgentRequest["meddpicc"];
   turnNumber?: number;
   maxTurns?: number;
 }
@@ -393,9 +393,9 @@ export async function handleReferenceAgent(req: Request, deps: ReferenceAgentDep
   try {
     const body = (await req.json()) as ReferenceAgentBody;
 
-    // Route V2 requests to the V2 handler
+    // Route artifact-based requests to the artifact handler
     if (body.version === 2) {
-      return handleV2ReferenceAgent(body as unknown as V2AgentRequest, model, deps);
+      return handleArtifactReferenceAgent(body as unknown as ArtifactAgentRequest, model, deps);
     }
 
     // Validate request

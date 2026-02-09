@@ -9,7 +9,7 @@
  *  2. Detailed: `# Title`, `## Meeting Details` with metadata, `## My Notes`, `## Meeting Notes`, `## Full Transcript`
  */
 
-import type { TranscriptTurn } from "../../../src/types/benchmark-v2";
+import type { TranscriptTurn } from "../../../src/types/benchmark-artifact";
 
 export interface ParsedTranscript {
   title: string;

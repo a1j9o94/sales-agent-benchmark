@@ -1,4 +1,4 @@
-import type { ScoringDimensionKey, EvaluationTaskType } from "@/types/benchmark-v2";
+import type { ScoringDimensionKey, EvaluationTaskType } from "@/types/benchmark-artifact";
 
 export function scoreColor(percentage: number): string {
   if (percentage >= 75) return "text-emerald-400";
@@ -88,7 +88,7 @@ export function dimensionColor(key: string): string {
   return colors[key] || "slate";
 }
 
-export const V2_DIMENSION_KEYS: ScoringDimensionKey[] = [
+export const ARTIFACT_DIMENSION_KEYS: ScoringDimensionKey[] = [
   "riskIdentification",
   "nextStepQuality",
   "prioritization",
