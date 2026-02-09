@@ -478,7 +478,7 @@ export function Leaderboard() {
             </div>
             <div>
               <h4 className="font-semibold">Model Rankings</h4>
-              <p className="text-xs text-slate-500">{entries.length} models tested on 36 checkpoints</p>
+              <p className="text-xs text-slate-500">{entries.length} models, 4 scoring dimensions</p>
             </div>
           </div>
 

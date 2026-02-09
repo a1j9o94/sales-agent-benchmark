@@ -276,7 +276,7 @@ export function ArtifactLeaderboard() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Model Rankings</h4>
-                  <p className="text-xs text-slate-500">{entries.length} models, 8 dimensions</p>
+                  <p className="text-xs text-slate-500">{entries.length} models, 65 checkpoints, 148 tasks</p>
                 </div>
               </div>
                 <div className="flex items-center gap-3 w-full sm:w-auto">
