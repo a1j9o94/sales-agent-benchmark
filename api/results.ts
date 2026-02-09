@@ -352,6 +352,7 @@ export async function getLeaderboard(mode: "public" | "private" = "private", dep
     JOIN agents a ON br.agent_id = a.id
     JOIN dimension_scores ds ON br.id = ds.run_id
     WHERE br.mode = ${mode}
+      AND br.agent_id NOT LIKE 'artifact_%'
     ORDER BY br.agent_id, br.aggregate_score DESC
   `;
 
@@ -408,6 +409,7 @@ export async function getAllRuns(options?: { mode?: "public" | "private"; limit?
       JOIN agents a ON br.agent_id = a.id
       JOIN dimension_scores ds ON br.id = ds.run_id
       WHERE br.mode = ${options.mode}
+        AND br.agent_id NOT LIKE 'artifact_%'
       ORDER BY br.run_timestamp DESC
       LIMIT ${limit}
     `;
@@ -431,6 +433,7 @@ export async function getAllRuns(options?: { mode?: "public" | "private"; limit?
       FROM benchmark_runs br
       JOIN agents a ON br.agent_id = a.id
       JOIN dimension_scores ds ON br.id = ds.run_id
+      WHERE br.agent_id NOT LIKE 'artifact_%'
       ORDER BY br.run_timestamp DESC
       LIMIT ${limit}
     `;
