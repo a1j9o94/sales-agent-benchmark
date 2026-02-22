@@ -92,6 +92,18 @@ export const BENCHMARK_MODELS = [
     openrouterId: "google/gemini-3-pro-preview-20251117",
     tier: "frontier",
   },
+  {
+    id: "gemini-3.1-pro",
+    name: "Gemini 3.1 Pro Preview",
+    openrouterId: "google/gemini-3.1-pro-preview",
+    tier: "frontier",
+  },
+  {
+    id: "claude-sonnet-4.6",
+    name: "Claude Sonnet 4.6",
+    openrouterId: "anthropic/claude-sonnet-4.6",
+    tier: "frontier",
+  },
   // Fast tier
   {
     id: "gemini-3-flash",
@@ -130,6 +142,12 @@ export const BENCHMARK_MODELS = [
     id: "qwen3-coder-480b",
     name: "Qwen 3 Coder 480B",
     openrouterId: "qwen/qwen3-coder-480b-a35b-07-25",
+    tier: "specialized",
+  },
+  {
+    id: "glm-5",
+    name: "GLM-5",
+    openrouterId: "z-ai/glm-5",
     tier: "specialized",
   },
   // Budget tier
