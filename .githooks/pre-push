@@ -1,0 +1,27 @@
+#!/bin/bash
+echo "Running pre-push quality gates..."
+
+# Check if Bun is available
+if ! command -v bun >/dev/null 2>&1; then
+  echo "⚠️  Bun not found, skipping TypeScript check"
+else
+  # Run TypeScript type checking
+  echo "Running TypeScript type check..."
+  bunx tsc --noEmit
+  if [ $? -ne 0 ]; then
+    echo "❌ TypeScript type check failed. Fix issues before pushing."
+    exit 1
+  fi
+fi
+
+# Try to run build if build script exists
+if [ -f "build.ts" ]; then
+  echo "Running build..."
+  bun run build
+  if [ $? -ne 0 ]; then
+    echo "❌ Build failed. Fix issues before pushing."
+    exit 1
+  fi
+fi
+
+echo "✅ Pre-push checks passed."
