@@ -7,7 +7,7 @@ if ! command -v bun >/dev/null 2>&1; then
 else
   # Run TypeScript type checking
   echo "Running TypeScript type check..."
-  bunx tsc --noEmit
+  bun x tsc --noEmit
   if [ $? -ne 0 ]; then
     echo "❌ TypeScript type check failed. Fix issues before pushing."
     exit 1
