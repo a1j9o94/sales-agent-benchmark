@@ -1,0 +1,173 @@
+{
+  "id": "avmedia",
+  "name": "StreamCore Media",
+  "checkpoints": [
+    {
+      "id": "streamcore-media_cp_001",
+      "dealId": "streamcore-media",
+      "timestamp": "2026-01-21",
+      "context": {
+        "company": "StreamCore Media",
+        "stage": "Discovery",
+        "lastInteraction": "Discovery call with JD Rhoads (owner)",
+        "painPoints": [
+          "Cannot integrate Flex Rental Solutions with QuickBooks, Ramp, TeamUp",
+          "Flex API is confusing and complex",
+          "Time-based inventory model doesn't map to standard tools",
+          "Been struggling with integration for years"
+        ],
+        "stakeholders": [
+          {
+            "name": "JD Rhoads",
+            "title": "Co",
+            "role": "founder/Owner",
+            "sentiment": "unknown",
+            "notes": "Economic Buyer - Champion (he's driving this personally). Former programmer, \"dabbles\" in tech. In his 50s, based in Chicago. Company HQ is Orlando."
+          },
+          {
+            "name": "[Data Analyst - name unknown]",
+            "title": "Has used AutomateFlow \"a lot\" per JD. James be hands",
+            "role": "on",
+            "sentiment": "unknown",
+            "notes": "keyboard. Need to engage directly."
+          }
+        ],
+        "history": "Initial discovery call with owner JD Rhoads, identified core integration challenge",
+        "meddpicc": {
+          "metrics": {
+            "status": "red",
+            "notes": "No quantified outcomes discussed. Need to understand: how many hours spent on manual data entry? How many projects/month?"
+          },
+          "economicBuyer": {
+            "status": "green",
+            "notes": "JD Rhoads is co-founder/owner. He's the EB."
+          },
+          "decisionCriteria": {
+            "status": "yellow",
+            "notes": "\"Capabilities\" - specifically, can we integrate with Flex Rental Solutions?"
+          },
+          "decisionProcess": {
+            "status": "yellow",
+            "notes": "Seems lightweight. JD + data analyst. Need to confirm if anyone else involved."
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "Unknown. Small company, likely straightforward."
+          },
+          "pain": {
+            "status": "green",
+            "notes": "Can't integrate Flex Rental Solutions with other systems. Time-based inventory model doesn't map to standard tools. Been struggling with this for years."
+          },
+          "champion": {
+            "status": "yellow",
+            "notes": "JD is driving this, but as owner he's the EB not a classic champion. Data analyst could be the hands-on champion."
+          },
+          "competition": {
+            "status": "green",
+            "notes": "None mentioned. They want Zapier specifically based on AV Vegas reference."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "Teams plan (~$2K-5K/yr likely)",
+        "closeDate": "TBD"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Breakthrough discovery that Flex Rental Solutions already built a private AutomateFlow integration",
+        "actualRisksThatMaterialized": [
+          "Flex API might be too complex for custom actions",
+          "May require expensive Solutions Partner engagement",
+          "Unknown if data analyst James engage hands-on"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    },
+    {
+      "id": "streamcore-media_cp_002",
+      "dealId": "streamcore-media",
+      "timestamp": "2026-01-21",
+      "context": {
+        "company": "StreamCore Media",
+        "stage": "Discovery",
+        "lastInteraction": "Discovered Flex already built invite-only AutomateFlow integration used by AV Vegas",
+        "painPoints": [
+          "Cannot integrate Flex Rental Solutions with QuickBooks, Ramp, TeamUp",
+          "Flex API is confusing and complex",
+          "Time-based inventory model doesn't map to standard tools",
+          "Been struggling with integration for years"
+        ],
+        "stakeholders": [
+          {
+            "name": "JD Rhoads",
+            "title": "Co",
+            "role": "founder/Owner",
+            "sentiment": "unknown",
+            "notes": "Economic Buyer - Champion (he's driving this personally). Former programmer, \"dabbles\" in tech. In his 50s, based in Chicago. Company HQ is Orlando."
+          },
+          {
+            "name": "[Data Analyst - name unknown]",
+            "title": "Has used AutomateFlow \"a lot\" per JD. James be hands",
+            "role": "on",
+            "sentiment": "unknown",
+            "notes": "keyboard. Need to engage directly."
+          }
+        ],
+        "history": "Major breakthrough - found existing private AutomateFlow integration for Flex Rental Solutions",
+        "meddpicc": {
+          "metrics": {
+            "status": "red",
+            "notes": "No quantified outcomes discussed. Need to understand: how many hours spent on manual data entry? How many projects/month?"
+          },
+          "economicBuyer": {
+            "status": "green",
+            "notes": "JD Rhoads is co-founder/owner. He's the EB."
+          },
+          "decisionCriteria": {
+            "status": "yellow",
+            "notes": "\"Capabilities\" - specifically, can we integrate with Flex Rental Solutions?"
+          },
+          "decisionProcess": {
+            "status": "yellow",
+            "notes": "Seems lightweight. JD + data analyst. Need to confirm if anyone else involved."
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "Unknown. Small company, likely straightforward."
+          },
+          "pain": {
+            "status": "green",
+            "notes": "Can't integrate Flex Rental Solutions with other systems. Time-based inventory model doesn't map to standard tools. Been struggling with this for years."
+          },
+          "champion": {
+            "status": "yellow",
+            "notes": "JD is driving this, but as owner he's the EB not a classic champion. Data analyst could be the hands-on champion."
+          },
+          "competition": {
+            "status": "green",
+            "notes": "None mentioned. They want Zapier specifically based on AV Vegas reference."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "Teams plan (~$2K-5K/yr likely)",
+        "closeDate": "TBD"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Next step to connect JD with Roger at Flex to get access to invite link",
+        "actualRisksThatMaterialized": [
+          "Flex developer may not approve access",
+          "Integration may not meet their specific needs",
+          "Still need to engage data analyst for hands-on work"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    }
+  ],
+  "finalOutcome": "active"
+}

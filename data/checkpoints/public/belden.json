@@ -1,0 +1,208 @@
+{
+  "id": "belden",
+  "name": "belden",
+  "checkpoints": [
+    {
+      "id": "belden_cp_001",
+      "dealId": "belden",
+      "timestamp": "2026-02-10",
+      "context": {
+        "company": "belden",
+        "stage": "Prospecting",
+        "lastInteraction": "Cold outreach to CDO, CIO, CTO with different angles",
+        "painPoints": [
+          "67K tasks indicating high automation usage",
+          "Enterprise company without enterprise controls"
+        ],
+        "stakeholders": [],
+        "history": "Initial Atlas outreach to Belden leadership identifying 29 users on Team plan",
+        "meddpicc": {
+          "metrics": {
+            "status": "yellow",
+            "notes": "15 users, 4 active, ~10K tasks/month, 6% utilization on Team 50K. Need to quantify governance risk + Atlas opportunity."
+          },
+          "economicBuyer": {
+            "status": "green",
+            "notes": "Brad Dineley - EVP, Chief Digital & Operations Officer. Reports to CEO. Responded directly, routed to Logan."
+          },
+          "decisionCriteria": {
+            "status": "red",
+            "notes": "Unknown - need discovery with Logan Cooper"
+          },
+          "decisionProcess": {
+            "status": "red",
+            "notes": "Unknown - need to understand procurement at Belden"
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "NYSE-listed = procurement, legal, security review likely"
+          },
+          "pain": {
+            "status": "yellow",
+            "notes": "Marketing team running automation without IT/digital visibility. Pardot connection fragility causing outages. No SSO/SCIM on public company."
+          },
+          "champion": {
+            "status": "yellow",
+            "notes": "Logan Cooper engaged but skeptical — asked \"are you able to provide details about the 29 users?\" Need to prove relevance to his digitalization mandate."
+          },
+          "competition": {
+            "status": "yellow",
+            "notes": "Unknown. Microsoft Power Automate likely in play (M365 shop). Accenture consulting relationship."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "TBD (enterprise consolidation + Atlas opportunity)",
+        "closeDate": "TBD"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "CDO Brad Dineley responded positively within 2 days, routing to Digital Lead",
+        "actualRisksThatMaterialized": [
+          "Unknown if pain points resonate",
+          "Multiple contacts could cause confusion",
+          "No champion identified yet"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    },
+    {
+      "id": "belden_cp_002",
+      "dealId": "belden",
+      "timestamp": "2026-02-12",
+      "context": {
+        "company": "belden",
+        "stage": "Discovery",
+        "lastInteraction": "Brad Dineley responded asking Digital Lead to reach out",
+        "painPoints": [
+          "Enterprise governance gap",
+          "Digital transformation opportunity"
+        ],
+        "stakeholders": [],
+        "history": "CDO responded routing to Digital Lead, identified Logan Cooper as likely contact",
+        "meddpicc": {
+          "metrics": {
+            "status": "yellow",
+            "notes": "15 users, 4 active, ~10K tasks/month, 6% utilization on Team 50K. Need to quantify governance risk + Atlas opportunity."
+          },
+          "economicBuyer": {
+            "status": "green",
+            "notes": "Brad Dineley - EVP, Chief Digital & Operations Officer. Reports to CEO. Responded directly, routed to Logan."
+          },
+          "decisionCriteria": {
+            "status": "red",
+            "notes": "Unknown - need discovery with Logan Cooper"
+          },
+          "decisionProcess": {
+            "status": "red",
+            "notes": "Unknown - need to understand procurement at Belden"
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "NYSE-listed = procurement, legal, security review likely"
+          },
+          "pain": {
+            "status": "yellow",
+            "notes": "Marketing team running automation without IT/digital visibility. Pardot connection fragility causing outages. No SSO/SCIM on public company."
+          },
+          "champion": {
+            "status": "yellow",
+            "notes": "Logan Cooper engaged but skeptical — asked \"are you able to provide details about the 29 users?\" Need to prove relevance to his digitalization mandate."
+          },
+          "competition": {
+            "status": "yellow",
+            "notes": "Unknown. Microsoft Power Automate likely in play (M365 shop). Accenture consulting relationship."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "TBD (enterprise consolidation + Atlas opportunity)",
+        "closeDate": "TBD"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Logan Cooper engaged within hours but expressed skepticism about user count and relevance to his scope",
+        "actualRisksThatMaterialized": [
+          "Wrong contact - usage is marketing ops, not digitalization",
+          "Digital Lead may not see relevance",
+          "Overstated user count could hurt credibility"
+        ],
+        "outcomeAtThisPoint": "progressing"
+      }
+    },
+    {
+      "id": "belden_cp_003",
+      "dealId": "belden",
+      "timestamp": "2026-02-19",
+      "context": {
+        "company": "belden",
+        "stage": "Discovery",
+        "lastInteraction": "Logan asked for details about 29 users, expressing lack of awareness",
+        "painPoints": [
+          "Marketing automation without IT visibility",
+          "Pardot connection fragility",
+          "No SSO/SCIM governance",
+          "6% utilization on current plan"
+        ],
+        "stakeholders": [],
+        "history": "Logan Cooper engaged but skeptical, reality check revealed actual usage is marketing ops only",
+        "meddpicc": {
+          "metrics": {
+            "status": "yellow",
+            "notes": "15 users, 4 active, ~10K tasks/month, 6% utilization on Team 50K. Need to quantify governance risk + Atlas opportunity."
+          },
+          "economicBuyer": {
+            "status": "green",
+            "notes": "Brad Dineley - EVP, Chief Digital & Operations Officer. Reports to CEO. Responded directly, routed to Logan."
+          },
+          "decisionCriteria": {
+            "status": "red",
+            "notes": "Unknown - need discovery with Logan Cooper"
+          },
+          "decisionProcess": {
+            "status": "red",
+            "notes": "Unknown - need to understand procurement at Belden"
+          },
+          "paperProcess": {
+            "status": "red",
+            "notes": "NYSE-listed = procurement, legal, security review likely"
+          },
+          "pain": {
+            "status": "yellow",
+            "notes": "Marketing team running automation without IT/digital visibility. Pardot connection fragility causing outages. No SSO/SCIM on public company."
+          },
+          "champion": {
+            "status": "yellow",
+            "notes": "Logan Cooper engaged but skeptical — asked \"are you able to provide details about the 29 users?\" Need to prove relevance to his digitalization mandate."
+          },
+          "competition": {
+            "status": "yellow",
+            "notes": "Unknown. Microsoft Power Automate likely in play (M365 shop). Accenture consulting relationship."
+          }
+        },
+        "hypothesis": {
+          "whyTheyWillBuy": [],
+          "whyTheyMightNot": [],
+          "whatNeedsToBeTrue": []
+        },
+        "amount": "TBD (enterprise consolidation + Atlas opportunity)",
+        "closeDate": "TBD"
+      },
+      "groundTruth": {
+        "whatHappenedNext": "Comprehensive reply sent correcting user count, framing governance visibility, and pivoting to Atlas opportunity for 8,500 employees",
+        "actualRisksThatMaterialized": [
+          "Credibility damaged by incorrect user count",
+          "Current usage not in Logan's scope",
+          "May be redirected to marketing team",
+          "Atlas vision may seem disconnected from current reality"
+        ],
+        "outcomeAtThisPoint": "at_risk"
+      }
+    }
+  ],
+  "finalOutcome": "active"
+}
